@@ -1,0 +1,20 @@
+class TokyoMetro::Required::Factory::Scss < RequiredFiles::MetaClass
+
+  def self.top_file
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "factory" , "scss" )
+  end
+
+  def self.other_files
+    [ "fundamental" , "colors" , "train_type" ].map { | filename |
+      ::File.join( top_file , filename )
+    } + [ "operators" , "railway_lines" , "train_types" ].map { | namespace |
+      [
+        ::File.join( top_file , namespace ) ,
+        [ "dirname_settings" , "fundamental" , "colors" ].map { | filename |
+          ::File.join( top_file , namespace , filename )
+        }
+      ]
+    }
+  end
+
+end

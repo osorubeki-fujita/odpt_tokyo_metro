@@ -13,7 +13,8 @@ module TokyoMetro
 
   # プロジェクトのトップディレクトリ
   # @note "#{ ::Rails.root }" とはしない
-  TOP_DIR = ::File.expand_path( "#{ File.dirname( __FILE__ ) }/.." )
+  TOP_DIR = ::File.expand_path( "#{ File.dirname( __FILE__ ) }/../.." )
+  LIB_DIR = ::File.expand_path( "#{ File.dirname( __FILE__ ) }/.." )
 
   # @!group ディレクトリ
 
@@ -295,4 +296,16 @@ module TokyoMetro
 
   # @!endgroup
 
+end
+
+#--------
+
+require "tokyo_metro/required.rb"
+
+::Dir.glob( "#{ ::File.dirname( __FILE__ ) }/required/**/**.rb" ).sort.each do | filename |
+  require filename
+end
+
+TokyoMetro::Required.files.each do | filename |
+  require filename
 end
