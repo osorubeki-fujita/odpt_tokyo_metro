@@ -5,6 +5,7 @@ require "active_support/core_ext"
 require "active_support/concern"
 
 require "positive_support"
+require "positive_web_support"
 require "required_files"
 require "odpt_common"
 
