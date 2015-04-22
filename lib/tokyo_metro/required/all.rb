@@ -46,7 +46,7 @@ class TokyoMetro::Required::All < TokyoMetro::Required
     def display_files_not_be_required
       string_for_regexp_that_ignore_files_under_the_directory_of_this_file = ::File.expand_path( __FILE__ ).gsub( /\/all\.rb\Z/ , "" ).convert_meta_character_in_regexp
       
-      puts string_for_regexp_that_ignore_files_under_the_directory_of_this_file.to_s
+      # puts string_for_regexp_that_ignore_files_under_the_directory_of_this_file.to_s
 
       _files_not_be_required = files_not_be_required.delete_if { |f|
         /\A#{ string_for_regexp_that_ignore_files_under_the_directory_of_this_file }/ === f
