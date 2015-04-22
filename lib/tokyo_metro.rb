@@ -318,7 +318,7 @@ module TokyoMetro
     def required_files( settings )
       case settings.to_s
       when "from_txt" , "production" , "test"
-        ary = open( "#{ ::TokyoMetro::TOP_DIR }/required_files.txt" , "r:utf-8" ).read.split( /\n/ ).map { |f|
+        open( "#{ ::TokyoMetro::TOP_DIR }/required_files.txt" , "r:utf-8" ).read.split( /\n/ ).map { |f|
           "#{ ::TokyoMetro::TOP_DIR }/#{ f }"
         }
 
@@ -330,10 +330,8 @@ module TokyoMetro
           require ::File.expand_path( filename )
         end
 
-        ary = TokyoMetro::Required::All.files
+        ::TokyoMetro::Required::All.files
       end
-
-      ary - [ ::File.expand_path( __FILE__ ).gsub( ".rb" , "" ) ]
     end
 
   end

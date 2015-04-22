@@ -1,12 +1,8 @@
 class TokyoMetro::Required::All::Factory::Generate::Api < TokyoMetro::Required
 
-  def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "generate" , "api" )
-  end
-
   def self.other_files
     [
-      ::Dir.glob( "#{ top_file }/**.rb" ).sort ,
+      all_files_in_the_same_directory ,
       MetaClass.files ,
       StationFacility.files
     ]

@@ -4,11 +4,6 @@ class TokyoMetro::Required::All::Api < TokyoMetro::Required
     super( set_all_files_under_the_top_namespace: false )
   end
 
-  # static / 変化のない（or 非常に少ない）情報を扱うクラス
-  def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "api" )
-  end
-
   def self.other_files
     [
       MetaClass.files ,

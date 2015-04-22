@@ -1,9 +1,5 @@
 class TokyoMetro::Required::All::Factory::Seed::Api::TrainTimetable < TokyoMetro::Required
 
-  def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "seed" , "api" , "train_timetable" )
-  end
-
   def self.other_files
     [
       [ "common" ] ,

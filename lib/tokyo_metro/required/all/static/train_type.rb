@@ -1,9 +1,5 @@
 class TokyoMetro::Required::All::Static::TrainType < TokyoMetro::Required
 
-  def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "static" , "train_type" )
-  end
-
   def self.other_files
     [ in_api_and_color , custom ]
   end
@@ -18,7 +14,7 @@ class TokyoMetro::Required::All::Static::TrainType < TokyoMetro::Required
 
     def custom
       [
-        File.join( top_file , "custom" ) ,
+        ::File.join( top_file , "custom" ) ,
         [ "other_operator" , "default_setting" , "main" ].map { | namespace |
           files_starting_with( top_file , "custom" , namespace )
         }

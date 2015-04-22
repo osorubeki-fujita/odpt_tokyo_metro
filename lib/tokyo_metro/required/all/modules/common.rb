@@ -1,9 +1,5 @@
 class TokyoMetro::Required::All::Modules::Common < TokyoMetro::Required
 
-  def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "modules" , "common" )
-  end
-
   def self.other_files
     [
       File.join( "#{ top_file }/convert_constant_to_class_method" ) ,

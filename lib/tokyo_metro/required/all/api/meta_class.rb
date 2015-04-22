@@ -1,9 +1,5 @@
 class TokyoMetro::Required::All::Api::MetaClass < TokyoMetro::Required
 
-  def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "api" , "meta_class" )
-  end
-
   def self.other_files
     namespaces.map { | namespace |
       files_starting_with( top_file , namespace )

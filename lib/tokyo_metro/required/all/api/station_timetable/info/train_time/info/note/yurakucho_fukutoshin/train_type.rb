@@ -4,13 +4,9 @@ class TokyoMetro::Required::All::Api::StationTimetable::Info::TrainTime::Info::N
     super( set_all_files_under_the_top_namespace: false )
   end
 
-  def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "api" , "station_timetable" , "info" , "train_time" , "info" , "note" , "yurakucho_fukutoshin" , "train_type" )
-  end
-
   def self.other_files
     [
-      ::Dir.glob( "#{ top_file }/**.rb" ).sort ,
+      all_files_in_the_same_directory ,
       namespaces.map { | namespace |
         [
           ::File.join( top_file , namespace ) ,
