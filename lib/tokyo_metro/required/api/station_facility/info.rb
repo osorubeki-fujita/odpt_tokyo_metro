@@ -5,7 +5,7 @@ class TokyoMetro::Required::Api::StationFacility::Info < RequiredFiles::MetaClas
   end
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "api" , "station_facility" , "info" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "api" , "station_facility" , "info" )
   end
 
   def self.other_files

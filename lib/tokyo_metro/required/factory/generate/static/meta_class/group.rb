@@ -1,7 +1,7 @@
 class TokyoMetro::Required::Factory::Generate::Static::MetaClass::Group < RequiredFiles::MetaClass
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "factory" , "generate" , "static" , "meta_class" , "group" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "generate" , "static" , "meta_class" , "group" )
   end
 
   def self.other_files

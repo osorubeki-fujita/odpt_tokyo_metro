@@ -1,7 +1,7 @@
 class TokyoMetro::Required::Factory::Seed::Static::Station < RequiredFiles::MetaClass
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "factory" , "seed" , "static" , "station" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "seed" , "static" , "station" )
   end
 
   def self.other_files

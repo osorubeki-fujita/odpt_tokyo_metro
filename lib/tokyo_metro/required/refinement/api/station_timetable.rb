@@ -1,7 +1,7 @@
 class TokyoMetro::Required::Refinement::Api::StationTimetable < RequiredFiles::MetaClass
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "refinement" , "api" , "station_timetable" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "refinement" , "api" , "station_timetable" )
   end
 
   def self.other_files

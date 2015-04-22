@@ -5,7 +5,7 @@ class TokyoMetro::Required::Api::TrainTimetable::Info::StationTime < RequiredFil
   end
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "api" , "train_timetable" , "info" , "station_time" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "api" , "train_timetable" , "info" , "station_time" )
   end
 
   def self.other_files

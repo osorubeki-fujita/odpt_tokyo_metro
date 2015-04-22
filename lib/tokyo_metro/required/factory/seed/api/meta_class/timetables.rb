@@ -1,7 +1,7 @@
 class TokyoMetro::Required::Factory::Seed::Api::MetaClass::Timetables < RequiredFiles::MetaClass
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "factory" , "seed" , "api" , "meta_class" , "timetables" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "seed" , "api" , "meta_class" , "timetables" )
   end
 
   def self.other_files

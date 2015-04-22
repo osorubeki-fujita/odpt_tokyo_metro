@@ -1,7 +1,7 @@
 class TokyoMetro::Required::App::Renderer::SideMenu < RequiredFiles::MetaClass
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "app" , "renderer" , "side_menu" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "app" , "renderer" , "side_menu" )
   end
 
   def self.other_files

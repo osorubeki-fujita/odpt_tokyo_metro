@@ -6,7 +6,7 @@ class TokyoMetro::Required::Factory < RequiredFiles::MetaClass
 
   # factory / Facetory Pattern
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "factory" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" )
   end
 
   def self.other_files

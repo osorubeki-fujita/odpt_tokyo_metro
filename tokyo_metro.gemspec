@@ -32,5 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
 
-  spec.add_runtime_dependency "required_files" , "=> 0.1.2"
+  spec.add_runtime_dependency "required_files" , "=> 0.1.3"
+  spec.add_runtime_dependency "odpt_common" , "=> 0.1.3"
+  spec.add_runtime_dependency "positive_support" , "=> 0.0.2"
 end

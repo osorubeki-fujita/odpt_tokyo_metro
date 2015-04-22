@@ -5,7 +5,7 @@ class TokyoMetro::Required::App < RequiredFiles::MetaClass
   end
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "app" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "app" )
   end
 
   def self.other_files

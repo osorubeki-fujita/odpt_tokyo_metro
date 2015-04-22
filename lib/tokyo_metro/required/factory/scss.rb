@@ -1,7 +1,7 @@
 class TokyoMetro::Required::Factory::Scss < RequiredFiles::MetaClass
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "factory" , "scss" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "scss" )
   end
 
   def self.other_files

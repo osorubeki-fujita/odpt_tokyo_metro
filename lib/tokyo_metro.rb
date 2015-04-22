@@ -1,4 +1,12 @@
-require "tokyo_metro/version"
+require_relative "tokyo_metro/version.rb"
+
+require "active_support"
+require "active_support/core_ext"
+require "active_support/concern"
+
+require "positive_support"
+require "required_files"
+require "odpt_common"
 
 # Encoding.default_external
 # require 'psych'
@@ -11,24 +19,25 @@ require 'fileutils'
 # 東京メトロ オープンデータを扱うモジュール
 module TokyoMetro
 
+  LIB_DIR = ::File.expand_path( ::File.dirname( __FILE__ ) )
+
   # プロジェクトのトップディレクトリ
   # @note "#{ ::Rails.root }" とはしない
-  TOP_DIR = ::File.expand_path( "#{ File.dirname( __FILE__ ) }/../.." )
-  LIB_DIR = ::File.expand_path( "#{ File.dirname( __FILE__ ) }/.." )
+  TOP_DIR = ::File.expand_path( "#{ File.dirname( __FILE__ ) }/.." )
 
   # @!group ディレクトリ
 
   # 本番環境に移行するファイルを格納するディレクトリ
   PRODUCTION_DIR = TOP_DIR
 
+  # 辞書ファイルのディレクトリ
+  DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/tokyo_metro/dictionary" )
+
   # 開発のためのファイルを格納するディレクトリ
-  DEV_DIR = ::File.expand_path( "#{TOP_DIR}/../rails_tokyo_metro_dev" )
+  DEV_DIR = "C:/RubyPj/rails_tokyo_metro_dev"
 
   # データベースのディレクトリ
-  DB_DIR = ::File.expand_path( "#{TOP_DIR}/../rails_tokyo_metro_db" )
-
-  # 辞書ファイルのディレクトリ
-  DICTIONARY_DIR = ::File.expand_path( "#{ PRODUCTION_DIR }/lib/tokyo_metro/dictionary" )
+  DB_DIR = "C:/RubyPj/rails_tokyo_metro_db"
 
   # @!group API へのアクセス
 
@@ -154,12 +163,26 @@ module TokyoMetro
   def self.set_all_api_constants_without_fare
     set_api_constants( config_of_api_constants_when_load_without_fare )
   end
+  
+  def self.require_files( settings = nil )
+    raise "Error" unless settings.nil? or ( [ "from_txt" , "update" , "development" , "production" , "test" ].include?( settings.to_s ) )
+    required_files( settings ).each do | filename |
+      require filename
+    end
+  end
 
   class << self
+  
+    def method_missing( method_name , *args )
+      if /const/ === method_name.to_s
+        valid_method_name = method_name.to_s.gsub( "const" , "constant" )
+        if methods.map( &:to_s ).include?( valid_method_name )
+          return send( valid_method_name , *args )
+        end
+      end
 
-    alias :set_api_consts :set_api_constants
-    alias :set_all_api_consts :set_all_api_constants
-    alias :set_all_api_consts_without_fare :set_all_api_constants_without_fare
+      super( method_name , *args )
+    end
 
     private
 
@@ -274,7 +297,7 @@ module TokyoMetro
 
     def config_of_api_constants_when_load_all
       h = ::Hash.new
-      config_api_constant_keys.each do | key |
+      api_constant_keys.each do | key |
         h[ key ] = true
       end
       h
@@ -282,14 +305,34 @@ module TokyoMetro
 
     def config_of_api_constants_when_load_without_fare
       h = ::Hash.new
-      ( config_api_constant_keys - [ :fare ] ).each do | key |
+      ( api_constant_keys - [ :fare ] ).each do | key |
         h[ key ] = true
       end
       h
     end
 
-    def config_api_constant_keys
+    def api_constant_keys
       [ :station_facility , :passenger_survey , :station , :railway_line , :point , :fare , :station_timetable , :train_timetable ]
+    end
+
+    def required_files( settings )
+      case settings.to_s
+      when "from_txt" , "production" , "test"
+        ary = open( "#{ ::TokyoMetro::TOP_DIR }/required_files.txt" , "r:utf-8" ).read.split( /\n/ ).map { |f|
+          "#{ ::TokyoMetro::TOP_DIR }/#{ f }"
+        }
+
+      else
+        require_relative "tokyo_metro/required.rb"
+
+        ::Dir.glob( "#{ ::TokyoMetro::LIB_DIR }/tokyo_metro/required/**/**.rb" ).sort.each do | filename |
+          require ::File.expand_path( filename )
+        end
+
+        ary = TokyoMetro::Required.files
+      end
+      
+      ary - [ ::File.expand_path( __FILE__ ).gsub( ".rb" , "" ) ]
     end
 
   end
@@ -300,12 +343,4 @@ end
 
 #--------
 
-require "tokyo_metro/required.rb"
-
-::Dir.glob( "#{ ::File.dirname( __FILE__ ) }/required/**/**.rb" ).sort.each do | filename |
-  require filename
-end
-
-TokyoMetro::Required.files.each do | filename |
-  require filename
-end
+::TokyoMetro.require_files( :development )

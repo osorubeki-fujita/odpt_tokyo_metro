@@ -2,7 +2,7 @@ class TokyoMetro::Required::ClassNameLibrary < RequiredFiles::MetaClass
 
   # class_name_library / クラス名のライブラリ
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "class_name_library" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "class_name_library" )
   end
 
   def self.other_files

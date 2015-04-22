@@ -5,7 +5,7 @@ class TokyoMetro::Required::Api::StationFacility::Info::BarrierFree::Facility::M
   end
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "api" , "station_facility" , "info" , "barrier_free" , "facility" , "meta_class" , "link_for_mobility_scooters_and_stairlift" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "api" , "station_facility" , "info" , "barrier_free" , "facility" , "meta_class" , "link_for_mobility_scooters_and_stairlift" )
   end
 
   def self.other_files

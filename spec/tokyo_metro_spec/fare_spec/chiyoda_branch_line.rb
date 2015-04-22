@@ -15,7 +15,6 @@ def chiyoda_branch_line
     [ to_ayase , :to_station ] # 綾瀬へ
   ]
 
-
   kita_ayase_set.each do | ary , method_name |
     ary.each do | item |
       describe ::TokyoMetro::Api::Fare::Info , "after converting station name of Kita-ayase" do

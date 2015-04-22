@@ -1,7 +1,7 @@
 class TokyoMetro::Required::Factory::Get::Api < RequiredFiles::MetaClass
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "factory" , "get" , "api" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "get" , "api" )
   end
 
   def self.other_files

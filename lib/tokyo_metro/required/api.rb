@@ -6,7 +6,7 @@ class TokyoMetro::Required::Api < RequiredFiles::MetaClass
 
   # static / 変化のない（or 非常に少ない）情報を扱うクラス
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "api" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "api" )
   end
 
   def self.other_files

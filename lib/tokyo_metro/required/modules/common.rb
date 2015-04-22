@@ -1,7 +1,7 @@
 class TokyoMetro::Required::Modules::Common < RequiredFiles::MetaClass
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "modules" , "common" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "modules" , "common" )
   end
 
   def self.other_files

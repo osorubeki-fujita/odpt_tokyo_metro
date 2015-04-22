@@ -5,7 +5,7 @@ class TokyoMetro::Required::Others < RequiredFiles::MetaClass
   end
 
   def self.top_file
-    ::File.join( ::Rails.root , "lib" , "tokyo_metro" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "api" )
   end
 
   def self.other_files

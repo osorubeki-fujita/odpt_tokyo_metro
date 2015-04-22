@@ -5,7 +5,7 @@ class TokyoMetro::Required::Factory::Generate::Api::StationFacility < RequiredFi
   end
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "factory" , "generate" , "api" , "station_facility" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "generate" , "api" , "station_facility" )
   end
 
   def self.other_files

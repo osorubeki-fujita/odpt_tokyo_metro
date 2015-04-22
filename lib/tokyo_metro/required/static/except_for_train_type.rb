@@ -5,7 +5,7 @@ class TokyoMetro::Required::Static::ExceptForTrainType < RequiredFiles::MetaClas
   end
 
   def self.top_file
-    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "required" , "static" )
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "static" )
   end
 
   def self.other_files
