@@ -53,12 +53,12 @@ class TokyoMetro::Static::TrainType::Color::Info < TokyoMetro::Static::Color
   # Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
   # @return [String]
   # @example
-  #   TokyoMetro::Static.train_types_color.each_value { | color | puts color.same_as.ljust(48) + " " + color.rgb_in_parentheses }
+  #   TokyoMetro::Static.train_types_color.each_value { | color | puts color.same_as.ljust(48) + " " + color.to_rgb_color_in_parentheses }
   #   =>
   #   custom.TrainTypeColor:White                      ( 255 , 255 , 255 )
   #   custom.TrainTypeColor:DarkGray                   ( 102 , 102 , 102 )
   #   custom.TrainTypeColor:HolidayExpress             ( 255 , 51 , 153 )
-  def rgb_in_parentheses
+  def to_rgb_color_in_parentheses
     super
   end
 

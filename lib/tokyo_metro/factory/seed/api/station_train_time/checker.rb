@@ -1,11 +1,15 @@
 class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
 
   def initialize( *symbol_of_railway_lines )
+    raise "Error" unless symbol_of_railway_lines.all? { |s| s.instance_of?( Symbol ) }
+
     @symbol_of_railway_lines = symbol_of_railway_lines.flatten.sort
-    class << @symbol_of_railway_lines
-      include ::TokyoMetro::ExtendBuiltinLibraries::SymbolModule::RailwayLine::List
-    end
-    @railway_line_ids = ::RailwayLine.where( same_as: @symbol_of_railway_lines.to_railway_lines_same_as ).pluck( :id )
+
+    railway_lines_same_as = @symbol_of_railway_lines.map { | symbol | 
+      ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringList.railway_line_string_list_in_system( symbol )
+    }.flatten
+
+    @railway_line_ids = ::RailwayLine.where( same_as: railway_lines_same_as ).pluck( :id )
 
     #--------
 

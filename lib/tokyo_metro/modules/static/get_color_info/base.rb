@@ -9,8 +9,8 @@ module TokyoMetro::Modules::Static::GetColorInfo::Base
 
   # Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
   # @return [String]
-  def rgb_in_parentheses
-    @color.rgb_in_parentheses
+  def to_s_rgb_color_in_parentheses
+    @color.to_s_rgb_color_in_parentheses
   end
 
 end

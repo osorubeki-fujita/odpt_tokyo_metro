@@ -17,7 +17,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
       # @return [::Module]
       # @note url_for
       @@url_helpers = ::Rails.application.routes.url_helpers
-    
+
       # @return [::ActionView::Base]
       # @note オリジナルの helper メソッド
       # @note url_for は利用不可

@@ -1,3 +1,4 @@
+# @note Rails の model {::RailwayLine} には column 'is_branch_railway_line' が定義されているので、この module を include することができる。
 module TokyoMetro::Modules::Common::Info::RailwayLine
 
   def is_not_branch_railway_line

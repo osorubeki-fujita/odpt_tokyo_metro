@@ -9,8 +9,8 @@ module TokyoMetro::Modules::Static::GetBackgroundColorInfo::Base
 
   # 背景の Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
   # @return [String]
-  def bg_rgb_in_parentheses
-    @bgcolor.rgb_in_parentheses
+  def to_s_rgb_bg_color_in_parentheses
+    @bgcolor.to_s_rgb_color_in_parentheses
   end
 
 end

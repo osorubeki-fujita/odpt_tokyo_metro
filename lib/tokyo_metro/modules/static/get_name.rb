@@ -17,10 +17,10 @@ module TokyoMetro::Modules::Static::GetName
     str = str.gsub( /_{2,}/ , "_" )
     str = str.downcase
 
-    if title.blank?
-      str
-    else
+    if title.present?
       "#{title}_#{str}"
+    else
+      str
     end
   end
 
@@ -37,14 +37,6 @@ module TokyoMetro::Modules::Static::GetName
   end
 
   private
-
-  def get_element( variable )
-    if variable.empty?
-      nil
-    else
-      variable.first
-    end
-  end
 
   def name_inspect( name_base )
     if name_base.instance_of?( ::Array )

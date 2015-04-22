@@ -48,11 +48,9 @@ class TokyoMetro::Static::Color
 
   # Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
   # @return [String]
-  def to_s_rgb_in_parentheses
-    "( " + self.to_a_rgb.join( " , ") + " )"
+  def to_s_rgb_color_in_parentheses
+    "( " + to_a_rgb.join( " , " ) + " )"
   end
-
-  alias :rgb_in_parentheses :to_s_rgb_in_parentheses
 
 # @!group 色情報の取得
 

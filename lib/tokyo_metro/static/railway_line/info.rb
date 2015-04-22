@@ -34,6 +34,7 @@ class TokyoMetro::Static::RailwayLine::Info
     @twitter_widget_id = twitter_widget_id
     @twitter_account = twitter_account
   end
+
   attr_reader :start_on
   attr_reader :twitter_widget_id
   attr_reader :twitter_account
@@ -1387,7 +1388,7 @@ class TokyoMetro::Static::RailwayLine::Info
   # 標準の路線色の Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
   # @return [::String]
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.color_normal_rgb_in_parentheses }
+  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.to_color_normal_rgb_in_parentheses }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : ( 243 , 151 , 0 )
   #   odpt.Railway:TokyoMetro.Marunouchi               : ( 230 , 0 , 18 )
@@ -1460,8 +1461,8 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:MIR.TX                              : ( 0 , 0 , 132 )
   #   odpt.Railway:Yurikamome.Yurikamome               : ( 0 , 65 , 142 )
   #   odpt.Railway:TWR.Rinkai                          : ( 0 , 65 , 142 )
-  def color_normal_rgb_in_parentheses
-    self.color_normal.rgb_in_parentheses
+  def to_color_normal_rgb_in_parentheses
+    self.color_normal.to_rgb_color_in_parentheses
   end
 
 # @!group 路線色に関するメソッド (2)
@@ -1619,8 +1620,8 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # 鉄道事業者の色の Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
   # @return [String]
-  def operator_color_rgb_in_parentheses
-    @operator.rgb_in_parentheses
+  def to_operator_color_rgb_in_parentheses
+    @operator.to_rgb_color_in_parentheses
   end
 
 # @!group 鉄道事業者の色に関するメソッド (2)
