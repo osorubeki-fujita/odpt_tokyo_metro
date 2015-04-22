@@ -1,0 +1,11 @@
+class TokyoMetro::Required::All::Factory::Seed::Reference < TokyoMetro::Required
+
+  def self.top_file
+    ::File.join( ::TokyoMetro::LIB_DIR , "tokyo_metro" , "factory" , "seed" , "reference" )
+  end
+
+  def self.other_files
+    File.join( top_file , "station" )
+  end
+
+end

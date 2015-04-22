@@ -324,14 +324,15 @@ module TokyoMetro
 
       else
         require_relative "tokyo_metro/required.rb"
+        require_relative "tokyo_metro/required/all.rb"
 
-        ::Dir.glob( "#{ ::TokyoMetro::LIB_DIR }/tokyo_metro/required/**/**.rb" ).sort.each do | filename |
+        ::Dir.glob( "#{ ::TokyoMetro::LIB_DIR }/tokyo_metro/required/all/**/**.rb" ).sort.each do | filename |
           require ::File.expand_path( filename )
         end
 
-        ary = TokyoMetro::Required.files
+        ary = TokyoMetro::Required::All.files
       end
-      
+
       ary - [ ::File.expand_path( __FILE__ ).gsub( ".rb" , "" ) ]
     end
 
