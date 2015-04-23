@@ -9,4 +9,5 @@
 /tmp/
 
 /lib/_tokyo_metro.rb
+/lib/tokyo_metro/dictionary/access_token.txt
 /required_files.txt
