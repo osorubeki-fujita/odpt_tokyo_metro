@@ -173,9 +173,9 @@ module TokyoMetro
   # @note  【公開禁止】
   # @note ファイル名称を .gitignore に記載すること
   def self.set_access_token
-    filename = "#{ ::Rails.root }/lib/tokyo_metro/dictionary/access_token.txt"
-    if ::File.exist?( filename )
-      self.const_set( :ACCESS_TOKEN , open( filename , "r:utf-8" ).read )
+    _access_token = access_token
+    if _access_token.present?
+      self.const_set( :ACCESS_TOKEN , _access_token )
     else
       puts "Error: The file \'#{ filename }\' does not exist."
     end
@@ -343,6 +343,20 @@ module TokyoMetro
         end
 
         ::TokyoMetro::Required::All.files
+      end
+    end
+    
+    def access_token
+      case ::Rails.env
+      when "development"
+        filename = "#{ ::Rails.root }/AccessToken"
+        if ::File.exist?( filename )
+          open( filename , "r:utf-8" ).read
+        else
+          nil
+        end
+      when "production"
+        ::ENV['TOKYO_METRO_ACCESS_TOKEN']
       end
     end
 
