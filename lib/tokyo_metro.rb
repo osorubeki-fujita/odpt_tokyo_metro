@@ -42,13 +42,6 @@ module TokyoMetro
 
   # @!group API へのアクセス
 
-  # Access Token
-  # @note API アクセス用のアクセストークン【必須】【アプリケーションごとに固有】<acl:consumerKey - acl:ConsumerKey>
-  # @note 複数のアプリケーションを作成する場合は、それぞれについて取得すること。
-  # @note  【公開禁止】
-  # @note .gitignore に記載すること
-  ACCESS_TOKEN = open( "#{ DICTIONARY_DIR }/access_token.txt" , "r:utf-8" ).read
-
   # 東京メトロオープンデータ API のエンドポイント
   API_ENDPOINT = "https://api.tokyometroapp.jp/api/v2"
 
@@ -171,6 +164,19 @@ module TokyoMetro
       require filename
     end
   end
+
+  # @!group Access Token
+
+  # Access Token
+  # @note API アクセス用のアクセストークン【必須】【アプリケーションごとに固有】<acl:consumerKey - acl:ConsumerKey>
+  # @note 複数のアプリケーションを作成する場合は、それぞれについて取得すること。
+  # @note  【公開禁止】
+  # @note .gitignore に記載すること
+  def self.set_access_token
+    self.const_set( :ACCESS_TOKEN , open( "#{ ::Rails.root }/lib/tokyo_metro/dictionary/access_token.txt" , "r:utf-8" ).read )
+  end
+  
+  # @!endgroup
 
   class << self
   
