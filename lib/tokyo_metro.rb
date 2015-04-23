@@ -171,13 +171,16 @@ module TokyoMetro
   # @note API アクセス用のアクセストークン【必須】【アプリケーションごとに固有】<acl:consumerKey - acl:ConsumerKey>
   # @note 複数のアプリケーションを作成する場合は、それぞれについて取得すること。
   # @note  【公開禁止】
-  # @note .gitignore に記載すること
+  # @note ファイル名称を .gitignore に記載すること
   def self.set_access_token
     filename = "#{ ::Rails.root }/lib/tokyo_metro/dictionary/access_token.txt"
-    raise "Error: The file \'#{ filename }\' does not exist." unless ::File.exist?( filename )
-    self.const_set( :ACCESS_TOKEN , open( filename , "r:utf-8" ).read )
+    if ::File.exist?( filename )
+      self.const_set( :ACCESS_TOKEN , open( filename , "r:utf-8" ).read )
+    else
+      puts "Error: The file \'#{ filename }\' does not exist."
+    end
   end
-  
+
   # @!endgroup
 
   class << self
