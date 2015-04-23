@@ -37,6 +37,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "positive_web_support" , ">= 0.1.1"
   spec.add_runtime_dependency "haml-rails"
   
-  spec.add_runtime_dependency "odpt_common" , ">= 0.1.5"
-  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.1"
+  spec.add_runtime_dependency "odpt_common" , ">= 0.1.6"
+  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.6"
 end
