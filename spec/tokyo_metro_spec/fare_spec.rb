@@ -1,3 +1,6 @@
+
+__END__
+
 require_relative 'fare_spec/marunouchi_branch_line.rb'
 require_relative 'fare_spec/chiyoda_branch_line.rb'
 

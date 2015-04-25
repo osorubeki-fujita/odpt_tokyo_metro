@@ -7,7 +7,9 @@ require "active_support/concern"
 require "positive_support"
 require "positive_web_support"
 require "required_files"
+
 require "odpt_common"
+require "odpt_tokyo_metro_helper"
 
 # Encoding.default_external
 # require 'psych'
@@ -348,7 +350,7 @@ module TokyoMetro
     
     def access_token
       case ::Rails.env
-      when "development"
+      when "development" , "test"
         filename = "#{ ::Rails.root }/AccessToken"
         if ::File.exist?( filename )
           open( filename , "r:utf-8" ).read

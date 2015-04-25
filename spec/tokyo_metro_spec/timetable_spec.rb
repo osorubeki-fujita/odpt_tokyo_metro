@@ -1,3 +1,5 @@
+__END__
+
 require_relative 'fundamental_settings.rb'
 
 

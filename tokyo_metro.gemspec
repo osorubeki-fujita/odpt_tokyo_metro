@@ -32,11 +32,15 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
 
-  spec.add_runtime_dependency "required_files" , ">= 0.2.1"
-  spec.add_runtime_dependency "positive_support" , ">= 0.0.2"
-  spec.add_runtime_dependency "positive_web_support" , ">= 0.1.1"
+  spec.add_development_dependency "capistrano"
+  spec.add_development_dependency "deployer", ">= 0.2.0"
+
+  spec.add_runtime_dependency "required_files" , ">= 0.2.4"
+  spec.add_runtime_dependency "positive_support" , ">= 0.2.2"
+  spec.add_runtime_dependency "positive_web_support" , ">= 0.2.2"
+
+  spec.add_runtime_dependency "odpt_common" , ">= 0.1.7"
+  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.7"
+
   spec.add_runtime_dependency "haml-rails"
-  
-  spec.add_runtime_dependency "odpt_common" , ">= 0.1.6"
-  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.6"
 end
