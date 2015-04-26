@@ -9,7 +9,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::MigrationFile < TokyoMetro::Rake:
         f.print( " " * 2 + row + "\n" )
       end
 
-      f.print( @rows[ ( index_where_active_record_definition_begins )..( @rows.length - 1 ) ].join( "\n" ) )
+      f.print( @rows[ ( index_where_def_change_ends )..( @rows.length - 1 ) ].join( "\n" ) )
     end
   end
 
@@ -19,7 +19,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::MigrationFile < TokyoMetro::Rake:
     @rows.index { | row | /\A {2}def change\Z/ === row }
   end
 
-  def index_where_active_record_definition_begins
+  def index_where_def_change_ends
     @rows.index { | row | /\A {2}end\Z/ === row }
   end
 

@@ -17,6 +17,7 @@ module TokyoMetro::Rake::Rails::Deploy::Heroku
     raise "Error" unless migrate_files.length == 1
 
     schema_file_active_record_definition_body = SchemaFile.new( schema_file ).active_record_definition_body
+    puts schema_file_active_record_definition_body
 
     MigrationFile.new( migrate_files.first ).set_body( schema_file_active_record_definition_body )
   end
@@ -41,7 +42,7 @@ module TokyoMetro::Rake::Rails::Deploy::Heroku
 
     def move_migration_files( to_old_dir: false , to_heroku_old_dir: false )
       migrate_files.each do | filename |
-        if to_heroku_old_dir
+        if to_old_dir
           new_filename = filename.gsub( /migrate(?=\/.+\.rb\Z)/ , "migrate_old" )
         elsif to_heroku_old_dir and /heroku_initializer\.rb\Z/ === filename
           new_filename = filename.gsub( /migrate(?=\/.+\.rb\Z)/ , "migrate_heroku_old" )
