@@ -18,7 +18,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
     set_first_settings_to_s
     set_commands_for_db
 
-    @commands.flatten.join( "\n" )
+    @commands.flatten
   end
 
   private
