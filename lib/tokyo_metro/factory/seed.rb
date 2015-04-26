@@ -120,7 +120,7 @@ module TokyoMetro::Factory::Seed
     def settings_of_seed
       h = ::Hash.new
 
-      ::YAML.load_file( "#{ TokyoMetro::PRODUCTION_DIR }/db/seeds/settings.yaml" ).each do | key , value |
+      ::YAML.load_file( "#{ TokyoMetro::RAILS_DIR }/db/seeds/settings.yaml" ).each do | key , value |
         h[ key.intern ] = value
       end
 

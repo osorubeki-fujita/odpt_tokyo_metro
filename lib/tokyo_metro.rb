@@ -24,34 +24,23 @@ module TokyoMetro
 
   LIB_DIR = ::File.expand_path( ::File.dirname( __FILE__ ) )
 
-  # プロジェクトのトップディレクトリ
+  # Gem のトップディレクトリ
   # @note "#{ ::Rails.root }" とはしない
-  TOP_DIR = ::File.expand_path( "#{ File.dirname( __FILE__ ) }/.." )
-
-  # @!group ディレクトリ
-
-  # 本番環境に移行するファイルを格納するディレクトリ
-  PRODUCTION_DIR = TOP_DIR
+  TOP_DIR = ::File.expand_path( "#{ LIB_DIR }/.." )
 
   # 辞書ファイルのディレクトリ
   DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/tokyo_metro/dictionary" )
+
+  # @!group ディレクトリ
+
+  # Directory of Rails application
+  RAILS_DIR = "C:/RubyPj/rails_tokyo_metro"
 
   # 開発のためのファイルを格納するディレクトリ
   DEV_DIR = "C:/RubyPj/rails_tokyo_metro_dev"
 
   # データベースのディレクトリ
   DB_DIR = "C:/RubyPj/rails_tokyo_metro_db"
-
-  # @!group API へのアクセス
-
-  # 東京メトロオープンデータ API のエンドポイント
-  API_ENDPOINT = "https://api.tokyometroapp.jp/api/v2"
-
-  # データ取得・検索 API
-  DATAPOINTS_URL = "#{API_ENDPOINT}/datapoints"
-
-  # 地物情報取得・検索 API
-  PLACES_URL = "#{API_ENDPOINT}/places"
 
   # @!group HTML, CSS, HAML, SCSS
 
@@ -70,7 +59,18 @@ module TokyoMetro
   # @!group DB
 
   # Rails の fixture ファイルを格納するディレクトリ
-  RAILS_FIXTURES_DIR = "#{ PRODUCTION_DIR }/test/fixtures"
+  RAILS_FIXTURES_DIR = "#{ RAILS_DIR }/test/fixtures"
+
+  # @!group API へのアクセス
+
+  # 東京メトロオープンデータ API のエンドポイント
+  API_ENDPOINT = "https://api.tokyometroapp.jp/api/v2"
+
+  # データ取得・検索 API
+  DATAPOINTS_URL = "#{API_ENDPOINT}/datapoints"
+
+  # 地物情報取得・検索 API
+  PLACES_URL = "#{API_ENDPOINT}/places"
 
   # @!group 駅名辞書
 

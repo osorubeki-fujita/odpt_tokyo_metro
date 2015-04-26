@@ -21,7 +21,8 @@ class TokyoMetro::Required::All < TokyoMetro::Required
       TempLib.files ,
       Document.files ,
       Test.files , 
-      Search.files
+      Search.files ,
+      Rake.files
     ]
   end
 
