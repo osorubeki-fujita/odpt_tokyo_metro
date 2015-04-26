@@ -10,6 +10,10 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
     set_time( time )
     optional_setting_of_initializer
     ::FileUtils.mkdir_p( @dirname ) unless ::Dir.exist?( @dirname )
+    
+    puts "-" * 32 + " Time: #{ @time }"
+    puts "-" * 32 + " Dirname: #{ @dirname }"
+    puts ""
   end
 
   attr_reader :time
