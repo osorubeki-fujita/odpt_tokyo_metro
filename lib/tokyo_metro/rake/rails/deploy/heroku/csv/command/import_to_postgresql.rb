@@ -9,7 +9,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToPostgresql 
   end
 
   def set_commands_for_db
-    tables_names_added_to_db.map { | table |
+    @commands << tables_names_added_to_db.map { | table |
       "\\copy #{ table } from \'\./../rails_tokyo_metro_db/csv/#{ @time }/shift_jis/#{ table }.csv\' CSV ;"
     }
   end
