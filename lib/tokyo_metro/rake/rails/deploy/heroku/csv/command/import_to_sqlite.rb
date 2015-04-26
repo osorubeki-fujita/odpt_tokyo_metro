@@ -6,7 +6,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToSqlite < To
   def optional_setting_of_initializer
     @letter_code = "utf8"
     # @dirname = ".import ./../rails_tokyo_metro_db/csv/#{ @time }/#{ @letter_code }/#{ table }.csv #{ table }"
-    @dirname = "#{ ::TokyoMetro::DB_DIR }/csv/#{ @time }/#{ @letter_code }"
+    @dirname = "#{ ::Rails.root }/db/csv/#{ @time }/#{ @letter_code }"
   end
 
   def first_settings

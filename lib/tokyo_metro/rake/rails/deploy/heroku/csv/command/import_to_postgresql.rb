@@ -5,7 +5,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToPostgresql 
   
   def optional_setting_of_initializer
     @letter_code = "shift_jis"
-    @dirname = "#{ ::TokyoMetro::DB_DIR }/csv/#{ @time }/#{ @letter_code }"
+    @dirname = "#{ ::Rails.root }/db/csv/#{ @time }/#{ @letter_code }"
   end
 
   # @note 原則は「schema_migrations 以外すべて」
