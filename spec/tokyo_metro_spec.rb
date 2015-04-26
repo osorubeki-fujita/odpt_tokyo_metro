@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'deployer'
 
 spec_filename = ::File.expand_path( ::File.dirname( __FILE__ ) )
-version = "0.1.12.11"
+version = "0.1.12.12"
 
 describe TokyoMetro do
   it "has a version number \'#{ version }\'" do

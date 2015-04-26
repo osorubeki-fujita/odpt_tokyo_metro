@@ -2,7 +2,7 @@
 class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ExportFromSqlite < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
 
   private
-  
+
   def optional_setting_of_initializer
     @letter_code = "utf8"
     # @dirname = ".import ./../rails_tokyo_metro_db/csv/#{ @time }/#{ @letter_code }/#{ table }.csv #{ table }"
@@ -14,7 +14,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ExportFromSqlite < 
   end
 
   def first_settings
-    [ ".mode csv" , ".header OFF" ]
+    [ ".mode csv" , ".header off" ]
   end
 
   # @note 「schema_migrations 以外の table から、# で始まるものを取り除いたもの」
