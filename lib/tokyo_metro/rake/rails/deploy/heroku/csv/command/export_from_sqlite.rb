@@ -21,7 +21,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ExportFromSqlite < 
   def tables_names_added_to_db
     tables_without_schema_migrations.delete_if( &:begin_with_sharp? ).map( &:to_s )
   end
-  
+
   def set_commands_for_db
     @commands << tables_names_added_to_db.map { | table |
       [

@@ -13,7 +13,7 @@ def set_tasks_to_check_namespaces
         namespaces.each do | namespace |
           ::TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace.new( namespace , filenames ).search.display
         end
-        
+
         a = nil
       end
 
