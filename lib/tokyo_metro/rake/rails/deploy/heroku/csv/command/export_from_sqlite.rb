@@ -1,5 +1,5 @@
 # SQLite から export する table
-class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ExportFromSqlite < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::MetaClass
+class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ExportFromSqlite < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
   
   private
   

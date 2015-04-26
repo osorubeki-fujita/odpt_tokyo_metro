@@ -1,5 +1,5 @@
 # PostgreSQL に import する table
-class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToPostgresql < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::MetaClass
+class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToPostgresql < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
 
   private
 

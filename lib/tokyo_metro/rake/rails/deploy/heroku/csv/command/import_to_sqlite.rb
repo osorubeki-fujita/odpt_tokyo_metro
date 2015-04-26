@@ -1,5 +1,5 @@
 # SQLite に import する table
-class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToSqlite < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::MetaClass
+class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToSqlite < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
 
   private
 
