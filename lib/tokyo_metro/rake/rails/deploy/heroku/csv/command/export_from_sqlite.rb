@@ -25,7 +25,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ExportFromSqlite < 
   def set_commands_for_db
     @commands << tables_names_added_to_db.map { | table |
       [
-        ".output #{ @dirname }/#{ table }.csv #{ table }" ,
+        ".output #{ @dirname }/#{ table }.csv" ,
         "select * from #{ table };"
       ]
     }
