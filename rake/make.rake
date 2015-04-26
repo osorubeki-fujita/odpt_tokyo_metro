@@ -1,5 +1,6 @@
 namespace :tokyo_metro do
   namespace :make do
+
     desc "ドキュメント生成に関するファイルのロード"
     task :load_scripts_related_to_document do
       require 'fileutils'
@@ -60,16 +61,10 @@ namespace :tokyo_metro do
     task :yaml_station_list => :load do
       ::TokyoMetro::Factory::YamlStationList.process
     end
-    
+
     desc "Static Example の作成"
     task :static_examples => :load do
       ::TokyoMetro::Document::MakeExamples::Static.process
-    end
-    
-    desc  "DB の import, export に関するコマンドの一括作成"
-    task :commands_for_db do
-      require_relative( "#{ File.dirname( __FILE__ ) }/../../../db/csv/make_commands.rb" )
-      MakeCommands.process
     end
 
   end

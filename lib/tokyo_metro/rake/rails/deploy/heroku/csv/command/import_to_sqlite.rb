@@ -16,7 +16,8 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToSqlite < To
 
   def set_commands_for_db
     @commands << tables_names_added_to_db.map { | table |
-      ".import ./../rails_tokyo_metro_db/csv/#{ @time }/utf8/#{ table }.csv #{ table }"
+      # ".import ./../rails_tokyo_metro_db/csv/#{ @time }/utf8/#{ table }.csv #{ table }"
+      ".import #{ ::TokyoMetro::DB_DIR }/csv/#{ @time }/utf8/#{ table }.csv #{ table }"
     }
   end
 

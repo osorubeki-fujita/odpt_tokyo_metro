@@ -5,13 +5,13 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass::Table
   end
 
   def schema_migrations?
-    /\A\#{2} \[Schema migrations\] / =~ @table
+    @table == "schema_migrations"
   end
-  
+
   def begin_with_sharp?
     /\A\#/ === @table
   end
-  
+
   def to_s
     @table.gsub( /\A\#\s+/ , "" )
   end
