@@ -11,7 +11,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::SchemaFile < TokyoMetro::Rake::Ra
   end
 
   def index_where_active_record_definition_ends
-    @rows.length - 1
+    ( @rows.length - 1 ) - 1
   end
 
 end
