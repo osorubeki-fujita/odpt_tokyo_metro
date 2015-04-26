@@ -2,6 +2,12 @@
 class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ExportFromSqlite < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
 
   private
+  
+  def optional_setting_of_initializer
+    @letter_code = "utf8"
+    # @dirname = ".import ./../rails_tokyo_metro_db/csv/#{ @time }/#{ @letter_code }/#{ table }.csv #{ table }"
+    @dirname = "#{ ::TokyoMetro::DB_DIR }/csv/#{ @time }/#{ @letter_code }"
+  end
 
   def set_time( time )
     super( time , require_time: false )
@@ -15,12 +21,11 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ExportFromSqlite < 
   def tables_names_added_to_db
     tables_without_schema_migrations.delete_if( &:begin_with_sharp? ).map( &:to_s )
   end
-
+  
   def set_commands_for_db
     @commands << tables_names_added_to_db.map { | table |
       [
-        # ".output ./../rails_tokyo_metro_db/csv/#{ @time }/utf8/#{ table }.csv" ,
-        ".output #{ ::TokyoMetro::DB_DIR }/csv/#{ @time }/utf8/#{ table }.csv #{ table }" ,
+        ".output #{ @dirname }/#{ table }.csv #{ table }" ,
         "select * from #{ table };"
       ]
     }

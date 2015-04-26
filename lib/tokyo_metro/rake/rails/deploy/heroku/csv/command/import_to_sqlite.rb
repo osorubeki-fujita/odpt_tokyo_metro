@@ -2,6 +2,12 @@
 class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToSqlite < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
 
   private
+  
+  def optional_setting_of_initializer
+    @letter_code = "utf8"
+    # @dirname = ".import ./../rails_tokyo_metro_db/csv/#{ @time }/#{ @letter_code }/#{ table }.csv #{ table }"
+    @dirname = "#{ ::TokyoMetro::DB_DIR }/csv/#{ @time }/#{ @letter_code }"
+  end
 
   def first_settings
     ".separator ,"
@@ -16,8 +22,7 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToSqlite < To
 
   def set_commands_for_db
     @commands << tables_names_added_to_db.map { | table |
-      # ".import ./../rails_tokyo_metro_db/csv/#{ @time }/utf8/#{ table }.csv #{ table }"
-      ".import #{ ::TokyoMetro::DB_DIR }/csv/#{ @time }/utf8/#{ table }.csv #{ table }"
+      ".import #{ @dirname }/#{ table }.csv #{ table }"
     }
   end
 

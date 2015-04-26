@@ -5,6 +5,8 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
     # @tables = open( "#{ ::Rails.root }/db/tables.txt" , "r:utf-8" ).read.split( /\n/ ).map { | table | Table.new( table ) }
     @commands = ::Array.new
     set_time( time )
+    optional_setting_of_initializer
+    ::FileUtils.mkdir_p( @dirname ) unless ::Dir.exist?( @dirname )
   end
 
   attr_reader :time
@@ -41,6 +43,10 @@ class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
     if first_settings.present?
       @commands << [ first_settings ].flatten
     end
+  end
+
+  def optional_setting_of_initializer
+    raise "Error: This method \'#{ __method__ }\' is not defined yet in this class \'#{ self.class.name }\'."
   end
 
   def tables_names_added_to_db
