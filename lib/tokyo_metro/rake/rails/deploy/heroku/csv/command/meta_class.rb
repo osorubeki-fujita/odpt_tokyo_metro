@@ -1,8 +1,11 @@
 class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
 
   def initialize( time = nil )
-    @tables = ::ActiveRecord::Base.connection.tables.map { | table | Table.new( table ) }
-    # @tables = open( "#{ ::Rails.root }/db/tables.txt" , "r:utf-8" ).read.split( /\n/ ).map { | table | Table.new( table ) }
+    # tables_from_file = ::File.open( "#{ ::Rails.root }/db/tables.txt" , "r:utf-8" ).read
+    tables_from_file = ::ActiveRecord::Base.connection.tables
+    # tables_from_file = open( "#{ ::Rails.root }/db/tables.txt" , "r:utf-8" ).read.split( /\n/ )
+
+    @tables = tables_from_file.map { | table | Table.new( table ) }
     @commands = ::Array.new
     set_time( time )
     optional_setting_of_initializer
