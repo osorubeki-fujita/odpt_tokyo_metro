@@ -33,14 +33,14 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec"
 
   spec.add_development_dependency "capistrano"
-  spec.add_development_dependency "deployer", ">= 0.3.2"
+  spec.add_development_dependency "deplo", ">= 0.1.2"
 
-  spec.add_runtime_dependency "required_files" , ">= 0.2.4"
-  spec.add_runtime_dependency "positive_support" , ">= 0.2.2"
-  spec.add_runtime_dependency "positive_web_support" , ">= 0.2.2"
+  spec.add_runtime_dependency "required_files" , ">= 0.2.5"
+  spec.add_runtime_dependency "positive_support" , ">= 0.2.4"
+  spec.add_runtime_dependency "positive_web_support" , ">= 0.2.4"
 
-  spec.add_runtime_dependency "odpt_common" , ">= 0.1.7"
-  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.8"
+  spec.add_runtime_dependency "odpt_common" , ">= 0.1.10"
+  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.10"
 
   spec.add_runtime_dependency "haml-rails"
 end

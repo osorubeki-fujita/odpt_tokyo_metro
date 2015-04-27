@@ -1,13 +1,13 @@
 require 'spec_helper'
-require 'deployer'
+require 'deplo'
 
 spec_filename = ::File.expand_path( ::File.dirname( __FILE__ ) )
-version = "0.1.13.0"
+version = "0.1.15.0"
 
 describe TokyoMetro do
   it "has a version number \'#{ version }\'" do
     expect( ::TokyoMetro::VERSION ).to eq( version )
-    expect( ::Deployer.version_check( ::TokyoMetro::VERSION , spec_filename ) ).to eq( true )
+    expect( ::Deplo.version_check( ::TokyoMetro::VERSION , spec_filename ) ).to eq( true )
   end
 end
 
