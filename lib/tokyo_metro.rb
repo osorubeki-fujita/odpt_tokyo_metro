@@ -29,7 +29,7 @@ module TokyoMetro
   TOP_DIR = ::File.expand_path( "#{ LIB_DIR }/.." )
 
   # 辞書ファイルのディレクトリ
-  DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/#{ ::File.basename( TOP_DIR ) }/dictionary" )
+  DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/tokyo_metro/dictionary" )
 
   # @!group API へのアクセス
 
