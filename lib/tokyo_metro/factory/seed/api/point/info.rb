@@ -25,9 +25,10 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
   end
 
   def station_in_db
-    _station_in_db = @stations.find_by_name_ja( @info.station_name_for_shift_jis )
+    _station_name_ja = @info.station_name_in_title.process_machine_dependent_character
+    _station_in_db = @stations.find_by_name_ja( _station_name_ja )
     if _station_in_db.nil?
-      raise "Error: The station information of \"#{ @info.station_name_for_shift_jis }\" does not exist in the db."
+      raise "Error: The station information of \"#{ _station_name_ja }\" does not exist in the db."
     end
     _station_in_db
   end

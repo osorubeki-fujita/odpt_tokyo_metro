@@ -40,17 +40,13 @@ class TokyoMetro::Factory::YamlStationList::EachStation
 
     return h
   end
-
-  def station_facility
-    @contents[ @header.index( "station_facility" ) ]
-  end
-
-  def station_facility_custom
-    @contents[ @header.index( "station_facility_custom" ) ]
-  end
-
-  def station_facility_custom_alias
-    @contents[ @header.index( "station_facility_custom_alias" ) ]
+  
+  [ :station_facility , :station_facility_custom , :station_facility_custom_alias ].each do | method_name |
+    eval <<-DEF
+      def #{ method_name }
+        @contents[ @header.index( "#{ method_name }" ) ]
+      end
+    DEF
   end
 
   # 駅情報の最後の index（この先は停車駅情報）
@@ -66,7 +62,7 @@ class TokyoMetro::Factory::YamlStationList::EachStation
 
   def inspect_of_custom_alias( title , content )
     if title == "station_facility_custom" and content == @key
-      custom_alias = self.station_facility_custom_alias
+      custom_alias = station_facility_custom_alias
       unless custom_alias.nil? or custom_alias == ""
         puts custom_alias
       end
@@ -78,14 +74,16 @@ class TokyoMetro::Factory::YamlStationList::EachStation
     if content.instance_of?( ::String ) and REGEXP_FOR_SPLIT === content
       return content.split( REGEXP_FOR_SPLIT )
 
-    elsif self.station_facility_info? and title == "station_facility_custom" and content == @key
+    elsif station_facility_info? and title == "station_facility_custom" and content == @key
       custom_alias = self.station_facility_custom_alias
       case custom_alias
       when nil , ""
         return nil
       end
-    elsif self.station_info? and title == "station_facility_custom" and content == self.station_facility
+
+    elsif station_info? and title == "station_facility_custom" and content == station_facility
       return nil
+
     elsif /Kojimachi\Z/ === content and title == "name_ja"
       return "麴町"
     end

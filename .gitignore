@@ -8,7 +8,9 @@
 /spec/reports/
 /tmp/
 
-/lib/_tokyo_metro.rb
+/db/
+
+/pending/
 /required_files.txt
 
 /.latest_version

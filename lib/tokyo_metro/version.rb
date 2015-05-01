@@ -1,3 +1,3 @@
 module TokyoMetro
-  VERSION = "0.1.15.0"
+  VERSION = "0.1.16.0"
 end

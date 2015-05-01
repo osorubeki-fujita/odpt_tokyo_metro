@@ -133,13 +133,7 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
   end
 
   def station_name_for_shift_jis
-    station_name = station_name_in_title
-    case station_name
-    when "麴町"
-      "麹町"
-    else
-      station_name
-    end
+    station_name_in_title.process_machine_dependent_character
   end
 
 end

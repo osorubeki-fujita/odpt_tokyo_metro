@@ -35,7 +35,7 @@ class TokyoMetro::Api::Point < TokyoMetro::Api::MetaClass::Hybrid
   # @return [nil]
   def self.save( http_client , filename , file_type: :yaml ,
     id_urn: nil , title: nil , category_name: nil ,
-    to_inspect: to_inspect )
+    to_inspect: false )
 
     data = get( http_client ,
       id_urn: id_urn , title: title , category_name: category_name ,

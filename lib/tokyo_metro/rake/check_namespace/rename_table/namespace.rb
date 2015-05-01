@@ -3,21 +3,21 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace
   module InfoOfRows
 
     private
-  
+
     def number_of_files
       @matched_rows.map( &:filename ).uniq.length
     end
-  
+
     def number_of_rows
       @matched_rows.length
     end
-    
+
     def display_info_of_rows( indent = 0 )
       puts ""
       puts " " * indent + "#{ number_of_files } files , #{ number_of_rows } rows"
       puts ""
     end
-    
+
   end
 
   def initialize( namespace , filenames )
@@ -26,7 +26,7 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace
     @matched_rows = ::Array.new
     @regexp_list = regexp_list
   end
-  
+
   include InfoOfRows
 
   def search

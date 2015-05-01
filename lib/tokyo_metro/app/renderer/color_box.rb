@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::ColorBox < TokyoMetro::App::Renderer::MetaClass
 
-  def initialize( request , class_name: nil , size: :normal , text: text )
+  def initialize( request , class_name: nil , size: :normal , text: nil )
     super( request )
     @class_name = set_class_name( class_name , size )
     @text = text

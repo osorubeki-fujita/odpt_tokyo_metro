@@ -40,7 +40,7 @@ class TokyoMetro::Api::Station < TokyoMetro::Api::MetaClass::Hybrid
   # @return [nil]
   def self.save( http_client , filename , file_type: :yaml ,
     id_urn: nil , same_as: nil , title: nil , operator: nil , railway_line: nil , station_code: nil ,
-    to_inspect: to_inspect )
+    to_inspect: false )
 
     data = get( http_client ,
       id_urn: id_urn , same_as: same_as , title: title , operator: operator , railway_line: railway_line , station_code: station_code ,

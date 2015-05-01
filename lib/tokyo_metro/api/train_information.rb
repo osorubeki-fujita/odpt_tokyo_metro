@@ -42,7 +42,7 @@ class TokyoMetro::Api::TrainInformation < TokyoMetro::Api::MetaClass::RealTime
   # @return [nil]
   def self.save( http_client , filename , file_type: :yaml ,
     id_urn: nil , operator: nil , railway_line: nil , information_status: nil , information_text: nil ,
-    to_inspect: to_inspect )
+    to_inspect: false )
 
     data = get( http_client ,
       id_urn: id_urn , operator: operator , railway_line: railway_line , information_status: information_status , information_text: information_text ,

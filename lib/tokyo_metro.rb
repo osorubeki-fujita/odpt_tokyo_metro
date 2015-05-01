@@ -138,14 +138,15 @@ module TokyoMetro
   # @!group 定数
 
   # 定数の定義
-  def self.set_constants( config_of_api_constants = nil )
-    set_fundamental_constants
-    set_api_constants( config_of_api_constants )
-  end
 
   def self.set_fundamental_constants
     ::TokyoMetro::Static::set_constants
     ::TokyoMetro::Api.set_constants_for_timetable
+  end
+  
+  def self.set_constants( config_of_api_constants = nil )
+    set_fundamental_constants
+    set_api_constants( config_of_api_constants )
   end
 
   def self.set_api_constants( config_of_api_constants = nil )
@@ -160,9 +161,9 @@ module TokyoMetro
     set_api_constants( config_of_api_constants_when_load_without_fare )
   end
   
-  def self.require_files( settings = nil )
+  def self.require_files( settings: nil , file_type: "txt" )
     raise "Error" unless settings.nil? or ( [ "from_txt" , "update" , "development" , "production" , "test" ].include?( settings.to_s ) )
-    required_files( settings ).each do | filename |
+    required_files( settings , file_type ).each do | filename |
       require filename
     end
   end
@@ -186,7 +187,7 @@ module TokyoMetro
   # @!endgroup
 
   class << self
-  
+
     def method_missing( method_name , *args )
       if /const/ === method_name.to_s
         valid_method_name = method_name.to_s.gsub( "const" , "constant" )
@@ -329,12 +330,13 @@ module TokyoMetro
       [ :station_facility , :passenger_survey , :station , :railway_line , :point , :fare , :station_timetable , :train_timetable ]
     end
 
-    def required_files( settings )
+    def required_files( settings , file_type )
+      raise "Error" unless [ "from_txt" , "production" , "test" , "staging" , "development" ].include?( settings.to_s )
+      raise "Error" unless [ "txt" , "yaml" , "json" , "cson" ].include?( file_type.to_s )
+
       case settings.to_s
       when "from_txt" , "production" , "test"
-        open( "#{ ::TokyoMetro::TOP_DIR }/required_files.txt" , "r:utf-8" ).read.split( /\n/ ).map { |f|
-          "#{ ::TokyoMetro::TOP_DIR }/#{ f }"
-        }
+        ::RequiredFiles::Get.send( "from_#{ file_type }" , ::TokyoMetro::TOP_DIR , "required_files" )
 
       else
         require_relative "tokyo_metro/required.rb"
@@ -344,10 +346,13 @@ module TokyoMetro
           require ::File.expand_path( filename )
         end
 
-        ::TokyoMetro::Required::All.files
+        ::TokyoMetro::Required::All.files( file_type )
       end
     end
-    
+
+    # API への Access Token を返すメソッド
+    # @note Rails の環境によって形態が異なる。
+    # @return [String]
     def access_token
       case ::Rails.env
       when "development" , "test"
@@ -370,4 +375,4 @@ end
 
 #--------
 
-::TokyoMetro.require_files( :development )
+::TokyoMetro.require_files( settings: :development , file_type: :txt )

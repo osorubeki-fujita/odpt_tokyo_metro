@@ -40,7 +40,7 @@ module TokyoMetro::Modules::Common::ToFactory::Seed::Group
     not_on_the_top_layer: false ,
     display_number: true ,
     other_info: nil ,
-    interrupt: interrupt
+    interrupt: false
   )
     self.class.send( factory_name ).process( self , *args , class_name , method_name , indent , no_display , not_on_the_top_layer , display_number , other_info , interrupt )
   end

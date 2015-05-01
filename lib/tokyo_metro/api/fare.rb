@@ -50,10 +50,10 @@ class TokyoMetro::Api::Fare < TokyoMetro::Api::MetaClass::NotRealTime
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定
   # @return [nil]
   def self.save( http_client , filename , file_type: :yaml ,
-    id_urn: id_urn , same_as: same_as , operator: operator ,
-    from_station: from_station , to_station: to_station ,
-    ticket: ticket , child_ticket: child_ticket , ic_card: ic_card , child_ic_card: child_ic_card ,
-    to_inspect: to_inspect )
+    id_urn: nil , same_as: nil , operator: nil ,
+    from_station: nil , to_station: nil ,
+    ticket: nil , child_ticket: nil , ic_card: nil , child_ic_card: nil ,
+    to_inspect: false )
 
     data = get( http_client ,
       id_urn: id_urn , same_as: same_as , operator: operator ,

@@ -28,19 +28,20 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.required_ruby_version = ">= 2.2.2"
+
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
 
   spec.add_development_dependency "capistrano"
-  spec.add_development_dependency "deplo", ">= 0.1.2"
+  spec.add_development_dependency "deplo", ">= 0.1.4"
 
-  spec.add_runtime_dependency "required_files" , ">= 0.2.5"
-  spec.add_runtime_dependency "positive_support" , ">= 0.2.4"
-  spec.add_runtime_dependency "positive_web_support" , ">= 0.2.4"
+  spec.add_runtime_dependency "required_files" , ">= 0.2.6"
 
-  spec.add_runtime_dependency "odpt_common" , ">= 0.1.10"
-  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.10"
+  spec.add_runtime_dependency "positive_support" , ">= 0.3.0"
+  spec.add_runtime_dependency "odpt_common" , ">= 0.1.15"
+  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.15"
 
-  spec.add_runtime_dependency "haml-rails"
+  spec.add_runtime_dependency "haml"
 end

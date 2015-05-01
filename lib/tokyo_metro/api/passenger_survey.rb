@@ -38,7 +38,7 @@ class TokyoMetro::Api::PassengerSurvey < TokyoMetro::Api::MetaClass::NotRealTime
   # @return [nil]
   def self.save( http_client , filename , file_type: :yaml ,
     id_urn: nil , same_as: nil , operator: nil , survey_year: nil ,
-    to_inspect: to_inspect )
+    to_inspect: false )
 
     data = get( http_client ,
       id_urn: id_urn , same_as: same_as , operator: operator , survey_year: survey_year ,

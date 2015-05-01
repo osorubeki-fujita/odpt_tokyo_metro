@@ -11,12 +11,8 @@ module TokyoMetro::Rake::Rails::Deploy::Heroku::Csv
 
       if utf8_file_content.present?
 
-        kojimachi_regexp = /麴町/
         shift_jis_file_content = utf8_file_content.map { | str |
-          if kojimachi_regexp =~ str
-            str = str.gsub( kojimachi_regexp , "麹町" )
-          end
-          str.encode( "windows-31j" )
+          str.process_machine_dependent_character.encode( "windows-31j" )
         }.join( "\n" )
 
         ::File.open( new_filename , "w:windows-31j" ) do |f|
