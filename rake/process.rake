@@ -24,7 +24,7 @@ namespace :tokyo_metro do
     desc "列車ロケーション情報のファイル名の変換"
     task :train_location_files do
       require 'fileutils'
-      ::Dir.chdir( "#{ ::TokyoMetro::DB_DIR }/train_location/2014" )
+      ::Dir.chdir( "#{ ::TokyoMetro::DEV_DB_DIR }/train_location/2014" )
       files = ::Dir.glob( "1007/TokyoMetro/**/**.json" ).select { | filename | /0[012]\d{4}.json\Z/ === filename }
       puts files.length
 

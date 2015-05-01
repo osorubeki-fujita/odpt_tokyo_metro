@@ -32,7 +32,7 @@ module TokyoMetro::Document::Gviz::DirGraph
     # .dot ファイル（ディレクトリ "db" ）を生成するメソッド
     # @return [nil]
     def make_db_dot_files
-      Dir.chdir( ::TokyoMetro::DB_DIR ) do
+      Dir.chdir( ::TokyoMetro::DEV_DB_DIR ) do
         dirs = [
           "csv" , "dictionary" , "fare" , "point" , "passenger_survey" , "railway_line" ,
           "station" , "station_facility" , "station_timetable" , "train_information" , "train_location" , "train_timetable"

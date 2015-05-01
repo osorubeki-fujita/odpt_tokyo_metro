@@ -13,7 +13,7 @@ module TokyoMetro::Modules::Api::Common::DbDirname
     # データを保存するディレクトリ
     # @return [String]
     def db_dirname
-      "#{::TokyoMetro.db_dir}/#{db_dirname_sub}"
+      "#{::TokyoMetro::DEV_DB_DIR}/#{db_dirname_sub}"
     end
 
   end

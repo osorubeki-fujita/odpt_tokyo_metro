@@ -29,37 +29,7 @@ module TokyoMetro
   TOP_DIR = ::File.expand_path( "#{ LIB_DIR }/.." )
 
   # 辞書ファイルのディレクトリ
-  DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/tokyo_metro/dictionary" )
-
-  # @!group ディレクトリ
-
-  # Directory of Rails application
-  RAILS_DIR = "C:/RubyPj/rails_tokyo_metro"
-
-  # 開発のためのファイルを格納するディレクトリ
-  DEV_DIR = "C:/RubyPj/rails_tokyo_metro_dev"
-
-  # データベースのディレクトリ
-  DB_DIR = "C:/RubyPj/rails_tokyo_metro_db"
-
-  # @!group HTML, CSS, HAML, SCSS
-
-  # HTML のディレクトリ
-  HTML_DIR = "#{ DEV_DIR }/app/html"
-
-  # HAML のディレクトリ
-  HAML_DIR = "#{ DEV_DIR }/app/haml"
-
-  # CSS のディレクトリ
-  CSS_DIR = "#{ DEV_DIR }/app/assets/css"
-
-  # SCSS のディレクトリ
-  SCSS_DIR = "#{ DEV_DIR }/app/assets/scss"
-
-  # @!group DB
-
-  # Rails の fixture ファイルを格納するディレクトリ
-  RAILS_FIXTURES_DIR = "#{ RAILS_DIR }/test/fixtures"
+  DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/#{ ::File.basename( TOP_DIR ) }/dictionary" )
 
   # @!group API へのアクセス
 
@@ -143,7 +113,7 @@ module TokyoMetro
     ::TokyoMetro::Static::set_constants
     ::TokyoMetro::Api.set_constants_for_timetable
   end
-  
+
   def self.set_constants( config_of_api_constants = nil )
     set_fundamental_constants
     set_api_constants( config_of_api_constants )
@@ -160,12 +130,40 @@ module TokyoMetro
   def self.set_all_api_constants_without_fare
     set_api_constants( config_of_api_constants_when_load_without_fare )
   end
-  
+
   def self.require_files( settings: nil , file_type: "txt" )
     raise "Error" unless settings.nil? or ( [ "from_txt" , "update" , "development" , "production" , "test" ].include?( settings.to_s ) )
     required_files( settings , file_type ).each do | filename |
       require filename
     end
+  end
+
+  # @!group Rails 関連
+
+  def self.set_rails_consts
+    # Directory of Rails application
+    const_set( :RAILS_DIR , ::Rails.root ) # "C:/RubyPj/rails_tokyo_metro"
+
+    # 開発のためのファイルを格納するディレクトリ
+    const_set( :DEV_DIR , "#{ RAILS_DIR }/dev" ) # "C:/RubyPj/rails_tokyo_metro_dev"
+
+  # データベースのディレクトリ
+    const_set( :DEV_DB_DIR , "#{ RAILS_DIR }/dev/db" ) # "C:/RubyPj/rails_tokyo_metro_db"
+
+    # fixture ファイルを格納するディレクトリ
+    const_set( :RAILS_FIXTURES_DIR , "#{ RAILS_DIR }/test/fixtures" )
+
+    # HTML のディレクトリ
+    const_set( :HTML_DIR , "#{ DEV_DIR }/app/html" )
+
+    # HAML のディレクトリ
+    const_set( :HAML_DIR , "#{ DEV_DIR }/app/haml" )
+
+    # CSS のディレクトリ
+    const_set( :CSS_DIR , "#{ DEV_DIR }/app/assets/css" )
+
+    # SCSS のディレクトリ
+    const_set( :SCSS_DIR , "#{ DEV_DIR }/app/assets/scss" )
   end
 
   # @!group Access Token
@@ -178,13 +176,11 @@ module TokyoMetro
   def self.set_access_token
     _access_token = access_token
     if _access_token.present?
-      self.const_set( :ACCESS_TOKEN , _access_token )
+      const_set( :ACCESS_TOKEN , _access_token )
     else
       puts "Error: The file \'#{ filename }\' does not exist."
     end
   end
-
-  # @!endgroup
 
   class << self
 
@@ -356,14 +352,14 @@ module TokyoMetro
     def access_token
       case ::Rails.env
       when "development" , "test"
-        filename = "#{ ::Rails.root }/AccessToken"
+        filename = "#{ RAILS_DIR }/AccessToken"
         if ::File.exist?( filename )
           open( filename , "r:utf-8" ).read
         else
           nil
         end
       when "production"
-        ::ENV['TOKYO_METRO_ACCESS_TOKEN']
+        ::ENV[ "TOKYO_METRO_ACCESS_TOKEN" ]
       end
     end
 
