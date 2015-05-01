@@ -6,7 +6,7 @@ module TokyoMetro::Document::Gviz::ConvertToImage
   # @return [nil]
   # @note Ruby のクラス図の生成過程は非常に重いため、生成を行うか否かを設定できるようにしてある。
   def self.process( include_ruby_classes: false )
-    Dir.chdir( ::TokyoMetro::Document::Gviz::DIRNAME ) do
+    Dir.chdir( ::TokyoMetro::Document::Gviz::DIR ) do
       dot_files = Dir.glob( "**.dot" )
       unless include_ruby_classes
         dot_files = dot_files.select { | filename | /\Aruby_classes/ !~ filename }

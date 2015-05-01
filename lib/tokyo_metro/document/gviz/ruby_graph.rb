@@ -21,7 +21,7 @@ module TokyoMetro::Document::Gviz::RubyGraph
       filename = "ruby_classes.dot"
       Dir.chdir( ::TokyoMetro.DEV_DIR ) do
         system( "yard graph --full --dependencies --verbose -f #{filename}" )
-        File.rename( filename , "#{ ::TokyoMetro::Document::Gviz::DIRNAME }/#{filename}" )
+        File.rename( filename , "#{ ::TokyoMetro::Document::Gviz::DIR }/#{filename}" )
       end
       return nil
     end

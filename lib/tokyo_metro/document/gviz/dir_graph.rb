@@ -47,7 +47,7 @@ module TokyoMetro::Document::Gviz::DirGraph
 
     def make_dot_by_dir_friend( dirname , add_db: false )
       default_dot_filename = "a.dot"
-      FileUtils.mkdir_p( ::TokyoMetro::Document::Gviz::DIRNAME )
+      FileUtils.mkdir_p( ::TokyoMetro::Document::Gviz::DIR )
 
       system( "dir_friend dot #{dirname} -c blues --dir_shape box --file_shape box -g \"splines:ortho\"" )
 
@@ -60,7 +60,7 @@ module TokyoMetro::Document::Gviz::DirGraph
       else
         filename_new = dirname
       end
-      File.rename( default_dot_filename , "#{ ::TokyoMetro::Document::Gviz::DIRNAME }/#{filename_new}.dot" )
+      File.rename( default_dot_filename , "#{ ::TokyoMetro::Document::Gviz::DIR }/#{filename_new}.dot" )
     end
 
   end
