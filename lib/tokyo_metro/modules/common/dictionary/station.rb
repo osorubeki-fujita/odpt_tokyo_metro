@@ -23,11 +23,11 @@ module TokyoMetro::Modules::Common::Dictionary::Station
       if station_same_as.nil?
         puts "★ #{ title } of \"#{ @train_number }\" is not defined."
         puts "Please investigate #{ title.downcase } of this train and input."
-        station_same_as_new = gets.chomp
+        station_same_as_new = ::STDIN.gets.chomp
         puts "#{ title } of \"#{ @train_number }\" is"
         puts " " * 4 + station_same_as_new
         puts "OK? \[Y/n\]"
-        yn = gets.chomp
+        yn = ::STDIN.gets.chomp
         case yn.downcase
         when "y"
           station_same_as_new

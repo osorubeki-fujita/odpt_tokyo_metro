@@ -48,7 +48,7 @@ module TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Common
   end
 
   def set_section_infos
-    @section_infos = @station_infos.each_cons(2).to_a
+    @section_infos = @station_infos.cons(2)
   end
 
   def set_travel_time_infos

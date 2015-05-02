@@ -55,7 +55,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable:
     if station_timetable_in_db.nil?
       puts "Station Timetable Instance of \"#{ station_timetable_in_api_same_as }\" does not exist in the db."
       puts "Please input valid name. (example: \"odpt.StationTimetable:TokyoMetro.MarunouchiBranch.Nakanosakaue\" )"
-      station_timetable_in_api_same_as = gets.chomp
+      station_timetable_in_api_same_as = ::STDIN.gets.chomp
       set_station_timetable_in_db( station_timetable_in_api_same_as )
     end
 

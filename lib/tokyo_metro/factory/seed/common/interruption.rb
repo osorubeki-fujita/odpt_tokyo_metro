@@ -24,7 +24,7 @@ module TokyoMetro::Factory::Seed::Common::Interruption
     end
 
     def get_yn
-      yn = gets.chomp.downcase
+      yn = ::STDIN.gets.chomp.downcase
       case yn
       when "y" , "n"
         return yn

@@ -34,7 +34,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
 
   def destroy!
     display_before_destroy
-    a = gets.chomp
+    a = ::STDIN.gets.chomp
     @station_train_times_from_train_timetables.each do | station_train_time_id |
       ::StationTrainTime.find( station_train_time_id ).destroy
     end

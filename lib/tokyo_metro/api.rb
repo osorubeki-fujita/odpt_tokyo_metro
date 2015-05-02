@@ -106,7 +106,7 @@ module TokyoMetro::Api
 
       puts ""
 
-      numbers = gets.chomp
+      numbers = ::STDIN.gets.chomp
       unless /\A\d+(?: \d+)*\Z/ === numbers
         return numbers_of_constants( ary_for_display )
       end

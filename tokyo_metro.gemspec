@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'tokyo_metro/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "tokyo_metro"
-  spec.version       = TokyoMetro::VERSION
-  spec.authors       = ["Shu Fujita"]
-  spec.email         = ["osorubeki.fujita@gmail.com"]
+  spec.name = "tokyo_metro"
+  spec.version = TokyoMetro::VERSION
+  spec.authors = ["Shu Fujita"]
+  spec.email = ["osorubeki.fujita@gmail.com"]
 
-  spec.summary       = "This gem provides library for Rails application of Tokyo Metro Open Data."
-  spec.description   = "This gem provides library for Rails application of Tokyo Metro Open Data. [Please note]: This gem (Ver: #{TokyoMetro::VERSION}) is temporary version. Maybe this gem will be renamed to \'odpt_tokyo_metro\'."
-  spec.homepage      = "https://github.com/osorubeki-fujita/odpt_tokyo_metro"
+  spec.summary = "This gem provides library for Rails application of Tokyo Metro Open Data."
+  spec.description = "This gem provides library for Rails application of Tokyo Metro Open Data. [Please note]: This gem (Ver: #{TokyoMetro::VERSION}) is temporary version. Maybe this gem will be renamed to \'odpt_tokyo_metro\'."
+  spec.homepage = "https://github.com/osorubeki-fujita/odpt_tokyo_metro"
 
   spec.license = "MIT"
 
@@ -23,12 +23,12 @@ Gem::Specification.new do |spec|
     # raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   # end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.files = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir = "exe"
+  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.required_ruby_version = ">= 2.2.2"
+  spec.required_ruby_version = ">= 2.1.6"
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
@@ -39,9 +39,9 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "required_files" , ">= 0.2.6"
 
-  spec.add_runtime_dependency "positive_support" , ">= 0.3.0"
-  spec.add_runtime_dependency "odpt_common" , ">= 0.1.15"
-  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.15"
+  spec.add_runtime_dependency "positive_support" , ">= 0.3.2"
+  spec.add_runtime_dependency "odpt_common" , ">= 0.1.16"
+  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.1.16"
 
   spec.add_runtime_dependency "haml"
 end
