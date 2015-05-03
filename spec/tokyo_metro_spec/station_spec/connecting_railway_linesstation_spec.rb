@@ -24,29 +24,33 @@ end
 
 
 def connecting_railway_lines__replacing_railway_lines( station )
-  info_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo.replacing_railway_lines[ station.same_as ]
+  infos_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo.replacing_railway_lines[ station.same_as ]
 
-  if info_related_to_this_station.present?
+  if infos_related_to_this_station.present?
 
     list_of_connecting_railway_lines = get_list_of_connecting_railway_lines( station )
-    describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "after replacing railway line names" do
-      info_related_to_this_station.each do | invalid_railway_line , info |
-      
-        station.connecting_railway_lines.each do | connecting_railway_line_info |
-          it "should not be #{invalid_railway_line}." do
-            expect( connecting_railway_line_info.railway_line ).not_to eq( invalid_railway_line )
+    describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "after replacing railway line names (#{ station.same_as })" do
+
+      it "is replaced." do
+        infos_related_to_this_station.each do | group |
+          replaced_railway_lines = group[ "replaced_railway_lines"]
+          replaced_railway_lines.each do  | replaced
+            station.connecting_railway_lines.each do | connecting_railway_line_info |
+              expect( connecting_railway_line_info.railway_line ).not_to eq( invalid_railway_line )
+            end
           end
         end
-
-        info[ "replacing_railway_line_names" ].each do | replacing_railway_line_name |
-          it "should include #{replacing_railway_line_name}." do
-            expect( list_of_connecting_railway_lines ).to include( replacing_railway_line_name )
-          end
-        end
-
       end
-    end
 
+      replacing_railway_lines = infos_related_to_this_station.map { | item | item[ "replacing_railway_lines"] }.flatten
+
+      replacing_railway_lines.each do | replacing_railway_line |
+        it "includes #{ replacing_railway_line }." do
+          expect( list_of_connecting_railway_lines ).to include( replacing_railway_line )
+        end
+      end
+
+    end
   end
 end
 
@@ -203,7 +207,7 @@ def connecting_railway_lines__transfer_additional_infos( station )
               expect( connecting_railway_line_info.another_station ).to eq( another_station )
             end
           end
-          
+
         end
 
       end

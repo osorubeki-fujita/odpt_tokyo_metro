@@ -1,0 +1,17 @@
+::TokyoMetro.set_api_constants( { station_facility: true } )
+
+require_relative 'station_facility_spec/platform_infos_of_marunouchi_branch_line_spec.rb'
+require_relative 'station_facility_spec/platform_infos_of_chiyoda_branch_line_spec.rb'
+
+require_relative 'station_facility_spec/toilet_location_in_nakano_shimbashi_spec.rb'
+require_relative 'station_facility_spec/escalator_direction_in_otemachi_spec.rb'
+
+require_relative 'station_facility_spec/replacing_railway_lines_of_platform_infos_spec.rb'
+
+platform_infos_of_marunouchi_branch_line
+platform_infos_of_chiyoda_branch_line
+
+station_facility_toilet_location_in_nakano_shimbashi
+station_facility_escalator_direction_in_otemachi
+
+station_facility_replacing_railway_lines_of_platform_infos

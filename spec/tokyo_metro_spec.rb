@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'deplo'
 
-TokyoMetro.set_rails_consts( "C:/RubyPj/rails/tokyo_metro" )
+TokyoMetro.initialize_in_local_environment( "C:/RubyPj/rails/tokyo_metro" )
 
 spec_filename = ::File.expand_path( ::File.dirname( __FILE__ ) )
 version = "0.1.17"
@@ -13,18 +13,12 @@ describe TokyoMetro do
   end
 end
 
-#---------------- モジュールの組み込み
-::TokyoMetro.set_modules
-
-#---------------- 定数のセット
-::TokyoMetro.set_fundamental_constants
-
 #--------------------------------
 
-#require_relative 'tokyo_metro_spec/dictionary.rb'
-#require_relative 'tokyo_metro_spec/static.rb'
+#require_relative 'tokyo_metro_spec/dictionary_spec.rb'
+#require_relative 'tokyo_metro_spec/static_spec.rb'
 
-# require_relative 'tokyo_metro_spec/fare.rb'
-require_relative 'tokyo_metro_spec/railway_line.rb'
-require_relative 'tokyo_metro_spec/station_facility.rb'
-require_relative 'tokyo_metro_spec/station.rb'
+# require_relative 'tokyo_metro_spec/fare_spec.rb'
+require_relative 'tokyo_metro_spec/railway_line_spec.rb'
+require_relative 'tokyo_metro_spec/station_facility_spec.rb'
+require_relative 'tokyo_metro_spec/station_spec.rb'

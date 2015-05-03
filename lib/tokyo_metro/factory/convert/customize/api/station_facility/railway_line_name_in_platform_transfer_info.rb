@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Customize::Api::StationFacility::RailwayLines < TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLines
+class TokyoMetro::Factory::Convert::Customize::Api::StationFacility::RailwayLineNameInPlatformTransferInfo < TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLines
 
   def initialize( *args , station_facility_same_as )
     super( *args )
@@ -6,7 +6,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::StationFacility::RailwayLine
   end
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility
-  
+
   private
 
   def station_name

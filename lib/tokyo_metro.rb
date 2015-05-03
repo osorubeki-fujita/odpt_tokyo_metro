@@ -132,11 +132,19 @@ module TokyoMetro
     set_api_constants( config_of_api_constants_when_load_without_fare )
   end
 
+  # @!group 関連ファイルのロード
+
   def self.require_files( settings: nil , file_type: "txt" )
     raise "Error" unless settings.nil? or ( [ "from_txt" , "update" , "development" , "production" , "test" ].include?( settings.to_s ) )
     required_files( settings , file_type ).each do | filename |
       require filename
     end
+  end
+
+  def self.initialize_in_local_environment( rails_dir )
+    set_rails_consts( rails_dir )
+    set_modules
+    set_fundamental_constants
   end
 
   # @!group Rails 関連
@@ -165,7 +173,7 @@ module TokyoMetro
 
     # SCSS のディレクトリ
     const_set( :SCSS_DIR , "#{ DEV_DIR }/app/assets/scss" )
-    
+
     return nil
   end
 
@@ -373,7 +381,7 @@ module TokyoMetro
         nil
       end
     end
-    
+
     def on_rails_application?
       ::Module.constants.sort.include?( :Rails )
     end

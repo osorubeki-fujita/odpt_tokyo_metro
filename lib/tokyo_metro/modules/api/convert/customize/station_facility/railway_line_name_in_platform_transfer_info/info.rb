@@ -28,7 +28,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLin
         ary = self.class.platform_transfer_list_class.new
 
         platform_info.transfer_infos.each do | transfer_info |
-          ::TokyoMetro::Factory::Convert::Customize::Api::StationFacility::RailwayLines.process( transfer_info , ary , replacing_dictionary , ignored_dictionary , @same_as )
+          ::TokyoMetro::Factory::Convert::Customize::Api::StationFacility::RailwayLineNameInPlatformTransferInfo.process( transfer_info , ary , replacing_dictionary , ignored_dictionary , @same_as )
         end
 
         platform_info.instance_eval do

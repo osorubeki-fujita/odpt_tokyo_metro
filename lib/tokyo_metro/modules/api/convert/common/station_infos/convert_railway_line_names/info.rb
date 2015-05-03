@@ -29,7 +29,7 @@ module TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLi
 
 end
 
-__END__
+
 
 # @note
 #   This module is included to {TokyoMetro::Api::Station::Info}
