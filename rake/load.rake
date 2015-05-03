@@ -9,7 +9,6 @@ namespace :tokyo_metro do
     open( "#{ ::Rails.root }/required_files.txt" , "r:utf-8" ).read.split( /\n/ ).each do |f|
       require f
     end
-    ::TokyoMetro.extend_builtin_libraries
     ::TokyoMetro.set_modules
     ::TokyoMetro.set_fundamental_constants
   end
