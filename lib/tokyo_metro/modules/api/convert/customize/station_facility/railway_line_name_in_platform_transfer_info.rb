@@ -8,14 +8,10 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLin
 
   # モジュールをクラスに追加するためのメソッド
   # @note
-  #   {TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info} is included
-  #     to {TokyoMetro::Api::StationFacility::Info} by this method.
-  # @note
   #   {TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo::Info} is prepended
   #     to {TokyoMetro::Api::StationFacility::Info} by this method.
   def self.set_modules
     ::TokyoMetro::Api::StationFacility::Info.class_eval do
-      include ::TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info
       prepend ::TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo::Info
     end
   end

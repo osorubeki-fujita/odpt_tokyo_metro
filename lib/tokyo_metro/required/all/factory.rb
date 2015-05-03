@@ -6,6 +6,7 @@ class TokyoMetro::Required::All::Factory < TokyoMetro::Required
 
   def self.other_files
     [
+      Convert.files ,
       Generate.files ,
       Get.files ,
       Save.files ,

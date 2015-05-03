@@ -1,3 +1,33 @@
+module TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info
+
+  private
+
+  def replace_railway_line_info( replacing_dictionary , ignored_dictionary , ary , info , inherit_info: false )
+    if replacing_dictionary.present? and replacing_dictionary[ @same_as ].present? and [ replacing_dictionary[ @same_as ][ "replaced_railway_line" ] ].flatten.include?( info.railway_line )
+
+      replacing_dictionary[ info.railway_line ][ "replacing_railway_line_names" ].each do | replacing_railway_line_name |
+        if inherit_info
+          ary << railway_line_info_after_conversion( replacing_railway_line_name , info )
+        else
+          ary << railway_line_info_after_conversion( replacing_railway_line_name )
+        end
+      end
+
+    else
+      add_connecting_railway_line_info_unless_ignore( ignored_dictionary , ary , info )
+    end
+  end
+
+  def add_connecting_railway_line_info_unless_ignore( ignored_dictionary , ary , info )
+    unless ignored_dictionary.present? and ignored_dictionary.find { | item | item[ "stations" ].include?( @same_as ) and item[ "railway_lines" ].include?( info.railway_line ) }.present?
+      ary << info
+    end
+  end
+
+end
+
+__END__
+
 # @note
 #   This module is included to {TokyoMetro::Api::Station::Info}
 #     by {TokyoMetro::Modules::Api::Convert::Common::Station::ConnectingRailwayLine.set_modules} .
@@ -9,9 +39,10 @@ module TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLi
   private
 
   # @note
-  #   This method calls either
+  #   This method calls '#railway_line_info_after_conversion'
+  #     (either
   #     {TokyoMetro::Modules::Api::Convert::Common::Station::ConnectingRailwayLine::Info#railway_line_info_after_conversion}
-  #     or {TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo::Info#railway_line_info_after_conversion} .
+  #     or {TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo::Info#railway_line_info_after_conversion}).
   # @note
   #   {TokyoMetro::Modules::Api::Convert::Common::Station::ConnectingRailwayLine::Info} is included
   #     to {TokyoMetro::Api::Station::Info}
