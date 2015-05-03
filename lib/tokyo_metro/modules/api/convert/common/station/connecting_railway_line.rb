@@ -10,7 +10,7 @@ module TokyoMetro::Modules::Api::Convert::Common::Station::ConnectingRailwayLine
   def self.set_modules
 
     ::TokyoMetro::Api::Station::Info.class_eval do
-      include ::TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info
+      # include ::TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info
       include ::TokyoMetro::Modules::Api::Convert::Common::Station::ConnectingRailwayLine::Info
     end
 
