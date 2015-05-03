@@ -1,4 +1,4 @@
-def replacing_railway_lines
+def station_facility_replacing_railway_lines_of_platform_infos
   list_of_replacing_railway_lines = ::TokyoMetro::ApiModules::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo.replacing_railway_lines
 
   ::TokyoMetro::Api.station_facilities.each do | station_facility |

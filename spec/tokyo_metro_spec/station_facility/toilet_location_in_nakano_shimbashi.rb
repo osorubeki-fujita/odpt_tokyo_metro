@@ -1,7 +1,7 @@
 #-------- 中野新橋駅 トイレ設置場所
 # @note 誤：odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Outside.Toilet.1
 # @note 正：odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Inside.Toilet.1
-def toilet_location_in_nakano_shimbashi
+def station_facility_toilet_location_in_nakano_shimbashi
 
   valid_barrier_free_info_name = "odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Inside.Toilet.1"
   invalid_barrier_free_info_name = "odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Outside.Toilet.1"
@@ -15,16 +15,18 @@ def toilet_location_in_nakano_shimbashi
   }
 
   barrier_free_info = station_facility_info.barrier_free_facilities.find( &proc_for_searching_barrier_free_facility )
+  
+  #--------
 
   valid_platform_infos = station_facility_info.platform_infos.select { | info |
-    info.barrier_free_facilities.present? and info.barrier_free_facilities.include?( valid_barrier_free_info_name )
+    info.barrier_free_facilities.present? and info.barrier_free_facilities.any?{ | facility | facility.same_as == valid_barrier_free_info_name }
   }
 
   invalid_platform_infos = station_facility_info.platform_infos.select { | info |
-    info.barrier_free_facilities.present? and info.barrier_free_facilities.include?( invalid_barrier_free_info_name )
+    info.barrier_free_facilities.present? and info.barrier_free_facilities.any?{ | facility | facility.same_as == invalid_barrier_free_info_name }
   }
 
-  describe ::TokyoMetro::Api::StationFacility::List , "after processing invalid info to \"#{ valid_barrier_free_info_name }\"" do
+  describe ::TokyoMetro::Api::StationFacility::List , "after processing invalid info \"#{ valid_barrier_free_info_name }\"" do
     describe ::TokyoMetro::Api::StationFacility::Info do
       it "\'#{ valid_barrier_free_info_name }\' is located in outside area." do
         expect( barrier_free_info ).to be_present

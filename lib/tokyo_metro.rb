@@ -165,6 +165,8 @@ module TokyoMetro
 
     # SCSS のディレクトリ
     const_set( :SCSS_DIR , "#{ DEV_DIR }/app/assets/scss" )
+    
+    return nil
   end
 
   # @!group Access Token

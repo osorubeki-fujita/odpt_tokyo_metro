@@ -5,6 +5,7 @@ class TokyoMetro::Api::StationFacility::Info::Platform::Info::BarrierFree::Info 
   end
 
   attr_reader :facility
+  alias :same_as :facility
 
   def self.factory_for_this_class
     factory_for_generating_platform_barrier_free_info_from_string
