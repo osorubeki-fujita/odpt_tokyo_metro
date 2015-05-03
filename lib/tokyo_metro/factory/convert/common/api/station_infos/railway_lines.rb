@@ -1,6 +1,6 @@
 class TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLines
 
-  def initialize( info , list, replacing_dictionary , ignored_dictionary )
+  def initialize( info , list , replacing_dictionary , ignored_dictionary )
     @info = info
     @list = list
     @replacing_dictionary = replacing_dictionary
@@ -24,6 +24,10 @@ class TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLines
   end
 
   private
+
+  def station_name
+    raise "Error: This method is not defined yet."
+  end
 
   def replaced_railway_lines
     [ @replacing_dictionary[ station_name ][ "replaced_railway_lines" ] ].flatten

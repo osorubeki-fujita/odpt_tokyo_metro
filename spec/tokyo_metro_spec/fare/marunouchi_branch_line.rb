@@ -13,8 +13,7 @@ def fares_related_to_marunouchi_branch_line
           same_as = fare_info.same_as
   
           # 出発駅
-            expect( from_station ).to eq( valid_station_name )
-  
+          expect( from_station ).to eq( valid_station_name )
         end
       end
       
@@ -33,8 +32,7 @@ def fares_related_to_marunouchi_branch_line
           same_as = fare_info.same_as
   
           # 到着駅
-            expect( to_station ).to eq( valid_station_name )
-  
+          expect( to_station ).to eq( valid_station_name )
         end
       end
 

@@ -19,9 +19,12 @@ end
 #---------------- 定数のセット
 ::TokyoMetro.set_fundamental_constants
 
+#--------------------------------
+
 #require_relative 'tokyo_metro_spec/dictionary.rb'
 #require_relative 'tokyo_metro_spec/static.rb'
 
 # require_relative 'tokyo_metro_spec/fare.rb'
 require_relative 'tokyo_metro_spec/railway_line.rb'
 require_relative 'tokyo_metro_spec/station_facility.rb'
+require_relative 'tokyo_metro_spec/station.rb'

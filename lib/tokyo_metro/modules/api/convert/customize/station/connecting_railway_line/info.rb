@@ -11,9 +11,9 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
   #   {TokyoMetro::Modules::Api::Convert::Common::Station::ConnectingRailwayLine::Info} is included
   #     to {TokyoMetro::Api::Station::Info}
   #     by {TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.set_modules} .
-  def initialize( *variables )
-    super( *variables )
-    convert_and_delete_connecting_railway_line_names(
+  def initialize( *args )
+    super( *args )
+    convert_and_delete_connecting_railway_lines(
       replacing: ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.replacing_railway_lines ,
       ignored: ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.ignored_railway_lines
     )

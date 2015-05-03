@@ -1,70 +1,85 @@
 "odpt.StationFacility:TokyoMetro.Asakusa":
-  replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
-  replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+  -
+    replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
 
 "odpt.StationFacility:TokyoMetro.Oshiage":
-  replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
-  replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+  -
+    replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
 
 "odpt.StationFacility:TokyoMetro.KitaSenju":
-  replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
-  replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+  -
+    replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Joban"
 
 "odpt.StationFacility:TokyoMetro.Ichigaya":
-  replaced_railway_lines: "odpt.Railway:JR-East.Sobu"
-  replacing_railway_lines: "odpt.Railway:JR-East.ChuoSobu"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East.Sobu"
+    replacing_railway_lines: "odpt.Railway:JR-East.ChuoSobu"
 
 "odpt.StationFacility:TokyoMetro.Iidabashi":
-  replaced_railway_lines: "odpt.Railway:JR-East.Sobu"
-  replacing_railway_lines: "odpt.Railway:JR-East.ChuoSobu"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East.Sobu"
+    replacing_railway_lines: "odpt.Railway:JR-East.ChuoSobu"
 
 "odpt.StationFacility:TokyoMetro.NishiFunabashi":
-  replaced_railway_lines: "odpt.Railway:JR-East.Sobu"
-  replacing_railway_lines: "odpt.Railway:JR-East.ChuoSobu"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East.Sobu"
+    replacing_railway_lines: "odpt.Railway:JR-East.ChuoSobu"
 
 "odpt.StationFacility:TokyoMetro.MinamiSenju":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Joban"
-
-"odpt.StationFacility:TokyoMetro.KitaSenju":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Joban"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Joban"
 
 "odpt.StationFacility:TokyoMetro.Ayase":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Joban"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Joban"
 
 "odpt.StationFacility:TokyoMetro.Mitsukoshimae":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Sobu"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Sobu"
 
 "odpt.StationFacility:TokyoMetro.Hatchobori":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Keiyo"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Keiyo"
 
 "odpt.StationFacility:TokyoMetro.ShinKiba":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Keiyo"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Keiyo"
 
 "odpt.StationFacility:TokyoMetro.Komagome":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Yamanote"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Yamanote"
 
 "odpt.StationFacility:TokyoMetro.Takadanobaba":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Yamanote"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Yamanote"
 
 "odpt.StationFacility:TokyoMetro.MeijiJingumae":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Yamanote"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Yamanote"
 
 "odpt.StationFacility:TokyoMetro.Meguro":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.Yamanote"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.Yamanote"
 
 "odpt.StationFacility:TokyoMetro.Oji":
-  replaced_railway_lines: "odpt.Railway:JR-East"
-  replacing_railway_lines: "odpt.Railway:JR-East.KeihinTohoku"
+  -
+    replaced_railway_lines: "odpt.Railway:JR-East"
+    replacing_railway_lines: "odpt.Railway:JR-East.KeihinTohoku"
 
 
 # __END__

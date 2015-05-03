@@ -29,7 +29,6 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLin
 
         platform_info.transfer_infos.each do | transfer_info |
           ::TokyoMetro::Factory::Convert::Customize::Api::StationFacility::RailwayLines.process( transfer_info , ary , replacing_dictionary , ignored_dictionary , @same_as )
-          # replace_railway_line_info( replacing_dictionary , ignored_dictionary , ary , transfer_info , inherit_info: true )
         end
 
         platform_info.instance_eval do
@@ -41,14 +40,3 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLin
   end
 
 end
-
-__END__
-
-
-
-  # @note
-  #   This method is called
-  #     by {TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info#replace_railway_line_info} .
-  def railway_line_info_after_conversion( replacing_railway_line_name , transfer_info )
-    self.class.platform_transfer_info_class.new( replacing_railway_line_name , transfer_info.railway_direction , transfer_info.necessary_time )
-  end

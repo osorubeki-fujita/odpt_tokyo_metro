@@ -1,4 +1,4 @@
-def chiyoda_branch_line
+def stations_on_chiyoda_branch_line
   ayase = ::TokyoMetro::Api.stations.find { | item | /Chiyoda\.Ayase\Z/ === item.same_as }
   kita_ayase = ::TokyoMetro::Api.stations.find { | item | /Chiyoda\.KitaAyase\Z/ === item.same_as }
   ayase_branch = ::TokyoMetro::Api.stations.find { | item | /ChiyodaBranch\.Ayase\Z/ === item.same_as }

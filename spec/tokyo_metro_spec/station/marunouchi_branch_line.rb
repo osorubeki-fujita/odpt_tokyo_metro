@@ -1,4 +1,4 @@
-def marunouchi_branch_line
+def stations_on_marunouchi_branch_line
   describe ::TokyoMetro::Api::Station::List , "of Marunouchi Branch Line" do
 
     nakano_sakaue_main = ::TokyoMetro::Api.stations.find { | item | /Marunouchi\.NakanoSakaue\Z/ === item.same_as }

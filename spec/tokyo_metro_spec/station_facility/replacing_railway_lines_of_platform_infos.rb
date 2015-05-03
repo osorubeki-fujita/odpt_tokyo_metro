@@ -11,7 +11,7 @@ def station_facility_replacing_railway_lines_of_platform_infos
           if platform_info.transfer_infos.present?
   
             platform_info.transfer_infos.each do | transfer_info |
-              puts replacing_railway_line_infos_of_this_station
+              # puts replacing_railway_line_infos_of_this_station
               replaced_railway_lines = [ replacing_railway_line_infos_of_this_station[ "replaced_railway_lines" ] ].flatten
               replaced_railway_lines.each do | invalid_railway_line_name |
   

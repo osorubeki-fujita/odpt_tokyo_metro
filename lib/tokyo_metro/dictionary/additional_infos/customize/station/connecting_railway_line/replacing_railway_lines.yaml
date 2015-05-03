@@ -1,11 +1,22 @@
-"odpt.Railway:Tobu.Isesaki":
-  stations:
-    - odpt.Station:TokyoMetro.Ginza.Asakusa
-    - odpt.Station:TokyoMetro.Hanzomon.Oshiage
-    - odpt.Station:TokyoMetro.Hibiya.KitaSenju
-    - odpt.Station:TokyoMetro.Chiyoda.KitaSenju
-  replacing_railway_line_names:
-    - odpt.Railway:Tobu.SkyTreeIsesaki
+"odpt.Station:TokyoMetro.Ginza.Asakusa" :
+  -
+    replacing_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replaced_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+
+"odpt.Station:TokyoMetro.Hanzomon.Oshiage" :
+  -
+    replacing_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replaced_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+
+"odpt.Station:TokyoMetro.Hibiya.KitaSenju" :
+  -
+    replacing_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replaced_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+
+"odpt.Station:TokyoMetro.Chiyoda.KitaSenju" :
+  -
+    replacing_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replaced_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
 
 # __END__
 
@@ -32,6 +43,6 @@
 # p( "odpt.Station:TokyoMetro.Chiyoda.Ayase" , "odpt.Railway:TokyoMetro.ChiyodaBranch" , not_recommended: false )
 # p( "odpt.Station:TokyoMetro.Hanzomon.Oshiage" , "odpt.Railway:Tobu.SkyTreeIsesaki" , not_recommended: false )
 # p( "odpt.Station:TokyoMetro.Namboku.AkabaneIwabuchi" , "odpt.Railway:SaitamaRailway.SaitamaRailway" , not_recommended: false )
-p( "odpt.Station:TokyoMetro.Namboku.Meguro" , "odpt.Railway:Tokyu.Meguro" , not_recommended: true )
-p( "odpt.Station:TokyoMetro.Namboku.Meguro" , "odpt.Railway:Toei.Mita" , not_recommended: true )
-p( "odpt.Station:TokyoMetro.Namboku.Shirokanedai" , "odpt.Railway:Toei.Mita" , not_recommended: true )
+# p( "odpt.Station:TokyoMetro.Namboku.Meguro" , "odpt.Railway:Tokyu.Meguro" , not_recommended: true )
+# p( "odpt.Station:TokyoMetro.Namboku.Meguro" , "odpt.Railway:Toei.Mita" , not_recommended: true )
+# p( "odpt.Station:TokyoMetro.Namboku.Shirokanedai" , "odpt.Railway:Toei.Mita" , not_recommended: true )

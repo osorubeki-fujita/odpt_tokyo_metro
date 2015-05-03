@@ -1,3 +1,6 @@
+__END__
+
+
 module TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info
 
   private
