@@ -41,12 +41,14 @@ class TokyoMetro::Api::Fare::Info < TokyoMetro::Api::MetaClass::NotRealTime::Inf
   # @return [::TokyoMetro::Static::Fare::Normal::Pattern]
   attr_reader :normal_fare
 
+  # @param stations [String, Regexp , Array<String or Regexp>]
   def from?( *stations )
-    stations.flatten.include?( @from_station )
+    stations.flatten.any? { | station | station === @from_station }
   end
 
+  # @param stations [String, Regexp , Array<String or Regexp>]
   def to?( *stations )
-    stations.flatten.include?( @to_station )
+    stations.flatten.any? { | station | station === @to_station }
   end
 
   def from_or_to?( *stations )

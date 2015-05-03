@@ -21,16 +21,17 @@ module TokyoMetro::Modules::Common::Dictionary::Station::StringList
 
   # 南北線・都営三田線の駅名リストをセットするためのモジュール関数
   def self.stations_same_as_in_namboku_and_toei_mita_lines( station_names )
-    stations_same_as_in_railway_lines(
-      [ "odpt.Station:TokyoMetro.Namboku" , "odpt.Station:Toei.Mita" ] ,
-      station_names
-    )
+    [ "TokyoMetro.Namboku" , "Toei.Mita" ].map { | railway_line |
+      station_names.map { | station_name |
+        "odpt.Station:#{ railway_line }.#{ station_name }"
+      }
+    }.flatten
   end
 
   def self.stations_same_as_in_railway_lines( railway_lines_in_system , station_names )
-    railway_lines_in_system.map { | railway_line |
+    [ railway_lines_in_system ].flatten.map { | railway_line |
       if station_names.instance_of?( ::Array )
-        station_names.map { | station_name | "odpt.Station:TokyoMetro.#{railway_line}.#{station_name}" }
+        station_names.map { | station_name | "odpt.Station:TokyoMetro.#{ railway_line }.#{station_name}" }
       elsif station_names.instance_of?( ::String )
         station_name = station_names
         "odpt.Station:TokyoMetro.#{railway_line}.#{station_name}"
@@ -71,7 +72,28 @@ module TokyoMetro::Modules::Common::Dictionary::Station::StringList
   #   ]
   BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM = %W( Honancho NakanoFujimicho NakanoShimbashi )
 
-  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋）
+  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋）【本線】
+  # @return [::Array <String>]
+  # @example
+  #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_shimbashi_invalid => [
+  #     "odpt.Station:TokyoMetro.Marunouchi.Honancho",
+  #     "odpt.Station:TokyoMetro.Marunouchi.NakanoFujimicho",
+  #     "odpt.Station:TokyoMetro.Marunouchi.NakanoShimbashi"
+  #   ]
+  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_INVALID = stations_same_as_in_railway_lines( "Marunouchi" , BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM )
+
+  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋）【支線】
+  # @return [::Array <String>]
+  #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_shimbashi => [
+  #     "odpt.Station:TokyoMetro.MarunouchiBranch.Honancho",
+  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi"
+  #   ]
+  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI = stations_same_as_in_railway_lines(
+    "MarunouchiBranch" , BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM
+  )
+
+  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋）【本線 + 支線】
   # @return [::Array <String>]
   # @example
   #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_shimbashi_including_invalid => [
@@ -82,20 +104,7 @@ module TokyoMetro::Modules::Common::Dictionary::Station::StringList
   #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho",
   #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi"
   #   ]
-  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_INCLUDING_INVALID = stations_same_as_in_marunouchi_main_and_branch_lines(
-    BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM
-  )
-
-  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋）
-  # @return [::Array <String>]
-  #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_shimbashi => [
-  #     "odpt.Station:TokyoMetro.MarunouchiBranch.Honancho",
-  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi"
-  #   ]
-  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI = stations_same_as_in_railway_lines(
-    [ "MarunouchiBranch" ] , BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM
-  )
+  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_INCLUDING_INVALID = BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_INVALID + BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI
 
   # @!group 丸ノ内支線の駅 (3) - 方南町、中野富士見町、中野新橋、中野坂上
 
@@ -110,7 +119,33 @@ module TokyoMetro::Modules::Common::Dictionary::Station::StringList
   #   ]
   BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_IN_SYSTEM = BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM + [ NAKANO_SAKAUE_IN_SYSTEM ]
 
-  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋、中野坂上）
+  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋、中野坂上）【本線】
+  # @return [::Array <String>]
+  # @example
+  #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_sakaue_on_main_line => [
+  #     "odpt.Station:TokyoMetro.Marunouchi.Honancho",
+  #     "odpt.Station:TokyoMetro.Marunouchi.NakanoFujimicho",
+  #     "odpt.Station:TokyoMetro.Marunouchi.NakanoShimbashi",
+  #     "odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue"
+  #   ]
+  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_ON_MAIN_LINE = stations_same_as_in_railway_lines(
+    "Marunouchi" , BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_IN_SYSTEM
+  )
+
+  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋、中野坂上）【支線】
+  # @return [::Array <String>]
+  # @example
+  #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_sakaue => [
+  #     "odpt.Station:TokyoMetro.MarunouchiBranch.Honancho",
+  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho",
+  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi",
+  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
+  #   ]
+  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE = stations_same_as_in_railway_lines(
+    "MarunouchiBranch" , BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_IN_SYSTEM
+  )
+
+  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋、中野坂上）【本線 + 支線】
   # @return [::Array <String>]
   # @example
   #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_sakaue_including_invalid => [
@@ -123,22 +158,7 @@ module TokyoMetro::Modules::Common::Dictionary::Station::StringList
   #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi",
   #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
   #   ]
-  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_INCLUDING_INVALID = stations_same_as_in_marunouchi_main_and_branch_lines(
-    BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_IN_SYSTEM
-  )
-
-  # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋、中野坂上）
-  # @return [::Array <String>]
-  # @example
-  #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_sakaue => [
-  #     "odpt.Station:TokyoMetro.MarunouchiBranch.Honancho",
-  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho",
-  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi",
-  #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
-  #   ]
-  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE = stations_same_as_in_railway_lines(
-    [ "MarunouchiBranch" ] , BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_IN_SYSTEM
-  )
+  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_INCLUDING_INVALID = BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_ON_MAIN_LINE + BETWEEN_HONANCHO_AND_NAKANO_SAKAUE
 
   # @!group 有楽町線・副都心線 共用区間 (1) - 和光市
 
@@ -426,7 +446,9 @@ module TokyoMetro::Modules::Common::Dictionary::Station::StringList
   #     "odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara",
   #     "odpt.Station:TokyoMetro.Fukutoshin.Senkawa",
   #     "odpt.Station:TokyoMetro.Fukutoshin.Kanamecho",
-  #     "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro",
+  #     "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
+  #   ]
+  #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_wakoshi_and_ikebukuro => [
   #     "odpt.Station:TokyoMetro.Yurakucho.Wakoshi",
   #     "odpt.Station:TokyoMetro.Yurakucho.ChikatetsuNarimasu",
   #     "odpt.Station:TokyoMetro.Yurakucho.ChikatetsuAkatsuka",
@@ -467,12 +489,12 @@ module TokyoMetro::Modules::Common::Dictionary::Station::StringList
   # @return [::Array <String>]
   # @example
   #   TokyoMetro::Modules::Common::Dictionary::Station::StringList.namboku_and_toei_mita_line_common_stations => [
-  #     "odpt.Station:TokyoMetro.odpt.Station:TokyoMetro.Namboku.Meguro",
-  #     "odpt.Station:TokyoMetro.odpt.Station:TokyoMetro.Namboku.Shirokanedai",
-  #     "odpt.Station:TokyoMetro.odpt.Station:TokyoMetro.Namboku.ShirokaneTakanawa",
-  #     "odpt.Station:TokyoMetro.odpt.Station:Toei.Mita.Meguro",
-  #     "odpt.Station:TokyoMetro.odpt.Station:Toei.Mita.Shirokanedai",
-  #     "odpt.Station:TokyoMetro.odpt.Station:Toei.Mita.ShirokaneTakanawa"
+  #     "odpt.Station:TokyoMetro.Namboku.Meguro",
+  #     "odpt.Station:TokyoMetro.Namboku.Shirokanedai",
+  #     "odpt.Station:TokyoMetro.Namboku.ShirokaneTakanawa",
+  #     "odpt.Station:Toei.Mita.Meguro",
+  #     "odpt.Station:Toei.Mita.Shirokanedai",
+  #     "odpt.Station:Toei.Mita.ShirokaneTakanawa"
   #   ]
   NAMBOKU_AND_TOEI_MITA_LINE_COMMON_STATIONS = stations_same_as_in_namboku_and_toei_mita_lines(
     NAMBOKU_AND_TOEI_MITA_LINE_COMMON_STATIONS_IN_SYSTEM

@@ -103,6 +103,7 @@ module TokyoMetro
       end
     end
 
+    return nil
   end
 
   # @!group 定数
@@ -140,15 +141,15 @@ module TokyoMetro
 
   # @!group Rails 関連
 
-  def self.set_rails_consts
+  def self.set_rails_consts( rails_dir = ::Rails.root )
     # Directory of Rails application
-    const_set( :RAILS_DIR , ::Rails.root ) # "C:/RubyPj/rails_tokyo_metro"
+    const_set( :RAILS_DIR , rails_dir ) # "C:/RubyPj/rails/tokyo_metro"
 
     # 開発のためのファイルを格納するディレクトリ
-    const_set( :DEV_DIR , "#{ RAILS_DIR }/dev" ) # "C:/RubyPj/rails_tokyo_metro_dev"
+    const_set( :DEV_DIR , "#{ RAILS_DIR }/dev" ) # "C:/RubyPj/rails/tokyo_metro_dev"
 
   # データベースのディレクトリ
-    const_set( :DEV_DB_DIR , "#{ RAILS_DIR }/dev/db" ) # "C:/RubyPj/rails_tokyo_metro_db"
+    const_set( :DEV_DB_DIR , "#{ RAILS_DIR }/dev/db" ) # "C:/RubyPj/rails/tokyo_metro_db"
 
     # fixture ファイルを格納するディレクトリ
     const_set( :RAILS_FIXTURES_DIR , "#{ RAILS_DIR }/test/fixtures" )
@@ -350,17 +351,29 @@ module TokyoMetro
     # @note Rails の環境によって形態が異なる。
     # @return [String]
     def access_token
-      case ::Rails.env
-      when "development" , "test"
-        filename = "#{ RAILS_DIR }/AccessToken"
-        if ::File.exist?( filename )
-          open( filename , "r:utf-8" ).read
-        else
-          nil
+      if on_rails_application?
+        case ::Rails.env
+        when "development" , "test"
+          access_token_from_file
+        when "production"
+          ::ENV[ "TOKYO_METRO_ACCESS_TOKEN" ]
         end
-      when "production"
-        ::ENV[ "TOKYO_METRO_ACCESS_TOKEN" ]
+      else
+        access_token_from_file
       end
+    end
+
+    def access_token_from_file
+      filename = "#{ RAILS_DIR }/AccessToken"
+      if ::File.exist?( filename )
+        open( filename , "r:utf-8" ).read
+      else
+        nil
+      end
+    end
+    
+    def on_rails_application?
+      ::Module.constants.sort.include?( :Rails )
     end
 
   end

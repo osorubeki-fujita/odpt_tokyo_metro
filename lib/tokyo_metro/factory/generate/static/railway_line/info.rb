@@ -11,7 +11,7 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
 
   def set_values_to_hash_for_making_variables
     super( hash_key_array: [ :name_ja , :name_hira , :name_en , :name_code ] , make_array: true )
-    super( hash_key_array: [ :twitter_widget_id , :twitter_account ] )
+    super( hash_key_array: [ :twitter_widget_id , :twitter_account , :index ] )
 
     @hash_for_making_variables[ :color ] = color_instance
     @hash_for_making_variables[ :operator ] = operator_instance

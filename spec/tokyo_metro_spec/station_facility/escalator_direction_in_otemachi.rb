@@ -1,5 +1,5 @@
 #-------- odpt.StationFacility:TokyoMetro.Chiyoda.Otemachi.Outside.Escalator.1（エスカレーターの方向）
-def escalator_direction_in_otemachi
+def station_facility_escalator_direction_in_otemachi
   invalid_barrier_free_info_name = "odpt.StationFacility:TokyoMetro.Chiyoda.Otemachi.Outside.Escalator.1"
   proc_for_searching = Proc.new { | barrier_free_info | barrier_free_info.same_as == invalid_barrier_free_info_name }
 
