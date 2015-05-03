@@ -12,10 +12,6 @@ module TokyoMetro::Modules::Common::ToFactory::Generate::Info
     # @param variables [::Array] Static なデータを処理する場合 … 変数は2つ。第1変数は作成するインスタンスの ID キー。第2変数は YAML をパースして得られた配列の要素。
     # @return [Info]
     def generate_from_hash( *variables )
-      #puts "method for factory: #{factory_name.to_s}"
-      #puts "factory: #{self.send( factory_name ).to_s}"
-      #puts __FILE__
-      #puts ""
       factory_for_this_class.process( *variables )
     end
 
