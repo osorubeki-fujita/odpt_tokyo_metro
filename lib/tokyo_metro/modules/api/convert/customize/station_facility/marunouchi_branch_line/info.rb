@@ -16,12 +16,11 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::Marunouchi
   end
 
   def convert_railway_line_name_of_platform_infos_to_marunouchi_branch_line
-    infos = @platform_infos.select { | info |
-      info.car_composition == 3 and info.railway_line == "odpt.Railway:TokyoMetro.Marunouchi"
-    }
-    infos.each do | info |
-      info.instance_eval do
-        @railway_line = "odpt.Railway:TokyoMetro.MarunouchiBranch"
+    @platform_infos.each do | info |
+      if info.car_composition == 3 and info.railway_line == "odpt.Railway:TokyoMetro.Marunouchi"
+        info.instance_eval do
+          @railway_line = "odpt.Railway:TokyoMetro.MarunouchiBranch"
+        end
       end
     end
   end

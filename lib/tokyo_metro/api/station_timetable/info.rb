@@ -330,7 +330,7 @@ class TokyoMetro::Api::StationTimetable::Info < TokyoMetro::Api::MetaClass::NotR
     # puts "#{d.to_s} (Class: #{d.class.name})"
     raise "Error" unless d.instance_of?( ::DateTime )
 
-    now_midnight = ( d.hour < ::TokyoMetro::CHANGE_DATE )
+    now_midnight = ( d.hour < ::TokyoMetro::DATE_CHANGING_HOUR )
 
     # 現在時刻は月曜の 0:00 - 2:59 で、日曜ダイヤに日付変更後の列車が存在し、日曜ダイヤの最終列車がまだ出発していない場合
     if now_midnight and d.monday? and self.sundays.last_train_depart_after_the_day_change? and self.sundays.last_train_not_departed_yet?(d)

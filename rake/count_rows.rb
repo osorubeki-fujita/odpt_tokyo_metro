@@ -3,7 +3,7 @@ def set_tasks_to_count_rows
     desc "コードの行数の取得"
     task :count_rows do
       files = [
-  =begin
+=begin
         "#{ ::Rails.root }/../rails_tokyo_metro_dev/tsukaisute/**/**.rb" ,
         "#{ ::Rails.root }/../rails_tokyo_metro_db/**.txt" ,
         "#{ ::Rails.root }/../rails_tokyo_metro_db/additional_datas/**/**.yaml" ,
@@ -21,7 +21,7 @@ def set_tasks_to_count_rows
         "#{ ::Rails.root }/config/application.rb" ,
         "#{ ::Rails.root }/config/application/**/**.rb" ,
         "#{ ::Rails.root }/Rakefile"
-  =end
+=end
         "#{ ::Rails.root }/app/helpers/**/**.rb" ,
       ].map { | str | Dir.glob( str ) }.flatten.sort
       ary_of_row_info = ::Array.new

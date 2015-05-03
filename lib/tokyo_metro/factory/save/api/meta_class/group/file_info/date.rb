@@ -31,7 +31,7 @@ class TokyoMetro::Factory::Save::Api::MetaClass::Group::FileInfo::Date < TokyoMe
   end
 
   def before_change_date?
-    @datetime.hour < ::TokyoMetro::CHANGE_DATE
+    @datetime.hour < ::TokyoMetro::DATE_CHANGING_HOUR
   end
 
 end

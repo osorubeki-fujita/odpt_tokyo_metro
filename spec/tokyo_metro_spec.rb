@@ -1,8 +1,6 @@
 require 'spec_helper'
 require 'deplo'
 
-TokyoMetro.initialize_in_local_environment( "C:/RubyPj/rails/tokyo_metro" )
-
 spec_filename = ::File.expand_path( ::File.dirname( __FILE__ ) )
 version = "0.1.17"
 
@@ -13,12 +11,46 @@ describe TokyoMetro do
   end
 end
 
-#--------------------------------
+=begin
+#--------
 
-#require_relative 'tokyo_metro_spec/dictionary_spec.rb'
-#require_relative 'tokyo_metro_spec/static_spec.rb'
+dictionary_of_stations
 
-# require_relative 'tokyo_metro_spec/fare_spec.rb'
-require_relative 'tokyo_metro_spec/railway_line_spec.rb'
-require_relative 'tokyo_metro_spec/station_facility_spec.rb'
-require_relative 'tokyo_metro_spec/station_spec.rb'
+#--------
+static_stations
+static_railway_lines
+static_train_types
+
+#--------
+
+::TokyoMetro.set_api_constants( { fare: true } )
+
+fares_related_to_marunouchi_branch_line
+fares_related_to_chiyoda_branch_line
+
+#--------
+
+::TokyoMetro.set_api_constants( { railway_line: true } )
+
+railway_line_info_of_marunouchi_branch_line
+railway_line_info_of_chiyoda_branch_line
+
+#--------
+
+::TokyoMetro.set_api_constants( { station_facility: true } )
+
+platform_infos_of_marunouchi_branch_line
+platform_infos_of_chiyoda_branch_line
+
+station_facility_toilet_location_in_nakano_shimbashi
+station_facility_escalator_direction_in_otemachi
+
+station_facility_replacing_railway_lines_of_platform_infos
+=end
+#--------
+
+::TokyoMetro.set_api_constants( { station: true } )
+
+# stations_on_marunouchi_branch_line
+# stations_on_chiyoda_branch_line
+connecting_railway_lines_of_station

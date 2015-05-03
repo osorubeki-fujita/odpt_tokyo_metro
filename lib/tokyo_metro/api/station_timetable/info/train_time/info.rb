@@ -246,7 +246,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info
   # @param h [DateTime] 時刻の設定（「時」を指定する）
   # @return [Boolean]
   def self.depart_in_midnight?(h)
-    h < ::TokyoMetro::CHANGE_DATE
+    h < ::TokyoMetro::DATE_CHANGING_HOUR
   end
 
   # @!endgroup

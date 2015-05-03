@@ -10,7 +10,7 @@ module TokyoMetro::Modules::Api::Convert::Common::Station::ConnectingRailwayLine
     if @connecting_railway_lines.present?
       ary = self.class.connecting_railway_line_list_class.new
       @connecting_railway_lines.each do | info |
-        ::TokyoMetro::Factory::Convert::Common::Api::Station::RailwayLines.process( info , ary , replacing , ignored , station_same_as )
+        ::TokyoMetro::Factory::Convert::Common::Api::Station::RailwayLines.process( info , ary , replacing , ignored , @same_as )
       end
       @connecting_railway_lines = ary
     end

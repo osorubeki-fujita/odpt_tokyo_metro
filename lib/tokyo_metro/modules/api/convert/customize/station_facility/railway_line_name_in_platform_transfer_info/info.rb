@@ -12,13 +12,6 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLin
 
   private
 
-  # @note
-  #   This method uses the method 'replace_railway_line_info'
-  #     in {TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info} .
-  # @note
-  #   {TokyoMetro::Modules::Api::Convert::Common::StationInfos::ConvertRailwayLineNames::Info} is included
-  #     to {TokyoMetro::Api::StationFacility::Info}
-  #     by {TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo.set_modules} .
   def convert_railway_line_names_in_platform_transfer_infos
     replacing_dictionary = ::TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo.replacing_railway_lines
     ignored_dictionary = nil

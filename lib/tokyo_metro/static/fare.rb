@@ -8,7 +8,7 @@ module TokyoMetro::Static::Fare
   # @return [::DateTime]
   # @note 現在の運賃は、2014年4月1日改定のもの。旧運賃は2014年3月31日の終電まで適用されていたため、2014年4月1日未明（3月31日の終電後）に現運賃へ切り替えが行われたものとする。
   # @note TokyoMetro::Static::Fare.last_revision で呼び出すことができる。
-  LAST_REVISION = ::DateTime.new( 2014 , 4 , 1 , ::TokyoMetro.change_date , 0 , 0 )
+  LAST_REVISION = ::DateTime.new( 2014 , 4 , 1 , ::TokyoMetro.date_changing_hour , 0 , 0 )
 
   # 定数 {::TokyoMetro::Static::NORMAL_FARE} を設定するメソッド
   # @note {::TokyoMetro::Static.normal_fare} で呼び出すこともできる。

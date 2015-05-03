@@ -20,12 +20,11 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::ChiyodaBra
   end
 
   def convert_railway_line_name_of_platform_infos_to_chiyoda_branch_line
-    infos = @platform_infos.select { | info |
-      info.car_composition == 3 and info.railway_line == "odpt.Railway:TokyoMetro.Chiyoda"
-    }
-    infos.each do | info |
-      info.instance_eval do
-        @railway_line = "odpt.Railway:TokyoMetro.ChiyodaBranch"
+    @platform_infos.each do | info |
+      if info.car_composition == 3 and info.railway_line == "odpt.Railway:TokyoMetro.Chiyoda"
+        info.instance_eval do
+          @railway_line = "odpt.Railway:TokyoMetro.ChiyodaBranch"
+        end
       end
     end
   end

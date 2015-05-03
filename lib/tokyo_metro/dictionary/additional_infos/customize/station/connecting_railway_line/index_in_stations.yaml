@@ -18,8 +18,11 @@
   "odpt.Railway:Tokyu.Toyoko":
     index_in_station: 7
     cleared: true
-  "odpt.Railway:Tokyu.DenEnToshi":
+  #--------
+  "odpt.Railway:TokyoMetro.Hanzomon":
     index_in_station: 8
+  "odpt.Railway:Tokyu.DenEnToshi":
+    index_in_station: 9
 
 # 【銀座線】表参道
 
@@ -494,6 +497,11 @@
     cleared: true
   "odpt.Railway:Keio.Inokashira":
     index_in_station: 7
+  #--------
+  "odpt.Railway:TokyoMetro.Ginza":
+    index_in_station: 8
+  "odpt.Railway:Tokyu.DenEnToshi":
+    index_in_station: 9
 
 # 【半蔵門線】永田町
 
@@ -613,3 +621,6 @@
     cleared: true
   "odpt.Railway:Keio.Inokashira":
     index_in_station: 8
+  #--------
+  "odpt.Railway:Tokyu.Toyoko":
+    index_in_station: 9

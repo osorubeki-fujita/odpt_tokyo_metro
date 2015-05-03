@@ -5,9 +5,9 @@ def station_facility_replacing_railway_lines_of_platform_infos
     ::TokyoMetro::Api.station_facilities.each do | station_facility |
       # この駅に関係する情報のみを取得
       replacing_railway_line_infos_of_this_station = list_of_replacing_railway_lines[ station_facility.same_as ]
-      replaced_railway_lines = replacing_railway_line_infos_of_this_station.map { | item | item[ "replaced_railway_lines" ] }.flatten
 
       if replacing_railway_line_infos_of_this_station.present?
+        replaced_railway_lines = replacing_railway_line_infos_of_this_station.map { | item | item[ "replaced_railway_lines" ] }.flatten
         station_facility.platform_infos.each do | platform_info |
           if platform_info.transfer_infos.present?
 

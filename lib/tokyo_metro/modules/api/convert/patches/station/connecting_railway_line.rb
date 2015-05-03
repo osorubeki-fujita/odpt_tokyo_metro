@@ -2,7 +2,7 @@ module TokyoMetro::Modules::Api::Convert::Patches::Station::ConnectingRailwayLin
 
   include ::TokyoMetro::Modules::Common::ConvertConstantToClassMethod
 
-  IGNORED_RAILWAY_LINES = ::YAML.load_file( "#{ ::TokyoMetro::dictionary_dir }/additional_infos/patches/station/connecting_railway_line/igonored_railway_lines.yaml" )
+  IGNORED_RAILWAY_LINES = ::YAML.load_file( "#{ ::TokyoMetro::dictionary_dir }/additional_infos/patches/station/connecting_railway_line/ignored_railway_lines.yaml" )
 
   # Method for adding modules to classes.
   # @note

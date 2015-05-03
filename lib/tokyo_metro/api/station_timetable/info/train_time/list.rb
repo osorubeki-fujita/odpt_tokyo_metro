@@ -108,7 +108,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::List < TokyoMetro::Api
   # @return [Boolean]
   # @note 配列の最後の列車が 0:00 - 2:59 の間に出発するか否かによって判定を行う。
   def last_train_depart_after_the_day_change?
-    self.last.departure_datetime.hour < ::TokyoMetro::CHANGE_DATE
+    self.last.departure_datetime.hour < ::TokyoMetro::DATE_CHANGING_HOUR
   end
 
   # 終電の出発前か否かの判定

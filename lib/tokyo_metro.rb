@@ -77,7 +77,7 @@ module TokyoMetro
   # @!group 時刻
 
   # ダイヤ上の日付変更時刻
-  CHANGE_DATE = 3
+  DATE_CHANGING_HOUR = 3
 
   # 現在時刻
   # @note タイムゾーンは日本時間 (GMT+9)

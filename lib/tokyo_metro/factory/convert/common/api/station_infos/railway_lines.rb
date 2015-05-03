@@ -5,12 +5,10 @@ class TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLines
     @list = list
     @replacing_dictionary = replacing_dictionary
     @ignored_dictionary = ignored_dictionary
-
-    @to_process = to_process?
   end
 
   def process
-    if @to_process
+    if to_replace?
       replacing_railway_lines_for_this_instance.each do | replacing_railway_line_name |
         @list << railway_line_info_after_conversion( replacing_railway_line_name )
       end
@@ -42,19 +40,33 @@ class TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLines
   end
 
   def replacing_railway_lines_for_this_instance
-    @replacing_dictionary[ station_name ].find { | item | item[ "replaced_railway_lines".include?( @info.railway_line ) ]}[ "relpacing_railway_lines" ]
+    base = @replacing_dictionary[ station_name ].find { | item | item[ "replaced_railway_lines" ].include?( @info.railway_line ) }[ "replacing_railway_lines" ]
+    ary = [ base ].flatten
+    puts "#{ station_name } / #{ @info.railway_line } / #{ ary.to_s }"
+    ary
   end
 
   # 処理の対象か否かを判定するメソッド
   # @return [Boolean]
-  def to_process?
+  def to_replace?
     @replacing_dictionary.present? and @replacing_dictionary[ station_name ].present? and replaced_railway_lines.include?( @info.railway_line )
   end
 
   # 無視の対象か否かを判定するメソッド
   # @return [Boolean]
   def to_ignore?
-    @ignored_dictionary.present? and @ignored_dictionary.find { | item | item[ "stations" ].include?( same_as ) and item[ "stations" ][ "railway_lines" ].include?( @info.railway_line ) }.present?
+    @ignored_dictionary.present? and @ignored_dictionary.find { | item | item[ "stations" ].include?( station_name ) and item[ "railway_lines" ].include?( @info.railway_line ) }.present?
   end
 
 end
+
+__END__
+    puts station_name
+    
+    
+    if @station_same_as == "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
+      puts ( @replacing_dictionary.present? and @replacing_dictionary[ station_name ].present? )
+      if @replacing_dictionary.present?
+        puts @replacing_dictionary[ station_name ]
+      end
+    end

@@ -1,22 +1,28 @@
 def connecting_railway_lines_of_station
+  connecting_railway_lines__class
+
   ::TokyoMetro::Api.stations.each do | station |
     if station.connecting_railway_lines.present?
-      connecting_railway_lines__class( station )
       connecting_railway_lines__replacing_railway_lines( station )
-      # connecting_railway_lines__ignored_railway_lines( station )
-      # connecting_railway_lines__optional_railway_lines( station )
-      # connecting_railway_lines__new_railway_lines( station )
-      # connecting_railway_lines__index_in_stations( station )
-      # connecting_railway_lines__transfer_additional_infos( station )
+      connecting_railway_lines__ignored_railway_lines( station )
+      connecting_railway_lines__optional_railway_lines( station )
+      connecting_railway_lines__new_railway_lines( station )
+      connecting_railway_lines__index_in_stations( station )
+      connecting_railway_lines__transfer_additional_infos( station )
     end
   end
 end
 
-def connecting_railway_lines__class( station )
+def connecting_railway_lines__class
   describe ::TokyoMetro::Api::Station::Info , "after setting connecting railway line infos" do
-    it "(connecting railway line info) should be an instance of ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info ." do
-      station.connecting_railway_lines.each do | connecting_railway |
-        expect( connecting_railway ).to be_instance_of( ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info )
+    it "connecting railway line info should be an instance of ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info ." do
+      ::TokyoMetro::Api.stations.each do | station |
+        connecting_railway_lines = station.connecting_railway_lines
+        if connecting_railway_lines.present?
+          station.connecting_railway_lines.each do | connecting_railway |
+            expect( connecting_railway ).to be_instance_of( ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info )
+          end
+        end
       end
     end
   end
@@ -24,20 +30,20 @@ end
 
 
 def connecting_railway_lines__replacing_railway_lines( station )
-  infos_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo.replacing_railway_lines[ station.same_as ]
+  infos_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.replacing_railway_lines[ station.same_as ]
 
   if infos_related_to_this_station.present?
 
     list_of_connecting_railway_lines = get_list_of_connecting_railway_lines( station )
+
+    replaced_railway_lines = infos_related_to_this_station.map { | item | item[ "replaced_railway_lines"] }.flatten
+
     describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "after replacing railway line names (#{ station.same_as })" do
 
       it "is replaced." do
-        infos_related_to_this_station.each do | group |
-          replaced_railway_lines = group[ "replaced_railway_lines"]
-          replaced_railway_lines.each do  | replaced
-            station.connecting_railway_lines.each do | connecting_railway_line_info |
-              expect( connecting_railway_line_info.railway_line ).not_to eq( invalid_railway_line )
-            end
+        replaced_railway_lines.each do | replaced_railway_line |
+          station.connecting_railway_lines.each do | connecting_railway_line_info |
+            expect( connecting_railway_line_info.railway_line ).not_to eq( replaced_railway_line )
           end
         end
       end
@@ -45,7 +51,7 @@ def connecting_railway_lines__replacing_railway_lines( station )
       replacing_railway_lines = infos_related_to_this_station.map { | item | item[ "replacing_railway_lines"] }.flatten
 
       replacing_railway_lines.each do | replacing_railway_line |
-        it "includes #{ replacing_railway_line }." do
+        it "includes \'#{ replacing_railway_line }\'" do
           expect( list_of_connecting_railway_lines ).to include( replacing_railway_line )
         end
       end
@@ -57,7 +63,7 @@ end
 
 def connecting_railway_lines__ignored_railway_lines( station )
   info_related_to_this_station = [ :Customize , :Patches ].map { | namespace |
-    eval( "::TokyoMetro::ApiModules::Convert::#{namespace}::Station::ConnectingRailwayLine.ignored_railway_lines" )
+    eval( "::TokyoMetro::Modules::Api::Convert::#{namespace}::Station::ConnectingRailwayLine.ignored_railway_lines" )
   }.flatten.select { | item |
     item[ "stations" ].include?( station.same_as )
   }
@@ -78,7 +84,7 @@ end
 
 
 def connecting_railway_lines__optional_railway_lines( station )
-  info_related_to_this_station = ::TokyoMetro::ApiModules::Convert::Customize::Station::ConnectingRailwayLine.optional_railway_lines.select { | item |
+  info_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.optional_railway_lines.select { | item |
     item[ "stations" ].include?( station.same_as )
   }
   if info_related_to_this_station.present?
@@ -97,7 +103,7 @@ end
 
 
 def connecting_railway_lines__new_railway_lines( station )
-  info_related_to_this_station = ::TokyoMetro::ApiModules::Convert::Customize::Station::ConnectingRailwayLine.new_railway_lines.select { | new_railway_line_name , info |
+  info_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.new_railway_lines.select { | new_railway_line_name , info |
     info[ "stations" ].include?( station.same_as )
   }
 
@@ -123,7 +129,7 @@ def connecting_railway_lines__new_railway_lines( station )
         end
 
         if regexp_of_date =~ starting_date_from_yaml
-          starting_date = ::DateTime.new( $1.to_i , $2.to_i , $3.to_i )
+          starting_date = ::DateTime.new( $1.to_i , $2.to_i , $3.to_i , ::TokyoMetro::DATE_CHANGING_HOUR )
           describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "starting date" do
             it "(#{new_railway_line_name} in #{station.same_as}) should start on #{starting_date_from_yaml}." do
               expect( connecting_railway_line_info_of_this_line.start_on ).to eq( starting_date )
@@ -140,7 +146,7 @@ end
 
 
 def connecting_railway_lines__index_in_stations( station )
-  info_related_to_this_station = ::TokyoMetro::ApiModules::Convert::Customize::Station::ConnectingRailwayLine.index_in_stations[ station.same_as ]
+  info_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.index_in_stations[ station.same_as ]
   if info_related_to_this_station.present?
 
     railway_lines_from_yaml = info_related_to_this_station.keys
@@ -174,7 +180,7 @@ def connecting_railway_lines__index_in_stations( station )
 end
 
 def connecting_railway_lines__transfer_additional_infos( station )
-  info_related_to_this_station = ::TokyoMetro::ApiModules::Convert::Customize::Station::ConnectingRailwayLine.transfer_additional_infos.select { | item |
+  info_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.transfer_additional_infos.select { | item |
     item[ "stations" ].include?( station.same_as )
   }
   if info_related_to_this_station.present?

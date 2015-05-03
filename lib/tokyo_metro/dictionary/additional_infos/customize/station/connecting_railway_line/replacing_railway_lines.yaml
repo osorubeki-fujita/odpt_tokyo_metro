@@ -1,22 +1,22 @@
 "odpt.Station:TokyoMetro.Ginza.Asakusa" :
   -
-    replacing_railway_lines: "odpt.Railway:Tobu.Isesaki"
-    replaced_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
 
 "odpt.Station:TokyoMetro.Hanzomon.Oshiage" :
   -
-    replacing_railway_lines: "odpt.Railway:Tobu.Isesaki"
-    replaced_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
 
 "odpt.Station:TokyoMetro.Hibiya.KitaSenju" :
   -
-    replacing_railway_lines: "odpt.Railway:Tobu.Isesaki"
-    replaced_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
 
 "odpt.Station:TokyoMetro.Chiyoda.KitaSenju" :
   -
-    replacing_railway_lines: "odpt.Railway:Tobu.Isesaki"
-    replaced_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replaced_railway_lines: "odpt.Railway:Tobu.Isesaki"
+    replacing_railway_lines: "odpt.Railway:Tobu.SkyTreeIsesaki"
 
 # __END__
 

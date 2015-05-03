@@ -13,6 +13,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
   #     by {TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.set_modules} .
   def initialize( *args )
     super( *args )
+    # puts @same_as
     convert_and_delete_connecting_railway_lines(
       replacing: ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.replacing_railway_lines ,
       ignored: ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.ignored_railway_lines
@@ -61,7 +62,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
       @connecting_railway_lines.each do | connecting_railway_line_info |
         index_info_of_this_railway_line = index_info_in_this_station[ connecting_railway_line_info.railway_line ]
         if index_info_of_this_railway_line.nil?
-          raise "Error: index of #{ connecting_railway_info.railway_line } in \"#{@same_as}\" is not defined."
+          raise "Error: index of #{ connecting_railway_line_info.railway_line } in \"#{@same_as}\" is not defined."
         end
 
         connecting_railway_line_info.send( :set_index_in_station , index_info_of_this_railway_line[ "index_in_station" ] )
@@ -86,12 +87,11 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
         additional_info_of_this_railway_line = _transfer_additional_infos_of_this_station[ connecting_railway_line_info.railway_line ]
 
         if additional_info_of_this_railway_line.present?
-          settings = [
+          [
             [ :connecting_another_station , true ] ,
             [ :not_recommended , false ] ,
             [ :note , true ]
-          ]
-          settings.each do | key_of_h , require_h_setting |
+          ].each do | key_of_h , require_h_setting |
             set_specific_transfer_additional_info( connecting_railway_line_info , additional_info_of_this_railway_line , key_of_h , require_h_info: require_h_setting )
           end
         end
