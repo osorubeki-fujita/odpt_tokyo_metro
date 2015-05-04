@@ -15,8 +15,8 @@ module TokyoMetro::App::Renderer::Icon
 
   FONT_AWESOME_ICON.each do | key , value |
     eval <<-DEF
-      def self.#{ key }( request , size = 1 , spin: nil , pulse: nil )
-        FontAwesome.new( request , "#{ value }" , size , spin: spin , pulse: pulse )
+      def self.#{ key }( request , size = 1 , spin: nil , pulse: nil , inverse: nil )
+        FontAwesome.new( request , "#{ value }" , size , spin: spin , pulse: pulse , inverse: inverse )
       end
     DEF
   end
