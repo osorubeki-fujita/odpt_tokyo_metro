@@ -48,8 +48,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
     )
 
     class << top
-      def current_category?
-        current_controller? and current_action?
+      def link_for_page_on_the_same_category?
+        link_for_page_on_current_controller? and link_for_page_of_current_action?
       end
     end
 

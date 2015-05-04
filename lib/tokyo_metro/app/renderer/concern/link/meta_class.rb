@@ -31,7 +31,7 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
     _h_locals = h_locals
     h.render inline: <<-HAML , type: :haml , locals: _h_locals
 %li{ class: li_class_name }<
-  = v.link_to_unless( current_page , "" , url , only_path_setting: false , class: class_name_of_link , target: target )
+  = v.link_to_unless( link_to_current_page , "" , url , only_path_setting: false , class: class_name_of_link , target: target )
   %div{ class: class_name_of_text_domain }<
     - # Icon
     - if icon_name.present?
@@ -115,7 +115,7 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
       additional_info: @additional_info ,
       additional_info_position: @additional_info_position ,
       link_to_another_website: @link_to_another_website ,
-      current_page: current_page?
+      link_to_current_page: link_to_current_page?
     } )
   end
 
@@ -125,21 +125,25 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
     else
       ary = [ @size ]
     end
-    if current_category?
-      ary << [ :current_category ]
+    if link_for_page_on_the_same_category?
+      ary << [ :same_category ]
     end
   end
 
-  def current_page?
+  def link_to_current_page?
     @request.fullpath == @url
   end
 
-  def current_controller?
+  def link_for_page_on_current_controller?
     current_controller == controller_of( @url )
   end
 
-  def current_category?
-    current_controller?
+  def link_for_page_on_the_same_category?
+    link_for_page_on_current_controller?
+  end
+  
+  def link_for_page_of_current_action?
+    current_action == action_of( @url )
   end
 
 end
