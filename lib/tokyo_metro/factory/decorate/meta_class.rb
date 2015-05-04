@@ -57,7 +57,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
   end
   
   def current_action
-    controller_of( @request.fullpath )
+    action_of( @request.fullpath )
   end
   
   def controller_of( url )
@@ -67,7 +67,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
       nil
     end
   end
-  
+
   def action_of( url )
     ::Rails.application.routes.recognize_path( url )[ :action ]
   end
