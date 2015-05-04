@@ -52,6 +52,10 @@ class TokyoMetro::Factory::Decorate::MetaClass
     ::Rails.application.routes.recognize_path( @request.referer )
   end
   
+  def current_host
+    @request.host
+  end
+  
   def current_controller
     controller_of( @request.fullpath )
   end
@@ -59,7 +63,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
   def current_action
     action_of( @request.fullpath )
   end
-  
+
   def controller_of( url )
     begin
       ::Rails.application.routes.recognize_path( url )[ :controller ]
@@ -69,7 +73,11 @@ class TokyoMetro::Factory::Decorate::MetaClass
   end
 
   def action_of( url )
-    ::Rails.application.routes.recognize_path( url )[ :action ]
+    begin
+      ::Rails.application.routes.recognize_path( url )[ :action ]
+    rescue ::ActionController::RoutingError
+      nil
+    end
   end
 
   def v

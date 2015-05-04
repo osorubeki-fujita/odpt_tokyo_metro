@@ -131,20 +131,30 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
     ary
   end
 
+  def link_to_page_on_the_same_host?
+    @request.host == host_of( @url )
+  end
+
   def link_to_current_page?
     @request.fullpath == @url
   end
 
-  def link_for_page_on_current_controller?
-    current_controller == controller_of( @url )
+  def link_for_page_on_the_same_controller?
+    u.current_page?( controller: action_of( @url ) )
+    # current_controller == controller_of( @url )
   end
 
   def link_for_page_on_the_same_category?
-    link_for_page_on_current_controller?
+    if @link_to_another_website
+      false
+    else
+      link_for_page_on_the_same_controller?
+    end
   end
-  
-  def link_for_page_of_current_action?
-    current_action == action_of( @url )
+
+  def link_for_page_of_the_same_action?
+    # current_action == action_of( @url )
+    u.current_page?( action: action_of( @url ) )
   end
 
 end
