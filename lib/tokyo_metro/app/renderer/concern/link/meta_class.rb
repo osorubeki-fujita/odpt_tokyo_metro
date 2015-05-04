@@ -38,8 +38,9 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
       %div{ class: :icon }
         = ::TokyoMetro::App::Renderer::Icon.send( icon_name , request ).render
 
-    - # Title (1)
+    - # Title
     - if title_ja.present? and title_en.present?
+      - # Title (1)
       %div{ class: :text }
         - if title_ja.instance_of?( ::Array )
           %div{ class: :text_ja }<
@@ -59,8 +60,8 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
             = title_en
       - if additional_info.present?
         = additional_info.call
-    - # Title (2)
     - else
+      - # Title (2)
       %div{ class: :text_large }
         - if title_ja.present?
           - text = title_ja
