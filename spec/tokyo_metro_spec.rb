@@ -20,7 +20,7 @@ options = [ :station ]
 options = options.map( &:to_s )
 
 def to_test( options , category )
-  options.blank? or ( options.present? and options.include?( category.to_s ) )
+  options.nil? or ( options.present? and options.include?( category.to_s ) )
 end
 
 #--------
