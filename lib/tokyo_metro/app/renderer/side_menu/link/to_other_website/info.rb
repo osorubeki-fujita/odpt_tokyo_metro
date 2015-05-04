@@ -10,7 +10,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToOtherWebsite::Info < TokyoMet
       class_name_of_link: :link ,
       class_name_of_text_domain: :link_to_other_website ,
       open_another_window: true ,
-      size: :small
+      size: :small ,
+      link_to_another_website: true
     )
   end
 

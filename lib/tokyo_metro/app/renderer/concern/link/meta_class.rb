@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Renderer::MetaClass
 
-  def initialize( request , title_ja , title_en , url , icon_name: nil , class_name_of_whole_domain: nil , class_name_of_link: :link , class_name_of_text_domain: nil , open_another_window: false , size: :normal , additional_info: nil , additional_info_position: nil )
+  def initialize( request , title_ja , title_en , url , icon_name: nil , class_name_of_whole_domain: nil , class_name_of_link: :link , class_name_of_text_domain: nil , open_another_window: false , size: :normal , additional_info: nil , additional_info_position: nil , link_to_another_website: false )
     super( request )
 
     raise "Error" if title_ja.blank? and title_en.blank?
@@ -8,6 +8,8 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
 
     raise "Error" if additional_info.present? and additional_info_position.blank?
     raise "Error" if additional_info.blank? and additional_info_position.present?
+    
+    raose "Error" if link_to_another_website and !( open_another_window )
 
     @title_ja = title_ja
     @title_en = title_en
@@ -21,6 +23,8 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
 
     @additional_info = additional_info
     @additional_info_position = additional_info_position
+    
+    @link_to_another_website = link_to_another_website
   end
 
   def render
@@ -29,9 +33,12 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
 %li{ class: li_class_name }<
   = v.link_to_unless( ( request.fullpath == url ) , "" , url , only_path_setting: false , class: class_name_of_link , target: target )
   %div{ class: class_name_of_text_domain }<
+    - # Icon
     - if icon_name.present?
       %div{ class: :icon }
         = ::TokyoMetro::App::Renderer::Icon.send( icon_name , request ).render
+
+    - # Title (1)
     - if title_ja.present? and title_en.present?
       %div{ class: :text }
         - if title_ja.instance_of?( ::Array )
@@ -52,6 +59,7 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
             = title_en
       - if additional_info.present?
         = additional_info.call
+    - # Title (2)
     - else
       %div{ class: :text_large }
         - if title_ja.present?
@@ -67,6 +75,14 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
             = text
       - if additional_info.present?
         = additional_info.call
+    - # External Link
+    - if open_another_window
+      - if link_to_another_website
+        %div{ class: :link_to_another_website }
+          = ::TokyoMetro::App::Renderer::Icon.open_another_window( request , 1 ).render
+      - else
+        %div{ class: :open_another_window }
+          = ::TokyoMetro::App::Renderer::Icon.link_to_another_website( request , 1 ).render
     HAML
   end
 
@@ -94,8 +110,10 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
       class_name_of_text_domain: @class_name_of_text_domain ,
       li_class_name: li_class_name ,
       target: target ,
+      open_another_window: open_another_window? ,
       additional_info: @additional_info ,
-      additional_info_position: @additional_info_position
+      additional_info_position: @additional_info_position ,
+      link_to_external_page: @link_to_external_page
     } )
   end
 

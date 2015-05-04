@@ -11,6 +11,8 @@ module TokyoMetro::App::Renderer::Icon
     IMAGE
   end
 
+  raise if ( FONT_AWESOME_ICON.keys & IMAGE.keys ).present?
+
   FONT_AWESOME_ICON.each do | key , value |
     eval <<-DEF
       def self.#{ key }( request , size = 1 , rotation: nil )
