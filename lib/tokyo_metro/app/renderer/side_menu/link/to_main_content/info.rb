@@ -43,7 +43,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       nil ,
       "Top" ,
-      url: "/" ,
+      controller: :application ,
       icon_name: :top
     )
 
