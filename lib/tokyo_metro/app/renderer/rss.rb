@@ -1,4 +1,3 @@
-
 module TokyoMetro::App::Renderer::Rss
 
   LIST = ::YAML.load_file( "#{ ::TokyoMetro::DICTIONARY_DIR }/view/rss.yaml")
@@ -7,7 +6,7 @@ module TokyoMetro::App::Renderer::Rss
     feed_urls = LIST.values.map { | item | item[ "url" ] }
     feed_urls.each do | feed_url |
       feed = ::Feedjira::Feed.fetch_and_parse(feed_urls.first)
-      
+
       p feed.title          # => "PILOG"
       p feed.url            # => "http://xoyip.hatenablog.com/"
       p feed.feed_url       # => "http://xoyip.hatenablog.com/feed"
