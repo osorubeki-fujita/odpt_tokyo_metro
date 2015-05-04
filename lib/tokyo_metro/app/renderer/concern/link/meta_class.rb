@@ -128,6 +128,7 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
     if link_for_page_on_the_same_category?
       ary << [ :same_category ]
     end
+    ary
   end
 
   def link_to_current_page?
