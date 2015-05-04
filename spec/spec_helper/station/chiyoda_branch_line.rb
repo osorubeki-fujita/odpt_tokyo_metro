@@ -1,103 +1,104 @@
 def stations_on_chiyoda_branch_line
-  ayase = ::TokyoMetro::Api.stations.find { | item | /Chiyoda\.Ayase\Z/ === item.same_as }
-  kita_ayase = ::TokyoMetro::Api.stations.find { | item | /Chiyoda\.KitaAyase\Z/ === item.same_as }
-  ayase_branch = ::TokyoMetro::Api.stations.find { | item | /ChiyodaBranch\.Ayase\Z/ === item.same_as }
-  kita_ayase_branch = ::TokyoMetro::Api.stations.find { | item | /ChiyodaBranch\.KitaAyase\Z/ === item.same_as }
+  chiyoda_main = "odpt.Railway:TokyoMetro.Chiyoda"
+  chiyoda_branch = "odpt.Railway:TokyoMetro.ChiyodaBranch"
 
-  describe ::TokyoMetro::Api::Station::List , "after add Chiyoda Branch Line" do
+  valid_name_of_ayase_main = "odpt.Station:TokyoMetro.Chiyoda.Ayase"
+  valid_name_of_ayase_branch = "odpt.Station:TokyoMetro.ChiyodaBranch.Ayase"
+  
+  invalid_name_of_kita_ayase_main = "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+  valid_name_of_kita_ayase_branch = "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase"
+  
+  ayase = ::TokyoMetro::Api.stations.find { | item | item.same_as == valid_name_of_ayase_main }
+  ayase_branch = ::TokyoMetro::Api.stations.find { | item | item.same_as == valid_name_of_ayase_branch }
+  
+  kita_ayase = ::TokyoMetro::Api.stations.find { | item | item.same_as == invalid_name_of_kita_ayase_main }
+  kita_ayase_branch = ::TokyoMetro::Api.stations.find { | item | item.same_as == valid_name_of_kita_ayase_branch }
 
-    describe "千代田線（本線 / 代々木上原 - 綾瀬）" do
+  describe TokyoMetro::Api::Station::Info , "after adding Chiyoda Branch Line" do
 
-      describe "綾瀬" do
-        describe "exist" do
-          it "(the station info of Ayase on Chiyoda Line) should be present." do
-            expect( ayase ).to be_present
+    describe "on Chiyoda Main Line (Yoyogi-uehara - Ayase)" do
+
+      describe "Ayase" do
+
+        it "exists" do
+          expect(ayase ).to be_present
+        end
+
+        it "has attibute \'same_as\' and it is \'#{ valid_name_of_ayase_main }\'" do
+          expect( ayase.same_as ).to eq( valid_name_of_ayase_main )
+        end
+
+        it "on Chiyoda Main Line" do
+          expect( ayase.railway_line ).to eq( chiyoda_main )
+        end
+
+        describe TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info do
+          # include odpt.Railway:TokyoMetro.ChiyodaBranch
+          connecting_info_to_chiyoda_branch = ayase.connecting_railway_lines.find { | item | item.railway_line == chiyoda_branch }
+          it "includes connecting railway info of Chiyoda Branch Line" do
+            expect( connecting_info_to_chiyoda_branch ).to be_present
           end
         end
 
-        describe "same_as" do
-          it "(the station info of Ayase on Chiyoda Line) should be same as \"odpt.Station:TokyoMetro.Chiyoda.Ayase\"." do
-            expect( ayase.same_as ).to eq( "odpt.Station:TokyoMetro.Chiyoda.Ayase" )
-          end
-        end
-
-        describe "connecting_railway_lines" do
-          it "(the station info of Ayase on Chiyoda Line) should include connecting railway info of Chiyoda Branch Line." do
-            expect( ayase.connecting_railway_lines.railway_lines ).to include( "odpt.Railway:TokyoMetro.ChiyodaBranch" )
-          end
-        end
       end
 
-      describe "北綾瀬" do
-        describe "exist" do
-          it "(the station info of Kita-ayase on Chiyoda Line) should not be present" do
-            expect( kita_ayase ).to be_nil
-          end
+      describe "Kita-ayase" do
+        it "does not exist" do
+          expect( kita_ayase ).not_to be_present
         end
       end
 
     end
 
 
-    describe "千代田線（支線 / 綾瀬 - 北綾瀬）" do
+    describe "on Chiyoda Branch Line (Ayase - Kita-ayase)" do
 
-      describe "綾瀬" do
-        describe "exist" do
-          it "(the station info of Ayase on Chiyoda Branch Line) should be present." do
-            expect( ayase_branch ).to be_present
-          end
+      describe "Ayase" do
+
+        it "exists" do
+          expect( ayase_branch ).to be_present
         end
 
-        describe "same_as" do
-          it "(the station info of Ayase on Chiyoda Branch Line) should be same as \"odpt.Station:TokyoMetro.ChiyodaBranch.Ayase\"." do
-            expect( ayase_branch.same_as ).to eq( "odpt.Station:TokyoMetro.ChiyodaBranch.Ayase" )
-          end
+        it "has attibute \'same_as\' and it is \'#{ valid_name_of_ayase_branch }\'" do
+          expect( ayase_branch.same_as ).to eq( valid_name_of_ayase_branch )
         end
 
-        describe "railway_line" do
-          it "(the station info of Ayase on Chiyoda Branch Line) should be on \"odpt.Railway:TokyoMetro.ChiyodaBranch\"." do
-            expect( ayase_branch.railway_line ).to eq( "odpt.Railway:TokyoMetro.ChiyodaBranch" )
-          end
+        it "on Chiyoda Branch Line" do
+          expect( ayase_branch.railway_line ).to eq( chiyoda_branch )
         end
 
-        describe "connecting_railway_lines" do
-          it "(the station info of Ayase on Chiyoda Branch Line) should include connecting railway info of Chiyoda Line." do
-            expect( ayase_branch.connecting_railway_lines.railway_lines ).to include( "odpt.Railway:TokyoMetro.Chiyoda" )
-          end
+        it "does not have attiribute \'id_urn\'" do
+          expect( ayase_branch.id_urn ).to be_nil
         end
 
-        describe "id_urn" do
-          it "(the station info of Ayase on Chiyoda Branch Line) should not contain \'id_urn\' info." do
-            expect( ayase_branch.id_urn ).to be_nil
-          end
+        it "does not have attiribute \'dc_date\'" do
+          expect( ayase_branch.dc_date ).to be_nil
         end
 
-        describe "id_urn" do
-          it "(the station info of Ayase on Chiyoda Branch Line) should not contain \'dc_date\' info." do
-            expect( ayase_branch.dc_date ).to be_nil
+        describe TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info do
+          # include odpt.Railway:TokyoMetro.Chiyoda
+          connecting_info_to_chiyoda_main = ayase_branch.connecting_railway_lines.find { | item | item.railway_line == chiyoda_main }
+          it "includes connecting railway info of Chiyoda Main Line" do
+            expect( connecting_info_to_chiyoda_main ).to be_present
           end
         end
 
       end
 
-      describe "北綾瀬" do
-        describe "exist" do
-          it "(the station info of Kita-ayase on Chiyoda Branch Line) should be present." do
-            expect( kita_ayase_branch ).to be_present
-          end
+      describe "Kita-ayase" do
+
+        it "exists" do
+          expect( kita_ayase_branch ).to be_present
         end
 
-        describe "same_as" do
-          it "(the station info of Kita-ayase on Chiyoda Branch Line) should be same as \"odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase\"." do
-            expect( kita_ayase_branch.same_as ).to eq( "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase" )
-          end
+        it "has attibute \'same_as\' and it is \'#{ valid_name_of_kita_ayase_branch }\'" do
+          expect( kita_ayase_branch.same_as ).to eq( valid_name_of_kita_ayase_branch )
         end
 
-        describe "railway_line" do
-          it "(the station info of Kita-ayase on Chiyoda Branch Line) should be on \"odpt.Railway:TokyoMetro.ChiyodaBranch\"." do
-            expect( ayase_branch.railway_line ).to eq( "odpt.Railway:TokyoMetro.ChiyodaBranch" )
-          end
+        it "on Chiyoda Branch Line" do
+          expect( ayase_branch.railway_line ).to eq( chiyoda_branch )
         end
+
       end
 
     end
