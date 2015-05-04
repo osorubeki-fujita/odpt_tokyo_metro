@@ -1,0 +1,12 @@
+"update":
+  title_ja: "更新情報"
+  url: "http://www.tokyometro.jp/update/rss/update.xml"
+"news":
+  title_ja: "ニュースリリース"
+  url: "http://www.tokyometro.jp/news/rss/news.xml"
+"newsletter":
+  title_ja: "ニュースレター"
+  url: "http://www.tokyometro.jp/corporate/newsletter/rss/newsletter.xml"
+"event":
+  title_ja: "イベント情報"
+  url: "http://www.tokyometro.jp/enjoy/event/rss/event.xml"
