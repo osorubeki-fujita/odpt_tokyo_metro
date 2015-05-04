@@ -61,7 +61,11 @@ class TokyoMetro::Factory::Decorate::MetaClass
   end
   
   def controller_of( url )
-    ::Rails.application.routes.recognize_path( url )[ :controller ]
+    begin
+      ::Rails.application.routes.recognize_path( url )[ :controller ]
+    rescue ::ActionController::RoutingError
+      nil
+    end
   end
   
   def action_of( url )
