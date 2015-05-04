@@ -30,7 +30,7 @@ module TokyoMetro::App::Renderer::Icon
   end
 
   def self.link_to_another_website( request , size = 1 )
-    FontAwesome::Stacked.new( request , [ { icon_name: :square , size: size + 1 } , { icon_name: :link_to_another_website_base , size: size , inverse: true } ] ).render
+    FontAwesome::Stacked.new( request , [ { icon_name: :square , size: size + 1 } , { icon_name: :link_to_another_website_base , size: size , inverse: true } ] )
   end
 
 end
