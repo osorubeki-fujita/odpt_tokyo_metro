@@ -60,11 +60,15 @@
 "top": "home"
 "home": "home"
 
-"open_another_window": "external-link-square"
-"link_to_another_website": "external-link"
+"open_another_window": "external-link"
+"link_to_another_website_base": "external-link-square"
 
 #-------- 仮定義
 
 "temp": "folder-open-o"
+
+#-------- 図形
+
+"square": "square"
 
 #-------- その他

@@ -1,12 +1,13 @@
 class TokyoMetro::App::Renderer::Icon::FontAwesome < TokyoMetro::App::Renderer::MetaClass
 
-  def initialize( request , icon_name , size = 1 , spin: nil , pulse: nil )
+  def initialize( request , icon_name , size = 1 , spin: nil , pulse: nil , inverse: nil )
     raise if spin and pulse
     super( request )
     @icon_name = icon_name
     @size = size
     @spin = spin
     @pulse = pulse
+    @inverse = inverse
   end
 
   def render
@@ -19,15 +20,18 @@ class TokyoMetro::App::Renderer::Icon::FontAwesome < TokyoMetro::App::Renderer::
 
   def classes
     ary = [ :fa , "fa-#{ @icon_name }" , "fa-#{ @size }x" ]
-    
+
     if @spin
       ary << [ "fa-spin" ]
-    end
-    if @pulse
+    elsif @pulse
       ary << [ "fa-pulse" ]
     end
 
-    return ary
+    if @inverse
+      ary << [ "fa-inverse" ]
+    end
+
+    ary
   end
 
   def h_locals
