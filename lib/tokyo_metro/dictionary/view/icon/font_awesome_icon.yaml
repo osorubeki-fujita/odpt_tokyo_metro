@@ -69,6 +69,7 @@
 
 #-------- 図形
 
-"square": "square"
+"square_filled": "square"
+"square_stroked": "square-o"
 
 #-------- その他
