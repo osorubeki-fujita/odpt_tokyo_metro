@@ -39,13 +39,21 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
   end
 
   def self.top( request )
-    self.new(
+    top = self.new(
       request ,
       nil ,
       "Top" ,
       url: "/" ,
       icon_name: :top
     )
+
+    class << top
+      def current_category?
+        current_contoller? and current_action?
+      end
+    end
+    
+    top
   end
 
   def self.train_location( request )

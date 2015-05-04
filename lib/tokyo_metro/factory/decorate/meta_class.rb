@@ -51,6 +51,22 @@ class TokyoMetro::Factory::Decorate::MetaClass
   def path
     ::Rails.application.routes.recognize_path( @request.referer )
   end
+  
+  def current_controller
+    controller_of( @request.fullpath )
+  end
+  
+  def current_action
+    controller_of( @request.fullpath )
+  end
+  
+  def controller_of( url )
+    ::Rails.application.routes.recognize_path( url )[ :controller ]
+  end
+  
+  def action_of( url )
+    ::Rails.application.routes.recognize_path( url )[ :action ]
+  end
 
   def v
     @@action_view_base
