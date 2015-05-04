@@ -13,7 +13,8 @@ end
 
 #--------
 
-options = [ :station ]
+options = [ ]
+# options = [ :station ]
 
 #--------
 
