@@ -80,10 +80,10 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
     - if open_another_window
       - if link_to_another_website
         %div{ class: :link_to_another_website }
-          = ::TokyoMetro::App::Renderer::Icon.open_another_window( request , 1 ).render
+          = ::TokyoMetro::App::Renderer::Icon.link_to_another_website( request , 1 ).render
       - else
         %div{ class: :open_another_window }
-          = ::TokyoMetro::App::Renderer::Icon.link_to_another_website( request , 1 ).render
+          = ::TokyoMetro::App::Renderer::Icon.open_another_window( request , 1 ).render
     HAML
   end
 
