@@ -114,7 +114,7 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
       open_another_window: open_another_window? ,
       additional_info: @additional_info ,
       additional_info_position: @additional_info_position ,
-      link_to_external_page: @link_to_external_page
+      link_to_another_website: @link_to_another_website
     } )
   end
 
