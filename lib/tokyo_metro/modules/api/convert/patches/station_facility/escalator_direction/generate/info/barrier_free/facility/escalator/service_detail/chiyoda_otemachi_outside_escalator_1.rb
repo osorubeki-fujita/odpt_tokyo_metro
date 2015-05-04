@@ -12,5 +12,3 @@ module TokyoMetro::Modules::Api::Convert::Patches::StationFacility::EscalatorDir
   end
 
 end
-
-# Complete: 2014/12/27 10:17
