@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::Icon::FontAwesome::Stacked < TokyoMetro::App::R
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %span{ class: [ "fa-stack" , "fa-lg" ] }
   - icon_settings.each do | icon |
-    = ::TokyoMetro::App::Renderer::Icon::FontAwesome.send( request , icon[ :icon_name ] , icon[ :size ] , spin: icon[ :spin ] , pulse: icon[ :pulse ] , inverse: icon[ :inverse ] ).render
+    = ::TokyoMetro::App::Renderer::Icon::FontAwesome.send( icon[ :icon_name ] , request , icon[ :size ] , spin: icon[ :spin ] , pulse: icon[ :pulse ] , inverse: icon[ :inverse ] ).render
     HAML
   end
   
