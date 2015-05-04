@@ -49,10 +49,10 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
 
     class << top
       def current_category?
-        current_contoller? and current_action?
+        current_controller? and current_action?
       end
     end
-    
+
     top
   end
 
