@@ -18,14 +18,14 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %ul{ class: [ :each_railway_line , railway_line_decorated.css_class_name ] }
   %li{ class: li_classes }
-    = link_to_unless( request.fullpass == url_for_railway_line_page , "" , url_for_railway_line_page )
+    = link_to_unless( request.fullpath == url_for_railway_line_page , "" , url_for_railway_line_page )
     %div{ class: div_classes }
       = railway_line_decorated.render_railway_line_code( small: small_railway_line_code )
       = railway_line_decorated.render_name( prefix_ja: prefix_ja , prefix_en: prefix_en , suffix_ja: suffix_ja , suffix_en: suffix_en )
   - survey_years.each do | survey_year |
     - url = url_for( common_setting_of_url_for_year_page.merge( { survey_year: survey_year } ) )
     %li{ class: :survey_year }
-      = link_to_unless( request.fullpass == url , "" , url )
+      = link_to_unless( request.fullpath == url , "" , url )
       %p{ class: :text_en }<
         = survey_year
     HAML

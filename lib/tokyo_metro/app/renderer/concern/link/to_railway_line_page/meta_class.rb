@@ -18,7 +18,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %li{ class: li_classes }
-  = link_to_unless( request.fullpass == url , "" , url )
+  = link_to_unless( request.fullpath == url , "" , url )
   %div{ class: div_classes }
     = railway_line_decorated.render_railway_line_code( small: small_railway_line_code )
     = railway_line_decorated.render_name( prefix_ja: prefix_ja , prefix_en: prefix_en , suffix_ja: suffix_ja , suffix_en: suffix_en )
