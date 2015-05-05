@@ -24,6 +24,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::Station < TokyoMetro
   def proc_for_links_to_railway_line_pages
     ::Proc.new {
       h_locals_for_this_proc = {
+        request: request ,
         railway_lines_prior: railway_lines_prior ,
         railway_lines_not_prior: railway_lines_not_prior ,
         years: @years

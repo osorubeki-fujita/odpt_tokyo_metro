@@ -44,7 +44,8 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
   def h_locals
     super.merge({
       survey_years: @survey_years ,
-      url_for_railway_line_page: url_helper.url_for(
+      url_for_railway_line_page: url_helpers.url_for(
+        host: current_host ,
         controller: @controller ,
         action: :action_for_railway_line_or_year_page ,
         railway_line: railway_line_page_name
@@ -55,6 +56,6 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
         railway_line: railway_line_page_name
       }
     })
-  end
+  end 
 
 end

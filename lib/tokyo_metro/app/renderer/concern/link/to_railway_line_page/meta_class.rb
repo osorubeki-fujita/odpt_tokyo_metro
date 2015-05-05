@@ -81,12 +81,14 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
     end
   end
 
+  private
+
   def url
     case @link_type
     when :railway_line_page_under_action_for_station
-      url_helper.url_for( controller: @controller , railway_line: railway_line_page_name )
+      url_helpers.url_for( controller: @controller , railway_line: railway_line_page_name )
     when :action_for_station , :standard
-      url_helper.url_for( controller: @controller , action: railway_line_page_name )
+      url_helpers.url_for( controller: @controller , action: railway_line_page_name )
     end
   end
 

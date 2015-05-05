@@ -27,7 +27,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
 
   def proc_for_links_to_railway_line_pages
     ::Proc.new {
-      h.render inline: <<-HAML , type: :haml , locals: { all_railway_lines: @all_railway_lines , survey_years: @years }
+      h.render inline: <<-HAML , type: :haml , locals: { request: request , all_railway_lines: @all_railway_lines , survey_years: @years }
 %ul{ id: :links_to_railway_line_pages , class: :links }
   %li{ class: [ :title , :in_station_page ] }<
     != "各路線 各駅の乗降客数"
