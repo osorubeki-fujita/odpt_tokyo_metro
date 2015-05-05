@@ -46,7 +46,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
       ary << @additional_class_of_li
     end
 
-    if current_railway_line = "#{ railway_line_object.css_class_name }_line"
+    if current_railway_line == "#{ railway_line_object.css_class_name }_line"
       ary << :this_page
     end
 
