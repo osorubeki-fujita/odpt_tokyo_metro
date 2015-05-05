@@ -11,9 +11,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Tab
   end
 
   def li_class
-    ::Proc.new { | info |
-      [ :transfer_info , info.railway_line.css_class_name ]
-    }
+    nil
   end
 
 end

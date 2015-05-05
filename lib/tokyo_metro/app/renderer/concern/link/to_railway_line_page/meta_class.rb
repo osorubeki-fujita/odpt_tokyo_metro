@@ -55,7 +55,11 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   end
 
   def div_classes
-    [ :link_to_railway_line_page ]
+    if url.present?
+      [ :link_to_railway_line_page ]
+    else
+      [ :railway_line_with_no_link ]
+    end
   end
 
   def add_railway_line_css_class_name_to_li_classes?

@@ -1,8 +1,8 @@
 class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRailwayLine < TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::FromStationFacilityPage
 
-  def initialize( request , connecting_railway_line_decorated , in_travel_time_infos: false )
+  def initialize( request , connecting_railway_line_decorated , display_additional_infos: false )
     @connecting_railway_line_decorated = connecting_railway_line_decorated
-    @in_travel_time_infos = in_travel_time_infos
+    @display_additional_infos = display_additional_infos
 
     railway_line_decorated = connecting_railway_line_decorated.railway_line.decorate
 
@@ -10,7 +10,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
   end
 
   private
-  
+
   def object
     @connecting_railway_line_decorated.object
   end
@@ -20,7 +20,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
   end
 
   def url
-    @connecting_railway_line_decorated.url
+    @connecting_railway_line_decorated.url_for_railway_line_page
   end
 
   def valid_railway_line_decorator_class?
