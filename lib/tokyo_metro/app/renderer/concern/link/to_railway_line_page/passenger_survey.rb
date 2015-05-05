@@ -45,16 +45,16 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
     super.merge({
       survey_years: @survey_years ,
       url_for_railway_line_page: url_helpers.url_for(
-        host: current_host ,
         controller: @controller ,
         action: :action_for_railway_line_or_year_page ,
-        railway_line: railway_line_page_name
+        railway_line: railway_line_page_name ,
+        only_path: true
       ) ,
       common_setting_of_url_for_year_page: {
-        host: current_host ,
         controller: @controller ,
         action: :action_for_railway_line_or_year_page ,
-        railway_line: railway_line_page_name
+        railway_line: railway_line_page_name ,
+        only_path: true
       }
     })
   end 
