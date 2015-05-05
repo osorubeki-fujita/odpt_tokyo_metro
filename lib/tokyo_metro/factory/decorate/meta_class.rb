@@ -51,15 +51,15 @@ class TokyoMetro::Factory::Decorate::MetaClass
   def path
     ::Rails.application.routes.recognize_path( @request.referer )
   end
-  
+
   def current_host
     @request.host
   end
-  
+
   def current_controller
     controller_of( @request.fullpath )
   end
-  
+
   def current_action
     action_of( @request.fullpath )
   end
@@ -111,19 +111,19 @@ class TokyoMetro::Factory::Decorate::MetaClass
     def v
       @@action_view_base
     end
-  
+
     def c
       @@action_controller_base
     end
-  
+
     def u
       @@url_helpers
     end
-  
+
     def url_helpers
       @@url_helpers
     end
-  
+
     def h
       @@application_controller_helper
     end

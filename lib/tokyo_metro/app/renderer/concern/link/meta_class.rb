@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
 
     raise "Error" if additional_info.present? and additional_info_position.blank?
     raise "Error" if additional_info.blank? and additional_info_position.present?
-    
+
     raose "Error" if link_to_another_website and !( open_another_window )
 
     @title_ja = title_ja
@@ -23,7 +23,7 @@ class TokyoMetro::App::Renderer::Concern::Link::MetaClass < TokyoMetro::App::Ren
 
     @additional_info = additional_info
     @additional_info_position = additional_info_position
-    
+
     @link_to_another_website = link_to_another_website
   end
 
