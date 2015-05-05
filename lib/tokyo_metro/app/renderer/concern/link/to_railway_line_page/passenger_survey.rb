@@ -51,6 +51,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
         railway_line: railway_line_page_name
       ) ,
       common_setting_of_url_for_year_page: {
+        host: current_host ,
         controller: @controller ,
         action: :action_for_railway_line_or_year_page ,
         railway_line: railway_line_page_name
