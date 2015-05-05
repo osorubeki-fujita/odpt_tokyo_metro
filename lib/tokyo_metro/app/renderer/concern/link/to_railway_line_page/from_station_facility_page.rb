@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::FromStationFa
   def li_classes
     ary = super()
     ary << :connection
-    if railway_line_object.railway_line.tokyo_metro?
+    if railway_line_object.tokyo_metro?
       ary << :tokyo_metro
     else
       ary << :other_operators
