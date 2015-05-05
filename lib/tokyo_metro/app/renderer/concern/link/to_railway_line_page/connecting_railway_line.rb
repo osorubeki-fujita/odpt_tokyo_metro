@@ -26,4 +26,15 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
     end
   end
 
+  def li_classes
+    ary = super()
+    if object.not_recommended?
+      ary << :not_recommended
+    end
+    if object.cleared?
+      ary << :cleared
+    end
+    ary
+  end
+
 end
