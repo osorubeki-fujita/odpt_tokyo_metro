@@ -6,7 +6,6 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
     @controller = :passenger_survey
     @link_type = :action_for_station
 
-    @small_railway_line_code = true
     @suffix_ja = "の各駅"
     @prefix_en = "Stations on"
 

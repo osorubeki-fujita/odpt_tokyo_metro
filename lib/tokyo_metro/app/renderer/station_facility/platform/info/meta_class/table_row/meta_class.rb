@@ -24,16 +24,23 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Tab
       end
     end
 
-    h.render inline: <<-HAML , type: :haml , locals: { ary: ary }
+    h.render inline: <<-HAML , type: :haml , locals: { ary: ary , ul_class: ul_class , li_class: li_class }
 - ary.each do | element |
   - if element.blank?
     = ::StationFacilityPlatformInfoDecorator.render_an_empty_cell
+
   - else
     %td{ class: :present , colspan: element[ :number_of_connected_cells ] }<
-      %ul
+      %ul{ class: ul_class }
         - element[ :infos ].each do | info |
-          %li<
-            = element[ :proc_for_display ].call( info )
+
+          - if li_class.instance_of?( ::Proc )
+            %li{ class: li_class.call( info ) }<
+              = element[ :proc_for_display ].call( info )
+
+          - elsif li_class.string? or li_class.symbol? or ( li_class.instance_of?( ::Array ) and li_class.all?( &:string_or_symbol? ) )
+            %li{ class: [ li_class ].flatten }<
+              = element[ :proc_for_display ].call( info )
     HAML
   end
 
@@ -75,6 +82,14 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Tab
     else
       false
     end
+  end
+
+  def ul_class
+    raise "Error: The method \'#{ __method__ }\' is not defined yet in this class."
+  end
+
+  def li_class
+    raise "Error: The method \'#{ __method__ }\' is not defined yet in this class."
   end
 
 end

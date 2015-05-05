@@ -3,6 +3,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   def initialize( request , railway_line_decorated )
     super( request )
     @railway_line_decorated = railway_line_decorated
+    @small_railway_line_code = true
     raise unless valid_railway_line_decorator_class?
   end
 
@@ -28,7 +29,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   end
 
   def railway_line_object
-    object.railway
+    object.railway_line
   end
   
   def railway_line_page_name
@@ -77,13 +78,9 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
       controller: @controller ,
       li_classes: li_classes ,
       div_classes: div_classes ,
-      additional_info_to_display: additional_info_to_display
+      additional_info_to_display: additional_info_to_display ,
+      url: url
     })
-    if url.present?
-      h_base.merge({ url: url })
-    else
-      h_base
-    end
   end
 
   def url

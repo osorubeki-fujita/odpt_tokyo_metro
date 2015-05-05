@@ -89,12 +89,12 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Eac
 - if inside.any?( &:present? )
   %tr{ class: :barrier_free_infos_inside }
     = ::StationFacilityPlatformInfoDecorator.render_inside_barrier_free_facility_title
-    = ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::BarrierFreeFacilityInfos.new( request , inside ).render
+    = ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::BarrierFreeFacilityInfos::Inside.new( request , inside ).render
 
 - if outside.any?( &:present? )
   %tr{ class: :barrier_free_infos_outside }
     = ::StationFacilityPlatformInfoDecorator.render_outside_barrier_free_facility_title
-    = ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::BarrierFreeFacilityInfos.new( request , outside ).render
+    = ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::BarrierFreeFacilityInfos::Outside.new( request , outside ).render
       HAML
     end
   end

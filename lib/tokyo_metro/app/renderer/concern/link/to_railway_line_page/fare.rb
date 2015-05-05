@@ -3,7 +3,6 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::Fare < TokyoM
   def initialize( request , railway_line_decorated , station_info )
     super( request , railway_line_decorated )
 
-    @small_railway_line_code = true
     @suffix_ja = "の各駅まで"
     @prefix_en = "To stations on"
 
