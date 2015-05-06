@@ -16,8 +16,8 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   %div{ class: div_classes }
     = railway_line_decorated.render_railway_line_code( small: small_railway_line_code )
     = railway_line_decorated.render_name( prefix_ja: prefix_ja , prefix_en: prefix_en , suffix_ja: suffix_ja , suffix_en: suffix_en )
-    - if additional_info_to_display.present?
-      = additional_info_to_display.call
+    - if optional_info_to_display.present?
+      = optional_info_to_display.call
       HAML
     end
   end
@@ -82,7 +82,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
       controller: @controller ,
       li_classes: li_classes ,
       div_classes: div_classes ,
-      additional_info_to_display: additional_info_to_display ,
+      optional_info_to_display: optional_info_to_display ,
       url: url
     })
   end
@@ -100,7 +100,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
     @railway_line_decorated.instance_of?( ::RailwayLineDecorator )
   end
 
-  def additional_info_to_display
+  def optional_info_to_display
     nil
   end
 
