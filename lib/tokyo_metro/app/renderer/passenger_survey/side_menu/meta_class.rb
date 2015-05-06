@@ -34,7 +34,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
     %span{ class: :small }<
       = "（年度別）"
   - all_railway_lines.each do | railway_line |
-    = ::TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurvey.new( request , railway_line.decorate , survey_years ).render
+    = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::LinkToRailwayLinePage.new( request , railway_line.decorate , survey_years ).render
       HAML
     }
   end
