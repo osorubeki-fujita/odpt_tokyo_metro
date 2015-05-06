@@ -4,8 +4,8 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Tab
 
   def set_proc_for_display
     @proc_for_display = ::Proc.new { | info |
-      # ::TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRailwayLine::FromPlatfromInfo.new( request , info.decorate ).render
-      info.decorate.render
+      ::TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRailwayLine::FromPlatfromInfo.new( request , info.decorate ).render
+      # info.decorate.render
     }
   end
 
