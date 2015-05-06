@@ -49,59 +49,35 @@ class TokyoMetro::Factory::Decorate::MetaClass
   end
 
   def path
-    ::Rails.application.routes.recognize_path( @request.referer )
+    recognize_path( @request.referer )
   end
 
   def current_host
     @request.host
   end
-
-  def current_controller
-    controller_of( @request.fullpath )
+  
+  [ :controller , :action , :railway_line , :station ].each do | method_base_name |
+    eval <<-DEF
+      def #{ method_base_name }_of( url )
+        begin
+          recognize_path( url )[ :#{ method_base_name } ]
+        rescue ::ActionController::RoutingError
+          nil
+        end
+      end
+      
+      def current_#{ method_base_name }
+        #{ method_base_name }_of( fullpath )
+      end
+    DEF
   end
-
-  def current_action
-    action_of( @request.fullpath )
+  
+  def recognize_path( url )
+    ::Rails.application.routes.recognize_path( url )
   end
-
-  def controller_of( url )
-    begin
-      ::Rails.application.routes.recognize_path( url )[ :controller ]
-    rescue ::ActionController::RoutingError
-      nil
-    end
-  end
-
-  def action_of( url )
-    begin
-      ::Rails.application.routes.recognize_path( url )[ :action ]
-    rescue ::ActionController::RoutingError
-      nil
-    end
-  end
-
-  def current_railway_line
-    railway_line_of( @request.fullpath )
-  end
-
-  def railway_line_of( url )
-    begin
-      ::Rails.application.routes.recognize_path( url )[ :railway_line ]
-    rescue ::ActionController::RoutingError
-      nil
-    end
-  end
-
-  def current_station
-    station_of( @request.fullpath )
-  end
-
-  def station_of( url )
-    begin
-      ::Rails.application.routes.recognize_path( url )[ :station ]
-    rescue ::ActionController::RoutingError
-      nil
-    end
+  
+  def fullpath
+    @request.fullpath
   end
 
   def v

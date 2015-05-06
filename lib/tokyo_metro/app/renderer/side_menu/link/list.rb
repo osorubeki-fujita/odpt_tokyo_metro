@@ -16,9 +16,9 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Rendere
 
   private
 
-  def set_link_instances( class_name , link_instance_names )
-    args = [ method , @request , opts ].flatten
-    link_instance_names.map { | method | class_name.send( *args ) }
+  def set_link_instances( class_name , link_instance_names , opts )
+    args = [ @request , opts ].flatten
+    link_instance_names.map { | method | class_name.send( method , *args ) }
   end
 
   def h_locals
@@ -28,7 +28,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Rendere
   def self.to_main_contents( request )
     self.new(
       request ,
-      ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent , "links_#{__method__}" ,
+      ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index , "links_#{__method__}" ,
       [
         :top , :train_location , :train_information ,
         :railway_line , :station_facility ,
@@ -57,12 +57,11 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Rendere
     )
   end
 
-  def self.to_station_pages( request , station_name )
+  def self.to_station_info_pages( request )
     self.new(
       request ,
-      ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation , "links_#{__method__}" ,
-      [ :train_information , :station_facility , :station_timetable , :fare ] ,
-      station_name
+      ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation , :links ,
+      [ :train_information , :station_facility , :station_timetable , :fare ]
     )
   end
 

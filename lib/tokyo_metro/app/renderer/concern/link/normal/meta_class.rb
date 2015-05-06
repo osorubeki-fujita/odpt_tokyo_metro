@@ -131,9 +131,9 @@ class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::
     ary
   end
 
-  def link_to_page_on_the_same_host?
-    @request.host == host_of( @url )
-  end
+  # def link_to_page_on_the_same_host?
+    # @request.host == host_of( @url )
+  # end
 
   def link_to_current_page?
     @request.fullpath == @url
