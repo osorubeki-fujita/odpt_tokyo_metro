@@ -9,7 +9,7 @@ class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::
     raise "Error" if additional_info.present? and additional_info_position.blank?
     raise "Error" if additional_info.blank? and additional_info_position.present?
 
-    raose "Error" if link_to_another_website and !( open_another_window )
+    raise "Error" if link_to_another_website and !( open_another_window )
 
     @title_ja = title_ja
     @title_en = title_en
@@ -145,11 +145,7 @@ class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::
   end
 
   def link_for_page_on_the_same_category?
-    if @link_to_another_website
-      false
-    else
-      link_for_page_on_the_same_controller?
-    end
+    !( @link_to_another_website ) and link_for_page_on_the_same_controller?
   end
 
   def link_for_page_of_the_same_action?

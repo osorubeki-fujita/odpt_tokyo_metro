@@ -7,8 +7,12 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
 
   private
 
-  def object
+  def connecting_railway_line_object
     @connecting_railway_line_decorated.object
+  end
+
+  def object
+    connecting_railway_line_object
   end
 
   def to_render?

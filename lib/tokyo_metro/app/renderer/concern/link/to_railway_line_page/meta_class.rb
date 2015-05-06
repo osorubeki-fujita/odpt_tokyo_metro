@@ -90,7 +90,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   def url
     case @link_type
     when :railway_line_page_under_action_for_station
-      url_helpers.url_for( controller: @controller , railway_line: railway_line_page_name , only_path: true )
+      url_helpers.url_for( controller: @controller , action: :action_for_station_page , station: current_station , railway_line: railway_line_page_name , only_path: true )
     when :action_for_station , :standard
       url_helpers.url_for( controller: @controller , action: railway_line_page_name , only_path: true )
     end

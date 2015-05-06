@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetro::App::Renderer::SideMenu::Link::MetaClass::Info
+class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index < TokyoMetro::App::Renderer::SideMenu::Link::MetaClass
 
   def initialize( request  , title_ja , title_en , url: nil , controller: nil , icon_name: nil , additional_class_name_of_text_domain: nil )
     actual_url = set_actual_url( url , controller )
@@ -44,7 +44,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       nil ,
       "Top" ,
       controller: :application ,
-      icon_name: :top
+      icon_name: __method__
     )
 
     class << top
@@ -61,8 +61,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       "現在運行中の列車" ,
       "Train location" ,
-      controller: :train_location ,
-      icon_name: :train_location
+      controller: __method__ ,
+      icon_name: __method__
     )
   end
 
@@ -71,8 +71,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       "列車運行情報" ,
       "Train information" ,
-      controller: :train_information ,
-      icon_name: :train_information
+      controller: __method__ ,
+      icon_name: __method__
     )
   end
 
@@ -81,8 +81,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       "路線のご案内" ,
       "Railway lines" ,
-      controller: :railway_line ,
-      icon_name: :railway_line
+      controller: __method__ ,
+      icon_name: __method__
     )
   end
 
@@ -91,8 +91,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       "駅のご案内" ,
       "Stations" ,
-      controller: :station_facility ,
-      icon_name: :station_facility
+      controller: __method__ ,
+      icon_name: __method__
     )
   end
 
@@ -101,8 +101,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       "時刻表（路線別）" ,
       "Timetables of railway lines" ,
-      controller: :railway_timetable ,
-      icon_name: :railway_timetable
+      controller: __method__ ,
+      icon_name: __method__
     )
   end
 
@@ -111,8 +111,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       "各駅の時刻表" , # "時刻表（駅別）" ,
       "Timetables of stations" ,
-      controller: :station_timetable ,
-      icon_name: :station_timetable
+      controller: __method__ ,
+      icon_name: __method__
     )
   end
 
@@ -121,8 +121,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       "運賃のご案内" ,
       "Fares" ,
-      controller: :fare ,
-      icon_name: :fare
+      controller: __method__ ,
+      icon_name: __method__
     )
   end
 
@@ -131,8 +131,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Info < TokyoMetr
       request ,
       "各駅の乗降客数" ,
       "Passenger surveys" ,
-      controller: :passenger_survey ,
-      icon_name: :passenger_survey
+      controller: __method__ ,
+      icon_name: __method__
     )
   end
 

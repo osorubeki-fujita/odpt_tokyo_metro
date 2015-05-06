@@ -79,14 +79,26 @@ class TokyoMetro::Factory::Decorate::MetaClass
       nil
     end
   end
-  
+
   def current_railway_line
-    action_of( @request.fullpath )
+    railway_line_of( @request.fullpath )
   end
-  
+
   def railway_line_of( url )
     begin
       ::Rails.application.routes.recognize_path( url )[ :railway_line ]
+    rescue ::ActionController::RoutingError
+      nil
+    end
+  end
+
+  def current_station
+    station_of( @request.fullpath )
+  end
+
+  def station_of( url )
+    begin
+      ::Rails.application.routes.recognize_path( url )[ :station ]
     rescue ::ActionController::RoutingError
       nil
     end
