@@ -108,8 +108,8 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
 
   # @!group 駅の判定
 
-  def between_wakoshi_and_kotake_mukaihara?
-    ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_wakoshi_and_kotake_mukaihara_in_system
+  def between_wakoshi_and_hikawadai?
+    ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_wakoshi_and_hikawadai_in_system
     at_these_stations?( ary )
   end
 
