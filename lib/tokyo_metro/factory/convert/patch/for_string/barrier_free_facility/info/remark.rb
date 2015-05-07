@@ -12,7 +12,7 @@ module TokyoMetro::Factory::Convert::Patch::ForString::BarrierFreeFacility::Info
     str = str.gsub( /お?乗り?換え?/ , "お乗り換え" )
     str = str.gsub( /(?<=（時間制限)：?(?=\d{1,2}時～\d{1,2}時）)/ , "：" )
     str = str.gsub( "時間制限" , "利用可能時間" )
-    str = str.gsub( /(?<=が、利用可能時間)(?=があります。) , "に制限" )
+    str = str.gsub( /(?<=が、利用可能時間)(?=があります。)/ , "に制限" )
 
     str = str.gsub( /(利用時間に制限があります。)\n?((?:[A-Z]?(?:\d{1,2})?[a-z]?出入口（\d{1,2}時～\d{1,2}時）)+)/ ) {
       str_ary = ::Array.new
