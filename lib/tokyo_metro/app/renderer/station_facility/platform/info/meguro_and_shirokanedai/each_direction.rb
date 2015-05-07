@@ -1,10 +1,7 @@
-class TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenMeguroAndShirokaneTakanawa::EachDirection < TokyoMetro::App::Renderer::StationFacility::Platform::Info::MultipleRailwayLines::EachDirection
+class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MeguroAndShirokanedai::EachDirection < TokyoMetro::App::Renderer::StationFacility::Platform::Info::MultipleRailwayLines::EachDirection
 
   include ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenMeguroAndShirokaneTakanawa::Common
-
-  def of_special_direction?
-    @railway_direction.railway_line.same_as == "odpt.Railway:TokyoMetro.Namboku" and @railway_direction.same_as == "odpt.RailwayDirection:TokyoMetro.Namboku.AkabaneIwabuchi"
-  end
+  include ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenMeguroAndShirokaneTakanawa::OfSpecialDirection
 
   def render_special_direction_ja
     h.render inline: <<-HAML , type: :haml

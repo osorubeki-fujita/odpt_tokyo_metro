@@ -26,9 +26,17 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
         ::RailwayLine.where( id: railway_line_ids_of_platform_infos )
       )
 
-    when :between_meguro_and_shirokane_takanawa
+    when :meguro_and_shirokanedai
       puts @type_of_platform_infos
-      ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenMeguroAndShirokaneTakanawa::Whole.new(
+      ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MeguroAndShirokanedai::Whole.new(
+        request ,
+        @platform_infos_grouped_by_railway_line.values.first ,
+        ::RailwayLine.where( same_as: [ "odpt.Railway:TokyoMetro.Namboku" , "odpt.Railway:Toei.Mita" ] ).order( :id )
+      )
+
+    when :shirokane_takanawa
+      puts @type_of_platform_infos
+      ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::ShirokaneTakanawa::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
         ::RailwayLine.where( same_as: [ "odpt.Railway:TokyoMetro.Namboku" , "odpt.Railway:Toei.Mita" ] ).order( :id )
@@ -71,8 +79,12 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
       :between_wakoshi_and_hikawadai
     elsif platform_infos_of_yurakucho_and_fukutoshin_line_at_kotake_mukaihara?
       :kotake_mukaihara
-    elsif platform_infos_of_namboku_and_toei_mita_line_between_meguro_and_shirokane_takanawa?
-      :between_meguro_and_shirokane_takanawa
+
+    elsif platform_infos_of_namboku_and_toei_mita_line_at_meguro_or_shirokanedai?
+      :meguro_and_shirokanedai
+    elsif platform_infos_of_namboku_and_toei_mita_line_at_shirokane_takanawa?
+      :shirokane_takanawa
+
     else
       :normal
     end
@@ -92,8 +104,12 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
     platform_infos_of_yurakucho_and_fukutoshin_line? and at_kotake_mukaihara?
   end
 
-  def platform_infos_of_namboku_and_toei_mita_line_between_meguro_and_shirokane_takanawa?
-    platform_infos_of_namboku_line? and between_meguro_and_shirokane_takanawa?
+  def platform_infos_of_namboku_and_toei_mita_line_at_meguro_or_shirokanedai?
+    platform_infos_of_namboku_line? and ( at_meguro? or at_shirokanedai? )
+  end
+
+  def platform_infos_of_namboku_and_toei_mita_line_at_shirokane_takanawa?
+    platform_infos_of_namboku_line? and at_shirokane_takanawa?
   end
 
   # @!group 路線の判定
@@ -117,17 +133,21 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
     at_these_stations?( ary )
   end
 
-  def at_kotake_mukaihara?
-    at_these_stations?( "KotakeMukaihara" )
-  end
-
   def between_meguro_and_shirokane_takanawa?
     ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.namboku_and_toei_mita_line_common_stations_in_system
     at_these_stations?( ary )
   end
+  
+  [ :kotake_mukaihara , :meguro , :shirokanedai , :shirokane_takanawa ].each do | station_name |
+    eval <<-DEF
+      def #{ station_name }
+        at_these_stations?( "#{ station_name.camelize }" )
+      end
+    DEF
+  end
 
   def at_these_stations?( *stations_in_system )
-    stations_in_system.map { | station | "odpt.StationFacility:TokyoMetro.#{station}" }.include?( @station_facility.same_as )
+    [ stations_in_system ].flatten.map { | station | "odpt.StationFacility:TokyoMetro.#{station}" }.include?( @station_facility.same_as )
   end
 
   # @!endgroup
