@@ -95,7 +95,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
       url_helpers.url_for( controller: @controller , action: railway_line_page_name , only_path: true )
     end
   end
-  
+
   def valid_railway_line_decorator_class?
     @railway_line_decorated.instance_of?( ::RailwayLineDecorator )
   end

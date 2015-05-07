@@ -20,7 +20,11 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
   end
 
   def url
-    @connecting_railway_line_decorated.url_for_railway_line_page
+    if connected_to_jr_lines?
+      nil
+    else
+      @connecting_railway_line_decorated.url_for_railway_line_page
+    end
   end
 
   def valid_railway_line_decorator_class?
@@ -45,6 +49,10 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
 = connecting_station_info.decorate.render_connection_info_from_another_station
       HAML
     }
+  end
+  
+  def connected_to_jr_lines?
+    @connecting_railway_line_decorated.instance_of?( ::RailwayLineDecorator ) and connecting_railway_line_object.same_as == "odpt.Railway:JR-East"
   end
 
 end
