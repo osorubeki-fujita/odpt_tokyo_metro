@@ -26,10 +26,10 @@ module TokyoMetro::Factory::Convert::Patch::ForString::BarrierFreeFacility::Info
         s.gsub( /\A([A-Z]?(?:\d{1,2})?[a-z]?出入口)（(\d{1,2}時～\d{1,2}時)）\Z/ ) { "#{ $1 }：#{ $2 }" }
       }
       str_ary << service_times
-      str_ary.flatten.join( "\n" )
+      str_ary.flatten.join( "\n" ) + "\n"
     }
 
-    str
+    str.gsub( /\n\Z/ , "" )
   end
 
 end
