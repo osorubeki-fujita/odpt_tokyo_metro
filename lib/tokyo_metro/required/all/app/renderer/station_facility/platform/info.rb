@@ -6,7 +6,9 @@ class TokyoMetro::Required::All::App::Renderer::StationFacility::Platform::Info 
       Normal.files ,
       MultipleRailwayLines.files ,
       BetweenMeguroAndShirokaneTakanawa.files ,
-      BetweenWakoshiAndKotakeMukaihara.files
+      BetweenWakoshiAndKotakeMukaihara.files ,
+      BetweenWakoshiAndHikawadai.files ,
+      KotakeMukaihara.files
     ]
   end
 

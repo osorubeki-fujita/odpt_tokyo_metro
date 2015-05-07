@@ -10,8 +10,15 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
   def to_a
     ary = ::Array.new
     case @type_of_platform_infos
-    when :between_wakoshi_and_kotake_mukaihara
+    when :between_wakoshi_and_hikawadai
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakoshiAndKotakeMukaihara::Whole.new(
+        request ,
+        @platform_infos_grouped_by_railway_line.values.first ,
+        ::RailwayLine.where( id: railway_line_ids_of_platform_infos )
+      )
+
+    when :kotake_mukaihara
+      ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::KotakeMukaihara::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
         ::RailwayLine.where( id: railway_line_ids_of_platform_infos )
@@ -56,8 +63,10 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
   end
 
   def type_of_platform_infos
-    if platform_infos_of_yurakucho_and_fukutoshin_line_between_wakoshi_and_kotake_mukaihara?
-      :between_wakoshi_and_kotake_mukaihara
+    if platform_infos_of_yurakucho_and_fukutoshin_line_between_wakoshi_and_hikawadai?
+      :between_wakoshi_and_hikawadai
+    elsif platform_infos_of_yurakucho_and_fukutoshin_line_at_kotake_mukaihara?
+      :kotake_mukaihara
     elsif platform_infos_of_namboku_and_toei_mita_line_between_meguro_and_shirokane_takanawa?
       :between_meguro_and_shirokane_takanawa
     else
@@ -71,8 +80,12 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
 
   # @!group 路線と駅の判定
 
-  def platform_infos_of_yurakucho_and_fukutoshin_line_between_wakoshi_and_kotake_mukaihara?
-    platform_infos_of_yurakucho_and_fukutoshin_line? and between_wakoshi_and_kotake_mukaihara?
+  def platform_infos_of_yurakucho_and_fukutoshin_line_between_wakoshi_and_hikawadai?
+    platform_infos_of_yurakucho_and_fukutoshin_line? and between_wakoshi_and_hikawadai?
+  end
+  
+  def platform_infos_of_yurakucho_and_fukutoshin_line_at_kotake_mukaihara?
+    platform_infos_of_yurakucho_and_fukutoshin_line? and at_kotake_mukaihara?
   end
 
   def platform_infos_of_namboku_and_toei_mita_line_between_meguro_and_shirokane_takanawa?
@@ -98,6 +111,10 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
   def between_wakoshi_and_kotake_mukaihara?
     ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_wakoshi_and_kotake_mukaihara_in_system
     at_these_stations?( ary )
+  end
+
+  def at_kotake_mukaihara?
+    at_these_stations?( "KotakeMukaihara" )
   end
 
   def between_meguro_and_shirokane_takanawa?
