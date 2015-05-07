@@ -3,18 +3,18 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakoshi
   include ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakoshiAndKotakeMukaihara::Common
 
   def of_special_direction?
-    @railway_direction.same_as == "odpt.RailwayDirection:TokyoMetro.Namboku.AkabaneIwabuchi" or @railway_direction.same_as == "odpt.RailwayDirection:Toei.Mita.NishiTakashimadaira"
+    @railway_direction.railway_line.same_as == "odpt.Railway:TokyoMetro.Yurakucho" and @railway_direction.same_as == "odpt.RailwayDirection:TokyoMetro.Yurakucho.ShinKiba"
   end
 
   def render_special_direction_ja
     h.render inline: <<-HAML , type: :haml
-= "白金高輪・"
+= "小竹向原・池袋・"
 %span{ class: :railway_line_name }<>
-  ="南北線"
-= "赤羽岩淵・"
+  ="有楽町線"
+= "新木場・"
 %span{ class: :railway_line_name }<>
-  = "都営三田線"
-= "西高島平" + "方面行きホーム"
+  = "副都心線"
+= "渋谷" + "方面行きホーム"
     HAML
   end
 

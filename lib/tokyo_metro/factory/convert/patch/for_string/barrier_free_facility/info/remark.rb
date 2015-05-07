@@ -28,6 +28,8 @@ module TokyoMetro::Factory::Convert::Patch::ForString::BarrierFreeFacility::Info
       str_ary << service_times
       str_ary.flatten.join( "\n" ) + "\n"
     }
+    
+    str = str.gsub( /が、?利用時間（(.+)）があります。/ ) { "。ご利用できる時間帯は #{ $1 } です。" }
 
     str.gsub( /\n\Z/ , "" )
   end
