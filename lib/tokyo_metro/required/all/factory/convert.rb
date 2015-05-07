@@ -7,7 +7,8 @@ class TokyoMetro::Required::All::Factory::Convert < TokyoMetro::Required
   def self.other_files
     [
       Common.files ,
-      Customize.files
+      Customize.files ,
+      Patch.files
     ]
   end
 
