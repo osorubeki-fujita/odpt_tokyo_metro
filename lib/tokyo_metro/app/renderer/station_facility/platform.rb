@@ -11,13 +11,15 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
     ary = ::Array.new
     case @type_of_platform_infos
     when :between_wakoshi_and_hikawadai
-      ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakoshiAndKotakeMukaihara::Whole.new(
+      puts @type_of_platform_infos
+      ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakoshiAndHikawadai::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
         ::RailwayLine.where( id: railway_line_ids_of_platform_infos )
       )
 
     when :kotake_mukaihara
+      puts @type_of_platform_infos
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::KotakeMukaihara::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
@@ -25,6 +27,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
       )
 
     when :between_meguro_and_shirokane_takanawa
+      puts @type_of_platform_infos
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenMeguroAndShirokaneTakanawa::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
@@ -32,6 +35,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
       )
 
     when :normal
+      puts @type_of_platform_infos
       @platform_infos_grouped_by_railway_line.each do | railway_line_id , platform_infos |
         ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::Normal::Whole.new(
           request ,
@@ -122,7 +126,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
     at_these_stations?( ary )
   end
 
-  def at_these_stations?( stations_in_system )
+  def at_these_stations?( *stations_in_system )
     stations_in_system.map { | station | "odpt.StationFacility:TokyoMetro.#{station}" }.include?( @station_facility.same_as )
   end
 
