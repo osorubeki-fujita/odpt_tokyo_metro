@@ -4,7 +4,7 @@ class TokyoMetro::Api::Point::Info::Title::Code
     @first_char = nil
     @number = nil
     @last_char = nil
-    @other_info = nil
+    @another_info = nil
     @additional_info_ja = nil
 
     if code.string?
@@ -13,7 +13,7 @@ class TokyoMetro::Api::Point::Info::Title::Code
         @number = $2.to_i
         @last_char = $3
       else
-        @other_info = code
+        @another_info = code
       end
     else
       raise "Error: #{ code } is not valid."
@@ -27,44 +27,44 @@ class TokyoMetro::Api::Point::Info::Title::Code
   attr_reader :first_char
   attr_reader :number
   attr_reader :last_char
-  attr_reader :other_info
+  attr_reader :another_info
   attr_reader :additional_info_ja
 
   def <=>( other )
     #-------- first_char が異なる場合
-    c_first_char = compare_by( :first_char )
+    c_first_char = compare_by( other , :first_char )
     if c_first_char.present?
       return c_first_char
     end
 
     #-------- first_char が同じで number が異なる場合
-    c_number = compare_by( :number )
+    c_number = compare_by( other , :number )
     if c_number.present?
       return c_number
     end
 
     #-------- first_char, number が同じで last_char が異なる場合
-    c_last_char = compare_by( :last_char )
+    c_last_char = compare_by( other , :last_char )
     if c_last_char.present?
       return c_last_char
     end
 
-    c_other_info = compare_by( :other_info )
-    if c_other_info.present?
-      return c_other_info
+    c_another_info = compare_by( other , :another_info )
+    if c_another_info.present?
+      return c_another_info
     end
 
-    c_additional_info_ja = compare_by( :additional_info_ja )
+    c_additional_info_ja = compare_by( other , :additional_info_ja )
     if c_additional_info_ja.present?
       return c_additional_info_ja
     end
 
     return 0
   end
-  
+
   private
-  
-  def compare_by( method_name )
+
+  def compare_by( other , method_name )
     if send( method_name ).blank? and other.send( method_name ).present?
       return -1
     elsif send( method_name ).present? and other.send( method_name ).present?
