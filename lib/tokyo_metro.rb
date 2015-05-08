@@ -208,7 +208,7 @@ module TokyoMetro
     [ :access_token , :google_map_api_key ].each do | const_name |
       eval <<-DEF
 
-        def self.set_#{ const_name }
+        def set_#{ const_name }
           _#{ const_name } = #{ const_name }
           if _#{ const_name }.present?
             const_set( :#{ const_name.upcase } , _#{ const_name } )
@@ -245,7 +245,7 @@ module TokyoMetro
         private :#{ const_name }_from_file
 
         def #{ const_name }_filename
-          "#{ RAILS_DIR }/#{ const_name.camelize }"
+          RAILS_DIR + "/#{ const_name.camelize }"
         end
 
         private :#{ const_name }_filename
