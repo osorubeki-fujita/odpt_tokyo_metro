@@ -29,7 +29,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::ServiceDetail::Info
   end
 
   def all_day?
-    self.time_to_a.all? { |i| i.nil? }
+    self.time_to_a.all?( &:nil? )
   end
 
   def everyday?
@@ -91,6 +91,11 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::ServiceDetail::Info
 
     if has_specific_service_end_time_info?
       h[ :service_end_time_hour ] , h[ :service_end_time_min ] = @service_end_time.to_array_of_hour_and_min
+    end
+
+    if all_day?
+      h[ :service_start_before_first_train ] = true
+      h[ :service_end_after_last_train ] = true
     end
 
     h
