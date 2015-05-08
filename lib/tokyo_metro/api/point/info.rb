@@ -89,15 +89,6 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   # @!endgroup
 
-  def category_name_en
-    case category_name_ja
-    when "出入口"
-      "Exit"
-    else
-      raise "Error: The category name of \"#{ @title.to_s }\" is not defined yet."
-    end
-  end
-
   def additional_info
     _additional_info = @title.additional_info
     if _additional_info.blank?
@@ -106,11 +97,22 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
       _additional_info
     end
   end
-  
+
   alias :additional_info_ja :additional_info
 
+  def category_name_en
+    str = ::TokyoMetro::Dictionary.english[ category_name_ja ]
+    unless str.present?
+      raise "Error: The category name of \"#{ @title.to_s }\" is not defined yet."
+    end
+
+    str
+  end
+
   def additional_info_en
-    nil
+    str = ::TokyoMetro::Dictionary.english[ additional_info_ja ]
+    #----
+    str
   end
 
   [ :code , :has_elevator? , :closed? ].each do | method_name |

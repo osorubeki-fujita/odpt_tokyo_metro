@@ -6,6 +6,7 @@ class TokyoMetro::Required::All < TokyoMetro::Required
 
   def self.other_files
     [
+      ::File.join( top_file , "dictionary" ) ,
       Modules.files ,
       #
       ClassNameLibrary.files ,

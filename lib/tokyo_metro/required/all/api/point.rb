@@ -5,7 +5,10 @@ class TokyoMetro::Required::All::Api::Point < TokyoMetro::Required
   end
 
   def self.other_files
-    ::File.join( top_file , "info" , "title" )
+    [
+      ::File.join( top_file , "info" , "title" ) ,
+      ::File.join( top_file , "info" , "title" , "code" )
+    ]
   end
 
 end

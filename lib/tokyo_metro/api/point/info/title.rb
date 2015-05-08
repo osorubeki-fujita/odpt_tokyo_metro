@@ -34,7 +34,7 @@ class TokyoMetro::Api::Point::Info::Title
   end
 
   def to_s_sub_1
-    if self.blank?
+    if @code.blank?
       @station_name
     else
       [ @station_name , @code ].join( " " )
