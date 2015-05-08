@@ -1,3 +1,7 @@
 #-------- TokyoMetro::Api::Point::Info
 
 "出入口": "Exit"
+"東出口": "East Exit"
+"西出口": "West Exit"
+"阪急出口": "Hankyu Exit"
+"西武出口": "Seibu Exit"

@@ -145,6 +145,9 @@ module TokyoMetro
     set_rails_consts( rails_dir )
     set_modules
     set_fundamental_constants
+
+    set_access_token
+    set_google_map_api_key
   end
 
   # @!group Rails 関連
@@ -177,22 +180,6 @@ module TokyoMetro
     return nil
   end
 
-  # @!group Access Token
-
-  # Access Token
-  # @note API アクセス用のアクセストークン【必須】【アプリケーションごとに固有】<acl:consumerKey - acl:ConsumerKey>
-  # @note 複数のアプリケーションを作成する場合は、それぞれについて取得すること。
-  # @note  【公開禁止】
-  # @note ファイル名称を .gitignore に記載すること
-  def self.set_access_token
-    _access_token = access_token
-    if _access_token.present?
-      const_set( :ACCESS_TOKEN , _access_token )
-    else
-      puts "Error: The file \'#{ filename }\' does not exist."
-    end
-  end
-
   class << self
 
     def method_missing( method_name , *args )
@@ -204,6 +191,66 @@ module TokyoMetro
       end
 
       super( method_name , *args )
+    end
+
+    # @!group Access Token , Google Map Api Key
+
+    # @note access_token
+
+    # Access Token
+    #   API への Access Token を返すメソッド
+    #   @note Rails の環境によって形態が異なる。
+    #   @note API アクセス用のアクセストークン【必須】【アプリケーションごとに固有】<acl:consumerKey - acl:ConsumerKey>
+    #   @note 複数のアプリケーションを作成する場合は、それぞれについて取得すること。
+    #   @note  【公開禁止】
+    #   @note ファイル名称を .gitignore に記載すること
+    #   @return [String]
+    [ :access_token , :google_map_api_key ].each do | const_name |
+      eval <<-DEF
+
+        def self.set_#{ const_name }
+          _#{ const_name } = #{ const_name }
+          if _#{ const_name }.present?
+            const_set( :#{ const_name.upcase } , _#{ const_name } )
+          else
+            error_msg = "Error: The file \"" + #{ const_name }_filename + "\" does not exist."
+            puts error_msg
+          end
+        end
+
+        def #{ const_name }
+          if on_rails_application?
+            case ::Rails.env
+            when "development" , "test"
+              #{ const_name }_from_file
+            when "production"
+              ::ENV[ "TOKYO_METRO_#{ const_name.upcase }" ]
+            end
+          else
+            #{ const_name }_from_file
+          end
+        end
+
+        private :#{ const_name }
+
+        def #{ const_name }_from_file
+          filename = #{ const_name }_filename
+          if ::File.exist?( filename )
+            open( filename , "r:utf-8" ).read
+          else
+            nil
+          end
+        end
+
+        private :#{ const_name }_from_file
+
+        def #{ const_name }_filename
+          "#{ RAILS_DIR }/#{ const_name.camelize }"
+        end
+
+        private :#{ const_name }_filename
+
+      DEF
     end
 
     private
@@ -354,31 +401,6 @@ module TokyoMetro
         end
 
         ::TokyoMetro::Required::All.files( file_type )
-      end
-    end
-
-    # API への Access Token を返すメソッド
-    # @note Rails の環境によって形態が異なる。
-    # @return [String]
-    def access_token
-      if on_rails_application?
-        case ::Rails.env
-        when "development" , "test"
-          access_token_from_file
-        when "production"
-          ::ENV[ "TOKYO_METRO_ACCESS_TOKEN" ]
-        end
-      else
-        access_token_from_file
-      end
-    end
-
-    def access_token_from_file
-      filename = "#{ RAILS_DIR }/AccessToken"
-      if ::File.exist?( filename )
-        open( filename , "r:utf-8" ).read
-      else
-        nil
       end
     end
 
