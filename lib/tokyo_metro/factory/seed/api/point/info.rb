@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
   def hash_to_db
     h = ::Hash.new
 
-    [ :id_urn , :code , :additional_info , :latitude , :longitude , :geo_json , :floor ].each do | key_name |
+    [ :id_urn , :code , :additional_info_ja , :additional_info_en , :latitude , :longitude , :geo_json , :floor ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end
 
@@ -38,14 +38,23 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
   end
 
   def point_category_in_db
-    if @info.category_name.nil?
-      raise "Error: The category name of \"#{ @info.title.to_s }\" is not valid. The category info is not defied."
-    end
-    ::PointCategory.find_or_create_by( name_ja: @info.category_name )
+    ::PointCategory.find_or_create_by( name_ja: point_category_name_ja , name_en: point_category_name_en )
   end
 
   def point_category_id
     point_category_in_db.id
+  end
+
+  [ :ja , :en ].each do | lang |
+    eval <<-DEF
+      def point_category_name_#{ lang }
+        str = @info.category_name_#{ lang }
+        unless str.present?
+          raise "Error: The category name (#{ lang }) of \"#{ @info.title.to_s }\" is not valid. The category info is not defied."
+        end
+        str
+      end
+    DEF
   end
 
 end

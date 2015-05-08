@@ -18,8 +18,8 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
       = railway_line_decorated.render_name_in_station_facility_platform_info_transfer_info
       - if railway_direction.present?
         = railway_direction.decorate.render_in_station_facility_platform_info_transfer_info
-    %div{ class: :time , min: necessary_time }<
-      = necessary_time
+      %p{ class: :time , min: necessary_time }<
+        = necessary_time
       HAML
     end
   end

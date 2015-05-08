@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
     ary = ::Array.new
     case @type_of_platform_infos
     when :between_wakoshi_and_hikawadai
-      puts @type_of_platform_infos
+      # puts @type_of_platform_infos
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakoshiAndHikawadai::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
@@ -19,7 +19,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
       )
 
     when :kotake_mukaihara
-      puts @type_of_platform_infos
+      # puts @type_of_platform_infos
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::KotakeMukaihara::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
@@ -27,7 +27,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
       )
 
     when :meguro_and_shirokanedai
-      puts @type_of_platform_infos
+      # puts @type_of_platform_infos
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MeguroAndShirokanedai::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
@@ -35,7 +35,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
       )
 
     when :shirokane_takanawa
-      puts @type_of_platform_infos
+      # puts @type_of_platform_infos
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::ShirokaneTakanawa::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
@@ -43,7 +43,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
       )
 
     when :normal
-      puts @type_of_platform_infos
+      # puts @type_of_platform_infos
       @platform_infos_grouped_by_railway_line.each do | railway_line_id , platform_infos |
         ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::Normal::Whole.new(
           request ,
@@ -140,7 +140,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Re
   
   [ :kotake_mukaihara , :meguro , :shirokanedai , :shirokane_takanawa ].each do | station_name |
     eval <<-DEF
-      def #{ station_name }
+      def at_#{ station_name }?
         at_these_stations?( "#{ station_name.camelize }" )
       end
     DEF

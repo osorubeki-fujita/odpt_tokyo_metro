@@ -12,7 +12,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::List < TokyoMetro::A
     - ary.each do | info |
       = info.render_tab
   %div{ id: :platform_info_tab_contents }
-    %ul
+    %ul{ id: :tab_contents }
       - ary.each do | info |
         = info.render_content
     HAML

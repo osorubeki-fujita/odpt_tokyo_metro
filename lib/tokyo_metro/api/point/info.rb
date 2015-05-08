@@ -51,10 +51,12 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
   # @return [String]
   # @note エレベータには「エレベータ」という文字列を含む。「出入口」の文字列の後に出口番号が続く。
   attr_reader :title
-
+  
   alias :longitude :geo_long
   alias :latitude :geo_lat
   alias :geo_json :region
+
+  alias :category_name_ja :category_name
 
   # @!group 駅情報の取得
 
@@ -87,6 +89,15 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   # @!endgroup
 
+  def category_name_en
+    case category_name_ja
+    when "出入口"
+      "Exit"
+    else
+      raise "Error: The category name of \"#{ @title.to_s }\" is not defined yet."
+    end
+  end
+
   def additional_info
     _additional_info = @title.additional_info
     if _additional_info.blank?
@@ -94,6 +105,12 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
     else
       _additional_info
     end
+  end
+  
+  alias :additional_info_ja :additional_info
+
+  def additional_info_en
+    nil
   end
 
   [ :code , :has_elevator? , :closed? ].each do | method_name |
@@ -130,10 +147,6 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
     else
       raise "Error"
     end
-  end
-
-  def station_name_for_shift_jis
-    station_name_in_title.process_machine_dependent_character
   end
 
 end

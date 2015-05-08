@@ -2,6 +2,8 @@
 class TokyoMetro::Factory::Generate::Api::Point::Info < TokyoMetro::Factory::Generate::Api::MetaClass::Info::Fundamental
 
   include ::TokyoMetro::ClassNameLibrary::Api::Point
+  
+  private
 
   # Info クラスに送る変数のリスト
   # @return [::Array]
@@ -22,10 +24,14 @@ class TokyoMetro::Factory::Generate::Api::Point::Info < TokyoMetro::Factory::Gen
 
   def category_name
     str = @hash[ "ugsrv:categoryName" ]
-    unless str == "出入口"
+    unless valid_category_name_ja.include?( str )
       raise "Error"
     end
     str
+  end
+
+  def valid_category_name_ja
+    [ "出入口" ]
   end
 
 end

@@ -2,6 +2,8 @@
 class TokyoMetro::Factory::Generate::Api::PassengerSurvey::Info < TokyoMetro::Factory::Generate::Api::MetaClass::Info::Fundamental
 
   include ::TokyoMetro::ClassNameLibrary::Api::PassengerSurvey
+  
+  private
 
   # Info クラスに送る変数のリスト
   # @return [::Array]
