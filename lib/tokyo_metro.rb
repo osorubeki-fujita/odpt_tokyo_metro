@@ -235,6 +235,7 @@ module TokyoMetro
 
         def #{ const_name }_from_file
           filename = #{ const_name }_filename
+          puts filename
           if ::File.exist?( filename )
             open( filename , "r:utf-8" ).read
           else
@@ -245,7 +246,7 @@ module TokyoMetro
         private :#{ const_name }_from_file
 
         def #{ const_name }_filename
-          RAILS_DIR + "/#{ const_name.camelize }"
+          ::TokyoMetro::RAILS_DIR + "/#{ const_name.camelize }"
         end
 
         private :#{ const_name }_filename
