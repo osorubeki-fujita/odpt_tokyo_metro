@@ -50,7 +50,7 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
       def point_category_name_#{ lang }
         str = @info.category_name_#{ lang }
         unless str.present?
-          raise "Error: The category name (#{ lang }) of \"#{ @info.title.to_s }\" is not valid. The category info is not defied."
+          raise "Error: The category name (#{ lang }) of \"" + @info.title.to_s + "\" is not valid. The category info is not defied."
         end
         str
       end
