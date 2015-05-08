@@ -213,7 +213,7 @@ module TokyoMetro
           if _#{ const_name }.present?
             const_set( :#{ const_name.upcase } , _#{ const_name } )
           else
-            error_msg = "Error: The file \"" + #{ const_name }_filename + "\" does not exist."
+            error_msg = "Error: The file \\"" + #{ const_name }_filename + "\\" does not exist."
             puts error_msg
           end
         end
