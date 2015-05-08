@@ -152,7 +152,7 @@ module TokyoMetro
 
   # @!group Rails 関連
 
-  def self.set_rails_consts( rails_dir = ::Rails.root )
+  def self.set_rails_consts( rails_dir = ::Rails.root.to_s )
     # Directory of Rails application
     const_set( :RAILS_DIR , rails_dir ) # "C:/RubyPj/rails/tokyo_metro"
 
@@ -213,7 +213,8 @@ module TokyoMetro
           if _#{ const_name }.present?
             const_set( :#{ const_name.upcase } , _#{ const_name } )
           else
-            error_msg = "Error: The file \\"" + #{ const_name }_filename + "\\" does not exist."
+            filename = #{ const_name }_filename
+            error_msg = "Error: The file \\"" + filename + "\\" does not exist."
             puts error_msg
           end
         end
@@ -235,7 +236,7 @@ module TokyoMetro
 
         def #{ const_name }_from_file
           filename = #{ const_name }_filename
-          puts filename
+          # puts filename
           if ::File.exist?( filename )
             open( filename , "r:utf-8" ).read
           else
@@ -246,6 +247,7 @@ module TokyoMetro
         private :#{ const_name }_from_file
 
         def #{ const_name }_filename
+          # puts "TokyoMetro::RAILS_DIR: " + ::TokyoMetro::RAILS_DIR.to_s + " (" + ::TokyoMetro::RAILS_DIR.class.to_s + ")"
           ::TokyoMetro::RAILS_DIR + "/#{ const_name.camelize }"
         end
 
