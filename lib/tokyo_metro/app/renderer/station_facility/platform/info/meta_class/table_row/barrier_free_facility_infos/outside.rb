@@ -3,7 +3,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Tab
   private
 
   def ul_class
-    :outside_barrier_free_facility_infos_for_this_position
+    [ :outside_barrier_free_facility_infos_for_this_position , super() ].flatten
   end
 
   def li_class

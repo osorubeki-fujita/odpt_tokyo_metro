@@ -14,7 +14,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Tab
   end
 
   def ul_class
-    :transfer_infos_for_this_position
+    [ :transfer_infos_for_this_position , :clearfix ]
   end
 
   def li_class
@@ -22,7 +22,3 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Tab
   end
 
 end
-
-__END__
-
- info.decorate.render
