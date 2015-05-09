@@ -1,9 +1,10 @@
 class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Renderer::MetaClass
 
-  def initialize( request , class_name , ul_id , link_instance_names , *opts )
+  def initialize( request , class_name , ul_id , link_instance_names , *opts , additional_proc: nil )
     @request = request
     @ul_id = ul_id
     @link_instances = set_link_instances( class_name , link_instance_names.flatten , opts )
+    @additional_proc = additional_proc
   end
 
   def render
@@ -11,6 +12,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Rendere
 %ul{ id: ul_id , class: :links }
   - link_instances.each do | link_instance |
     = link_instance.render
+- if additional_proc.present?
+  = additional_proc.call
     HAML
   end
 
@@ -22,7 +25,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Rendere
   end
 
   def h_locals
-    { ul_id: @ul_id , link_instances: @link_instances }
+    { ul_id: @ul_id , link_instances: @link_instances , additional_proc: @additional_proc }
   end
 
   def self.to_main_contents( request )
@@ -57,12 +60,27 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Rendere
     )
   end
 
-  def self.to_station_info_pages( request )
+  def self.to_station_info_pages( request , station_info: nil )
     self.new(
       request ,
       ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation , :links ,
-      [ :train_information , :station_facility , :station_timetable , :fare ]
+      [ :train_information , :station_facility , :station_timetable , :fare ] ,
+      additional_proc: additional_proc_of_links_to_station_info_page( station_info )
     )
+  end
+
+  class << self
+
+    private
+
+    def additional_proc_of_links_to_station_info_page( station_info )
+      if station_info.blank?
+        return nil
+      end
+
+      ::Proc.new { station_info.decorate.render_link_to_station_facility_info_of_connecting_other_stations }
+    end
+  
   end
 
 end
