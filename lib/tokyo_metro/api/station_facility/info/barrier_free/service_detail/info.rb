@@ -28,20 +28,20 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::ServiceDetail::Info
     " " * indent + operation_day_to_s + time_to_s
   end
 
-  def all_day?
-    self.time_to_a.all?( &:nil? )
-  end
-
-  def everyday?
-    @operation_day.nil?
-  end
-
   def service_start_before_first_train?
     @service_start_time == "始発"
   end
 
   def service_end_after_last_train?
     @service_end_time == "終車時"
+  end
+
+  def all_day?
+    service_start_before_first_train? and service_end_after_last_train?
+  end
+
+  def everyday?
+    @operation_day.nil?
   end
 
   def operation_days
@@ -91,11 +91,6 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::ServiceDetail::Info
 
     if has_specific_service_end_time_info?
       h[ :service_end_time_hour ] , h[ :service_end_time_min ] = @service_end_time.to_array_of_hour_and_min
-    end
-
-    if all_day?
-      h[ :service_start_before_first_train ] = true
-      h[ :service_end_after_last_train ] = true
     end
 
     h
