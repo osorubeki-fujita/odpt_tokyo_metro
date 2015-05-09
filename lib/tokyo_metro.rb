@@ -150,6 +150,11 @@ module TokyoMetro
     set_access_token
     set_google_map_api_key
   end
+  
+  # @see https://developers.google.com/maps/documentation/javascript/tutorial?hl=ja
+  def self.google_map_javasciprt_uri
+    "https://maps.googleapis.com/maps/api/js?key=#{ GOOGLE_MAP_API_KEY }&sensor=true"
+  end
 
   # @!group Rails 関連
 
