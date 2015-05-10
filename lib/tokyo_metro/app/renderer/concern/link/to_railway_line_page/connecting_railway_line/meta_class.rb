@@ -16,7 +16,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
   end
 
   def to_render?
-    !( @connecting_railway_line_decorated.operated_now? )
+    @connecting_railway_line_decorated.operated_now?
   end
 
   def url
