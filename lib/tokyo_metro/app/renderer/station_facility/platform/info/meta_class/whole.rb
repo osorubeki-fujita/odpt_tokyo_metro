@@ -16,12 +16,12 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Who
   end
 
   def render_railway_line_text_name
-    h.render inline: <<-HAML , type: :haml , locals: { info: self }
-%div{ class: :text }<
+    h.render inline: <<-HAML , type: :haml , locals: { this: self }
+%div{ class: [ :text , :clearfix ] }<
   %div{ class: :text_ja }<
-    = info.railway_line_name_ja
+    = this.railway_line_name_ja
   %div{ class: :text_en }<
-    = info.railway_line_name_en
+    = this.railway_line_name_en
     HAML
   end
 

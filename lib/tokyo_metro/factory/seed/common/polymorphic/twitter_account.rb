@@ -3,10 +3,10 @@ module TokyoMetro::Factory::Seed::Common::Polymorphic::TwitterAccount
   private
 
   def seed_twitter_account
-    if @info.twitter_widget_id.present? and @info.twitter_account.present?
+    if @info.twitter_widget_id.present? and @info.twitter_account_name.present?
       ::TwitterAccount.create(
         widget_id: @info.twitter_widget_id.to_s ,
-        name: @info.twitter_account ,
+        name: @info.twitter_account_name ,
         operator_or_railway_id: @id ,
         operator_or_railway_type: twitter_polymorphic_type
       )

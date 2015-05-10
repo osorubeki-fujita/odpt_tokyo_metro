@@ -1,26 +1,23 @@
-# 【銀座線・副都心線】渋谷
+# 【銀座線】渋谷
 
 -
   stations:
     - odpt.Station:TokyoMetro.Ginza.Shibuya
   railway_lines:
+    "odpt.Railway:TokyoMetro.Hanzomon":
+      hidden_on_railway_line_page: true
+
     "odpt.Railway:TokyoMetro.Fukutoshin":
       not_recommended: true
       note: 銀座線から副都心線へ乗り換える場合は、表参道駅で半蔵門線に乗り換えの上、渋谷駅で半蔵門線から副都心線に乗り換えると移動距離が少なく便利です。
+
     "odpt.Railway:Tokyu.Toyoko":
       not_recommended: true
       note: 銀座線から東急東横線へ乗り換える場合は、表参道駅で半蔵門線に乗り換えの上、渋谷駅で半蔵門線から副都心線に乗り換えると移動距離が少なく便利です。
+
     "odpt.Railway:Tokyu.DenEnToshi":
       not_recommended: true
       note: 銀座線から東急田園都市線へ乗り換える場合は、表参道駅で半蔵門線の東急田園都市線直通列車にお乗り換え下さい。
-
--
-  stations:
-    - odpt.Station:TokyoMetro.Fukutoshin.Shibuya
-  railway_lines:
-    "odpt.Railway:TokyoMetro.Ginza":
-      not_recommended: true
-      note: 副都心線から銀座線へ乗り換える場合は、渋谷駅で半蔵門線に乗り換えの上、表参道駅で半蔵門線から副都心線に乗り換えると移動距離が少なく便利です。
 
 # 【銀座線・丸ノ内線】赤坂見附／【有楽町線・半蔵門線・南北線】
 
@@ -249,6 +246,15 @@
     "odpt.Railway:Toei.Shinjuku":
       connecting_another_station: odpt.Station:Toei.Shinjuku.Iwamotocho
 
+# 【東西線】西船橋
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Tozai.NishiFunabashi
+  railway_lines:
+    "odpt.Railway:ToyoRapidRailway.ToyoRapidRailway":
+      hidden_on_railway_line_page: true
+
 # 【千代田線・副都心線】明治神宮前
 
 -
@@ -283,6 +289,30 @@
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.MachiyaEkimae
 
+# 【千代田線】綾瀬
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Chiyoda.Ayase
+    # - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
+  railway_lines:
+    "odpt.Railway:JR-East.Joban":
+      hidden_on_railway_line_page: true
+
+#-
+#  stations:
+#    - odpt.Station:TokyoMetro.Chiyoda.Ayase
+#  railway_lines:
+#    "odpt.Railway:TokyoMetro.ChiyodaBranch":
+#      hidden_on_railway_line_page: true
+
+#-
+#  stations:
+#    - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
+#  railway_lines:
+#    "odpt.Railway:TokyoMetro.Chiyoda":
+#      hidden_on_railway_line_page: true
+
 # 【有楽町線】東池袋
 
 -
@@ -291,6 +321,17 @@
   railway_lines:
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.HigashiIkebukuroYonchome
+
+# 【半蔵門線】渋谷
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Hanzomon.Shibuya
+  railway_lines:
+    "odpt.Railway:TokyoMetro.Ginza":
+      hidden_on_railway_line_page: true
+    "odpt.Railway:Tokyu.DenEnToshi":
+      hidden_on_railway_line_page: true
 
 # 【半蔵門線】神保町
 
@@ -302,6 +343,35 @@
       not_recommended: true
       note: 都営新宿線への乗り換えは九段下駅が便利です。
 
+# 【半蔵門線】押上
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Hanzomon.Oshiage
+  railway_lines:
+    "odpt.Railway:Tobu.SkyTreeIsesaki":
+      hidden_on_railway_line_page: true
+
+# 【南北線】目黒
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Namboku.Meguro
+  railway_lines:
+    "odpt.Railway:Tokyu.Meguro":
+      hidden_on_railway_line_page: true
+    "odpt.Railway:Toei.Mita":
+      hidden_on_railway_line_page: true
+
+# 【南北線】白金台
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Namboku.Shirokanedai
+  railway_lines:
+    "odpt.Railway:Toei.Mita":
+      hidden_on_railway_line_page: true
+
 # 【南北線】王子
 
 -
@@ -311,6 +381,15 @@
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.OjiEkimae
 
+# 【南北線】赤羽岩淵
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Namboku.AkabaneIwabuchi
+  railway_lines:
+    "odpt.Railway:SaitamaRailway.SaitamaRailway":
+      hidden_on_railway_line_page: true
+
 # 【副都心線】雑司が谷
 
 -
@@ -319,6 +398,19 @@
   railway_lines:
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.Kishibojinmae
+
+# 【副都心線】渋谷
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Fukutoshin.Shibuya
+  railway_lines:
+    "odpt.Railway:TokyoMetro.Ginza":
+      not_recommended: true
+      note: 副都心線から銀座線へ乗り換える場合は、渋谷駅で半蔵門線に乗り換えの上、表参道駅で半蔵門線から副都心線に乗り換えると移動距離が少なく便利です。
+  railway_lines:
+    "odpt.Railway:Tokyu.Toyoko":
+      hidden_on_railway_line_page: true
 
 # 【都営三田線】西巣鴨
 

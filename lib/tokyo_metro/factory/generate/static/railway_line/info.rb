@@ -1,21 +1,22 @@
 class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
-  include ::TokyoMetro::Modules::Common::Info::NewRailwayLine::SetStartOn
+  include ::TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine::SetTime
 
   def self.hash_keys
-    [ :name_ja , :name_hira , :name_en , :name_code , :operator , :index , :color , :start_on , :twitter_widget_id , :twitter_account ]
+    [ :name_ja , :name_hira , :name_en , :name_code , :operator , :index , :color , :start_on , :end_on , :twitter_widget_id , :twitter_account_name ]
   end
 
   private
 
   def set_values_to_hash_for_making_variables
     super( hash_key_array: [ :name_ja , :name_hira , :name_en , :name_code ] , make_array: true )
-    super( hash_key_array: [ :twitter_widget_id , :twitter_account , :index ] )
+    super( hash_key_array: [ :twitter_widget_id , :twitter_account_name , :index ] )
 
     @hash_for_making_variables[ :color ] = color_instance
     @hash_for_making_variables[ :operator ] = operator_instance
-    @hash_for_making_variables[ :start_on ] = set_start_on( @h[ :start_on ] )
+    @hash_for_making_variables[ :start_on ] = set_time_of( @h[ :start_on ] , type: :start_on )
+    @hash_for_making_variables[ :end_on ] = set_time_of( @h[ :end_on ] , type: :end_on )
   end
 
   # 事業者のインスタンスを取得するメソッド

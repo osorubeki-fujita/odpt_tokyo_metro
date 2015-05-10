@@ -15,7 +15,7 @@ module TokyoMetro::Factory::Convert::Patch::ForString::BarrierFreeFacility::Info
     str = str.gsub( /お?乗り?換え?/ , "お乗り換え" )
     str = str.gsub( /(?<=（時間制限)：?(?=\d{1,2}時～\d{1,2}時）)/ , "：" )
     str = str.gsub( "時間制限" , available )
-    str = str.gsub( /(?<=が、#{ available })(?=があります。)/ , "に制限" )
+    str = str.gsub( /(?<=が、#{ available })(?=があります)/ , "に制限" )
     str = str.gsub( /(?<=ご利用、お乗り換えは)、?(?=できません。)/ , "" )
 
     str = str.gsub( "B8出入口エレベーターB7出入口エレベーター" , "B8出入口エレベーター、B7出入口エレベーター" )

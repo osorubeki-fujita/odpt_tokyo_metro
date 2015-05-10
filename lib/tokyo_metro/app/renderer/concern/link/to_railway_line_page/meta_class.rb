@@ -55,11 +55,14 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   end
 
   def div_classes
+    ary = ::Array.new
+    ary << :clearfix 
     if url.present?
-      [ :link_to_railway_line_page ]
+      ary << :link_to_railway_line_page
     else
-      [ :railway_line_with_no_link ]
+      ary << :railway_line_with_no_link
     end
+    ary
   end
 
   def add_railway_line_css_class_name_to_li_classes?

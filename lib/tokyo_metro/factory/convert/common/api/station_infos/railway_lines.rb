@@ -42,7 +42,7 @@ class TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLines
   def replacing_railway_lines_for_this_instance
     base = @replacing_dictionary[ station_name ].find { | item | item[ "replaced_railway_lines" ].include?( @info.railway_line ) }[ "replacing_railway_lines" ]
     ary = [ base ].flatten
-    puts "#{ station_name } / #{ @info.railway_line } / #{ ary.to_s }"
+    # puts "#{ station_name } / #{ @info.railway_line } / #{ ary.to_s }"
     ary
   end
 
@@ -59,14 +59,3 @@ class TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLines
   end
 
 end
-
-__END__
-    puts station_name
-    
-    
-    if @station_same_as == "odpt.Station:TokyoMetro.Chiyoda.KitaSenju"
-      puts ( @replacing_dictionary.present? and @replacing_dictionary[ station_name ].present? )
-      if @replacing_dictionary.present?
-        puts @replacing_dictionary[ station_name ]
-      end
-    end

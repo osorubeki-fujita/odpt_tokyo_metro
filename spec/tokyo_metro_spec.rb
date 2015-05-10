@@ -13,26 +13,26 @@ end
 
 #--------
 
-options = [ ]
-# options = [ :station ]
+# options = [ ]
+options = [ :station ]
 
 #--------
 
 options = options.map( &:to_s )
 
-def to_test( options , category )
+def to_test( category , options )
   options.nil? or ( options.present? and options.include?( category.to_s ) )
 end
 
 #--------
 
-if to_test( options , :dictionary )
+if to_test( :dictionary , options )
   dictionary_of_stations
 end
 
 #--------
 
-if to_test( options , :static )
+if to_test( :static , options )
   static_stations
   static_railway_lines
   static_train_types
@@ -40,7 +40,7 @@ end
 
 #--------
 
-if to_test( options , :fare )
+if to_test( :fare , options )
   ::TokyoMetro.set_api_constants( { fare: true } )
   fares_related_to_marunouchi_branch_line
   fares_related_to_chiyoda_branch_line
@@ -48,7 +48,7 @@ end
 
 #--------
 
-if to_test( options , :railway_line )
+if to_test( :railway_line , options )
   ::TokyoMetro.set_api_constants( { railway_line: true } )
   railway_line_info_of_marunouchi_branch_line
   railway_line_info_of_chiyoda_branch_line
@@ -56,7 +56,7 @@ end
 
 #--------
 
-if to_test( options , :station_facility )
+if to_test( :station_facility , options )
   ::TokyoMetro.set_api_constants( { station_facility: true } )
 
   platform_infos_of_marunouchi_branch_line
@@ -70,7 +70,7 @@ end
 
 #--------
 
-if to_test( options , :station )
+if to_test( :station , options )
   ::TokyoMetro.set_api_constants( { station: true } )
 
   stations_on_marunouchi_branch_line

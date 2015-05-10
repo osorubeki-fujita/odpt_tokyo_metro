@@ -7,6 +7,8 @@ odpt.Operator:TokyoMetro:
   numbering : true
   railway_line_code_shape : stroked_circle
   station_code_shape : stroked_circle
+  twitter_widget_id: "532627820543897600"
+  twitter_account_name: "tokyometro_info"
   color :
     web : "#109ed4"
     red : 16

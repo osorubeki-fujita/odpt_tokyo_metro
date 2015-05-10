@@ -1,22 +1,14 @@
-#-------- 【半蔵門線】（銀座線）渋谷
--
-    stations:
-        - odpt.Station:TokyoMetro.Ginza.Shibuya
-    railway_lines:
-        - odpt.Railway:TokyoMetro.Hanzomon
+# def p( station_name , railway_name , not_recommended: true )
+#   station_info = ::Station::Info.find_by( same_as: station_name )
+#   railway_line = ::RailwayLine.find_by( same_as: railway_name )
+#   connecting_railway_lines = station_info.connecting_railway_lines
+#   i = connecting_railway_lines.length + 1
+#   c = connecting_railway_lines.find_by( railway_line_id: railway_line.id )
+#   if c.present?
+#     c.update( not_recommended: not_recommended , hidden_on_railway_line_page: true )
+#   else
+#     ConnectingRailwayLine.create(  station_info_id: station_info.id , railway_line_id: railway_line.id , index_in_station: i , not_recommended: not_recommended , hidden_on_railway_line_page: true )
+#   end
+#   return nil
+# end
 
-#-------- 【銀座線】（半蔵門線）渋谷
-#-------- 【東急田園都市線】（半蔵門線）渋谷
--
-    stations:
-        - odpt.Station:TokyoMetro.Hanzomon.Shibuya
-    railway_lines:
-        - odpt.Railway:TokyoMetro.Ginza
-        - odpt.Railway:Tokyu.DenEnToshi
-
-#-------- 【東急東横線】（副都心線）渋谷
--
-    stations:
-        - odpt.Station:TokyoMetro.Fukutoshin.Shibuya
-    railway_lines:
-        - odpt.Railway:Tokyu.Toyoko

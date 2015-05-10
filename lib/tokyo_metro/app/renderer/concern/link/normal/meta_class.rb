@@ -30,9 +30,9 @@ class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::
   def render
     _h_locals = h_locals
     h.render inline: <<-HAML , type: :haml , locals: _h_locals
-%li{ class: li_class_name }<
+%li{ class: [ li_class_name , :clearfix ].flatten }<
   = v.link_to_unless( link_to_current_page , "" , url , only_path_setting: false , class: class_name_of_link , target: target )
-  %div{ class: class_name_of_text_domain }<
+  %div{ class: [ class_name_of_text_domain , :clearfix ].flatten }<
     - # Icon
     - if icon_name.present?
       %div{ class: :icon }
@@ -41,7 +41,7 @@ class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::
     - # Title
     - if title_ja.present? and title_en.present?
       - # Title (1)
-      %div{ class: :text }
+      %div{ class: [ :text , :clearfix ] }
         - if title_ja.instance_of?( ::Array )
           %div{ class: :text_ja }<
             - title_ja.each do | row |

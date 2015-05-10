@@ -1,0 +1,29 @@
+"odpt.Railway:JR-East.UenoTokyo":
+  start_on: 2015.03.14
+  stations:
+    - odpt.Station:TokyoMetro.Ginza.Ueno
+    - odpt.Station:TokyoMetro.Hibiya.Ueno
+    - odpt.Station:TokyoMetro.Marunouchi.Tokyo
+    - odpt.Station:TokyoMetro.Ginza.Shimbashi
+
+"odpt.Railway:JR-East.Shinkansen":
+  end_on: 2015.03.13
+  stations:
+    - odpt.Station:TokyoMetro.Marunouchi.Tokyo
+    - odpt.Station:TokyoMetro.Ginza.Ueno
+    - odpt.Station:TokyoMetro.Hibiya.Ueno
+
+"odpt.Railway:JR-East.Shinkansen.2015":
+  start_on: 2015.03.14
+  end_on: 2016.03.14
+  stations:
+    - odpt.Station:TokyoMetro.Marunouchi.Tokyo
+    - odpt.Station:TokyoMetro.Ginza.Ueno
+    - odpt.Station:TokyoMetro.Hibiya.Ueno
+
+"odpt.Railway:JR-East.Shinkansen.2016":
+  start_on: 2016.03.15
+  stations:
+    - odpt.Station:TokyoMetro.Marunouchi.Tokyo
+    - odpt.Station:TokyoMetro.Ginza.Ueno
+    - odpt.Station:TokyoMetro.Hibiya.Ueno

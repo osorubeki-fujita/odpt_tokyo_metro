@@ -9,7 +9,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Rendere
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%ul{ id: ul_id , class: :links }
+%ul{ id: ul_id , class: [ :links , :clearfix ] }
   - link_instances.each do | link_instance |
     = link_instance.render
 - if additional_proc.present?

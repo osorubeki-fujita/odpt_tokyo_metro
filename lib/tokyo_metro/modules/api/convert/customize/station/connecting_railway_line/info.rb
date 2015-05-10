@@ -13,15 +13,20 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
   #     by {TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.set_modules} .
   def initialize( *args )
     super( *args )
+    # puts "----"
     # puts @same_as
+    # if @connecting_railway_lines.present?
+      # puts @connecting_railway_lines.map( &:railway_line ).to_s
+    # end
     convert_and_delete_connecting_railway_lines(
       replacing: ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.replacing_railway_lines ,
       ignored: ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.ignored_railway_lines
     )
     add_optional_railway_lines
-    add_new_railway_lines
+    set_new_and_old_railway_lines
     set_index_in_station
     set_transfer_additional_infos
+    # puts "===="
   end
 
   private
@@ -42,15 +47,21 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
 
   end
 
-  def add_new_railway_lines
-    new_railway_lines = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.new_railway_lines.select { | new_railway_line_name , info |
+  def set_new_and_old_railway_lines
+    new_or_old_railway_lines = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.new_and_old_railway_lines.select { | new_railway_line_name , info |
       info[ "stations" ].include?( @same_as )
     }
 
-    if new_railway_lines.present?
+    if new_or_old_railway_lines.present?
       set_new_connecting_railway_line_list_unless_exist
-      new_railway_lines.each do | new_railway_line_name , info |
-        @connecting_railway_lines << self.class.connecting_railway_line_info_class.new( new_railway_line_name , start_on: info[ "start_on" ] )
+      new_or_old_railway_lines.each do | railway_line_name , info |
+        info_of_this_railway_line = @connecting_railway_lines.find { | item | item.railway_line == railway_line_name }
+        if info_of_this_railway_line.present?
+          info_of_this_railway_line.send( :set_start_on , info[ "start_on" ] )
+          info_of_this_railway_line.send( :set_end_on , info[ "end_on" ] )
+        else
+          @connecting_railway_lines << self.class.connecting_railway_line_info_class.new( railway_line_name , start_on: info[ "start_on" ] , end_on: info[ "end_on" ] )
+        end
       end
     end
 
@@ -83,6 +94,11 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
     _transfer_additional_infos_of_this_station = transfer_additional_infos_of_this_station
 
     if _transfer_additional_infos_of_this_station.present?
+      _transfer_additional_infos_of_this_station.keys.each do | railway_line |
+        unless @connecting_railway_lines.map( &:railway_line ).include?( railway_line )
+          raise "\n" + "Error: \"#{ @same_as }\" on \"#{ @railway_line }\" should be connected to \"#{ railway_line }\".\n" + "connnected to:\n" + @connecting_railway_lines.map( &:railway_line ).join( "\n" ) + "\n" + "keys: \n" + _transfer_additional_infos_of_this_station.keys.join( "\n" )
+        end
+      end
       @connecting_railway_lines.each do | connecting_railway_line_info |
         additional_info_of_this_railway_line = _transfer_additional_infos_of_this_station[ connecting_railway_line_info.railway_line ]
 
@@ -90,6 +106,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
           [
             [ :connecting_another_station , true ] ,
             [ :not_recommended , false ] ,
+            [ :hidden_on_railway_line_page , false ] ,
             [ :note , true ]
           ].each do | key_of_h , require_h_setting |
             set_specific_transfer_additional_info( connecting_railway_line_info , additional_info_of_this_railway_line , key_of_h , require_h_info: require_h_setting )

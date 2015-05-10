@@ -37,15 +37,7 @@ class TokyoMetro::Factory::Generate::Api::MetaClass::Info::ConvertAndSetArrayDat
   private
 
   def set_info_list( data_from_hash , to_flatten )
-    ary = data_from_hash
-    if ary.blank?
-      ary = ::Array.new
-    end
-    ary = check_validity_and_convert( ary , to_flatten )
-    return ary
-  end
-
-  def check_validity_and_convert( ary , to_flatten )
+    ary = data_from_hash.with_default_value( ::Array.new )
     if to_flatten and ary.instance_of?( ::Array )
       # 配列の要素に配列が存在する場合（≒2次元配列の場合）
       if ary.any? { | element | element.instance_of?( ::Array ) }
@@ -53,15 +45,11 @@ class TokyoMetro::Factory::Generate::Api::MetaClass::Info::ConvertAndSetArrayDat
       end
       ary = ary.flatten
     end
-    ary
+    return ary
   end
 
   def set_list_class( list_class )
-    if list_class.nil?
-      ::Array
-    else
-      list_class
-    end
+    list_class.with_default_value( ::Array )
   end
 
   def inspect_info_of_two_dimensional_array( ary )

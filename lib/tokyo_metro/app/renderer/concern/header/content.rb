@@ -34,7 +34,7 @@ class TokyoMetro::App::Renderer::Concern::Header::Content < TokyoMetro::App::Ren
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%div{ class: [ domain_class_name , :content_header ] , id: domain_id_name }
+%div{ class: [ domain_class_name , :content_header , :clearfix ] , id: domain_id_name }
 
   - # icon , text
 

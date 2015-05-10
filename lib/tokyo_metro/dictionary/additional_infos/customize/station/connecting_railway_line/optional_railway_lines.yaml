@@ -10,6 +10,8 @@
     railway_lines:
         - odpt.Railway:JR-East.Musashino
         - odpt.Railway:JR-East.Shinkansen
+        - odpt.Railway:JR-East.Shinkansen.2015
+        - odpt.Railway:JR-East.Shinkansen.2016
         - odpt.Railway:JR-Central.Shinkansen
 -
     stations:

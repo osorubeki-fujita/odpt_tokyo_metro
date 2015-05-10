@@ -83,6 +83,14 @@
   "odpt.Railway:TokyoMetro.Marunouchi":
     index_in_station: 2
 
+# 【銀座線】三越前
+
+"odpt.Station:TokyoMetro.Ginza.Mitsukoshimae":
+  "odpt.Railway:TokyoMetro.Hanzomon":
+    index_in_station: 1
+  "odpt.Railway:JR-East.Sobu":
+    index_in_station: 2
+
 # 【銀座線】上野広小路
 
 "odpt.Station:TokyoMetro.Ginza.UenoHirokoji":
@@ -117,8 +125,12 @@
     index_in_station: 7
   "odpt.Railway:JR-East.Shinkansen":
     index_in_station: 8
-  "odpt.Railway:Keisei.KeiseiMain":
+  "odpt.Railway:JR-East.Shinkansen.2015":
     index_in_station: 9
+  "odpt.Railway:JR-East.Shinkansen.2016":
+    index_in_station: 10
+  "odpt.Railway:Keisei.KeiseiMain":
+    index_in_station: 11
     cleared: true
 
 # 【丸ノ内線】新宿
@@ -214,8 +226,12 @@
   "odpt.Railway:JR-East.Shinkansen":
     index_in_station: 12
     cleared: true
-  "odpt.Railway:JR-Central.Shinkansen":
+  "odpt.Railway:JR-East.Shinkansen.2015":
     index_in_station: 13
+  "odpt.Railway:JR-East.Shinkansen.2016":
+    index_in_station: 14
+  "odpt.Railway:JR-Central.Shinkansen":
+    index_in_station: 15
 
 # 【丸ノ内線】淡路町
 
@@ -338,8 +354,12 @@
   "odpt.Railway:JR-East.Shinkansen":
     index_in_station: 8
     cleared: true
-  "odpt.Railway:Keisei.KeiseiMain":
+  "odpt.Railway:JR-East.Shinkansen.2015":
     index_in_station: 9
+  "odpt.Railway:JR-East.Shinkansen.2016":
+    index_in_station: 10
+  "odpt.Railway:Keisei.KeiseiMain":
+    index_in_station: 11
 
 # 【日比谷線】北千住
 

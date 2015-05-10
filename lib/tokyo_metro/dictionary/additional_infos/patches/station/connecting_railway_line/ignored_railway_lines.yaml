@@ -25,12 +25,12 @@
         - odpt.Railway:JR-East.ChuoKaisoku
 
 #-------- 【都営三田線】目黒・白金台
--
-    stations:
-        - odpt.Station:TokyoMetro.Namboku.Meguro
-        - odpt.Station:TokyoMetro.Namboku.Shirokanedai
-    railway_lines:
-        - odpt.Railway:Toei.Mita
+#-
+#    stations:
+#        - odpt.Station:TokyoMetro.Namboku.Meguro
+#        - odpt.Station:TokyoMetro.Namboku.Shirokanedai
+#    railway_lines:
+#        - odpt.Railway:Toei.Mita
 
 #-------- 【小田急小田原線】代々木公園
 -

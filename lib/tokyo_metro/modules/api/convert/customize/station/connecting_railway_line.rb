@@ -2,7 +2,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
 
   include ::TokyoMetro::Modules::Common::ConvertConstantToClassMethod
 
-  [ :replacing_railway_lines , :ignored_railway_lines , :optional_railway_lines , :new_railway_lines , :index_in_stations , :transfer_additional_infos ].each do | filename |
+  [ :replacing_railway_lines , :ignored_railway_lines , :optional_railway_lines , :new_and_old_railway_lines , :index_in_stations , :transfer_additional_infos ].each do | filename |
     const_set(
       filename.upcase ,
       ::YAML.load_file( "#{ ::TokyoMetro::dictionary_dir }/additional_infos/customize/station/connecting_railway_line/#{filename}.yaml" )

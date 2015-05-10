@@ -23,7 +23,7 @@ class TokyoMetro::Static::Operator::Info
   # @param color [::TokyoMetro::Static::Color] 事業者の色
   def initialize( same_as , name_ja , name_ja_display , name_en , name_en_display , index , operator_code ,
     numbering , railway_line_code_shape , station_code_shape , color ,
-    twitter_widget_id , twitter_account
+    twitter_widget_id , twitter_account_name
   )
     @same_as = same_as
     @name_ja = name_ja
@@ -38,13 +38,13 @@ class TokyoMetro::Static::Operator::Info
     @color = color
 
     @twitter_widget_id = twitter_widget_id
-    @twitter_account = twitter_account
+    @twitter_account_name = twitter_account_name
   end
 
   attr_reader :operator_code
 
   attr_reader :twitter_widget_id
-  attr_reader :twitter_account
+  attr_reader :twitter_account_name
 
 # @!group 鉄道事業者の ID、番号に関するメソッド
 

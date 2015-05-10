@@ -17,11 +17,13 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
       cleared: cleared? ,
       not_recommended: not_recommended? ,
       connecting_railway_line_note_id: connecting_railway_line_note_id ,
-      start_on: @info.start_on
+      start_on: @info.start_on ,
+      end_on: @info.end_on ,
+      hidden_on_railway_line_page: hidden_on_railway_line_page?
     })
   end
 
-  [ :connecting_to_another_station? , :cleared? , :recommended? , :not_recommended? ].each do | method_name |
+  [ :connecting_to_another_station? , :cleared? , :recommended? , :not_recommended? , :hidden_on_railway_line_page? ].each do | method_name |
     eval <<-DEF
       def #{method_name}
         @info.#{method_name}

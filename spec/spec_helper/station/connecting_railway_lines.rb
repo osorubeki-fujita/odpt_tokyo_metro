@@ -6,7 +6,7 @@ def connecting_railway_lines_of_station
       connecting_railway_lines__replacing_railway_lines( station )
       connecting_railway_lines__ignored_railway_lines( station )
       connecting_railway_lines__optional_railway_lines( station )
-      connecting_railway_lines__new_railway_lines( station )
+      connecting_railway_lines__new_and_old_railway_lines( station )
       connecting_railway_lines__index_in_stations( station )
       connecting_railway_lines__transfer_additional_infos( station )
     end
@@ -102,38 +102,47 @@ def connecting_railway_lines__optional_railway_lines( station )
 end
 
 
-def connecting_railway_lines__new_railway_lines( station )
-  info_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.new_railway_lines.select { | new_railway_line_name , info |
+def connecting_railway_lines__new_and_old_railway_lines( station )
+  info_related_to_this_station = ::TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.new_and_old_railway_lines.select { | new_railway_line_name , info |
     info[ "stations" ].include?( station.same_as )
   }
 
   if info_related_to_this_station.present?
-    info_related_to_this_station.each do | new_railway_line_name , info |
+    info_related_to_this_station.each do | railway_line_name , info |
 
-      connecting_railway_line_info_of_this_line = station.connecting_railway_lines.find { | info | info.railway_line == new_railway_line_name }
+      connecting_railway_line_info_of_this_line = station.connecting_railway_lines.find { | info | info.railway_line == railway_line_name }
       describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "after adding new railway line info" do
-        it "(#{station.same_as}) should contain the information of \"#{new_railway_line_name}\"." do
+        it "(#{station.same_as}) should contain the information of \"#{ railway_line_name }\"." do
           expect( connecting_railway_line_info_of_this_line ).to be_present
         end
       end
 
       if connecting_railway_line_info_of_this_line.present?
         starting_date_from_yaml = info[ "start_on" ]
+        ending_date_from_yaml = info[ "end_on" ]
         regexp_of_date = /\A(\d{4})\.(\d{2})\.(\d{2})\Z/
 
-        describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "yaml file" do
-          it "(#{new_railway_line_name} in #{station.same_as}) should contain valid date info." do
-            expect( starting_date_from_yaml ).to be_present
-            expect( starting_date_from_yaml ).to match( regexp_of_date )
-          end
-        end
-
-        if regexp_of_date =~ starting_date_from_yaml
-          starting_date = ::DateTime.new( $1.to_i , $2.to_i , $3.to_i , ::TokyoMetro::DATE_CHANGING_HOUR )
-          describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "starting date" do
-            it "(#{new_railway_line_name} in #{station.same_as}) should start on #{starting_date_from_yaml}." do
-              expect( connecting_railway_line_info_of_this_line.start_on ).to eq( starting_date )
+        [ [ starting_date_from_yaml , "start" ] , [ ending_date_from_yaml , "end" ] ].each do | date_info , str |
+          if date_info.present?
+  
+            describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "#{ str }_on" do
+              it "(#{ railway_line_name } in #{station.same_as}) should contain valid date info of #{ str }ing." do
+                expect( date_info ).to match( regexp_of_date )
+              end
             end
+    
+            if regexp_of_date =~ date_info
+              date_time = ::DateTime.new( $1.to_i , $2.to_i , $3.to_i , ::TokyoMetro::DATE_CHANGING_HOUR )
+              if str == "end"
+                date_time = date_time.tomorrow
+              end
+              describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "DateTime (#{str})" do
+                it "(#{ railway_line_name } in #{station.same_as}) should #{str} on #{date_info}." do
+                  expect( connecting_railway_line_info_of_this_line.send( "#{str}_on" ) ).to eq( date_time )
+                end
+              end
+            end
+          
           end
         end
 
@@ -196,16 +205,16 @@ def connecting_railway_lines__transfer_additional_infos( station )
               expect( connecting_railway_line_info ).not_to be_recommended
             end
           end
-
         end
+
         if additional_info_of_this_line[ "note" ]
           describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info do
             it "(transfer to \"#{connecting_railway_line_info.railway_line}\" at \"#{station.same_as}\") should contain note." do
               expect( connecting_railway_line_info.note ).to eq( additional_info_of_this_line[ "note" ] )
             end
           end
-
         end
+
         if additional_info_of_this_line[ "another_station" ]
           another_station = additional_info_of_this_line[ "another_station" ]
           describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info do
@@ -213,7 +222,14 @@ def connecting_railway_lines__transfer_additional_infos( station )
               expect( connecting_railway_line_info.another_station ).to eq( another_station )
             end
           end
+        end
 
+        if additional_info_of_this_line[ "hidden_on_railway_line_page" ]
+          describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info do
+            it "(\"#{station.same_as}\") is connected to \"#{connecting_railway_line_info.railway_line}\" but it is not displayed on railway line page." do
+              expect( connecting_railway_line_info ).to be_hidden_on_railway_line_page
+            end
+          end
         end
 
       end
