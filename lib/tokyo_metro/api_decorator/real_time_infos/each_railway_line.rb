@@ -13,11 +13,11 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::EachRailwayLine < TokyoMetro::Fac
   attr_reader :train_information
   attr_reader :train_locations
 
-  def render_train_information( controller )
+  def render_train_operation_info( controller )
     @train_information.decorate( request , @railway_line , max_delay , controller ).render
   end
 
-  def render_train_information_test
+  def render_train_operation_info_test_version
     h.render inline: <<-HAML , type: :haml , locals: { railway_line: @railway_line , status_list_for_test: STATUS_LIST_FOR_TEST }
 - railway_line_decorated = railway_line.decorate
 - status_list_for_test.each do | test_status |
@@ -43,11 +43,11 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::EachRailwayLine < TokyoMetro::Fac
     HAML
   end
 
-  def render_train_information_precise_version
+  def render_train_operation_info_precise_version
     @train_information.decorate( @railway_line , max_delay ).render_precise_version
   end
 
-  def render_train_locations
+  def render_train_location_infos
     h.render inline: <<-HAML , type: :haml , locals: { info: self }
 = info.train_locations.exclude_toei_mita_line.decorate( request , info.railway_line ).render
     HAML

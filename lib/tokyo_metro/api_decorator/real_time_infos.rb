@@ -75,7 +75,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
 
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 - this.infos_of_each_railway_line.each do | info_of_a_railway_line |
-  = info_of_a_railway_line.render_train_information( controller )
+  = info_of_a_railway_line.render_train_operation_info( controller )
     HAML
   end
 
@@ -84,7 +84,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
 %div{ class: [ :precise_version_title , :text_ja ] }<
   = ::TrainInformationDecorator.common_title_ja + " " + "詳細版"
 - this.infos_of_each_railway_line.each do | info_of_a_railway_line |
-  = info_of_a_railway_line.render_train_information_precise_version
+  = info_of_a_railway_line.render_train_operation_info_precise_version
     HAML
   end
 
@@ -93,7 +93,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
 %div{ class: [ :test_title , :text_ja ] }<
   = ::TrainInformationDecorator.common_title_ja + " " + "テスト"
 - this.infos_of_each_railway_line.each do | info_of_a_railway_line |
-  = info_of_a_railway_line.render_train_information_test
+  = info_of_a_railway_line.render_train_operation_info_test_version
     HAML
   end
 
