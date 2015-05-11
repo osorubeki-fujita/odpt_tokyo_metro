@@ -5,7 +5,6 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::TrainLocationInfos < TokyoMetro::
   end
   
   def render( include_delay , include_train_locations )
-    h.render inline: <<-HAML , type: :haml , locals: h_locals
     raise "Error" if !( include_delay ) and !( include_train_locations )
     h_locals = {
       this: self ,
