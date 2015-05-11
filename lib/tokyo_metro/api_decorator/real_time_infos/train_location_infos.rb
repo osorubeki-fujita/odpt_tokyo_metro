@@ -1,7 +1,7 @@
 class TokyoMetro::ApiDecorator::RealTimeInfos::TrainLocationInfos < TokyoMetro::ApiDecorator::RealTimeInfos::Category::MetaClass
 
   def frequency
-    @time_infos_of_train_locations.map( &:frequency ).sort.uniq
+    @time_infos.map( &:frequency ).sort.uniq
   end
   
   def render( include_delay , include_train_locations )
