@@ -17,10 +17,18 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::Fare < TokyoM
 
   def li_classes
     ary = super()
-    if @station_info.connected_to?( railway_line_object , only_tokyo_metro: true )
+    if !( this_page? ) and this_station?
       ary << :this_station
     end
     ary
+  end
+
+  def this_station?
+    @station_info.connected_to?( railway_line_object , only_tokyo_metro: true , include_myself: true )
+  end
+
+  def link_to_this_page?
+    super() or ( current_railway_line.blank? and @station_info.railway_line.id == railway_line_object.id )
   end
 
   def h_locals

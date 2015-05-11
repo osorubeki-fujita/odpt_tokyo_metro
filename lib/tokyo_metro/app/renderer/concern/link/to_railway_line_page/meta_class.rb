@@ -68,9 +68,9 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   def add_railway_line_css_class_name_to_li_classes?
     true
   end
-  
+
   def link_to_this_page?
-    current_railway_line == "#{ railway_line_object.css_class_name }_line"
+    current_railway_line ==  @railway_line_decorated.page_name
   end
 
   def h_locals
