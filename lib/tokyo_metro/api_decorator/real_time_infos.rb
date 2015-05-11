@@ -191,7 +191,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
 
   # 列車位置情報のメタデータを出力するメソッド
   def render_meta_data_of_train_location_infos( include_delay: true , include_train_locations: false )
-    @time_infos_of_train_operation_infos.render( include_delay , include_train_locations )
+    @time_infos_of_train_location_infos.render( include_delay , include_train_locations )
   end
 
   private
