@@ -66,7 +66,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::TrainLocationInfos < TokyoMetro::
   private
 
   def frequency_to_s
-    frequency_of_train_location_info.map( &:to_s ).join( " - " )
+    frequency.map( &:to_s ).join( " - " )
   end
 
   def render_frequency( str )
