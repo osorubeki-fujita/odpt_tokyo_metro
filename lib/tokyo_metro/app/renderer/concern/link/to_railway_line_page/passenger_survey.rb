@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%ul{ class: [ :each_railway_line , railway_line_decorated.css_class_name ] }
+%ul{ class: [ :each_railway_line , railway_line_decorated.css_class_name , :clearfix ] }
   %li{ class: li_classes }
     = link_to_unless( request.fullpath == url_for_railway_line_page , "" , url_for_railway_line_page )
     %div{ class: div_classes }
