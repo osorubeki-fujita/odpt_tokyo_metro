@@ -20,7 +20,11 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::TrainLocationInfos < TokyoMetro::
   end
 
   def render_title( include_delay , include_train_locations )
-    h.render inline: <<-HAML , type: :haml , locals: h_locals
+    h_locals_i = super.merge({
+      include_delay: include_delay ,
+      include_train_locations: include_train_locations
+    })
+    h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %ul{ class: :titles }
   - if include_delay
     = this.render_title_of_current_delay
