@@ -156,7 +156,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
     }
 
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%div{ id: :real_time_info_and_update_button }
+%div{ id: :real_time_info_and_update_button , class: :clearfix }
   = this.render_title_of_meta_data
   %ul{ class: :time_infos }
     = this.render_meta_data_of_train_operation_infos
