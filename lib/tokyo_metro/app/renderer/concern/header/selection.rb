@@ -17,7 +17,7 @@ class TokyoMetro::App::Renderer::Concern::Header::Selection < TokyoMetro::App::R
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%div{ id: domain_id_name , class: domain_class_name }
+%div{ id: domain_id_name , class: [ domain_class_name , :clearfix ].flatten }
   - if icon_names.length > 1
     %div{ class: :icons }
       - icon_names.each do | icon_name |
