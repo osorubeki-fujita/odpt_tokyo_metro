@@ -54,7 +54,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::Category::MetaClass < TokyoMetro:
     HAML
   end
 
-  def render_time_info_ja( time_infos , li_class , title )
+  def render_time_info_ja( time_infos , li_classes , title )
     h_locals_i = {
       time_for_display: time_for_display( time_infos , lang: :ja ) ,
       li_classes: li_classes ,
@@ -69,7 +69,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::Category::MetaClass < TokyoMetro:
     HAML
   end
 
-  def render_time_info_en( time_infos , li_class , title )
+  def render_time_info_en( time_infos , li_classes , title )
     h_locals_i = {
       time_for_display: time_for_display( time_infos , lang: :en ) ,
       li_classes: li_classes ,
