@@ -2,7 +2,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
 
   def self.initialize_in_rails_app
     self.class_eval do
-      include ::Rails.application.routes.url_helpers
+      # include ::Rails.application.routes.url_helpers
 
       # @note link_to , link_to_unless_current , url_for , current_page?
       @@action_view_base = ::ActionView::Base.new
@@ -56,7 +56,23 @@ class TokyoMetro::Factory::Decorate::MetaClass
     @request.host
   end
   
-  [ :controller , :action , :railway_line , :station ].each do | method_base_name |
+  [ :controller , :action ].each do | method_base_name |
+    eval <<-DEF
+      def #{ method_base_name }_of( url )
+        begin
+          recognize_path( url )[ :#{ method_base_name } ]
+        rescue ::ActionController::RoutingError
+          nil
+        end
+      end
+      
+      def current_#{ method_base_name }
+        #{ method_base_name }_of( fullpath )
+      end
+    DEF
+  end
+  
+  [ :railway_line , :station ].each do | method_base_name |
     eval <<-DEF
       def #{ method_base_name }_of( url )
         begin
