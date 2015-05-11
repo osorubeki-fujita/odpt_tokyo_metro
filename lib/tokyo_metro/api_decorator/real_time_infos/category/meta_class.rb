@@ -36,7 +36,13 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::Category::MetaClass < TokyoMetro:
   end
   
   def render_title_of_each_content( icon_name , text_ja , text_en )
-    h.render inline: <<-HAML , type: :haml , locals: { request: request , icon_name , text_ja , text_en }
+    h_locals_i = {
+      request: request ,
+      icon_name: icon_name ,
+      text_ja: text_ja ,
+      text_en: text_en
+    }
+    h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %li{ class: [ :title , :clearfix ] }<
   %div{ class: :icon }<
     = ::TokyoMetro::App::Renderer::Icon.send( icon_name , request , 1 ).render
