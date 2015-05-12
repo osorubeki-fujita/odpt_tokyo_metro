@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
 %ul{ class: :links , id: :links_to_passenger_survey_pages }
   = proc_for_links_to_railway_line_pages.call
   = proc_for_links_to_year_pages.call
-  = proc_for_links_to_station_pages.call
+  - # = proc_for_links_to_station_pages.call
     HAML
   end
 

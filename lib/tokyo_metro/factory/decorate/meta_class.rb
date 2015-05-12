@@ -55,7 +55,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
     DEF
   end
 
-  [ :railway_line , :station , :year ].each do | method_base_name |
+  [ :railway_line , :station , :survey_year ].each do | method_base_name |
     eval <<-DEF
       def #{ method_base_name }_of( url )
         begin

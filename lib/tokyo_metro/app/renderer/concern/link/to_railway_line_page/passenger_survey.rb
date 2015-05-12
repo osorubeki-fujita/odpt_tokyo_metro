@@ -59,7 +59,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
   end
 
   def link_to_railway_line_page_is_link_to_the_same_page?
-    link_to_the_same_railway_line_page? and ( current_year.to_s == @survey_years.max.to_s )
+    link_to_the_same_railway_line_page? and ( current_survey_year.to_s == @survey_years.max.to_s )
   end
   
   def link_to_the_same_railway_line_page?
@@ -83,7 +83,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
 
   def proc_for_deciding_whether_add_link_to_year_page
     ::Proc.new { | year_i |
-      link_to_the_same_railway_line_page? and ( ( current_year.to_s == year_i.to_s ) or ( current_year.blank? and @survey_years.max.to_s == year_i.to_s ) )
+      link_to_the_same_railway_line_page? and ( ( current_survey_year.to_s == year_i.to_s ) or ( current_survey_year.blank? and @survey_years.max.to_s == year_i.to_s ) )
     }
   end
 
