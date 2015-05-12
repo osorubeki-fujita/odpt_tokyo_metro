@@ -64,7 +64,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
   
   def link_to_the_same_railway_line_page?
     [
-      [ cunnrent_controller , @controller ] ,
+      [ current_controller , @controller ] ,
       [ current_action , :action_for_railway_line_or_year_page ] ,
       [ current_railway_line , railway_line_page_name ]
     ].all? { | current_info , link_info |
