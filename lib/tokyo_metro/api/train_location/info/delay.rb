@@ -79,7 +79,7 @@ class TokyoMetro::Api::TrainLocation::Info::Delay
     ary << min_part( add_hour_part: add_hour_part )
     ary << "min"
     ary << sec_part
-    ary << "秒"
+    ary << "sec"
     ary.map( &:to_s ).join( " " )
   end
 

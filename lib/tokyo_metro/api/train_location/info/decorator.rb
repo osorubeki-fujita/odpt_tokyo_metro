@@ -40,7 +40,7 @@ class TokyoMetro::Api::TrainLocation::Info::Decorator < TokyoMetro::Api::MetaCla
   end
 
   def render_current_position
-    stations = [ :from_station , :to_station ].map { | attr_name |
+    station_infos = [ :from_station , :to_station ].map { | attr_name |
       object.send( attr_name )
     }.select( &:present? ).map { | station_info_same_as |
       case station_info_same_as
@@ -53,7 +53,7 @@ class TokyoMetro::Api::TrainLocation::Info::Decorator < TokyoMetro::Api::MetaCla
       ::Station::Info.find_by( same_as: station_info_same_as )
     }
 
-    h.render inline: <<-HAML , type: :haml , locals: { request: request , stations: stations }
+    h.render inline: <<-HAML , type: :haml , locals: { request: request , station_infos: station_infos }
 %div{ class: :current_position }
   %div{ class: :title_of_current_position }
     %p{ class: :text_ja }<
@@ -61,8 +61,8 @@ class TokyoMetro::Api::TrainLocation::Info::Decorator < TokyoMetro::Api::MetaCla
     %p{ class: :text_en }<
       = "Now at"
   %div{ class: :station_infos }<
-    - stations.each.with_index(1) do | station , i |
-      = station.decorate.train_location.render_name
+    - station_infos.each.with_index(1) do | station_info , i |
+      = station_info.decorate.train_location.render_name
       - unless i == stations.length
         %div{ class: :arrow }
           = ::TokyoMetro::App::Renderer::Icon.caret_right( request , 2 ).render
