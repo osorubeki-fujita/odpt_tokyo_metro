@@ -31,6 +31,54 @@ class TokyoMetro::Factory::Decorate::MetaClass
 
   attr_reader :request
 
+  def path
+    recognize_path( @request.referer )
+  end
+
+  def current_host
+    @request.host
+  end
+
+  [ :controller , :action ].each do | method_base_name |
+    eval <<-DEF
+      def #{ method_base_name }_of( url )
+        begin
+          recognize_path( url )[ :#{ method_base_name } ]
+        rescue ::ActionController::RoutingError
+          nil
+        end
+      end
+
+      def current_#{ method_base_name }
+        #{ method_base_name }_of( fullpath )
+      end
+    DEF
+  end
+
+  [ :railway_line , :station , :year ].each do | method_base_name |
+    eval <<-DEF
+      def #{ method_base_name }_of( url )
+        begin
+          recognize_path( url )[ :#{ method_base_name } ]
+        rescue ::ActionController::RoutingError
+          nil
+        end
+      end
+
+      def current_#{ method_base_name }
+        #{ method_base_name }_of( fullpath )
+      end
+    DEF
+  end
+  
+  def fullpath
+    @request.fullpath
+  end
+
+  def recognize_path( url )
+    ::Rails.application.routes.recognize_path( url )
+  end
+
   private
 
   def default_url_options
@@ -46,54 +94,6 @@ class TokyoMetro::Factory::Decorate::MetaClass
       c: c ,
       v: v
     }
-  end
-
-  def path
-    recognize_path( @request.referer )
-  end
-
-  def current_host
-    @request.host
-  end
-  
-  [ :controller , :action ].each do | method_base_name |
-    eval <<-DEF
-      def #{ method_base_name }_of( url )
-        begin
-          recognize_path( url )[ :#{ method_base_name } ]
-        rescue ::ActionController::RoutingError
-          nil
-        end
-      end
-      
-      def current_#{ method_base_name }
-        #{ method_base_name }_of( fullpath )
-      end
-    DEF
-  end
-  
-  [ :railway_line , :station ].each do | method_base_name |
-    eval <<-DEF
-      def #{ method_base_name }_of( url )
-        begin
-          recognize_path( url )[ :#{ method_base_name } ]
-        rescue ::ActionController::RoutingError
-          nil
-        end
-      end
-      
-      def current_#{ method_base_name }
-        #{ method_base_name }_of( fullpath )
-      end
-    DEF
-  end
-  
-  def recognize_path( url )
-    ::Rails.application.routes.recognize_path( url )
-  end
-  
-  def fullpath
-    @request.fullpath
   end
 
   def v
