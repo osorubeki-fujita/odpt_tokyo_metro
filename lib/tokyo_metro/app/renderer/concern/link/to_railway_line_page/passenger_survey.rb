@@ -40,7 +40,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
   def url
     nil
   end
-  
+
   def url_for_railway_line_page
     url_helpers.url_for(
       controller: @controller , 
