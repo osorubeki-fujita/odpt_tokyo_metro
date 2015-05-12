@@ -42,7 +42,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
   def proc_for_links_to_year_pages
     ::Proc.new {
       h.render inline: <<-HAML , type: :haml , locals: { request: request , survey_years: @years }
-%ul{ id: :links_to_year_pages , class: [ :links , :clearfix ] }
+%ul{ id: :links_to_year_pages , class: :links }
   %li{ class: [ :title , :to_year_pages ] }<
     != "全路線 全駅の乗降客数"
     %span{ class: :small }<
