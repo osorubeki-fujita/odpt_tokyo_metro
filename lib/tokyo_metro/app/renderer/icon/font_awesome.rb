@@ -2,6 +2,7 @@ class TokyoMetro::App::Renderer::Icon::FontAwesome < TokyoMetro::App::Renderer::
 
   def initialize( request , icon_name , size = 1 , spin: nil , pulse: nil , inverse: nil )
     raise if spin and pulse
+    raise "Error" if ( spin or pulse ) and !( [ "circle-o-notch" , "cog" , "gear" , "refresh" , "spinner" ].include?( icon_name ) )
     super( request )
     @icon_name = icon_name
     @size = size

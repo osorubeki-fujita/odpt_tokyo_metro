@@ -1,7 +1,7 @@
 module TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine
 
   def self.instance_of( request , railway_lines )
-    railway_lines = railway_lines.to_a
+    railway_lines = [ railway_lines ].flatten
     case railway_lines.length
     when 1
       railway_line = railway_lines.first

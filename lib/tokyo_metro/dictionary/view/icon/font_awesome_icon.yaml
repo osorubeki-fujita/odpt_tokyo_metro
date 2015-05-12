@@ -48,7 +48,28 @@
 
 #-------- 矢印
 
+"caret_left": "caret-left"
 "caret_right": "caret-right"
+"caret_up": "caret-up"
+"caret_down": "caret-down"
+
+"arrows_v": "arrows-v"
+"arrows_h": "arrows-h"
+
+"chevron_left": "chevron-left"
+"chevron_right": "chevron-right"
+"chevron_up": "chevron-up"
+"chevron_down": "chevron-down"
+
+"angle_left": "angle-left"
+"angle_right": "angle-right"
+"angle_up": "angle-up"
+"angle_down": "angle-down"
+
+"angle_double_left": "angle-double-left"
+"angle_double_right": "angle-double-right"
+"angle_double_up": "angle-double-up"
+"angle_double_down": "angle-double-down"
 
 #-------- SNS
 

@@ -50,7 +50,7 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::App::Renderer::MetaClass
       if @railway_lines.length == 1
         return ::RailwayLine.where( same_as: "odpt.Railway:TokyoMetro.Marunouchi" )
       else
-        return @railway_lines.where.not( same_as: "odpt.Railway:TokyoMetro.MarunouchiBranch" )
+        return @railway_lines.delete_if { | item | item.same_as == "odpt.Railway:TokyoMetro.MarunouchiBranch" }
       end
     end
 
@@ -58,7 +58,7 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::App::Renderer::MetaClass
       if @railway_lines.length == 1
         return ::RailwayLine.where( same_as: "odpt.Railway:TokyoMetro.Chiyoda" )
       else
-        return @railway_lines.where.not( same_as: "odpt.Railway:TokyoMetro.ChiyodaBranch" )
+        return @railway_lines.delete_if { | item | item.same_as == "odpt.Railway:TokyoMetro.ChiyodaBranch" }
       end
     end
 
