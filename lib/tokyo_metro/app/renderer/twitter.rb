@@ -6,7 +6,7 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::App::Renderer::MetaClass
     raise "Error" unless visibility == :visible or :hidden
     super( request )
     @setting = setting
-    @railway_lines = railway_lines
+    @railway_lines = [ railway_lines ].flatten
     @visibility = visibility
   end
 

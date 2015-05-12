@@ -2,12 +2,10 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
 
   def initialize( request , railway_lines , http_client = ::HTTPClient.new )
     super( request )
-    @railway_lines = railway_lines.except_for_branch_lines
-    @infos_of_each_railway_line = ::Array.new( @railway_lines.map { | railway_line |
-      ::TokyoMetro::ApiDecorator::RealTimeInfos::EachRailwayLine.new( request , railway_line , http_client )
-    } )
+    @http_client = http_client
+    set_railway_lines( railway_lines )
+    set_infos_of_each_railway_line
     raise "Error" unless has_any_railway_line?
-
     set_time_infos_of_train_operation_infos
     set_time_infos_of_train_location_infos
   end
@@ -195,6 +193,20 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
   end
 
   private
+
+  def set_railway_lines( railway_lines )
+    if railway_lines.instance_of?( ::RailwayLine )
+      @railway_lines = [ railway_lines ]
+    else
+      @railway_lines = railway_lines.except_for_branch_lines
+    end
+  end
+
+  def set_infos_of_each_railway_line
+    @infos_of_each_railway_line = ::Array.new( @railway_lines.map { | railway_line |
+      ::TokyoMetro::ApiDecorator::RealTimeInfos::EachRailwayLine.new( request , railway_line , @http_client )
+    })
+  end
 
   def set_time_infos_of_train_operation_infos
     @time_infos_of_train_operation_infos = ::TokyoMetro::ApiDecorator::RealTimeInfos::TrainOperationInfos.new(

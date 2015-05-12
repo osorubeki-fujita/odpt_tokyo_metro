@@ -26,11 +26,11 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::Fare < TokyoM
   def link_to_this_page?
     super() or ( railway_line_param_is_not_set? and railway_line_of_station_info_and_railway_line_object_is_the_same? )
   end
-  
+
   def railway_line_param_is_not_set?
     current_railway_line.blank?
   end
-  
+
   def railway_line_of_station_info_and_railway_line_object_is_the_same?
     @station_info.railway_line.id == railway_line_object.id
   end
