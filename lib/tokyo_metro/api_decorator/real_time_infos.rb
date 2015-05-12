@@ -146,7 +146,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
 
   # @!group Meta Data
 
-  def render_real_time_info_and_update_button_of_train_informations( include_train_locations: false )
+  def render_meta_datum( include_train_locations: false )
     h_locals = {
       this: self ,
       requset: @requset ,

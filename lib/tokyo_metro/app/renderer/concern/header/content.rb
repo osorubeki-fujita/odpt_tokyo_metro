@@ -83,7 +83,6 @@ class TokyoMetro::App::Renderer::Concern::Header::Content < TokyoMetro::App::Ren
       add_update_button: @add_update_button ,
       update_button_id: @update_button_id ,
       #
-      # size_setting_button_id: size_setting_button_id ,
       url_in_size_setting_form: url_in_size_setting_form ,
       class_name_of_size_setting_form_button: class_name_of_size_setting_form_button ,
       #
@@ -91,16 +90,6 @@ class TokyoMetro::App::Renderer::Concern::Header::Content < TokyoMetro::App::Ren
       class_name_of_updating_real_time_info_form_button: class_name_of_updating_real_time_info_form_button
     } )
   end
-
-=begin
-  def size_setting_button_id
-    if @size_setting_button_type.present?
-      "#{ @size_setting_button_type }_#{ @contoller_of_size_setting }"
-    else
-      nil
-    end
-  end
-=end
 
   def url_in_size_setting_form
     if @size_setting_button_type.present?
