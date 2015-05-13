@@ -64,7 +64,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
             = "All stations of Tokyo Metro"
       - survey_year_max = survey_years.max
       - survey_years.sort.reverse.each do | survey_year |
-        = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear.new( request , survey_year , survey_year_max , :all )
+        = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear.new( request , survey_year , survey_year_max , :all ).render
       HAML
     }
   end
