@@ -42,8 +42,8 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
       survey_year: @survey_year ,
       survey_year_max: @survey_year_max ,
       url: @url ,
+      only_year: @only_year ,
       without_link: without_link? ,
-      only_year: only_year ,
       li_classes: li_classes
     })
   end
