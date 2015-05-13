@@ -42,11 +42,15 @@ class TokyoMetro::Factory::Decorate::MetaClass
   [ :controller , :action ].each do | method_base_name |
     eval <<-DEF
       def #{ method_base_name }_of( url )
-        current_position( :#{ method_base_name } )
+        begin
+          recognize_path( url )[ :#{ method_base_name } ]
+        rescue ::ActionController::RoutingError
+          nil
+        end
       end
 
       def current_#{ method_base_name }
-        #{ method_base_name }_of( fullpath )
+        current_position( :#{ method_base_name } )
       end
     DEF
   end
@@ -54,11 +58,15 @@ class TokyoMetro::Factory::Decorate::MetaClass
   [ :railway_line , :station , :survey_year ].each do | method_base_name |
     eval <<-DEF
       def #{ method_base_name }_of( url )
-        current_position( :#{ method_base_name } )
+        begin
+          recognize_path( url )[ :#{ method_base_name } ]
+        rescue ::ActionController::RoutingError
+          nil
+        end
       end
 
       def current_#{ method_base_name }
-        #{ method_base_name }_of( fullpath )
+        current_position( :#{ method_base_name } )
       end
     DEF
   end
