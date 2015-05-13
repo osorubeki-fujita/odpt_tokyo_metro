@@ -41,7 +41,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
       railway_line: @railway_line_page_name ,
       survey_year: @survey_year ,
       only_path: true ,
-      with_operator_icon: with_operator_icon
+      with_operator_icon: @with_operator_icon
     )
   end
 
