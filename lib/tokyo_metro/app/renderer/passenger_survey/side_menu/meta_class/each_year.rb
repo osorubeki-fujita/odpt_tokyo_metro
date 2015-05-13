@@ -21,7 +21,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
   - else
     - if with_operator_icon
       %div{ class: :icon }<
-        = ::TokyoMetro::App::Renderer::Icon.tokyo_metro( request, 1 ).render
+        = ::TokyoMetro::App::Renderer::Icon.tokyo_metro( request , 1 ).render
     %div{ class: :text }
       %p{ class: :text_ja }<
         %span{ class: :text_en }<
