@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear < TokyoMetro::App::Renderer::MetaClass
 
-  def initialize( request , survey_year , survey_year_max , railway_line_page_name , only_year: true )
+  def initialize( request , survey_year , survey_year_max , railway_line_page_name , only_year: true , with_operator_icon: false )
     super( request )
     @survey_year = survey_year
     @survey_year_max = survey_year_max
@@ -18,7 +18,10 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
     %p{ class: :text_en }<
       = survey_year
   - else
-    %div{ class: :text }<
+    - if with_operator_icon
+      %div{ class: :icon }<
+        = ::TokyoMetro::App::Renderer::Icon.tokyo_metro( request, 1 ).render
+    %div{ class: :text }
       %p{ class: :text_ja }<
         %span{ class: :text_en }<
           = survey_year
@@ -36,7 +39,8 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
       action: :action_for_railway_line_or_year_page ,
       railway_line: @railway_line_page_name ,
       survey_year: @survey_year ,
-      only_path: true
+      only_path: true ,
+      with_operator_icon: with_operator_icon
     )
   end
 

@@ -42,11 +42,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
   [ :controller , :action ].each do | method_base_name |
     eval <<-DEF
       def #{ method_base_name }_of( url )
-        begin
-          recognize_path( url )[ :#{ method_base_name } ]
-        rescue ::ActionController::RoutingError
-          nil
-        end
+        current_position( :#{ method_base_name } )
       end
 
       def current_#{ method_base_name }
@@ -58,11 +54,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
   [ :railway_line , :station , :survey_year ].each do | method_base_name |
     eval <<-DEF
       def #{ method_base_name }_of( url )
-        begin
-          recognize_path( url )[ :#{ method_base_name } ]
-        rescue ::ActionController::RoutingError
-          nil
-        end
+        current_position( :#{ method_base_name } )
       end
 
       def current_#{ method_base_name }
@@ -70,7 +62,7 @@ class TokyoMetro::Factory::Decorate::MetaClass
       end
     DEF
   end
-  
+
   def fullpath
     @request.fullpath
   end
@@ -80,6 +72,23 @@ class TokyoMetro::Factory::Decorate::MetaClass
   end
 
   private
+  
+  def current_position( hash_key_name )
+    begin
+      return recognize_path( fullpath )[ hash_key_name.to_sym ]
+    rescue ::ActionController::RoutingError
+      return nil
+    end
+  end
+
+  def method_missing( method_name , *args )
+    if /\Acurrent_([a-z_]+)\Z/ =~ method_name.to_s
+      if args.blank?
+        current_position( $1 )
+      end
+    end
+    return super( method_name , args )
+  end
 
   def default_url_options
     ::ActionController::Base.default_url_options
