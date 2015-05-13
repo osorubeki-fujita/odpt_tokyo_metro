@@ -18,10 +18,13 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
     %p{ class: :text_en }<
       = survey_year
   - else
-    %p{ class: :text_ja }<
-      = survey_year.to_s + "年度"
-    %p{ class: :text_en }<
-      = "In " + survey_year.to_s
+    %div{ class: :text }<
+      %p{ class: :text_ja }<
+        %span{ class: :text_en }<
+          = survey_year
+        != "年度"
+      %p{ class: :text_en }<
+        = "In " + survey_year.to_s
     HAML
   end
 
