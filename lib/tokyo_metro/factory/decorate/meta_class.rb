@@ -116,6 +116,26 @@ class TokyoMetro::Factory::Decorate::MetaClass
     @@application_controller_helper
   end
 
+  def current_page?( arg )
+    if arg.instance_of?( ::String )
+      fullpath == arg
+
+    elsif arg.instance_of?( ::Hash )
+      arg.all? { | key ,value |
+        current_info = send( "current_#{ key }" )
+
+        if value.instance_of?( ::Array )
+          value.flatten.map( &:to_s ).include?( current_info.to_s )
+        else
+          current_info.to_s == value.to_s
+        end
+      }
+
+    else
+      raise "Error"
+    end
+  end
+
   class << self
 
     private

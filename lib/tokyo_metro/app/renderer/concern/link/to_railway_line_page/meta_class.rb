@@ -48,10 +48,14 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
     end
 
     if link_to_this_page?
-      ary << :this_page
+      ary << additional_li_classes_to_link_to_this_page
     end
 
     ary.flatten
+  end
+  
+  def additional_li_classes_to_link_to_this_page
+    :this_page
   end
 
   def div_classes
