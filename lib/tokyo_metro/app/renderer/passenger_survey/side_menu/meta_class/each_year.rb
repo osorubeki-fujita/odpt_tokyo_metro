@@ -12,7 +12,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%li{ class: :survey_year }
+%li{ class: li_classes }
   = link_to_unless( without_link , "" , url )
   - if only_year
     %p{ class: :text_en }<
@@ -43,7 +43,8 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
       survey_year_max: @survey_year_max ,
       url: @url ,
       without_link: without_link? ,
-      only_year: only_year
+      only_year: only_year ,
+      li_classes: li_classes
     })
   end
 
@@ -61,6 +62,14 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
 
   def link_to_the_same_survey_year?
     current_page?( survey_year: @survey_year ) or ( current_page?( survey_year: nil ) and ( @survey_year_max.to_s == @survey_year.to_s ) )
+  end
+  
+  def li_classes
+    ary = [ :survey_year ]
+    if without_link?
+      ary << :this_year
+    end
+    ary
   end
 
 end

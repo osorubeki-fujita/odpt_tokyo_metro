@@ -40,11 +40,11 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
   end
 
   def proc_for_links_to_year_pages
+    li_classes = [ :tokyo_metro , :small ]
+    if current_railway_line.to_s == "all"
+      li_classes << :this_page
+    end
     ::Proc.new {
-      li_classes = [ :tokyo_metro , :small ]
-      if current_railway_line.to_s == "all"
-        li_classes << :this_page
-      end
       h.render inline: <<-HAML , type: :haml , locals: { request: request , survey_years: @years , li_classes: li_classes }
 %ul{ id: :links_to_year_pages , class: :links }
   %li{ class: [ :title , :to_year_pages ] }<
