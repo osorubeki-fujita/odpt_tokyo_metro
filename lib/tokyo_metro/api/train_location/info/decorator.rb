@@ -1,4 +1,4 @@
-class TokyoMetro::Api::TrainLocation::Info::Decorator < TokyoMetro::Api::MetaClass::RealTime::Info::Decorator
+﻿class TokyoMetro::Api::TrainLocation::Info::Decorator < TokyoMetro::Api::MetaClass::RealTime::Info::Decorator
 
   def initialize( request , obj , railway_line )
     super( request , obj )
@@ -63,7 +63,7 @@ class TokyoMetro::Api::TrainLocation::Info::Decorator < TokyoMetro::Api::MetaCla
   %div{ class: :station_infos }<
     - station_infos.each.with_index(1) do | station_info , i |
       = station_info.decorate.train_location.render_name
-      - unless i == stations.length
+      - unless i == station_infos.length
         %div{ class: :arrow }
           = ::TokyoMetro::App::Renderer::Icon.caret_right( request , 2 ).render
     HAML

@@ -28,7 +28,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
   private
 
   def set_url
-    @url = url_helper.url_for(
+    @url = url_helpers.url_for(
       controller: :passenger_survey ,
       action: :action_for_railway_line_or_year_page ,
       railway_line: @railway_line_page_name ,
