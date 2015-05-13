@@ -6,6 +6,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
     @survey_year_max = survey_year_max
     @railway_line_page_name = railway_line_page_name
     @only_year = only_year
+    @with_operator_icon = with_operator_icon
 
     set_url
   end
