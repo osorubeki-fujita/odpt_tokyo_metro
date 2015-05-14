@@ -83,7 +83,7 @@ class TokyoMetro::Api::TrainInformation::Info::Decorator < TokyoMetro::Api::Meta
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: { this: self }
-%div{ class: [ :train_information , :railway_line ] }
+%li{ class: [ :train_information , :railway_line , :clearfix ] }
   = this.railway_line.decorate.render_matrix( make_link_to_railway_line: true , size: :small , link_controller_name: this.controller )
   %div{ class: [ :status , this.status_type ] }
     %div{ class: :infos }

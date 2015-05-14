@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%ul{ class: :links , id: :links_to_passenger_survey_pages }
+%ul{ id: :links_to_passenger_survey_pages , class: [ :links , :clearfix ] }
   = proc_for_links_to_railway_line_pages.call
   = proc_for_links_to_year_pages.call
   - # = proc_for_links_to_station_pages.call
@@ -46,12 +46,12 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
     end
     ::Proc.new {
       h.render inline: <<-HAML , type: :haml , locals: { request: request , survey_years: @years , li_classes: li_classes }
-%ul{ id: :links_to_year_pages , class: :links }
+%ul{ id: :links_to_year_pages , class: [ :links , :in_side_menu ] }
   %li{ class: [ :title , :to_year_pages ] }<
     != "全路線 全駅の乗降客数"
     %span{ class: :small }<
       = "（年度別）"
-  %ul{ class: :operator }
+  %ul{ class: [ :operator , :clearfix ] }
     %li{ class: li_classes }
       = ::PassengerSurveyDecorator.link_to_year_page( nil )
       %div{ class: [ :link_to_operator_page , :clearfix ] }
@@ -72,7 +72,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
   def proc_for_links_to_station_pages
     ::Proc.new {
       h.render inline: <<-HAML , type: :haml
-%ul{ class: :links , id: :links_to_station_pages }
+%ul{ id: :links_to_station_pages , class: :links }
   %li{ class: [ :title , :passenger_info_header ] }<
     != "各駅の乗降客数"
     %span{ class: :small }<

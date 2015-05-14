@@ -225,7 +225,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos < TokyoMetro::Factory::Decorate::M
       @time_infos_of_train_location_infos = nil
     end
   end
-  
+
   def has_train_locations_infos_on_initialize?
     @infos_of_each_railway_line.map( &:train_locations ).any?( &:present? )
   end
