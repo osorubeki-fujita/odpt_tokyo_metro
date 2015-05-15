@@ -16,7 +16,9 @@ class TokyoMetro::Api::Point::Info::Title::Code
         @another_info = code
       end
     else
-      raise "Error: #{ code } is not valid."
+      unless code.nil?
+        raise "Error: TokyoMetro::Api::Point::Info::Title::Code - #{ code } is not valid."
+      end
     end
 
     if additional_info_ja.present?
