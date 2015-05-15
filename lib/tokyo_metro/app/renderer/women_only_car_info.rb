@@ -30,7 +30,7 @@ class TokyoMetro::App::Renderer::WomenOnlyCarInfo < TokyoMetro::Factory::Decorat
     end
 
     @infos = infos_in_db.includes( :operation_day , :from_station_info , :to_station_info ).to_a.group_by( &:railway_line_id ).map { | railway_line_id , infos |
-      ::TokyoMetro::App::Renderer::WomenOnlyCarInfo::EachRailwayLine.new( @request , @railway_lines.find( railway_line_id ) , infos )
+      ::TokyoMetro::App::Renderer::WomenOnlyCarInfo::EachRailwayLine.new( @request , ::RailwayLine.find( railway_line_id ) , infos )
     }
   end
 
