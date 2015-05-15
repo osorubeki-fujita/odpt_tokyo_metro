@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Concern::Header::MetaClass < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::Concern::Header::MetaClass < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize(
     request , text_ja , text_en ,

@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Icon::Image < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::Icon::Image < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , image_filename , class_name: nil )
     super( request )

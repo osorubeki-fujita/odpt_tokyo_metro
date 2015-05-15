@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , passenger_survey_infos , make_graph )
     super( request )

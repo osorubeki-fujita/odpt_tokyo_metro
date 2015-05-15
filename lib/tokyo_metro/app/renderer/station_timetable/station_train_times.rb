@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::StationTimetable::StationTrainTimes < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::StationTimetable::StationTrainTimes < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( station_train_times )
     @grouped_by_hour = station_train_times.group_by( &:hour_in_station_timetable )

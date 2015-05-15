@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::WomenOnlyCarInfo::EachRailwayLine < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::WomenOnlyCarInfo::EachRailwayLine < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , railway_line , infos )
     super( request )

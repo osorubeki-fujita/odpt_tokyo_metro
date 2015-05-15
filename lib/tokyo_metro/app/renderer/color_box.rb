@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::ColorBox < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::ColorBox < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , class_name: nil , size: :normal , text: nil )
     super( request )

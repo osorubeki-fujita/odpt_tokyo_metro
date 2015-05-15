@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::MetaClass < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::MetaClass < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , infos_in_a_row )
     super( request )

@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::SideMenu::NowDeveloping < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::SideMenu::NowDeveloping < TokyoMetro::Factory::Decorate::MetaClass
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals

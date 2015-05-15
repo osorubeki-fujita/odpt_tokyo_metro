@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass::Row < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass::Row < TokyoMetro::Factory::Decorate::MetaClass
 
   @@rectangle_height = 20
 

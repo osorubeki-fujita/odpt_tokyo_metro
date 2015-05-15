@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , station_infos , fares , normal_fare_groups , to_make_empty_row_when_no_station: false )
     super( request )

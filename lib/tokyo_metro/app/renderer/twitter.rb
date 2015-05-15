@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Twitter < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::Twitter < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , setting , railway_lines = nil , visibility: :visible )
     raise "Error" unless setting == :tokyo_metro or setting == :railway_lines

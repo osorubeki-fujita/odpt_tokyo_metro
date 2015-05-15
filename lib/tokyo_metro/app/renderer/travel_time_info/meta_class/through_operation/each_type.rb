@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::EachType < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::EachType < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request )
     super( request )

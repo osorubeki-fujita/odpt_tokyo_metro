@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::SideMenu < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::SideMenu < TokyoMetro::Factory::Decorate::MetaClass
 
   def self.render_all( request )
     h.render inline: <<-HAML , type: :haml , locals: { all_list: all_list( request ) }

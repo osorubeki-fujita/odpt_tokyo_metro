@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Row::Station < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Row::Station < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , station_info ,
     left_columns , columns_next_to_railway_line , right_columns ,

@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Factory::Decorate::MetaClass
 
   # @params station_infos_including_other_railway_lines は、駅（全路線）のインスタンスとする。
   # @params railway_line [::RailwayLine]

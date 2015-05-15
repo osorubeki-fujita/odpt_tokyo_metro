@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Row::Section < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Row::Section < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize(
     request , section_info , necessary_time ,

@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , survey_year , survey_year_max , railway_line_page_name , only_year: true , with_operator_icon: false )
     super( request )

@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom::ChiyodaBranchLine < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom::ChiyodaBranchLine < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , branch_railway_line )
     super( request )

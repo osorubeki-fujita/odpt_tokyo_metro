@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Icon::FontAwesome::Stacked < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::Icon::FontAwesome::Stacked < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , icon_settings )
     raise unless icon_settings.instance_of?( ::Array )

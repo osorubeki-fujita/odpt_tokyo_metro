@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Concern::Header::Title::Top < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::Concern::Header::Title::Top < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request )
     super( request )

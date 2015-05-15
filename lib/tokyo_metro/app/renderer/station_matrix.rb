@@ -1,5 +1,5 @@
 # 駅一覧表（路線別）を作成するためのクラス
-class TokyoMetro::App::Renderer::StationMatrix < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::StationMatrix < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , railway_lines , make_link_to_railway_line: false , type_of_link_to_station: nil , set_anchor: false )
     super( request )

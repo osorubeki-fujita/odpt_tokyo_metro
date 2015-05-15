@@ -12,6 +12,8 @@ require "odpt_common"
 require "odpt_tokyo_metro_helper"
 require "with_default_value"
 
+require "rails_decorate_factory"
+
 # Encoding.default_external
 # require 'psych'
 

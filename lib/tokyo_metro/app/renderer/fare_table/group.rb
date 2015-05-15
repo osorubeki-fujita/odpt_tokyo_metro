@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , station_info , railway_line_of_terminal_station )
     super( request )

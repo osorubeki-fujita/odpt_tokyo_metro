@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , class_name , ul_id , link_instance_names , *opts , additional_proc: nil )
     @request = request

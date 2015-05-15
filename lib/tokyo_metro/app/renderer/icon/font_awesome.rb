@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Icon::FontAwesome < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::Icon::FontAwesome < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , icon_name , size = 1 , spin: nil , pulse: nil , inverse: nil )
     raise if spin and pulse

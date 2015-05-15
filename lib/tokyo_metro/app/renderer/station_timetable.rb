@@ -1,5 +1,5 @@
 # 個別の時刻表（路線・方面・運行日別）を作成するためのクラス
-class TokyoMetro::App::Renderer::StationTimetable < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::StationTimetable < TokyoMetro::Factory::Decorate::MetaClass
 
   # Constructor
   # @param station_train_times_of_a_direction_and_an_operation_day [Array <TrainTime>] 各列車の情報（路線・方面・運行日別）のリスト

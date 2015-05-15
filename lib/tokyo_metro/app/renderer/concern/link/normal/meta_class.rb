@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , title_ja , title_en , url , icon_name: nil , class_name_of_whole_domain: nil , class_name_of_link: :link , class_name_of_text_domain: nil , open_another_window: false , size: :normal , additional_info: nil , additional_info_position: nil , link_to_another_website: false )
     super( request )

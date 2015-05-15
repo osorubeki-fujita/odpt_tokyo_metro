@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::StationCode::Normal < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::StationCode::Normal < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , station_infos , first_info: nil )
     super( request )

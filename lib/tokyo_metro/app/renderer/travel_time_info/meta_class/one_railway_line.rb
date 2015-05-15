@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::OneRailwayLine < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::OneRailwayLine < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , railway_line )
     super( request )

@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::App::Renderer::MetaClass
+class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , station_facility )
     super( request )
