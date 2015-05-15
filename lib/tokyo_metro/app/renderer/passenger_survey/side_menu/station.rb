@@ -27,7 +27,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::Station < TokyoMetro
         request: request ,
         railway_lines_prior: railway_lines_prior ,
         railway_lines_not_prior: railway_lines_not_prior ,
-        years: @years
+        survey_years: @survey_years
       }
       h.render inline: <<-HAML , type: :haml , locals: h_locals_for_this_proc
 %ul{ id: :links_to_railway_line_pages_of_this_station , class: :links }
@@ -36,14 +36,14 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::Station < TokyoMetro
     %span{ class: :small }<
       = "（年度別）"
   - railway_lines_prior.each do | railway_line |
-    = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::LinkToRailwayLinePage.new( request , railway_line.decorate , years , additional_class_of_li: :this_station ).render
+    = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::LinkToRailwayLinePage.new( request , railway_line.decorate , survey_years , additional_class_of_li: :this_station ).render
 %ul{ id: :links_to_railway_line_pages , class: :links }
   %li{ class: [ :title , :in_station_page ] }<
     != "その他の路線の乗降客数"
     %span{ class: :small }<
       = "（年度別）"
   - railway_lines_not_prior.each do | railway_line |
-    = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::LinkToRailwayLinePage.new( request , railway_line.decorate , years ).render
+    = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::LinkToRailwayLinePage.new( request , railway_line.decorate , survey_years ).render
       HAML
     }
   end

@@ -12,7 +12,7 @@ module TokyoMetro::Rake::Rails::Deploy::Heroku::Csv
       if utf8_file_content.present?
 
         shift_jis_file_content = utf8_file_content.map { | str |
-          str.process_machine_dependent_character.encode( "windows-31j" )
+          str.process_machine_dependent_character.encode( "windows-31j" ).gsub( /\"\"/ , "" )
         }.join( "\n" )
 
         ::File.open( new_filename , "w:windows-31j" ) do |f|

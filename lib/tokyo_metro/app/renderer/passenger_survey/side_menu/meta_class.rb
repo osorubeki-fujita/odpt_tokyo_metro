@@ -3,7 +3,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
   def initialize( request )
     super( request )
     @all_railway_lines = ::RailwayLine.tokyo_metro( including_branch_line: false )
-    @years = ::PassengerSurvey.all.pluck( :survey_year ).uniq.sort
+    @survey_years = ::PassengerSurvey.all.pluck( :survey_year ).uniq.sort
   end
 
   def render
@@ -27,7 +27,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
 
   def proc_for_links_to_railway_line_pages
     ::Proc.new {
-      h.render inline: <<-HAML , type: :haml , locals: { request: request , all_railway_lines: @all_railway_lines , survey_years: @years }
+      h.render inline: <<-HAML , type: :haml , locals: { request: request , all_railway_lines: @all_railway_lines , survey_years: @survey_years }
 %ul{ id: :links_to_railway_line_pages , class: :links }
   %li{ class: [ :title , :in_station_page ] }<
     != "各路線 各駅の乗降客数"
@@ -44,8 +44,14 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
     if current_railway_line.to_s == "all"
       li_classes << :this_page
     end
+    h_locals_i = {
+      request: request ,
+      survey_years: @survey_years ,
+      li_classes: li_classes ,
+      survey_year_max: @survey_years.max
+    }
     ::Proc.new {
-      h.render inline: <<-HAML , type: :haml , locals: { request: request , survey_years: @years , li_classes: li_classes }
+      h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %ul{ id: :links_to_year_pages , class: [ :links , :in_side_menu ] }
   %li{ class: [ :title , :to_year_pages ] }<
     != "全路線 全駅の乗降客数"
@@ -62,7 +68,6 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
             = "東京メトロ 全駅"
           %p{ class: :text_en }<
             = "All stations of Tokyo Metro"
-      - survey_year_max = survey_years.max
       - survey_years.sort.reverse.each do | survey_year |
         = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear.new( request , survey_year , survey_year_max , :all ).render
       HAML
