@@ -25,5 +25,9 @@ class TokyoMetro::App::Renderer::Document::Link < TokyoMetro::App::Renderer::Con
       HAML
     }
   end
+  
+  def link_for_page_on_the_same_category?
+    nil
+  end
 
 end
