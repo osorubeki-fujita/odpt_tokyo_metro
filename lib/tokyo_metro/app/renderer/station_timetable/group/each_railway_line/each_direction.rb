@@ -39,11 +39,10 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     _operation_day_ids = operation_day_ids
     station_train_times.each do | station_train_time |
       operation_day_id = station_train_time.operation_day.id
-        if h[ operation_day_id ].nil?
-          h[ operation_day_id ] = ::Array.new
-        end
-        h[ operation_day_id ] << station_train_time
+      if h[ operation_day_id ].nil?
+        h[ operation_day_id ] = ::Array.new
       end
+      h[ operation_day_id ] << station_train_time
     end
 
     h.sort_keys.map { | operation_day_id , _station_train_times |
