@@ -140,8 +140,7 @@ class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::
   end
 
   def link_for_page_on_the_same_controller?
-    # u.current_page?( controller: action_of( @url ) )
-    current_controller == controller_of( @url )
+    current_page?( controller: controller_of( @url ) )
   end
 
   def link_for_page_on_the_same_category?
@@ -149,8 +148,7 @@ class TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass < TokyoMetro::
   end
 
   def link_for_page_of_the_same_action?
-    current_action == action_of( @url )
-    # u.current_page?( action: action_of( @url ) )
+    current_page?( action: action_of( @url ) )
   end
 
 end
