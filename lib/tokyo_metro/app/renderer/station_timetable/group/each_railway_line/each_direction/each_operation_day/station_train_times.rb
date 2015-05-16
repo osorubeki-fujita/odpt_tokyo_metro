@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::StationTimetable::StationTrainTimes < TokyoMetro::Factory::Decorate::MetaClass
+class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachRailwayDirection::EachOperationDay::StationTrainTimes < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( station_train_times )
     @grouped_by_hour = station_train_times.group_by( &:hour_in_station_timetable )
@@ -98,7 +98,7 @@ class TokyoMetro::App::Renderer::StationTimetable::StationTrainTimes < TokyoMetr
       this: self
     })
   end
-  
+
   def message_in_header_ja
     str = ::String.new
     one_terminal_station_info = has_one_terminal_station_info?
@@ -126,7 +126,7 @@ class TokyoMetro::App::Renderer::StationTimetable::StationTrainTimes < TokyoMetr
     end
     str
   end
-  
+
   def message_in_header_en
     str = ::String.new
     one_terminal_station_info = has_one_terminal_station_info?
