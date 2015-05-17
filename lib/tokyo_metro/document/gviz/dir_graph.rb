@@ -35,9 +35,9 @@ module TokyoMetro::Document::Gviz::DirGraph
       Dir.chdir( ::TokyoMetro::DEV_DB_DIR ) do
         dirs = [
           "csv" , "dictionary" , "fare" , "point" , "passenger_survey" , "railway_line" ,
-          "station" , "station_facility" , "station_timetable" , "train_information" , "train_location" , "train_timetable"
+          "station" , "station_facility" , "station_timetable" , "train_operation_info" , "train_location" , "train_timetable"
         ]
-        exceptions = [ "fare" , "train_information" , "train_location" , "train_timetable" ]
+        exceptions = [ "fare" , "train_operation_info" , "train_location" , "train_timetable" ]
         ( dirs - exceptions ).each do | db_dirname |
           make_dot_by_dir_friend( db_dirname , add_db: true )
         end

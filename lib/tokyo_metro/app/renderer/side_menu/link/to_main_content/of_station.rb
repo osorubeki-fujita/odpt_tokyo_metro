@@ -37,7 +37,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
     end
   end
 
-  def self.train_information( request )
+  def self.train_operation_info( request )
     self.new(
       request ,
       "列車運行情報" ,

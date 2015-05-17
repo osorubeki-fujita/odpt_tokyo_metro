@@ -1,15 +1,15 @@
 class TokyoMetro::ApiProcessor::RealTimeInfos::RailwayLine::List < ::Array
 
-  def has_any_train_information?
-    self.any?( &:has_train_information? )
+  def has_any_train_operation_info?
+    self.any?( &:has_train_operation_info? )
   end
 
-  def dc_date_times_of_train_information
-    self.map( &:dc_date_time_of_train_information ).sort
+  def dc_date_times_of_train_operation_info
+    self.map( &:dc_date_time_of_train_operation_info ).sort
   end
 
-  def validity_times_of_train_information
-    @infos_of_each_railway_line.map( &:train_information ).map( &:validity )
+  def validity_times_of_train_operation_info
+    @infos_of_each_railway_line.map( &:train_operation_info ).map( &:validity )
   end
 
   def has_any_train_location?

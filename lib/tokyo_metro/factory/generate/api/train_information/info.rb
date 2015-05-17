@@ -15,10 +15,10 @@ class TokyoMetro::Factory::Generate::Api::TrainInformation::Info < TokyoMetro::F
     time_of_origin = DateTime.parse( @hash[ "odpt:timeOfOrigin" ] )
 
     railway_line = @hash[ "odpt:railway" ]
-    train_information_status = @hash[ "odpt:trainInformationStatus" ]
-    train_information_text = @hash[ "odpt:trainInformationText" ].process_train_information_text
+    train_operation_info_status = @hash[ "odpt:trainInformationStatus" ]
+    train_operation_info_text = @hash[ "odpt:trainInformationText" ].process_train_operation_info_text
 
-    [ id , dc_date , valid , operator , time_of_origin , railway_line , train_information_status , train_information_text ]
+    [ id , dc_date , valid , operator , time_of_origin , railway_line , train_operation_info_status , train_operation_info_text ]
   end
 
 end

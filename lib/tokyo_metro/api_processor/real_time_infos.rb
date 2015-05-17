@@ -11,7 +11,7 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
     @http_client = http_client
 
     initialize_list_of_real_time_infos
-    set_train_informations_of_railway_lines( all: true )
+    set_train_operation_infos_of_railway_lines( all: true )
 
     @provision_status = ::TokyoMetro::ApiProcessor::RealTimeInfos::ProvisionStatus.new
   end
@@ -72,9 +72,9 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
   # @!group 列車運行情報
 
   [
-    :has_any_train_information? ,
+    :has_any_train_operation_info? ,
     :has_any_train_location? ,
-    :dc_date_times_of_train_information
+    :dc_date_times_of_train_operation_info
   ].each do | method_name |
     eval <<-DEF
       def #{ method_name }
@@ -86,9 +86,9 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
   # @!group 列車運行情報、列車ロケーション情報の配信状況
 
   [
-    :train_informations_provided? ,
+    :train_operation_infos_provided? ,
     :train_locations_provided? ,
-    :train_informations_are_not_provided! ,
+    :train_operation_infos_are_not_provided! ,
     :train_locations_are_not_provided!
   ].each do | method_name |
     eval <<-DEF
@@ -116,41 +116,41 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
 
   # インスタンス変数 infos_of_each_railway_line の各要素に運行情報をセットするメソッド
   # @note Constructor でも使用する
-  def set_train_informations_of_railway_lines( *railway_lines_same_as , all: nil )
-    _new_train_informations = new_train_informations_in_api( railway_lines_same_as , all )
+  def set_train_operation_infos_of_railway_lines( *railway_lines_same_as , all: nil )
+    _new_train_operation_infos = new_train_operation_infos_in_api( railway_lines_same_as , all )
   end
 
   # 新しい運行情報を API から取得するメソッド
   # @param [String] railway_lines_same_as 運行情報をセットしたい路線の名称 (same_as)
   # @note railway_lines_same_as が指定されておらず、all が true の場合、すべての路線について取得する。
   # @return [::TokyoMetro::Api::TrainInformation::List]
-  def new_train_informations_in_api( railway_lines_same_as , all )
-    _railway_lines_for_getting_train_informations = railway_lines_for_getting_train_informations( railway_lines_same_as , all )
-    selected_railway_lines_same_as = railway_lines_for_getting_train_informations( railway_lines_same_as , all ).pluck( :same_as )
-    train_informations = ::TokyoMetro::Api::TrainInformation.get(
+  def new_train_operation_infos_in_api( railway_lines_same_as , all )
+    _railway_lines_for_getting_train_operation_infos = railway_lines_for_getting_train_operation_infos( railway_lines_same_as , all )
+    selected_railway_lines_same_as = railway_lines_for_getting_train_operation_infos( railway_lines_same_as , all ).pluck( :same_as )
+    train_operation_infos = ::TokyoMetro::Api::TrainInformation.get(
       @http_client ,
       perse_json: true ,
       generate_instance: true
     )
     sleep( 0.2 )
     # 列車運行情報の取得に失敗した場合
-    unless succeed_to_get_new_train_informations?( _railway_lines_for_getting_train_informations , train_informations )
+    unless succeed_to_get_new_train_operation_infos?( _railway_lines_for_getting_train_operation_infos , train_operation_infos )
       # 取得できた列車運行情報がない場合
-      if got_no_train_information?
+      if got_no_train_operation_info?
         # 列車運行情報の配信ステータスを false とする
-        train_informations_are_not_provided!
+        train_operation_infos_are_not_provided!
       end
     end
-    train_informations
+    train_operation_infos
   end
 
   # 列車運行情報の取得に成功したか否かを判定するメソッド
-  def succeed_to_get_new_train_informations?( _railway_lines_for_getting_train_informations , train_informations )
-    _railway_lines_for_getting_train_informations.sort == train_informations.railway_lines_same_as.sort
+  def succeed_to_get_new_train_operation_infos?( _railway_lines_for_getting_train_operation_infos , train_operation_infos )
+    _railway_lines_for_getting_train_operation_infos.sort == train_operation_infos.railway_lines_same_as.sort
   end
 
-  def got_no_train_information?( train_informations )
-    train_informations.empty?
+  def got_no_train_operation_info?( train_operation_infos )
+    train_operation_infos.empty?
   end
 
   def railway_lines_included_in_infos_of_each_railway_line
@@ -161,7 +161,7 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
     @infos_of_each_railway_lines.railway_lines_same_as
   end
 
-  def railway_lines_for_getting_train_informations( railway_lines_same_as , all )
+  def railway_lines_for_getting_train_operation_infos( railway_lines_same_as , all )
     # 路線名が指定されていない場合
     if railway_lines_same_as.blank? or railway_lines_same_as == [ nil ]
       unless all

@@ -16,11 +16,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   attr_reader :controller
 
   def additional_info_abstruct_ja
-    object.train_information_status.try( :name_ja_for_display )
+    object.train_operation_info_status.try( :name_ja_for_display )
   end
 
   def additional_info_abstruct_en
-    object.train_information_status.try( :name_en_for_display )
+    object.train_operation_info_status.try( :name_en_for_display )
   end
 
   def additional_info_precise_ja
@@ -85,7 +85,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: { this: self }
-%li{ class: [ :train_information , :railway_line , :clearfix ] }
+%li{ class: [ :train_operation_info , :railway_line , :clearfix ] }
   = this.railway_line.decorate.render_matrix( make_link_to_railway_line: true , size: :small , link_controller_name: this.controller )
   %div{ class: [ :status , this.status_type ] }
     %div{ class: :infos }
@@ -110,23 +110,23 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
     h.render inline: <<-HAML , type: :haml , locals: { this: self }
 - max_delay_decorator = this.max_delay.decorate( request )
 %div{ class: :additional_infos }<
-  - if [ this.additional_info_abstruct_ja , max_delay_decorator.displayed_in_train_information? , this.additional_info_precise_ja ].any?( &:present? )
+  - if [ this.additional_info_abstruct_ja , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_ja ].any?( &:present? )
     %div{ class: :text_ja }
       - if this.additional_info_abstruct_ja.present?
         %p{ class: :abstruct }<
           = this.additional_info_abstruct_ja
-      - if max_delay_decorator.try( :displayed_in_train_information? )
-        = max_delay_decorator.render_ja_in_train_information
+      - if max_delay_decorator.try( :displayed_in_train_operation_info? )
+        = max_delay_decorator.render_ja_in_train_operation_info
       - if this.additional_info_precise_ja.present?
         %p{ class: :precise }<
           = this.additional_info_precise_ja
-  - if [ this.additional_info_abstruct_en , max_delay_decorator.displayed_in_train_information? , this.additional_info_precise_en ].any?( &:present? )
+  - if [ this.additional_info_abstruct_en , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_en ].any?( &:present? )
     %div{ class: :text_en }
       - if this.additional_info_abstruct_en.present?
         %p{ class: :abstruct }<
           = this.additional_info_abstruct_en
-      - if max_delay_decorator.displayed_in_train_information?
-        = max_delay_decorator.render_en_in_train_information
+      - if max_delay_decorator.displayed_in_train_operation_info?
+        = max_delay_decorator.render_en_in_train_operation_info
       - if this.additional_info_precise_en.present?
         %p{ class: :precise }<
           = this.additional_info_precise_en

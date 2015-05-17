@@ -8,14 +8,14 @@ class TokyoMetro::ApiProcessor::RealTimeInfos::RailwayLine::Info
   attr_reader :railway_line
   attr_reader :http_client
 
-  def has_train_information?
+  def has_train_operation_info?
     @trian_information.present?
   end
 
-  def dc_date_of_train_information
-    @train_information.dc_date
+  def dc_date_of_train_operation_info
+    @train_operation_info.dc_date
   end
-  alias :dc_date_time_of_train_information :dc_date_of_train_information
+  alias :dc_date_time_of_train_operation_info :dc_date_of_train_operation_info
 
   def has_any_train_location?
     @train_locations.present?

@@ -33,7 +33,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   # @!group render
 
-  def render( include_train_location_infos: false , controller: :train_information , options: nil )
+  def render( include_train_location_infos: false , controller: :train_operation_info , options: nil )
     if options.present?
       options = [ options ].flatten
     end
@@ -47,7 +47,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     }
 
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%div{ id: :train_informations }
+%div{ id: :train_operation_infos }
   = this.render_title_of_train_operation_infos( add_index_of_train_location: add_index_of_train_location )
   = this.render_train_operation_infos( controller )
   - if include_train_location_infos
@@ -102,8 +102,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
     ::TokyoMetro::App::Renderer::Concern::Header::Content.new(
       @request ,
-      :title_of_train_informations ,
-      :train_information ,
+      :title_of_train_operation_infos ,
+      :train_operation_info ,
       ::TrainInformationDecorator.common_title_ja ,
       ::TrainInformationDecorator.common_title_en ,
       additional_content: proc_for_additional_content
@@ -143,12 +143,12 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   end
 
   def train_operation_infos
-    @infos_of_each_railway_line.map( &:train_information ).flatten
+    @infos_of_each_railway_line.map( &:train_operation_info ).flatten
   end
 
   def train_location_infos
     if has_train_location_infos?
-      @infos_of_each_railway_line.map( &:train_locations ).flatten
+      @infos_of_each_railway_line.map( &:train_location_infos ).flatten
     else
       nil
     end

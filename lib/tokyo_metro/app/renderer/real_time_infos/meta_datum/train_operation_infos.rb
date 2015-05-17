@@ -2,7 +2,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainOperationInfos <
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: { this: self }
-%li{ class: :train_information }
+%li{ class: :train_operation_info }
   %ul{ class: :titles }
     = this.render_title
   %ul{ class: :time_infos_of_category }
@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainOperationInfos <
   end
 
   def render_title
-    render_title_of_each_content( :train_information , ::TrainInformationDecorator.common_title_ja , ::TrainInformationDecorator.common_title_en )
+    render_title_of_each_content( :train_operation_info , ::TrainInformationDecorator.common_title_ja , ::TrainInformationDecorator.common_title_en )
   end
 
 end

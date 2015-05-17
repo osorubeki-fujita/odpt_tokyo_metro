@@ -6,7 +6,7 @@ class TokyoMetro::Api::TrainLocation::Info::Delay
 
   attr_reader :delay
 
-  def displayed_in_train_information?
+  def displayed_in_train_operation_info?
     @delay.present? and @delay > 0
   end
 

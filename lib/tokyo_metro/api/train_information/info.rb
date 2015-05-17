@@ -15,13 +15,13 @@ class TokyoMetro::Api::TrainInformation::Info < TokyoMetro::Api::MetaClass::Real
   # @param operator [String] 運行会社 <odpt:operator - odpt:Operator>
   # @param time_of_origin [DateTime] 発生時刻（ISO8601 日付時刻形式をもとに生成した DateTime のインスタンス） - xsd:dateTime
   # @param railway_line [String] 発生路線 <odpt:railway - odpt:Railway>
-  # @param train_information_status [String] 運行ステータス <odpt:trainInformationStatus - xsd:string>
-  # @param train_information_text [String] 運行情報テキスト <odpt:trainInformationText - xsd:string>
+  # @param train_operation_info_status [String] 運行ステータス <odpt:trainInformationStatus - xsd:string>
+  # @param train_operation_info_text [String] 運行情報テキスト <odpt:trainInformationText - xsd:string>
   # @note 運行ステータスは、平常時は省略。運行情報が存在する場合は「運行情報あり」を格納。遅延などの情報を取得可能な場合は、「遅延」等のテキストを格納。
-  def initialize( id_urn , dc_date , valid , operator , time_of_origin , railway_line , train_information_status , train_information_text )
+  def initialize( id_urn , dc_date , valid , operator , time_of_origin , railway_line , train_operation_info_status , train_operation_info_text )
     @id_urn = id_urn
     @dc_date , @valid = dc_date , valid
-    @operator , @time_of_origin , @railway_line , @status , @text = operator , time_of_origin , railway_line , train_information_status , train_information_text 
+    @operator , @time_of_origin , @railway_line , @status , @text = operator , time_of_origin , railway_line , train_operation_info_status , train_operation_info_text 
   end
 
   # @!group 運行情報のメタデータ (For developers)
@@ -86,7 +86,7 @@ class TokyoMetro::Api::TrainInformation::Info < TokyoMetro::Api::MetaClass::Real
 
   # @!endgroup
 
-  def train_information_status
+  def train_operation_info_status
     if @status.present?
       ::TrainInformationStatus.find_or_create_by( in_api: @status )
     else
@@ -94,12 +94,12 @@ class TokyoMetro::Api::TrainInformation::Info < TokyoMetro::Api::MetaClass::Real
     end
   end
 
-  def train_information_text
+  def train_operation_info_text
     ::TrainInformationText.find_or_create_by( in_api: @text )
   end
 
   def text_in_api
-    train_information_text.in_api
+    train_operation_info_text.in_api
   end
 
   def text_en
@@ -111,19 +111,19 @@ class TokyoMetro::Api::TrainInformation::Info < TokyoMetro::Api::MetaClass::Real
   end
 
   def place
-    train_information_text.place
+    train_operation_info_text.place
   end
 
   def on_schedule?
-    train_information_text.on_schedule?
+    train_operation_info_text.on_schedule?
   end
 
   def delayed?
-    train_information_status.try( :delayed? )
+    train_operation_info_status.try( :delayed? )
   end
 
   def suspended?
-    train_information_status.try( :suspended? )
+    train_operation_info_status.try( :suspended? )
   end
 
 end

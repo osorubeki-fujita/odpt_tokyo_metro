@@ -40,7 +40,7 @@ module TokyoMetro::ClassNameLibrary::Static::TrainInformationStatus
     private
 
     def yaml_file_basename
-      "train_information_status"
+      "train_operation_info_status"
     end
 
   end
