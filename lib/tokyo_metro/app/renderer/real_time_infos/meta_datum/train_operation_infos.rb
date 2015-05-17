@@ -1,4 +1,4 @@
-class TokyoMetro::ApiDecorator::RealTimeInfos::TrainOperationInfos < TokyoMetro::ApiDecorator::RealTimeInfos::Category::MetaClass
+class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainOperationInfos < TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::MetaClass
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: { this: self }

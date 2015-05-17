@@ -17,14 +17,12 @@ class TokyoMetro::Required::All < TokyoMetro::Required
       #
       Static.files ,
       Api.files ,
-      ApiDecorator.files ,
       Refinement.files ,
       TempLib.files ,
       Document.files ,
       Test.files , 
       Search.files ,
-      Rake.files ,
-      
+      Rake.files
     ]
   end
 

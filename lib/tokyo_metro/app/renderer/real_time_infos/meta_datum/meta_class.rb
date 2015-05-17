@@ -1,4 +1,4 @@
-class TokyoMetro::ApiDecorator::RealTimeInfos::Category::MetaClass < TokyoMetro::Factory::Decorate::MetaClass
+class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::MetaClass < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( request , time_infos )
     super( request )
@@ -100,6 +100,8 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::Category::MetaClass < TokyoMetro:
       time_infos.map( &:to_strf_normal_ja )
     when :en
       time_infos.map( &:to_strf_normal_en )
+    when nil
+      time_infos.map( &:to_s )
     end
   end
   

@@ -1,10 +1,12 @@
-class TokyoMetro::ApiDecorator::RealTimeInfos::TrainLocationInfos < TokyoMetro::ApiDecorator::RealTimeInfos::Category::MetaClass
+class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainLocationInfos < TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::MetaClass
 
   def frequency
     @time_infos.map( &:frequency ).sort.uniq
   end
-  
-  def render( include_delay , include_train_locations )
+
+  # 列車位置情報のメタデータを出力するメソッド
+  def render( include_delay: true , include_train_locations: false )
+    raise "Error" unless [ include_delay , include_train_locations ].all?( &:boolean? )
     raise "Error" if !( include_delay ) and !( include_train_locations )
     h_locals = {
       this: self ,
@@ -66,7 +68,7 @@ class TokyoMetro::ApiDecorator::RealTimeInfos::TrainLocationInfos < TokyoMetro::
   private
 
   def frequency_to_s
-    frequency.map( &:to_s ).join( " - " )
+    time_for_display( frequency , lang: nil )
   end
 
   def render_frequency( str )
