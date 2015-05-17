@@ -50,7 +50,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
       survey_years: @survey_years ,
       li_classes: li_classes ,
       survey_year_max: @survey_years.max ,
-      without_link_to_operator_main_page: current_page?( controller: :passenger_survey , action: :action_for_railway_line_or_year_page , railway_line: :all )
+      without_link_to_operator_main_page: without_link_to_operator_main_page?
     }
     ::Proc.new {
       h.render inline: <<-HAML , type: :haml , locals: h_locals_i
@@ -88,9 +88,13 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
       HAML
     }
   end
-  
+
   def ul_class
     :links_to_passenger_survey_pages
+  end
+
+  def without_link_to_operator_main_page?
+    current_page?( controller: :passenger_survey , action: :action_for_railway_line_or_year_page , railway_line: :all ) and ( current_page?( survey_year: @survey_years.max ) or current_page?( survey_year: nil ) )
   end
 
 end
