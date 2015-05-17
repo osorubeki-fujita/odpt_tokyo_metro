@@ -12,7 +12,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
       h.render inline: <<-HAML , type: :haml , locals: h_locals
 %li{ class: li_classes }
   - if url.present?
-    = link_to_unless( request.fullpath == url , "" , url )
+    = link_to_unless( without_link_to_railway_line_page , "" , url )
   %div{ class: div_classes }
     = railway_line_decorated.render_railway_line_code( small: small_railway_line_code )
     = railway_line_decorated.render_name( prefix_ja: prefix_ja , prefix_en: prefix_en , suffix_ja: suffix_ja , suffix_en: suffix_en )
@@ -61,8 +61,8 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   def div_classes
     ary = ::Array.new
     ary << :clearfix 
-    if url.present?
-      ary << :link_to_railway_line_page
+    if without_link_to_railway_line_page?
+      ary << :with_link_to_railway_line_page
     else
       ary << :railway_line_with_no_link
     end
@@ -90,7 +90,8 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
       li_classes: li_classes ,
       div_classes: div_classes ,
       optional_info_to_display: optional_info_to_display ,
-      url: url
+      url: url ,
+      without_link_to_railway_line_page: without_link_to_railway_line_page?
     })
   end
 
@@ -101,6 +102,10 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
     when :action_for_station , :standard
       url_helpers.url_for( controller: @controller , action: railway_line_page_name , only_path: true )
     end
+  end
+  
+  def without_link_to_railway_line_page?
+    request.fullpath == url
   end
 
   def valid_railway_line_decorator_class?

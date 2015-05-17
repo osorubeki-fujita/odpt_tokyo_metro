@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%ul{ id: :links_to_passenger_survey_pages , class: [ :links , :clearfix ] }
+%ul{ id: ul_class , class: [ :links , :clearfix ] }
   = proc_for_links_to_railway_line_pages.call
   = proc_for_links_to_year_pages.call
   - # = proc_for_links_to_station_pages.call
@@ -21,7 +21,8 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
     super.merge({
       proc_for_links_to_railway_line_pages: proc_for_links_to_railway_line_pages ,
       proc_for_links_to_year_pages: proc_for_links_to_year_pages ,
-      proc_for_links_to_station_pages: proc_for_links_to_station_pages
+      proc_for_links_to_station_pages: proc_for_links_to_station_pages ,
+      ul_class: ul_class
     })
   end
 
@@ -84,6 +85,10 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
       = "（年度別）"
       HAML
     }
+  end
+  
+  def ul_class
+    :links_to_passenger_survey_pages
   end
 
 end

@@ -17,7 +17,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %ul{ class: [ :each_railway_line , railway_line_decorated.css_class_name , :clearfix ] }
   %li{ class: li_classes }
-    = link_to_unless( without_link_to_railway_line_page , "" , url_for_railway_line_page )
+    = link_to_unless( without_link_to_railway_line_page , "" , url )
     %div{ class: div_classes }
       = railway_line_decorated.render_railway_line_code( small: small_railway_line_code )
       = railway_line_decorated.render_name( prefix_ja: prefix_ja , prefix_en: prefix_en , suffix_ja: suffix_ja , suffix_en: suffix_en )
@@ -37,7 +37,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
     nil
   end
 
-  def url_for_railway_line_page
+  def url
     url_helpers.url_for(
       controller: @controller , 
       action: :action_for_railway_line_or_year_page ,
@@ -51,7 +51,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
   end
 
   def link_to_current_page?
-    current_page?( url_for_railway_line_page )
+    current_page?( url )
   end
 
   def link_to_railway_line_page_is_link_to_the_same_page?
@@ -66,10 +66,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::PassengerSurv
   def h_locals
     super.merge({
       survey_years: @survey_years ,
-      railway_line_page_name: railway_line_page_name ,
-      #
-      url_for_railway_line_page: url_for_railway_line_page ,
-      without_link_to_railway_line_page: without_link_to_railway_line_page?
+      railway_line_page_name: railway_line_page_name
     })
   end
 
