@@ -46,7 +46,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole < TokyoMetro::F
   private
 
   def h_locals( include_train_locations )
-    super.merge({
+    super().merge({
       this: self ,
       include_train_locations: include_train_locations
     })
