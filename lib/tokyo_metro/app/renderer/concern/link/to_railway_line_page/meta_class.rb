@@ -62,9 +62,9 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
     ary = ::Array.new
     ary << :clearfix 
     if without_link_to_railway_line_page?
-      ary << :with_link_to_railway_line_page
+      ary << :railway_line_without_link
     else
-      ary << :railway_line_with_no_link
+      ary << :with_link_to_railway_line_page
     end
     ary
   end
