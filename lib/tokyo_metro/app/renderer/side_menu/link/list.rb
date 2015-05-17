@@ -80,7 +80,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
 
       ::Proc.new { station_info.decorate.render_link_to_station_facility_info_of_connecting_other_stations }
     end
-  
+
   end
 
 end

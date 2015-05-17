@@ -19,7 +19,7 @@ class TokyoMetro::Api::TrainLocation::List < TokyoMetro::Api::MetaClass::RealTim
   end
 
   def decorate( request , railway_line )
-    ::TokyoMetro::Api::TrainLocation::List::Decorator.new( request , self , railway_line )
+    ::TokyoMetro::Factory::Decorate::Api::TrainLocation::List.new( request , self , railway_line )
   end
 
   def exclude_toei_mita_line

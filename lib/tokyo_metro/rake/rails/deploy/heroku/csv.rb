@@ -22,7 +22,7 @@ module TokyoMetro::Rake::Rails::Deploy::Heroku::Csv
       end
 
     end
-    
+
     return nil
   end
 

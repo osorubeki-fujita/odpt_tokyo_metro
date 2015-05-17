@@ -71,7 +71,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear 
   def link_to_the_same_survey_year?
     current_page?( survey_year: @survey_year ) or ( current_page?( survey_year: nil ) and ( @survey_year_max.to_s == @survey_year.to_s ) )
   end
-  
+
   def li_classes
     ary = [ :survey_year ]
     if without_link?

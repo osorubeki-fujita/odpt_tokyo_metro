@@ -2,7 +2,7 @@
 class TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::ImportToPostgresql < TokyoMetro::Rake::Rails::Deploy::Heroku::Csv::Command::MetaClass
 
   private
-  
+
   def optional_setting_of_initializer
     @letter_code = "shift_jis"
     @dirname = "#{ ::Rails.root }/db/csv/#{ @time }/#{ @letter_code }"

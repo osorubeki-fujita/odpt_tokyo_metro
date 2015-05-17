@@ -5,33 +5,33 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainLocationInfos < 
   end
 
   # 列車位置情報のメタデータを出力するメソッド
-  def render( include_delay: true , include_train_locations: false )
-    raise "Error" unless [ include_delay , include_train_locations ].all?( &:boolean? )
-    raise "Error" if !( include_delay ) and !( include_train_locations )
+  def render( include_delay: true , include_train_location_infos: false )
+    raise "Error" unless [ include_delay , include_train_location_infos ].all?( &:boolean? )
+    raise "Error" if !( include_delay ) and !( include_train_location_infos )
     h_locals = {
       this: self ,
       include_delay: include_delay ,
-      include_train_locations: include_train_locations
+      include_train_location_infos: include_train_location_infos
     }
 
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %li{ class: :train_locations }
-  = this.render_title( include_delay , include_train_locations )
+  = this.render_title( include_delay , include_train_location_infos )
   = this.render_meta_data
     HAML
   end
 
-  def render_title( include_delay , include_train_locations )
+  def render_title( include_delay , include_train_location_infos )
     h_locals_i = {
       this: self ,
       include_delay: include_delay ,
-      include_train_locations: include_train_locations
+      include_train_location_infos: include_train_location_infos
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %ul{ class: :titles }
   - if include_delay
     = this.render_title_of_current_delay
-  - if include_train_locations
+  - if include_train_location_infos
     = this.render_title_of_train_locations
     HAML
   end

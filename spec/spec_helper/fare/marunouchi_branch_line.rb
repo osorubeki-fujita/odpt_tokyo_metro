@@ -7,16 +7,16 @@ def fares_related_to_marunouchi_branch_line
 
       ::TokyoMetro::Api.fares.each do | fare_info |
         if fare_info.from?( valid_and_invalid_station_name_ary )
-  
+
           from_station = fare_info.from_station
           valid_station_name = fare_info.from_station.gsub( /Marunouchi(?:Branch)?\./ , "MarunouchiBranch." )
           same_as = fare_info.same_as
-  
+
           # 出発駅
           expect( from_station ).to eq( valid_station_name )
         end
       end
-      
+
     end
 
   end
@@ -26,11 +26,11 @@ def fares_related_to_marunouchi_branch_line
 
       ::TokyoMetro::Api.fares.each do | fare_info |
         if fare_info.to?( valid_and_invalid_station_name_ary )
-        
+
           to_station = fare_info.to_station
           valid_station_name = fare_info.to_station.gsub( /Marunouchi(?:Branch)?\./ , "MarunouchiBranch." )
           same_as = fare_info.same_as
-  
+
           # 到着駅
           expect( to_station ).to eq( valid_station_name )
         end

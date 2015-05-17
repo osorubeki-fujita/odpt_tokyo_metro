@@ -4,7 +4,7 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace::MatchedRow
     @filename = filename
     @row_content = row_content
     @row_number = row_number
-    
+
     @regexp_index = regexp_index
   end
 

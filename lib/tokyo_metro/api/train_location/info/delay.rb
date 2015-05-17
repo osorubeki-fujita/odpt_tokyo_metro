@@ -19,7 +19,7 @@ class TokyoMetro::Api::TrainLocation::Info::Delay
   end
 
   def decorate( request )
-    ::TokyoMetro::Api::TrainLocation::Info::Delay::Decorator.new( request , self )
+    ::TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::Delay.new( request , self )
   end
 
   def hour_part
@@ -81,6 +81,24 @@ class TokyoMetro::Api::TrainLocation::Info::Delay
     ary << sec_part
     ary << "sec"
     ary.map( &:to_s ).join( " " )
+  end
+
+  def on_schedule?
+    has_valid_delay? and @delay < 30
+  end
+
+  def nearly_on_schedule?
+    has_valid_delay? and @delay >= 30 and @delay < 180
+  end
+
+  def delayed?
+    has_valid_delay? and @delay >= 180
+  end
+
+  private
+
+  def has_valid_delay?
+    @delay.present?
   end
 
 end

@@ -50,11 +50,11 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass::Row < TokyoM
   def set_order( whole_passenger_survey_infos)
     @order = whole_passenger_survey_infos.where( 'passenger_journeys > ?' , @passenger_survey_info.passenger_journeys ).count + 1
   end
-  
+
   def h_locals_for_order
     { td_classes: td_classes_of_order , order: @order }
   end
-  
+
   def td_classes_of_order( order = @order )
     ary = [ :order , :text_en ]
     unless order == @number

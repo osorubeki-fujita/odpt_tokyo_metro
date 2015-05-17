@@ -31,7 +31,7 @@ module TokyoMetro::Rake::Rails::Deploy::Heroku
     def migrate_files
       ::Dir.glob( "#{ ::Rails.root }/db/migrate/**.rb" )
     end
-    
+
     def migrate_files_except_for_heroku_initializer
       migrate_files.delete_if { | filename | /heroku_initializer\.rb\Z/ === filename }
     end

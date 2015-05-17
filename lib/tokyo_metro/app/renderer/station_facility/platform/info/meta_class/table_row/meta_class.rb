@@ -41,7 +41,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Tab
           - elsif li_class.string? or li_class.symbol? or ( li_class.instance_of?( ::Array ) and li_class.all?( &:string_or_symbol? ) )
             %li{ class: [ li_class ].flatten }<
               = element[ :proc_for_display ].call( info )
-          
+
           - elsif li_class.blank?
             = element[ :proc_for_display ].call( info )
     HAML

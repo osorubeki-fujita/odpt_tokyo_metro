@@ -13,7 +13,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToDocument < TokyoMetro::App::R
       size: :small
     )
   end
-  
+
   def link_for_page_on_the_same_category?
     super and link_for_page_of_the_same_action?
   end

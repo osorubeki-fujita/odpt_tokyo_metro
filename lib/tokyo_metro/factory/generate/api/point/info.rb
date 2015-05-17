@@ -2,7 +2,7 @@
 class TokyoMetro::Factory::Generate::Api::Point::Info < TokyoMetro::Factory::Generate::Api::MetaClass::Info::Fundamental
 
   include ::TokyoMetro::ClassNameLibrary::Api::Point
-  
+
   private
 
   # Info クラスに送る変数のリスト

@@ -23,7 +23,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   end
 
   private
-  
+
   def object
     @railway_line_decorated.object
   end
@@ -31,7 +31,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
   def railway_line_object
     object.railway_line
   end
-  
+
   def railway_line_page_name
     @railway_line_decorated.railway_line_page_name
   end
@@ -53,7 +53,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
 
     ary.flatten
   end
-  
+
   def additional_li_classes_to_link_to_this_page
     :this_page
   end
@@ -103,7 +103,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::MetaClass < T
       url_helpers.url_for( controller: @controller , action: railway_line_page_name , only_path: true )
     end
   end
-  
+
   def without_link_to_railway_line_page?
     request.fullpath == url
   end

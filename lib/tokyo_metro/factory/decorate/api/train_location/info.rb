@@ -1,4 +1,4 @@
-﻿class TokyoMetro::Api::TrainLocation::Info::Decorator < TokyoMetro::Api::MetaClass::RealTime::Info::Decorator
+class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
 
   def initialize( request , obj , railway_line )
     super( request , obj )
@@ -8,18 +8,21 @@
   attr_reader :railway_line
 
   def render
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
-- train_type_in_api = ::TrainTypeInApi.find_by( same_as: this.object.train_type )
-- starting_station = ::Station::Info.find_by( same_as: this.object.starting_station )
-- terminal_station = ::Station::Info.find_by( same_as: this.object.terminal_station )
+    h_locals_i = {
+      this: self ,
+      train_type_in_api_decorated: train_type_in_api_decorated ,
+      starting_station_decorated: starting_station_decorated ,
+      terminal_station_decorated: terminal_station_decorated
+    }
+    h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %div{ class: :train_location , id: this.object.train_number.downcase }
   %div{ class: :train_fundamental_infos }
     = this.railway_line.decorate.render_matrix( make_link_to_railway_line: false , size: :small )
     %div{ class: :train_infos }
-      = train_type_in_api.decorate.render_in_train_location
-      = terminal_station.decorate.train_location.render_as_terminal_station
+      = train_type_in_api_decorated.render_in_train_location
+      = terminal_station_decorated.render_as_terminal_station
   %div{ class: :sub_infos }
-    = starting_station.decorate.train_location.render_as_starting_station
+    = starting_station_decorated.render_as_starting_station
     = this.render_train_number
     = this.render_delay
   = this.render_current_position
@@ -27,7 +30,8 @@
   end
 
   def render_train_number
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
+    str = object.train_number
+    h.render inline: <<-HAML , type: :haml , locals: { str: str }
 %div{ class: :train_number }
   %div{ class: :title_of_train_number }
     %p{ class: :text_ja }<
@@ -35,7 +39,7 @@
     %p{ class: :text_en }<
       = "Train number "
   %div{ class: [ :train_number_text , :text_en ] }<
-    = this.object.train_number
+    = str
     HAML
   end
 
@@ -71,6 +75,20 @@
 
   def render_delay
     object.delay_instance.decorate( request ).render_in_location_of_each_train
+  end
+
+  private
+
+  def train_type_in_api_decorated
+    ::TrainTypeInApi.find_by( same_as: object.train_type ).decorate
+  end
+
+  def starting_station_decorated
+    ::Station::Info.find_by( same_as: this.object.starting_station ).decorate.train_location
+  end
+
+  def terminal_station_decorated
+    ::Station::Info.find_by( same_as: this.object.terminal_station ).decorate.train_location
   end
 
 end

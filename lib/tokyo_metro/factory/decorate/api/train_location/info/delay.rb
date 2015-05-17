@@ -1,11 +1,12 @@
-class TokyoMetro::Api::TrainLocation::Info::Delay::Decorator < TokyoMetro::Api::MetaClass::RealTime::Info::Decorator
+class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::Delay < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
 
   def displayed_in_train_information?
     object.displayed_in_train_information?
   end
 
   def render_in_location_of_each_train
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
+    main_str = object.to_s_separated_by_comma
+    h.render inline: <<-HAML , type: :haml , locals: { main_str: main_str }
 %div{ class: :delay }
   %div{ class: :title_of_delay }
     %p{ class: :text_ja }<>
@@ -17,28 +18,31 @@ class TokyoMetro::Api::TrainLocation::Info::Delay::Decorator < TokyoMetro::Api::
       %span{ class: :small }<
         = "(mm:ss)"
   %div{ class: [ :time , :text_en ] }<
-    = this.object.to_s_separated_by_comma
+    = main_str
     HAML
   end
 
   def render_ja_in_train_information
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
+    str = "現在の遅れ 最大 #{ object.to_s_ja }"
+    h.render inline: <<-HAML , type: :haml , locals: { str: str }
 %p{ class: :max_delay }<
-  = "現在の遅れ 最大 " + this.object.to_s_ja
+  = str
     HAML
   end
 
   def render_en_in_train_information
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
+    str = "Max delay: #{ object.to_s_en }"
+    h.render inline: <<-HAML , type: :haml , locals: { str: str }
 %p{ class: :max_delay }<
-  = "Max delay: " + this.object.to_s_en
+  = str
     HAML
   end
 
   def render_in_train_information_precise_version
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
+    str = "最大遅れ：#{ object.delay.to_s }秒"
+    h.render inline: <<-HAML , type: :haml , locals: { str: str }
 %div{ class: :max_delay }<
-  = "最大遅れ：" + this.object.delay.to_s + "秒"
+  = str
     HAML
   end
 

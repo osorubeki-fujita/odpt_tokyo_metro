@@ -51,7 +51,7 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
   # @return [String]
   # @note エレベータには「エレベータ」という文字列を含む。「出入口」の文字列の後に出口番号が続く。
   attr_reader :title
-  
+
   alias :longitude :geo_long
   alias :latitude :geo_lat
   alias :geo_json :region

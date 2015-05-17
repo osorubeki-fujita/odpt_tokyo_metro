@@ -124,13 +124,13 @@ def connecting_railway_lines__new_and_old_railway_lines( station )
 
         [ [ starting_date_from_yaml , "start" ] , [ ending_date_from_yaml , "end" ] ].each do | date_info , str |
           if date_info.present?
-  
+
             describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "#{ str }_on" do
               it "(#{ railway_line_name } in #{station.same_as}) should contain valid date info of #{ str }ing." do
                 expect( date_info ).to match( regexp_of_date )
               end
             end
-    
+
             if regexp_of_date =~ date_info
               date_time = ::DateTime.new( $1.to_i , $2.to_i , $3.to_i , ::TokyoMetro::DATE_CHANGING_HOUR )
               if str == "end"
@@ -142,7 +142,7 @@ def connecting_railway_lines__new_and_old_railway_lines( station )
                 end
               end
             end
-          
+
           end
         end
 

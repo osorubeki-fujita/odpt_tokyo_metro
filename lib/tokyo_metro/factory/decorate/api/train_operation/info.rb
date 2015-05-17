@@ -1,11 +1,13 @@
-class TokyoMetro::Api::TrainInformation::Info::Decorator < TokyoMetro::Api::MetaClass::RealTime::Info::Decorator
+class TokyoMetro::Factory::Decorate::Api::TrainOperation < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
 
-  def initialize( request , obj , railway_line , max_delay , controller )
+  def initialize( request , obj , railway_line , max_delay , controller , no_train )
     super( request , obj )
     @railway_line = railway_line
-    @max_delay = max_delay.try( :floor )
-    @status_type = set_status_type
+    set_max_delay( max_delay )
     @controller = controller
+    @no_train = no_train
+
+    @status_type = status_type_on_initialize
   end
 
   attr_reader :railway_line
@@ -106,7 +108,7 @@ class TokyoMetro::Api::TrainInformation::Info::Decorator < TokyoMetro::Api::Meta
 
   def render_status_additional_infos
     h.render inline: <<-HAML , type: :haml , locals: { this: self }
-- max_delay_decorator = this.max_delay_instance.decorate( request )
+- max_delay_decorator = this.max_delay.decorate( request )
 %div{ class: :additional_infos }<
   - if [ this.additional_info_abstruct_ja , max_delay_decorator.displayed_in_train_information? , this.additional_info_precise_ja ].any?( &:present? )
     %div{ class: :text_ja }
@@ -131,82 +133,45 @@ class TokyoMetro::Api::TrainInformation::Info::Decorator < TokyoMetro::Api::Meta
     HAML
   end
 
-  def render_precise_version
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
-%div{ class: [ :train_information_precise_version , :railway_line ] }
-  = this.railway_line.decorate.render_matrix( make_link_to_railway_line: true , size: :small , link_controller_name: :train_information )
-  %div{ class: [ :status , this.status_type ] }
-    %div{ class: :infos }
-      = this.render_main_info_of_precise_version
-      = this.render_time_of_origin_of_precise_version
-      = this.render_dc_date_of_precise_version
-      = this.render_validity_of_precise_version
-      = this.render_operator_of_precise_version
-    HAML
-  end
-
-  def render_main_info_of_precise_version
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
-- max_delay_decorator = this.max_delay_instance.decorate
-%div{ class: :main_info }
-  - train_information_status = this.object.train_information_status
-  - train_information_text = this.object.train_information_text
-  - if train_information_status.present?
-    %div{ class: :status_of_precise_version }<
-      = train_information_status.name_ja_for_display
-  %div{ class: :text_of_precise_version }<
-    = train_information_text.in_api
-  = max_delay_decorator.render_in_train_information_precise_version
-    HAML
-  end
-
-  def render_time_of_origin_of_precise_version
-    if object.time_of_origin.present?
-      render_info_of_precise_version( "発生時刻" , :time_of_origin , :time , object.time_of_origin.to_strf_normal_ja )
-    end
-  end
-
-  def render_operator_of_precise_version
-    render_info_of_precise_version( "運行事業者" , :operator_name , :name , ::Operator.find_by( same_as: object.operator ).name_ja )
-  end
-
-  def max_delay_instance
-    ::TokyoMetro::Api::TrainLocation::Info::Delay.new( @max_delay )
-  end
-
   private
 
   def no_train?
-    @max_delay.blank?
+    @no_train
+  end
+
+  def after_last_train_finishes?
+    no_train? and hour_after_last_train_finishes.include?( object.dc_date.hour )
+  end
+  
+  def before_first_train_begins?
+    no_train? and hour_before_first_train_begins.include?( object.dc_date.hour )
   end
 
   def on_schedule?
-    object.on_schedule? and @max_delay < 10
+    object.on_schedule? and @max_delay.on_schedule?
   end
 
   def nearly_on_schedule?
-    object.on_schedule? and @max_delay >= 10 and @max_delay < 180
+    object.on_schedule? and @max_delay.nearly_on_schedule?
   end
 
   def delayed?
-    # object.delayed? or @max_delay >= 180
-    @max_delay >= 180
+    # object.delayed? or @max_delay.delayed?
+    @max_delay.delayed?
   end
 
   def suspended?
     object.suspended?
   end
 
-  def set_status_type
-    if no_train?
-      case object.dc_date.hour
-      when 20 , 21 , 22 , 23 , 0 , 1 , 2
-        :after_last_train_finished
-      when 3 , 4 , 5 , 6
-        :before_first_train_begin
-      else
-        :no_train
-      end
+  def status_type_on_initialize
+    if after_last_train_finishes?
+      :after_last_train_finished
+    elsif before_first_train_begins?
+      :before_first_train_begin
+    elsif no_train?
+      :no_train
+
     elsif on_schedule?
       :on_schedule
     elsif nearly_on_schedule?
@@ -218,6 +183,18 @@ class TokyoMetro::Api::TrainInformation::Info::Decorator < TokyoMetro::Api::Meta
     else
       :other_status
     end
+  end
+
+  def set_max_delay( max_delay )
+    @max_delay = ::TokyoMetro::Api::TrainLocation::Info::Delay.new( max_delay )
+  end
+
+  def hour_after_last_train_finishes
+    ( ( 20..23 ).to_a + ( 0...( ::TokyoMetro::DATE_CHANGING_HOUR ) ).to_a ).flatten
+  end
+
+  def hour_before_first_train_begins
+    ( ( ::TokyoMetro::DATE_CHANGING_HOUR )..6 ).to_a
   end
 
 end

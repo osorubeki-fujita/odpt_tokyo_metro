@@ -18,7 +18,7 @@ class TokyoMetro::App::Renderer::Icon::FontAwesome::Stacked < TokyoMetro::Factor
     = ::TokyoMetro::App::Renderer::Icon.send( icon[ :icon_name ] , request , icon[ :size ] , spin: icon[ :spin ] , pulse: icon[ :pulse ] , inverse: icon[ :inverse ] ).render
     HAML
   end
-  
+
   private
 
   def h_locals

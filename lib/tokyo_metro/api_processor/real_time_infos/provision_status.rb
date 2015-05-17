@@ -29,22 +29,3 @@ class TokyoMetro::ApiProcessor::RealTimeInfos::ProvisionStatus::EachRailwayLine
   end
 
 end
-
-__END__
-
-運行中の列車 なし
-No train is operated now.
-折返し運転
-本日の運行は終了しました。
-Shuttle service is provided in section with no effect by accidents.
-Today's operation was finished.
-
-
-運行中の列車 なし
-No train is operated now.
-ダイヤ乱れ
-本日の運行は終了しました。
-Trains are behind schedule.
-Today's operation was finished.
-
-東急田園都市線内での東急線内遅延により、一部の列車に遅れが出ています。

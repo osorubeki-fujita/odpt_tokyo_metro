@@ -53,7 +53,7 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace
     puts ""
     puts "**** #{ @namespace }"
     puts ""
-    
+
     indent = 4
 
     _filename_length_max = filename_length_max

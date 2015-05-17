@@ -15,7 +15,7 @@ def station_facility_toilet_location_in_nakano_shimbashi
   }
 
   barrier_free_info = station_facility_info.barrier_free_facilities.find( &proc_for_searching_barrier_free_facility )
-  
+
   #--------
 
   valid_platform_infos = station_facility_info.platform_infos.select { | info |

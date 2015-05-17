@@ -28,7 +28,7 @@ module TokyoMetro::App::Renderer::Icon
       end
     DEF
   end
-  
+
   # def self.open_another_window( request , size = 1 )
     # FontAwesome::Stacked.new( request , [ { icon_name: :square_stroked , size: size } , { icon_name: :open_another_window_base , size: size } ] )
   # end

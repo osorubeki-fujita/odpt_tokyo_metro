@@ -61,8 +61,8 @@ class TokyoMetro::Api::TrainInformation::Info < TokyoMetro::Api::MetaClass::Real
 
   alias :to_strf :to_s
 
-  def decorate( request , railway_line , max_delay , controller )
-    ::TokyoMetro::Api::TrainInformation::Info::Decorator.new( request , self , railway_line , max_delay , controller )
+  def decorate( request , railway_line , max_delay , controller , no_train )
+    ::TokyoMetro::Factory::Decorate::Api::TrainOperation.new( request , self , railway_line , max_delay , controller , no_train )
   end
 
   # インスタンスの情報をハッシュにして返すメソッド
@@ -87,8 +87,8 @@ class TokyoMetro::Api::TrainInformation::Info < TokyoMetro::Api::MetaClass::Real
   # @!endgroup
 
   def train_information_status
-    if status.present?
-      ::TrainInformationStatus.find_or_create_by( in_api: status )
+    if @status.present?
+      ::TrainInformationStatus.find_or_create_by( in_api: @status )
     else
       nil
     end

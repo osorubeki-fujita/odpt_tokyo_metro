@@ -14,7 +14,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::RailwayLine::Header < T
   = this.render_header_of_passenger_journeys
     HAML
   end
-  
+
   def render_header_of_order
     h.render inline: <<-HAML , type: :haml , locals: { railway_line: @railway_line }
 %td{ class: :order , colspan: 2 }<

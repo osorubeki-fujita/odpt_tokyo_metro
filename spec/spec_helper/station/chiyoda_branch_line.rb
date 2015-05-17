@@ -4,13 +4,13 @@ def stations_on_chiyoda_branch_line
 
   valid_name_of_ayase_main = "odpt.Station:TokyoMetro.Chiyoda.Ayase"
   valid_name_of_ayase_branch = "odpt.Station:TokyoMetro.ChiyodaBranch.Ayase"
-  
+
   invalid_name_of_kita_ayase_main = "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
   valid_name_of_kita_ayase_branch = "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase"
-  
+
   ayase = ::TokyoMetro::Api.stations.find { | item | item.same_as == valid_name_of_ayase_main }
   ayase_branch = ::TokyoMetro::Api.stations.find { | item | item.same_as == valid_name_of_ayase_branch }
-  
+
   kita_ayase = ::TokyoMetro::Api.stations.find { | item | item.same_as == invalid_name_of_kita_ayase_main }
   kita_ayase_branch = ::TokyoMetro::Api.stations.find { | item | item.same_as == valid_name_of_kita_ayase_branch }
 

@@ -7,7 +7,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     set_infos_of_each_railway_line
 
     raise "Error" unless has_any_railway_line?
-    
+
     set_meta_datum
   end
 
@@ -33,7 +33,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   # @!group render
 
-  def render( include_train_locations: false , controller: :train_information , options: nil , make_test: false , add_precise_version: false )
+  def render( include_train_location_infos: false , controller: :train_information , options: nil )
     if options.present?
       options = [ options ].flatten
     end
@@ -41,23 +41,16 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     h_locals = {
       this: self ,
       request: @request ,
-      include_train_locations: include_train_locations ,
+      include_train_location_infos: include_train_location_infos ,
       controller: controller ,
-      add_index_of_train_location: options.try( :include? , :add_index_of_train_location ) ,
-      #
-      make_test: make_test ,
-      add_precise_version: add_precise_version
+      add_index_of_train_location: options.try( :include? , :add_index_of_train_location )
     }
 
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %div{ id: :train_informations }
   = this.render_title_of_train_operation_infos( add_index_of_train_location: add_index_of_train_location )
-  = this.render_train_operation_infos( controller , index_of_train_location )
-  - if add_precise_version
-    = this.render_train_operation_infos_precise_version
-  - if make_test
-    = this.render_train_operation_infos_test_version
-  - if include_train_locations
+  = this.render_train_operation_infos( controller )
+  - if include_train_location_infos
     - if this.has_train_location_infos?
       = this.render_title_of_train_location_infos
       = this.render_train_location_infos
@@ -66,34 +59,15 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   # @!group
 
-  def render_train_operation_infos( controller , index_of_train_location )
+  def render_train_operation_infos( controller )
     h_locals = {
       this: self ,
-      controller: controller ,
-      index_of_train_location: index_of_train_location
+      controller: controller
     }
 
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 - this.infos_of_each_railway_line.each do | info_of_a_railway_line |
   = info_of_a_railway_line.render_train_operation_info( controller )
-    HAML
-  end
-
-  def render_train_operation_infos_precise_version
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
-%div{ class: [ :precise_version_title , :text_ja ] }<
-  = ::TrainInformationDecorator.common_title_ja + " " + "詳細版"
-- this.infos_of_each_railway_line.each do | info_of_a_railway_line |
-  = info_of_a_railway_line.render_train_operation_info_precise_version
-    HAML
-  end
-
-  def render_train_operation_infos_test_version
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
-%div{ class: [ :test_title , :text_ja ] }<
-  = ::TrainInformationDecorator.common_title_ja + " " + "テスト"
-- this.infos_of_each_railway_line.each do | info_of_a_railway_line |
-  = info_of_a_railway_line.render_train_operation_info_test_version
     HAML
   end
 
@@ -148,8 +122,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   # @!group Meta Data
 
-  def render_meta_datum( include_train_locations: nil )
-    @meta_datum.render( include_train_locations: include_train_locations )
+  def render_meta_datum( include_train_location_infos: nil )
+    @meta_datum.render( include_train_location_infos: include_train_location_infos )
   end
 
   private

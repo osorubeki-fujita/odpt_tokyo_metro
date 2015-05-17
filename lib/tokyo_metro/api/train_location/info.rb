@@ -107,7 +107,7 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
   # @!endgroup
 
   def decorate( request , railway_line )
-    ::TokyoMetro::Api::TrainLocation::Info::Decorator.new( request , self , railway_line )
+    ::TokyoMetro::Factory::Decorate::Api::TrainLocation::Info.new( request , self , railway_line )
   end
 
   def railway_direction_in_api_same_as

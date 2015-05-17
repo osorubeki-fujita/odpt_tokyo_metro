@@ -13,14 +13,14 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole < TokyoMetro::F
   attr_reader :train_operation_infos
   attr_reader :train_location_infos
 
-  def render( include_train_locations: nil )
-    h.render inline: <<-HAML , type: :haml , locals: h_locals( include_train_locations )
+  def render( include_train_location_infos: nil )
+    h.render inline: <<-HAML , type: :haml , locals: h_locals( include_train_location_infos )
 %div{ id: :real_time_info_and_update_button , class: :clearfix }
   = this.render_title
   %ul{ class: :time_infos }
     = this.train_operation_infos.render
     - if this.has_train_location_infos?
-      = this.train_location_infos.render( include_train_locations: include_train_locations )
+      = this.train_location_infos.render( include_train_location_infos: include_train_location_infos )
     HAML
   end
 
@@ -38,17 +38,17 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole < TokyoMetro::F
       icon_size: 2
     ).render
   end
-  
+
   def has_train_location_infos?
     @train_location_infos.present?
   end
 
   private
 
-  def h_locals( include_train_locations )
+  def h_locals( include_train_location_infos )
     super().merge({
       this: self ,
-      include_train_locations: include_train_locations
+      include_train_location_infos: include_train_location_infos
     })
   end
 

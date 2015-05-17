@@ -5,72 +5,41 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
   def initialize( request , railway_line , http_client )
     super( request )
     @railway_line = railway_line
-    get_train_information( http_client )
-    get_train_locations( http_client )
+    get_train_operation_info( http_client )
+    get_train_location_infos( http_client )
+    set_max_delay
   end
 
   attr_reader :railway_line
-  attr_reader :train_information
-  attr_reader :train_locations
+  attr_reader :train_operation_info
+  attr_reader :train_location_infos
 
   def render_train_operation_info( controller )
-    @train_information.decorate( request , @railway_line , max_delay , controller ).render
-  end
-
-  def render_train_operation_info_test_version
-    h.render inline: <<-HAML , type: :haml , locals: { railway_line: @railway_line , status_list_for_test: STATUS_LIST_FOR_TEST }
-- railway_line_decorated = railway_line.decorate
-- status_list_for_test.each do | test_status |
-  %div{ class: [ :train_information_test , :railway_line ] }
-    = railway_line_decorated.render_matrix( make_link_to_railway_line: true , size: :small , link_controller_name: :train_information )
-    %div{ class: [ :status , test_status[ "status_type" ] ] }
-      %div{ class: :infos }
-        %div{ class: :icon }<
-          = ::TokyoMetro::App::Renderer::Icon.send( test_status[ "status_type" ] , request , 3 ).render
-        %div{ class: :text }
-          %p{ class: :text_ja }<
-            = test_status[ "status_text_ja" ]
-          %p{ class: :text_en }<
-            = test_status[ "status_text_en" ]
-        - if test_status[ "additional_info_abstruct" ].present? or test_status[ "additional_info_precise" ].present?
-          %div{ class: :additional_infos }<
-            - if test_status[ "additional_info_abstruct" ].present?
-              %div{ class: :abstruct }<
-                = test_status[ "additional_info_abstruct" ]
-            - if test_status[ "additional_info_precise" ].present?
-              %div{ class: :precise }<
-                = test_status[ "additional_info_precise" ]
-    HAML
-  end
-
-  def render_train_operation_info_precise_version
-    @train_information.decorate( @railway_line , max_delay ).render_precise_version
+    @train_operation_info.decorate( request , @railway_line , @max_delay , controller , no_train? ).render
   end
 
   def render_train_location_infos
-    h.render inline: <<-HAML , type: :haml , locals: { info: self }
-= info.train_locations.exclude_toei_mita_line.decorate( request , info.railway_line ).render
-    HAML
+    @train_location_infos.exclude_toei_mita_line.decorate( request , @railway_line ).render
   end
 
   private
 
-  def get_train_information( http_client )
-    train_informations = ::TokyoMetro::Api::TrainInformation.get(
+  def get_train_operation_info( http_client )
+    train_operation_infos = ::TokyoMetro::Api::TrainInformation.get(
       http_client ,
       railway_line: @railway_line.same_as ,
       perse_json: true ,
       generate_instance: true
     )
-    if train_informations.length > 1
+    if train_operation_infos.length > 1
       raise "Error"
     end
-    @train_information = train_informations.first
+    @train_operation_info = train_operation_infos.first
     sleep( 0.2 )
   end
 
-  def get_train_locations( http_client )
-    @train_locations = ::TokyoMetro::Api::TrainLocation.get(
+  def get_train_location_infos( http_client )
+    @train_location_infos = ::TokyoMetro::Api::TrainLocation.get(
       http_client ,
       @railway_line.same_as ,
       perse_json: true ,
@@ -79,8 +48,12 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
     sleep( 0.2 )
   end
 
-  def max_delay
-    @train_locations.max_delay
+  def set_max_delay
+    @max_delay = @train_location_infos.try( :max_delay )
+  end
+
+  def no_train?
+    @train_location_infos.blank?
   end
 
 end

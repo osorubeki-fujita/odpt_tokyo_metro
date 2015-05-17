@@ -10,7 +10,7 @@ module TokyoMetro::Rake
     raise error_msg_with_options_inspected unless args.present?
     time_args = args.select { |v| /\d{14}/ === v }
     raise error_msg_with_options_inspected unless time_args.present?
-    
+
     return time_args.first
   end
 

@@ -36,7 +36,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
   attr_reader :hidden_on_railway_line_page
 
   attr_reader :customized_infos
-  
+
   [ :start_on , :end_on ].each do | instance_variable |
     eval <<-DEF
       def set_#{ instance_variable }( variable )

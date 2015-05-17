@@ -7,7 +7,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     @railway_direction = railway_direction
     @station_timetables = station_timetables
   end
-  
+
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 - grouped_by_operation_day.each do | station_timetables_of_each_operation_day |

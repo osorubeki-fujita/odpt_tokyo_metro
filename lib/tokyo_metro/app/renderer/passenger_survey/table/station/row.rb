@@ -6,7 +6,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::Station::Row < TokyoMet
     passenger_survey_infos_all
   )
     super( request , passenger_survey_info , n , max_passenger_journey_in_graph , make_graph )
-    
+
     set_order( passenger_survey_infos_all )
   end
 

@@ -34,7 +34,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::MetaClass < TokyoMetr
   def next_update
     validity_times
   end
-  
+
   def render_title_of_each_content( icon_name , text_ja , text_en )
     h_locals_i = {
       request: request ,
@@ -101,14 +101,14 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::MetaClass < TokyoMetr
     when :en
       time_infos.map( &:to_strf_normal_en )
     when nil
-      time_infos.map( &:to_s )
+      time_infos.map( &:to_strf_normal_en )
     end
   end
-  
+
   def h_locals
     super().merge({
       this: self
     })
   end
-  
+
 end

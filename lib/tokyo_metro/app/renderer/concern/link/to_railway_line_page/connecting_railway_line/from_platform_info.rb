@@ -29,7 +29,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
   def object
     @platform_transfer_info_decorated.object
   end
-  
+
   def optional_info_to_display
     nil
   end

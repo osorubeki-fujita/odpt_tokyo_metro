@@ -3,7 +3,7 @@ class TokyoMetro::Required::All::Static::ExceptForTrainType < TokyoMetro::Requir
   def initialize
     super( set_all_files_under_the_top_namespace: false )
   end
-  
+
   def self.top_file
     ::TokyoMetro::Required::All::Static.top_file
   end

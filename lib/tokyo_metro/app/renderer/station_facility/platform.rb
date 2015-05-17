@@ -99,7 +99,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
   def platform_infos_of_yurakucho_and_fukutoshin_line_between_wakoshi_and_hikawadai?
     platform_infos_of_yurakucho_and_fukutoshin_line? and between_wakoshi_and_hikawadai?
   end
-  
+
   def platform_infos_of_yurakucho_and_fukutoshin_line_at_kotake_mukaihara?
     platform_infos_of_yurakucho_and_fukutoshin_line? and at_kotake_mukaihara?
   end
@@ -137,7 +137,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
     ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.namboku_and_toei_mita_line_common_stations_in_system
     at_these_stations?( ary )
   end
-  
+
   [ :kotake_mukaihara , :meguro , :shirokanedai , :shirokane_takanawa ].each do | station_name |
     eval <<-DEF
       def at_#{ station_name }?

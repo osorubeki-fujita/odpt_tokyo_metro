@@ -3,7 +3,7 @@ class TokyoMetro::App::Renderer::StationCode::Normal < TokyoMetro::Factory::Deco
   def initialize( request , station_infos , first_info: nil )
     super( request )
     @station_infos = [ station_infos ].flatten
-    
+
     if @station_infos.all?( &:at_ayase? ) or @station_infos.all?( &:at_nakano_sakaue? )
       @station_infos = [ @station_infos.first ]
     end
@@ -33,5 +33,5 @@ class TokyoMetro::App::Renderer::StationCode::Normal < TokyoMetro::Factory::Deco
       first_info: @first_info
     })
   end
-  
+
 end

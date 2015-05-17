@@ -1,8 +1,8 @@
 def dictionary_of_stations
   describe TokyoMetro::Modules::Common::Dictionary::Station::StringList do
-  
+
     it "contains module methods returning list of stations on Marunouchi Branch Line" do
-  
+
       expect( TokyoMetro::Modules::Common::Dictionary::Station::StringList.nakano_sakaue_in_system ).to eq( "NakanoSakaue" )
       expect( TokyoMetro::Modules::Common::Dictionary::Station::StringList.nakano_sakaue ).to eq([
         "odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue",
@@ -59,9 +59,9 @@ def dictionary_of_stations
         "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi",
         "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
       ])
-  
+
     end
-  
+
     it "contains module methods returning list of stations in sections where Yurakucho Line and Fukutoshin Line share tracks" do
       expect( TokyoMetro::Modules::Common::Dictionary::Station::StringList.wakoshi_in_system ).to eq( "Wakoshi" )
       expect( TokyoMetro::Modules::Common::Dictionary::Station::StringList.wakoshi ).to eq([
@@ -235,7 +235,7 @@ def dictionary_of_stations
         "odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro"
       ])
     end
-  
+
     it "contains module methods returning list of stations in sections where Yurakucho Line and Fukutoshin Line share tracks" do
       expect( TokyoMetro::Modules::Common::Dictionary::Station::StringList.namboku_and_toei_mita_line_common_stations_in_system ).to eq([
         "Meguro",
@@ -251,7 +251,7 @@ def dictionary_of_stations
         "odpt.Station:Toei.Mita.ShirokaneTakanawa"
       ])
     end
-  
+
   end
 
 end

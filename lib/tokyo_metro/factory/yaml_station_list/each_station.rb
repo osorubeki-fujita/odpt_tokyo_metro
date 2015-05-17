@@ -40,7 +40,7 @@ class TokyoMetro::Factory::YamlStationList::EachStation
 
     return h
   end
-  
+
   [ :station_facility , :station_facility_custom , :station_facility_custom_alias ].each do | method_name |
     eval <<-DEF
       def #{ method_name }

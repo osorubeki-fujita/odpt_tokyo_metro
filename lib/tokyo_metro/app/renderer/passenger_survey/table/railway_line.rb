@@ -27,7 +27,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::RailwayLine < TokyoMetr
   def passenger_survey_infos_of_the_same_railway_line
     @passenger_survey_infos
   end
-  
+
   def main_railway_line
     [ @railway_lines_including_branch ].flatten.select { | item | !( item.is_branch_railway_line? ) }.first
   end

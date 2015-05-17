@@ -8,14 +8,14 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass::Header < Tok
   def render
     raise "Error: This method \'#{ __method__ }\' is not defined in this class \'#{ self.class.name }\'."
   end
-  
+
   def render_header_of_order
     h.render inline: <<-HAML , type: :haml
 %td{ class: :order }<
   = "順位"
     HAML
   end
-  
+
   def render_header_of_station
     h.render inline: <<-HAML , type: :haml
 %td{ class: :station }<
@@ -32,7 +32,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass::Header < Tok
     = "年度"
     HAML
   end
-  
+
   def render_header_of_passenger_journeys
     h.render inline: <<-HAML , type: :haml , locals: { make_graph: @make_graph }
 - if make_graph
@@ -43,9 +43,9 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass::Header < Tok
     = "乗降客数"
     HAML
   end
-  
+
   private
-  
+
   def h_locals
     super.merge({
       this: self

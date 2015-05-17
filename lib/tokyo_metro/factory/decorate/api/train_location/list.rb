@@ -1,4 +1,4 @@
-class TokyoMetro::Api::TrainLocation::List::Decorator < TokyoMetro::Api::MetaClass::RealTime::Info::Decorator
+class TokyoMetro::Factory::Decorate::Api::TrainLocation::List < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
 
   def initialize( request , obj , railway_line )
     super( request , obj )

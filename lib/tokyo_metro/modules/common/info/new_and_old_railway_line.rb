@@ -15,7 +15,7 @@ module TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine
   def ended_already?
     end_on.present? and ::Time.now > end_on
   end
-  
+
   def already_ended?
     ended_already?
   end

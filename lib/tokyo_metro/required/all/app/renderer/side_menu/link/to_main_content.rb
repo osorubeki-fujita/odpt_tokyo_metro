@@ -3,5 +3,5 @@ class TokyoMetro::Required::All::App::Renderer::SideMenu::Link::ToMainContent < 
   def self.other_files
     ::File.join( top_file , "index" )
   end
-  
+
 end
