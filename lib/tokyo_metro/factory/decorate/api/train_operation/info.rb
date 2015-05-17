@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Decorate::Api::TrainOperation < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
+class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
 
   def initialize( request , obj , railway_line , max_delay , controller , no_train )
     super( request , obj )
