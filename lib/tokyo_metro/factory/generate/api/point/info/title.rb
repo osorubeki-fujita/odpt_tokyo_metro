@@ -11,7 +11,7 @@ class TokyoMetro::Factory::Generate::Api::Point::Info::Title < TokyoMetro::Facto
   def variables
     set_variables
     set_station_name
-    [ @station_name , @code , @additional_info , @elevator , @closed ]
+    [ @station_name , @code , @additional_name , @elevator , @closed ]
   end
 
   def set_variables
@@ -29,7 +29,7 @@ class TokyoMetro::Factory::Generate::Api::Point::Info::Title < TokyoMetro::Facto
   def set_variables_in_code
     if /\A(.+)[(（](.+)[）)]\Z/ === @code
       @code = $1
-      @additional_info = $2
+      @additional_name = $2
     end
 
     elevator_regexp = /\Aエレベーター?\Z/
@@ -37,13 +37,13 @@ class TokyoMetro::Factory::Generate::Api::Point::Info::Title < TokyoMetro::Facto
     if elevator_regexp === @code
       @elevator = true
       @code = nil
-    elsif elevator_regexp === @additional_info
+    elsif elevator_regexp === @additional_name
       @elevator = true
-      @additional_info = nil
+      @additional_name = nil
 
-    elsif @additional_info == "閉"
+    elsif @additional_name == "閉"
       @closed = true
-      @additional_info = nil
+      @additional_name = nil
     end
   end
 

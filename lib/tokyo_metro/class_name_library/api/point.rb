@@ -127,6 +127,14 @@ module TokyoMetro::ClassNameLibrary::Api::Point
       ::Point::Category
     end
 
+    def db_code_class
+      ::Point::Code
+    end
+
+    def db_additional_name_class
+      ::Point::AdditionalName
+    end
+
     private
 
     # @!group クラスメソッド - データの取得・保存

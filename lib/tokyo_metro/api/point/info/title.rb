@@ -5,23 +5,23 @@ class TokyoMetro::Api::Point::Info::Title
   include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
 
   # Constructor
-  def initialize( station_name , code , additional_info , elevator , closed )
+  def initialize( station_name , code , additional_name , elevator , closed )
     @station_name = station_name
     @code = code
-    @additional_info = additional_info
+    @additional_name = additional_name
     @elevator = elevator
     @closed = closed
   end
 
-  attr_reader :station_name , :code , :additional_info , :elevator , :closed
+  attr_reader :station_name , :code , :additional_name , :elevator , :closed
 
   alias :has_elevator? :elevator
   alias :closed? :closed
 
   def to_s
     str_1 = to_s_sub_1
-    unless @additional_info == ""
-      str_1 += ( "/" + @additional_info )
+    unless @additional_name == ""
+      str_1 += ( "/" + @additional_name )
     end
     if @elevator
       str_1 += "/【EV】"

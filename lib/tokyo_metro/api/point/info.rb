@@ -89,16 +89,16 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   # @!endgroup
 
-  def additional_info
-    _additional_info = @title.additional_info
-    if _additional_info.blank?
+  def additional_name
+    _additional_name = @title.additional_name
+    if _additional_name.blank?
       nil
     else
-      _additional_info
+      _additional_name
     end
   end
 
-  alias :additional_info_ja :additional_info
+  alias :additional_name_ja :additional_name
 
   def category_name_en
     str = ::TokyoMetro::Dictionary.english[ category_name_ja ]
@@ -109,8 +109,8 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
     str
   end
 
-  def additional_info_en
-    str = ::TokyoMetro::Dictionary.english[ additional_info_ja ]
+  def additional_name_en
+    str = ::TokyoMetro::Dictionary.english[ additional_name_ja ]
     #----
     str
   end

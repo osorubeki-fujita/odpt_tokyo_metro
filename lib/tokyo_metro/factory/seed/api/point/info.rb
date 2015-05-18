@@ -10,11 +10,11 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
   def hash_to_db
     h = ::Hash.new
 
-    [ :id_urn , :code , :additional_info_ja , :additional_info_en , :latitude , :longitude , :geo_json , :floor ].each do | key_name |
+    [ :id_urn , :latitude , :longitude , :geo_json , :floor ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end
 
-    [ :station_facility_id , :category_id ].each do | key_name |
+    [ :station_facility_id , :category_id , :code_id ].each do | key_name |
       h[ key_name ] = self.send( key_name )
     end
 
@@ -57,6 +57,30 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
         str
       end
     DEF
+  end
+
+  def code_in_db
+    if @info.code.present?
+      self.class.db_code_class.find_or_create_by( main: @info.code , additional_name_id: additional_name_id )
+    else
+      nil
+    end
+  end
+
+  def code_id
+    code_in_db.try( :id )
+  end
+
+  def additional_name_in_db
+    if @info.additional_name_ja.present? or @info.additional_name_en.present?
+      self.class.db_additional_name_class.find_or_create_by( name_ja: @info.additional_name_ja , name_en: @info.additional_name_en )
+    else
+      nil
+    end
+  end
+
+  def additional_name_id
+    additional_name_in_db.try( :id )
   end
 
 end
