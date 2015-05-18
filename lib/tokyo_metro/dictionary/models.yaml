@@ -6,8 +6,6 @@ RailwayLine:
   - RailwayLine
   - TravelTimeInfo
   - WomenOnlyCarInfo
-  - ConnectingRailwayLine
-  - ConnectingRailwayLineNote
 
 RailwayDirection:
   - RailwayDirection
@@ -25,6 +23,10 @@ StoppingPattern:
 Station:
   - "Station::Info"
   - "Station::NameAlias"
+
+ConnectingRailwayLine:
+  - "ConnectingRailwayLine::Info"
+  - "ConnectingRailwayLine::Note"
 
 StationFacility:
   - StationFacility
