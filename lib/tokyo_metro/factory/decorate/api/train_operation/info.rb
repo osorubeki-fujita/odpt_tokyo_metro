@@ -16,11 +16,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   attr_reader :controller
 
   def additional_info_abstruct_ja
-    object.train_operation_info_status.try( :name_ja_for_display )
+    object.train_operation_status.try( :name_ja_for_display )
   end
 
   def additional_info_abstruct_en
-    object.train_operation_info_status.try( :name_en_for_display )
+    object.train_operation_status.try( :name_en_for_display )
   end
 
   def additional_info_precise_ja

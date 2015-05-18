@@ -60,17 +60,17 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index < TokyoMet
     self.new(
       request ,
       "現在運行中の列車" ,
-      "Train location" ,
+      "Train location info" ,
       controller: __method__ ,
       icon_name: __method__
     )
   end
 
-  def self.train_operation_info( request )
+  def self.train_operation( request )
     self.new(
       request ,
       "列車運行情報" ,
-      "Train information" ,
+      "Train operation info" ,
       controller: __method__ ,
       icon_name: __method__
     )

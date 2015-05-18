@@ -12,6 +12,7 @@ class TokyoMetro::Api::TrainOperation::List < TokyoMetro::Api::MetaClass::RealTi
   def railway_lines
     self.map( &:railway_line )
   end
+
   alias :railway_lines_same_as :railway_lines
 
   def update!( http_client , time: ::TokyoMetro.time_now )

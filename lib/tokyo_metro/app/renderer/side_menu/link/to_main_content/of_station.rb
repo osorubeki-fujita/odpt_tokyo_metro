@@ -37,11 +37,11 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
     end
   end
 
-  def self.train_operation_info( request )
+  def self.train_operation( request )
     self.new(
       request ,
       "列車運行情報" ,
-      "Train information" ,
+      "Train operation info" ,
       controller: __method__ ,
       icon_name: __method__
     )

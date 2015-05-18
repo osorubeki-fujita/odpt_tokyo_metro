@@ -18,10 +18,16 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
   # @param info_status [String] 運行ステータス <odpt:trainInformationStatus - xsd:string>
   # @param info_text [String] 運行情報テキスト <odpt:trainInformationText - xsd:string>
   # @note 運行ステータスは、平常時は省略。運行情報が存在する場合は「運行情報あり」を格納。遅延などの情報を取得可能な場合は、「遅延」等のテキストを格納。
-  def initialize( id_urn , dc_date , valid , operator , time_of_origin , railway_line , info_status , info_text )
+  def initialize(
+    id_urn ,
+    dc_date , valid ,
+    operator , time_of_origin , railway_line ,
+    info_status , info_text
+  )
     @id_urn = id_urn
     @dc_date , @valid = dc_date , valid
-    @operator , @time_of_origin , @railway_line , @status , @text = operator , time_of_origin , railway_line , info_status , info_text
+    @operator , @time_of_origin , @railway_line = operator , time_of_origin , railway_line
+    @status , @text = info_status , info_text
   end
 
   # @!group 運行情報のメタデータ (For developers)
@@ -86,20 +92,20 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
 
   # @!endgroup
 
-  def train_operation_info_status
+  def train_operation_status
     if @status.present?
-      ::TrainInformationStatus.find_or_create_by( in_api: @status )
+      ::TrainOperation::Status.find_or_create_by( in_api: @status )
     else
       nil
     end
   end
 
-  def train_operation_info_text
-    ::TrainInformationText.find_or_create_by( in_api: @text )
+  def train_operation_text
+    ::TrainOperation::Text.find_or_create_by( in_api: @text )
   end
 
   def text_in_api
-    train_operation_info_text.in_api
+    train_operation_text.in_api
   end
 
   def text_en
@@ -111,19 +117,19 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
   end
 
   def place
-    train_operation_info_text.place
+    train_operation_text.place
   end
 
   def on_schedule?
-    train_operation_info_text.on_schedule?
+    train_operation_text.on_schedule?
   end
 
   def delayed?
-    train_operation_info_status.try( :delayed? )
+    train_operation_status.try( :delayed? )
   end
 
   def suspended?
-    train_operation_info_status.try( :suspended? )
+    train_operation_status.try( :suspended? )
   end
 
 end

@@ -16,7 +16,7 @@ class TokyoMetro::Factory::Generate::Api::TrainOperation::Info < TokyoMetro::Fac
 
     railway_line = @hash[ "odpt:railway" ]
     info_status = @hash[ "odpt:trainInformationStatus" ]
-    info_text = @hash[ "odpt:trainInformationText" ].process_train_operation_info_text
+    info_text = @hash[ "odpt:trainInformationText" ].process_train_operation_text
 
     [ id , dc_date , valid , operator , time_of_origin , railway_line , info_status , info_text ]
   end

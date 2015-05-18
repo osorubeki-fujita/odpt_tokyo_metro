@@ -227,7 +227,7 @@ module TokyoMetro::Factory::Seed
           ::TokyoMetro::Static.train_owners.seed
           ::TokyoMetro::Static::Fare::Normal.seed
           ::TokyoMetro::Static.operation_days.seed
-          ::TokyoMetro::Static.train_operation_info_statuses.seed
+          ::TokyoMetro::Static.train_operation_statuses.seed
         }
       )
     end

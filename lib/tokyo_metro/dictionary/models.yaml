@@ -75,10 +75,11 @@ Timetable:
   - TrainRelation
   - StationTrainTime
 
-TrainInformation:
-  - TrainInformation
-  - TrainInformationOld
-  - TrainInformationStatus
+TrainOperation:
+  - "TrainOperation::Info"
+  - "TrainOperation::OldInfo"
+  - "TrainOperation::Status"
+  - "TrainOperation::Text"
 
 TrainLocation:
   - TrainLocation

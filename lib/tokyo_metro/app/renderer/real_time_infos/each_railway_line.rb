@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Factory::Decorate::MetaClass
 
-  STATUS_FOR_TEST = ::YAML.load_file( "#{ ::TokyoMetro::DICTIONARY_DIR }/view/train_operation_status_for_test.yaml" )
+  TRAIN_OPERATION_STATUS_FOR_TEST = ::YAML.load_file( "#{ ::TokyoMetro::DICTIONARY_DIR }/view/train_operation_status_for_test.yaml" )
 
   def initialize( request , railway_line , http_client )
     super( request )
