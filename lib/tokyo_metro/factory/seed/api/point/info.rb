@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
       h[ key_name ] = @info.send( key_name )
     end
 
-    [ :station_facility_id , :point_category_id ].each do | key_name |
+    [ :station_facility_id , :category_id ].each do | key_name |
       h[ key_name ] = self.send( key_name )
     end
 
@@ -27,9 +27,11 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
   def station_in_db
     _station_name_ja = @info.station_name_in_title.process_machine_dependent_character
     _station_in_db = @station_infos.find_by( name_ja: _station_name_ja )
+
     if _station_in_db.nil?
       raise "Error: The station information of \"#{ _station_name_ja }\" does not exist in the db."
     end
+
     _station_in_db
   end
 
@@ -37,17 +39,17 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
     station_in_db.station_facility_id
   end
 
-  def point_category_in_db
-    ::PointCategory.find_or_create_by( name_ja: point_category_name_ja , name_en: point_category_name_en )
+  def category_in_db
+    self.class.db_category_class.find_or_create_by( name_ja: category_name_ja , name_en: category_name_en )
   end
 
-  def point_category_id
-    point_category_in_db.id
+  def category_id
+    category_in_db.id
   end
 
   [ :ja , :en ].each do | lang |
     eval <<-DEF
-      def point_category_name_#{ lang }
+      de category_name_#{ lang }
         str = @info.category_name_#{ lang }
         unless str.present?
           raise "Error: The category name (#{ lang }) of \"" + @info.title.to_s + "\" is not valid. The category info is not defied."

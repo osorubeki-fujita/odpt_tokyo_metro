@@ -120,7 +120,11 @@ module TokyoMetro::ClassNameLibrary::Api::Point
     end
 
     def db_instance_class
-      ::Point
+      ::Point::Info
+    end
+
+    def db_category_class
+      ::Point::Category
     end
 
     private

@@ -6,7 +6,7 @@ class TokyoMetro::Factory::Seed::Api::Station::Info::Exit::Info < TokyoMetro::Fa
 
   def hash_to_db
     {
-      point_id: point_id ,
+      point_info_id: point_info_id( search_by: @info.point_id_urn ) ,
       station_id: @station_id
     }
   end

@@ -2,21 +2,25 @@ module TokyoMetro::Factory::Seed::Reference::Point
 
   private
 
-  def point_in_db( whole = nil , search_by: @info.point )
+  def point_info_in_db( whole = nil , search_by: @info.point )
     if whole.present?
-      whole.find_by_id_urn( search_by )
+      whole.find_by( id_urn: search_by )
     else
-      ::Point.find_by_id_urn( search_by )
+      ::Point::Info.find_by( id_urn: search_by )
     end
   end
 
-  def point_id( whole = nil , search_by: @info.point )
-    _point_in_db = point_in_db( whole , search_by: search_by )
-    raise "Error: \"#{ search_by }\" does not exist in the database." if _point_in_db.nil?
-    _point_in_db.id
+  def point_info_id( whole = nil , search_by: @info.point )
+    _point_info_in_db = point_info_in_db( whole , search_by: search_by )
+
+    if _point_info_in_db.nil?
+      raise "Error: \"#{ search_by }\" does not exist in the database."
+    end
+
+    _point_info_in_db.id
   end
 
-  alias :exit_in_db :point_in_db
-  alias :exit_id :point_id
+  alias :exit_in_db :point_info_in_db
+  alias :exit_id :point_info_id
 
 end

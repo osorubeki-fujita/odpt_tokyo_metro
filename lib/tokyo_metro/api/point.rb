@@ -26,7 +26,7 @@ class TokyoMetro::Api::Point < TokyoMetro::Api::MetaClass::Hybrid
   end
 
   # 駅情報を取得し保存するメソッド
-  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】 
+  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
   # @param file_type [Symbol] 保存するファイルの種類【必須】
   # @param id_urn [String] 固有識別子 (ucode) <id - URN>
   # @param title [String] 地物名。エレベータには「エレベータ」という文字列を含む。「出入口」の文字列の後に出口番号が続く。<dc:title - xsd:string>
@@ -59,13 +59,13 @@ class TokyoMetro::Api::Point < TokyoMetro::Api::MetaClass::Hybrid
 
     h = ary.group_by( &:station_name_in_title )
     h.keys.sort.each do | station |
-      h[ station ].sort_by( &:code_in_title ).each do | point |
-        puts "(#{ point.floor.to_s.rjust(2) }) #{point.category_name} #{point.title.to_s}"
+      h[ station ].sort_by( &:code_in_title ).each do | point_info |
+        puts "(#{ point_info.floor.to_s.rjust(2) }) #{ point_info.category_name } #{ point_info.title.to_s }"
       end
     end
 
-    ary.each do | point |
-      puts point.to_strf
+    ary.each do | point_info |
+      puts point_info.to_strf
       puts "\n" * 2
     end
 
@@ -77,8 +77,8 @@ class TokyoMetro::Api::Point < TokyoMetro::Api::MetaClass::Hybrid
     puts "● #{get_test_title} (geo)"
     result = get_geo( http_client , geo_long , geo_lat , radius , to_inspect: true , perse_json: true , generate_instance: true )
     puts "(#{result.length})"
-    result.each do | point |
-      puts point.to_strf
+    result.each do | point_info |
+      puts point_info.to_strf
       puts "" * 2
     end
   end
