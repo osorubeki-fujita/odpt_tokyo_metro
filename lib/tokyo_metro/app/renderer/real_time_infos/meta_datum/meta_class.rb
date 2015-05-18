@@ -94,14 +94,14 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::MetaClass < TokyoMetr
   end
 
   def time_str_ary( time_infos , lang )
-    raise "Error" unless lang == :ja or lang == :en
+    raise "Error" unless lang == :ja or lang == :en or lang.nil?
     case lang
     when :ja
       time_infos.map( &:to_strf_normal_ja )
     when :en
       time_infos.map( &:to_strf_normal_en )
     when nil
-      time_infos.map( &:to_strf_normal_en )
+      time_infos.map( &:to_s )
     end
   end
 

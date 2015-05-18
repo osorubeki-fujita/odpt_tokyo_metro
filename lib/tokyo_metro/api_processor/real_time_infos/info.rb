@@ -18,7 +18,7 @@ class TokyoMetro::ApiProcessor::RealTimeInfos::RailwayLine::Info
   alias :dc_date_time_of_train_operation_info :dc_date_of_train_operation_info
 
   def has_any_train_location?
-    @train_locations.present?
+    @train_location_infos.present?
   end
 
   def railway_line_same_as

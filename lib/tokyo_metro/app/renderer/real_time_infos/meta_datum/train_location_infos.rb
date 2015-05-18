@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainLocationInfos < 
     }
 
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%li{ class: :train_locations }
+%li{ class: :train_location_infos }
   = this.render_title( include_delay , include_train_location_infos )
   = this.render_meta_data
     HAML
@@ -32,7 +32,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainLocationInfos < 
   - if include_delay
     = this.render_title_of_current_delay
   - if include_train_location_infos
-    = this.render_title_of_train_locations
+    = this.render_title_of_train_location_infos
     HAML
   end
 
@@ -40,7 +40,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainLocationInfos < 
     render_title_of_each_content( :delay , "現在の遅れ" , "Delay" )
   end
 
-  def render_title_of_train_locations
+  def render_title_of_train_location_infos
     render_title_of_each_content( :train_location , ::TrainLocationDecorator.common_title_ja , ::TrainLocationDecorator.common_title_en )
   end
 

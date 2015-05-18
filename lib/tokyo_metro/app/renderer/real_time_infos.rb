@@ -28,12 +28,12 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   # @!group 列車位置情報
 
   def has_train_location_infos?
-    @infos_of_each_railway_line.map( &:train_locations ).flatten.present?
+    @infos_of_each_railway_line.map( &:train_location_infos ).flatten.present?
   end
 
   # @!group render
 
-  def render( include_train_location_infos: false , controller: :train_operation_info , options: nil )
+  def render( include_train_location_infos: false , controller: :train_operation , options: nil )
     if options.present?
       options = [ options ].flatten
     end
@@ -73,13 +73,13 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   def render_train_location_infos
     h.render inline: <<-HAML , type: :haml , locals: { this: self }
-%div{ id: :train_locations }
+%div{ id: :train_location_infos }
   - if this.has_one_railway_line?
     - this.infos_of_each_railway_line.each do | info_of_a_railway_line |
       = info_of_a_railway_line.render_train_location_infos
   - else
     - this.infos_of_each_railway_line.each do | info_of_a_railway_line |
-      - if info_of_a_railway_line.train_locations.present?
+      - if info_of_a_railway_line.train_location_infos.present?
         = info_of_a_railway_line.railway_line.decorate.render_title_in_train_location
         = info_of_a_railway_line.render_train_location_infos
     HAML
@@ -103,7 +103,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     ::TokyoMetro::App::Renderer::Concern::Header::Content.new(
       @request ,
       :title_of_train_operation_infos ,
-      :train_operation_info ,
+      :train_operation ,
       ::TrainOperation::InfoDecorator.common_title_ja ,
       ::TrainOperation::InfoDecorator.common_title_en ,
       additional_content: proc_for_additional_content
@@ -113,7 +113,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   def render_title_of_train_location_infos
     ::TokyoMetro::App::Renderer::Concern::Header::Content.new(
       @request ,
-      :title_of_train_locations ,
+      :title_of_train_location_infos ,
       :train_location ,
       ::TrainLocationDecorator.common_title_ja ,
       ::TrainLocationDecorator.common_title_en

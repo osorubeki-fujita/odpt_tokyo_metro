@@ -25,7 +25,8 @@ module TokyoMetro::Modules::Db::Model
           else
             category_name = nil
           end
-          model_ary << [ category_name , model , eval( "::#{model}.all.count" ) ]
+
+          model_ary << [ category_name , model , eval( "::#{ model }.all.count" ) ]
         end
       end
       model_ary

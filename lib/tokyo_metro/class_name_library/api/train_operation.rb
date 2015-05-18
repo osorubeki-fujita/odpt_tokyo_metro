@@ -104,7 +104,7 @@ module TokyoMetro::ClassNameLibrary::Api::TrainOperation
     # データを保存するディレクトリ
     # @return [String]
     def db_dirname_sub
-      "train_operation_info"
+      "train_operation"
     end
 
   end

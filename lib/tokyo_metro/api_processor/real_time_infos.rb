@@ -87,9 +87,9 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
 
   [
     :train_operation_infos_provided? ,
-    :train_locations_provided? ,
+    :train_location_infos_provided? ,
     :train_operation_infos_are_not_provided! ,
-    :train_locations_are_not_provided!
+    :train_location_infos_are_not_provided!
   ].each do | method_name |
     eval <<-DEF
       def #{ method_name }

@@ -84,11 +84,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   end
 
   def starting_station_decorated
-    ::Station::Info.find_by( same_as: this.object.starting_station ).decorate.train_location
+    ::Station::Info.find_by( same_as: object.starting_station ).decorate.train_location
   end
 
   def terminal_station_decorated
-    ::Station::Info.find_by( same_as: this.object.terminal_station ).decorate.train_location
+    ::Station::Info.find_by( same_as: object.terminal_station ).decorate.train_location
   end
 
 end

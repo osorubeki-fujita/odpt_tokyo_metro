@@ -25,15 +25,15 @@ class TokyoMetro::ApiProcessor::RealTimeInfos::RailwayLine::List < ::Array
   end
 
   def dc_date_times_of_train_location_info
-    @infos_of_each_railway_line.map( &:train_locations ).flatten.map( &:dc_date )
+    @infos_of_each_railway_line.map( &:train_location_infos ).flatten.map( &:dc_date )
   end
 
   def validity_times_of_train_location_info
-    @infos_of_each_railway_line.map( &:train_locations ).flatten.map( &:validity )
+    @infos_of_each_railway_line.map( &:train_location_infos ).flatten.map( &:validity )
   end
 
   def frequency_of_train_location_info
-    @infos_of_each_railway_line.map( &:train_locations ).flatten.map( &:frequency )
+    @infos_of_each_railway_line.map( &:train_location_infos ).flatten.map( &:frequency )
   end
 
 end
