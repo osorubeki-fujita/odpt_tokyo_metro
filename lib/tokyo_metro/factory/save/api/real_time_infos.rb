@@ -2,13 +2,13 @@
 module TokyoMetro::Factory::Save::Api::RealtimeInfos
 
   # ループの開始
-  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】 
+  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
   # @return [nil]
   def self.begin_loop( http_client = ::HTTPClient.new , sleeping_time: 30 )
     # loop 開始
     loop do
       #-------- 列車運行情報
-      TokyoMetro::Api::TrainInformation.save_datas_of_each_group( http_client , file_type: :json )
+      TokyoMetro::Api::TrainOperation.save_datas_of_each_group( http_client , file_type: :json )
       sleep(1)
 
       #-------- 列車ロケーション情報

@@ -3,8 +3,8 @@ namespace :tokyo_metro do
     namespace :get do
 
       desc "取得テスト - 列車運行情報"
-      task :train_information => :load do
-        ::TokyoMetro::Api::TrainInformation.get_test( ::HTTPClient.new )
+      task :train_operation => :load do
+        ::TokyoMetro::Api::TrainOperation.get_test( ::HTTPClient.new )
       end
 
       desc "取得テスト - 列車ロケーション情報"
@@ -79,7 +79,7 @@ namespace :tokyo_metro do
           ::TokyoMetro::Static::Fare::Normal.test
         end
       end
-      
+
       namespace :station do
         desc "取得テスト - 駅情報 渋谷（銀座線）"
         task :ginza_line_shibuya => :load do
@@ -105,7 +105,7 @@ namespace :tokyo_metro do
           ::TokyoMetro::Api::Point.get_test( ::HTTPClient.new )
         end
       end
-      
+
       # 地理情報
       namespace :geo do
         desc "取得テスト - 駅情報（地理情報から）"

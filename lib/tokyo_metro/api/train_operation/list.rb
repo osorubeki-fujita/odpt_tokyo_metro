@@ -1,7 +1,7 @@
 # 各路線の列車運行情報を格納する配列
-class TokyoMetro::Api::TrainInformation::List < TokyoMetro::Api::MetaClass::RealTime::List
+class TokyoMetro::Api::TrainOperation::List < TokyoMetro::Api::MetaClass::RealTime::List
 
-  include ::TokyoMetro::ClassNameLibrary::Api::TrainInformation
+  include ::TokyoMetro::ClassNameLibrary::Api::TrainOperation
 
   # 各路線の情報を路線の建設順に並べ替えるメソッド
   # @return [List]

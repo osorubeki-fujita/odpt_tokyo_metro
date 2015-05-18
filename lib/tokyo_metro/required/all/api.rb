@@ -15,7 +15,7 @@ class TokyoMetro::Required::All::Api < TokyoMetro::Required
       StationTrainTime.files ,
       StationTimetable.files ,
       TrainTimetable.files ,
-      TrainInformation.files ,
+      TrainOperation.files ,
       TrainLocation.files
     ]
   end
@@ -38,7 +38,7 @@ class TokyoMetro::Required::All::Api < TokyoMetro::Required
       [
         "fare" , "mlit_railway_line" , "mlit_station" , "passenger_survey" , "point" , "railway_line" ,
         "station" , "station_facility" ,
-        "train_information" , "train_location" ,
+        "train_operation" , "train_location" ,
         "station_timetable" , "train_timetable"
       ]
     end

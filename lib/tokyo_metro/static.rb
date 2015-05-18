@@ -50,7 +50,7 @@ module TokyoMetro::Static
     ::TokyoMetro::Static::TrainType.set_constant
 
     #---- 列車運行情報
-    ::TokyoMetro::Static::TrainInformationStatus.set_constant
+    ::TokyoMetro::Static::TrainOperationStatus.set_constant
 
     #---- 曜日
     ::TokyoMetro::Static::OperationDay.set_constant

@@ -1,6 +1,6 @@
 #-------- 各コンテンツ（鉄道関連）
 
-"train_information": "info"
+"train_operation": "info"
 "train_location": "location-arrow" # "map-marker"
 "railway_line": "code-fork"
 "station_facility": "folder-open-o" # 仮定義

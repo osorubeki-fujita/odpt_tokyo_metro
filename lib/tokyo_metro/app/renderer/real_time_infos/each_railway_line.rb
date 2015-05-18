@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Factory::Decorate::MetaClass
 
-  STATUS_LIST_FOR_TEST = ::YAML.load_file( "#{ ::TokyoMetro::DICTIONARY_DIR }/view/train_operation_info/status_list_for_test.yaml" )
+  STATUS_FOR_TEST = ::YAML.load_file( "#{ ::TokyoMetro::DICTIONARY_DIR }/view/train_operation_status_for_test.yaml" )
 
   def initialize( request , railway_line , http_client )
     super( request )
@@ -25,7 +25,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
   private
 
   def get_train_operation_info( http_client )
-    train_operation_infos = ::TokyoMetro::Api::TrainInformation.get(
+    train_operation_infos = ::TokyoMetro::Api::TrainOperation.get(
       http_client ,
       railway_line: @railway_line.same_as ,
       perse_json: true ,
