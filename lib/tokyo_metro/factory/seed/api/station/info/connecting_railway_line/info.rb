@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Seed::Api::Station::Info::ConnectingRailwayLine::Info
   end
 
   def method_name_for_db_instance_class
-    :db_instance_class_of_connecting_railway_line
+    :db_instance_class_of_connecting_railway_line_info
   end
 
 end

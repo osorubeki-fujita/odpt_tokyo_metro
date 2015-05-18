@@ -4,6 +4,14 @@
 #     by {TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine.set_modules} .
 module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayLine::Factory::Seed::Info::ConnectingRailwayLine::Info
 
+  class << self
+
+    def db_instance_class_of_connecting_railway_line_note
+      ::ConnectingRailwayLine::Note
+    end
+
+  end
+
   private
 
   # @todo railway_line_id の列を廃止する（他社線の駅名情報も DB に登録し、すべての railway_line_id へ station_id からアクセスできるようにする）
@@ -16,7 +24,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
       connecting_to_another_station: connecting_to_another_station? ,
       cleared: cleared? ,
       not_recommended: not_recommended? ,
-      connecting_railway_line_note_id: connecting_railway_line_note_id ,
+      note_id: note_id ,
       start_on: @info.start_on ,
       end_on: @info.end_on ,
       hidden_on_railway_line_page: hidden_on_railway_line_page?
@@ -53,9 +61,9 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
     connecting_station.try( :id )
   end
 
-  def connecting_railway_line_note_id
+  def note_id
     if @info.note.present?
-      ::ConnectingRailwayLineNote.find_or_create_by( note: @info.note ).id
+      self.class.db_instance_class_of_connecting_railway_line_note.find_or_create_by( ja: @info.note ).id
      else
       nil
     end

@@ -186,11 +186,11 @@ module TokyoMetro::ClassNameLibrary::Api::Station
     end
 
     def db_instance_class
-      ::Station
+      ::Station::Info
     end
 
-    def db_instance_class_of_connecting_railway_line
-      ::ConnectingRailwayLine
+    def db_instance_class_of_connecting_railway_line_info
+      ::ConnectingRailwayLine::Info
     end
 
     def db_instance_class_of_exit
