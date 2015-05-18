@@ -18,9 +18,7 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
   # @param info_status [String] 運行ステータス <odpt:trainInformationStatus - xsd:string>
   # @param info_text [String] 運行情報テキスト <odpt:trainInformationText - xsd:string>
   # @note 運行ステータスは、平常時は省略。運行情報が存在する場合は「運行情報あり」を格納。遅延などの情報を取得可能な場合は、「遅延」等のテキストを格納。
-  def initialize( id_urn , dc_date , valid , operator , time_of_origin , railway_line ,
-    info_status , info_text
-  )
+  def initialize( id_urn , dc_date , valid , operator , time_of_origin , railway_line , info_status , info_text )
     @id_urn = id_urn
     @dc_date , @valid = dc_date , valid
     @operator , @time_of_origin , @railway_line , @status , @text = operator , time_of_origin , railway_line , info_status , info_text

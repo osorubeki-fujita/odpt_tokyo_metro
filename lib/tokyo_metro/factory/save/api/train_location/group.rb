@@ -1,4 +1,4 @@
-# 列車運行情報 odpt:TrainInformation のデータを保存するためのクラス
+# 列車位置情報 odpt.Train のデータを保存するためのクラス
 class TokyoMetro::Factory::Save::Api::TrainLocation::Group < TokyoMetro::Factory::Save::Api::MetaClass::Group
 
   include ::TokyoMetro::ClassNameLibrary::Api::TrainLocation

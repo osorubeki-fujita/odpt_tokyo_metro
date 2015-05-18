@@ -5,12 +5,12 @@ namespace :tokyo_metro do
     task :require_fileutils => :load do
       require 'fileutils'
     end
-    
+
     desc "API のデータを取得・保存 - 駅時刻表"
     task :station_timetable => :require_fileutils do
       ::TokyoMetro::Api::StationTimetable.save_datas_of_each_group( ::HTTPClient.new , file_type: :json )
     end
-    
+
     desc "API のデータを取得・保存 - 列車時刻表"
     task :train_timetable => :require_fileutils do
       ::TokyoMetro::Api::TrainTimetable.save_datas_of_each_group( ::HTTPClient.new , file_type: :json )
@@ -47,8 +47,8 @@ namespace :tokyo_metro do
     end
 
     desc "API のデータを取得・保存 - 列車運行情報"
-    task :train_information => :require_fileutils do
-      ::TokyoMetro::Api::TrainInformation.save_datas_of_each_group( ::HTTPClient.new , file_type: :json )
+    task :train_operation => :require_fileutils do
+      ::TokyoMetro::Api::TrainOperation.save_datas_of_each_group( ::HTTPClient.new , file_type: :json )
     end
 
     desc "API のデータを取得・保存 - 列車ロケーション情報"
@@ -59,7 +59,7 @@ namespace :tokyo_metro do
     desc "API からデータを取得し保存 - すべて"
     task :all => :require_fileutils do
       http_client = ::HTTPClient.new
-      namespaces = %W( StationTimetable TrainTimetable StationFacility PassengerSurvey Fare Station Point RailwayLine TrainInformation TrainLocation )
+      namespaces = %W( StationTimetable TrainTimetable StationFacility PassengerSurvey Fare Station Point RailwayLine TrainOperation TrainLocation )
       namespaces.each.with_index(1) do | namespace , i |
         eval <<-EVAL
           ::TokyoMetro::Api::#{ namespace }.save_datas_of_each_group( http_client , file_type: :json )
@@ -69,6 +69,6 @@ namespace :tokyo_metro do
         end
       end
     end
-  
+
   end
 end

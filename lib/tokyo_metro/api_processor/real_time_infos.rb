@@ -123,11 +123,11 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
   # 新しい運行情報を API から取得するメソッド
   # @param [String] railway_lines_same_as 運行情報をセットしたい路線の名称 (same_as)
   # @note railway_lines_same_as が指定されておらず、all が true の場合、すべての路線について取得する。
-  # @return [::TokyoMetro::Api::TrainInformation::List]
+  # @return [::TokyoMetro::Api::TrainOperation::List]
   def new_train_operation_infos_in_api( railway_lines_same_as , all )
     _railway_lines_for_getting_train_operation_infos = railway_lines_for_getting_train_operation_infos( railway_lines_same_as , all )
     selected_railway_lines_same_as = railway_lines_for_getting_train_operation_infos( railway_lines_same_as , all ).pluck( :same_as )
-    train_operation_infos = ::TokyoMetro::Api::TrainInformation.get(
+    train_operation_infos = ::TokyoMetro::Api::TrainOperation.get(
       @http_client ,
       perse_json: true ,
       generate_instance: true

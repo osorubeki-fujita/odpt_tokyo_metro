@@ -1,5 +1,5 @@
 # 列車運行情報 odpt:TrainInformation を扱うクラスのリスト
-module TokyoMetro::ClassNameLibrary::Api::TrainInformation
+module TokyoMetro::ClassNameLibrary::Api::TrainOperation
 
   extend ::ActiveSupport::Concern
 
@@ -22,61 +22,61 @@ module TokyoMetro::ClassNameLibrary::Api::TrainInformation
     # @!group 生成するクラスの情報
 
     # トップレベルのクラス
-    # @return [Const ( ::TokyoMetro::Api::TrainInformation )]
+    # @return [Const ( ::TokyoMetro::Api::TrainOperation )]
     def toplevel_namespace
-      ::TokyoMetro::Api::TrainInformation
+      ::TokyoMetro::Api::TrainOperation
     end
 
     # 配列のクラス
-    # @return [Const ( ::TokyoMetro::Api::TrainInformation::List )]
+    # @return [Const ( ::TokyoMetro::Api::TrainOperation::List )]
     def list_class
-      ::TokyoMetro::Api::TrainInformation::List
+      ::TokyoMetro::Api::TrainOperation::List
     end
 
     # 配列の要素となるインスタンスのクラス
-    # @return [Const ( ::TokyoMetro::Api::TrainInformation::Info )]
+    # @return [Const ( ::TokyoMetro::Api::TrainOperation::Info )]
     def info_class
-      ::TokyoMetro::Api::TrainInformation::Info
+      ::TokyoMetro::Api::TrainOperation::Info
     end
 
     # @!group Factory Pattern のクラスの情報
 
     # API からデータを取得するための Factory Pattern クラス
-    # @return [Const ( ::TokyoMetro::Factory::Get::Api::DataSearch::TrainInformation )]
+    # @return [Const ( ::TokyoMetro::Factory::Get::Api::DataSearch::TrainOperation )]
     def factory_for_getting
-      ::TokyoMetro::Factory::Get::Api::DataSearch::TrainInformation
+      ::TokyoMetro::Factory::Get::Api::DataSearch::TrainOperation
     end
 
     # API から取得したデータを保存するための Factory Pattern クラス
-    # @return [Const ( ::TokyoMetro::Factory::Save::Api::TrainInformation::EachFile )]
+    # @return [Const ( ::TokyoMetro::Factory::Save::Api::TrainOperation::EachFile )]
     def factory_for_saving_to_each_file
-      ::TokyoMetro::Factory::Save::Api::TrainInformation::EachFile
+      ::TokyoMetro::Factory::Save::Api::TrainOperation::EachFile
     end
 
     # グループ化されたデータを保存するための Factory Pattern クラス
-    # @return [Const ( ::TokyoMetro::Factory::Save::Api::TrainInformation::Group )]
+    # @return [Const ( ::TokyoMetro::Factory::Save::Api::TrainOperation::Group )]
     def factory_for_saving_datas_of_each_group
-      ::TokyoMetro::Factory::Save::Api::TrainInformation::Group
+      ::TokyoMetro::Factory::Save::Api::TrainOperation::Group
     end
 
     def list_class_for_saving_grouped_infos
-      ::TokyoMetro::Factory::Save::Api::TrainInformation::Group::List
+      ::TokyoMetro::Factory::Save::Api::TrainOperation::Group::List
     end
 
     def file_info_class_for_saving
-      ::TokyoMetro::Factory::Save::Api::TrainInformation::Group::FileInfo
+      ::TokyoMetro::Factory::Save::Api::TrainOperation::Group::FileInfo
     end
 
     # JSON をパースして得られた配列の要素である Hash からインスタンスを作成するメソッドための Factory Pattern クラス
-    # @return [Const ( ::TokyoMetro::Factory::Generate::Api::TrainInformation::Info )]
+    # @return [Const ( ::TokyoMetro::Factory::Generate::Api::TrainOperation::Info )]
     def factory_for_generating_from_hash
-      ::TokyoMetro::Factory::Generate::Api::TrainInformation::Info
+      ::TokyoMetro::Factory::Generate::Api::TrainOperation::Info
     end
 
     # 保存済みの情報を処理しインスタンスを復元するための Factory Pattern クラス
-    # @return [Const ( ::TokyoMetro::Factory::Generate::Api::TrainInformation::List )]
+    # @return [Const ( ::TokyoMetro::Factory::Generate::Api::TrainOperation::List )]
     def factory_for_generating_from_saved_file
-      ::TokyoMetro::Factory::Generate::Api::TrainInformation::List
+      ::TokyoMetro::Factory::Generate::Api::TrainOperation::List
     end
 
     # API の情報（generate_instance が true のときの、インスタンスの配列）の各成分をディレクトリ分けするときに使用するキーの設定

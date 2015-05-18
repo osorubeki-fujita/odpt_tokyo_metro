@@ -1,6 +1,6 @@
-class TokyoMetro::Static::TrainInformationStatus::Info
+class TokyoMetro::Static::TrainOperationStatus::Info
 
-  include ::TokyoMetro::ClassNameLibrary::Static::TrainInformationStatus
+  include ::TokyoMetro::ClassNameLibrary::Static::TrainOperationStatus
   include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
 
