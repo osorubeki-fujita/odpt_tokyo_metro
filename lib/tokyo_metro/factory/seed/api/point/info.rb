@@ -49,7 +49,7 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
 
   [ :ja , :en ].each do | lang |
     eval <<-DEF
-      de category_name_#{ lang }
+      def category_name_#{ lang }
         str = @info.category_name_#{ lang }
         unless str.present?
           raise "Error: The category name (#{ lang }) of \"" + @info.title.to_s + "\" is not valid. The category info is not defied."

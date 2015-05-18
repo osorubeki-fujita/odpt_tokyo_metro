@@ -2,7 +2,7 @@ module TokyoMetro::Factory::Seed::Reference::Point
 
   private
 
-  def point_info_in_db( whole = nil , search_by: @info.point )
+  def point_info_in_db( whole = nil , search_by: @info.point_id_urn )
     if whole.present?
       whole.find_by( id_urn: search_by )
     else
@@ -10,7 +10,7 @@ module TokyoMetro::Factory::Seed::Reference::Point
     end
   end
 
-  def point_info_id( whole = nil , search_by: @info.point )
+  def point_info_id( whole = nil , search_by: @info.point_id_urn )
     _point_info_in_db = point_info_in_db( whole , search_by: search_by )
 
     if _point_info_in_db.nil?
