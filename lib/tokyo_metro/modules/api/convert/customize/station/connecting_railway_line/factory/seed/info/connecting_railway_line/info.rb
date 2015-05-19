@@ -14,13 +14,13 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
 
   private
 
-  # @todo railway_line_id の列を廃止する（他社線の駅名情報も DB に登録し、すべての railway_line_id へ station_id からアクセスできるようにする）
+  # @todo railway_line_id の列を廃止する（他社線の駅名情報も DB に登録し、すべての railway_line_id へ station_info_id からアクセスできるようにする）
   def hash_to_db
     super.merge({
-      # station_id: @station_id ,
+      # station_info_id: @station_info_id ,
       # railway_line_id: railway_line_id ,
       index_in_station: @info.index_in_station ,
-      connecting_station_id: connecting_station_id ,
+      connecting_station_info_id: connecting_station_info_id ,
       connecting_to_another_station: connecting_to_another_station? ,
       cleared: cleared? ,
       not_recommended: not_recommended? ,
@@ -41,14 +41,14 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
 
   def connecting_station
     if connecting_to_another_station?
-      station = ::Station.find_by( railway_line_id: railway_line_id , same_as: @info.connecting_station )
-      unless station.present?
+      station_info = ::Station::Info.find_by( railway_line_id: railway_line_id , same_as: @info.connecting_station )
+      unless station_info.present?
         raise "Error: railway_line_id: #{railway_line_id} / same_as: #{ @info.connecting_another_station }"
       end
-      return station
+      return station_info
     else
-      station_name_in_system = ::Station.find( @station_id ).name_in_system
-      connecting_station = ::Station.find_by( railway_line_id: railway_line_id , name_in_system: station_name_in_system )
+      station_name_in_system = ::Station::Info.find( @station_info_id ).name_in_system
+      connecting_station = ::Station::Info.find_by( railway_line_id: railway_line_id , name_in_system: station_name_in_system )
       if connecting_station.present?
         connecting_station
       else
@@ -57,7 +57,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ConnectingRailwayL
     end
   end
 
-  def connecting_station_id
+  def connecting_station_info_id
     connecting_station.try( :id )
   end
 

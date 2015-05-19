@@ -34,7 +34,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::LastSt
     {
       station_timetable_id: nil ,
       train_type_in_this_station_id: nil ,
-      arrival_station_id: arrival_station_id( _info_of_last_station_in_tokyo_metro ) ,
+      arrival_station_info_id: arrival_station_info_id( _info_of_last_station_in_tokyo_metro ) ,
       stop_for_drivers: stop_for_drivers?
     }.merge( base_hash_for_seeding_additional_arrival_times ).merge( _info_of_last_station_in_tokyo_metro.time_to_h )
   end

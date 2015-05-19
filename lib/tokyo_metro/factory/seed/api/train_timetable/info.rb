@@ -34,8 +34,8 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info < TokyoMetro::Factory
     _operation_day_in_db = operation_day_in_db
 
     h[ :railway_line_id ] = _railway_line_in_db.id
-    h[ :starting_station_id ] = _starting_station_info_in_db.id
-    h[ :terminal_station_id ] = _terminal_station_info_in_db.id
+    h[ :starting_station_info_id ] = _starting_station_info_in_db.id
+    h[ :terminal_station_info_id ] = _terminal_station_info_in_db.id
     h[ :operation_day_id ] = _operation_day_in_db.id
 
     h[ :railway_direction_id ] = railway_direction_id( _railway_line_in_db.id )
@@ -61,16 +61,16 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info < TokyoMetro::Factory
     station_info_in_db( @stations , search_by: @info.starting_station )
   end
 
-  def starting_station_id
-    station_id( @stations , search_by: @info.starting_station )
+  def starting_station_info_id
+    station_info_id( @stations , search_by: @info.starting_station )
   end
 
   def terminal_station_info_in_db
     station_info_in_db( @stations , search_by: @info.terminal_station )
   end
 
-  def terminal_station_id
-    station_id( @stations , search_by: @info.terminal_station )
+  def terminal_station_info_id
+    station_info_id( @stations , search_by: @info.terminal_station )
   end
 
   def railway_direction_id( _railway_line_id )

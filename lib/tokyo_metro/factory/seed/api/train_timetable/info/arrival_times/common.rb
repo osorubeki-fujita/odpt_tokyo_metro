@@ -28,8 +28,8 @@ module TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Commo
     station_times.last
   end
 
-  def arrival_station_id( station_time )
-    station_id( search_by: station_time.station[ :arrival ] )
+  def arrival_station_info_id( station_time )
+    station_info_id( search_by: station_time.station[ :arrival ] )
   end
 
   def train_timetable_id

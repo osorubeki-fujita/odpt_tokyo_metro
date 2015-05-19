@@ -21,12 +21,12 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::YurakuchoF
   end
 
   def seed_and_get_id
-    station_info_in_db = ::Station.find_by( name_ja: @border , railway_line_id: railway_line_on_the_border_station_info_in_db.id )
+    station_info_in_db = ::Station::Info.find_by( name_ja: @border , railway_line_id: railway_line_on_the_border_station_info_in_db.id )
     train_type_instance = ::TrainType.find_by_same_as( @train_type_in_db )
 
     h = {
       railway_line_id: railway_line_in_db.id ,
-      from_station_id: station_info_in_db.id ,
+      from_station_info_id: station_info_in_db.id ,
       train_type_id: train_type_instance.id ,
       note: self.to_s
     }

@@ -7,7 +7,7 @@ class TokyoMetro::Factory::Seed::Api::Station::Info::LinkToPassengerSurvey::Info
   def hash_to_db
     {
       passenger_survey_id: passenger_survey_id ,
-      station_id: @station_id
+      station_info_id: @station_info_id
     }
   end
 

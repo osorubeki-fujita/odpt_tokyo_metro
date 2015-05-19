@@ -46,10 +46,10 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
     [
       :station_timetable_id ,
       :train_timetable_id ,
-      :departure_station_id ,
+      :departure_station_info_id ,
       :index_in_train_timetable ,
       :station_timetable_starting_station_info_id ,
-      :train_type_in_this_station_id ,
+      :train_type_in_this_station_info_id ,
       :station_timetable_connection_info_id # 接続情報は station_train_time に対して定義する。（train_timetable_connection_info_id でないことに注意）
     ].each do | key_name |
       h[ key_name ] = self.send( key_name )
@@ -112,7 +112,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
   #
   # station_timetable_id
   # train_timetable_id
-  # departure_station_id
+  # departure_station_info_id
   #
   [ :station_timetable , :train_timetable , :departure_station ].each do | method_base_name |
     eval <<-DEF
@@ -126,7 +126,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
     departure_station_info_in_db.same_as
   end
 
-  def train_type_in_this_station_id
+  def train_type_in_this_station_info_id
     self.class.factory_for_train_type.id_in_db(
       actual_train_type ,
       train_timetable_in_db.railway_line ,

@@ -10,7 +10,7 @@ class TokyoMetro::Api::StationTimetable::List < TokyoMetro::Api::MetaClass::NotR
     super(
       ::Operator.all ,
       ::RailwayLine.all ,
-      ::Station.all ,
+      ::Station::Info.all ,
       ::RailwayDirection.all ,
       display_number: true
     )

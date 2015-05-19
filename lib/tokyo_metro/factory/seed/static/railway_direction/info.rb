@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayDirection::Info < TokyoMetro::Fa
       in_api_same_as: @info.in_api_same_as ,
       railway_direction_code: @info.railway_direction_code ,
       railway_line_id: railway_line_id ,
-      station_id: station_id
+      station_info_id: station_info_id
     }
   end
 

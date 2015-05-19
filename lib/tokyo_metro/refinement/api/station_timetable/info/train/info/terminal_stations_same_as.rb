@@ -3,7 +3,7 @@ module TokyoMetro::Refinement::Api::StationTimetable::Info::TrainTime::Info::Ter
 
   def terminal_stations_same_as( railway_lines )
     if /\.Wakoshi\Z/ === @terminal_station
-      ::Station.where(
+      ::Station::Info.where(
         railway_line_id: railway_lines.pluck( :id ) ,
         name_in_system: "Wakoshi"
       ).pluck( :same_as )

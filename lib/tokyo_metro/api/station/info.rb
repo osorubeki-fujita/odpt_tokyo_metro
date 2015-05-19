@@ -162,25 +162,25 @@ class TokyoMetro::Api::Station::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
   alias :name_ja :title_shift_jis
 
   def seed_connecting_railway_lines( indent )
-    @connecting_railway_lines.try( :seed , station_id , indent )
+    @connecting_railway_lines.try( :seed , station_info_id , indent )
   end
 
   def seed_exits( indent )
-    @exit_list.try( :seed , station_id , indent )
+    @exit_list.try( :seed , station_info_id , indent )
   end
 
   def seed_link_to_passenger_surveys( indent )
-    @passenger_survey.try( :seed , station_id , indent )
+    @passenger_survey.try( :seed , station_info_id , indent )
   end
 
   private
 
-  def station_id
+  def station_info_id
     instance_in_db.id
   end
 
   def instance_in_db
-    ::Station.find_by_same_as( @same_as )
+    ::Station::Info.find_by( same_as: @same_as )
   end
 
   def station_same_as__is_in?( *variables )

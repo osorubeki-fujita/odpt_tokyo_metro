@@ -7,7 +7,7 @@ class TokyoMetro::Api::Point::List < TokyoMetro::Api::MetaClass::Hybrid::List
   undef :find_by_same_as
 
   def seed
-    super( ::Station.all , display_number: true )
+    super( ::Station::Info.all , display_number: true )
   end
 
   # インスタンスの情報を整形した文字列にして返すメソッド
