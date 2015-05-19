@@ -57,10 +57,10 @@ class TokyoMetro::Api::Station::List < TokyoMetro::Api::MetaClass::Hybrid::List
   # @return [::TokyoMetro::Api::Station::List]
   def to_seed
     railway_lines = ::RailwayLine.all
-    stations_in_each_line = self.group_by { | station |
-      railway_line = railway_lines.find_by( same_as: station.railway_line )
+    stations_in_each_line = self.group_by { | station_info |
+      railway_line = railway_lines.find_by( same_as: station_info.railway_line )
       if railway_line.nil?
-        raise "Error: data of the railway_line same as \"#{ station.railway_line }\" does not exist."
+        raise "Error: data of the railway_line same as \"#{ station_info.railway_line }\" does not exist."
       end
       railway_line.id
     }
