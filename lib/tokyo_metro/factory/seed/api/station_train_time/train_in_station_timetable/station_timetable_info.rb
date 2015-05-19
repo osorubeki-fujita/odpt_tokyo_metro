@@ -21,8 +21,8 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable:
     when 1
       _stations.first
     else
-      _stations.find { | station_in_db |
-        train_timetable.stops_at?( station_in_db.same_as )
+      _stations.find { | station_info_in_db |
+        train_timetable.stops_at?( station_info_in_db.same_as )
       }
     end
   end

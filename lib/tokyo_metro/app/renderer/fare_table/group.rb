@@ -35,12 +35,12 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
     station_infos_including_other_railway_lines.first
   end
 
-  def to_station_ids
+  def to_station_info_ids
     @railway_lines_of_terminal_station.map( &:station_infos ).flatten.map( &:id ).sort.uniq
   end
 
   def fares
-    ::Fare.where( from_station_info_id: starting_station_info.id , to_station_info_id: to_station_ids ).includes(
+    ::Fare.where( from_station_info_id: starting_station_info.id , to_station_info_id: to_station_info_ids ).includes(
       :from_station_info ,
       :to_station_info ,
       :normal_fare_group

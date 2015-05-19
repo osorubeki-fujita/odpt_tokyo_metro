@@ -33,7 +33,7 @@ class TokyoMetro::Api::Station::List < TokyoMetro::Api::MetaClass::Hybrid::List
   end
 
   # 配列に含まれる {TokyoMetro::Api::Station::Info} の各インスタンスの乗換路線情報を DB に流し込むメソッド
-  # @note 各駅の基本情報をすべて流し込んでから、乗換路線情報のみを流し込む。（乗換駅の情報を流し込む際に ::Station.find_by を利用しており、既知のすべての駅の流し込みが済んでいなければならないため）
+  # @note 各駅の基本情報をすべて流し込んでから、乗換路線情報のみを流し込む。（乗換駅の情報を流し込む際に ::Station::Info.find_by を利用しており、既知のすべての駅の流し込みが済んでいなければならないため）
   # @example
   #   TokyoMetro::Api::Station::List.factory_for_seeding_connecting_railway_lines
   #     => TokyoMetro::Factory::Seed::Api::Station::List::ConnectingRailwayLine
@@ -57,10 +57,10 @@ class TokyoMetro::Api::Station::List < TokyoMetro::Api::MetaClass::Hybrid::List
   # @return [::TokyoMetro::Api::Station::List]
   def to_seed
     railway_lines = ::RailwayLine.all
-    stations_in_each_line = self.group_by { | station |
-      railway_line = railway_lines.find_by( same_as: station.railway_line )
+    stations_in_each_line = self.group_by { | station_info |
+      railway_line = railway_lines.find_by( same_as: station_info.railway_line )
       if railway_line.nil?
-        raise "Error: data of the railway_line same as \"#{ station.railway_line }\" does not exist."
+        raise "Error: data of the railway_line same as \"#{ station_info.railway_line }\" does not exist."
       end
       railway_line.id
     }

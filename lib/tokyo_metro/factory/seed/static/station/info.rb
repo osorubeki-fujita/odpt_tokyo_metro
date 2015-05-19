@@ -32,7 +32,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
   end
 
   def station_already_exists_in_db?
-    ::Station.exists?( same_as: @info.same_as )
+    ::Station::Info.exists?( same_as: @info.same_as )
   end
 
   def station_facility_already_exists_in_db?
@@ -40,7 +40,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
   end
 
   def update_station
-    ::Station.find_by_same_as( @info.same_as ).update( hash_for_updating_db )
+    ::Station::Info.find_by( same_as: @info.same_as ).update( hash_for_updating_db )
   end
 
   def create_station_facility
@@ -124,7 +124,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
   end
 
   def seed_stopping_patterns
-    s_id = station_id
+    s_id = station_info_id
 
     seed_normal_stopping_patterns( s_id )
     seed_normal_stopping_patterns_of_some_trains( s_id )
@@ -139,7 +139,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
     @info.stop.each do | pattern |
       p_id = create_and_get_pattern_id( pattern )
       ::StationStoppingPattern.find_or_create_by(
-        station_id: s_id ,
+        station_info_id: s_id ,
         stopping_pattern_id: p_id ,
         partial: false ,
         for_driver: false
@@ -153,7 +153,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
         p_id = create_and_get_pattern_id( pattern )
         note_id = ::StationStoppingPatternNote.find_or_create_by( text: note ).id
         ::StationStoppingPattern.find_or_create_by(
-          station_id: s_id ,
+          station_info_id: s_id ,
           stopping_pattern_id: p_id ,
           partial: true ,
           for_driver: false ,
@@ -168,7 +168,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
       @info.stop_for_drivers.each do | pattern |
         p_id = create_and_get_pattern_id( pattern )
         ::StationStoppingPattern.find_or_create_by(
-          station_id: s_id ,
+          station_info_id: s_id ,
           stopping_pattern_id: p_id ,
           partial: false ,
           for_driver: true

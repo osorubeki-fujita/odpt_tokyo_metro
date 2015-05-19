@@ -2,7 +2,7 @@ module TokyoMetro::Factory::Seed::Api::MetaClass::Timetables::TrainTypeModules::
 
   include ::TokyoMetro::Modules::Common::Info::Decision::TerminalStation
 
-  def bound_for?( *list_of_train_terminal_station , compared: @terminal_station_in_db.same_as )
+  def bound_for?( *list_of_train_terminal_station , compared: @terminal_station_info_in_db.same_as )
     super( list_of_train_terminal_station , compared )
   end
 

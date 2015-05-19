@@ -31,7 +31,7 @@ class TokyoMetro::Api::RailwayLine::Info::StationOrder::Info < TokyoMetro::Api::
 
   # @note 使用停止中 - {TokyoMetro::Static::Station::InEachRailwayLine::Info#seed}を参照
   def seed
-    ::Station.find_by( same_as: @station ).update( index_in_railway_line: @index )
+    ::Station::Info.find_by( same_as: @station ).update( index_in_railway_line: @index )
   end
 
   alias :to_strf :to_s

@@ -7,13 +7,13 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::TrainType < TokyoMet
   include ::TokyoMetro::Factory::Seed::Api::MetaClass::Timetables::TrainTypeModules::StartingStation
   include ::TokyoMetro::Factory::Seed::Api::MetaClass::Timetables::TrainTypeModules::ConvertRailwayLine
 
-  def initialize( train_type , railway_line_in_db , starting_station_in_db , terminal_station_in_db , operation_day_in_db )
-    super( train_type , railway_line_in_db , terminal_station_in_db , operation_day_in_db )
-    @starting_station_in_db = starting_station_in_db
+  def initialize( train_type , railway_line_in_db , starting_station_info_in_db , terminal_station_info_in_db , operation_day_in_db )
+    super( train_type , railway_line_in_db , terminal_station_info_in_db , operation_day_in_db )
+    @starting_station_info_in_db = starting_station_info_in_db
   end
 
   def to_a
-    super + [ @starting_station_in_db.id ]
+    super + [ @starting_station_info_in_db.id ]
   end
 
   def self.train_type_pattern_class
@@ -62,8 +62,8 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::TrainType < TokyoMet
     [
       [ "Train type" , @train_type ] ,
       [ "Railway line" , @railway_line_in_db.same_as ] ,
-      [ "Starting station" , @starting_station_in_db.same_as ] ,
-      [ "Terminal station" , @terminal_station_in_db.same_as ] ,
+      [ "Starting station" , @starting_station_info_in_db.same_as ] ,
+      [ "Terminal station" , @terminal_station_info_in_db.same_as ] ,
       [ "Operation day" , @operation_day_in_db.name_en ]
     ]
   end

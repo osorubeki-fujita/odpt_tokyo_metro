@@ -77,10 +77,10 @@ class TokyoMetro::Api::TrainTimetable::Info::StationTime::Info
     factory_for_generating_station_time_from_hash
   end
 
-  def station_ids
+  def station_info_ids
     h = ::Hash.new
     self.station.each do | k , v |
-      h[k] = ::Station.find_by_same_as( v ).id
+      h[k] = ::Station::Info.find_by_same_as( v ).id
     end
     h
   end

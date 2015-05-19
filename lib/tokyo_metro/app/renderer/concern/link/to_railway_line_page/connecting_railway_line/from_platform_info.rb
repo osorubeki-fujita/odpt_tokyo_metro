@@ -60,7 +60,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
       puts "railway line connected: #{ railway_line_connected.same_as }"
       railway_line_connected
     else
-      connecting_railway_line_info = station_info.connecting_railway_lines.find_by( railway_line: railway_line_connected )
+      connecting_railway_line_info = station_info.connecting_railway_line_infos.find_by( railway_line: railway_line_connected )
       unless connecting_railway_line_info.present?
         puts "station info: #{ station_info.same_as }"
         puts "railway line of this station: #{ railway_line_of_this_station.same_as }"

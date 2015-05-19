@@ -17,7 +17,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::Fundamental::Info:
       station_timetable_id: @station_timetable_id ,
       operator_id: operator_id( @operators ) ,
       railway_line_id: _railway_line_id ,
-      station_id: station_id( @stations ) ,
+      station_info_id: station_info_id( @stations ) ,
       railway_direction_id: railway_direction_id( _railway_line_id , @railway_directions )
     }
   end

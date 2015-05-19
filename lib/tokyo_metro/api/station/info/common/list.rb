@@ -3,8 +3,8 @@ class TokyoMetro::Api::Station::Info::Common::List < TokyoMetro::Api::MetaClass:
   include ::TokyoMetro::ClassNameLibrary::Api::Station
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::List
 
-  def seed( station_id , indent )
-    super( station_id , indent: indent + 1 , not_on_the_top_layer: true , no_display: true , display_number: false )
+  def seed( station_info_id , indent )
+    super( station_info_id , indent: indent + 1 , not_on_the_top_layer: true , no_display: true , display_number: false )
   end
 
   # インスタンスの情報を整形した文字列にして返すメソッド

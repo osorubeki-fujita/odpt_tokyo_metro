@@ -116,11 +116,11 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
   def set_id_of_starting_station_info
     ids_of_station_infos = @station_infos_including_other_railway_lines.pluck( :id )
     ids_of_this_railway_line = @railway_line.station_infos.pluck( :id )
-    common_station_ids = ( ids_of_station_infos & ids_of_this_railway_line )
-    if common_station_ids.empty?
+    common_station_info_ids = ( ids_of_station_infos & ids_of_this_railway_line )
+    if common_station_info_ids.empty?
       nil
-    elsif common_station_ids.length == 1
-      common_station_ids.first
+    elsif common_station_info_ids.length == 1
+      common_station_info_ids.first
     else
       raise "Error"
     end

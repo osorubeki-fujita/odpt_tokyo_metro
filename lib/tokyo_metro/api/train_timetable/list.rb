@@ -1,7 +1,7 @@
 # 列車別の時刻表の情報の配列
 class TokyoMetro::Api::TrainTimetable::List < TokyoMetro::Api::MetaClass::NotRealTime::List
 
-  include ::TokyoMetro::ClassNameLibrary::Api::TrainTimetable  
+  include ::TokyoMetro::ClassNameLibrary::Api::TrainTimetable
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::List
   include ::TokyoMetro::Modules::Api::List::Selection::RailwayLines
 
@@ -9,7 +9,7 @@ class TokyoMetro::Api::TrainTimetable::List < TokyoMetro::Api::MetaClass::NotRea
     super(
       ::Operator.all ,
       ::RailwayLine.all ,
-      ::Station.all ,
+      ::Station::Info.all ,
       ::RailwayDirection.all ,
       ::TrainOwner.all ,
       display_number: true

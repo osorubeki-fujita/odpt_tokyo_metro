@@ -80,7 +80,7 @@ module TokyoMetro::Factory::Seed
   def self.destroy_all_items_related_to_stations
     destroy_all_items_of(
       ::Station::Info ,
-      ::ConnectingRailwayLine
+      ::ConnectingRailwayLine::Info
     )
   end
 

@@ -77,7 +77,7 @@ module TokyoMetro::Modules::Common::Info::Decision::StartingStation
 
   # @param variables [Regexp or String] 比較に使用する正規表現または文字列
   # @param compared [String] 比較対象（include されるクラスで指定する）
-  # @note include されるクラス・モジュールで、super を用いるなどして上書きする。（include されるクラスにより、compared の部分が @starting_station になったり @starting_station_in_db.same_as になったりするため）
+  # @note include されるクラス・モジュールで、super を用いるなどして上書きする。（include されるクラスにより、compared の部分が @starting_station になったり @starting_station_info_in_db.same_as になったりするため）
   def starting?( *variables , compared )
     compare_base( variables , compared )
   end

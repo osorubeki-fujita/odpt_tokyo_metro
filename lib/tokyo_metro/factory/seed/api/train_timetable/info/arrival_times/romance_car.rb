@@ -31,31 +31,31 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Romanc
   end
 
   def hash_to_db( station_time , _hash_to_select_station_timetable_base )
-    _arrival_station_id = arrival_station_id( station_time )
+    _arrival_station_info_id = arrival_station_info_id( station_time )
 
     {
-      train_type_in_this_station_id: train_type_in_this_station_id ,
-      station_timetable_id: station_timetable_id( _arrival_station_id , _hash_to_select_station_timetable_base ) ,
-      arrival_station_id: _arrival_station_id ,
+      train_type_in_this_station_info_id: train_type_in_this_station_info_id ,
+      station_timetable_id: station_timetable_id( _arrival_station_info_id , _hash_to_select_station_timetable_base ) ,
+      arrival_station_info_id: _arrival_station_info_id ,
       stop_for_drivers: false
     }.merge( station_time.time_to_h ).merge( base_hash_for_seeding_additional_arrival_times )
   end
 
-  def station_timetable_id( _arrival_station_id , _hash_to_select_station_timetable_base )
-    _station_timetable_ids = station_timetable_ids( _arrival_station_id , _hash_to_select_station_timetable_base ).uniq.sort
+  def station_timetable_id( _arrival_station_info_id , _hash_to_select_station_timetable_base )
+    _station_timetable_ids = station_timetable_ids( _arrival_station_info_id , _hash_to_select_station_timetable_base ).uniq.sort
     unless _station_timetable_ids.length == 1
       raise "Error: #{ _station_timetable_ids.to_s }"
     end
     _station_timetable_ids.first
   end
 
-  def station_timetable_ids( _arrival_station_id , _hash_to_select_station_timetable_base )
-    ::StationTimetableFundamentalInfo.where( hash_to_select_station_timetable( _arrival_station_id , _hash_to_select_station_timetable_base ) ).pluck( :station_timetable_id )
+  def station_timetable_ids( _arrival_station_info_id , _hash_to_select_station_timetable_base )
+    ::StationTimetableFundamentalInfo.where( hash_to_select_station_timetable( _arrival_station_info_id , _hash_to_select_station_timetable_base ) ).pluck( :station_timetable_id )
   end
 
-  def hash_to_select_station_timetable( _arrival_station_id , _hash_to_select_station_timetable_base )
+  def hash_to_select_station_timetable( _arrival_station_info_id , _hash_to_select_station_timetable_base )
     {
-      station_id: _arrival_station_id
+      station_info_id: _arrival_station_info_id
     }.merge( _hash_to_select_station_timetable_base )
   end
 
@@ -98,7 +98,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Romanc
     # したがって、このメソッドでは何もすることはない。
   end
 
-  def train_type_in_this_station_id
+  def train_type_in_this_station_info_id
     romance_car.id
   end
 

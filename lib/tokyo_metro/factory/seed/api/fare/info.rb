@@ -18,7 +18,7 @@ class TokyoMetro::Factory::Seed::Api::Fare::Info < TokyoMetro::Factory::Seed::Ap
       h[ key_name ] = @info.send( key_name )
     end
 
-    [ :dc_date , :normal_fare_group_id , :operator_id , :from_station_id , :to_station_id ].each do | key_name |
+    [ :dc_date , :normal_fare_group_id , :operator_id , :from_station_info_id , :to_station_info_id ].each do | key_name |
       h[ key_name ] = self.send( key_name )
     end
 

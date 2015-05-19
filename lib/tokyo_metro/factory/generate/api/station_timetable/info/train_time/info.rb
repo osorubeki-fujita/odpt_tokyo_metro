@@ -18,9 +18,9 @@ class TokyoMetro::Factory::Generate::Api::StationTimetable::Info::TrainTime::Inf
     end
 
     # 列車の補足情報のインスタンスを取得
-    note = self.class.train_info_note_list_class.generate_from_string( @hash[ "odpt:note" ] )
+    notes = self.class.train_info_note_list_class.generate_from_string( @hash[ "odpt:note" ] )
 
-    [ departure_time , terminal_station , train_type , is_last , is_origin , car_composition , note ]
+    [ departure_time , terminal_station , train_type , is_last , is_origin , car_composition , notes ]
   end
 
   def self.instance_class

@@ -12,7 +12,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::YurakuchoF
     ::RailwayLine.find_by_same_as( "odpt.Railway:Seibu.Ikebukuro" )
   end
 
-  def railway_line_on_the_border_station_in_db
+  def railway_line_on_the_border_station_info_in_db
     ::RailwayLine.find_by_same_as( "odpt.Railway:Seibu.SeibuYurakucho" )
   end
 

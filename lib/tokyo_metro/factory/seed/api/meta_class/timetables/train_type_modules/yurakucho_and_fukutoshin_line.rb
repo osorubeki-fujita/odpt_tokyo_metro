@@ -55,7 +55,7 @@ module TokyoMetro::Factory::Seed::Api::MetaClass::Timetables::TrainTypeModules::
       end
 
     else
-      raise "Error: The terminal station \"#{ @terminal_station_in_db.same_as } is not valid."
+      raise "Error: The terminal station \"#{ @terminal_station_info_in_db.same_as } is not valid."
     end
   end
 

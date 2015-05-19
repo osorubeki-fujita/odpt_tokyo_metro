@@ -5,7 +5,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
 
     @symbol_of_railway_lines = symbol_of_railway_lines.flatten.sort
 
-    railway_lines_same_as = @symbol_of_railway_lines.map { | symbol | 
+    railway_lines_same_as = @symbol_of_railway_lines.map { | symbol |
       ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringList.railway_line_string_list_in_system( symbol )
     }.flatten
 
@@ -155,14 +155,14 @@ __END__
 
       # 和光市着（副都心線） - ::StationTimetable とはリンクしていないので、そもそも重複しない
       # h[ :station_train_times_from_train_timetables ] -= ::StationTrainTime.where(
-        # arrival_station_id: ::Station.where( same_as: "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi" ).pluck( :id )
+        # arrival_station_info_id: ::Station::Info.where( same_as: "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi" ).pluck( :id )
       # ).pluck( :id )
 
       # puts h[ :station_train_times_from_train_timetables ].length
 
       # 和光市～氷川台発（副都心線）
       station_timetable_ids_of_fukutoshin_line_between_wakoshi_and_hikawadai = ::StationTimetable.where(
-        station_id: ::Station.where( same_as: %W( Wakoshi ChikatetsuNarimasu ChikatetsuAkatsuka Heiwadai Hikawadai ).map { | station |
+      station_info_id: ::Station::Info.where( same_as: %W( Wakoshi ChikatetsuNarimasu ChikatetsuAkatsuka Heiwadai Hikawadai ).map { | station |
           "odpt.Station:TokyoMetro.Fukutoshin.#{station}"
         } )
       ).pluck( :id )
