@@ -104,7 +104,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
     station_time_in_train_timetable.time_to_h
   end
 
-  def departure_station_in_db
+  def departure_station_info_in_db
     station_set_in_db[ :departure ]
   end
 
@@ -123,7 +123,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
   end
 
   def departure_station_same_as
-    departure_station_in_db.same_as
+    departure_station_info_in_db.same_as
   end
 
   def train_type_in_this_station_id

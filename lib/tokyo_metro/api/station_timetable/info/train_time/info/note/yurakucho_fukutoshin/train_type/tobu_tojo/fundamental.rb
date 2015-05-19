@@ -12,6 +12,6 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::YurakuchoF
     ::RailwayLine.find_by_same_as( "odpt.Railway:Tobu.Tojo" )
   end
 
-  alias :railway_line_on_the_border_station_in_db :railway_line_in_db
+  alias :railway_line_on_the_border_station_info_in_db :railway_line_in_db
 
 end

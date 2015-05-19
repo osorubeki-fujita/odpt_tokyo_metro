@@ -29,7 +29,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable
 
   def find_and_get_train_timetable_infos_of_this_train
     @train_timetable_in_api = train_timetable_in_api
-    @instance_of_actual_departure_station_in_db = instance_of_actual_departure_station_in_db
+    @instance_of_actual_departure_station_info_in_db = instance_of_actual_departure_station_info_in_db
 
     h = ::Hash.new
 
@@ -37,7 +37,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable
       h[ key_name ] = self.send( key_name )
     end
 
-    h.merge( @train_timetable_in_api.station_time_info_and_index_of( @instance_of_actual_departure_station_in_db.same_as ) )
+    h.merge( @train_timetable_in_api.station_time_info_and_index_of( @instance_of_actual_departure_station_info_in_db.same_as ) )
   end
 
   private
@@ -94,12 +94,12 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable
     ::TrainTimetable.find_by_same_as( @train_timetable_in_api.same_as )
   end
 
-  def instance_of_actual_departure_station_in_db
+  def instance_of_actual_departure_station_info_in_db
     @station_timetable_info.instance_of_actual_station_in_api( @train_timetable_in_api )
   end
 
   def station_set_in_db
-    { departure: @instance_of_actual_departure_station_in_db }
+    { departure: @instance_of_actual_departure_station_info_in_db }
   end
 
 end

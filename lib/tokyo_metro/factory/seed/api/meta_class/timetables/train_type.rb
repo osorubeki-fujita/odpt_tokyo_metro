@@ -21,27 +21,27 @@ class TokyoMetro::Factory::Seed::Api::MetaClass::Timetables::TrainType
   include ::TokyoMetro::Factory::Seed::Reference::TrainTypeInApi
   include ::TokyoMetro::Factory::Seed::Reference::Dictionary::TrainType
 
-  # インスタンス変数 station_in_db が定義されているサブクラスで include する
+  # インスタンス変数 station_info_in_db が定義されているサブクラスで include する
   # include CurrentStation
 
-  # インスタンス変数 starting_station_in_db が定義されているサブクラスで include する
+  # インスタンス変数 starting_station_info_in_db が定義されているサブクラスで include する
   # include StartingStation
 
   # Constructor
-  def initialize( train_type , railway_line_in_db , terminal_station_in_db , operation_day_in_db )
+  def initialize( train_type , railway_line_in_db , terminal_station_info_in_db , operation_day_in_db )
     @train_type = train_type
     @railway_line_in_db = railway_line_in_db
-    @terminal_station_in_db = terminal_station_in_db
+    @terminal_station_info_in_db = terminal_station_info_in_db
     @operation_day_in_db = operation_day_in_db
   end
 
   attr_reader :train_type
   attr_reader :railway_line_in_db
-  attr_reader :terminal_station_in_db
+  attr_reader :terminal_station_info_in_db
   attr_reader :operation_day_in_db
 
   def to_a
-    [ @train_type , @railway_line_in_db.id , @terminal_station_in_db.id , @operation_day_in_db.id ]
+    [ @train_type , @railway_line_in_db.id , @terminal_station_info_in_db.id , @operation_day_in_db.id ]
   end
 
   def self.id_in_db( *variables )
@@ -164,7 +164,7 @@ class TokyoMetro::Factory::Seed::Api::MetaClass::Timetables::TrainType
     [
       [ "Train type" , @train_type ] ,
       [ "Railway line" , @railway_line_in_db.same_as ] ,
-      [ "Terminal station" , @terminal_station_in_db.same_as ] ,
+      [ "Terminal station" , @terminal_station_info_in_db.same_as ] ,
       [ "Operation day" , @operation_day_in_db.name_en ]
     ]
   end

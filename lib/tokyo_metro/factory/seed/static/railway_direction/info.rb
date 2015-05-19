@@ -8,7 +8,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayDirection::Info < TokyoMetro::Fa
   private
 
   def hash_to_db
-    { 
+    {
       same_as: @info.same_as ,
       in_api_same_as: @info.in_api_same_as ,
       railway_direction_code: @info.railway_direction_code ,
@@ -29,16 +29,16 @@ class TokyoMetro::Factory::Seed::Static::RailwayDirection::Info < TokyoMetro::Fa
     _railway_line_in_db
   end
 
-  def station_in_db( whole = nil , search_by: @info.station )
-    _station_in_db = super( whole = nil , search_by: search_by )
-    if _station_in_db.nil?
+  def station_info_in_db( whole = nil , search_by: @info.station )
+    _station_info_in_db = super( whole = nil , search_by: search_by )
+    if _station_info_in_db.nil?
       puts "\"#{ @info.station }\" does not exist in db."
-      _station_in_db = super( whole = nil , search_by: "Undefined" )
-      if _station_in_db.nil?
+      _station_info_in_db = super( whole = nil , search_by: "Undefined" )
+      if _station_info_in_db.nil?
         raise "Error: \"Undefined\" does not exist in db."
       end
     end
-    _station_in_db
+    _station_info_in_db
   end
 
 end

@@ -14,10 +14,10 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::List < TokyoMetro::Api
 
 =begin
   # @note {TokyoMetro::Api::TrainTimetable::Info::StationTime::List#seed} と同じロジック
-  def seed( id_in_db , operation_day_id , railway_line_in_db , station_in_db )
+  def seed( id_in_db , operation_day_id , railway_line_in_db , station_info_in_db )
     raise "Error: #{self.class.name}\##{__method__}"
     self.each do | train |
-      train.seed( id_in_db , operation_day_id , railway_line_in_db , station_in_db )
+      train.seed( id_in_db , operation_day_id , railway_line_in_db , station_info_in_db )
     end
   end
 

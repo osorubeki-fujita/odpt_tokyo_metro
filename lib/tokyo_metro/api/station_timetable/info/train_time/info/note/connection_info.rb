@@ -7,9 +7,9 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::Connection
   attr_reader :station , :connection
 
   def seed_and_get_id( railway_line_ids )
-    station_in_db = ::Station.find_by( name_ja: @station , railway_line_id: railway_line_ids )
+    station_info_in_db = ::Station.find_by( name_ja: @station , railway_line_id: railway_line_ids )
     connection_info_h = {
-      station_id: station_in_db.id ,
+      station_id: station_info_in_db.id ,
       connection: @connection ,
       note: self.to_s
     }

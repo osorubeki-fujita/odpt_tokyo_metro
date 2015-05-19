@@ -29,18 +29,18 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info < TokyoMetro::Factory
     h = ::Hash.new
 
     _railway_line_in_db = railway_line_in_db( @railway_lines )
-    _starting_station_in_db = starting_station_in_db
-    _terminal_station_in_db = terminal_station_in_db
+    _starting_station_info_in_db = starting_station_info_in_db
+    _terminal_station_info_in_db = terminal_station_info_in_db
     _operation_day_in_db = operation_day_in_db
 
     h[ :railway_line_id ] = _railway_line_in_db.id
-    h[ :starting_station_id ] = _starting_station_in_db.id
-    h[ :terminal_station_id ] = _terminal_station_in_db.id
+    h[ :starting_station_id ] = _starting_station_info_in_db.id
+    h[ :terminal_station_id ] = _terminal_station_info_in_db.id
     h[ :operation_day_id ] = _operation_day_in_db.id
 
     h[ :railway_direction_id ] = railway_direction_id( _railway_line_in_db.id )
 
-    h[ :train_type_id ] = train_type_id( _railway_line_in_db , _starting_station_in_db , _terminal_station_in_db , _operation_day_in_db )
+    h[ :train_type_id ] = train_type_id( _railway_line_in_db , _starting_station_info_in_db , _terminal_station_info_in_db , _operation_day_in_db )
 
     [ :id_urn , :same_as , :train_number ].each do | column_name |
       h[ column_name ] = @info.send( column_name )
@@ -57,16 +57,16 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info < TokyoMetro::Factory
     super( @operators )
   end
 
-  def starting_station_in_db
-    station_in_db( @stations , search_by: @info.starting_station )
+  def starting_station_info_in_db
+    station_info_in_db( @stations , search_by: @info.starting_station )
   end
 
   def starting_station_id
     station_id( @stations , search_by: @info.starting_station )
   end
 
-  def terminal_station_in_db
-    station_in_db( @stations , search_by: @info.terminal_station )
+  def terminal_station_info_in_db
+    station_info_in_db( @stations , search_by: @info.terminal_station )
   end
 
   def terminal_station_id

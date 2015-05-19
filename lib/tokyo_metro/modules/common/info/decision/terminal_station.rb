@@ -5,7 +5,7 @@ module TokyoMetro::Modules::Common::Info::Decision::TerminalStation
   # 列車の行先を判定するメソッド
   # @param args [Regexp or String] 比較に使用する正規表現または文字列
   # @param compared [String] 比較対象（include されるクラスで指定する）
-  # @note include されるクラス・モジュールで、super を用いるなどして上書きする。（include されるクラスにより、compared の部分が @terminal_station になったり @terminal_station_in_db.same_as になったりするため）
+  # @note include されるクラス・モジュールで、super を用いるなどして上書きする。（include されるクラスにより、compared の部分が @terminal_station になったり @terminal_station_info_in_db.same_as になったりするため）
   # @return [Boolean]
   # @note args を複数指定した場合は、指定された【いずれか】の駅を行先とする列車を取得する。
   def bound_for?( *args , compared )
