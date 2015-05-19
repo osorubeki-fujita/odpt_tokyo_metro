@@ -28,7 +28,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
   end
 
   def valid_railway_line_decorator_class?
-    @connecting_railway_line_decorated.instance_of?( ::ConnectingRailwayLineDecorator )
+    @connecting_railway_line_decorated.instance_of?( ::ConnectingRailwayLine::InfoDecorator )
   end
 
   def connecting_to_another_station?
