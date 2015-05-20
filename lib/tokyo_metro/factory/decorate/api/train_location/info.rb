@@ -10,17 +10,16 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   def render
     h_locals_i = {
       this: self ,
-      train_type_in_api_decorated: train_type_in_api_decorated ,
+      train_type_decorated: train_type_decorated ,
       starting_station_decorated: starting_station_decorated ,
       terminal_station_decorated: terminal_station_decorated
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
-%li{ class: :train_location , id: this.object.train_number.downcase }
+%li{ class: [ :train_location , this.railway_line.css_class_name , :clearfix ] , id: this.object.train_number.downcase }
   %div{ class: :train_fundamental_infos }
     = this.railway_line.decorate.render_matrix( make_link_to_railway_line: false , size: :very_small )
-    %div{ class: :train_infos }
-      = train_type_in_api_decorated.render_in_train_location
-      = terminal_station_decorated.render_as_terminal_station
+    = train_type_decorated.render_in_train_location
+    = terminal_station_decorated.render_as_terminal_station
   = this.render_current_position
   %div{ class: :sub_infos }
     = this.render_delay
@@ -59,10 +58,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
     h.render inline: <<-HAML , type: :haml , locals: { request: request , station_infos: station_infos }
 %div{ class: :current_position }
-  %div{ class: :title_of_current_position }
-    %p{ class: :text_ja }<
-      = "現在位置"
-    %p{ class: :text_en }<
+  %p{ class: [ :title_of_current_position , :text_ja ] }
+    = "現在位置"
+    %span{ class: :text_en }<
       = "Now at"
   %div{ class: :station_infos }<
     - station_infos.each.with_index(1) do | station_info , i |
@@ -79,8 +77,25 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   private
 
-  def train_type_in_api_decorated
-    ::TrainTypeInApi.find_by( same_as: object.train_type ).decorate
+  def train_type_decorated
+    if train_type.present?
+      train_type.decorate
+
+    elsif object.train_type == "odpt.TrainType:TokyoMetro.RomanceCar" and object.railway_line == "odpt.Railway:TokyoMetro.Chiyoda"
+      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" ).decorate
+
+    elsif object.train_type == "odpt.TrainType:TokyoMetro.SemiExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Yurakucho"
+      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
+
+    elsif object.train_type == "odpt.TrainType:TokyoMetro.SemiExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
+      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
+
+    elsif object.train_type == "odpt.TrainType:TokyoMetro.CommuterLimitedExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
+      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
+
+    else
+      raise "Error: train_type_in_api: \"#{ object.train_type }\" / railway_line: \"#{ object.railway_line }\""
+    end
   end
 
   def starting_station_decorated
@@ -89,6 +104,26 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   def terminal_station_decorated
     ::Station::Info.find_by( same_as: object.terminal_station ).decorate.train_location
+  end
+  
+  def train_type
+    ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
+  end
+
+  def train_type_in_api
+    ::TrainTypeInApi.find_by( same_as: object.train_type )
+  end
+
+  def train_type_in_api_id
+    train_type_in_api.id
+  end
+
+  def railway_line_in_db
+    ::RailwayLine.find_by( same_as: object.railway_line )
+  end
+
+  def railway_line_id
+    railway_line_in_db.id
   end
 
 end
