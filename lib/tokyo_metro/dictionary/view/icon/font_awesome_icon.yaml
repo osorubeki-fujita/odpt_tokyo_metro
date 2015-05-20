@@ -87,6 +87,12 @@
 # "open_another_window_base": "external-link-square"
 # "link_to_another_website_base": "external-link"
 
+#-------- 注意
+
+"info": "info"
+"info_circle": "info-circle"
+# "remark": "exclamation-triangle" （運行・遅延情報で定義済み）
+
 #-------- 仮定義
 
 "temp": "folder-open-o"

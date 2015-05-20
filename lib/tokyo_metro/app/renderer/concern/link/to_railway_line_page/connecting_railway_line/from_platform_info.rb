@@ -20,6 +20,9 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
         = railway_direction.decorate.render_in_station_facility_platform_info_transfer_info
       %p{ class: [ :time , :text_en ] , min: necessary_time }<
         = necessary_time
+    - if optional_infos_to_display.present?
+      - [ optional_infos_to_display ].flatten.each do | info |
+        = info.call
       HAML
     end
   end
@@ -30,8 +33,12 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
     @platform_transfer_info_decorated.object
   end
 
-  def optional_info_to_display
-    nil
+  def optional_infos_to_display
+    ary = ::Array.new
+    if has_additional_transfer_info_to_display?
+      ary << additional_transfer_info_to_display
+    end
+    ary
   end
 
   def li_classes
@@ -54,11 +61,12 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
 
     station_info = station_infos.find_by( railway_line: railway_line_of_this_station )
 
-    if railway_line_connected.same_as == "odpt.Railway:JR-East"
+    if railway_line_connected.jr_lines?
       puts "station info: #{ station_info.same_as }"
       puts "railway line of this station: #{ railway_line_of_this_station.same_as }"
       puts "railway line connected: #{ railway_line_connected.same_as }"
-      railway_line_connected
+
+      r = railway_line_connected
     else
       connecting_railway_line_info = station_info.connecting_railway_line_infos.find_by( railway_line: railway_line_connected )
       unless connecting_railway_line_info.present?
@@ -66,8 +74,21 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
         puts "railway line of this station: #{ railway_line_of_this_station.same_as }"
         puts "railway line connected: #{ railway_line_connected.same_as }"
       end
-      connecting_railway_line_info
+      r = connecting_railway_line_info
     end
+
+    if r.blank?
+      str = ::String.new
+      str << "\n"
+      str << "object \[#{ object.class }\] : #{ object.id }"
+      str << "station_facility_platform_info: #{ station_facility_platform_info.id }"
+      str << "station_facility: #{ station_facility_platform_info.station_facility.id }"
+      str << "station info: #{ station_info.same_as }"
+      str << "railway line of this station: #{ railway_line_of_this_station.same_as }"
+      raise str
+    end
+
+    r
   end
 
   def valid_railway_line_decorator_class?

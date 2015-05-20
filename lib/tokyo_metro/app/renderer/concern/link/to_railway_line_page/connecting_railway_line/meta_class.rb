@@ -27,20 +27,28 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
     end
   end
 
-  def valid_railway_line_decorator_class?
+  def connecting_railway_line_info_decorator?
     @connecting_railway_line_decorated.instance_of?( ::ConnectingRailwayLine::InfoDecorator )
+  end
+
+  def valid_railway_line_decorator_class?
+    connecting_railway_line_info_decorator?
   end
 
   def connecting_to_another_station?
     object.connecting_to_another_station?
   end
 
-  def optional_info_to_display
-    if @display_another_station_info and connecting_to_another_station?
-      another_station_info_to_display
-    else
-      nil
+  def optional_infos_to_display
+    ary = ::Array.new
+    if has_another_station_info_to_display?
+      ary << another_station_info_to_display
     end
+    ary
+  end
+  
+  def has_another_station_info_to_display?
+    @display_another_station_info and connecting_to_another_station?
   end
 
   def another_station_info_to_display
@@ -52,7 +60,7 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
   end
 
   def connected_to_jr_lines?
-    @connecting_railway_line_decorated.instance_of?( ::RailwayLineDecorator ) and connecting_railway_line_object.same_as == "odpt.Railway:JR-East"
+    @connecting_railway_line_decorated.instance_of?( ::RailwayLineDecorator ) and connecting_railway_line_object.jr_lines?
   end
 
 end
