@@ -132,6 +132,23 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
           = this.additional_info_precise_en
     HAML
   end
+  
+  def self.render_status_icon_and_text( request , status_type , icon_size = 3 )
+    h_locals_i = {
+      request: request ,
+      status_type: status_type ,
+      icon_size: icon_size
+    }
+    h.render inline: <<-HAML , type: :haml , locals: { this: self }
+%div{ class: :icon }<
+  = ::TokyoMetro::App::Renderer::Icon.send( this.status_type , request , 3 ).render
+%div{ class: :text }
+  %p{ class: :text_ja }<
+    = this.status_text_ja
+  %p{ class: :text_en }<
+    = this.status_text_en
+    HAML
+  end
 
   private
 

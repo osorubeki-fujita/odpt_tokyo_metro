@@ -5,21 +5,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::Delay < TokyoMetr
   end
 
   def render_in_location_of_each_train
-    main_str = object.to_s_separated_by_comma
-    h.render inline: <<-HAML , type: :haml , locals: { main_str: main_str }
-%div{ class: [ :delay , :clearfix ] }
-  %div{ class: :title_of_delay }
-    %p{ class: :text_ja }<>
-      = "遅れ"
-      %span{ class: :small }<
-        = "（分：秒）"
-    %p{ class: :text_en }<>
-      = "Delay"
-      %span{ class: :small }<
-        = "(mm:ss)"
-  %div{ class: [ :time , :text_en ] }<
-    = main_str
-    HAML
+    if object.on_schedule?
+      render_in_location_of_each_train_when_on_schedule
+    else
+      render_in_location_of_each_train_when_delayed
+    end
   end
 
   def render_ja_in_train_operation_info
@@ -43,6 +33,38 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::Delay < TokyoMetr
     h.render inline: <<-HAML , type: :haml , locals: { str: str }
 %div{ class: :max_delay }<
   = str
+    HAML
+  end
+
+  private
+
+  def render_in_location_of_each_train_when_on_schedule
+    h.render inline: <<-HAML , type: :haml , locals: { request: request }
+%div{ class: [ :on_schedule , :clearfix ] }
+  = ::TokyoMetro::App::Renderer::Icon.on_schedule( request , 2 ).render
+  %div{ class: :text }
+    %p{ class: :text_ja }<
+      = "平常運転"
+    %p{ class: :text_en }<
+      = "Now on schedule"
+    HAML
+  end
+
+  def render_in_location_of_each_train_when_delayed
+    main_str = object.to_s_separated_by_comma
+    h.render inline: <<-HAML , type: :haml , locals: { main_str: main_str }
+%div{ class: [ :delay , :clearfix ] }
+  %div{ class: :title_of_delay }
+    %p{ class: :text_ja }<>
+      = "遅れ"
+      %span{ class: :small }<
+        = "（分：秒）"
+    %p{ class: :text_en }<>
+      = "Delay"
+      %span{ class: :small }<
+        = "(mm:ss)"
+  %div{ class: [ :time , :text_en ] }<
+    = main_str
     HAML
   end
 
