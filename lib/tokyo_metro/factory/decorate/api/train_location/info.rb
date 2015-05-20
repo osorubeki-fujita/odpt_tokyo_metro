@@ -32,7 +32,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   def render_train_number
     str = object.train_number
     h.render inline: <<-HAML , type: :haml , locals: { str: str }
-%div{ class: :train_number }
+%div{ class: [ :train_number , :clearfix ] }
   %div{ class: :title_of_train_number }
     %p{ class: :text_ja }<
       = "列車番号"

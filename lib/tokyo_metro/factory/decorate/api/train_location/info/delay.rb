@@ -7,7 +7,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::Delay < TokyoMetr
   def render_in_location_of_each_train
     main_str = object.to_s_separated_by_comma
     h.render inline: <<-HAML , type: :haml , locals: { main_str: main_str }
-%div{ class: :delay }
+%div{ class: [ :delay , :clearfix ] }
   %div{ class: :title_of_delay }
     %p{ class: :text_ja }<>
       = "遅れ"
