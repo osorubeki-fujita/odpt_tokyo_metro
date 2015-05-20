@@ -15,7 +15,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       terminal_station_decorated: terminal_station_decorated
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
-%div{ class: :train_location , id: this.object.train_number.downcase }
+%li{ class: :train_location , id: this.object.train_number.downcase }
   %div{ class: :train_fundamental_infos }
     = this.railway_line.decorate.render_matrix( make_link_to_railway_line: false , size: :very_small )
     %div{ class: :train_infos }

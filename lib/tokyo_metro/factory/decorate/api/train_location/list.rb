@@ -15,8 +15,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::List < TokyoMetro::Fact
   - if railway_direction.blank?
     - raise "\[Error\] railway_line: " + railway_line.same_as + " / railway_direction: " + railway_direction_in_api_same_as
   = railway_direction.decorate.render_title_in_train_location
-  - train_location_infos.each do | train_location |
-    = train_location.decorate( request , this.railway_line ).render
+  %ul{ class: [ :train_locations_of_each_direction , :clearfix ] }
+    - train_location_infos.each do | train_location |
+      = train_location.decorate( request , this.railway_line ).render
     HAML
   end
 
