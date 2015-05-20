@@ -21,11 +21,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     %div{ class: :train_infos }
       = train_type_in_api_decorated.render_in_train_location
       = terminal_station_decorated.render_as_terminal_station
+  = this.render_current_position
   %div{ class: :sub_infos }
+    = this.render_delay
     = starting_station_decorated.render_as_starting_station
     = this.render_train_number
-    = this.render_delay
-  = this.render_current_position
     HAML
   end
 
@@ -69,7 +69,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       = station_info.decorate.train_location.render_name
       - unless i == station_infos.length
         %div{ class: :arrow }
-          = ::TokyoMetro::App::Renderer::Icon.caret_right( request , 2 ).render
+          = ::TokyoMetro::App::Renderer::Icon.caret_down( request , 2 ).render
     HAML
   end
 
