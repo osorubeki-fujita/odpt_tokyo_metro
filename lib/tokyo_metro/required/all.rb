@@ -47,7 +47,7 @@ class TokyoMetro::Required::All < TokyoMetro::Required
     # @return [nil]
     def display_files_not_be_required
       regexp = regexp_for_ignoring_files_under_the_directory_of_this_file
-      _files_not_be_required = files_not_be_required.delete_if { |f| regexp === f }
+      _files_not_be_required = files_not_be_required.delete_if { |f| regexp === f } - [ "#{ ::TokyoMetro::LIB_DIR }/tokyo_metro/version" ]
 
       if _files_not_be_required.present?
         puts "● These files will not be required."
