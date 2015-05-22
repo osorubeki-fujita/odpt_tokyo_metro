@@ -61,7 +61,7 @@
   railway_lines:
     "odpt.Railway:TokyoMetro.Ginza":
       connecting_another_station: odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke
-      note: "銀座線外苑前駅、銀座線渋谷駅をご利用の場合は、青山一丁目駅でのお乗り換えが便利です。"
+      note: "銀座線外苑前駅をご利用の場合は、青山一丁目駅でのお乗り換えが便利です。また、銀座線渋谷駅をご利用の場合は、表参道駅でのお乗り換えが便利です。"
     "odpt.Railway:TokyoMetro.Marunouchi":
       connecting_another_station: odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke
 -

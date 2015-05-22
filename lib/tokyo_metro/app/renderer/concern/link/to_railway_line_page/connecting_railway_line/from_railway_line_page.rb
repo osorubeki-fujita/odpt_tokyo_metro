@@ -42,13 +42,13 @@ class TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRai
       }
       h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 - if c_railway_line_decorated.not_recommended? and note.present?
-  %div{ class: :remark , note: note.ja }
+  %div{ class: :remark , title: note.ja }
     = ::TokyoMetro::App::Renderer::Icon.remark( request , 1 ).render
 - elsif c_railway_line_decorated.not_recommended?
-  %div{ class: :info , note: "別の駅でのお乗り換えをお勧めします。" }
+  %div{ class: :info , title: "別の駅でのお乗り換えをお勧めします。" }
     = ::TokyoMetro::App::Renderer::Icon.info_circle( request , 1 ).render
 - elsif note.present?
-  %div{ class: :info , note: note.ja }
+  %div{ class: :info , title: note.ja }
     = ::TokyoMetro::App::Renderer::Icon.info_circle( request , 1 ).render
       HAML
     }
