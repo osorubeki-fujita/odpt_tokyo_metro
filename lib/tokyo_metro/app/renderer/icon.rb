@@ -3,6 +3,8 @@ module TokyoMetro::App::Renderer::Icon
   FONT_AWESOME_ICON = ::YAML.load_file( "#{ ::TokyoMetro::DICTIONARY_DIR }/view/icon/font_awesome_icon.yaml" )
   IMAGE = ::YAML.load_file( "#{ ::TokyoMetro::DICTIONARY_DIR }/view/icon/image.yaml" )
 
+  raise if ( FONT_AWESOME_ICON.keys & IMAGE.keys ).present?
+
   def self.font_awesome_icons
     FONT_AWESOME_ICON
   end
@@ -10,8 +12,6 @@ module TokyoMetro::App::Renderer::Icon
   def self.images
     IMAGE
   end
-
-  raise if ( FONT_AWESOME_ICON.keys & IMAGE.keys ).present?
 
   FONT_AWESOME_ICON.each do | key , value |
     eval <<-DEF
@@ -38,3 +38,13 @@ module TokyoMetro::App::Renderer::Icon
   # end
 
 end
+
+＿END__
+
+# @todo
+
+FontAwesome::Stacked
+FontAwesome::Spin
+FontAwesome::Pulse
+
+に分離
