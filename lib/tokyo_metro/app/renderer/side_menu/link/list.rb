@@ -36,7 +36,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
         :top , :train_location , :train_operation ,
         :railway_line , :station_facility ,
         # :railway_timetable ,
-        :station_timetable , :fare , :passenger_survey
+        # :station_timetable ,
+        :fare , :passenger_survey
       ]
     )
   end
@@ -46,7 +47,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
       request ,
       ::TokyoMetro::App::Renderer::SideMenu::Link::ToDocument , "links_#{__method__}" ,
       [
-        :development_document , :how_to_use # ,
+        :development_document # ,
+        # :how_to_use # ,
         # :disclaimer , :remark , :another_page
       ]
     )
@@ -64,7 +66,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
     self.new(
       request ,
       ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation , :links ,
-      [ :train_operation , :station_facility , :station_timetable , :fare ] ,
+      [ :train_operation , :station_facility , :fare ] ,
+      # [ :train_operation , :station_facility , :station_timetable , :fare ] ,
       additional_proc: additional_proc_of_links_to_station_info_page( station_info )
     )
   end
