@@ -93,6 +93,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     elsif object.train_type == "odpt.TrainType:TokyoMetro.CommuterLimitedExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
       ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
 
+    elsif object.train_type == "odpt.TrainType:TokyoMetro.LimitedExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
+      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
+
     else
       raise "Error: train_type_in_api: \"#{ object.train_type }\" / railway_line: \"#{ object.railway_line }\""
     end

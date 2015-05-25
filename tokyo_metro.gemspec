@@ -40,7 +40,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "required_files" , ">= 0.2.6"
 
   spec.add_runtime_dependency "positive_support" , ">= 0.3.2"
-  spec.add_runtime_dependency "odpt_common" , ">= 0.2.1"
+  spec.add_runtime_dependency "odpt_common" , ">= 0.2.2"
   spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.2.1"
   spec.add_runtime_dependency "with_default_value" , ">= 0.1.0"
   spec.add_runtime_dependency "rails_decorate_factory" , ">= 0.1.0"
