@@ -39,7 +39,8 @@ module TokyoMetro::App::Renderer::Icon
 
 end
 
-＿END__
+
+__END__
 
 # @todo
 
