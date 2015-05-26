@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::SideMenu::NowDeveloping < TokyoMetro::Factory::
           = row
     %div{ class: :text_en }
       %p<
-        = "The library 'Rails on Ruby' and this web-application has been developed now. Please note that some contents in this app may be wrong."
+        = "The library 'Rails on Ruby' and this web-application is now under development. Please note that some contents in this app may be wrong."
     HAML
   end
 
