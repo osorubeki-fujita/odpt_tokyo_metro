@@ -91,7 +91,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       when "odpt.TrainType:TokyoMetro.SemiExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
 
-      when object.train_type == "odpt.TrainType:TokyoMetro.RapidExpress"
+      when "odpt.TrainType:TokyoMetro.RapidExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToSeibu" ).decorate
       end
 
@@ -101,13 +101,13 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       when "odpt.TrainType:TokyoMetro.SemiExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
 
-      when object.train_type == "odpt.TrainType:TokyoMetro.RapidExpress"
+      when "odpt.TrainType:TokyoMetro.RapidExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToSeibu" ).decorate
 
-      when object.train_type == "odpt.TrainType:TokyoMetro.CommuterLimitedExpress"
+      when "odpt.TrainType:TokyoMetro.CommuterLimitedExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
 
-      when object.train_type == "odpt.TrainType:TokyoMetro.LimitedExpress"
+      when "odpt.TrainType:TokyoMetro.LimitedExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" ).decorate
       end
 
