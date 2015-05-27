@@ -79,26 +79,41 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   def train_type_decorated
     if train_type.present?
-      train_type.decorate
-
-    elsif object.train_type == "odpt.TrainType:TokyoMetro.RomanceCar" and object.railway_line == "odpt.Railway:TokyoMetro.Chiyoda"
-      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" ).decorate
-
-    elsif object.train_type == "odpt.TrainType:TokyoMetro.SemiExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Yurakucho"
-      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
-
-    elsif object.train_type == "odpt.TrainType:TokyoMetro.SemiExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
-      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
-
-    elsif object.train_type == "odpt.TrainType:TokyoMetro.CommuterLimitedExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
-      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
-
-    elsif object.train_type == "odpt.TrainType:TokyoMetro.LimitedExpress" and object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
-      ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
-
-    else
-      raise "Error: train_type_in_api: \"#{ object.train_type }\" / railway_line: \"#{ object.railway_line }\""
+      return train_type.decorate
     end
+
+    if object.train_type == "odpt.TrainType:TokyoMetro.RomanceCar" and object.railway_line == "odpt.Railway:TokyoMetro.Chiyoda"
+      return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" ).decorate
+
+    elsif object.railway_line == "odpt.Railway:TokyoMetro.Yurakucho"
+
+      case object.train_type
+      when "odpt.TrainType:TokyoMetro.SemiExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
+
+      when object.train_type == "odpt.TrainType:TokyoMetro.RapidExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToSeibu" ).decorate
+      end
+
+    elsif object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
+
+      case object.train_type
+      when "odpt.TrainType:TokyoMetro.SemiExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
+
+      when object.train_type == "odpt.TrainType:TokyoMetro.RapidExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToSeibu" ).decorate
+
+      when object.train_type == "odpt.TrainType:TokyoMetro.CommuterLimitedExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
+
+      when object.train_type == "odpt.TrainType:TokyoMetro.LimitedExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" ).decorate
+      end
+
+    end
+
+    raise "Error: train_type_in_api: \"#{ object.train_type }\" / railway_line: \"#{ object.railway_line }\""
   end
 
   def starting_station_decorated
