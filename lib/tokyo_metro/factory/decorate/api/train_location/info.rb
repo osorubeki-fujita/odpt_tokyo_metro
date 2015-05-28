@@ -81,11 +81,15 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     if train_type.present?
       return train_type.decorate
     end
+    
+    case object.railway_line
+    when "odpt.Railway:TokyoMetro.Chiyoda"
 
-    if object.train_type == "odpt.TrainType:TokyoMetro.RomanceCar" and object.railway_line == "odpt.Railway:TokyoMetro.Chiyoda"
-      return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" ).decorate
+      if object.train_type == "odpt.TrainType:TokyoMetro.RomanceCar"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" ).decorate
+      end
 
-    elsif object.railway_line == "odpt.Railway:TokyoMetro.Yurakucho"
+    when "odpt.Railway:TokyoMetro.Yurakucho"
 
       case object.train_type
       when "odpt.TrainType:TokyoMetro.SemiExpress"
@@ -95,7 +99,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" ).decorate
       end
 
-    elsif object.railway_line == "odpt.Railway:TokyoMetro.Fukutoshin"
+    when "odpt.Railway:TokyoMetro.Fukutoshin"
 
       case object.train_type
       when "odpt.TrainType:TokyoMetro.SemiExpress"
@@ -123,7 +127,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   def terminal_station_decorated
     ::Station::Info.find_by( same_as: object.terminal_station ).decorate.train_location
   end
-  
+
   def train_type
     ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
   end
