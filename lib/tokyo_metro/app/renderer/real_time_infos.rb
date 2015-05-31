@@ -1,8 +1,10 @@
 class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , railway_lines , http_client = ::HTTPClient.new )
+  def initialize( request , railway_lines , http_client = ::HTTPClient.new , visibility: :visible )
     super( request )
     @http_client = http_client
+    @visibility = visibility
+
     set_railway_lines( railway_lines )
     set_infos_of_each_railway_line
 
@@ -155,7 +157,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   end
 
   def set_meta_datum
-    @meta_datum = ::TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole.new( request , train_operation_infos , train_location_infos )
+    @meta_datum = ::TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole.new( request , train_operation_infos , train_location_infos , @visibility )
   end
 
 end

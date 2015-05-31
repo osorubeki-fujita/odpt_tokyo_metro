@@ -3,7 +3,7 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::Factory::Decorate::MetaCl
   def initialize( request , setting , railway_lines = nil , visibility: :visible )
     raise "Error" unless setting == :tokyo_metro or setting == :railway_lines
     raise "Error" if setting == :railway_lines and railway_lines.blank?
-    raise "Error" unless visibility == :visible or :hidden
+    raise "Error" unless visibility == :visible or visibility == :hidden
     super( request )
     @setting = setting
     @railway_lines = [ railway_lines ].flatten
@@ -13,7 +13,7 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::Factory::Decorate::MetaCl
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %div{ id: :twitters , class: visibility }
-  = ::TokyoMetro::App::Renderer::Twitter::Header.new( request , visibility: visibility ).render
+  = ::TokyoMetro::App::Renderer::Twitter::Header.new( request , visibility ).render
   %div{ id: :twitter_accounts }
     - # %ul{ id: :twitter_tabs_for_each_acount }
     - #   %li{ id: :twitter_tab_tokyo_metro }<
@@ -34,11 +34,11 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::Factory::Decorate::MetaCl
   private
 
   def h_locals
-    super.merge( {
+    super.merge({
       setting: @setting ,
       railway_lines: railway_lines_to_render ,
       visibility: @visibility
-    } )
+    })
   end
 
   def railway_lines_to_render
