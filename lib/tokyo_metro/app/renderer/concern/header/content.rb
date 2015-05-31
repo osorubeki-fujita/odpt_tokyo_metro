@@ -53,7 +53,7 @@ class TokyoMetro::App::Renderer::Concern::Header::Content < TokyoMetro::App::Ren
   - # size_setting_button
 
   - if size_setting_button_type.present?
-    %div{ id: size_setting_button_id , class: [ :size_button , size_setting_button_type ] }<
+    %div{ id: size_setting_button_id , class: [ :size_changing_button , size_setting_button_type ] }<
       = button_tag( type: :button ) do
         = ::TokyoMetro::App::Renderer::Icon.send( size_setting_button_type , request , 1 ).render
 
