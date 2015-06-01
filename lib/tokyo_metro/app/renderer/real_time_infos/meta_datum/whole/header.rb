@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole::Header < TokyoMetro::App::Renderer::Concern::Header::Content
 
-  include ::TokyoMetro::App::Renderer::Concern::Header::Content::SizeSettingButtonType
+  include ::TokyoMetro::App::Renderer::Concerns::Header::Content::SizeSettingButtonType
 
   def initialize( request , visibility , icon_size: 2 )
     @visibility = visibility

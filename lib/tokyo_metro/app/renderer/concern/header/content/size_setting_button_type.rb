@@ -1,12 +1,12 @@
-module TokyoMetro::App::Renderer::Concern::Header::Content::SizeSettingButtonType
+module TokyoMetro::App::Renderer::Concerns::Header::Content::SizeSettingButtonType
 
   private
 
   def size_setting_button_type
-    case @visibility
-    when :visible
+    case @visibility.to_s
+    when "visible"
       :minimize
-    when :hidden
+    when "hidden"
       :display
     end
   end
