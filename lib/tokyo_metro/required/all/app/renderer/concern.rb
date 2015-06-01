@@ -1,4 +1,4 @@
-class TokyoMetro::Required::All::App::Renderer::Concern < TokyoMetro::Required
+class TokyoMetro::Required::All::App::Renderer::Concerns < TokyoMetro::Required
 
   def self.other_files
     [

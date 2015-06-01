@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::StationLinkList < TokyoMetro::Factory::Decorate
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-= ::TokyoMetro::App::Renderer::Concern::Header::Selection.station_from_list( request ).render
+= ::TokyoMetro::App::Renderer::Concerns::Header::Selection.station_from_list( request ).render
 %div{ id: :station_link_list }
   = ja.render
   = en.render

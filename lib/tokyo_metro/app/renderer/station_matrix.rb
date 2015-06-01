@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::StationMatrix < TokyoMetro::Factory::Decorate::
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-= ::TokyoMetro::App::Renderer::Concern::Header::Selection.station_from_railway_line( request ).render
+= ::TokyoMetro::App::Renderer::Concerns::Header::Selection.station_from_railway_line( request ).render
 %div{ id: :station_matrixes }
   - railway_lines.each do | railway_line |
     = railway_line.decorate.render_matrix_and_links_to_stations( make_link_to_railway_line , type_of_link_to_station , set_anchor )
