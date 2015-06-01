@@ -294,7 +294,8 @@ module TokyoMetro
       set_namespaces_to_module_library( h , :Patches , :StationFacility ,
         :EscalatorDirection ,
         :RailwayDirectionInPlatformTransferInfo ,
-        :BarrierFreeFacilityLocatedArea
+        :BarrierFreeFacilityLocatedArea ,
+        :SurroundingArea
       )
 
       set_namespaces_to_module_library( h , :Patches , :TrainInfos ,
