@@ -1,2 +1,2 @@
-class TokyoMetro::App::Renderer::ConnectingRailwayLine::LinkToRailwayLinePage < TokyoMetro::App::Renderer::Concern::Link::ToRailwayLinePage::ConnectingRailwayLine::FromStationFacilityPage
+class TokyoMetro::App::Renderer::ConnectingRailwayLine::LinkToRailwayLinePage < TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRailwayLine::FromStationFacilityPage
 end

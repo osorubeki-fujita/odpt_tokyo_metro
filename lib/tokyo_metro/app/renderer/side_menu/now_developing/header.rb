@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::SideMenu::NowDeveloping::Header < TokyoMetro::App::Renderer::Concern::Header::Content
+class TokyoMetro::App::Renderer::SideMenu::NowDeveloping::Header < TokyoMetro::App::Renderer::Concerns::Header::Content
 
   def initialize( request , icon_size: 2 )
     super(

@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Document::Link < TokyoMetro::App::Renderer::Concern::Link::Normal::MetaClass
+class TokyoMetro::App::Renderer::Document::Link < TokyoMetro::App::Renderer::Concerns::Link::Normal::MetaClass
 
   def initialize( request , title_ja , title_en , url_action , model_name , icon_name: nil )
     @model_name = model_name

@@ -102,7 +102,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
       HAML
     }
 
-    ::TokyoMetro::App::Renderer::Concern::Header::Content.new(
+    ::TokyoMetro::App::Renderer::Concerns::Header::Content.new(
       @request ,
       :title_of_train_operation_infos ,
       :train_operation ,
@@ -113,7 +113,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   end
 
   def render_title_of_train_location_infos
-    ::TokyoMetro::App::Renderer::Concern::Header::Content.new(
+    ::TokyoMetro::App::Renderer::Concerns::Header::Content.new(
       @request ,
       :title_of_train_location_infos ,
       :train_location ,

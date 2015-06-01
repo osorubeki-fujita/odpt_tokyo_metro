@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole::Header < TokyoMetro::App::Renderer::Concern::Header::Content
+class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole::Header < TokyoMetro::App::Renderer::Concerns::Header::Content
 
   include ::TokyoMetro::App::Renderer::Concerns::Header::Content::SizeSettingButtonType
 

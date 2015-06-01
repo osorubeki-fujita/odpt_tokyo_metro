@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Twitter::Header < TokyoMetro::App::Renderer::Concern::Header::Content
+class TokyoMetro::App::Renderer::Twitter::Header < TokyoMetro::App::Renderer::Concerns::Header::Content
 
   include ::TokyoMetro::App::Renderer::Concerns::Header::Content::SizeSettingButtonType
 
