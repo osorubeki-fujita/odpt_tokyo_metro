@@ -98,6 +98,33 @@
 "info_circle": "info-circle"
 # "remark": "exclamation-triangle" （運行・遅延情報で定義済み）
 
+#-------- 地理
+
+"location": "location-arrow"
+"map_marker": "map-marker"
+"street_view": "street-view"
+"current_position": "street-view"
+
+#-------- 交通
+
+ambulance: ambulance
+automobile: automobile
+bicycle: bicycle
+bus: bus
+cab: cab
+car: car
+fighter_jet: fighter-jet
+motorcycle: motorcycle
+plane: plane
+rocket: rocket
+ship: ship
+space_shuttle: space-shuttle
+subway: subway
+taxi: taxi
+train: train
+truck: truck
+wheelchair: wheelchair
+
 #-------- 仮定義
 
 "temp": "folder-open-o"
