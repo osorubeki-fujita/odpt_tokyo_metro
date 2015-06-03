@@ -94,14 +94,24 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
 
   def train_operation_status
     if @status.present?
-      ::TrainOperation::Status.find_or_create_by( in_api: @status )
+      status_in_db = ::TrainOperation::Status.find_by( in_api: @status )
+      if status_in_db.present?
+        status_in_db
+      else
+        ::TrainOperation::Status.create( in_api: @status , id: ::TrainOperation::Status.pluck(:id).max + 1 )
+      end
     else
       nil
     end
   end
 
   def train_operation_text
-    ::TrainOperation::Text.find_or_create_by( in_api: @text )
+    text_in_db = ::TrainOperation::Text.find_by( in_api: @text )
+    if text_in_db.present?
+      text_in_db
+    else
+      ::TrainOperation::Text.create( in_api: @text , id: ::TrainOperation::Text.pluck(:id).max + 1 )
+    end
   end
 
   def text_in_api

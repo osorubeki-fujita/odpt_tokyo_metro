@@ -120,6 +120,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
       - if this.additional_info_precise_ja.present?
         %p{ class: :precise }<
           = this.additional_info_precise_ja
+
   - if [ this.additional_info_abstruct_en , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_en ].any?( &:present? )
     %div{ class: :text_en }
       - if this.additional_info_abstruct_en.present?
