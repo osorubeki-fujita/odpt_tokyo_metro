@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
       h[ key_name ] = @info.send( key_name )
     end
 
-    [ :station_facility_id , :category_id , :code_id ].each do | key_name |
+    [ :station_facility_info_id , :category_id , :code_id ].each do | key_name |
       h[ key_name ] = self.send( key_name )
     end
 
@@ -35,8 +35,8 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
     _station_info_in_db
   end
 
-  def station_facility_id
-    station_info_in_db.station_facility_id
+  def station_facility_info_id
+    station_info_in_db.station_facility_info_id
   end
 
   def category_in_db

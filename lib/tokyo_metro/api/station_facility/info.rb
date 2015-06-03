@@ -63,12 +63,12 @@ class TokyoMetro::Api::StationFacility::Info < TokyoMetro::Api::MetaClass::NotRe
   end
 
   def seed_barrier_free_facilities_or_platform_infos( info , indent )
-    station_facility_id = instance_in_db.id
-    info.try( :seed , station_facility_id , indent )
+    station_facility_info_id = instance_in_db.id
+    info.try( :seed , station_facility_info_id , indent )
   end
 
   def instance_in_db
-    ::StationFacility.find_by_same_as( @same_as )
+    ::StationFacility::Info.find_by_same_as( @same_as )
   end
 
   # @!endgroup

@@ -82,11 +82,11 @@ class TokyoMetro::Api::RailwayLine < TokyoMetro::Api::MetaClass::Hybrid
     ary.each do | railway_line |
       file = File.open( "TokyoMetro_#{railway_line.railway_line_code_for_filename}.txt" , "w:utf-8" )
       railway_line.station_order.each do | station_info |
-        station_facility = station_info.name.gsub( "odpt\.Station\:" , "odpt\.StationFacility\:" ).gsub( /\.[a-zA-Z]+\.([a-zA-Z]+)\Z/ ) { | matched | "\.#{$1}" }
+        station_facility_info = station_info.name.gsub( "odpt\.Station\:" , "odpt\.StationFacility\:" ).gsub( /\.[a-zA-Z]+\.([a-zA-Z]+)\Z/ ) { | matched | "\.#{$1}" }
 
         file.print station_info.name
         file.print "\t"
-        file.print station_facility
+        file.print station_facility_info
         file.print "\n"
       end
       file.close

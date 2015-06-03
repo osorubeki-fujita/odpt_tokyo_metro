@@ -11,8 +11,8 @@ class TokyoMetro::Api::StationFacility::Info::Platform::List < TokyoMetro::Api::
     super( indent , 1 )
   end
 
-  def seed( station_facility_id , indent )
-    super( station_facility_id , indent: indent + 1 , not_on_the_top_layer: true )
+  def seed( station_facility_info_id , indent )
+    super( station_facility_info_id , indent: indent + 1 , not_on_the_top_layer: true )
   end
 
   def self.factory_for_seeding_this_class

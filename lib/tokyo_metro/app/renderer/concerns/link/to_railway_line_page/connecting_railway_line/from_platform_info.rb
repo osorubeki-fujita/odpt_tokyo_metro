@@ -54,7 +54,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
 
   def connecting_railway_line_info_in_initialize
     station_facility_platform_info = object.station_facility_platform_info
-    station_infos = station_facility_platform_info.station_facility.station_infos
+    station_infos = station_facility_platform_info.station_facility_info.station_infos
 
     railway_line_of_this_station = ::RailwayLine.find( station_facility_platform_info.railway_line_id )
     railway_line_connected = ::RailwayLine.find( object.railway_line_id )
@@ -82,7 +82,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
       str << "\n"
       str << "object \[#{ object.class }\] : #{ object.id }"
       str << "station_facility_platform_info: #{ station_facility_platform_info.id }"
-      str << "station_facility: #{ station_facility_platform_info.station_facility.id }"
+      str << "station_facility: #{ station_facility_platform_info.station_facility_info.id }"
       str << "station info: #{ station_info.same_as }"
       str << "railway line of this station: #{ railway_line_of_this_station.same_as }"
       raise str

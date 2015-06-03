@@ -29,7 +29,7 @@ ConnectingRailwayLine:
   - "ConnectingRailwayLine::Note"
 
 StationFacility:
-  - StationFacility
+  - "StationFacility::Info"
   - StationFacilityAlias
   - StationFacilityPlatformInfo
   - StationFacilityPlatformInfoTransferInfo

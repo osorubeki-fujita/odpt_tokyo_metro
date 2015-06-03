@@ -1,8 +1,8 @@
 class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , station_facility )
+  def initialize( request , station_facility_info )
     super( request )
-    @station_facility = station_facility
+    @station_facility_info = station_facility_info
     @platform_infos_grouped_by_railway_line = platform_infos_grouped_by_railway_line
     @type_of_platform_infos = type_of_platform_infos
   end
@@ -57,14 +57,14 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
     ::TokyoMetro::App::Renderer::StationFacility::Platform::List.new( @resuest , ary )
   end
 
-  def self.make_list( request , station_facility )
-    self.new( request , station_facility ).to_a
+  def self.make_list( request , station_facility_info )
+    self.new( request , station_facility_info ).to_a
   end
 
   private
 
   def platform_infos_grouped_by_railway_line
-    @station_facility.platform_infos.includes(
+    @station_facility_info.platform_infos.includes(
       :railway_direction ,
       :station_facility_platform_info_barrier_free_facility_infos ,
       :station_facility_platform_info_transfer_infos ,
@@ -147,7 +147,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
   end
 
   def at_these_stations?( *stations_in_system )
-    [ stations_in_system ].flatten.map { | station | "odpt.StationFacility:TokyoMetro.#{station}" }.include?( @station_facility.same_as )
+    [ stations_in_system ].flatten.map { | station | "odpt.StationFacility:TokyoMetro.#{station}" }.include?( @station_facility_info.same_as )
   end
 
   # @!endgroup

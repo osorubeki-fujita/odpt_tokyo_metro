@@ -13,11 +13,11 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
   alias :create_station :seed_main
 
   def seed_main
-    if station_already_exists_in_db?
-      update_station
+    if station_info_already_exists_in_db?
+      update_station_info
     else
-      unless station_facility_already_exists_in_db?
-        create_station_facility
+      unless station_facility_info_already_exists_in_db?
+        create_station_facility_info
       end
       create_station
     end
@@ -31,20 +31,20 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
     seed_stopping_patterns
   end
 
-  def station_already_exists_in_db?
+  def station_info_already_exists_in_db?
     ::Station::Info.exists?( same_as: @info.same_as )
   end
 
-  def station_facility_already_exists_in_db?
-    ::StationFacility.exists?( same_as: @info.station_facility )
+  def station_facility_info_already_exists_in_db?
+    ::StationFacility::Info.exists?( same_as: @info.station_facility_info )
   end
 
-  def update_station
+  def update_station_info
     ::Station::Info.find_by( same_as: @info.same_as ).update( hash_for_updating_db )
   end
 
-  def create_station_facility
-    ::StationFacility.find_or_create_by( same_as: @info.station_facility )
+  def create_station_facility_info
+    ::StationFacility::Info.find_or_create_by( same_as: @info.station_facility_info )
   end
 
   def hash_for_updating_db
@@ -58,7 +58,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
   def hash_to_db
     h = ::Hash.new
 
-    h[ :station_facility_id ] = station_facility_id
+    h[ :station_facility_info_id ] = station_facility_info_id
     h[ :railway_line_id ] = @railway_line_id
     h[ :operator_id ] = ::RailwayLine.find( @railway_line_id ).operator_id
 
@@ -88,9 +88,9 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
     DEF
   end
 
-  [ :station_facility_in_db , :station_facility_id ].each do | method_name |
+  [ :station_facility_info_in_db , :station_facility_info_id ].each do | method_name |
     eval <<-DEF
-      def #{method_name}( whole = nil , search_by: @info.station_facility )
+      def #{method_name}( whole = nil , search_by: @info.station_facility_info )
         super( whole = nil , search_by: search_by )
       end
     DEF
@@ -111,10 +111,10 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
       if @info.station_facility_custom_alias.present?
         ary_of_station_facility_alias += [ @info.station_facility_custom_alias ].flatten
       end
-      sf_id = station_facility_id
+      sf_id = station_facility_info_id
       ary_of_station_facility_alias.each.with_index(1) do | station_facility_alias , i |
         h = {
-          station_facility_id: sf_id ,
+          station_facility_info_id: sf_id ,
           index_of_alias: i ,
           same_as: station_facility_alias
         }

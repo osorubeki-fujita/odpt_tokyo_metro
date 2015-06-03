@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Info <
 
   def hash_to_db
     {
-      station_facility_id: @station_facility_id ,
+      station_facility_info_id: @station_facility_info_id ,
       id_urn: @info.id_urn ,
       same_as: @info.same_as ,
       remark: @info.remark ,

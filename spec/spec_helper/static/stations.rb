@@ -4,7 +4,7 @@ def static_stations
 
       it "contains a station facility info." do
         infos_of_a_railway_line.each do | station_name , station_info |
-          expect( station_info.station_facility ).to be_present
+          expect( station_info.station_facility_info ).to be_present
         end
       end
 

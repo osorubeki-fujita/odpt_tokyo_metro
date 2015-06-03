@@ -38,11 +38,11 @@ class TokyoMetro::Factory::Save::Api::Point::Group < TokyoMetro::Factory::Save::
   def station_facility_key( id_str )
     ::TokyoMetro::Api.stations.each do | station |
       if station.exit_list.include_info_of?( id_str )
-        station_facility = station.facility
-        if station_facility.string?
-          return station_facility
+        station_facility_info = station.facility
+        if station_facility_info.string?
+          return station_facility_info
         else
-          return station_facility.same_as
+          return station_facility_info.same_as
         end
 
       end

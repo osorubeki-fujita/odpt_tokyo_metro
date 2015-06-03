@@ -10,11 +10,11 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::Common::Info < Toky
 
   def set_optional_variables( args )
     set_optional_variables__check_length_of_args( args , 1 )
-    @station_facility_id = args.first
+    @station_facility_info_id = args.first
   end
 
   def optional_variables
-    [ @station_facility_id ]
+    [ @station_facility_info_id ]
   end
 
 end

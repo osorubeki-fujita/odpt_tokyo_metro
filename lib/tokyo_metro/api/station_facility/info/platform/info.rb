@@ -71,8 +71,8 @@ class TokyoMetro::Api::StationFacility::Info::Platform::Info
 
   alias :to_strf :to_s
 
-  def seed( station_facility_id )
-    super( station_facility_id )
+  def seed( station_facility_info_id )
+    super( station_facility_info_id )
   end
 
   [ :transfer_infos , :barrier_free_facilities , :surrounding_areas ].each do | method_base_name |
