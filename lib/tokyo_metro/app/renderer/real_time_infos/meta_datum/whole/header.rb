@@ -16,7 +16,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole::Header < Tokyo
       add_update_button: true ,
       update_button_id: :update_button_in_content_header_of_real_time_infos ,
       controller_of_updating_real_time_info_form: :update ,
-      action_of_updating_real_time_info_form: :normal
+      action_of_updating_real_time_info_form: :real_time_infos
     )
   end
 
