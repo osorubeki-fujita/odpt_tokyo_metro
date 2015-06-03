@@ -107,18 +107,18 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
 
   def seed_station_facility_custom
     if @info.station_facility_custom.present?
-      ary_of_station_facility_alias = [ @info.station_facility_custom ].flatten
+      ary_of_station_facility_name_alias = [ @info.station_facility_custom ].flatten
       if @info.station_facility_custom_alias.present?
-        ary_of_station_facility_alias += [ @info.station_facility_custom_alias ].flatten
+        ary_of_station_facility_name_alias += [ @info.station_facility_custom_alias ].flatten
       end
       sf_id = station_facility_info_id
-      ary_of_station_facility_alias.each.with_index(1) do | station_facility_alias , i |
+      ary_of_station_facility_name_alias.each.with_index(1) do | station_facility_name_alias , i |
         h = {
           station_facility_info_id: sf_id ,
           index_of_alias: i ,
-          same_as: station_facility_alias
+          same_as: station_facility_name_alias
         }
-        ::StationFacilityAlias.find_or_create_by(h)
+        ::StationFacility::NameAlias.find_or_create_by(h)
       end
     end
   end

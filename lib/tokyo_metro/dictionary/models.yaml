@@ -30,7 +30,7 @@ ConnectingRailwayLine:
 
 StationFacility:
   - "StationFacility::Info"
-  - StationFacilityAlias
+  - "StationFacility::NameAlias"
   - StationFacilityPlatformInfo
   - StationFacilityPlatformInfoTransferInfo
   - StationFacilityPlatformInfoBarrierFreeFacilityInfo
