@@ -90,26 +90,6 @@ class TokyoMetro::App::Renderer::Concerns::Header::Content < TokyoMetro::App::Re
     } )
   end
 
-=begin
-  def url_in_size_setting_form
-    if @size_changing_button.present?
-      # ::Rails.application.routes.url_helpers.url_for( controller: controller_of_size_setting , action: size_changing_button_type , host: default_url_options[ :host ] )
-      # ::Rails.application.routes.url_helpers.url_for( controller: controller_of_size_setting , action: size_changing_button_type )
-      u.url_for( controller: @controller_of_size_setting , action: @size_changing_button_type , only_path: true )
-    else
-      nil
-    end
-  end
-
-  def class_name_of_size_setting_form_button
-    if @size_changing_button.present?
-      "ajax_link_to_#{ @controller_of_size_setting }"
-    else
-      nil
-    end
-  end
-=end
-
   def url_in_updating_real_time_info_form
     if @add_update_button
       u.url_for( controller: @controller_of_updating_real_time_info_form , action: @action_of_updating_real_time_info_form , only_path: true )
