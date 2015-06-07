@@ -38,8 +38,9 @@ class TokyoMetro::App::Renderer::Concerns::Header::Content < TokyoMetro::App::Re
 
   - # icon , text
 
-  %div{ class: :icon }<
-    = ::TokyoMetro::App::Renderer::Icon.send( icon_name , request , icon_size ).render
+  - if icon_name.present?
+    %div{ class: :icon }<
+      = ::TokyoMetro::App::Renderer::Icon.send( icon_name , request , icon_size ).render
   - if text_ja.present?
     %div{ class: :text }
       %h3{ class: :text_ja }<

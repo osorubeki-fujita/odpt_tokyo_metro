@@ -2,7 +2,7 @@ class TokyoMetro::App::Renderer::Concerns::Header::Selection < TokyoMetro::App::
 
   def initialize(
     request , text_ja , text_en , domain_id_name , domain_class_name , *icon_names ,
-    icon_size: 3 ,
+    icon_size: 2 ,
     additional_content: nil
   )
     super(
