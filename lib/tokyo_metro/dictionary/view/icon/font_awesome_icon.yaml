@@ -1,14 +1,24 @@
+#-------- 仮定義
+
+temp: &temp
+  "folder-open-o"
+
 #-------- 各コンテンツ（鉄道関連）
+normal_train: &normal_train
+  subway
 
 "train_operation": "info"
 "train_location": "location-arrow" # "map-marker"
-"railway_line": "code-fork"
-"station_facility": "folder-open-o" # 仮定義
-"railway_timetable": "folder-open-o" # 仮定義
-"station_timetable": "folder-open-o" # 仮定義
+"railway_line": *normal_train
+# railway_line: "code-fork"
+
+"station_facility": *temp
+"railway_timetable": *temp
+"station_timetable": *temp
 "fare": "jpy" # "ticket"
 "passenger_survey": "users"
-"station": "folder-open-o" # 仮定義
+"station": *temp
+
 
 #-------- 運行・遅延情報
 
@@ -124,10 +134,6 @@ taxi: taxi
 train: train
 truck: truck
 wheelchair: wheelchair
-
-#-------- 仮定義
-
-"temp": "folder-open-o"
 
 #-------- 図形
 
