@@ -24,7 +24,7 @@ module TokyoMetro::App::Renderer::Icon
   IMAGE.each do | key , value |
     eval <<-DEF
       def self.#{ key }( request , size = 1 , class_name: nil )
-        Image.new( request , "#{ value }" , class_name: class_name )
+        Image.new( request , "#{ value }" , size , class_name: class_name )
       end
     DEF
   end
