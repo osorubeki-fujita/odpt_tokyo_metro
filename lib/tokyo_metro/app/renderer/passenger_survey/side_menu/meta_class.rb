@@ -65,7 +65,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
         = ::PassengerSurveyDecorator.link_to_year_page( nil )
       %div{ class: [ :link_to_operator_page , :clearfix ] }
         %div{ class: :icon }
-          = ::TokyoMetro::App::Renderer::Icon.tokyo_metro( request ).render
+          = ::TokyoMetro::App::Renderer::Icon.tokyo_metro( request , 2 ).render
         %div{ class: :text }
           %p{ class: :text_ja }<
             = "東京メトロ 全駅"

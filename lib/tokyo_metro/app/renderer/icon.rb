@@ -29,23 +29,4 @@ module TokyoMetro::App::Renderer::Icon
     DEF
   end
 
-  # def self.open_another_window( request , size = 1 )
-    # FontAwesome::Stacked.new( request , [ { icon_name: :square_stroked , size: size } , { icon_name: :open_another_window_base , size: size } ] )
-  # end
-
-  # def self.link_to_another_website( request , size = 1 )
-    # FontAwesome::Stacked.new( request , [ { icon_name: :square_filled , size: size } , { icon_name: :link_to_another_website_base , size: size , inverse: true } ] )
-  # end
-
 end
-
-
-__END__
-
-# @todo
-
-FontAwesome::Stacked
-FontAwesome::Spin
-FontAwesome::Pulse
-
-に分離
