@@ -4,9 +4,9 @@ module TokyoMetro::Modules::Common::ToFactory::Seed::Group
 
   def seed(
     *variables ,
-    # factory_name
+    #----- ★ factory_name
     class_name: self.class ,
-    # method_name
+    #---- ★ method_name
     indent: 0 ,
     no_display: false ,
     not_on_the_top_layer: false ,
@@ -16,9 +16,9 @@ module TokyoMetro::Modules::Common::ToFactory::Seed::Group
   )
     __seed__(
       *variables ,
-      factory_name: :factory_for_seeding_this_class ,
+      factory_name: :factory_for_seeding_this_class , # ★
       class_name: class_name ,
-      method_name: __method__ ,
+      method_name: __method__ , # ★
       indent: indent ,
       no_display: no_display ,
       not_on_the_top_layer: not_on_the_top_layer ,

@@ -12,8 +12,8 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::
   attr_reader :direction
 
   def to_s( indent = 0 )
-    if @direction.to_s == ""
-      super + " " + "☆☆☆☆☆☆☆☆"
+    if @direction.to_s.blank?
+      super + " " + "☆☆☆☆"
     else
       super + " " + @direction.to_s
     end

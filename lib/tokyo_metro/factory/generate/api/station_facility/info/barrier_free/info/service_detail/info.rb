@@ -15,7 +15,7 @@ class TokyoMetro::Factory::Generate::Api::StationFacility::Info::BarrierFree::In
   end
 
   def service_end_time
-    @hash[ "odpt:operationDays" ].with_default_value( "終車時" )
+    @hash[ "ugsrv:serviceEndTime" ].with_default_value( "終車時" )
   end
 
   def operation_days
