@@ -19,7 +19,8 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
     "上下" => "both" ,
     "改札内" => "inside" ,
     "改札外" => "outside" ,
-    "stations" => "stations" ,
+    "station" => "station" ,
+    "platform_info" => "platform_info" ,
     "barrier_free_facilities" => "barrier_free_facilities"
   }
 
@@ -28,8 +29,8 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
     @asset_image_dirname = asset_image_dirname
     @filename = filename
 
-    @new_file_basename = new_file_basename( filename )
-    @new_dir_basename = new_dir_basename( filename )
+    @new_file_basename = new_file_basename
+    @new_dir_basename = new_dir_basename
   end
 
   def copy
@@ -42,9 +43,12 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
   def new_filename
     "#{ @asset_image_dirname }/#{ @new_dir_basename }/#{ @new_file_basename }.svg"
   end
+  
+  def file_basename
+    ::File.basename( @filename , ".*" ).encode( "UTF-8" )
+  end
 
-  def new_file_basename( filename )
-    file_basename = File.basename( filename , ".*" ).encode( "UTF-8" )
+  def new_file_basename
     file_basename_elements = file_basename.gsub( /\A(toilet|wheel_chair|escalator|others|icon)_/ ) { "#{$1}\n" }.split( /[\n（）・／]/ )
 
     new_file_basename_ary = ::Array.new
@@ -57,11 +61,11 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
     new_file_basename_ary.select( &:present? ).join( "_" )
   end
 
-  def new_dir_basename( filename )
-    if [ "icon_platform_info" , "icon_station" ].include?( filename )
+  def new_dir_basename
+    if [ "icon_platform_info" , "icon_station" ].include?( file_basename )
       "customized_icon"
     else
-      "barrier_free_facility"
+      "barrier_free_facilities"
     end
   end
 
