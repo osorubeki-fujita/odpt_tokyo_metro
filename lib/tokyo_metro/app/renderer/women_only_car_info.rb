@@ -10,7 +10,7 @@ class TokyoMetro::App::Renderer::WomenOnlyCarInfo < TokyoMetro::Factory::Decorat
     if @infos.present?
       h.render inline: <<-HAML , type: :haml , locals: h_locals
 %div{ id: :women_only_car }
-  = ::WomenOnlyCarInfoDecorator.render_sub_top_title
+  = ::TokyoMetro::App::Renderer::WomenOnlyCarInfo::Header.new( request ).render
   - if infos.length > 1
     - infos.each do | infos_of_a_railway_line |
       = infos_of_a_railway_line.render( display_railway_line: true )
