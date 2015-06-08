@@ -4,7 +4,7 @@ class TokyoMetro::App::Renderer::StationFacility::Header::RailwayLines::OtherOpe
     super(
       request ,
       :title ,
-      :tokyo_metro ,
+      :normal_train ,
       "乗り入れ路線" ,
       "Other railway lines" ,
       icon_size: 2
