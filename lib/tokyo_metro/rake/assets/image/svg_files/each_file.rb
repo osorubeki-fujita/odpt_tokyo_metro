@@ -35,7 +35,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
 
   def copy
     puts ( new_filename.ljust(128) + " <= " + @filename )
-    # ::FileUtils.copy( @filename , new_filename )
+    ::FileUtils.copy( @filename , new_filename )
   end
 
   private
