@@ -63,7 +63,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
 
   def new_dir_basename
     if [ "icon_platform_info" , "icon_station" ].include?( file_basename )
-      "customized_icon"
+      "customized_icons"
     else
       "barrier_free_facilities"
     end
