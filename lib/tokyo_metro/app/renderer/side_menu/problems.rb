@@ -20,7 +20,7 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
     super().merge({
       contents_ja: contents_ja ,
       contents_en: contents_en ,
-      link_to_list_of_tasks_to_do: url_helpers.url_for( controller: :document , action: :index , anchor: :to_do )
+      link_to_list_of_tasks_to_do: url_helpers.url_for( controller: :document , action: :index , anchor: :to_do , only_path: true )
     })
   end
 
