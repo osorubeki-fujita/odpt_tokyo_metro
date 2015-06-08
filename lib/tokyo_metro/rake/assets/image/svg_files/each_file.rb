@@ -43,7 +43,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
   def new_filename
     "#{ @asset_image_dirname }/#{ @new_dir_basename }/#{ @new_file_basename }.svg"
   end
-  
+
   def file_basename
     ::File.basename( @filename , ".*" ).encode( "UTF-8" )
   end

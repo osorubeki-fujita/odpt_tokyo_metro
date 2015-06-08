@@ -7,7 +7,7 @@ class TokyoMetro::App::Renderer::StationFacility::Header::RailwayLines::TheSameO
       :tokyo_metro ,
       "#{ ::ApplicationHelper.this_operator.name_ja_normal }の路線" ,
       "Railway lines of #{ ::ApplicationHelper.this_operator.name_en_normal }" ,
-      icon_size: 2
+      icon_size: 3
     )
   end
 
