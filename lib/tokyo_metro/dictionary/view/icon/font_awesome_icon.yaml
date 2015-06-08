@@ -3,6 +3,12 @@
 temp: &temp
   "folder-open-o"
 
+#-------- 共通
+moon: &moon
+  moon-o
+sun: &sun
+  sun-o
+
 #-------- 各コンテンツ（鉄道関連）
 
 normal_train: &normal_train
@@ -20,12 +26,14 @@ fare: jpy # ticket
 passenger_survey: users
 # station: *temp
 
+women_only_car: *sun
+
 #-------- 運行・遅延情報
 
 delay: history
 remark: "exclamation-triangle"
 
-no_train: "moon-o"
+no_train: *moon
 after_last_train_finished: "moon-o"
 before_first_train_begin: "moon-o"
 
@@ -156,9 +164,16 @@ wheelchair: wheelchair
 
 #-------- 時間
 
-time: clock
-clock: clock
+clock: &clock
+  clock-o
+time: *clock
 history: history
+
+#-------- 天体
+
+# sun: *sun
+star: "star-o"
+# moon: *moon
 
 #-------- その他
 

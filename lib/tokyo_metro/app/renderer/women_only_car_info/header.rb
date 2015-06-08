@@ -4,7 +4,7 @@ class TokyoMetro::App::Renderer::WomenOnlyCarInfo::Header < TokyoMetro::App::Ren
     super(
       request ,
       :title ,
-      :temp ,
+      :women_only_car ,
       "女性専用車のご案内" ,
       "Women only car" ,
       icon_size: 3
