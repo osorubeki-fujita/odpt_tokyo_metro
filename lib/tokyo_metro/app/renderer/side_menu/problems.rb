@@ -5,7 +5,7 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
 %div{ id: :problems }
   = ::TokyoMetro::App::Renderer::SideMenu::Problems::Header.new( request ).render
   %ul{ class: [ :info_text , :problems ] }
-    - contents.each do | info |
+    - contents_ja.each do | info |
       %li{ class: :text_ja }<
         = info
     %li{ class: :to_do }<
