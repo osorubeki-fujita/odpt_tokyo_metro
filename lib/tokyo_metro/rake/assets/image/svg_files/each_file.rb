@@ -33,7 +33,6 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
   end
 
   def copy
-    puts "copy"
     puts ( new_filename.ljust(128) + " <= " + @filename )
     # ::FileUtils.copy( @filename , new_filename )
   end
@@ -41,7 +40,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
   private
 
   def new_filename
-    "#{ @asset_image_dirname }/#{ @dir_basename }/#{ @file_basename }.svg"
+    "#{ @asset_image_dirname }/#{ @new_dir_basename }/#{ @new_file_basename }.svg"
   end
 
   def new_file_basename( filename )
