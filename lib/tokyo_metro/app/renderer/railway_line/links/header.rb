@@ -1,4 +1,4 @@
-class  TokyoMetro::App::Renderer::RailwayLine::Header < TokyoMetro::App::Renderer::Concerns::Header::Content
+class TokyoMetro::App::Renderer::RailwayLine::Links::Header < TokyoMetro::App::Renderer::Concerns::Header::Content
 
   def initialize( request , railway_lines )
     super(
