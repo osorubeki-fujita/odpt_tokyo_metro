@@ -4,6 +4,7 @@ temp: &temp
   "folder-open-o"
 
 #-------- 各コンテンツ（鉄道関連）
+
 normal_train: &normal_train
   subway
 
@@ -18,7 +19,6 @@ station_timetable: *temp
 fare: jpy # ticket
 passenger_survey: users
 # station: *temp
-
 
 #-------- 運行・遅延情報
 
@@ -117,6 +117,7 @@ th_large: th-large
 th_list: th-list
 
 #---- 四角形を利用してデザイン変更？
+
 # open_another_window_base: "external-link-square"
 # link_to_another_website_base: "external-link"
 
@@ -153,5 +154,12 @@ train: train
 truck: truck
 wheelchair: wheelchair
 
+#-------- 時間
+
+time: clock
+clock: clock
+history: history
+
 #-------- その他
+
 ban: ban
