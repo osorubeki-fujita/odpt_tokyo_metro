@@ -38,7 +38,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
   end
 
   private
-  
+
   def new_filename
     "#{ @asset_image_dirname }/#{ @dir_basename }/#{ @file_basename }.svg"
   end
@@ -46,7 +46,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
   def new_file_basename( filename )
     file_basename = File.basename( filename , ".*" ).encode( "UTF-8" )
     file_basename_elements = file_basename.gsub( /\A(toilet|wheel_chair|escalator|others|icon)_/ ) { "#{$1}\n" }.split( /[\n（）・／]/ )
-    
+
     new_file_basename_ary = ::Array.new
     while !( file_basename_elements.empty? )
       element = file_basename_elements.shift

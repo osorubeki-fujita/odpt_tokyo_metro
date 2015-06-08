@@ -3,7 +3,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles
   def initialize
     @svg_dirname = "#{ ::TokyoMetro::DEV_DIR }/app/images/svg"
     @asset_image_dirname = "#{ ::TokyoMetro::RAILS_DIR }/app/assets/images/barrier_free_facility"
-    @svg_files = ::Dir.glob( "#{svg_dirname}/**.svg" )
+    @svg_files = ::Dir.glob( "#{@svg_dirname}/**.svg" )
   end
 
   def copy
