@@ -13,9 +13,9 @@ end
 
 #--------
 
-options = [ ]
+# options = [ ]
 # options = [ :station ]
-# options = [ :station_facility ]
+options = [ :station_facility ]
 
 #--------
 
@@ -65,6 +65,7 @@ if to_test( :station_facility , options )
 
   station_facility_toilet_location_in_nakano_shimbashi
   station_facility_escalator_direction_in_otemachi
+  escalator_operation_day_in_kasumigaseki
   station_facility_surrounding_area
 
   station_facility_replacing_railway_lines_of_platform_infos

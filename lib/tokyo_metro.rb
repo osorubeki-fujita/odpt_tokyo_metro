@@ -293,6 +293,7 @@ module TokyoMetro
 
       set_namespaces_to_module_library( h , :Patches , :StationFacility ,
         :EscalatorDirection ,
+        :EscalatorOperationDay ,
         :RailwayDirectionInPlatformTransferInfo ,
         :BarrierFreeFacilityLocatedArea ,
         :SurroundingArea
