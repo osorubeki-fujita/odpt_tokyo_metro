@@ -6,7 +6,7 @@ class TokyoMetro::App::Renderer::FareTable::LinkToRailwayLinePage::Header < Toky
     super(
       request ,
       :title ,
-      :yen ,
+      :jpy ,
       proc_for_text_ja ,
       proc_for_text_en ,
       icon_size: 3
