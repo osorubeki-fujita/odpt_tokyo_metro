@@ -39,11 +39,11 @@ class TokyoMetro::App::Renderer::Concerns::Header::Selection < TokyoMetro::App::
   end
 
   def self.station_from_list( request )
-    self.new( request , "駅一覧から駅をえらぶ" , "Select station from list" , :select_station_from_list , :selection_header , :station )
+    self.new( request , "駅一覧から駅をえらぶ" , "Select station from list" , :select_station_from_list , :selection_header , :list )
   end
 
   def self.station_from_railway_line( request )
-    self.new( request , "路線から駅をえらぶ" , "Select station from railway line" , :select_station_from_railway_line , :selection_header , :station )
+    self.new( request , "路線から駅をえらぶ" , "Select station from railway line" , :select_station_from_railway_line , :selection_header , :railway_line )
   end
 
   private

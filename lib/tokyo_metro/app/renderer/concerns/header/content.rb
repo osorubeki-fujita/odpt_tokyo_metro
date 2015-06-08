@@ -44,12 +44,21 @@ class TokyoMetro::App::Renderer::Concerns::Header::Content < TokyoMetro::App::Re
   - if text_ja.present?
     %div{ class: :text }
       %h3{ class: :text_ja }<
-        = text_ja
+        - if text_ja.instance_of?( ::Proc )
+          = text_ja.call
+        - else
+          = text_ja
       %h4{ class: :text_en }<
-        = text_en
+        - if text_en.instance_of?( ::Proc )
+          = text_en.call
+        - else
+          = text_en
   - else
     %h3{ class: :text_en }<
-      = text_en
+      - if text_en.instance_of?( ::Proc )
+        = text_en.call
+      - else
+        = text_en
 
   - # size_changing_button
 

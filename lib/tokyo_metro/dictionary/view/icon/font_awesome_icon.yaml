@@ -98,6 +98,24 @@ home: home
 open_another_window: "external-link-square"
 link_to_another_website: "external-link"
 
+#-------- 図形
+
+square_filled: square
+square_stroked: square-o
+
+#-------- リスト
+
+bars: bars
+navicon: navicon
+reorder: reorder
+list: list
+list_alt: list-alt
+list_ol: list-ol
+list_ul: list-ul
+th: th
+th_large: th-large
+th_list: th-list
+
 #---- 四角形を利用してデザイン変更？
 # open_another_window_base: "external-link-square"
 # link_to_another_website_base: "external-link"
@@ -134,11 +152,6 @@ taxi: taxi
 train: train
 truck: truck
 wheelchair: wheelchair
-
-#-------- 図形
-
-square_filled: square
-square_stroked: "square-o"
 
 #-------- その他
 ban: ban
