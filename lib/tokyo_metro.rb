@@ -165,10 +165,10 @@ module TokyoMetro
     const_set( :RAILS_DIR , rails_dir ) # "C:/RubyPj/rails/tokyo_metro"
 
     # 開発のためのファイルを格納するディレクトリ
-    const_set( :DEV_DIR , "#{ RAILS_DIR }/dev" ) # "C:/RubyPj/rails/tokyo_metro_dev"
+    const_set( :DEV_DIR , "#{ RAILS_DIR }/dev" ) # "C:/RubyPj/rails/tokyo_metro/dev"
 
   # データベースのディレクトリ
-    const_set( :DEV_DB_DIR , "#{ RAILS_DIR }/dev/db/201412" ) # "C:/RubyPj/rails/tokyo_metro_db"
+    const_set( :DEV_DB_DIR , "#{ RAILS_DIR }/dev/db/201412" ) # "C:/RubyPj/rails/tokyo_metro/dev/db"
 
     # fixture ファイルを格納するディレクトリ
     const_set( :RAILS_FIXTURES_DIR , "#{ RAILS_DIR }/test/fixtures" )

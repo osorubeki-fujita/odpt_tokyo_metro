@@ -17,7 +17,7 @@ railway_timetable: *temp
 station_timetable: *temp
 fare: jpy # ticket
 passenger_survey: users
-station: *temp
+# station: *temp
 
 
 #-------- 運行・遅延情報
