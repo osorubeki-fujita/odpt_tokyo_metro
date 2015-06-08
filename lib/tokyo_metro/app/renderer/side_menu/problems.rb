@@ -9,7 +9,7 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
       %li{ class: :text_ja }<
         = info
     %li{ class: :to_do }<
-      = link_to( "" , url_for( controller: :document , action: :index , anchor: :to_do ) )
+      = link_to( "" , link_to_list_of_tasks_to_do )
       = "To Do"
     HAML
   end
@@ -19,7 +19,8 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
   def h_locals
     super().merge({
       contents_ja: contents_ja ,
-      contents_en: contents_en
+      contents_en: contents_en ,
+      link_to_list_of_tasks_to_do: url_helpers.url_for( controller: :document , action: :index , anchor: :to_do )
     })
   end
 
