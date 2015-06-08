@@ -15,6 +15,8 @@ module TokyoMetro::Factory::Convert::Patch::ForString::BarrierFreeFacility::Info
     str = str.gsub( /お?乗り?換え?/ , "お乗り換え" )
     str = str.gsub( /(?<=（時間制限)：?(?=\d{1,2}時～\d{1,2}時）)/ , "：" )
     str = str.gsub( "時間制限" , available )
+    str = str.gsub( /お[こ越]し(?:いただ|頂)/ , "お越しいただ" )
+    str = str.gsub( /(?<=ますが)、?(?=#{ available })/ , "、" )
     str = str.gsub( /(?<=が、#{ available })(?=があります)/ , "に制限" )
     str = str.gsub( /(?<=ご利用、お乗り換えは)、?(?=できません。)/ , "" )
 
@@ -30,7 +32,12 @@ module TokyoMetro::Factory::Convert::Patch::ForString::BarrierFreeFacility::Info
       str_ary.flatten.join( "\n" ) + "\n"
     }
 
+
     str = str.gsub( /が、?利用時間（(.+)）があります。/ ) { "。ご利用できる時間帯は #{ $1 } です。" }
+
+    # 御茶ノ水
+    str = str.gsub( /(?<=利用時間に制限があります)（6時～終車（1F）6時～20時（2F））、/ , "（1F：6時～終車、2F：6時～20時）。\n" )
+    str = str.gsub( /(?<=神田川)より(?=の)/ , "沿い" )
 
     str.gsub( /\n\Z/ , "" )
   end
