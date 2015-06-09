@@ -19,7 +19,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass::G
       this: self
     })
   end
-  
+
   def h_locals
     {
       this: self ,

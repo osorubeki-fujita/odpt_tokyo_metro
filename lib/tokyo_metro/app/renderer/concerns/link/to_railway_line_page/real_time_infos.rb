@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::RealTimeInfos < TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass
+class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::RealTimeInfos < TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass::Group
 
   def initialize( request , railway_line_decorated )
     super( request , railway_line_decorated )
