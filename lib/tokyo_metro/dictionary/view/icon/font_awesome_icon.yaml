@@ -8,6 +8,11 @@ moon: &moon
   moon-o
 sun: &sun
   sun-o
+remark: &remark
+  exclamation-triangle
+location: &location
+  location-arrow
+  # map-marker
 
 #-------- 各コンテンツ（鉄道関連）
 
@@ -15,7 +20,7 @@ normal_train: &normal_train
   subway
 
 train_operation: info
-train_location: "location-arrow" # "map-marker"
+train_location: *location
 railway_line: *normal_train
 # railway_line: "code-fork"
 
@@ -28,13 +33,13 @@ passenger_survey: users
 
 women_only_car: *sun
 
-now_developing: 
+now_developing: *remark
 problems: info-circle
 
 #-------- 運行・遅延情報
 
 delay: history
-remark: "exclamation-triangle"
+# remark: exclamation-triangle
 
 no_train: *moon
 after_last_train_finished: "moon-o"
@@ -136,14 +141,15 @@ th_list: th-list
 
 info: info
 info_circle: "info-circle"
-# remark: "exclamation-triangle" （運行・遅延情報で定義済み）
+# remark: "exclamation-triangle"
 
 #-------- 地理
 
-location: "location-arrow"
+# location - 定義済み
 map_marker: "map-marker"
-street_view: "street-view"
-current_position: "street-view"
+street_view: &street_view
+  street-view
+current_position: *street_view
 
 #-------- 交通
 
