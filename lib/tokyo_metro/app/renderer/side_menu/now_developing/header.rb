@@ -4,7 +4,7 @@ class TokyoMetro::App::Renderer::SideMenu::NowDeveloping::Header < TokyoMetro::A
     super(
       request ,
       :remark ,
-      :remark ,
+      :now_developing ,
       "ご利用上の注意" ,
       "Please note" ,
       icon_size: icon_size ,

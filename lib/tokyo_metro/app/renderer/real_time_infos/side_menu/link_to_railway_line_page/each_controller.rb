@@ -42,7 +42,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinkToRailwayLinePage:
   end
 
   def li_classes
-    ary = [ "to_#{ @controller }" ]
+    ary = [ "to_#{ @controller }" , :each_controller ]
     if without_link?
       ary << :this_page
     end

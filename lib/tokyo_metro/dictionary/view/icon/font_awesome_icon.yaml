@@ -28,6 +28,9 @@ passenger_survey: users
 
 women_only_car: *sun
 
+now_developing: 
+problems: info-circle
+
 #-------- 運行・遅延情報
 
 delay: history
@@ -41,7 +44,7 @@ on_schedule: "check-square-o"
 nearly_on_schedule: "check-square"
 delayed: "exclamation-circle"
 suspended: "exclamation-triangle"
-other_status: "info-circle"
+other_status: info-circle
 
 #-------- コンテスト
 

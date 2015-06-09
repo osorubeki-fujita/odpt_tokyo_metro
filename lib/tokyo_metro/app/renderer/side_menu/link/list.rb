@@ -33,8 +33,11 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
       request ,
       ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index , "links_#{__method__}" ,
       [
-        :top , :train_location , :train_operation ,
-        :railway_line , :station_facility ,
+        :top ,
+        :train_operation ,
+        :train_location ,
+        :railway_line ,
+        :station_facility ,
         # :railway_timetable ,
         # :station_timetable ,
         :fare , :passenger_survey

@@ -4,7 +4,7 @@ class TokyoMetro::App::Renderer::SideMenu::Problems::Header < TokyoMetro::App::R
     super(
       request ,
       :problems ,
-      :info ,
+      :problems ,
       "既知の主な問題点" ,
       "Problems and bugs" ,
       icon_size: icon_size ,
