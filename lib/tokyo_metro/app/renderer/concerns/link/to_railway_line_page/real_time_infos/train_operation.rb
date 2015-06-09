@@ -8,9 +8,6 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::RealTimeInfo
 
     @controller = :train_operation
     @link_type = :standard
-
-    @station_info = station_info
-    @add_connection_info_to_class = true
   end
 
 end
