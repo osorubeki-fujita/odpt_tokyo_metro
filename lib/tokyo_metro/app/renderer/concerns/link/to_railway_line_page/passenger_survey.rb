@@ -56,11 +56,10 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
   end
 
   def h_locals
-    {
-      request: request ,
+    super.merge({
       survey_years: @survey_years ,
       railway_line_page_name: railway_line_page_name
-    }
+    })
   end
 
   # def additional_li_classes_to_link_to_this_page

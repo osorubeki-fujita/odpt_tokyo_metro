@@ -19,5 +19,13 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass::G
       this: self
     })
   end
+  
+  def h_locals
+    {
+      this: self ,
+      request: @request ,
+      railway_line_decorated: @railway_line_decorated
+    }
+  end
 
 end
