@@ -57,8 +57,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
 
   def h_locals
     super.merge({
-      survey_years: @survey_years ,
-      railway_line_page_name: railway_line_page_name
+      survey_years: @survey_years
     })
   end
 

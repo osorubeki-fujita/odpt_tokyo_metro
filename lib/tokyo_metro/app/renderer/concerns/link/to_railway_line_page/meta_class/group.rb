@@ -24,7 +24,8 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass::G
     {
       this: self ,
       request: @request ,
-      railway_line_decorated: @railway_line_decorated
+      railway_line_decorated: @railway_line_decorated ,
+      railway_line_page_name: railway_line_page_name
     }
   end
 
