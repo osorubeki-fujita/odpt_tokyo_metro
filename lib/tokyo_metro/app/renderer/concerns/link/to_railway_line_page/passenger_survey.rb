@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSurvey < TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass
+class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSurvey < TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass::Group
 
   def initialize( request , railway_line_decorated , survey_years , additional_class_of_li: nil )
     super( request , railway_line_decorated )
@@ -16,11 +16,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %ul{ class: [ :each_railway_line , railway_line_decorated.css_class_name , :clearfix ] }
-  %li{ class: li_classes }
-    = link_to_unless( without_link_to_railway_line_page , "" , url )
-    %div{ class: div_classes }
-      = railway_line_decorated.render_railway_line_code( small: small_railway_line_code )
-      = railway_line_decorated.render_name( prefix_ja: prefix_ja , prefix_en: prefix_en , suffix_ja: suffix_ja , suffix_en: suffix_en )
+  = this.render_railway_line_name
   - survey_year_max = survey_years.max
   - survey_years.each do | survey_year |
     = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear.new( request , survey_year , survey_year_max , railway_line_page_name ).render
@@ -31,10 +27,6 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
 
   def add_railway_line_css_class_name_to_li_classes?
     false
-  end
-
-  def url
-    nil
   end
 
   def url
@@ -64,10 +56,11 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
   end
 
   def h_locals
-    super.merge({
+    {
+      request: request ,
       survey_years: @survey_years ,
       railway_line_page_name: railway_line_page_name
-    })
+    }
   end
 
   # def additional_li_classes_to_link_to_this_page
