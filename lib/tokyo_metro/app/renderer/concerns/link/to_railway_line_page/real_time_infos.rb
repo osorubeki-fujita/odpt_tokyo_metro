@@ -4,7 +4,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::RealTimeInfo
     super( request , railway_line_decorated )
 
     @controller = nil
-    @controllers = [ :train_operation , :train_location ]
+    @controllers = [ :train_operation , :train_location , :railway_line ]
     @link_type = :standard
   end
 
