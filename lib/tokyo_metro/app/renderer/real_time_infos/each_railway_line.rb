@@ -18,6 +18,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
     @train_operation_info.decorate( request , @railway_line , @max_delay , controller , no_train? ).render
   end
 
+  # 三田線を除外
   def render_train_location_infos
     @train_location_infos.exclude_toei_mita_line.decorate( request , @railway_line ).render
   end

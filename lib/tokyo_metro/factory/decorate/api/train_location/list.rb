@@ -8,17 +8,26 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::List < TokyoMetro::Fact
   attr_reader :railway_line
 
   def render
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
-- this.object.group_by_railway_direction.each do | railway_direction_in_api_same_as , train_location_infos |
-  - railway_line = this.railway_line
-  - railway_direction = ::RailwayDirection.find_by( railway_line_id: railway_line.id , in_api_same_as: railway_direction_in_api_same_as )
-  - if railway_direction.blank?
-    - raise "\[Error\] railway_line: " + railway_line.same_as + " / railway_direction: " + railway_direction_in_api_same_as
-  = railway_direction.decorate.render_title_in_train_location
-  %ul{ class: [ :train_locations_of_each_direction , :clearfix ] }
-    - train_location_infos.each do | train_location |
-      = train_location.decorate( request , this.railway_line ).render
+    h.render inline: <<-HAML , type: :haml , locals: h_locals
+- grouped_by_railway_direction.each do | list_of_each_direction |
+  = list_of_each_direction.render
     HAML
+  end
+
+  private
+
+  def h_locals
+    super.merge({
+      grouped_by_railway_direction: grouped_by_railway_direction
+    })
+  end
+
+  def grouped_by_railway_direction
+    @object.group_by_railway_direction.map { | railway_direction_in_api_same_as , train_location_infos |
+      ::TokyoMetro::Factory::Decorate::Api::TrainLocation::List::EachDirection.new( @request , @railway_line , railway_direction_in_api_same_as , train_location_infos )
+    }.sort_by { | item |
+      item.railway_direction.id
+    }
   end
 
 end
