@@ -1,5 +1,7 @@
 class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinkToRailwayLinePage::EachController < TokyoMetro::Factory::Decorate::MetaClass
 
+  ICON_SIZE = 2
+
   def initialize( request , controller , railway_line_page_name )
     super( request )
     @controller = controller
@@ -12,7 +14,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinkToRailwayLinePage:
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %li{ class: li_classes }
   = link_to_unless( without_link , "" , url )
-  = ::TokyoMetro::App::Renderer::Icon.send( controller , request , 2 ).render
+  = ::TokyoMetro::App::Renderer::Icon.send( controller.to_s + "_img" , request , icon_size ).render
     HAML
   end
 
@@ -32,7 +34,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinkToRailwayLinePage:
       controller: @controller ,
       url: @url ,
       without_link: without_link? ,
-      li_classes: li_classes
+      li_classes: li_classes ,
+      icon_size: ICON_SIZE
     })
   end
 
