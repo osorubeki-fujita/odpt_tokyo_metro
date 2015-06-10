@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinkToRailwayLinePage::EachController < TokyoMetro::Factory::Decorate::MetaClass
 
-  ICON_SIZE = 2
+  ICON_SIZE = 3
 
   def initialize( request , controller , railway_line_page_name )
     super( request )
