@@ -12,8 +12,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinkToRailwayLinePage:
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %li{ class: li_classes }
   = link_to_unless( without_link , "" , url )
-  %p{ class: :text_en }<
-    = ::TokyoMetro::App::Renderer::Icon.send( controller , request , 2 ).render
+  = ::TokyoMetro::App::Renderer::Icon.send( controller , request , 2 ).render
     HAML
   end
 
