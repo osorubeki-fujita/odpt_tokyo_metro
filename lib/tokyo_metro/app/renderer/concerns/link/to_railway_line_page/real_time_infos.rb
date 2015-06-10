@@ -1,10 +1,10 @@
 class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::RealTimeInfos < TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass::Group
 
-  def initialize( request , railway_line_decorated )
+  def initialize( request , railway_line_decorated , controllers )
     super( request , railway_line_decorated )
 
     @controller = nil
-    @controllers = [ :train_operation , :train_location , :railway_line ]
+    @controllers = controllers
     @link_type = :standard
   end
 
@@ -12,7 +12,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::RealTimeInfo
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %ul{ class: [ :each_railway_line , railway_line_decorated.css_class_name , :clearfix ] }
   = this.render_railway_line_name
-  - controllers.each do | controller |
+  - controllers.each do | controller , texts |
     = ::TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinkToRailwayLinePage::EachController.new( request , controller , railway_line_page_name ).render
     HAML
   end
