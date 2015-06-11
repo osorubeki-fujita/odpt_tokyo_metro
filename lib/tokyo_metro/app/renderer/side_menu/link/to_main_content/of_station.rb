@@ -65,6 +65,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
       "Facilities of this station" ,
       station_info ,
       controller: __method__ ,
+      # icon_name: :barrier_free_facilities
       icon_name: nil
     )
   end
