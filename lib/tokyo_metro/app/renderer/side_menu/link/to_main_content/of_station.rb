@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index
 
-  def initialize( request , title_ja , title_en , station_info , url: nil , controller: nil , icon_name: nil )
+  def initialize( request , title_ja , title_en , station_info , url: nil , controller: nil , icon_name: nil , additional_class_name_of_div_domain: nil )
     @request = request
     @current_station = current_station ,
     @station_info = station_info
