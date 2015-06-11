@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
       request ,
       title_ja ,
       title_en ,
-      url: url ,
+      url: actual_url( url , controller ) ,
       controller: controller ,
       icon_name: icon_name ,
       additional_class_name_of_div_domain: additional_class_name_of_div_domain
@@ -17,7 +17,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
 
   private
 
-  def set_actual_url( url , controller )
+  def actual_url( url , controller )
     raise "Error" if url.blank? and controller.blank?
     raise "Error" if url.present? and controller.present?
 
