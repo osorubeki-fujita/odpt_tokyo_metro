@@ -17,8 +17,13 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index < TokyoMet
   private
 
   def actual_url( url , controller )
-    raise "Error" if url.blank? and controller.blank?
-    raise "Error" if url.present? and controller.present?
+    if url.blank? and controller.blank?
+      raise "Error: url: #{ url } / controller: #{ controller }" 
+    end
+    if url.present? and controller.present?
+      raise "Error: url: #{ url } / controller: #{ controller }" 
+    end
+
     if controller.present?
       url_helpers.url_for( controller: controller , action: :index , only_path: true )
     else
