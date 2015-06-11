@@ -91,9 +91,14 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
     when "odpt.Railway:TokyoMetro.Yurakucho"
 
+      #-------- 西武
+
       case object.train_type
       when "odpt.TrainType:TokyoMetro.SemiExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
+
+      when "odpt.TrainType:TokyoMetro.Rapid"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" ).decorate
 
       when "odpt.TrainType:TokyoMetro.RapidExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" ).decorate
@@ -102,11 +107,20 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     when "odpt.Railway:TokyoMetro.Fukutoshin"
 
       case object.train_type
+
+      #-------- 西武
+
       when "odpt.TrainType:TokyoMetro.SemiExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
 
+      when "odpt.TrainType:TokyoMetro.Rapid"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" ).decorate
+        
+
       when "odpt.TrainType:TokyoMetro.RapidExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" ).decorate
+
+      #-------- 東急
 
       when "odpt.TrainType:TokyoMetro.CommuterLimitedExpress"
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
@@ -119,13 +133,13 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
     raise "Error: train_type_in_api: \"#{ object.train_type }\" / railway_line: \"#{ object.railway_line }\""
   end
-
-  def starting_station_decorated
-    ::Station::Info.find_by( same_as: object.starting_station ).decorate.train_location
-  end
-
-  def terminal_station_decorated
-    ::Station::Info.find_by( same_as: object.terminal_station ).decorate.train_location
+  
+  [ :starting_station , :terminal_station ].each do | method_basename |
+    eval <<-DEF
+      def #{ method_basename }_decorated
+        ::Station::Info.find_by( same_as: object.#{ method_basename } ).decorate.train_location
+      end
+    DEF
   end
 
   def train_type
