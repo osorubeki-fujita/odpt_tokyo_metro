@@ -60,11 +60,12 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos::Gro
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 - # normal_fare_group_id が定義されている場合
 - # （運賃が設定されていない場合）
-- station_infos.each do | station_info , i |
+- station_infos.each.with_index(1) do | station_info , i |
   %tr<
     = station_info.decorate.render_in_fare_table
-    %td{ colspan: number_of_station_infos_in_this_group , colspan: 4 , class: :no_fare }<>
-      = " "
+    - if i == 1
+      %td{ colspan: number_of_station_infos , colspan: 4 , class: :no_fare }<>
+        = " "
     HAML
   end
 
