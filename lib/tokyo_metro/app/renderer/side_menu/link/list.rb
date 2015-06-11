@@ -72,8 +72,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
       :list_of_links_to_station_pages ,
       [ :train_operation , :station_facility , :fare ] ,
       # [ :train_operation , :station_facility , :station_timetable , :fare ] ,
-      station_info ,
-      additional_proc: additional_proc_of_links_to_station_info_page( station_info )
+      station_info
     )
   end
 
@@ -81,12 +80,12 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
 
     private
 
-    def additional_proc_of_links_to_station_info_page( station_info )
+    def additional_proc_of_links_to_station_info_page( request , station_info )
       if station_info.blank?
         return nil
       end
 
-      ::Proc.new { station_info.decorate.render_link_to_station_facility_info_of_connecting_other_stations }
+      ::Proc.new { station_info.decorate.render_link_to_page_of_connecting_other_stations( current_controller ) }
     end
 
   end
