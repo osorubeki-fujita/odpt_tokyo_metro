@@ -32,9 +32,9 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
     # end
     #----
 
-    logger.debug "TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation\#set_actual_url"
-    logger.debug "current_station: #{ current_station }"
-    logger.debug "station_info (name_in_system): #{ @station_info.name_in_system }"
+    puts "TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation\#set_actual_url"
+    puts "current_station: #{ current_station }"
+    puts "station_info (name_in_system): #{ @station_info.name_in_system }"
 
     if controller.present?
       url_helpers.url_for( controller: controller , action: :action_for_station_page , station: current_station , only_path: true )
