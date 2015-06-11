@@ -49,7 +49,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
   end
 
   def new_file_basename
-    file_basename_elements = file_basename.gsub( /\A(toilet|wheel_chair|escalator|others|icon)_/ ) { "#{$1}\n" }.split( /[\n（）・／]/ )
+    file_basename_elements = file_basename.gsub( /\A(toilet|wheel_chair|escalator|others|customized_icon)_/ ) { "#{$1}\n" }.split( /[\n（）・／]/ )
 
     new_file_basename_ary = ::Array.new
     while !( file_basename_elements.empty? )
@@ -62,7 +62,7 @@ class TokyoMetro::Rake::Assets::Image::SvgFiles::EachFile
   end
 
   def new_dir_basename
-    if [ "icon_platform_info" , "icon_station" ].include?( file_basename )
+    if [ "customized_icon_platform_info" , "customized_icon_station" , "customized_icon_station_colored" ].include?( file_basename )
       "customized_icons"
     else
       "barrier_free_facilities"

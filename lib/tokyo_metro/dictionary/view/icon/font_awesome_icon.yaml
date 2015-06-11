@@ -1,7 +1,7 @@
 #-------- 仮定義
 
 temp: &temp
-  "folder-open-o"
+  folder-open-o
 
 #-------- 共通
 moon: &moon
@@ -19,17 +19,28 @@ location: &location
 normal_train: &normal_train
   subway
 
-train_operation: info
-train_location: *location
-railway_line: *normal_train
-# railway_line: "code-fork"
+train_operation:
+  info
+train_location:
+  *location
+railway_line:
+  *normal_train
+# railway_line:
+#   code-fork
 
-station_facility: *temp
-railway_timetable: *temp
-station_timetable: *temp
-fare: jpy # ticket
-passenger_survey: users
-# station: *temp
+station_facility:
+  *temp
+railway_timetable:
+  *temp
+station_timetable:
+  *temp
+fare:
+  jpy
+  # ticket
+passenger_survey:
+  users
+# station:
+#   *temp
 
 women_only_car: *sun
 
@@ -39,16 +50,17 @@ problems: info-circle
 #-------- 運行・遅延情報
 
 delay: history
-# remark: exclamation-triangle
+# remark:
+#   exclamation-triangle
 
 no_train: *moon
-after_last_train_finished: "moon-o"
-before_first_train_begin: "moon-o"
+after_last_train_finished: *moon
+before_first_train_begin: *moon
 
-on_schedule: "check-square-o"
-nearly_on_schedule: "check-square"
-delayed: "exclamation-circle"
-suspended: "exclamation-triangle"
+on_schedule: check-square-o
+nearly_on_schedule: check-square
+delayed: exclamation-circle
+suspended: exclamation-triangle
 other_status: info-circle
 
 #-------- コンテスト
@@ -58,8 +70,12 @@ development: wrench
 
 #-------- ドキュメント
 
-how_to_use: book # font_awesome_icon
-development_document: "lightbulb-o" # book
+how_to_use:
+  book
+  # font_awesome_icon
+development_document:
+  lightbulb-o
+  # book
 
 #-------- リアルタイム情報
 
@@ -69,50 +85,50 @@ real_time_infos: spinner
 
 #-------- 表示・非表示 切り替え
 
-display: "chevron-down"
-minimize: "chevron-up"
+display: chevron-down
+minimize: chevron-up
 
 #-------- 矢印
 
-caret_left: "caret-left"
-caret_right: "caret-right"
-caret_up: "caret-up"
-caret_down: "caret-down"
+caret_left: caret-left
+caret_right: caret-right
+caret_up: caret-up
+caret_down: caret-down
 
-arrows_v: "arrows-v"
-arrows_h: "arrows-h"
+arrows_v: arrows-v
+arrows_h: arrows-h
 
-chevron_left: "chevron-left"
-chevron_right: "chevron-right"
-chevron_up: "chevron-up"
-chevron_down: "chevron-down"
+chevron_left: chevron-left
+chevron_right: chevron-right
+chevron_up: chevron-up
+chevron_down: chevron-down
 
-angle_left: "angle-left"
-angle_right: "angle-right"
-angle_up: "angle-up"
-angle_down: "angle-down"
+angle_left: angle-left
+angle_right: angle-right
+angle_up: angle-up
+angle_down: angle-down
 
-angle_double_left: "angle-double-left"
-angle_double_right: "angle-double-right"
-angle_double_up: "angle-double-up"
-angle_double_down: "angle-double-down"
+angle_double_left: angle-double-left
+angle_double_right: angle-double-right
+angle_double_up: angle-double-up
+angle_double_down: angle-double-down
 
 #-------- SNS など
 
-twitter: "twitter-square"
-twitter_square: "twitter-square"
+twitter: twitter-square
+twitter_square: twitter-square
 
 github: github
-facebook_official: "facebook-official"
-facebook_square: "facebook-square"
+facebook_official: facebook-official
+facebook_square: facebook-square
 
 #-------- Web サイトで広く用いられるもの
 
 top: home
 home: home
 
-open_another_window: "external-link-square"
-link_to_another_website: "external-link"
+open_another_window: external-link-square
+link_to_another_website: external-link
 
 #-------- 図形
 
@@ -134,19 +150,19 @@ th_list: th-list
 
 #---- 四角形を利用してデザイン変更？
 
-# open_another_window_base: "external-link-square"
-# link_to_another_website_base: "external-link"
+# open_another_window_base: external-link-square
+# link_to_another_website_base: external-link
 
 #-------- 注意
 
 info: info
-info_circle: "info-circle"
-# remark: "exclamation-triangle"
+info_circle: info-circle
+# remark: exclamation-triangle
 
 #-------- 地理
 
 # location - 定義済み
-map_marker: "map-marker"
+map_marker: map-marker
 street_view: &street_view
   street-view
 current_position: *street_view
@@ -181,7 +197,7 @@ history: history
 #-------- 天体
 
 # sun: *sun
-star: "star-o"
+star: star-o
 # moon: *moon
 
 #-------- その他
