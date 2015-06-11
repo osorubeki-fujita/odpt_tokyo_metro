@@ -69,7 +69,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
     self.new(
       request ,
       ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation ,
-      :links_to_station_pages ,
+      :list_of_links_to_station_pages ,
       [ :train_operation , :station_facility , :fare ] ,
       # [ :train_operation , :station_facility , :station_timetable , :fare ] ,
       station_info ,
