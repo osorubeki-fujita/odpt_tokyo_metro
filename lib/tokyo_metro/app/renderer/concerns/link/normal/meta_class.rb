@@ -39,6 +39,8 @@ class TokyoMetro::App::Renderer::Concerns::Link::Normal::MetaClass < TokyoMetro:
     %div{ class: :icon }
       - if icon_name.present?
         = ::TokyoMetro::App::Renderer::Icon.send( icon_name , request , icon_size ).render
+      - else
+        %div{ class: :icon_img }<
 
     - # Title
     - if title_ja.present? and title_en.present?
