@@ -2,7 +2,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
 
   def initialize( request , title_ja , title_en , station_info , url: nil , controller: nil , icon_name: nil , additional_class_name_of_div_domain: nil )
     @request = request
-    @current_station = current_station
+    @current_station = current_station ,
+    @station_info = station_info
     super(
       request ,
       title_ja ,
@@ -30,6 +31,10 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
       # action = current_action
     # end
     #----
+
+    logger.debug "TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation\#set_actual_url"
+    logger.debug "current_station: #{ current_station }"
+    logger.debug "station_info (name_in_system): #{ @station_info.name_in_system }"
 
     if controller.present?
       url_helpers.url_for( controller: controller , action: :action_for_station_page , station: current_station , only_path: true )
