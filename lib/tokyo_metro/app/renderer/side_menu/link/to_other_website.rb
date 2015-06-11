@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToOtherWebsite < TokyoMetro::Ap
       url ,
       icon_name: icon_name ,
       class_name_of_link: :link ,
-      class_name_of_text_domain: :link_to_other_website ,
+      class_name_of_div_domain: :link_to_other_website ,
       open_another_window: true ,
       size: :small ,
       link_to_another_website: true

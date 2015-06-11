@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToDocument < TokyoMetro::App::R
       url ,
       icon_name: icon_name ,
       class_name_of_link: :link ,
-      class_name_of_text_domain: :link_to_document ,
+      class_name_of_div_domain: :link_to_document ,
       open_another_window: true ,
       size: :small
     )
