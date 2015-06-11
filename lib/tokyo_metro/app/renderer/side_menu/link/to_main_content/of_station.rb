@@ -8,8 +8,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
       request ,
       title_ja ,
       title_en ,
-      url: actual_url( url , controller ) ,
-      # controller: controller ,
+      url: url ,
+      controller: controller ,
       icon_name: icon_name ,
       additional_class_name_of_div_domain: additional_class_name_of_div_domain
     )
@@ -65,7 +65,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
       "Facilities of this station" ,
       station_info ,
       controller: __method__ ,
-      icon_name: :barrier_free_facilities
+      icon_name: nil
     )
   end
 
