@@ -65,7 +65,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
     )
   end
 
-  def self.to_station_info_pages( request , station_info: nil )
+  def self.to_station_info_pages( request , station_info )
     self.new(
       request ,
       ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation ,
