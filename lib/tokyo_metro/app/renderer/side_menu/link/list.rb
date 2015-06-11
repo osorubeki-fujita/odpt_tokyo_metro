@@ -13,7 +13,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
   - link_instances.each do | link_instance |
     = link_instance.render
 - if additional_proc.present?
-  = additional_proc.call
+  = additional_proc.call( this )
     HAML
   end
 
@@ -25,7 +25,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
   end
 
   def h_locals
-    { ul_id: @ul_id , link_instances: @link_instances , additional_proc: @additional_proc }
+    { this: self , ul_id: @ul_id , link_instances: @link_instances , additional_proc: @additional_proc }
   end
 
   def self.to_main_contents( request )
@@ -72,7 +72,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
       :list_of_links_to_station_pages ,
       [ :train_operation , :station_facility , :fare ] ,
       # [ :train_operation , :station_facility , :station_timetable , :fare ] ,
-      station_info
+      station_info ,
+      additional_proc: additional_proc_of_links_to_station_info_page( request , station_info )
     )
   end
 
@@ -85,7 +86,9 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
         return nil
       end
 
-      ::Proc.new { station_info.decorate.render_link_to_page_of_connecting_other_stations( current_controller ) }
+      ::Proc.new { | this |
+        station_info.decorate.render_link_to_page_of_connecting_other_stations( this.send( :current_controller ) )
+      }
     end
 
   end
