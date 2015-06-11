@@ -1,9 +1,9 @@
 class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , class_name , ul_id , link_instance_names , *opts , additional_proc: nil )
+  def initialize( request , class_name , ul_id , link_instance_names , *options , additional_proc: nil )
     @request = request
     @ul_id = ul_id
-    @link_instances = set_link_instances( class_name , link_instance_names.flatten , opts )
+    @link_instances = set_link_instances( class_name , link_instance_names.flatten , options )
     @additional_proc = additional_proc
   end
 
@@ -19,8 +19,8 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
 
   private
 
-  def set_link_instances( class_name , link_instance_names , opts )
-    args = [ @request , opts ].flatten
+  def set_link_instances( class_name , link_instance_names , options )
+    args = [ @request , options ].flatten
     link_instance_names.map { | method | class_name.send( method , *args ) }
   end
 
@@ -68,9 +68,11 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
   def self.to_station_info_pages( request , station_info: nil )
     self.new(
       request ,
-      ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation , :links ,
+      ::TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation ,
+      :links ,
       [ :train_operation , :station_facility , :fare ] ,
       # [ :train_operation , :station_facility , :station_timetable , :fare ] ,
+      station_info ,
       additional_proc: additional_proc_of_links_to_station_info_page( station_info )
     )
   end
