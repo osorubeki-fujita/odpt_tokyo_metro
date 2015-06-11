@@ -1,10 +1,12 @@
 class TokyoMetro::App::Renderer::Concerns::Link::Normal::MetaClass < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , title_ja , title_en , url , icon_name: nil , class_name_of_whole_domain: nil , class_name_of_link: :link , class_name_of_text_domain: nil , open_another_window: false , size: :normal , additional_info: nil , additional_info_position: nil , link_to_another_website: false )
+  ICON_SIZE = 1
+
+  def initialize( request , title_ja , title_en , url , icon_name: nil , class_name_of_whole_domain: nil , class_name_of_link: :link , class_name_of_div_domain: nil , open_another_window: false , size: :normal , additional_info: nil , additional_info_position: nil , link_to_another_website: false )
     super( request )
 
     raise "Error" if title_ja.blank? and title_en.blank?
-    raise "Error" if class_name_of_text_domain.blank?
+    raise "Error" if class_name_of_div_domain.blank?
 
     raise "Error" if additional_info.present? and additional_info_position.blank?
     raise "Error" if additional_info.blank? and additional_info_position.present?
@@ -17,7 +19,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::Normal::MetaClass < TokyoMetro:
     @icon_name = icon_name
     @class_name_of_whole_domain = class_name_of_whole_domain
     @class_name_of_link = class_name_of_link
-    @class_name_of_text_domain = class_name_of_text_domain
+    @class_name_of_div_domain = class_name_of_div_domain
     @open_another_window = open_another_window
     @size = size
 
@@ -32,11 +34,11 @@ class TokyoMetro::App::Renderer::Concerns::Link::Normal::MetaClass < TokyoMetro:
     h.render inline: <<-HAML , type: :haml , locals: _h_locals
 %li{ class: [ li_class_name , :clearfix ].flatten }<
   = v.link_to_unless( link_to_current_page , "" , url , only_path_setting: false , class: class_name_of_link , target: target )
-  %div{ class: [ class_name_of_text_domain , :clearfix ].flatten }<
+  %div{ class: [ class_name_of_div_domain , :clearfix ].flatten }<
     - # Icon
-    - if icon_name.present?
-      %div{ class: :icon }
-        = ::TokyoMetro::App::Renderer::Icon.send( icon_name , request ).render
+    %div{ class: :icon }
+      - if icon_name.present?
+        = ::TokyoMetro::App::Renderer::Icon.send( icon_name , request , icon_size ).render
 
     - # Title
     - if title_ja.present? and title_en.present?
@@ -108,14 +110,15 @@ class TokyoMetro::App::Renderer::Concerns::Link::Normal::MetaClass < TokyoMetro:
       url: @url ,
       icon_name: @icon_name ,
       class_name_of_link: [ @class_name_of_link ].flatten.uniq.sort ,
-      class_name_of_text_domain: @class_name_of_text_domain ,
+      class_name_of_div_domain: @class_name_of_div_domain ,
       li_class_name: li_class_name ,
       target: target ,
       open_another_window: open_another_window? ,
       additional_info: @additional_info ,
       additional_info_position: @additional_info_position ,
       link_to_another_website: @link_to_another_website ,
-      link_to_current_page: link_to_current_page?
+      link_to_current_page: link_to_current_page? ,
+      icon_size: ICON_SIZE
     } )
   end
 

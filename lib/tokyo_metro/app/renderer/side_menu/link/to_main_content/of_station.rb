@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index
 
-  def initialize( request , title_ja , title_en , url: nil , controller: nil , icon_name: nil , additional_class_name_of_text_domain: nil )
+  def initialize( request , title_ja , title_en , url: nil , controller: nil , icon_name: nil , additional_class_name_of_div_domain: nil )
     @request = request
     @current_station = current_station
     super(
@@ -10,7 +10,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::OfStation < Toky
       url: url ,
       controller: controller ,
       icon_name: icon_name ,
-      additional_class_name_of_text_domain: additional_class_name_of_text_domain
+      additional_class_name_of_div_domain: additional_class_name_of_div_domain
     )
   end
 

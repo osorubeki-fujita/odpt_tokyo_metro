@@ -1,17 +1,14 @@
 class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index < TokyoMetro::App::Renderer::SideMenu::Link::MetaClass
 
-  def initialize( request  , title_ja , title_en , url: nil , controller: nil , icon_name: nil , additional_class_name_of_text_domain: nil )
-    actual_url = set_actual_url( url , controller )
-    actual_class_name_of_text_domain = set_actual_class_name_of_text_domain( additional_class_name_of_text_domain )
-
+  def initialize( request  , title_ja , title_en , url: nil , controller: nil , icon_name: nil , additional_class_name_of_div_domain: nil )
     super(
       request ,
       title_ja ,
       title_en ,
-      actual_url ,
+      actual_url( url , controller ) ,
       icon_name: icon_name ,
       class_name_of_link: :link ,
-      class_name_of_text_domain: actual_class_name_of_text_domain ,
+      class_name_of_div_domain: [ controller , actual_class_name_of_div_domain( additional_class_name_of_div_domain ) ].flatten ,
       open_another_window: false ,
       size: :normal
     )
@@ -19,7 +16,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index < TokyoMet
 
   private
 
-  def set_actual_url( url , controller )
+  def actual_url( url , controller )
     raise "Error" if url.blank? and controller.blank?
     raise "Error" if url.present? and controller.present?
     if controller.present?
@@ -29,10 +26,10 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index < TokyoMet
     end
   end
 
-  def set_actual_class_name_of_text_domain( additional_class_name_of_text_domain )
+  def actual_class_name_of_div_domain( additional_class_name_of_div_domain )
     ary = [ :link_to_content ]
-    if additional_class_name_of_text_domain.present?
-      ary << additional_class_name_of_text_domain
+    if additional_class_name_of_div_domain.present?
+      ary << additional_class_name_of_div_domain
       ary = ary.flatten
     end
     ary
@@ -92,7 +89,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToMainContent::Index < TokyoMet
       "駅のご案内" ,
       "Stations" ,
       controller: __method__ ,
-      icon_name: __method__
+      icon_name: nil
     )
   end
 
