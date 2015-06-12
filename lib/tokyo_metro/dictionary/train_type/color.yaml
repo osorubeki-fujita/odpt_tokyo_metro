@@ -23,7 +23,11 @@ custom.TrainTypeColor:Black:
 
 custom.TrainTypeColor:HolidayExpress:
   note: 土休急行 標準色（ピンク）
-  web: "#ff3399"
+  web: "#ff99cc"
   red: 255
-  green: 51
-  blue: 153
+  green: 153
+  blue: 204
+  # web: "#ff3399"
+  # red: 255
+  # green: 51
+  # blue: 153

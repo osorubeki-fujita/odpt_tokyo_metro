@@ -12,7 +12,8 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       this: self ,
       train_type_decorated: train_type_decorated ,
       starting_station_decorated: starting_station_decorated ,
-      terminal_station_decorated: terminal_station_decorated
+      terminal_station_decorated: terminal_station_decorated ,
+      train_owner_decorated: train_owner_decorated
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %li{ class: [ :train_location , this.railway_line.css_class_name , :clearfix ] , id: this.object.train_number.downcase }
@@ -23,22 +24,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   = this.render_current_position
   %div{ class: :sub_infos }
     = this.render_delay
-    = starting_station_decorated.render_as_starting_station
     = this.render_train_number
-    HAML
-  end
-
-  def render_train_number
-    str = object.train_number
-    h.render inline: <<-HAML , type: :haml , locals: { str: str }
-%div{ class: [ :train_number , :clearfix ] }
-  %div{ class: :title_of_train_number }
-    %p{ class: :text_ja }<
-      = "列車番号"
-    %p{ class: :text_en }<
-      = "Train number "
-  %div{ class: [ :train_number_text , :text_en ] }<
-    = str
+    = starting_station_decorated.render_as_starting_station
+    = train_owner_decorated.render_in_train_location
     HAML
   end
 
@@ -75,64 +63,21 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     object.delay_instance.decorate( request ).render_in_location_of_each_train
   end
 
-  private
-
-  def train_type_decorated
-    if train_type.present?
-      return train_type.decorate
-    end
-    
-    case object.railway_line
-    when "odpt.Railway:TokyoMetro.Chiyoda"
-
-      if object.train_type == "odpt.TrainType:TokyoMetro.RomanceCar"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" ).decorate
-      end
-
-    when "odpt.Railway:TokyoMetro.Yurakucho"
-
-      #-------- 西武
-
-      case object.train_type
-      when "odpt.TrainType:TokyoMetro.SemiExpress"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
-
-      when "odpt.TrainType:TokyoMetro.Rapid"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" ).decorate
-
-      when "odpt.TrainType:TokyoMetro.RapidExpress"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" ).decorate
-      end
-
-    when "odpt.Railway:TokyoMetro.Fukutoshin"
-
-      case object.train_type
-
-      #-------- 西武
-
-      when "odpt.TrainType:TokyoMetro.SemiExpress"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" ).decorate
-
-      when "odpt.TrainType:TokyoMetro.Rapid"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" ).decorate
-        
-
-      when "odpt.TrainType:TokyoMetro.RapidExpress"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" ).decorate
-
-      #-------- 東急
-
-      when "odpt.TrainType:TokyoMetro.CommuterLimitedExpress"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" ).decorate
-
-      when "odpt.TrainType:TokyoMetro.LimitedExpress"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" ).decorate
-      end
-
-    end
-
-    raise "Error: train_type_in_api: \"#{ object.train_type }\" / railway_line: \"#{ object.railway_line }\""
+  def render_train_number
+    str = object.train_number
+    h.render inline: <<-HAML , type: :haml , locals: { str: str }
+%div{ class: [ :train_number , :clearfix ] }
+  %div{ class: :title_of_train_number }
+    %p{ class: :text_ja }<
+      = "列車番号"
+    %p{ class: :text_en }<
+      = "Train number "
+  %div{ class: [ :train_number_text , :text_en ] }<
+    = str
+    HAML
   end
+
+  private
   
   [ :starting_station , :terminal_station ].each do | method_basename |
     eval <<-DEF
@@ -143,7 +88,65 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   end
 
   def train_type
-    ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
+    t = ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
+    if t.present?
+      return t
+    end
+
+    case object.railway_line
+    when "odpt.Railway:TokyoMetro.Chiyoda"
+
+      if object.train_type == "odpt.TrainType:TokyoMetro.RomanceCar"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
+      end
+
+    when "odpt.Railway:TokyoMetro.Yurakucho"
+
+      #-------- 西武
+
+      case object.train_type
+      when "odpt.TrainType:TokyoMetro.SemiExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" )
+
+      when "odpt.TrainType:TokyoMetro.Rapid"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" )
+
+      when "odpt.TrainType:TokyoMetro.RapidExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" )
+      end
+
+    when "odpt.Railway:TokyoMetro.Fukutoshin"
+
+      case object.train_type
+
+      #-------- 西武
+
+      when "odpt.TrainType:TokyoMetro.SemiExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" )
+
+      when "odpt.TrainType:TokyoMetro.Rapid"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" )
+        
+
+      when "odpt.TrainType:TokyoMetro.RapidExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" )
+
+      #-------- 東急
+
+      when "odpt.TrainType:TokyoMetro.CommuterLimitedExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" )
+
+      when "odpt.TrainType:TokyoMetro.LimitedExpress"
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" )
+      end
+
+    end
+
+    raise "Error: train_type_in_api: \"#{ object.train_type }\" / railway_line: \"#{ object.railway_line }\""
+  end
+
+  def train_type_decorated
+    train_type.decorate
   end
 
   def train_type_in_api
@@ -160,6 +163,14 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   def railway_line_id
     railway_line_in_db.id
+  end
+
+  def train_owner_in_db
+    ::TrainOwner.find_by( same_as: object.train_owner )
+  end
+
+  def train_owner_decorated
+    train_owner_in_db.decorate
   end
 
 end
