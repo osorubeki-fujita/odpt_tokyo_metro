@@ -95,7 +95,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     object.train_type == "odpt.TrainType:TokyoMetro.Local"
   end
   
-  [ :train_type , :train_owner ],each do | method_basename |
+  [ :train_type , :train_owner ].each do | method_basename |
     eval <<-DEF
       def render_#{ method_basename }?
         !( not_render_#{ method_basename }? )
