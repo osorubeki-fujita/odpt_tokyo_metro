@@ -42,7 +42,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::Delay < TokyoMetr
 
   def render_in_location_of_each_train_when_on_schedule
     h.render inline: <<-HAML , type: :haml , locals: { request: request }
-%div{ class: [ :time_info , :on_schedule , :clearfix ] }
+%li{ class: [ :time_info , :on_schedule , :clearfix ] }
   %div{ class: :icon }<
     = ::TokyoMetro::App::Renderer::Icon.on_schedule( request , 2 ).render
   %div{ class: :text }
@@ -60,7 +60,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::Delay < TokyoMetr
   def render_in_location_of_each_train_when_delayed( status_name = :delayed )
     main_str = object.to_s_separated_by_comma
     h.render inline: <<-HAML , type: :haml , locals: { main_str: main_str , status_name: status_name }
-%div{ class: [ :time_info , status_name , :clearfix ] }
+%li{ class: [ :time_info , status_name , :clearfix ] }
   %div{ class: :icon }<
     = ::TokyoMetro::App::Renderer::Icon.send( status_name , request , 2 ).render
   %div{ class: :title_of_delay }

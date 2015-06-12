@@ -22,7 +22,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     = train_type_decorated.render_in_train_location
     = terminal_station_decorated.render_as_terminal_station
   = this.render_current_position
-  %div{ class: :sub_infos }
+  %ul{ class: :sub_infos }
     = this.render_delay
     = this.render_train_number
     = starting_station_decorated.render_as_starting_station
@@ -66,7 +66,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   def render_train_number
     str = object.train_number
     h.render inline: <<-HAML , type: :haml , locals: { str: str }
-%div{ class: [ :train_number , :clearfix ] }
+%li{ class: [ :train_number , :sub_info , :clearfix ] }
   %div{ class: :title_of_train_number }
     %p{ class: :text_ja }<
       = "列車番号"
