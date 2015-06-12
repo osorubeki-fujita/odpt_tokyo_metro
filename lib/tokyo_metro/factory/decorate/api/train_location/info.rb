@@ -13,20 +13,24 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       train_type_decorated: train_type_decorated ,
       starting_station_decorated: starting_station_decorated ,
       terminal_station_decorated: terminal_station_decorated ,
-      train_owner_decorated: train_owner_decorated
+      train_owner_decorated: train_owner_decorated ,
+      to_render_train_type: render_train_type? ,
+      to_render_train_owner: render_train_owner?
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %li{ class: [ :train_location , this.railway_line.css_class_name , :clearfix ] , id: this.object.train_number.downcase }
   %div{ class: :train_fundamental_infos }
     = this.railway_line.decorate.render_matrix( make_link_to_railway_line: false , size: :very_small )
-    = train_type_decorated.render_in_train_location
+    - if to_render_train_type
+      = train_type_decorated.render_in_train_location
     = terminal_station_decorated.render_as_terminal_station
   = this.render_current_position
   %ul{ class: :sub_infos }
     = this.render_delay
     = this.render_train_number
     = starting_station_decorated.render_as_starting_station
-    = train_owner_decorated.render_in_train_location
+    - if to_render_train_owner
+      = train_owner_decorated.render_in_train_location
     HAML
   end
 
@@ -78,7 +82,35 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   end
 
   private
+
+  def not_render_train_type?
+    ( on_ginza_line? or on_marunouchi_line? or on_marunouchi_branch_line? or on_hibiya_line? ) and local_train?
+  end
+
+  def not_render_train_owner?
+    on_ginza_line? or on_marunouchi_line? or on_marunouchi_branch_line?
+  end
+
+  def local_train?
+    object.train_type == "odpt.TrainType:TokyoMetro.Local"
+  end
   
+  [ :train_type , :train_owner ],each do | method_basename |
+    eval <<-DEF
+      def render_#{ method_basename }?
+        !( not_render_#{ method_basename }? )
+      end
+    DEF
+  end
+  
+  [ :ginza , :marunouchi , :marunouchi_branch , :hibiya ].each do | method_basename |
+    eval <<-DEF
+      def on_#{ method_basename }_line?
+        @railway_line.same_as == "odpt.Railway:TokyoMetro.#{ method_basename.camelize }"
+      end
+    DEF
+  end
+
   [ :starting_station , :terminal_station ].each do | method_basename |
     eval <<-DEF
       def #{ method_basename }_decorated
