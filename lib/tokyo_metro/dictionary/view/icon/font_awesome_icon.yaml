@@ -98,6 +98,11 @@ caret_down: caret-down
 arrows_v: arrows-v
 arrows_h: arrows-h
 
+arrow_left: arrow-left
+arrow_right: arrow-right
+arrow_up: arrow-up
+arrow_down: arrow-down
+
 chevron_left: chevron-left
 chevron_right: chevron-right
 chevron_up: chevron-up
