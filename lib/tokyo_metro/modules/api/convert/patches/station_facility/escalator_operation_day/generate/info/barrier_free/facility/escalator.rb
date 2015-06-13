@@ -28,7 +28,7 @@ module TokyoMetro::Modules::Api::Convert::Patches::StationFacility::EscalatorOpe
       proc_for_deciding_invalidity = ::Proc.new { | info_h |
         info_h[ "ugsrv:serviceStartTime" ].with_default_value( "始発" ) == "始発" and info_h[ "ugsrv:serviceEndTime" ].with_default_value( "終車時" ) == "終車時" and info_h[ "odpt:operationDays" ].blank?
       }
-      module_name = ::TokyoMetro::Modules::Api::Convert::Patches::StationFacility::EscalatorOperationDay::Generate::Info::BarrierFree::Facility::Escalator::ServiceDetail::GinzaAkasakaMitsukeOutsideEscalator1
+      module_name = ::TokyoMetro::Modules::Api::Convert::Patches::StationFacility::EscalatorOperationDay::Generate::Info::BarrierFree::Facility::Escalator::ServiceDetail::GinzaAkasakaMitsukeOutsideEscalator
       service_details_after_prepending_patch_module( proc_for_deciding_invalidity , module_name )
 
     else
@@ -39,13 +39,17 @@ module TokyoMetro::Modules::Api::Convert::Patches::StationFacility::EscalatorOpe
   def service_details_after_prepending_patch_module( proc_for_deciding_invalidity , module_name )
     service_detail_ary_new =@hash[ "odpt:serviceDetail" ].map { | info_h |
       factory_instance = self.class.factory_for_generating_barrier_free_escalator_service_detail_from_hash.new( info_h )
-
       if proc_for_deciding_invalidity.call( info_h )
-        class << factory_instance
-          prepend module_name
-        end
+        # factory_instance.instance_eval do
+          # prepend module_name
+        # end
+        puts "* #{ module_name }"
+        eval <<-PREPEND
+          class << factory_instance
+            prepend ::#{ module_name }
+          end
+        PREPEND
       end
-
       factory_instance.generate
     }
 
