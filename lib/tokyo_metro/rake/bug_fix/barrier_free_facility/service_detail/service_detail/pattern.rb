@@ -49,14 +49,14 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
     end
   end
 
-  def self.process( title , facility_names , proc_for_deciding_validity , info_for_updating , h_for_updating , proc_for_creating_h_for_new_pattern_instance , to_test: true )
-    self.new( title , facility_names , proc_for_deciding_validity ).process( info_for_updating , h_for_updating , proc_for_creating_h_for_new_pattern_instance , to_test )
+  def self.process( title , facility_names , proc_for_deciding_invalidity , info_for_updating , h_for_updating , proc_for_creating_h_for_new_pattern_instance , to_test: true )
+    self.new( title , facility_names , proc_for_deciding_invalidity ).process( info_for_updating , h_for_updating , proc_for_creating_h_for_new_pattern_instance , to_test )
   end
 
   private
 
   def set_facility_info_ids
-    facility_names.each do | facility_name |
+    @facility_names.each do | facility_name |
       facility = ::BarrierFreeFacility::Info.find_by( same_as: facility_name )
       unless facility.present?
         raise "\"#{ facility_name }\" is not present."
