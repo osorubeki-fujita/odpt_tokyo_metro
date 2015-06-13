@@ -82,7 +82,7 @@ class TokyoMetro::Rake::Debug::StationFacility
   end
 
   def self.process( title , facilities , category )
-    self.new( title , facilities , category )
+    self.new( title , facilities , category ).process
   end
 
 end
