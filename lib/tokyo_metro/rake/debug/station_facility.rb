@@ -13,8 +13,7 @@ class TokyoMetro::Rake::Debug::StationFacility
 
   def process
     @facilities.each do | station , facility_names |
-      facility_list = [ facility_names ].flatten
-      facility_list.each do | facility_name |
+      [ facility_names ].flatten.each do | facility_name |
         puts "-" * 4
         puts ""
         inspect_each_facility( station , facility_name )
@@ -50,30 +49,31 @@ class TokyoMetro::Rake::Debug::StationFacility
 
   def set_http_client
     @http_client = ::HTTPClient.new
+    sleep(5)
     [ :connect_timeout , :send_timeout , :receive_timeout ].each do | timeout_type |
       @http_client.send( "#{ timeout_type }=" , 300 )
     end
-    sleep(10)
+    sleep(5)
   end
 
   def load_datum_from_api
-    @facilities.keys.each do | sta |
-      unless @h[ sta ].present?
-        @h[ sta ] = ::Hash.new
+    @facilities.keys.each do | station |
+      unless @h[ station ].present?
+        @h[ station ] = ::Hash.new
       end
-      @h[ sta ][ :json ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ sta.capitalize }" , perse_json: true ).first
+      @h[ station ][ :json ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ station.capitalize }" , perse_json: true ).first
       sleep(1)
-      @h[ sta ][ :instance ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ sta.capitalize }" , perse_json: true , generate_instance: true ).first
+      @h[ station ][ :instance ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ station.capitalize }" , perse_json: true , generate_instance: true ).first
       sleep(1)
     end
   end
   
   def inspect_each_facility( station , facility_name )
-    proc_for_json = @proc[ :json ][ :proc ]
+    proc_for_json = @procs[ :json ][ :proc ]
     list_from_json = @h[ station ][ :json ][ @procs[ :json ][ :key ] ]
 
-    proc_for_instance = @proc[ :instance ][ :proc ]
-    list_from_instance = @h[ station ][ :instance ].send( @proc[ :instance ][ :method ] )
+    proc_for_instance = @procs[ :instance ][ :proc ]
+    list_from_instance = @h[ station ][ :instance ].send( @procs[ :instance ][ :method ] )
 
     puts proc_for_json.call( list_from_json , facility_name ).inspect
     puts ""
