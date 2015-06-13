@@ -57,7 +57,7 @@ class TokyoMetro::Rake::Debug::StationFacility
   end
 
   def load_datum_from_api
-    facilities.keys.each do | sta |
+    @facilities.keys.each do | sta |
       unless @h[ sta ].present?
         @h[ sta ] = ::Hash.new
       end
