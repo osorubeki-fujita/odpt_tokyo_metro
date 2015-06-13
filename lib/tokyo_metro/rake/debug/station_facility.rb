@@ -22,7 +22,7 @@ class TokyoMetro::Rake::Debug::StationFacility
   end
 
   private
-  
+
   def set_procs
     case @category
     when :barrier_free_facilities
@@ -61,13 +61,13 @@ class TokyoMetro::Rake::Debug::StationFacility
       unless @h[ station ].present?
         @h[ station ] = ::Hash.new
       end
-      @h[ station ][ :json ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ station.capitalize }" , perse_json: true ).first
+      @h[ station ][ :json ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ station.camelize }" , perse_json: true ).first
       sleep(1)
-      @h[ station ][ :instance ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ station.capitalize }" , perse_json: true , generate_instance: true ).first
+      @h[ station ][ :instance ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ station.camelize }" , perse_json: true , generate_instance: true ).first
       sleep(1)
     end
   end
-  
+
   def inspect_each_facility( station , facility_name )
     proc_for_json = @procs[ :json ][ :proc ]
     list_from_json = @h[ station ][ :json ][ @procs[ :json ][ :key ] ]
