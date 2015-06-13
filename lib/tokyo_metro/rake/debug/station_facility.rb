@@ -61,9 +61,9 @@ class TokyoMetro::Rake::Debug::StationFacility
       unless @h[ sta ].present?
         @h[ sta ] = ::Hash.new
       end
-      @h[ sta ][ :json ] = ::TokyoMetro::Api::StationFacility.get( http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ sta.capitalize }" , perse_json: true ).first
+      @h[ sta ][ :json ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ sta.capitalize }" , perse_json: true ).first
       sleep(1)
-      @h[ sta ][ :instance ] = ::TokyoMetro::Api::StationFacility.get( http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ sta.capitalize }" , perse_json: true , generate_instance: true ).first
+      @h[ sta ][ :instance ] = ::TokyoMetro::Api::StationFacility.get( @http_client , same_as: "odpt.stationFacility:TokyoMetro.#{ sta.capitalize }" , perse_json: true , generate_instance: true ).first
       sleep(1)
     end
   end
