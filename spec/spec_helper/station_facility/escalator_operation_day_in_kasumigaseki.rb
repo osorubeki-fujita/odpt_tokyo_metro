@@ -1,4 +1,4 @@
-#-------- odpt.StationFacility:TokyoMetro.Chiyoda.Otemachi.Outside.Escalator.1（エスカレーターの方向）
+#-------- odpt.StationFacility:TokyoMetro.Chiyoda.Kasumigaseki.Outside.Escalator.4 / odpt.StationFacility:TokyoMetro.Chiyoda.Kasumigaseki.Outside.Escalator.5（エスカレーターの利用可能日）
 def escalator_operation_day_in_kasumigaseki
   c_escalator_4 = "odpt.StationFacility:TokyoMetro.Chiyoda.Kasumigaseki.Outside.Escalator.4"
   c_escalator_5 = "odpt.StationFacility:TokyoMetro.Chiyoda.Kasumigaseki.Outside.Escalator.5"

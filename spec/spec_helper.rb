@@ -31,6 +31,7 @@ require_relative 'spec_helper/station_facility/platform_infos_of_chiyoda_branch_
 require_relative 'spec_helper/station_facility/toilet_location_in_nakano_shimbashi.rb'
 require_relative 'spec_helper/station_facility/escalator_direction_in_otemachi.rb'
 require_relative 'spec_helper/station_facility/escalator_operation_day_in_kasumigaseki.rb'
+require_relative 'spec_helper/station_facility/escalator_operation_day_in_akasaka_mitsuke.rb'
 require_relative 'spec_helper/station_facility/surrounding_area.rb'
 
 require_relative 'spec_helper/station_facility/replacing_railway_lines_of_platform_infos.rb'
