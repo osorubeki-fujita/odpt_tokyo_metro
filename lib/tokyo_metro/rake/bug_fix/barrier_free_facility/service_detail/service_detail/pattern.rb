@@ -4,7 +4,7 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
     puts title
 
     @facility_names = [ facility_names ].flatten
-    @proc_for_deciding_invalidity = proc_for_deciding_validity
+    @proc_for_deciding_invalidity = proc_for_deciding_invalidity
     @facility_info_ids = []
     @invalid_service_detail_pattern_id = nil
 
