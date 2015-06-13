@@ -31,7 +31,9 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
       h_for_new_pattern_instance = proc_for_creating_h_for_new_pattern_instance.call( info_for_updating , @invalid_service_detail_pattern )
       new_pattern_instance = ::BarrierFreeFacilityServiceDetailPattern.find_by( h_for_new_pattern_instance )
       unless new_pattern_instance.present?
-        new_pattern_instance = ::BarrierFreeFacilityServiceDetailPattern.create( h_for_new_pattern_instance )
+        new_pattern_instance = ::BarrierFreeFacilityServiceDetailPattern.create( h_for_new_pattern_instance.merge({
+          id: ::BarrierFreeFacilityServiceDetailPattern.all.pluck(:id).max + 1
+        }))
         puts "A new instance is created."
       end
 
