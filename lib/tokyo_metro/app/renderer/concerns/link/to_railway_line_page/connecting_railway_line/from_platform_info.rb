@@ -78,14 +78,14 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
     end
 
     if r.blank?
-      str = ::String.new
-      str << "\n"
-      str << "object \[#{ object.class }\] : #{ object.id }"
-      str << "station_facility_platform_info: #{ station_facility_platform_info.id }"
-      str << "station_facility: #{ station_facility_platform_info.station_facility_info.id }"
-      str << "station info: #{ station_info.same_as }"
-      str << "railway line of this station: #{ railway_line_of_this_station.same_as }"
-      raise str
+      ary = ::Array.new
+      ary << "\n"
+      ary << "object \[#{ object.class }\] : #{ object.id }"
+      ary << "station_facility_platform_info: #{ station_facility_platform_info.id }"
+      ary << "station_facility: #{ station_facility_platform_info.station_facility_info.id }"
+      ary << "station info: #{ station_info.same_as }"
+      ary << "railway line of this station: #{ railway_line_of_this_station.same_as }"
+      raise ary.join( "\n" )
     end
 
     r
