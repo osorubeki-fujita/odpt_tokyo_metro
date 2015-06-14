@@ -4,10 +4,10 @@ temp: &temp
   folder-open-o
 
 #-------- 共通
-moon: &moon
-  moon-o
 sun: &sun
   sun-o
+moon: &moon
+  moon-o
 remark: &remark
   exclamation-triangle
 location: &location
