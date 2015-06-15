@@ -2,12 +2,12 @@
     stations:
         - odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue
     railway_lines:
-        - odpt.Station:TokyoMetro.MarunouchiBranch
+        - odpt.Railway:TokyoMetro.MarunouchiBranch
 -
     stations:
         - odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue
     railway_lines:
-        - odpt.Station:TokyoMetro.Marunouchi
+        - odpt.Railway:TokyoMetro.Marunouchi
 -
     stations:
         - odpt.Station:TokyoMetro.Ginza.Ueno
