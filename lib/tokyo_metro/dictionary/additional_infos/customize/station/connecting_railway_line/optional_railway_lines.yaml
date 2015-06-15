@@ -1,5 +1,15 @@
 -
     stations:
+        - odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue
+    railway_lines:
+        - odpt.Station:TokyoMetro.MarunouchiBranch
+-
+    stations:
+        - odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue
+    railway_lines:
+        - odpt.Station:TokyoMetro.Marunouchi
+-
+    stations:
         - odpt.Station:TokyoMetro.Ginza.Ueno
         - odpt.Station:TokyoMetro.Hibiya.Ueno
     railway_lines:
