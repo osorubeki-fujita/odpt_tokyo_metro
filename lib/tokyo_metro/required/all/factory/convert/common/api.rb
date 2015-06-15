@@ -7,7 +7,8 @@ class TokyoMetro::Required::All::Factory::Convert::Common::Api < TokyoMetro::Req
   def self.other_files
     [
       StationInfos.files ,
-      Station.files
+      Station.files ,
+      StationFacility.files
     ]
   end
 
