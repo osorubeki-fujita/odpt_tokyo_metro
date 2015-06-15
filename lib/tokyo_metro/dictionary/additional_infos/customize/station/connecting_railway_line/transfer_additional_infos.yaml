@@ -306,28 +306,30 @@
       connecting_another_station: odpt.Station:Toei.TodenArakawa.MachiyaEkimae
 
 # 【千代田線】綾瀬
+# 支線に関するデータは TokyoMetro::Modules::Api::Convert::Customize::Station::ChiyodaBranchLine::Generate::List によって追加されるため、
+# このファイルでは支線に関連する部分をコメントアウトしている。
 
 -
   stations:
     - odpt.Station:TokyoMetro.Chiyoda.Ayase
-    - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
+    # - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
   railway_lines:
     "odpt.Railway:JR-East.Joban":
       hidden_on_railway_line_page: true
 
--
-  stations:
-    - odpt.Station:TokyoMetro.Chiyoda.Ayase
-  railway_lines:
-    "odpt.Railway:TokyoMetro.ChiyodaBranch":
-      hidden_on_railway_line_page: true
+# -
+  # stations:
+    # - odpt.Station:TokyoMetro.Chiyoda.Ayase
+  # railway_lines:
+    # "odpt.Railway:TokyoMetro.ChiyodaBranch":
+      # hidden_on_railway_line_page: true
 
--
-  stations:
-    - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
-  railway_lines:
-    "odpt.Railway:TokyoMetro.Chiyoda":
-      hidden_on_railway_line_page: true
+# -
+  # stations:
+    # - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
+  # railway_lines:
+    # "odpt.Railway:TokyoMetro.Chiyoda":
+      # hidden_on_railway_line_page: true
 
 # 【有楽町線】東池袋
 

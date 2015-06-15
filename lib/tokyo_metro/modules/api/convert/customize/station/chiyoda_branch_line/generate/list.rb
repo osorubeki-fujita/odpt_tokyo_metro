@@ -11,8 +11,11 @@ module TokyoMetro::Modules::Api::Convert::Customize::Station::ChiyodaBranchLine:
     if ayase.present?
       ayase_branch = ::Marshal.load( Marshal.dump( ayase ) )
 
-      ayase.connecting_railway_lines << self.class.connecting_railway_line_info_class.new( chiyoda_branch )
-      ayase_branch.connecting_railway_lines << self.class.connecting_railway_line_info_class.new( chiyoda )
+      connecting_railway_line_info_on_main_line = self.class.connecting_railway_line_info_class.new( chiyoda_branch , hidden_on_railway_line_page: true )
+      connecting_railway_line_info_on_branch_line = self.class.connecting_railway_line_info_class.new( chiyoda , hidden_on_railway_line_page: true )
+
+      ayase.connecting_railway_lines << connecting_railway_line_info_on_main_line
+      ayase_branch.connecting_railway_lines << connecting_railway_line_info_on_branch_line
 
       ayase.connecting_railway_lines.set_index_in_station!.sort!
       ayase_branch.connecting_railway_lines.set_index_in_station!.sort!
