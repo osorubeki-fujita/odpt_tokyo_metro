@@ -56,22 +56,26 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
     station_facility_platform_info = object.station_facility_platform_info
     station_infos = station_facility_platform_info.station_facility_info.station_infos
 
-    railway_line_of_this_station = ::RailwayLine.find( station_facility_platform_info.railway_line_id )
+    railway_line_for_this_platform_info = ::RailwayLine.find( station_facility_platform_info.railway_line_id )
     railway_line_connected = ::RailwayLine.find( object.railway_line_id )
 
-    station_info = station_infos.find_by( railway_line: railway_line_of_this_station )
+    station_info = station_infos.find_by( railway_line: railway_line_for_this_platform_info )
 
     if railway_line_connected.jr_lines?
       puts "station info: #{ station_info.same_as }"
-      puts "railway line of this station: #{ railway_line_of_this_station.same_as }"
+      puts "railway line of this station: #{ railway_line_for_this_platform_info.same_as }"
       puts "railway line connected: #{ railway_line_connected.same_as }"
 
       r = railway_line_connected
+
+    elsif station_info.same_as == "odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue" and railway_line_connected.same_as == "odpt.Railway:TokyoMetro.Marunouchi"
+      r = nil
+    
     else
       connecting_railway_line_info = station_info.connecting_railway_line_infos.find_by( railway_line: railway_line_connected )
       unless connecting_railway_line_info.present?
         puts "station info: #{ station_info.same_as }"
-        puts "railway line of this station: #{ railway_line_of_this_station.same_as }"
+        puts "railway line of this station: #{ railway_line_for_this_platform_info.same_as }"
         puts "railway line connected: #{ railway_line_connected.same_as }"
       end
       r = connecting_railway_line_info
@@ -84,7 +88,8 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
       ary << "station_facility_platform_info: #{ station_facility_platform_info.id }"
       ary << "station_facility: #{ station_facility_platform_info.station_facility_info.id }"
       ary << "station info: #{ station_info.same_as }"
-      ary << "railway line of this station: #{ railway_line_of_this_station.same_as }"
+      ary << "railway line for this platform info: #{ railway_line_for_this_platform_info.same_as }"
+      ary << "railway line connected: #{ railway_line_connected.same_as }"
       raise ary.join( "\n" )
     end
 

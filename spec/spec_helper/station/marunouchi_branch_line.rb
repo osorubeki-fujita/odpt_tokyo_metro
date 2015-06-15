@@ -40,7 +40,7 @@ def stations_on_marunouchi_branch_line
           # not include odpt.Railway:TokyoMetro.MarunouchiBranch
           connecting_info_to_marunouchi_branch = nakano_sakaue_main.connecting_railway_lines.find { | item | item.railway_line == "odpt.Railway:TokyoMetro.MarunouchiBranch" }
           it "does not include connecting railway info of Marunouchi Branch Line" do
-            expect( connecting_info_to_marunouchi_branch ).not_to be_present
+            expect( connecting_info_to_marunouchi_branch ).to be_present
           end
         end
 
@@ -76,7 +76,7 @@ def stations_on_marunouchi_branch_line
           # not include odpt.Railway:TokyoMetro.Marunouchi
           connecting_info_to_marunouchi_branch = nakano_sakaue_main.connecting_railway_lines.find { | item | item.railway_line == "odpt.Railway:TokyoMetro.Marunouchi" }
           it "does not include connecting railway info of Marunouchi Main Line" do
-            expect( connecting_info_to_marunouchi_branch ).not_to be_present
+            expect( connecting_info_to_marunouchi_branch ).to be_present
           end
         end
 
