@@ -133,6 +133,20 @@
     index_in_station: 11
     cleared: true
 
+# 【丸ノ内線】中野坂上
+
+"odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue":
+  "odpt.Railway:TokyoMetro.MarunouchiBranch":
+    index_in_station: 1
+  "odpt.Railway:Toei.Oedo":
+    index_in_station: 2
+
+"odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue":
+  "odpt.Railway:TokyoMetro.Marunouchi":
+    index_in_station: 1
+  "odpt.Railway:Toei.Oedo":
+    index_in_station: 2
+
 # 【丸ノ内線】新宿
 
 "odpt.Station:TokyoMetro.Marunouchi.Shinjuku":

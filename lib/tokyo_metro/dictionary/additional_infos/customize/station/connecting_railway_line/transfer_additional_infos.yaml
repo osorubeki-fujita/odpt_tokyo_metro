@@ -165,6 +165,22 @@
       not_recommended: true
       note: 銀座線への乗り換えは上野駅が便利です。
 
+# 【丸ノ内線】中野坂上
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue
+  railway_lines:
+    "odpt.Railway:TokyoMetro.MarunouchiBranch":
+      hidden_on_railway_line_page: true
+
+-
+  stations:
+    - odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue
+  railway_lines:
+    "odpt.Railway:TokyoMetro.Marunouchi":
+      hidden_on_railway_line_page: true
+
 # 【丸ノ内線】新宿
 
 -
@@ -294,24 +310,24 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Chiyoda.Ayase
-    # - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
+    - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
   railway_lines:
     "odpt.Railway:JR-East.Joban":
       hidden_on_railway_line_page: true
 
-#-
-#  stations:
-#    - odpt.Station:TokyoMetro.Chiyoda.Ayase
-#  railway_lines:
-#    "odpt.Railway:TokyoMetro.ChiyodaBranch":
-#      hidden_on_railway_line_page: true
+-
+  stations:
+    - odpt.Station:TokyoMetro.Chiyoda.Ayase
+  railway_lines:
+    "odpt.Railway:TokyoMetro.ChiyodaBranch":
+      hidden_on_railway_line_page: true
 
-#-
-#  stations:
-#    - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
-#  railway_lines:
-#    "odpt.Railway:TokyoMetro.Chiyoda":
-#      hidden_on_railway_line_page: true
+-
+  stations:
+    - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
+  railway_lines:
+    "odpt.Railway:TokyoMetro.Chiyoda":
+      hidden_on_railway_line_page: true
 
 # 【有楽町線】東池袋
 
