@@ -30,7 +30,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     = this.render_train_number
     = starting_station_decorated.render_as_starting_station
     - if to_render_train_owner
-      = train_owner_decorated.render_in_train_location
+      = train_owner_decorated.in_train_location.render
     HAML
   end
 

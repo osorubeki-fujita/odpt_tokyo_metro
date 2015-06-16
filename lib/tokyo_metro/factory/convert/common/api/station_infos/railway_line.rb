@@ -58,4 +58,8 @@ class TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLine
     @ignored_dictionary.present? and @ignored_dictionary.find { | item | item[ "stations" ].include?( station_name ) and item[ "railway_lines" ].include?( @info.railway_line ) }.present?
   end
 
+  def railway_line_info_after_conversion
+    raise "The method \'#{ __method__ }\' is not defined in \'#{ self.class }\'."
+  end
+
 end

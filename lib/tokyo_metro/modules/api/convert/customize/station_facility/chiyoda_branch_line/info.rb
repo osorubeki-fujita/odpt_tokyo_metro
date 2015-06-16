@@ -21,7 +21,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::ChiyodaBra
 
   def convert_railway_line_name_of_platform_infos_to_chiyoda_branch_line
     @platform_infos.each do | info |
-      ::TokyoMetro::Factory::Convert::Common::Api::StationFacility::PlatformInfo.process(
+      ::TokyoMetro::Factory::Convert::Common::Api::StationFacility::Platform.process(
         info ,
         car_composition: 3 ,
         railway_line: { from: "odpt.Railway:TokyoMetro.Chiyoda" , to: "odpt.Railway:TokyoMetro.ChiyodaBranch" }
@@ -30,15 +30,15 @@ module TokyoMetro::Modules::Api::Convert::Customize::StationFacility::ChiyodaBra
   end
 
   def convert_railway_line_name_of_transfer_infos_to_chiyoda_branch_line
-    infos = @platform_infos.each do | platform_info |
+    @platform_infos.each do | platform_info |
       if platform_info.transfer_infos.present?
 
         platform_info.transfer_infos.each do | transfer_info |
-          if transfer_info.railway_line == "odpt.Railway:TokyoMetro.Chiyoda" and transfer_info.railway_direction == "odpt.RailDirection:TokyoMetro.KitaAyase"
-            transfer_info.instance_eval do
-              @railway_line = "odpt.Railway:TokyoMetro.ChiyodaBranch"
-            end
-          end
+          ::TokyoMetro::Factory::Convert::Common::Api::StationFacility::Platform::Transfer.process(
+            transfer_info ,
+            railway_line: { from: "odpt.Railway:TokyoMetro.Chiyoda" , to: "odpt.Railway:TokyoMetro.ChiyodaBranch" } ,
+            railway_direction: "odpt.RailDirection:TokyoMetro.KitaAyase"
+          )
         end
 
       end
