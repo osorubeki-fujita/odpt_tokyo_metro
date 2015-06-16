@@ -3,7 +3,9 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
   def initialize( title , number_of_connecting_railway_line_infos_should_be: nil , to_update: false )
     puts title
     @valid_number_of_connecting_railway_line_infos = number_of_connecting_railway_line_infos_should_be
-    raise unless @valid_number_of_connecting_railway_line_infos.integer?
+    unless @valid_number_of_connecting_railway_line_infos.integer?
+      raise "valid number of connecting railway line infos should be integer."
+    end
     @to_update = to_update
 
     @station_infos = {
@@ -21,20 +23,39 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
     check_railway_lines
 
     @station_infos.each do | k , station_info |
-      raise "Error: #{ k }" unless station_info.present?
-      raise "Error: #{ k }" unless station_info.connecting_railway_line_infos.length == @valid_number_of_connecting_railway_line_infos
-      c_oedo = station_info.connecting_railway_line_infos.find_by( railway_line_id: @oedo_line.id )
-      raise "Error #{k}" unless c_oedo.present?
-      puts "Update connecting railway line info to Oedo Line: #{k}"
-      if @to_update and c_oedo.index_in_station == 2
-        c_oedo.update( index_in_station: 2 )
+      unless station_info.present?
+        raise "Station info on #{k} line is not present."
       end
+      unless station_info.connecting_railway_line_infos.length == @valid_number_of_connecting_railway_line_infos
+        l = station_info.connecting_railway_line_infos.length
+        v = @valid_number_of_connecting_railway_line_infos
+        raise "The number of connecting railway line infos of station on #{k} line is not valid. (Now: #{l} / Valid: #{v})"
+      end
+
+      c_oedo = station_info.connecting_railway_line_infos.find_by( railway_line_id: @oedo_line.id )
+
+      unless c_oedo.present?
+        raise "Station info on #{k} line does not have connecting railway line info to Toei Oedo Line."
+      end
+
+      puts "Update connecting railway line info to Oedo Line: #{k}"
+
+      if @to_update
+        unless c_oedo.index_in_station == 2
+          c_oedo.update( index_in_station: 2 )
+          puts "Complete - update"
+        else
+          puts "You need not to update"
+        end
+      end
+
     end
+
   end
 
   def create_connecting_railway_line_info
-    hashes_for_creating_connecting_railway_line_infos.each do |h|
-      h_for_create = h.merge({
+    fundamental_hashes_for_finding_connecting_railway_line_infos.each do |h|
+      h_for_finding = h.merge({
         index_in_station: 1 ,
         connecting_to_another_station: false ,
         cleared: false ,
@@ -42,12 +63,24 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
         note_id: nil ,
         hidden_on_railway_line_page: true ,
         start_on: nil ,
-        end_on: nil ,
-        id: ::ConnectingRailwayLine::Info.all.pluck( :id ).max + 1
+        end_on: nil
       })
-      puts h_for_create
-      ::ConnectingRailwayLine::Info.create( h_for_create )
+
+      puts h_for_finding
+      info_already_created = ::ConnectingRailwayLine::Info.find_by( h_for_finding )
+      unless info_already_created.present?
+        h_for_creating = h_for_finding.merge({
+          id: ::ConnectingRailwayLine::Info.all.pluck( :id ).max + 1
+        })
+        puts "Create new info.\n#{ h_for_creating.to_s }"
+        ::ConnectingRailwayLine::Info.create( h_for_creating )
+        puts "Complete - create new info"
+      else
+        puts "You need not to create new info.\n#{ h_for_finding.to_s }"
+      end
+
     end
+
   end
 
   def self.update_connecting_railway_line( title , number_of_connecting_railway_line_infos_should_be: nil , to_update: false )
@@ -63,7 +96,7 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
     end
   end
 
-  def hashes_for_creating_connecting_railway_line_infos
+  def fundamental_hashes_for_finding_connecting_railway_line_infos
     [
       { station_info_id: @station_infos[ :main ].id , railway_line_id: @railway_lines[ :branch ].id , connecting_station_info_id: @station_infos[ :branch ].id } ,
       { station_info_id: @station_infos[ :branch ].id , railway_line_id: @railway_lines[ :main ].id , connecting_station_info_id: @station_infos[ :main ].id }
