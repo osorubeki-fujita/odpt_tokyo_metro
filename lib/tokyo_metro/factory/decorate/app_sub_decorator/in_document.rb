@@ -1,7 +1,7 @@
 class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::Factory::Decorate::AppSubDecorator
 
   def render_infos
-    h.render inline: <<-HAML , type: :haml , locals: { infos: infos_to_render }
+    h.render inline: <<-HAML , type: :haml , locals: { infos: infos_to_render , this: @decorator }
 %ul{ class: [ :sub_infos , :clearfix ] }
   - infos.each do | title , attrs |
     %li{ class: [ :title , :text_en ] }<
@@ -21,14 +21,13 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::F
   end
 
   private
-  
+
   def infos_to_render
     raise "This method \'#{ __method__ }\' is not defined in \'#{ self.class }\'."
   end
 
   def render_name( regexp , name_str , p_class )
     _h_locals = {
-      this: self ,
       regexp: regexp ,
       name_str: name_str ,
       p_class: p_class
