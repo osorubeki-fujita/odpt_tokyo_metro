@@ -1,7 +1,8 @@
 class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
 
   def initialize( title , number_of_connecting_railway_line_infos_should_be: nil , to_update: false )
-    puts title
+    puts "* #{ title }"
+    puts ""
     @valid_number_of_connecting_railway_line_infos = number_of_connecting_railway_line_infos_should_be
     unless @valid_number_of_connecting_railway_line_infos.integer?
       raise "valid number of connecting railway line infos should be integer."
@@ -43,11 +44,12 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
       if @to_update
         unless c_oedo.index_in_station == 2
           c_oedo.update( index_in_station: 2 )
-          puts "Complete - update"
+          puts " " * 4 + "Complete - update"
         else
-          puts "You need not to update"
+          puts " " * 4 + "You need not to update"
         end
       end
+      puts ""
 
     end
 
@@ -55,6 +57,8 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
 
   def create_connecting_railway_line_info
     fundamental_hashes_for_finding_connecting_railway_line_infos.each do |h|
+      puts "Create new connecting railway line info"
+
       h_for_finding = h.merge({
         index_in_station: 1 ,
         connecting_to_another_station: false ,
@@ -66,18 +70,19 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
         end_on: nil
       })
 
-      puts h_for_finding
+      puts " " *4 + h_for_finding.to_s
       info_already_created = ::ConnectingRailwayLine::Info.find_by( h_for_finding )
       unless info_already_created.present?
         h_for_creating = h_for_finding.merge({
           id: ::ConnectingRailwayLine::Info.all.pluck( :id ).max + 1
         })
-        puts "Create new info.\n#{ h_for_creating.to_s }"
+        puts " " *4 + "Create new info.\n#{ h_for_creating.to_s }"
         ::ConnectingRailwayLine::Info.create( h_for_creating )
-        puts "Complete - create new info"
+        puts " " *4 + "Complete - create new info"
       else
-        puts "You need not to create new info.\n#{ h_for_finding.to_s }"
+        puts " " *4 + "You need not to create new info.\n#{ h_for_finding.to_s }"
       end
+      puts ""
 
     end
 

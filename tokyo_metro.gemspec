@@ -46,4 +46,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rails_decorate_factory" , ">= 0.1.0"
 
   spec.add_runtime_dependency "haml"
+  spec.add_runtime_dependency "log_finder" , ">= 0.1.0"
 end
