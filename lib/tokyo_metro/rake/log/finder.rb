@@ -3,7 +3,7 @@ class TokyoMetro::Rake::Log::Finder < LogFinder
   def self.search_by(
     regexp ,
     environment: :development ,
-    suffix: nil
+    suffix: nil ,
     read_length: 256 * 1024 ,
     number_of_lines: nil
   )
