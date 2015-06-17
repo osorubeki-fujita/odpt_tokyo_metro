@@ -28,6 +28,9 @@ require_relative 'spec_helper/railway_line/chiyoda_branch_line.rb'
 require_relative 'spec_helper/station_facility/platform_infos_of_marunouchi_branch_line.rb'
 require_relative 'spec_helper/station_facility/platform_infos_of_chiyoda_branch_line.rb'
 
+require_relative 'spec_helper/station_facility/platform_transfer_infos_at_kudanshita.rb'
+require_relative 'spec_helper/station_facility/platform_transfer_infos_at_nakano_sakaue.rb'
+
 require_relative 'spec_helper/station_facility/toilet_location_in_nakano_shimbashi.rb'
 require_relative 'spec_helper/station_facility/escalator_direction_in_otemachi.rb'
 require_relative 'spec_helper/station_facility/escalator_operation_day_in_kasumigaseki.rb'

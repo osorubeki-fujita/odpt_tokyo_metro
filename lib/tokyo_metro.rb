@@ -295,7 +295,7 @@ module TokyoMetro
       set_namespaces_to_module_library( h , :Patches , :StationFacility ,
         :EscalatorDirection ,
         :EscalatorOperationDay ,
-        :RailwayDirectionInPlatformTransferInfoAtKudanshita ,
+        :PlatformTransferInfoAtKudanshita ,
         :BarrierFreeFacilityLocatedArea ,
         :SurroundingArea
       )
@@ -334,6 +334,7 @@ module TokyoMetro
 
       set_namespaces_to_module_library( h , :Customize , :StationFacility ,
         :RailwayLineNameInPlatformTransferInfo ,
+        :PlatformTransferInfoAtNakanoSakaue ,
         :MarunouchiBranchLine ,
         :ChiyodaBranchLine
       )

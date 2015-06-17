@@ -1,4 +1,4 @@
-module TokyoMetro::Modules::Api::Convert::Patches::StationFacility::RailwayDirectionInPlatformTransferInfoAtKudanshita::Info
+module TokyoMetro::Modules::Api::Convert::Patches::StationFacility::PlatformTransferInfoAtKudanshita::Info
 
   # Constructor
   def initialize( *variables )
@@ -21,7 +21,7 @@ module TokyoMetro::Modules::Api::Convert::Patches::StationFacility::RailwayDirec
               railway_direction: { from: "odpt.Railway:Toei.Shinjuku" , to: "odpt.RailDirection:Toei.Shinjuku" }
             )
           end
-  
+
         end
       end
     end

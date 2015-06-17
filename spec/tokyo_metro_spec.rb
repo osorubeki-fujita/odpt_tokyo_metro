@@ -64,6 +64,9 @@ if to_test( :station_facility , options )
   platform_infos_of_marunouchi_branch_line
   platform_infos_of_chiyoda_branch_line
 
+  platform_transfer_infos_at_kudanshita
+  platform_transfer_infos_at_nakano_sakaue
+
   station_facility_toilet_location_in_nakano_shimbashi
   station_facility_escalator_direction_in_otemachi
   escalator_operation_day_in_kasumigaseki
