@@ -43,7 +43,7 @@ module TokyoMetro::Modules::Api::Convert::Patches::StationFacility::EscalatorOpe
         # factory_instance.instance_eval do
           # prepend module_name
         # end
-        puts "* #{ module_name }"
+        # puts "* #{ module_name }"
         eval <<-PREPEND
           class << factory_instance
             prepend ::#{ module_name }
