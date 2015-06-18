@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
     - contents_ja.each do | info |
       %li{ class: :text_ja }<
         = info
-    %li{ class: :to_do }<
+    %li{ class: [ :to_do , :text_en ] }<
       = link_to( "" , link_to_list_of_tasks_to_do )
       = "To Do"
     HAML

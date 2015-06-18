@@ -66,11 +66,14 @@ class TokyoMetro::App::Renderer::Concerns::Link::Normal::MetaClass < TokyoMetro:
         = additional_info.call
     - else
       - # Title (2)
-      %div{ class: :text_large }
-        - if title_ja.present?
-          - text = title_ja
-        - elsif title_en.present?
-          - text = title_en
+      - div_classes = [ :text_large ]
+      - if title_ja.present?
+        - text = title_ja
+        - div_classes << :text_ja
+      - elsif title_en.present?
+        - text = title_en
+        - div_classes << :text_en
+      %div{ class: div_classes }
         - if text.instance_of?( ::Array )
           - text.each do | row |
             %p<
