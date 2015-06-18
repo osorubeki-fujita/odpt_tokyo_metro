@@ -1,29 +1,49 @@
 class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::Factory::Decorate::AppSubDecorator
 
   def render_infos
-    h.render inline: <<-HAML , type: :haml , locals: { infos: infos_to_render , this: @decorator }
+    h.render inline: <<-HAML , type: :haml , locals: { infos: infos_to_render }
 %ul{ class: [ :sub_infos , :clearfix ] }
-  - infos.each do | title , attrs |
+  - infos.each do | title , group |
     %li{ class: [ :title , :text_en ] }<
       = title
     %dl{ class: :clearfix }
-      - attrs.each do | info_attr |
-        - if info_attr.instance_of?( ::String ) or info_attr.instance_of?( ::Symbol )
-          - info = this.send( info_attr )
-        - elsif info_attr.instance_of?( ::Proc )
-          - info = info_attr.call( this )
-        - if info.present?
+      - group.each do | k , v |
+        - if v.present?
           %dt{ class: [ :attr_title , :text_en ] }<
-            = info_attr.to_s + " :"
+            = k.to_s + " :"
           %dd<
-            = info
+            = v.to_s
     HAML
   end
 
   private
 
   def infos_to_render
-    raise "This method \'#{ __method__ }\' is not defined in \'#{ self.class }\'."
+    { "Infos from Db Columns" => infos_from_db_columns }
+  end
+
+  def infos_from_db_columns
+    infos_from_methods_of_object( object.class.attribute_names )
+  end
+
+  def infos_from_methods_of_object( method_names )
+    h = ::Hash.new
+    method_names.each do | method_name |
+      h[k] = object.send( method_name )
+    end
+    h
+  end
+
+  def infos_from_methods_of_decorator( method_names )
+    infos_from_methods_of( @decorator , method_names )
+  end
+
+  def infos_from_methods_of( obj , method_names )
+    h = ::Hash.new
+    method_names.each do | method_name |
+      h[k] = obj.send( method_name )
+    end
+    h
   end
 
   def render_name( regexp , name_str , p_class )
