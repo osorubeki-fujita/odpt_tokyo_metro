@@ -27,24 +27,24 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::F
   end
 
   def infos_from_db_columns
-    infos_from_methods_of_object( object.class.attribute_names )
+    infors_from_db_columns_of( object )
   end
 
-  def infos_from_methods_of_object( method_names )
+  def infors_from_db_columns_of( obj )
+    infos_from_methods_of( obj , obj.class.attribute_names )
+  end
+
+  def infos_from_methods_of_object( *method_names )
+    infos_from_methods_of( object , *method_names )
+  end
+
+  def infos_from_methods_of_decorator( *method_names )
+    infos_from_methods_of( @decorator , *method_names )
+  end
+
+  def infos_from_methods_of( obj , *method_names )
     h = ::Hash.new
-    method_names.each do | method_name |
-      h[k] = object.send( method_name )
-    end
-    h
-  end
-
-  def infos_from_methods_of_decorator( method_names )
-    infos_from_methods_of( @decorator , method_names )
-  end
-
-  def infos_from_methods_of( obj , method_names )
-    h = ::Hash.new
-    method_names.each do | method_name |
+    method_names.flatten.each do | method_name |
       h[k] = obj.send( method_name )
     end
     h
