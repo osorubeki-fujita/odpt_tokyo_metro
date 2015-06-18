@@ -45,7 +45,7 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::F
   def infos_from_methods_of( obj , *method_names )
     h = ::Hash.new
     method_names.flatten.each do | method_name |
-      h[k] = obj.send( method_name )
+      h[ method_name ] = obj.send( method_name )
     end
     h
   end
