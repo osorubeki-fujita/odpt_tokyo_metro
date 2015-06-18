@@ -15,9 +15,9 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
   %div{ class: div_classes }
     = railway_line_decorated.render_railway_line_code( small: small_railway_line_code )
     %div{ class: :railway_line }
-      = railway_line_decorated.render_name_in_station_facility_platform_info_transfer_info
-      - if railway_direction.present?
-        = railway_direction.decorate.render_in_station_facility_platform_info_transfer_info
+      = railway_line_decorated.in_platform_transfer_info.render
+      - if railway_direction_decorated.present?
+        = railway_direction_decorated.render_in_station_facility_platform_info_transfer_info
       %p{ class: [ :time , :text_en ] , min: necessary_time }<
         = necessary_time
     - if optional_infos_to_display.present?
@@ -47,7 +47,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
 
   def h_locals
     super().merge({
-      railway_direction: @platform_transfer_info_decorated.railway_direction ,
+      railway_direction_decorated: @platform_transfer_info_decorated.railway_direction.try( :decorate ) ,
       necessary_time: @platform_transfer_info_decorated.necessary_time
     })
   end
