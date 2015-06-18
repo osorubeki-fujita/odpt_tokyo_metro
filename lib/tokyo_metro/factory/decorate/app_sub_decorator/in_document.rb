@@ -1,5 +1,9 @@
 class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::Factory::Decorate::AppSubDecorator
 
+  def render_button_domain
+    h.content_tag( :div , '' , class: [ :button_area , :clearfix ] )
+  end
+
   def render_infos
     h.render inline: <<-HAML , type: :haml , locals: { infos: infos_to_render }
 %ul{ class: [ :sub_infos , :clearfix ] }
