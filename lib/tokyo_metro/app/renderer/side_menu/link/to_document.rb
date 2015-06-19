@@ -9,13 +9,15 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToDocument < TokyoMetro::App::R
       icon_name: icon_name ,
       class_name_of_link: :link ,
       class_name_of_div_domain: :link_to_document ,
-      open_another_window: true ,
+      open_another_window: link_for_page_on_the_same_controller? ,
       size: :small
     )
   end
 
+  alias :__link_for_page_on_the_same_category?__ :link_for_page_on_the_same_category?
+
   def link_for_page_on_the_same_category?
-    super and link_for_page_of_the_same_action?
+    __link_for_page_on_the_same_category?__ and link_for_page_of_the_same_action?
   end
 
   def self.development_document( request )
