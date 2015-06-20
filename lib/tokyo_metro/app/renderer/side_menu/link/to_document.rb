@@ -22,7 +22,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToDocument < TokyoMetro::App::R
   end
 
   def open_another_window?
-    link_for_page_on_the_same_controller?
+    !( link_for_page_on_the_same_controller? )
   end
 
   def self.development_document( request )
