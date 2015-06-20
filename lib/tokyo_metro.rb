@@ -101,7 +101,7 @@ module TokyoMetro
       categories.each do | category , namespaces |
         [ namespaces ].flatten.each do | namespace |
           eval <<-SET
-            ::TokyoMetro::Modules::Api::Convert::#{module_type}::#{category}::#{namespace}.set_modules
+            ::TokyoMetro::Modules::Api::ToFactory::Convert::#{module_type}::#{category}::#{namespace}.set_modules
           SET
         end
       end
