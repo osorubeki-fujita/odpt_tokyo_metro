@@ -16,7 +16,7 @@ end
 # options = [ ]
 # options = [ :station ]
 # options = [ :station_facility ]
-options = [ :station , :station_facility ]
+options = [ :station , :station_facility , :railway_line , :fare ]
 
 #--------
 

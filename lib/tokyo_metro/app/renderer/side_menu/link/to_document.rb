@@ -14,10 +14,10 @@ class TokyoMetro::App::Renderer::SideMenu::Link::ToDocument < TokyoMetro::App::R
     )
   end
 
-  alias :__link_for_page_on_the_same_category?__ :link_for_page_on_the_same_category?
+  alias :__link_for_page_on_the_same_category? :link_for_page_on_the_same_category?
 
   def link_for_page_on_the_same_category?
-    __link_for_page_on_the_same_category?__ and link_for_page_of_the_same_action?
+    __link_for_page_on_the_same_category? and link_for_page_of_the_same_action?
   end
 
   def self.development_document( request )
