@@ -79,7 +79,7 @@ module TokyoMetro::Factory::Scss::TrainType
           # 路線ごとの各種別について記述
           train_types_in_a_railway_line.each do | train_type |
             # custom.TrainType:x.y.z の z の部分をクラス名に用いる
-            train_type_fundamental = ::DocumentHelper.train_type_css_class_in_document( train_type )
+            train_type_fundamental = train_type.decorate.css_class_name
 
             ary << begin_scss_content( "\.#{train_type_fundamental}" , indent , 3 )
 
