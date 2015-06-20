@@ -8,14 +8,7 @@ module TokyoMetro::Modules::Api::Convert::Customize::Fare::ChiyodaBranchLine::Ki
   private
 
   def convert_infos_related_to_kita_ayase
-    regexp = /Chiyoda(?=\.KitaAyase(?:\.|\Z))/
-    if regexp === @from_station
-      @same_as = @same_as.gsub( regexp , "ChiyodaBranch" )
-      @from_station = @from_station.gsub( regexp , "ChiyodaBranch" )
-    elsif regexp === @to_station
-      @same_as = @same_as.gsub( regexp , "ChiyodaBranch" )
-      @to_station = @to_station.gsub( regexp , "ChiyodaBranch" )
-    end
+    ::TokyoMetro::Factory::Convert::Customize::Api::Fare::ChiyodaBranchLine::KitaAyase::Info.process( self )
   end
 
 end
