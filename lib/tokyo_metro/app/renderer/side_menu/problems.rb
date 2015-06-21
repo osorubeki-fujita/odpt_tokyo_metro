@@ -9,7 +9,10 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
       %li{ class: :text_ja }<
         = info
     %li{ class: [ :to_do , :text_en ] }<
-      = link_to( "" , link_to_list_of_tasks_to_do )
+      - if open_another_window
+        = link_to( "" , link_to_list_of_tasks_to_do , target: :_blank )
+      - else
+        = link_to( "" , link_to_list_of_tasks_to_do )
       = "To Do"
     HAML
   end
@@ -20,7 +23,8 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
     super().merge({
       contents_ja: contents_ja ,
       contents_en: contents_en ,
-      link_to_list_of_tasks_to_do: link_to_list_of_tasks_to_do
+      link_to_list_of_tasks_to_do: link_to_list_of_tasks_to_do ,
+      open_another_window: open_another_window?
     })
   end
 
@@ -36,16 +40,7 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
   end
 
   def link_to_list_of_tasks_to_do
-    h = {
-      controller: :document ,
-      action: :index ,
-      anchor: :to_do ,
-      only_path: true
-    }
-    if open_another_window?
-      h[ :target ] = :_blank
-    end
-    url_helpers.url_for(h)
+    url_helpers.url_for( controller: :document , action: :index , anchor: :to_do , only_path: true )
   end
 
   def on_the_same_controller?
