@@ -20,7 +20,7 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
     super().merge({
       contents_ja: contents_ja ,
       contents_en: contents_en ,
-      link_to_list_of_tasks_to_do: url_helpers.url_for( controller: :document , action: :index , anchor: :to_do , only_path: true )
+      link_to_list_of_tasks_to_do: link_to_list_of_tasks_to_do
     })
   end
 
@@ -33,6 +33,27 @@ class TokyoMetro::App::Renderer::SideMenu::Problems < TokyoMetro::Factory::Decor
 
   def contents_en
     nil
+  end
+
+  def link_to_list_of_tasks_to_do
+    h = {
+      controller: :document ,
+      action: :index ,
+      anchor: :to_do ,
+      only_path: true
+    }
+    if open_another_window?
+      h[ :target ] = :_blank
+    end
+    url_helpers.url_for(h)
+  end
+
+  def on_the_same_controller?
+    current_controller == :document
+  end
+
+  def open_another_window?
+    !( on_the_same_controller? )
   end
 
 end
