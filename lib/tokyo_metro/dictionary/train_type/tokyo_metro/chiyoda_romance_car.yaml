@@ -2,23 +2,6 @@
 
 #-------- 【小田急線へ】
 
-"custom.TrainTypeOtherOperator:Odakyu.RomanceCar.Standard":
-  train_type: odpt.TrainType:TokyoMetro.RomanceCar
-  bgcolor:
-    web: "#ff0000"
-    red: 255
-    green: 0
-    blue: 0
-  color:
-    ref: custom.TrainTypeColor:White
-  operator: odpt.Operator:Odakyu
-  stopping_pattern:
-    "odpt.Railway:TokyoMetro.Chiyoda": custom.StoppingPattern:TokyoMetro.Chiyoda.RomanceCar
-  note: 千代田線 特急ロマンスカー（小田急線 直通）
-  operator: odpt.Operator:TokyoMetro
-  railway_line: odpt.Railway:TokyoMetro.Chiyoda
-
-
 "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal":
   ref: custom.TrainTypeDefault:TokyoMetro.RomanceCar
   stopping_pattern:

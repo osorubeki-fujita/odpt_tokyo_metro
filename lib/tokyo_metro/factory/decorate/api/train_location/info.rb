@@ -1,5 +1,9 @@
 class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
 
+  include ::TokyoMetro::Modules::Common::Info::Decision::CurrentStation
+  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
+  include ::TokyoMetro::Modules::Common::Info::Decision::TrainType
+
   def initialize( request , obj , railway_line )
     super( request , obj )
     @railway_line = railway_line
@@ -84,17 +88,13 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   private
 
   def not_render_train_type?
-    ( on_ginza_line? or on_marunouchi_line? or on_marunouchi_branch_line? or on_hibiya_line? ) and local_train?
+    ( on_ginza_line_page? or on_marunouchi_line_page? or on_marunouchi_branch_line_page? or on_hibiya_line_page? ) and local_train?
   end
 
   def not_render_train_owner?
-    on_ginza_line? or on_marunouchi_line? or on_marunouchi_branch_line?
+    on_ginza_line_page? or on_marunouchi_line_page? or on_marunouchi_branch_line_page?
   end
 
-  def local_train?
-    object.train_type == "odpt.TrainType:TokyoMetro.Local"
-  end
-  
   [ :train_type , :train_owner ].each do | method_basename |
     eval <<-DEF
       def render_#{ method_basename }?
@@ -103,9 +103,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     DEF
   end
   
-  [ :ginza , :marunouchi , :marunouchi_branch , :hibiya ].each do | method_basename |
+  [ :ginza , :marunouchi , :marunouchi_branch , :hibiya , :tozai , :chiyoda , :yurakucho , :hanzomon , :namboku , :fukutoshin ].each do | method_basename |
     eval <<-DEF
-      def on_#{ method_basename }_line?
+      def on_#{ method_basename }_line_page?
         @railway_line.same_as == "odpt.Railway:TokyoMetro.#{ method_basename.camelize }"
       end
     DEF
@@ -113,65 +113,59 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   [ :starting_station , :terminal_station ].each do | method_basename |
     eval <<-DEF
+      def #{ method_basename }
+        ::Station::Info.find_by( same_as: object.#{ method_basename } )
+      end
+
       def #{ method_basename }_decorated
-        ::Station::Info.find_by( same_as: object.#{ method_basename } ).decorate.train_location
+        #{ method_basename }.decorate.train_location
       end
     DEF
   end
 
   def train_type
-    t = ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
-    if t.present?
-      return t
-    end
 
-    case object.railway_line
-    when "odpt.Railway:TokyoMetro.Chiyoda"
+    #-------- 【千代田線】
 
-      if object.train_type == "odpt.TrainType:TokyoMetro.RomanceCar"
+    if on_chiyoda_line?
+
+      #-------- （小田急）
+      if limited_express_or_romance_car?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
       end
 
-    when "odpt.Railway:TokyoMetro.Yurakucho"
+    #-------- 【有楽町線・副都心線】小竹向原
+
+    elsif on_yurakucho_or_fukutoshin_line? and starting_station.at_kotake_mukaihara?
 
       #-------- 西武
 
-      case object.train_type
-      when "odpt.TrainType:TokyoMetro.SemiExpress"
+      if semi_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" )
-
-      when "odpt.TrainType:TokyoMetro.Rapid"
+      elsif rapid_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" )
-
-      when "odpt.TrainType:TokyoMetro.RapidExpress"
+      elsif rapid_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" )
       end
 
-    when "odpt.Railway:TokyoMetro.Fukutoshin"
+    #-------- 【副都心線】渋谷
 
-      case object.train_type
-
-      #-------- 西武
-
-      when "odpt.TrainType:TokyoMetro.SemiExpress"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" )
-
-      when "odpt.TrainType:TokyoMetro.Rapid"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" )
-        
-
-      when "odpt.TrainType:TokyoMetro.RapidExpress"
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" )
+    elsif on_fukutoshin_line? and starting_station.at_shibuya_on_fukutoshin_line?
 
       #-------- 東急
 
-      when "odpt.TrainType:TokyoMetro.CommuterLimitedExpress"
+      case object.train_type
+      if commuter_limited_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" )
-
-      when "odpt.TrainType:TokyoMetro.LimitedExpress"
+      elsif limited_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" )
       end
 
+    end
+
+    t = ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
+    if t.present?
+      return t
     end
 
     raise "Error: train_type_in_api: \"#{ object.train_type }\" / railway_line: \"#{ object.railway_line }\""
@@ -203,6 +197,18 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   def train_owner_decorated
     train_owner_in_db.decorate
+  end
+
+  def station_same_as__is_in?( *args )
+    super( *args , object.from_station.same_as )
+  end
+
+  def on_the_railway_line_of?( *args )
+    super( *args , object.railway_line.same_as )
+  end
+
+  def train_type_of?( *args )
+    super( *args , object.train_type )
   end
 
 end

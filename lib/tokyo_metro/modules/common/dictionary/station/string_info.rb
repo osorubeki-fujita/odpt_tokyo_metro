@@ -28,6 +28,7 @@
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kotake_mukaihara_on_fukutoshin_line   => odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ikebukuro_on_yurakucho_line           => odpt.Station:TokyoMetro.Yurakucho.Ikebukuro
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ikebukuro_on_fukutoshin_line          => odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro
+#   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.shibuya_on_fukutoshin_line          => odpt.Station:TokyoMetro.Fukutoshin.Shibuya
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.motomachi_chukagai                    => odpt:Station.YokohamaMinatomiraiRailway.Minatomirai.MotomachiChukagai
 module TokyoMetro::Modules::Common::Dictionary::Station::StringInfo
 

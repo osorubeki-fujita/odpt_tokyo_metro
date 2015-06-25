@@ -27,6 +27,7 @@ module TokyoMetro::Modules::Common::Info::Decision::CurrentStation
   #   at_kotake_mukaihara_on_fukutoshin_line?
   #   at_ikebukuro_on_yurakucho_line?
   #   at_ikebukuro_on_fukutoshin_line?
+  #   at_shibuya_on_fukutoshin_line?
   #   at_motomachi_chukagai?
 
   ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.constants( false ).each do | const_name |

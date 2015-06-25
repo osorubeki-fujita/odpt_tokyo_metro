@@ -36,5 +36,6 @@ wakoshi_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.Wakoshi
 kotake_mukaihara_on_yurakucho_line: odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara
 kotake_mukaihara_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara
 ikebukuro_on_yurakucho_line: odpt.Station:TokyoMetro.Yurakucho.Ikebukuro
+shibuya_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.Shibuya
 ikebukuro_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro
 motomachi_chukagai: odpt:Station.YokohamaMinatomiraiRailway.Minatomirai.MotomachiChukagai
