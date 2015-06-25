@@ -154,7 +154,6 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
       #-------- 東急
 
-      case object.train_type
       if commuter_limited_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" )
       elsif limited_express_train?
