@@ -2,8 +2,8 @@
 class TokyoMetro::Factory::Get::Api::DataSearch < TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
 
   # Constructor
-  def initialize( data_id , perse_json , generate_instance , to_inspect )
-    super( perse_json , generate_instance , to_inspect )
+  def initialize( data_id , *args )
+    super( *args )
     @data_id = data_id
   end
 
@@ -14,14 +14,7 @@ class TokyoMetro::Factory::Get::Api::DataSearch < TokyoMetro::Factory::Get::Api:
   private
 
   def generate_new_array_instance( ary )
-    if ary.empty?
-      return ::Array.new
-    else
-      raise unless ary.all? { | item | item.instance_of?( ::Hash ) }
-      raise unless ary.length == 1
-      raise unless ary.first[ "@type" ].present?
-      ary
-    end
+    ::TokyoMetro::Factory::Get::Api::MetaClass::Fundamental::Generator::NewArray::Find.process( ary )
   end
 
   def access_point_url
