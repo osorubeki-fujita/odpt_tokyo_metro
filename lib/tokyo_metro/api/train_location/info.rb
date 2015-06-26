@@ -222,8 +222,8 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
     super( *args , compared: @from_station ) and @to_station.blank?
   end
 
-  def set_train_name
-    @train_name = ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_names[ @train_number ]
-  end
+  # def set_train_name
+    # @train_name = ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_names[ @train_number ]
+  # end
 
 end
