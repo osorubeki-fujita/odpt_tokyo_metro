@@ -16,6 +16,8 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
   include ::TokyoMetro::Modules::Api::Info::Decision::TerminalStation
   include ::TokyoMetro::Modules::Api::Info::Decision::OperatedSection
 
+  include ::TokyoMetro::Modules::Api::Info::Decision::CurrentStation
+
   # Constructor
   def initialize( id_urn , same_as , train_number , train_type , dc_date , valid , frequency ,
     railway_line , train_owner , railway_direction , delay , starting_station , terminal_station , from_station , to_station )
@@ -209,5 +211,11 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
 =end
 
   # @!endgroup
+
+  private
+
+  def station_same_as__is_in?( *args )
+    super( *args , compared: @from_station ) and @to_station.blank?
+  end
 
 end

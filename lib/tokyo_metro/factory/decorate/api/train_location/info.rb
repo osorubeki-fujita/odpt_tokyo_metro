@@ -1,9 +1,5 @@
 class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CurrentStation
-  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
-  include ::TokyoMetro::Modules::Common::Info::Decision::TrainType
-
   def initialize( request , obj , railway_line )
     super( request , obj )
     @railway_line = railway_line
@@ -125,38 +121,43 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   def train_type
 
-    #-------- 【千代田線】
-
-    if on_chiyoda_line?
-
-      #-------- （小田急）
-      if limited_express_or_romance_car?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
-      end
+    #-------- 【千代田線】（小田急ロマンスカー）
+    if object.romance_car_on_chiyoda_line?
+      return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
 
     #-------- 【有楽町線・副都心線】小竹向原
 
-    elsif on_yurakucho_or_fukutoshin_line? and starting_station.at_kotake_mukaihara?
+    elsif object.on_yurakucho_or_fukutoshin_line? and object.at_kotake_mukaihara? and object.to_seibu_line?
 
-      #-------- 西武
+      #-------- 西武池袋線（など）
 
-      if semi_express_train?
+      if object.semi_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" )
-      elsif rapid_train?
+      elsif object.rapid_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" )
-      elsif rapid_express_train?
+      elsif object.rapid_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" )
+      end
+
+    #-------- 【有楽町線・副都心線】和光市
+
+    elsif object.on_yurakucho_or_fukutoshin_line? and object.at_wakoshi? and object.to_tobu_tojo_line?
+
+      #-------- 東武東上線
+
+      if object.local_train?
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToTobuTojo" )
       end
 
     #-------- 【副都心線】渋谷
 
-    elsif on_fukutoshin_line? and starting_station.at_shibuya_on_fukutoshin_line?
+    elsif object.on_fukutoshin_line? and object.at_shibuya_on_fukutoshin_line? and ( object.terminate_on_tokyu_toyoko_line? or object.terminate_at_motomachi_chukagai? )
 
-      #-------- 東急
+      #-------- 東急東横線・みなとみらい線
 
-      if commuter_limited_express_train?
+      if object.commuter_limited_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" )
-      elsif limited_express_train?
+      elsif object.limited_express_train?
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" )
       end
 
@@ -198,16 +199,20 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     train_owner_in_db.decorate
   end
 
-  def station_same_as__is_in?( *args )
-    super( *args , object.from_station.same_as )
+  def to_seibu_line?
+    terminal_station.railway_line.operator == "odpt.Operator:Seibu"
   end
 
-  def on_the_railway_line_of?( *args )
-    super( *args , object.railway_line.same_as )
+  def to_tobu_tojo_line?
+    terminal_station.railway_line == "odpt.Railway:Tobu.Tojo"
   end
 
-  def train_type_of?( *args )
-    super( *args , object.train_type )
+  def to_tokyu_toyoko_line?
+    terminal_station.railway_line == "odpt.Railway:Tokyu.Toyoko"
+  end
+
+  def for_motomachi_chukagai?
+    
   end
 
 end

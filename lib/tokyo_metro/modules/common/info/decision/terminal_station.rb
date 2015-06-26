@@ -55,7 +55,7 @@ module TokyoMetro::Modules::Common::Info::Decision::TerminalStation
 
   # @!group 列車の行先に関するメソッド (2) - 路線
 
-  #---------------- is_terminating_at_xxx?
+  #---------------- is_terminating_on_xxx?
   # @note ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::RegexpInfo を用いて定義
 
   ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::RegexpInfo.constants( false ).each do | const_name |
