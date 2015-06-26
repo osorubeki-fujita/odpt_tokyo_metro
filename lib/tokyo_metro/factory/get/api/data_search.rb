@@ -2,9 +2,9 @@
 class TokyoMetro::Factory::Get::Api::DataSearch < TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
 
   # Constructor
-  def initialize( http_client , id_urn , perse_json , generate_instance , to_inspect )
+  def initialize( data_id , perse_json , generate_instance , to_inspect )
     super( perse_json , generate_instance , to_inspect )
-    @id = id_urn
+    @data_id = data_id
   end
 
   def self.process( http_client , *args )
@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Get::Api::DataSearch < TokyoMetro::Factory::Get::Api:
   private
 
   def access_point_url
-    "#{ ::TokyoMetro::DATAPOINTS_URL }/#{ @id }"
+    "#{ ::TokyoMetro::DATAPOINTS_URL }/#{ @data_id }"
   end
 
 end

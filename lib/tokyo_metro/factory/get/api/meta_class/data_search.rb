@@ -3,6 +3,13 @@ class TokyoMetro::Factory::Get::Api::MetaClass::DataSearch < TokyoMetro::Factory
 
   private
 
+  def check_validity_of_settings( http_client )
+    super( http_client )
+    unless self.class.rdf_type.string?
+      raise "Error"
+    end
+  end
+
   # HTTP クライアントに渡すパラメーターを設定するメソッド (private)
   # @param h [Hash] パラメーターのハッシュ
   # @param key [String] パラメーターのハッシュに設定するキー
@@ -25,7 +32,7 @@ class TokyoMetro::Factory::Get::Api::MetaClass::DataSearch < TokyoMetro::Factory
   # パラメータを格納したハッシュを取得するメソッド
   # @return [Hash]
   def parameters
-    super().( { "rdf:type" => self.class.rdf_type } )
+    super().merge( { "rdf:type" => self.class.rdf_type } )
   end
 
   def access_point_url

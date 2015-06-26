@@ -52,9 +52,6 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
   def check_validity_of_settings( http_client )
     raise "Error" unless ::TokyoMetro::ACCESS_TOKEN.string?
     raise "Error" unless http_client.instance_of?( ::HTTPClient )
-    unless self.class.rdf_type.string?
-      raise "Error"
-    end
   end
 
   def parameters_to_strf
@@ -122,6 +119,14 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
   end
 
   def self.process
+    raise "This method \'#{ __method__ }\' is not defined in \'#{ self }\'."
+  end
+
+  def self.list_class
+    raise "This method \'#{ __method__ }\' is not defined in \'#{ self }\'."
+  end
+
+  def self.info_class
     raise "This method \'#{ __method__ }\' is not defined in \'#{ self }\'."
   end
 
