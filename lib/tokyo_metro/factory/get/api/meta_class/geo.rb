@@ -12,7 +12,7 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Geo < TokyoMetro::Factory::Get::
   # パラメータを格納したハッシュを取得するメソッド
   # @return [Hash]
   def parameters
-    super.merge(  { "lon" => @long.to_s , "lat" => @lat.to_s , "radius" => @radius.to_s } )
+    super.merge(  { "rdf:type" => self.class.rdf_type , "lon" => @long.to_s , "lat" => @lat.to_s , "radius" => @radius.to_s } )
   end
 
   # @!group クラスメソッド - データの取得・保存（地物情報検索 API から）

@@ -122,6 +122,8 @@ module TokyoMetro::Api
 
   end
 
+  # @!group 時刻表の列車の補足情報に関する定数の定義
+
   # 東京メトロ オープンデータに関する定数を定義するメソッド (1) - 時刻表の列車の補足情報に関する定数
   # @return [nil]
   def self.set_constants_for_timetable
@@ -139,5 +141,15 @@ module TokyoMetro::Api
   def self.timetable_notes_of_departure
     ::TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::PlatformNumber::LIST
   end
+
+  def self.get( http_client , id_urn , perse_json: false , generate_instance: false , to_inspect: false )
+    factory_for_getting.process( http_client , id_urn , perse_json , generate_instance , to_inspect )
+  end
+  
+  def self.factory_for_getting
+    ::TokyoMetro::Factory::Get::Api::DataSearch
+  end
+
+  # @!endgroup
 
 end

@@ -16,16 +16,6 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
     @to_inspect = to_inspect
   end
 
-  def self.rdf_type
-    self.info_class.rdf_type
-  end
-
-  # パラメータを格納したハッシュを取得するメソッド
-  # @return [Hash]
-  def parameters
-    { "rdf:type" => self.class.rdf_type , "acl:consumerKey" => ::TokyoMetro::ACCESS_TOKEN }
-  end
-
   # API からデータを取得するメソッド
   # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
   # @return [::Array <Hash>] インスタンス変数 perse_json が true の場合は、JSON を配列に変換して返す。
@@ -53,6 +43,12 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
 
   private
 
+  # パラメータを格納したハッシュを取得するメソッド
+  # @return [Hash]
+  def parameters
+    { "acl:consumerKey" => ::TokyoMetro::ACCESS_TOKEN }
+  end
+
   def check_validity_of_settings( http_client )
     raise "Error" unless ::TokyoMetro::ACCESS_TOKEN.string?
     raise "Error" unless http_client.instance_of?( ::HTTPClient )
@@ -68,7 +64,7 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
   # API からのレスポンスを受け取るメソッド
   # @param http_client [::HTTPClient] HTTPクライアント
   def response_from_api( http_client )
-    http_client.get( access_point_url , self.parameters )
+    http_client.get( access_point_url , parameters )
   end
 
   # API のレスポンスを設定に応じて処理するメソッド

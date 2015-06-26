@@ -18,6 +18,16 @@ class TokyoMetro::Factory::Get::Api::MetaClass::DataSearch < TokyoMetro::Factory
     return nil
   end
 
+  def self.rdf_type
+    self.info_class.rdf_type
+  end
+
+  # パラメータを格納したハッシュを取得するメソッド
+  # @return [Hash]
+  def parameters
+    super().( { "rdf:type" => self.class.rdf_type } )
+  end
+
   def access_point_url
     ::TokyoMetro::DATAPOINTS_URL
   end

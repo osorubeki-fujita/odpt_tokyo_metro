@@ -4,14 +4,16 @@ class TokyoMetro::Factory::Get::Api::DataSearch::Point < TokyoMetro::Factory::Ge
   include ::TokyoMetro::ClassNameLibrary::Api::Point
 
   # Constructor
-  def initialize( id , title , category_name ,
+  def initialize( id_urn , title , category_name ,
     perse_json , generate_instance , to_inspect )
 
     super( perse_json , generate_instance , to_inspect )
-    @id = id
+    @id = id_urn
     @title = title
     @category_name = category_name
   end
+
+  private
 
   # HTTPClient に送るパラメーター
   # @return [Hash]
@@ -30,12 +32,8 @@ class TokyoMetro::Factory::Get::Api::DataSearch::Point < TokyoMetro::Factory::Ge
   # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）【必須】
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定【必須】
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定【必須】
-  def self.process( http_client , id , title , category_name ,
-    perse_json , generate_instance , to_inspect )
-
-    info = self.new( id , title , category_name ,
-      perse_json , generate_instance , to_inspect )
-    info.get_data( http_client )
+  def self.process( http_client , id_urn , title , category_name , perse_json , generate_instance , to_inspect )
+    self.new( id_urn , title , category_name , perse_json , generate_instance , to_inspect ).get_data( http_client )
   end
 
 end
