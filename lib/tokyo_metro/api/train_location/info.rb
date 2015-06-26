@@ -30,7 +30,7 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
     @starting_station , @terminal_station = starting_station , terminal_station
     @from_station , @to_station = from_station , to_station
 
-    set_train_name
+    # set_train_name
   end
 
   # @!group 列車ロケーション情報のメタデータ (For developers)
