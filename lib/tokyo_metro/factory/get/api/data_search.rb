@@ -13,6 +13,16 @@ class TokyoMetro::Factory::Get::Api::DataSearch < TokyoMetro::Factory::Get::Api:
 
   private
 
+  def generate_new_array_instance( ary )
+    if ary.empty?
+      return ::Array.new
+    else
+      raise unless ary.all? { | item | item.instance_of?( ::Hash ) }
+      raise unless ary.map { | item | item[ "@type" ] }.length == 1
+      
+    end
+  end
+
   def access_point_url
     "#{ ::TokyoMetro::DATAPOINTS_URL }/#{ @data_id }"
   end

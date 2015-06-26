@@ -100,9 +100,7 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
   # @param ary [::Array] JSON や YAML をパースして得られた配列
   # @return [TokyoMetro::Api::Fundamental::List (or its sub-class)]
   def generate_new_array_instance( ary )
-    unless ary.all?{ |i| i.instance_of?( Hash ) }
-      raise "Error"
-    end
+    raise unless ary.all? { |i| i.instance_of?( ::Hash ) }
     list_class = self.class.list_class
     info_class = self.class.info_class
     list_class.new( ary.map { | element |
