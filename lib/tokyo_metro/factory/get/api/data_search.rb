@@ -18,8 +18,9 @@ class TokyoMetro::Factory::Get::Api::DataSearch < TokyoMetro::Factory::Get::Api:
       return ::Array.new
     else
       raise unless ary.all? { | item | item.instance_of?( ::Hash ) }
-      raise unless ary.map { | item | item[ "@type" ] }.length == 1
-      
+      raise unless ary.length == 1
+      raise unless ary.first[ "@type" ].present?
+      ary
     end
   end
 
