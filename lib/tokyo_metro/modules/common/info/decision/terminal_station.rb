@@ -97,10 +97,10 @@ module TokyoMetro::Modules::Common::Info::Decision::TerminalStation
  end
 
   #-------- [alias]
-  [ :is_terminating , :terminate ].each do | prefix |
+  [ :is_terminating_on , :terminate_on ].each do | prefix |
     eval <<-ALIAS
-      alias :#{ prefix }_on_tokyu_toyoko_or_minatomirai_line? :terminating_on_tokyu_toyoko_or_minatomirai_line?
-      alias :#{ prefix }_on_tokyu_toyoko_or_at_motomachi_chukagai? :terminating_on_tokyu_toyoko_or_at_motomachi_chukagai?
+      alias :#{ prefix }_tokyu_toyoko_or_minatomirai_line? :terminating_on_tokyu_toyoko_or_minatomirai_line?
+      alias :#{ prefix }_tokyu_toyoko_or_at_motomachi_chukagai? :terminating_on_tokyu_toyoko_or_at_motomachi_chukagai?
     ALIAS
   end
 

@@ -62,6 +62,24 @@ module TokyoMetro::Modules::Common::Info::Decision::ActualStartingStation
     ALIAS
   end
 
+  # @!group 列車の始発駅に関するメソッド (4) - 東急東横線・みなとみらい線
+
+  def actually_starting_on_tokyu_toyoko_or_minatomirai_line?
+    actually_starting_on_tokyu_toyoko_line? or actually_starting_on_minatomirai_line?
+ end
+
+  def actually_starting_on_tokyu_toyoko_or_at_motomachi_chukagai?
+    actually_starting_on_tokyu_toyoko_line? or actually_starting_at_motomachi_chukagai?
+ end
+
+  #-------- [alias]
+  [ :is_actually_starting_on , :actually_start_on ].each do | prefix |
+    eval <<-ALIAS
+      alias :#{ prefix }_tokyu_toyoko_or_minatomirai_line? :actually_starting_on_tokyu_toyoko_or_minatomirai_line?
+      alias :#{ prefix }_tokyu_toyoko_or_at_motomachi_chukagai? :actually_starting_on_tokyu_toyoko_or_at_motomachi_chukagai?
+    ALIAS
+  end
+
   # @!endgroup
 
   private

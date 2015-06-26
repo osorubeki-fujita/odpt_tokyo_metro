@@ -71,6 +71,24 @@ module TokyoMetro::Modules::Common::Info::Decision::StartingStation
     ALIAS
   end
 
+  # @!group 列車の始発駅に関するメソッド (4) - 東急東横線・みなとみらい線
+
+  def starting_on_tokyu_toyoko_or_minatomirai_line?
+    starting_on_tokyu_toyoko_line? or starting_on_minatomirai_line?
+ end
+
+  def starting_on_tokyu_toyoko_or_at_motomachi_chukagai?
+    starting_on_tokyu_toyoko_line? or starting_at_motomachi_chukagai?
+ end
+
+  #-------- [alias]
+  [ :is_starting_on , :start_on ].each do | prefix |
+    eval <<-ALIAS
+      alias :#{ prefix }_tokyu_toyoko_or_minatomirai_line? :starting_on_tokyu_toyoko_or_minatomirai_line?
+      alias :#{ prefix }_tokyu_toyoko_or_at_motomachi_chukagai? :starting_on_tokyu_toyoko_or_at_motomachi_chukagai?
+    ALIAS
+  end
+
   # @!endgroup
 
   private
