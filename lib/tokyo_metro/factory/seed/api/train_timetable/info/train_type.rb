@@ -49,7 +49,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::TrainType < TokyoMet
     elsif terminating_on_yurakucho_line?
       convert_railway_instance_to_yurakucho_line
     #-------- 終着駅が副都心線・東急東横線・みなとみらい線
-    elsif terminating_on_fukutoshin_line? or terminating_on_tokyu_toyoko_line? or terminating_on_minatomirai_line?
+    elsif terminating_on_fukutoshin_line? or terminating_on_tokyu_toyoko_or_minatomirai_line?
       convert_railway_instance_to_fukutoshin_line
     else
       raise error_msg

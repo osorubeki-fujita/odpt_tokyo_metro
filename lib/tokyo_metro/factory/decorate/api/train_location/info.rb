@@ -127,7 +127,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
     #-------- 【有楽町線・副都心線】小竹向原
 
-    elsif object.on_yurakucho_or_fukutoshin_line? and object.at_kotake_mukaihara? and object.terminate_on_seibu_line?
+    elsif object.on_yurakucho_or_fukutoshin_line? and object.at_kotake_mukaihara? and object.terminating_on_seibu_line?
 
       #-------- 西武池袋線（など）
 
@@ -143,7 +143,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
     #-------- 【有楽町線・副都心線】和光市
 
-    elsif object.on_yurakucho_or_fukutoshin_line? and object.at_wakoshi? and object.terminate_on_tobu_tojo_line?
+    elsif object.on_yurakucho_or_fukutoshin_line? and object.at_wakoshi? and object.terminating_on_tobu_tojo_line?
 
       #-------- 東武東上線
 
@@ -153,7 +153,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
     #-------- 【副都心線】渋谷
 
-    elsif object.on_fukutoshin_line? and object.at_shibuya_on_fukutoshin_line? and ( object.terminate_on_tokyu_toyoko_line? or object.terminate_at_motomachi_chukagai? )
+    elsif object.on_fukutoshin_line? and object.at_shibuya_on_fukutoshin_line? and object.terminating_on_tokyu_toyoko_or_minatomirai_line?
 
       #-------- 東急東横線・みなとみらい線
 

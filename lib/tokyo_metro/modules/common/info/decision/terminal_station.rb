@@ -86,6 +86,24 @@ module TokyoMetro::Modules::Common::Info::Decision::TerminalStation
     ALIAS
   end
 
+  # @!group 列車の行先に関するメソッド (4) - 東急東横線・みなとみらい線
+
+  def terminating_on_tokyu_toyoko_or_minatomirai_line?
+    terminating_on_tokyu_toyoko_line? or terminating_on_minatomirai_line?
+ end
+
+  def terminating_on_tokyu_toyoko_or_at_motomachi_chukagai?
+    terminating_on_tokyu_toyoko_line? or terminating_at_motomachi_chukagai?
+ end
+
+  #-------- [alias]
+  [ :is_terminating , :terminate ].each do | prefix |
+    eval <<-ALIAS
+      alias :#{ prefix }_on_tokyu_toyoko_or_minatomirai_line? :terminating_on_tokyu_toyoko_or_minatomirai_line?
+      alias :#{ prefix }_on_tokyu_toyoko_or_at_motomachi_chukagai? :terminating_on_tokyu_toyoko_or_at_motomachi_chukagai?
+    ALIAS
+  end
+
   # @!endgroup
 
 end
