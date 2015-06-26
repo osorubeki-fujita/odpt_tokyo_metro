@@ -78,7 +78,7 @@ module TokyoMetro::Modules::Common::Info::Decision::TrainType
   end
 
   def romance_car_specific_train?
-    train_of?( ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_name.values )
+    train_of?( ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_names.values )
   end
 
   alias is_romance_car_specific_train? :romance_car_specific_train?

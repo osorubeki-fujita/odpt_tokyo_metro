@@ -20,7 +20,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainInfos::Roma
   end
 
   def specific_train_name
-    ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_name[ @same_as ]
+    ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_names[ @same_as ]
   end
 
 end

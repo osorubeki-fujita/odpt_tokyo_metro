@@ -117,4 +117,16 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
     } )
   end
 
+  def set_parameter_send_to_api
+    raise "This method \'#{ __method__ }\' is not defined in \'#{ self.class }\'."
+  end
+
+  def access_point_url
+    raise "This method \'#{ __method__ }\' is not defined in \'#{ self.class }\'."
+  end
+
+  def self.process
+    raise "This method \'#{ __method__ }\' is not defined in \'#{ self }\'."
+  end
+
 end

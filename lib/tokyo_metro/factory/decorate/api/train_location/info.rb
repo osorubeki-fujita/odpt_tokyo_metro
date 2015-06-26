@@ -123,7 +123,12 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
     #-------- 【千代田線】（小田急ロマンスカー）
     if object.romance_car_on_chiyoda_line?
-      return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
+  
+      if object.romance_car_specific_train?
+        
+      else
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
+      end
 
     #-------- 【有楽町線・副都心線】小竹向原
 
@@ -199,22 +204,6 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   def train_owner_decorated
     train_owner_in_db.decorate
-  end
-
-  def to_seibu_line?
-    terminal_station.railway_line.operator == "odpt.Operator:Seibu"
-  end
-
-  def to_tobu_tojo_line?
-    terminal_station.railway_line == "odpt.Railway:Tobu.Tojo"
-  end
-
-  def to_tokyu_toyoko_line?
-    terminal_station.railway_line == "odpt.Railway:Tokyu.Toyoko"
-  end
-
-  def for_motomachi_chukagai?
-    
   end
 
 end

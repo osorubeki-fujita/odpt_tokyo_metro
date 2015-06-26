@@ -420,7 +420,7 @@ module TokyoMetro
     end
 
     def on_rails_application?
-      ::Module.constants.sort.include?( :Rails )
+      ::Module.constants.include?( :Rails )
     end
 
   end

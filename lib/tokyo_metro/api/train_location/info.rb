@@ -29,6 +29,8 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
     @delay = delay
     @starting_station , @terminal_station = starting_station , terminal_station
     @from_station , @to_station = from_station , to_station
+
+    set_train_name
   end
 
   # @!group 列車ロケーション情報のメタデータ (For developers)
@@ -105,6 +107,8 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
   # @return [String]
   # @return [nil] 列車が駅に停車している場合は nil
   attr_reader :to_station
+  
+  attr_reader :train_name
 
   # @!endgroup
 
@@ -216,6 +220,10 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
 
   def station_same_as__is_in?( *args )
     super( *args , compared: @from_station ) and @to_station.blank?
+  end
+
+  def set_train_name
+    @train_name = ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_names[ @train_number ]
   end
 
 end

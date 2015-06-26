@@ -1,6 +1,6 @@
 # ロマンスカーの列車番号と列車名の辞書を格納する名前空間
 # @example
-#   TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_name =>
+#   TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_names =>
 #     {
 #       "odpt.TrainTimetable:TokyoMetro.Chiyoda.A0952E.Weekdays"=>"custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.MetroHakone.Weekdays.21",
 #       "odpt.TrainTimetable:TokyoMetro.Chiyoda.A1832E.Weekdays"=>"custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.MetroHomeWay.Weekdays.71",
@@ -17,10 +17,10 @@
 #     }
 module TokyoMetro::Modules::Common::Dictionary::RomanceCar
 
-  TRAIN_NAME = ::YAML.load_file( "#{ ::TokyoMetro.dictionary_dir }/train_type/romance_car_train_name.yaml" )
+  TRAIN_NAMES = ::YAML.load_file( "#{ ::TokyoMetro.dictionary_dir }/train_type/romance_car_train_names.yaml" )
 
-  def self.train_name
-    TRAIN_NAME
+  def self.train_names
+    TRAIN_NAMES
   end
 
 end
