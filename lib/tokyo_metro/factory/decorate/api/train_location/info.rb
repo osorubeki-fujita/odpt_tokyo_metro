@@ -122,7 +122,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   end
 
   def train_type
-    ::TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType.get( object )
+    ::TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType.get( self )
   end
   
   # def train_name

@@ -429,6 +429,10 @@ module TokyoMetro
 
 end
 
+def on_rails_application?
+  ::Module.constants.include?( :Rails )
+end
+
 #--------
 
 ::TokyoMetro.require_files( settings: :development , file_type: :txt )
