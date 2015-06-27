@@ -127,7 +127,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   # @!group render - 3. Meta Data
 
   def render_meta_datum( include_train_location_infos: nil )
-    @meta_datum.render( include_train_location_infos: include_train_location_infos )
+    @meta_datum.try( :render , include_train_location_infos: include_train_location_infos )
   end
 
   private
@@ -157,9 +157,21 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
       nil
     end
   end
+  
+  def valid_train_operation_infos
+    train_operation_infos.delete_if { | item | item.instance_of?( ::TokyoMetro::Api::TrainOperation::Info::NetworkError ) }
+  end
+
+  def valid_train_location_infos
+    train_location_infos.select( &:present? )
+  end
 
   def set_meta_datum
-    @meta_datum = ::TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole.new( request , train_operation_infos , train_location_infos , @visibility )
+    if valid_train_operation_infos.present?
+      @meta_datum = ::TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::Whole.new( request , valid_train_operation_infos , valid_train_location_infos , @visibility )
+    else
+      @meta_datum = nil
+    end
   end
 
 end

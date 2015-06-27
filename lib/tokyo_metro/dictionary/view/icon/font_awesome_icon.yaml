@@ -62,7 +62,7 @@ nearly_on_schedule: check-square
 delayed: exclamation-circle
 suspended: exclamation-triangle
 other_status: info-circle
-network_error: &remark
+network_error: *remark
 
 #-------- コンテスト
 
