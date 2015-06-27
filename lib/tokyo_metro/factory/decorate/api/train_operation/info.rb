@@ -16,11 +16,20 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   attr_reader :controller
 
   def additional_info_abstruct_ja
-    object.train_operation_status.try( :name_ja_for_display )
+    if actually_delayed?
+      nil
+    else
+      object.train_operation_status.try( :name_ja_for_display )
+    end
+    
   end
 
   def additional_info_abstruct_en
-    object.train_operation_status.try( :name_en_for_display )
+    if actually_delayed?
+      nil
+    else
+      object.train_operation_status.try( :name_en_for_display )
+    end
   end
 
   def additional_info_precise_ja
@@ -182,13 +191,15 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
     object.suspended?
   end
 
+  def actually_delayed?
+    @status_type == :delayed and object.on_schedule?
+  end
+
   def status_type_on_initialize
     if after_last_train_finishes?
       :after_last_train_finished
     elsif before_first_train_begins?
       :before_first_train_begin
-    elsif no_train?
-      :no_train
 
     elsif on_schedule?
       :on_schedule
@@ -198,6 +209,10 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
       :delayed
     elsif suspended?
       :suspended
+
+    # elsif no_train?
+      # :no_train
+
     else
       :other_status
     end

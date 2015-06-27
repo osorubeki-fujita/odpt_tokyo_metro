@@ -15,6 +15,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   attr_reader :infos_of_each_railway_line
 
+  # @!group 判定 - 路線
+
   def has_any_railway_line?
     @railway_lines.present?
   end
@@ -27,13 +29,13 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     @railway_lines.length > 1
   end
 
-  # @!group 列車位置情報
+  # @!group 判定 - 列車位置情報
 
   def has_train_location_infos?
     @infos_of_each_railway_line.map( &:train_location_infos ).flatten.present?
   end
 
-  # @!group render
+  # @!group render - (1) Main
 
   def render( include_train_location_infos: false , controller: :train_operation , options: nil )
     if options.present?
@@ -59,7 +61,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     HAML
   end
 
-  # @!group
+  # @!group render - 2. Sub
 
   def render_train_operation_infos( controller )
     h_locals = {
@@ -122,7 +124,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     ).render
   end
 
-  # @!group Meta Data
+  # @!group render - 3. Meta Data
 
   def render_meta_datum( include_train_location_infos: nil )
     @meta_datum.render( include_train_location_infos: include_train_location_infos )

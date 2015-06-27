@@ -203,13 +203,13 @@ module TokyoMetro
 
   # @!group 運行ダイヤに関するメソッド
 
-  def self.current_diagram
-    diagram_as_of( current_operation_day )
-  end
-
   def self.diagram_as_of( time )
     t = operation_day_as_of( time )
     ::TokyoMetro::Modules::Db::Select::OperationDay.process(t)
+  end
+
+  def self.current_diagram
+    diagram_as_of( current_operation_day )
   end
 
   # @!endgroup
