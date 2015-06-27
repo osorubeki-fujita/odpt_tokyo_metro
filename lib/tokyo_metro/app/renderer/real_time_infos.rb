@@ -34,6 +34,10 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   def has_train_location_infos?
     @infos_of_each_railway_line.map( &:train_location_infos ).flatten.present?
   end
+  
+  def has_valid_train_location_infos?
+    valid_train_location_infos.present?
+  end
 
   # @!group render - (1) Main
 
@@ -55,7 +59,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   = this.render_title_of_train_operation_infos( add_index_of_train_location: add_index_of_train_location )
   = this.render_train_operation_infos( controller )
   - if include_train_location_infos
-    - if this.has_train_location_infos?
+    - if this.has_valid_train_location_infos?
       = this.render_title_of_train_location_infos
       = this.render_train_location_infos
     HAML
@@ -163,7 +167,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   end
 
   def valid_train_location_infos
-    train_location_infos.select( &:present? )
+    train_location_infos.try( :select , &:present? )
   end
 
   def set_meta_datum
