@@ -35,19 +35,6 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   end
 
   def render_current_position
-    station_infos = [ :from_station , :to_station ].map { | attr_name |
-      object.send( attr_name )
-    }.select( &:present? ).map { | station_info_same_as |
-      case station_info_same_as
-      when "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
-        "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase"
-      else
-        station_info_same_as
-      end
-    }.map { | station_info_same_as |
-      ::Station::Info.find_by( same_as: station_info_same_as )
-    }
-
     h.render inline: <<-HAML , type: :haml , locals: { request: request , station_infos: station_infos }
 %div{ class: :current_position }
   %p{ class: [ :title_of_current_position , :text_ja ] }
@@ -117,6 +104,21 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
         #{ method_basename }.decorate.train_location
       end
     DEF
+  end
+  
+  def station_infos
+    [ :from_station , :to_station ].map { | attr_name |
+      object.send( attr_name )
+    }.select( &:present? ).map { | station_info_same_as |
+      case station_info_same_as
+      when "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+        "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase"
+      else
+        station_info_same_as
+      end
+    }.map { | station_info_same_as |
+      ::Station::Info.find_by( same_as: station_info_same_as )
+    }
   end
 
   def train_type
