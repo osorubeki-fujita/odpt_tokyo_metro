@@ -1,33 +1,44 @@
 -
   name_ja: 平日
   name_en: Weekday
+  same_as: "custom:OperationDay:Weekday"
 -
   name_ja: 土休日
   name_en: "Saturday and holiday"
+  same_as: "custom:OperationDay:SaturdayHoliday"
 -
   name_ja: 土休日
   name_en: Holiday
+  same_as: "custom:OperationDay:Holiday"
 -
   name_ja: 土日祝
   name_en: "Saturday, Sunday and Holiday"
+  same_as: "custom:OperationDay:SaturdaySundayHoliday"
 -
   name_ja: 月曜
   name_en: Monday
+  same_as: "custom:OperationDay:Monday"
 -
   name_ja: 火曜
   name_en: Tuesday
+  same_as: "custom:OperationDay:Tuesday"
 -
   name_ja: 水曜
   name_en: Wednesday
+  same_as: "custom:OperationDay:Wednesday"
 -
   name_ja: 木曜
   name_en: Thurasday
+  same_as: "custom:OperationDay:Thurasday"
 -
   name_ja: 金曜
   name_en: Friday
+  same_as: "custom:OperationDay:Friday"
 -
   name_ja: 土曜
   name_en: Saturday
+  same_as: "custom:OperationDay:Saturday"
 -
   name_ja: 日曜
   name_en: Sunday
+  same_as: "custom:OperationDay:Sunday"

@@ -83,11 +83,13 @@ module TokyoMetro
   # ダイヤ上の日付変更時刻
   DATE_CHANGING_HOUR = 3
 
+  DEFAULT_TIME_ZONE = ::Kernel.Rational(9,24)
+
   # 現在時刻
   # @note タイムゾーンは日本時間 (GMT+9)
   # @return [DateTime]
-  def self.time_now( time_zone: "+09:00" )
-    rational_for_time_zone = ::Kernel.Rational(9,24)
+  def self.time_now( time_zone: nil )
+    rational_for_time_zone ||= DEFAULT_TIME_ZONE
     ::DateTime.now.new_offset( rational_for_time_zone )
   end
 
@@ -188,6 +190,29 @@ module TokyoMetro
 
     return nil
   end
+
+  # @!group 運行日に関するメソッド
+
+  def self.current_operation_day
+    ::TokyoMetro::Static::OperationDay.of_current
+  end
+
+  def self.operation_day_as_of( time )
+    ::TokyoMetro::Static::OperationDay.as_of( time )
+  end
+
+  # @!group 運行ダイヤに関するメソッド
+
+  def self.current_diagram
+    diagram_as_of( current_operation_day )
+  end
+
+  def self.diagram_as_of( time )
+    t = operation_day_as_of( time )
+    ::TokyoMetro::Modules::Db::Select::OperationDay.process(t)
+  end
+
+  # @!endgroup
 
   class << self
 
@@ -424,8 +449,6 @@ module TokyoMetro
     end
 
   end
-
-  # @!endgroup
 
 end
 

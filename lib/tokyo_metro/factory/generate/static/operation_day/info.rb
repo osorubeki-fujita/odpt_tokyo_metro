@@ -7,7 +7,7 @@ class TokyoMetro::Factory::Generate::Static::OperationDay::Info < TokyoMetro::Fa
   end
 
   def self.hash_keys
-    [ :name_ja , :name_en ]
+    [ :name_ja , :name_en , :same_as ]
   end
 
 end

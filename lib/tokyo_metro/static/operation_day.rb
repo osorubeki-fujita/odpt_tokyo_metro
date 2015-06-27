@@ -2,7 +2,7 @@ class TokyoMetro::Static::OperationDay < TokyoMetro::Static::Fundamental::MetaCl
 
   include ::TokyoMetro::ClassNameLibrary::Static::OperationDay
 
-  # @!group 列車運行情報のリスト
+  # @!group 運行日のリスト
 
   # 定数を設定するクラスメソッド
   # @return [nil]
@@ -11,5 +11,18 @@ class TokyoMetro::Static::OperationDay < TokyoMetro::Static::Fundamental::MetaCl
   end
 
   # @!endgroup
+
+  def self.of_current
+    as_of( ::TokyoMetro.time_now )
+  end
+
+  def self.as_of( time )
+    if time.hour < ::TokyoMetro::DATE_CHANGING_HOUR
+      t = time.yesterday
+    else
+      t = time
+    end
+    ::DateTime.new( t.year , t.month , t.day , 12 , 0 , 0 , t.zone )
+  end
 
 end
