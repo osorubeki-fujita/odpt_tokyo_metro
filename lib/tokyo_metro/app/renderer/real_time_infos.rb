@@ -157,7 +157,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
       nil
     end
   end
-  
+
   def valid_train_operation_infos
     train_operation_infos.delete_if { | item | item.instance_of?( ::TokyoMetro::Api::TrainOperation::Info::NetworkError ) }
   end

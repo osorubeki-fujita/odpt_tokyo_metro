@@ -1,6 +1,6 @@
 class TokyoMetro::Api::TrainOperation::Info::BasicError
 
-  def decorate( request , obj , railway_line , max_delay , controller , no_train )
+  def decorate( request , railway_line , max_delay , controller , no_train )
     decorator_class.new( request , self , railway_line , controller )
   end
 
