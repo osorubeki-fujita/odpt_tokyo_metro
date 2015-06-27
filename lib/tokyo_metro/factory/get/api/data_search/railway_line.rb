@@ -1,5 +1,5 @@
 # API から鉄道路線情報 odpt:Railway のデータを取得するための Factory Pattern のクラス
-class TokyoMetro::Factory::Get::Api::DataSearch::RailwayLine < TokyoMetro::Factory::Get::Api::MetaClass::DataSearch
+class TokyoMetro::Factory::Get::Api::DataSearch::RailwayLine < TokyoMetro::Factory::Get::Api::MetaClass::Search::DataSearch
 
   include ::TokyoMetro::ClassNameLibrary::Api::RailwayLine
 

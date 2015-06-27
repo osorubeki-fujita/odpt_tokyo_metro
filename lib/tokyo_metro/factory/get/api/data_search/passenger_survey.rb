@@ -1,5 +1,5 @@
 # API から駅乗降人員数 odpt:PassengerSurvey のデータを取得するための Factory Pattern のクラス
-class TokyoMetro::Factory::Get::Api::DataSearch::PassengerSurvey < TokyoMetro::Factory::Get::Api::MetaClass::DataSearch
+class TokyoMetro::Factory::Get::Api::DataSearch::PassengerSurvey < TokyoMetro::Factory::Get::Api::MetaClass::Search::DataSearch
 
   include ::TokyoMetro::ClassNameLibrary::Api::PassengerSurvey
 

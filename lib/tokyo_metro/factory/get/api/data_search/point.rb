@@ -1,5 +1,5 @@
 # API から地物情報 ug:Poi のデータを取得するための Factory Pattern のクラス
-class TokyoMetro::Factory::Get::Api::DataSearch::Point < TokyoMetro::Factory::Get::Api::MetaClass::DataSearch
+class TokyoMetro::Factory::Get::Api::DataSearch::Point < TokyoMetro::Factory::Get::Api::MetaClass::Search::DataSearch
 
   include ::TokyoMetro::ClassNameLibrary::Api::Point
 

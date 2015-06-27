@@ -1,9 +1,8 @@
 # API からデータを取得するための Factory Pattern のクラス（地物検索 API を利用する場合）
-class TokyoMetro::Factory::Get::Api::MetaClass::Geo < TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
+class TokyoMetro::Factory::Get::Api::MetaClass::Search::Geo < TokyoMetro::Factory::Get::Api::MetaClass::Search
 
-  def initialize( long , lat , radius , perse_json , generate_instance , to_inspect )
-    super( perse_json , generate_instance , to_inspect )
-
+  def initialize( long , lat , radius , *args )
+    super( *args )
     @long = long
     @lat = lat
     @radius = radius
@@ -13,7 +12,6 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Geo < TokyoMetro::Factory::Get::
   # @return [Hash]
   def parameters
     super().merge({
-      "rdf:type" => self.class.rdf_type ,
       "lon" => @long.to_s ,
       "lat" => @lat.to_s ,
       "radius" => @radius.to_s

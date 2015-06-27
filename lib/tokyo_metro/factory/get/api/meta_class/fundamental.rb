@@ -96,11 +96,8 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
     ::JSON.parse( body_of_response( response ) )
   end
 
-  # JSON や YAML をパースして得られた配列を処理し、配列のクラスの変更と中身のハッシュのインスタンスへの置き換えを行うメソッド
-  # @param ary [::Array] JSON や YAML をパースして得られた配列
-  # @return [TokyoMetro::Api::Fundamental::List (or its sub-class)]
-  def generate_new_array_instance( ary )
-    ::TokyoMetro::Factory::Get::Api::MetaClass::Fundamental::Generator::NewArray::Search.process( ary , self.class )
+  def generate_new_array_instance( *args )
+    raise "This method \'#{ __method__ }\' is not defined in \'#{ self.class }\'."
   end
 
   def set_parameter_send_to_api

@@ -1,5 +1,5 @@
 # API から運賃 odpt:RailwayFare のデータを取得するための Factory Pattern のクラス
-class TokyoMetro::Factory::Get::Api::DataSearch::Fare < TokyoMetro::Factory::Get::Api::MetaClass::DataSearch
+class TokyoMetro::Factory::Get::Api::DataSearch::Fare < TokyoMetro::Factory::Get::Api::MetaClass::Search::DataSearch
 
   include ::TokyoMetro::ClassNameLibrary::Api::Fare
 

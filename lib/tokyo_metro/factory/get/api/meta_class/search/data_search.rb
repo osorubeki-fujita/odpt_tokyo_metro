@@ -1,14 +1,7 @@
 # API からデータを取得するための Factory Pattern のクラス（データ検索 API を利用する場合）
-class TokyoMetro::Factory::Get::Api::MetaClass::DataSearch < TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
+class TokyoMetro::Factory::Get::Api::MetaClass::Search::DataSearch < TokyoMetro::Factory::Get::Api::MetaClass::Search
 
   private
-
-  def check_validity_of_settings( http_client )
-    super( http_client )
-    unless self.class.rdf_type.string?
-      raise "Error"
-    end
-  end
 
   # HTTP クライアントに渡すパラメーターを設定するメソッド (private)
   # @param h [Hash] パラメーターのハッシュ
@@ -27,12 +20,6 @@ class TokyoMetro::Factory::Get::Api::MetaClass::DataSearch < TokyoMetro::Factory
 
   def self.rdf_type
     self.info_class.rdf_type
-  end
-
-  # パラメータを格納したハッシュを取得するメソッド
-  # @return [Hash]
-  def parameters
-    super().merge( { "rdf:type" => self.class.rdf_type } )
   end
 
   def access_point_url
