@@ -105,11 +105,13 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   def render_status_additional_infos
     h_locals_i = {
       this: self ,
-      max_delay_decorator: @max_delay.decorate( request )
+      max_delay_decorator: @max_delay.decorate( request ) ,
+      to_render_status_additional_infos_ja: to_render_status_additional_infos_ja? ,
+      to_render_status_additional_infos_en: to_render_status_additional_infos_en?
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %div{ class: :additional_infos }<
-  - if [ this.additional_info_abstruct_ja , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_ja_to_a ].any?( &:present? )
+  - if to_render_status_additional_infos_ja
     %div{ class: :text_ja }
       - if this.additional_info_abstruct_ja.present?
         %p{ class: :abstruct }<
@@ -121,7 +123,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
           %p{ class: :precise }<
             = row
 
-  - if [ this.additional_info_abstruct_en , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_en ].any?( &:present? )
+  - if to_render_status_additional_infos_en
     %div{ class: :text_en }
       - if this.additional_info_abstruct_en.present?
         %p{ class: :abstruct }<
@@ -219,6 +221,14 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
 
   def hour_before_first_train_begins
     ( ( ::TokyoMetro::DATE_CHANGING_HOUR )..6 ).to_a
+  end
+
+  def to_render_status_additional_infos_ja?
+    [ additional_info_abstruct_ja , additional_info_precise_ja ].any?( &:present? ) or max_delay_decorator.displayed_in_train_operation_info?
+  end
+
+  def to_render_status_additional_infos_en?
+    [ additional_info_abstruct_en , additional_info_precise_en ].any?( &:present? ) or max_delay_decorator.displayed_in_train_operation_info?
   end
 
 end
