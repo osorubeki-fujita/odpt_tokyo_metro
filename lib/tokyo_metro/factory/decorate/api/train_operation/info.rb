@@ -114,9 +114,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
         = max_delay_decorator.render_ja_in_train_operation_info
       - if this.additional_info_precise_ja.try( :instance_of? , ::String )
         - precise_info_rows = this.additional_info_precise_ja.split( /\n/ )
-        - precise_info_rows.each do | precise_info_row |
-          %p{ class: :precise }<
-            = precise_info_row
+        %p{ class: :precise }<
+          = precise_info_rows.to_s
+        - # - precise_info_rows.each do | precise_info_row |
+        - #   %p{ class: :precise }<
+        - #     = precise_info_row
 
   - if [ this.additional_info_abstruct_en , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_en ].any?( &:present? )
     %div{ class: :text_en }
