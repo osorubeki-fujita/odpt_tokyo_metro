@@ -133,13 +133,17 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
   def on_schedule?
     train_operation_text.on_schedule?
   end
-
-  def delayed?
-    !!( train_operation_status.try( :delayed? ) )
-  end
-
-  def suspended?
-    !!( train_operation_status.try( :suspended? ) )
+  
+  [ :delayed? , :suspended? ].each do | method_name |
+    eval <<-DEF
+      def #{ method_name }
+        if train_operation_status.blank?
+          false
+        else
+          train_operation_status.#{ method_name }
+        end
+      end
+    DEF
   end
 
 end
