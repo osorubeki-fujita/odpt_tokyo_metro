@@ -9,15 +9,5 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental::Generator::NewArray
   def self.process( ary , namespace )
     self.new( ary , namespace ).process
   end
-  
-  private
-  
-  def list_class
-    @namespace.list_class
-  end
 
-  def info_class
-    @namespace.info_class
-  end
-  
 end
