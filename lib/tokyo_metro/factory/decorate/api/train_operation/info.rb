@@ -117,6 +117,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
         - rows.each do | row |
           %p{ class: :precise }<
             = row
+
   - if [ this.additional_info_abstruct_en , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_en ].any?( &:present? )
     %div{ class: :text_en }
       - if this.additional_info_abstruct_en.present?
@@ -127,9 +128,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
       - if this.additional_info_precise_en.present?
         %p{ class: :precise }<
           = this.additional_info_precise_en
-  HAML
+    HAML
   end
-  
+
   def self.render_status_icon_and_text( request , status_type , icon_size = 3 )
     h_locals_i = {
       request: request ,
