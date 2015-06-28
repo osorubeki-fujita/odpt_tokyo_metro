@@ -160,7 +160,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   end
   
   def on_schedule?
-    @status_type == :on_schedule or object.on_schedule? or @max_delay.on_schedule?
+    @status_type == :on_schedule or ( object.on_schedule? and @max_delay.on_schedule? )
   end
   
   def nearly_on_schedule?
