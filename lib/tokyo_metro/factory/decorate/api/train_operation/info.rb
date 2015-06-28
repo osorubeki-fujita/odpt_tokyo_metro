@@ -40,6 +40,10 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
       end
     end
   end
+  
+  def additional_info_precise_ja_to_a
+    additional_info_precise_ja.try( :split , /\n/ )
+  end
 
   def additional_info_precise_en
     case @status_type
@@ -105,20 +109,17 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %div{ class: :additional_infos }<
-  - if [ this.additional_info_abstruct_ja , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_ja ].any?( &:present? )
+  - if [ this.additional_info_abstruct_ja , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_ja_to_a ].any?( &:present? )
     %div{ class: :text_ja }
       - if this.additional_info_abstruct_ja.present?
         %p{ class: :abstruct }<
           = this.additional_info_abstruct_ja
       - if max_delay_decorator.try( :displayed_in_train_operation_info? )
         = max_delay_decorator.render_ja_in_train_operation_info
-      - if this.additional_info_precise_ja.try( :instance_of? , ::String )
-        - precise_info_rows = this.additional_info_precise_ja.split( /\n/ )
-        %p{ class: :precise }<
-          = precise_info_rows.to_s
-        - # - precise_info_rows.each do | precise_info_row |
-        - #   %p{ class: :precise }<
-        - #     = precise_info_row
+      - if this.additional_info_precise_ja_to_a.present?
+        - additional_info_precise_ja_to_a.each do | row |
+          %p{ class: :precise }<
+            = row
 
   - if [ this.additional_info_abstruct_en , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_en ].any?( &:present? )
     %div{ class: :text_en }
