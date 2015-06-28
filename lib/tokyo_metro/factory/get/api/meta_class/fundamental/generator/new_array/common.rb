@@ -2,7 +2,7 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental::Generator::NewArray
 
   def process
     _info_class = info_class
-    list_class.new( ary.map { | item |
+    list_class.new( @ary.map { | item |
       _info_class.generate_from_hash( item )
     } )
   end
