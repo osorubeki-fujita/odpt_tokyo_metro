@@ -8,8 +8,6 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
     @status_type = status_type_on_initialize
   end
 
-  attr_reader :max_delay
-
   def additional_info_abstruct_ja
     if actually_delayed?
       nil
@@ -101,8 +99,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   # end
 
   def render_status_additional_infos
-    h.render inline: <<-HAML , type: :haml , locals: { this: self }
-- max_delay_decorator = this.max_delay.decorate( request )
+    h_locals_i = {
+      this: self ,
+      max_delay_decorator: @max_delay.decorate( request )
+    }
+    h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %div{ class: :additional_infos }<
   - if [ this.additional_info_abstruct_ja , max_delay_decorator.displayed_in_train_operation_info? , this.additional_info_precise_ja ].any?( &:present? )
     %div{ class: :text_ja }
