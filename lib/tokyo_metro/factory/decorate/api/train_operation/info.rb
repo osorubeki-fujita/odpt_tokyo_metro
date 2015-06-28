@@ -158,22 +158,22 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   def before_first_train_begins?
     no_train? and hour_before_first_train_begins.include?( object.dc_date.hour )
   end
-
-  [ :on_schedule? , :nearly_on_schedule? ].each do | method_name |
-    eval <<-DEF
-      def #{ method_name }
-        @status_type == :#{ method_name } or ( object.#{ method_name } and @max_delay.#{ method_name } )
-      end
-    DEF
+  
+  def on_schedule?
+    @status_type == :on_schedule or object.on_schedule? or @max_delay.on_schedule?
+  end
+  
+  def nearly_on_schedule?
+    @status_type == :nearly_on_schedule or @max_delay.nearly_on_schedule?
   end
 
   # @note {#status_type_on_initialize} での判定が正常に行われるようにするために，object.delayed? を追加している．
   def delayed?
-    @status_type == :delayed or object.send( __method__ ) or @max_delay.send( __method__ )
+    @status_type == :delayed or object.delayed? or @max_delay.delayed?
   end
 
   def suspended?
-    object.suspended?
+    @status_type == :suspended or object.suspended?
   end
 
   def actually_delayed?
