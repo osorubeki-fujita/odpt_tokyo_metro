@@ -35,7 +35,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
     when :no_train
       "運行中の列車はありません。"
     else
-      object.text_in_api
+      if actually_delayed?
+        nil
+      else
+        object.text_in_api
+      end
     end
   end
 
@@ -48,7 +52,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
     when :no_train
       "No train is operated now."
     else
-      object.text_en
+      if actually_delayed?
+        nil
+      else
+        object.text_en
+      end
     end
   end
 
@@ -160,8 +168,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   end
 
   def delayed?
-    # object.delayed? or @max_delay.delayed?
-    @max_delay.delayed?
+    @status_type == :delayed or object.delayed?
   end
 
   def suspended?
