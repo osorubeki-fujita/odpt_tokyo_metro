@@ -1,7 +1,7 @@
 class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info::NetworkError < TokyoMetro::Factory::Decorate::Api::TrainOperation::Info::BasicError
 
   private
-  
+
   def h_locals_for_status_additional_infos
     {
       text_ja_abstruct: "ネットワークエラー" ,

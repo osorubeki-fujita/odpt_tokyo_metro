@@ -16,7 +16,6 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
     else
       object.train_operation_status.try( :name_ja_for_display )
     end
-    
   end
 
   def additional_info_abstruct_en
