@@ -167,8 +167,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
     object.on_schedule? and @max_delay.nearly_on_schedule?
   end
 
+  # @note {#status_type_on_initialize} での判定が正常に行われるようにするために，object.delayed? を追加している．
   def delayed?
-    @status_type == :delayed or object.delayed?
+    @status_type == :delayed or object.delayed? 
   end
 
   def suspended?
