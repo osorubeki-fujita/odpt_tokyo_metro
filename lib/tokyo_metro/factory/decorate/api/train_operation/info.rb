@@ -160,9 +160,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   end
 
   [ :on_schedule? , :nearly_on_schedule? ].each do | method_name |
-    def #{ method_name }
-      @status_type == :#{ method_name } or ( object.#{ method_name } and @max_delay.#{ method_name } )
-    end
+    eval <<-DEF
+      def #{ method_name }
+        @status_type == :#{ method_name } or ( object.#{ method_name } and @max_delay.#{ method_name } )
+      end
+    DEF
   end
 
   # @note {#status_type_on_initialize} での判定が正常に行われるようにするために，object.delayed? を追加している．
