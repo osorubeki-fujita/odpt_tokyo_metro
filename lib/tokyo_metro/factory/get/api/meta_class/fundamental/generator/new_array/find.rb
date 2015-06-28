@@ -42,7 +42,7 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental::Generator::NewArray
       :Station , :StationFacility , :RailwayLine ,
       :StationTimetable , :TrainTimetable ,
       :TrainLocation , :TrainOperator ,
-      :MilitRailwayLine , :MlitStation
+      :MlitRailwayLine , :MlitStation
     ]
   end
 
