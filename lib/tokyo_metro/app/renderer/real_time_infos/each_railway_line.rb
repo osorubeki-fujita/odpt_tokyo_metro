@@ -2,11 +2,11 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
 
   TRAIN_OPERATION_STATUS_FOR_TEST = ::YAML.load_file( "#{ ::TokyoMetro::DICTIONARY_DIR }/view/train_operation_status_for_test.yaml" )
 
-  def initialize( request , railway_line , http_client )
+  def initialize( request , railway_line , http_client , test_mode )
     super( request )
     @railway_line = railway_line
-    get_train_operation_info( http_client )
-    get_train_location_infos( http_client )
+    get_train_operation_info( http_client , test_mode )
+    get_train_location_infos( http_client , test_mode )
     set_max_delay
   end
 
@@ -27,37 +27,50 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
 
   private
 
-  def get_train_operation_info( http_client )
-    begin
-      train_operation_infos = ::TokyoMetro::Api::TrainOperation.get( http_client , railway_line: @railway_line.same_as , perse_json: true , generate_instance: true )
-      if train_operation_infos.length > 1
-        raise "Error"
+  def get_train_operation_info( http_client , test_mode )
+    case test_mode
+    when nil
+      begin
+        train_operation_infos = ::TokyoMetro::Api::TrainOperation.get( http_client , railway_line: @railway_line.same_as , perse_json: true , generate_instance: true )
+        if train_operation_infos.length > 1
+          raise "Error"
+        end
+        @train_operation_info = train_operation_infos.first
+      rescue ::SocketError
+        @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::NetworkError.instance
+      rescue ::JSON::ParserError
+        @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::JsonParserError.instance
+      ensure
+        sleep( 0.2 )
       end
-      # @train_operation_info = train_operation_infos.first
-       @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::JsonParserError.instance
-    rescue ::SocketError
+    when :network_error
       @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::NetworkError.instance
-    rescue ::JSON::ParserError
+    when :json_parser_error
       @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::JsonParserError.instance
-    ensure
-      sleep( 0.2 )
+    else
+      raise
     end
   end
 
-  def get_train_location_infos( http_client )
-    begin
-      # @train_location_infos = ::TokyoMetro::Api::TrainLocation.get( http_client , @railway_line.same_as , perse_json: true , generate_instance: true )
+  def get_train_location_infos( http_client , test_mode )
+    case test_mode
+    when nil
+      begin
+        @train_location_infos = ::TokyoMetro::Api::TrainLocation.get( http_client , @railway_line.same_as , perse_json: true , generate_instance: true )
+      rescue ::SocketError
+        @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::NetworkError.instance
+        @train_location_infos = nil
+      rescue ::JSON::ParserError
+        @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::JsonParserError.instance
+        @train_location_infos = nil
+      ensure
+        sleep( 0.2 )
+      end
+    when :network_error , :json_parser_error
       @train_location_infos = nil
-    rescue ::SocketError
-      @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::NetworkError.instance
-      @train_location_infos = nil
-    rescue ::JSON::ParserError
-      @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::JsonParserError.instance
-      @train_location_infos = nil
-    ensure
-      sleep( 0.2 )
+    else
+      raise
     end
-
   end
 
   def set_max_delay

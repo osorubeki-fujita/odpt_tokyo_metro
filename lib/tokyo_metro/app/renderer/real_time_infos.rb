@@ -1,9 +1,10 @@
 class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , railway_lines , http_client = ::HTTPClient.new , visibility: :visible )
+  def initialize( request , railway_lines , http_client = ::HTTPClient.new , visibility: :visible , test_mode: nil )
     super( request )
     @http_client = http_client
     @visibility = visibility
+    @test_mode = test_mode
 
     set_railway_lines( railway_lines )
     set_infos_of_each_railway_line
@@ -146,7 +147,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   def set_infos_of_each_railway_line
     @infos_of_each_railway_line = ::Array.new( @railway_lines.map { | railway_line |
-      ::TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine.new( request , railway_line , @http_client )
+      ::TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine.new( request , railway_line , @http_client , @test_mode)
     })
   end
 
