@@ -133,7 +133,7 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
   def on_schedule?
     train_operation_text.on_schedule?
   end
-  
+
   [ :delayed? , :suspended? ].each do | method_name |
     eval <<-DEF
       def #{ method_name }
