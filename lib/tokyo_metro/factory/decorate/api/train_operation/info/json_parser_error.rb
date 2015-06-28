@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info::JsonPerserError < TokyoMetro::Factory::Decorate::Api::TrainOperation::Info::BasicError
+class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info::JsonParserError < TokyoMetro::Factory::Decorate::Api::TrainOperation::Info::BasicError
 
   private
   
