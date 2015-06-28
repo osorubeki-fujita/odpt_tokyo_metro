@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info::BasicError < Tok
   end
 
   def status_text_en
-    "Couldn't load information"
+    "Fail to load information"
   end
 
   def render_status_additional_infos

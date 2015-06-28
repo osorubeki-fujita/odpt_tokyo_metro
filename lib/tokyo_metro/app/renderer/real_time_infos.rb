@@ -8,7 +8,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     set_railway_lines( railway_lines )
     set_infos_of_each_railway_line
 
-    raise "Error" unless has_any_railway_line?
+    raise unless has_any_railway_line?
 
     set_meta_datum
   end
