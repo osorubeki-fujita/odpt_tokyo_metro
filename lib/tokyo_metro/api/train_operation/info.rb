@@ -135,11 +135,11 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
   end
 
   def delayed?
-    train_operation_status.try( :delayed? )
+    !!( train_operation_status.try( :delayed? ) )
   end
 
   def suspended?
-    train_operation_status.try( :suspended? )
+    !!( train_operation_status.try( :suspended? ) )
   end
 
 end
