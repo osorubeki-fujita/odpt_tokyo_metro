@@ -32,5 +32,5 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Common < TokyoMetro::F
     = this.status_text_en
     HAML
   end
-  
+
 end
