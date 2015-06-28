@@ -137,11 +137,7 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
   [ :delayed? , :suspended? ].each do | method_name |
     eval <<-DEF
       def #{ method_name }
-        if train_operation_status.blank?
-          false
-        else
-          train_operation_status.#{ method_name }
-        end
+        train_operation_status.present? and train_operation_status.#{ method_name }
       end
     DEF
   end
