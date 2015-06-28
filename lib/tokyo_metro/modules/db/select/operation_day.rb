@@ -9,8 +9,7 @@ class TokyoMetro::Modules::Db::Select::OperationDay
   end
 
   def holiday?
-    # @time.holiday?
-    true
+    ::HolidayJapan.check( ::Date.new( @time.year , @time.month , @time.day ) )
   end
 
   def process
