@@ -206,6 +206,13 @@ history: history
 star: star-o
 # moon: *moon
 
+#-------- ファイル
+file_black: file
+file: file-o
+file_text_black: file-text
+file_text: file-text-o
+files: files-o
+
 #-------- その他
 
 ban: ban

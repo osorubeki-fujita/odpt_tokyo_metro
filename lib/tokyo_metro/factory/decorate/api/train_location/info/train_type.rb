@@ -72,6 +72,22 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
 
   private
 
+  def railway_line_in_db
+    ::RailwayLine.find_by( same_as: object.railway_line )
+  end
+
+  def railway_line_id
+    railway_line_in_db.id
+  end
+
+  def train_type_in_api
+    ::TrainTypeInApi.find_by( same_as: object.train_type )
+  end
+
+  def train_type_in_api_id
+    train_type_in_api.id
+  end
+
   def process_log_of_romance_car
     str = log_as_for_romance_car
     if on_rails_application?
