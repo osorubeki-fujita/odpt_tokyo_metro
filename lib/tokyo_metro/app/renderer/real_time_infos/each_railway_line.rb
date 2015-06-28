@@ -33,7 +33,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
       if train_operation_infos.length > 1
         raise "Error"
       end
-      @train_operation_info = train_operation_infos.first
+      # @train_operation_info = train_operation_infos.first
+       @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::JsonParserError.instance
     rescue ::SocketError
       @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::NetworkError.instance
     rescue ::JSON::ParserError
@@ -45,7 +46,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
 
   def get_train_location_infos( http_client )
     begin
-      @train_location_infos = ::TokyoMetro::Api::TrainLocation.get( http_client , @railway_line.same_as , perse_json: true , generate_instance: true )
+      # @train_location_infos = ::TokyoMetro::Api::TrainLocation.get( http_client , @railway_line.same_as , perse_json: true , generate_instance: true )
+      @train_location_infos = nil
     rescue ::SocketError
       @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::NetworkError.instance
       @train_location_infos = nil
