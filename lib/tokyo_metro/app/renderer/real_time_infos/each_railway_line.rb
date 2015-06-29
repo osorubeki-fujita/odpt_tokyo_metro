@@ -25,6 +25,12 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
     end
   end
 
+  def update_train_operation_text_in_db
+    if @train_operation_info.instance_of?( ::TokyoMetro::Api::TrainOperation::Info )
+      @train_operation_info.update_train_operation_text_in_db
+    end
+  end
+
   private
 
   def get_train_operation_info( http_client , test_mode )

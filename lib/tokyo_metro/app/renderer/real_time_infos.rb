@@ -35,9 +35,15 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   def has_train_location_infos?
     @infos_of_each_railway_line.map( &:train_location_infos ).flatten.present?
   end
-  
+
   def has_valid_train_location_infos?
     valid_train_location_infos.present?
+  end
+
+  def update_train_operation_text_in_db
+    @infos_of_each_railway_line.each do | info_of_railway_line |
+      info_of_railway_line.update_train_operation_text_in_db
+    end
   end
 
   # @!group render - (1) Main
@@ -133,6 +139,17 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   def render_meta_datum( include_train_location_infos: nil )
     @meta_datum.try( :render , include_train_location_infos: include_train_location_infos )
+  end
+
+  # @!group Loop
+
+  # 定期実行する処理
+  def self.process_in_loop
+    if on_rails_application?
+      puts "process_in_loop"
+      self.new( nil , ::RailwayLine.tokyo_metro , visibility: :hidden ).update_train_operation_text_in_db
+    end
+    return nil
   end
 
   private

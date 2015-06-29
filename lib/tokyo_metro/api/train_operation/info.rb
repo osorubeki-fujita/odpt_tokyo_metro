@@ -142,4 +142,9 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
     DEF
   end
 
+  def update_train_operation_text_in_db
+    t = train_operation_text
+    return nil
+  end
+
 end
