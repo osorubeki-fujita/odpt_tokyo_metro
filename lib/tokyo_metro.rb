@@ -448,10 +448,6 @@ module TokyoMetro
       end
     end
 
-    def on_rails_application?
-      ::Module.constants.include?( :Rails )
-    end
-
   end
 
 end

@@ -14,8 +14,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
   def in_db
     #-------- 【千代田線】（小田急ロマンスカー）
     if object.romance_car_on_chiyoda_line?
-      process_log_of_romance_car
-
+      generate_log_of_romance_car
       return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
 
     #-------- 【有楽町線・副都心線】小竹向原
@@ -88,14 +87,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
     train_type_in_api.id
   end
 
-  def process_log_of_romance_car
-    str = log_as_for_romance_car
+  def generate_log_of_romance_car
     if on_rails_application?
-      time_now = ::TokyoMetro.time_now
-      # if time_now.hour >= ::TokyoMetro::DATE_CHANGING_HOUR and time_now.yesterday.strftime()
+      ::Rails.application.config.romance_car_logger.info( log_as_for_romance_car )
     end
     return nil
-    #
   end
 
   def log_as_for_romance_car
@@ -116,8 +112,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
     rescue
       str_ary <<  object.inspect
     end
-    str_ary << ""
-    str_ary.join( "\n" )
+    str_ary.join( " / " )
   end
 
 end
