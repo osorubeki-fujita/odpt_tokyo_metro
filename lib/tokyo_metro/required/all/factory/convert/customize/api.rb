@@ -9,7 +9,9 @@ class TokyoMetro::Required::All::Factory::Convert::Customize::Api < TokyoMetro::
       MetaClass.files ,
       Fare.files ,
       RailwayLine.files ,
-      StationFacility.files
+      StationFacility.files ,
+      TrainTimetable.files ,
+      TrainLocation.files
     ]
   end
 
