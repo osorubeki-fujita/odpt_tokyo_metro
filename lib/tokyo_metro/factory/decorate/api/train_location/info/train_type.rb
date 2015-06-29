@@ -14,7 +14,6 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
   def in_db
     #-------- 【千代田線】（小田急ロマンスカー）
     if object.romance_car_on_chiyoda_line?
-      generate_log_of_romance_car
       return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
 
     #-------- 【有楽町線・副都心線】小竹向原
@@ -85,39 +84,6 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
 
   def train_type_in_api_id
     train_type_in_api.id
-  end
-
-  def generate_log_of_romance_car
-    if on_rails_application?
-      case ::Rails.env
-      when "development" , "test"
-        ::Rails.application.config.romance_car_logger.info( log_as_for_romance_car )
-      when "production"
-        ::Rails.logger.info( "[Romance Car] #{ log_as_for_romance_car }" )
-      end
-    end
-    return nil
-  end
-
-  def log_as_for_romance_car
-    str_ary = ::Array.new
-    str_ary << "Time: #{ ::TokyoMetro.time_now.to_s }"
-    str_ary << "Train type: #{ object.train_type }"
-    # str_ary << "Train name: #{ decorator.train_name }"
-    begin
-      case object.train_type
-      when "odpt.TrainType:TokyoMetro.LimitedExpress"
-        str_ary <<  object.inspect
-      when "odpt.TrainType:TokyoMetro.RomanceCar"
-        str_ary <<  object.inspect
-      else
-        raise
-      end
-    # train_type が不正の場合
-    rescue
-      str_ary <<  object.inspect
-    end
-    str_ary.join( " / " )
   end
 
 end
