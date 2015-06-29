@@ -4,6 +4,8 @@ class TokyoMetro::Required::All::Factory::Generate::Api::MetaClass < TokyoMetro:
     [
       [ "info" ] ,
       [ "info" , "fundamental" ] ,
+      [ "info" , "fundamental" , "validity_checker" ] ,
+      [ "info" , "fundamental" , "validity_checker" , "meta_class" ] ,
       [ "info" , "not_on_the_top_layer" ] ,
       [ "list" ] ,
       [ "list" , "normal" ] ,
