@@ -4,9 +4,8 @@ class TokyoMetro::Factory::Generate::Api::MetaClass::Info::Fundamental::Validity
 
   def class_method_names_and_hash_keys
     {
-      rdf_type_of_facility: "\@type" ,
-      category_name: "ugsrv:categoryName" , # (e.g.) ::TokyoMetro::Api::StationFacility::Info::BarrierFree::Toilet.category_name (Class Method)
-      spac__is_available_to: "spac:isAvailableTo" # (e.g.) ::TokyoMetro::Api::StationFacility::Info::BarrierFree::LinkForMobilityScooter.spac__is_available_to (Class Method)
+      rdf_type: "\@type" , # (e.g.) ::TokyoMetro::Api::StationTimetable.rdf_type (Class Method)
+      context: "\@context" # (e.g.) ::TokyoMetro::Api::StationTimetable.context (Class Method)
     }
   end
 
