@@ -89,7 +89,12 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
 
   def generate_log_of_romance_car
     if on_rails_application?
-      ::Rails.application.config.romance_car_logger.info( log_as_for_romance_car )
+      case ::Rails.env
+      when "development" , "test"
+        ::Rails.application.config.romance_car_logger.info( log_as_for_romance_car )
+      when "production"
+        ::Rails.logger.info( "[Romance Car] #{ log_as_for_romance_car }" )
+      end
     end
     return nil
   end
