@@ -4,8 +4,10 @@ class TokyoMetro::Factory::Generate::Api::MetaClass::Info::Fundamental::Validity
 
   def class_method_names_and_hash_keys
     {
-      rdf_type: "\@type" , # (e.g.) ::TokyoMetro::Api::StationTimetable.rdf_type (Class Method)
-      context: "\@context" # (e.g.) ::TokyoMetro::Api::StationTimetable.context (Class Method)
+      # (e.g.) ::TokyoMetro::Api::StationTimetable.rdf_type (Class Method)
+      rdf_type: "\@type" ,
+      # (e.g.) ::TokyoMetro::Api::StationTimetable.context (Class Method)
+      context: "\@context"
     }
   end
 
