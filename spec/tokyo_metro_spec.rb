@@ -16,7 +16,7 @@ end
 # options = [ ]
 # options = [ :station ]
 # options = [ :station_facility ]
-# options = [ :station , :station_facility , :railway_line , :fare ]
+# options = [ :station , :station_facility , :railway_line , :fare , :get_info_from_api ]
 options = [ :station , :station_facility , :railway_line ]
 
 #--------
@@ -89,4 +89,6 @@ end
 
 #--------
 
-get_api
+if to_test( :get_info_from_api , options )
+  get_info_from_api
+end

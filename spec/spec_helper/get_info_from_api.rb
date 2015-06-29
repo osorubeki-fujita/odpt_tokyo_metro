@@ -1,4 +1,4 @@
-def get_api
+def get_info_from_api
   describe TokyoMetro::Api do
 
     describe "\#.get" do
