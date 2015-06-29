@@ -86,3 +86,7 @@ if to_test( :station , options )
   stations_on_chiyoda_branch_line
   connecting_railway_lines_of_station
 end
+
+#--------
+
+get_api

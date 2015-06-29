@@ -105,7 +105,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   def render_status_additional_infos
     h_locals_i = {
       this: self ,
-      max_delay_decorator: @max_delay.decorate( request ) ,
+      max_delay_decorator: max_delay_decorator ,
       to_render_status_additional_infos_ja: to_render_status_additional_infos_ja? ,
       to_render_status_additional_infos_en: to_render_status_additional_infos_en?
     }
@@ -221,6 +221,10 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
 
   def hour_before_first_train_begins
     ( ( ::TokyoMetro::DATE_CHANGING_HOUR )..6 ).to_a
+  end
+
+  def max_delay_decorator
+    @max_delay.decorate( request )
   end
 
   def to_render_status_additional_infos_ja?

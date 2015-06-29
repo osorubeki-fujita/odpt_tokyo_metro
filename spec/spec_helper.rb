@@ -44,3 +44,7 @@ require_relative 'spec_helper/station_facility/replacing_railway_lines_of_platfo
 require_relative 'spec_helper/station/marunouchi_branch_line.rb'
 require_relative 'spec_helper/station/chiyoda_branch_line.rb'
 require_relative 'spec_helper/station/connecting_railway_lines.rb'
+
+#--------
+
+require_relative 'spec_helper/get_api.rb'

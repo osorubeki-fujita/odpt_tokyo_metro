@@ -1,5 +1,7 @@
 require_relative "tokyo_metro/version.rb"
 
+require 'httpclient'
+
 require "active_support"
 require "active_support/core_ext"
 require "active_support/concern"
