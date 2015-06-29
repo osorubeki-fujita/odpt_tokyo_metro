@@ -81,5 +81,45 @@ def get_api
       end
     end
 
+    sleep( 0.2 )
+
+    #--------
+
+    it "should be an instance of \'TokyoMetro::Api::Point::Info\'." do
+      point_id_urn = "urn:ucode:_00001C000000000000010000030C40CF"
+      point = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , point_id_urn , perse_json: true , generate_instance: true )
+      expect( point.first ).to be_instance_of( ::TokyoMetro::Api::Point::Info )
+    end
+
+    it "should be an instance of \'TokyoMetro::Api::Station::Info\'." do
+      station_id_urn = "urn:ucode:_00001C000000000000010000030C4703"
+      station = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , station_id_urn , perse_json: true , generate_instance: true )
+      expect( station.first ).to be_instance_of( ::TokyoMetro::Api::Station::Info )
+    end
+
+    sleep( 0.2 )
+
+    it "should be an instance of \'TokyoMetro::Api::RailwayLine::Info\'." do
+      railway_line_id_urn = "urn:ucode:_00001C000000000000010000030C46AC"
+      railway_line = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , railway_line_id_urn , perse_json: true , generate_instance: true )
+      expect( railway_line.first ).to be_instance_of( ::TokyoMetro::Api::RailwayLine::Info )
+    end
+
+    sleep( 0.2 )
+
+    it "should be an instance of \'TokyoMetro::Api::MlitStation::Info\'." do
+      railway_line_id_urn = "urn:ucode:_00001C000000000000010000030BC6A5"
+      railway_line = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , railway_line_id_urn , perse_json: true , generate_instance: true )
+      expect( railway_line.first ).to be_instance_of( ::TokyoMetro::Api::MlitStation::Info )
+    end
+
+    sleep( 0.2 )
+
+    it "should be an instance of \'TokyoMetro::Api::MlitRailway::Info\'." do
+      railway_line_id_urn = "urn:ucode:_00001C000000000000010000030BBBAB"
+      railway_line = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , railway_line_id_urn , perse_json: true , generate_instance: true )
+      expect( railway_line.first ).to be_instance_of( ::TokyoMetro::Api::MlitRailway::Info )
+    end
+
   end
 end
