@@ -6,6 +6,7 @@ class TokyoMetro::Required::All::Factory::Convert::Customize::Api < TokyoMetro::
 
   def self.other_files
     [
+      MetaClass.files ,
       Fare.files ,
       RailwayLine.files ,
       StationFacility.files
