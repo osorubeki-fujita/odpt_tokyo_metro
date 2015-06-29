@@ -169,14 +169,14 @@ def connecting_railway_lines__index_in_stations( station )
     station.connecting_railway_lines.each do | connecting_railway_line_info |
 
       valid_index = info_related_to_this_station[ connecting_railway_line_info.railway_line ][ "index_in_station" ]
-      describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , " - index_in_station" do
+      describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "- index_in_station" do
         it "(\"#{connecting_railway_line_info.railway_line}\" connected at \"#{station.same_as}\") should contain an index number \##{valid_index}." do
           expect( connecting_railway_line_info.index_in_station ).to eq( valid_index )
         end
       end
 
       if info_related_to_this_station[ connecting_railway_line_info.railway_line ][ "cleared" ]
-        describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , " - cleared" do
+        describe ::TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info , "- cleared" do
           it "(\"#{connecting_railway_line_info.railway_line}\" connected at \"#{station.same_as}\") should be cleared in HTML." do
             expect( connecting_railway_line_info ).to be_cleared
           end
