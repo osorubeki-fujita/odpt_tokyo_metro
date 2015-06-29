@@ -2,17 +2,9 @@ class TokyoMetro::Required::All::Factory::Generate::Api::MetaClass < TokyoMetro:
 
   def self.other_files
     [
-      [ "info" ] ,
-      [ "info" , "fundamental" ] ,
-      [ "info" , "fundamental" , "validity_checker" ] ,
-      [ "info" , "fundamental" , "validity_checker" , "meta_class" ] ,
-      [ "info" , "not_on_the_top_layer" ] ,
-      [ "list" ] ,
-      [ "list" , "normal" ] ,
-      [ "list" , "date" ]
-    ].map { | file_basename |
-      ::File.join( top_file , *file_basename )
-    }
+      Info.files ,
+      List.files
+    ]
   end
 
 end
