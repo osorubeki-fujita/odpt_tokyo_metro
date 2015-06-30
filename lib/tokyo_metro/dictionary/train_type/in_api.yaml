@@ -82,6 +82,16 @@ odpt.TrainType:TokyoMetro.Unknown:
 odpt.TrainType:TokyoMetro.Extra:
   name_ja : 臨時
   name_en : Extra
+
+#-------- 都営地下鉄
+
+odpt.TrainType:Toei.Local:
+  name_ja : 各停
+  name_en : Local
+
+odpt.TrainType:Toei.Express:
+  name_ja : 急行
+  name_en : Express
   
 odpt.TrainType:Toei.AirportLimitedExpress:
   name_ja : エアポート快特

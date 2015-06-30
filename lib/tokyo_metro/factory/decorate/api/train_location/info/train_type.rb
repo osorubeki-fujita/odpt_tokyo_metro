@@ -54,6 +54,10 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
         return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" )
       end
 
+    #-------- 【南北線・三田線】目黒 - 白金高輪
+
+    # elsif object.on_namboku_or_toei_mita_line?
+      
     end
 
     t = ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
