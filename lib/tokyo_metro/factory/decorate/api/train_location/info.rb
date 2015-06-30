@@ -10,6 +10,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   def render
     h_locals_i = {
       this: self ,
+      railway_line_of_train: railway_line_of_train
       train_type_decorated: train_type_decorated ,
       starting_station_decorated: starting_station_decorated ,
       terminal_station_decorated: terminal_station_decorated ,
@@ -18,9 +19,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       to_render_train_owner: render_train_owner?
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
-%li{ class: [ :train_location , this.railway_line.css_class_name , :clearfix ] , id: this.object.train_number.downcase }
+%li{ class: [ :train_location , railway_line_of_train.css_class_name , :clearfix ] , id: this.object.train_number.downcase }
   %div{ class: :train_fundamental_infos }
-    = this.railway_line.decorate.render_matrix( make_link_to_railway_line: false , size: :very_small )
+    = railway_line_of_train.decorate.render_matrix( make_link_to_railway_line: false , size: :very_small )
     - if to_render_train_type
       = train_type_decorated.render_in_train_location
     = terminal_station_decorated.render_as_terminal_station
@@ -76,6 +77,14 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   def not_render_train_owner?
     on_ginza_line_page? or on_marunouchi_line_page? or on_marunouchi_branch_line_page?
+  end
+  
+  def railway_line_of_train
+    if object.toei_mita_line?
+      ::RailwayLine.find_by( same_as: "odpt.Railway:Toei.Mita" )
+    else
+      @railway_line
+    end
   end
 
   [ :train_type , :train_owner ].each do | method_basename |
