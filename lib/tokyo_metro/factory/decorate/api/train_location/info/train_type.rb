@@ -56,8 +56,22 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
 
     #-------- 【南北線・三田線】目黒 - 白金高輪
 
-    # elsif object.on_namboku_or_toei_mita_line?
-      
+    elsif object.on_namboku_line? and object.local_train?
+
+      if object.terminate_on_tokyu_meguro_line?
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Namboku.Local.ToTokyu" )
+      else
+        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Namboku.Local.Normal" )
+      end
+
+    elsif object.on_toei_mita_line? and object.local_train?
+
+      if object.terminate_on_tokyu_meguro_line?
+        return ::TrainType.find_by( same_as: "custom.TrainType:Toei.Mita.Local.ToTokyu" )
+      else
+        return ::TrainType.find_by( same_as: "custom.TrainType:Toei.Mita.Local.Normal" )
+      end
+
     end
 
     t = ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
