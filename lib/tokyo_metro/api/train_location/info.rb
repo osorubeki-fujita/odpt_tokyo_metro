@@ -120,15 +120,17 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
     railway_direction
   end
 
-  def railway_direction_for_grouping_in_decorator
-    case railway_direction_in_api_same_as
-    when "odpt.RailDirection:Toei.NishiTakashimadaira"
-      "odpt.RailDirection:TokyoMetro.AkabaneIwabuchi"
-    when "odpt.RailDirection:Toei.Meguro"
-      "odpt.RailDirection:TokyoMetro.Meguro"
-    else
-      railway_direction_in_api_same_as
+  def railway_direction_for_grouping_in_decorator( railway_line_in_db )
+    if railway_line_in_db.namboku_line?
+      case railway_direction_in_api_same_as
+      when "odpt.RailDirection:Toei.NishiTakashimadaira"
+        return "odpt.RailDirection:TokyoMetro.AkabaneIwabuchi"
+      when "odpt.RailDirection:Toei.Meguro"
+        return "odpt.RailDirection:TokyoMetro.Meguro"
+      end
     end
+
+    return railway_direction_in_api_same_as
   end
 
   # 定義されるメソッド
