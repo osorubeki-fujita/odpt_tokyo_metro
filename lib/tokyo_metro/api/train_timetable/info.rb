@@ -132,6 +132,10 @@ class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRea
     [ @weekdays , @saturdays , @holidays ]
   end
 
+  def valid_timetables
+    timetables.select( &:present? )
+  end
+
   # 運行日の列車時刻
   # @return [::TokyoMetro::Api::TrainTimetable::Info::StationTime::List <::TokyoMetro::Api::TrainTimetable::Info::StationTime::Info>]
   # @note 平日運行の場合は @weekdays , 土休日運行の場合は @holidays を返す。
