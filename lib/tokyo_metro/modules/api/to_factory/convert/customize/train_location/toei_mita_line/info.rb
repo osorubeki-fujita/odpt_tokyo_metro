@@ -1,4 +1,4 @@
-module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainLocation::ToeiMitaLine
+module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainLocation::ToeiMitaLine::Info
 
   def initialize( *variables )
     super( *variables )
