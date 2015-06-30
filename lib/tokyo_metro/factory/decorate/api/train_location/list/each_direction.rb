@@ -3,8 +3,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::List::EachDirection < T
   def initialize( request , railway_line , railway_direction_in_api_same_as , train_location_infos )
     super( request )
     @railway_line = railway_line
-    @railway_direction = ::RailwayDirection.find_by( railway_line_id: @railway_line.id , in_api_same_as: railway_direction_in_api_same_as )
-    if @railway_direction.blank?
+    @railway_direction = ::RailwayDirection.find_by( railway_line: @railway_line , in_api_same_as: railway_direction_in_api_same_as )
+    if @railway_direction.blank? and @railway_line.namboku_line?
+      @railway_direction = ::RailwayDirection.find_by( railway_line: ::RailwayLine.find_by( same_as: "odpt.Railway:Toei.Mita" ) , in_api_same_as: railway_direction_in_api_same_as )
+    end
+    unless @railway_direction.present?
       raise "\[Error\] railway_line: #{ @railway_line.same_as } / railway_direction: #{ railway_direction_in_api_same_as }"
     end
     @train_location_infos = train_location_infos
