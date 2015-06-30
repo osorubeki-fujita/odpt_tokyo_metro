@@ -12,7 +12,9 @@ class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::RomanceCar::
   def generate_log_of_romance_car
     case ::Rails.env
     when "development" , "test"
-      ::Rails.application.config.romance_car_logger.info( log_as_for_romance_car )
+      _log_as_for_romance_car = log_as_for_romance_car
+      puts _log_as_for_romance_car
+      ::Rails.application.config.romance_car_logger.info( _log_as_for_romance_car )
     when "production"
       ::Rails.logger.info( "[Romance Car] #{ log_as_for_romance_car }" )
     end
