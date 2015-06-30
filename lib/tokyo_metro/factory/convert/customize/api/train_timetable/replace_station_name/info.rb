@@ -1,12 +1,10 @@
-class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStationName::Info
+class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStationName::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental
 
   def initialize( object , regexp_for_replaced_station , replacing_string )
-    @object = object
+    super( object )
     @regexp_for_replaced_station = regexp_for_replaced_station
     @replacing_string = replacing_string
   end
-
-  attr_reader :object
 
   def process
     object.valid_timetables.each do | timetable |
@@ -22,10 +20,6 @@ class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStati
 
       end
     end
-  end
-
-  def self.process( object , regexp_for_replaced_station , replacing_string )
-    self.new( object , regexp_for_replaced_station , replacing_string ).process
   end
 
 end

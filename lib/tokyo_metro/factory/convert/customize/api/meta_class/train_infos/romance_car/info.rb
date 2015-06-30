@@ -1,10 +1,4 @@
-class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::RomanceCar::Info
-
-  def initialize( object )
-    @object = object
-  end
-
-  attr_reader :object
+class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::RomanceCar::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental
 
   def process
     if romance_car_on_chiyoda_line?
@@ -12,10 +6,6 @@ class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::Roman
       set_train_type
       set_specific_train_name
     end
-  end
-
-  def self.process( object )
-    self.new( object ).process
   end
 
   private

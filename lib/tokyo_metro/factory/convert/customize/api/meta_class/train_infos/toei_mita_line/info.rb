@@ -1,19 +1,9 @@
-class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::ToeiMitaLine::Info
-
-  def initialize( object )
-    @object = object
-  end
-
-  attr_reader :object
+class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::ToeiMitaLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental
 
   def process
     convert_railway_line
     convert_railway_direction
     convert_train_type
-  end
-
-  def self.process( object )
-    self.new( object ).process
   end
 
   private
