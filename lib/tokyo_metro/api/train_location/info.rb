@@ -116,8 +116,8 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
     ::TokyoMetro::Factory::Decorate::Api::TrainLocation::Info.new( request , self , railway_line )
   end
 
-  def before_decorate( railway_line_in_db )
-    ::TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::Info.new( self , railway_line_in_db )
+  def before_decorate
+    ::TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::Info.new( self )
   end
 
   # 定義されるメソッド
