@@ -1,4 +1,5 @@
 #---- 丸ノ内線
+ikebukuro_on_marunouchi_line: odpt.Station:TokyoMetro.Marunouchi.Ikebukuro
 honancho: odpt.Station:TokyoMetro.MarunouchiBranch.Honancho
 nakano_fujimicho: odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho
 nakano_shimbashi: odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi
@@ -36,6 +37,9 @@ wakoshi_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.Wakoshi
 kotake_mukaihara_on_yurakucho_line: odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara
 kotake_mukaihara_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara
 ikebukuro_on_yurakucho_line: odpt.Station:TokyoMetro.Yurakucho.Ikebukuro
-shibuya_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.Shibuya
 ikebukuro_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro
+shinjuku_sanchome_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome
+shibuya_on_fukutoshin_line: odpt.Station:TokyoMetro.Fukutoshin.Shibuya
 motomachi_chukagai: odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.MotomachiChukagai
+toyosu: odpt.Station:TokyoMetro.Yurakucho.Toyosu
+shin_kiba: odpt.Station:TokyoMetro.Yurakucho.ShinKiba

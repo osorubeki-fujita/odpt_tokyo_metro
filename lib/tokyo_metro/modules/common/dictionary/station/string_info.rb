@@ -1,5 +1,6 @@
 # 駅名を定数・モジュール関数として提供する名前空間
 # @example
+#   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ikebukuro_on_marunouchi_line => odpt.Station:TokyoMetro.Marunouchi.Ikebukuro
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.honancho                              => odpt.Station:TokyoMetro.MarunouchiBranch.Honancho
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.nakano_fujimicho                      => odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.nakano_shimbashi                      => odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi
@@ -28,8 +29,11 @@
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kotake_mukaihara_on_fukutoshin_line   => odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ikebukuro_on_yurakucho_line           => odpt.Station:TokyoMetro.Yurakucho.Ikebukuro
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ikebukuro_on_fukutoshin_line          => odpt.Station:TokyoMetro.Fukutoshin.Ikebukuro
+#   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.shinjuku_sanchome_on_fukutoshin_line          => odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.shibuya_on_fukutoshin_line          => odpt.Station:TokyoMetro.Fukutoshin.Shibuya
 #   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.motomachi_chukagai                    => odpt:Station.YokohamaMinatomiraiRailway.Minatomirai.MotomachiChukagai
+#   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.toyosu             => odpt.Station:TokyoMetro.Yurakucho.Toyosu
+#   TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.shin_kiba             => odpt.Station:TokyoMetro.Yurakucho.ShinKiba
 module TokyoMetro::Modules::Common::Dictionary::Station::StringInfo
 
   include ::TokyoMetro::Modules::Common::ConvertConstantToClassMethod
