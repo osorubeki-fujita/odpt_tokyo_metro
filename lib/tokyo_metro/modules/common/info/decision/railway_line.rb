@@ -6,7 +6,7 @@ module TokyoMetro::Modules::Common::Info::Decision::RailwayLine
     railway_line_base_name = item.underscore.downcase
     eval <<-DEF
       def on_#{ railway_line_base_name }_line?
-        on_the_railway_line_of?( ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.#{railway_line_base_name} )
+        on_the_railway_line_of?( ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.#{ railway_line_base_name } )
       end
 
       #-------- [alias]

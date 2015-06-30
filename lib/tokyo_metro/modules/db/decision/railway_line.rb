@@ -4,7 +4,7 @@ module TokyoMetro::Modules::Db::Decision::RailwayLine
 
   private
 
-  def on_the_railway_line_of?( *args , compared )
+  def on_the_railway_line_of?( *args )
     super( *args , railway_line.same_as )
   end
 
