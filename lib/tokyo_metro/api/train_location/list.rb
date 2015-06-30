@@ -29,17 +29,7 @@ class TokyoMetro::Api::TrainLocation::List < TokyoMetro::Api::MetaClass::RealTim
   end
 
   def group_by_railway_direction
-    self.group_by { | train_location_info |
-      d = train_location_info.railway_direction_in_api_same_as
-      case d
-      when "odpt.RailDirection:Toei.Meguro"
-        "odpt.RailDirection:TokyoMetro.Meguro"
-      when "odpt.RailDirection:Toei.NishiTakashimadaira"
-        "odpt.RailDirection:TokyoMetro.NishiTakashimadaira"
-      else
-        d
-      end
-    }
+    self.group_by( &:railway_direction_in_api_same_as )
   end
 
 end
