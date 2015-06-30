@@ -8,6 +8,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::Roman
 
   def process
     if romance_car_on_chiyoda_line?
+      puts "TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::RomanceCar::Info\#process"
       set_train_type
       set_specific_train_name
     end
