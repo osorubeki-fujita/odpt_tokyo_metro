@@ -14,6 +14,7 @@ class TokyoMetro::Required::All::Factory < TokyoMetro::Required
       YamlStationList.files ,
       Seed.files ,
       Common.files ,
+      BeforeDecorate.files ,
       Decorate.files
     ]
   end

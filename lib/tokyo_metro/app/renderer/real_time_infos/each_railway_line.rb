@@ -144,5 +144,3 @@ SocketError - getaddrinfo: ���̂悤�ȃz�X�g�͕s���ł��B 
   app/controllers/concerns/action_base_for_station_page.rb:8:in `action_base_for_station_page'
   app/controllers/station_facility_controller.rb:24:in `action_for_station_page'
   actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
-
-

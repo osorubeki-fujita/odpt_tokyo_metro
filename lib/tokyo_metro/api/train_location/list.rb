@@ -22,14 +22,14 @@ class TokyoMetro::Api::TrainLocation::List < TokyoMetro::Api::MetaClass::RealTim
     ::TokyoMetro::Factory::Decorate::Api::TrainLocation::List.new( request , self , railway_line )
   end
 
+  def before_decorate
+    ::TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::List.new( self )
+  end
+
   def exclude_toei_mita_line
     self.class.new( self.select { | train_location_info |
       train_location_info.railway_line  != "odpt.Railway:Toei.Mita"
     } )
-  end
-
-  def group_by_railway_direction_in_decorator( railway_line_in_db )
-    self.group_by { | item | item.railway_direction_for_grouping_in_decorator( railway_line_in_db ) }
   end
 
 end

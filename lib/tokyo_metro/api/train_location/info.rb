@@ -116,83 +116,8 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
     ::TokyoMetro::Factory::Decorate::Api::TrainLocation::Info.new( request , self , railway_line )
   end
 
-  def railway_direction_in_api_same_as
-    railway_direction
-  end
-
-  def railway_direction_for_grouping_in_decorator( railway_line_in_db )
-    # 都営三田線（目黒 - 白金高輪）の列車
-    if railway_line_in_db.namboku_line? and toei_mita_line?
-      case railway_direction_in_api_same_as
-      when "odpt.RailDirection:Toei.NishiTakashimadaira"
-        return "odpt.RailDirection:TokyoMetro.AkabaneIwabuchi"
-      when "odpt.RailDirection:Toei.Meguro"
-        return "odpt.RailDirection:TokyoMetro.Meguro"
-      end
-    end
-
-    # 有楽町・副都心線
-    if railway_line_in_db.yurakucho_or_fukutoshin_line?
-
-      # 西武線直通列車
-      if terminating_on_seibu_line?
-        case railway_direction_in_api_same_as
-        when "odpt.RailDirection:TokyoMetro.KotakeMukaihara"
-          return "odpt.RailDirection:TokyoMetro.Wakoshi"
-        end
-      end
-
-      # 池袋行き（新木場・渋谷方面から）
-      if terminating_at_ikebukuro_on_yurakucho_line? or terminating_at_ikebukuro_on_fukutoshin_line?
-        if starting_at_toyosu? or starting_at_shin_kiba? or starting_at_shibuya_on_fukutoshin_line? or starting_on_tokyu_toyoko_or_minatomirai_line?
-          return "odpt.RailDirection:TokyoMetro.Wakoshi"
-        end
-      end
-
-      # 小竹向原行き（新木場・渋谷方面から）
-      if terminating_at_kotake_mukaihara_on_yurakucho_line? or terminating_at_kotake_mukaihara_on_fukutoshin_line?
-        if starting_at_toyosu? or starting_at_shin_kiba? or starting_at_shibuya_on_fukutoshin_line? or starting_on_tokyu_toyoko_or_minatomirai_line?
-          return "odpt.RailDirection:TokyoMetro.Wakoshi"
-        end
-      end
-
-    end
-
-    # 有楽町線
-    if railway_line_in_db.yurakucho_line?
-
-      # 池袋行き（和光市・東武線・西武線方面から）
-      if terminating_at_ikebukuro_on_yurakucho_line?
-        if starting_at_wakoshi_on_yurakucho_line? or starting_at_kotake_mukaihara_on_yurakucho_line? or starting_on_seibu_line? or starting_on_tobu_tojo_line?
-          return "odpt.RailDirection:TokyoMetro.ShinKiba"
-        end
-      end
-
-    end
-
-    # 副都心線
-    if railway_line_in_db.fukutoshin_line?
-
-      # 新宿三丁目行き（渋谷方面から）
-      if terminating_at_shinjuku_sanchome_on_fukutoshin_line?
-        if starting_at_shibuya_on_fukutoshin_line? or starting_on_tokyu_toyoko_or_minatomirai_line?
-          case railway_direction_in_api_same_as
-          when "odpt.RailDirection:TokyoMetro.Ikebukuro"
-            return "odpt.RailDirection:TokyoMetro.Wakoshi"
-          end
-        end
-      end
-
-      # 池袋行き（和光市・東武線・西武線方面から）
-      if terminating_at_ikebukuro_on_fukutoshin_line?
-        if starting_at_wakoshi_on_fukutoshin_line? or starting_at_kotake_mukaihara_on_fukutoshin_line? or starting_on_seibu_line? or starting_on_tobu_tojo_line?
-          return "odpt.RailDirection:TokyoMetro.Shibuya"
-        end
-      end
-
-    end
-
-    return railway_direction_in_api_same_as
+  def before_decorate( railway_line_in_db )
+    ::TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::Info.new( self , railway_line_in_db )
   end
 
   # 定義されるメソッド
