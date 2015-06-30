@@ -28,8 +28,8 @@ class TokyoMetro::Api::TrainLocation::List < TokyoMetro::Api::MetaClass::RealTim
     } )
   end
 
-  def group_by_railway_direction
-    self.group_by( &:railway_direction_in_api_same_as )
+  def group_by_railway_direction_in_decorator
+    self.group_by( &:railway_direction_for_grouping_in_decorator )
   end
 
 end

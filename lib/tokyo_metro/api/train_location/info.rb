@@ -120,6 +120,17 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
     railway_direction
   end
 
+  def railway_direction_for_grouping_in_decorator
+    case railway_direction_in_api_same_as
+    when "odpt.RailDirection:Toei.NishiTakashimadaira"
+      "odpt.RailDirection:TokyoMetro.AkabaneIwabuchi"
+    when "odpt.RailDirection:Toei.Meguro"
+      "odpt.RailDirection:TokyoMetro.Meguro"
+    else
+      railway_direction_in_api_same_as
+    end
+  end
+
   # 定義されるメソッド
   #
   # to , to_sta

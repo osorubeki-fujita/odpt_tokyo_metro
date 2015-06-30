@@ -23,7 +23,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::List < TokyoMetro::Fact
   end
 
   def grouped_by_railway_direction
-    @object.group_by_railway_direction.map { | railway_direction_in_api_same_as , train_location_infos |
+    @object.group_by_railway_direction_in_decorator.map { | railway_direction_in_api_same_as , train_location_infos |
       ::TokyoMetro::Factory::Decorate::Api::TrainLocation::List::EachDirection.new( @request , @railway_line , railway_direction_in_api_same_as , train_location_infos )
     }.sort_by { | item |
       item.railway_direction.id
