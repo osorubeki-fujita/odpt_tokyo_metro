@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   def render
     h_locals_i = {
       this: self ,
-      railway_line_of_train: railway_line_of_train
+      railway_line_of_train: railway_line_of_train ,
       train_type_decorated: train_type_decorated ,
       starting_station_decorated: starting_station_decorated ,
       terminal_station_decorated: terminal_station_decorated ,
