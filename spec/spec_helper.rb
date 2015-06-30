@@ -47,4 +47,8 @@ require_relative 'spec_helper/station/connecting_railway_lines.rb'
 
 #--------
 
+require_relative 'spec_helper/train_location.rb'
+
+#--------
+
 require_relative 'spec_helper/get_info_from_api.rb'

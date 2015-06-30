@@ -2,10 +2,15 @@ class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ToeiMitaLine
 
   def process
     convert_station_name
+    convert_operator
     super
   end
 
   private
+
+  def convert_operator
+    object.instance_variable_set( :@operator , "odpt.Operator:Toei" )
+  end
 
   def convert_station_name
     TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStationName::Info.process(

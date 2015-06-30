@@ -8,7 +8,6 @@ class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::ToeiM
 
   def process
     convert_railway_line
-    convert_operator
     convert_railway_direction
     convert_train_type
   end
@@ -21,10 +20,6 @@ class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::ToeiM
 
   def convert_railway_line
     object.instance_variable_set( :@railway_line , "odpt.Railway:Toei.Mita" )
-  end
-
-  def convert_operator
-    object.instance_variable_set( :@operator , "odpt.Operator:Toei" )
   end
 
   def convert_railway_direction

@@ -16,8 +16,8 @@ end
 # options = [ ]
 # options = [ :station ]
 # options = [ :station_facility ]
-# options = [ :station , :station_facility , :railway_line , :fare , :get_info_from_api ]
-options = [ :station , :station_facility , :railway_line ]
+# options = [ :station , :station_facility , :railway_line , :fare , :train_location , :get_info_from_api ]
+options = [ :station , :station_facility , :railway_line , :train_location ]
 
 #--------
 
@@ -85,6 +85,12 @@ if to_test( :station , options )
   stations_on_marunouchi_branch_line
   stations_on_chiyoda_branch_line
   connecting_railway_lines_of_station
+end
+
+#--------
+
+if to_test( :train_location , options )
+  train_location
 end
 
 #--------
