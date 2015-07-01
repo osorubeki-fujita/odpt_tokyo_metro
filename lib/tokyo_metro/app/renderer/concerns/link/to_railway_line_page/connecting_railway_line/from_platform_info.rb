@@ -70,7 +70,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
 
     elsif station_info.same_as == "odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue" and railway_line_connected.same_as == "odpt.Railway:TokyoMetro.Marunouchi"
       r = nil
-    
+
     else
       connecting_railway_line_info = station_info.connecting_railway_line_infos.find_by( railway_line: railway_line_connected )
       unless connecting_railway_line_info.present?

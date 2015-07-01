@@ -107,7 +107,7 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
   # @return [String]
   # @return [nil] 列車が駅に停車している場合は nil
   attr_reader :to_station
-  
+
   attr_reader :train_name
 
   # @!endgroup

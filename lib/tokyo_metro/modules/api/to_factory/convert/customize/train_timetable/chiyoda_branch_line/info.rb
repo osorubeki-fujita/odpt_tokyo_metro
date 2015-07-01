@@ -1,16 +1,9 @@
 module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainTimetable::ChiyodaBranchLine::Info
 
-  def initialize( *variables )
-    super( *variables )
-    convert_station_name_of_chiyoda_branch_line
-  end
-
   private
 
-  def convert_station_name_of_chiyoda_branch_line
-    if operated_only_on_chiyoda_branch_line_including_invalid?
-      replace_station_name( ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Dictionary::RegexpForReplace.chiyoda_branch_line_stations , "ChiyodaBranch" )
-    end
+  def convert_infos_of_chiyoda_branch_line
+    ::TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ChiyodaBranchLine::Info.process( self )
   end
 
 end

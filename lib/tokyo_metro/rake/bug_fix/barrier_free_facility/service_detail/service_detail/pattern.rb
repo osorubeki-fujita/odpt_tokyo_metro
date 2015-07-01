@@ -76,7 +76,7 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
       service_details = facility_info.service_details
       service_details.each.with_index(1) do | detail_info , i |
         pattern = detail_info.barrier_free_facility_service_detail_pattern
-  
+
         if @proc_for_deciding_invalidity.call( pattern )
           if @invalid_service_detail_pattern_id.blank?
             @invalid_service_detail_pattern_id = pattern.id

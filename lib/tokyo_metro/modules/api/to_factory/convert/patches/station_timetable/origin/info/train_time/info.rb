@@ -20,7 +20,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Patches::StationTimetable::
     end
     return nil
   end
-  
+
   [ :ayase , :wakoshi ].each do | station_name |
     eval <<-DEF
       def has_starting_station_info_of_#{ station_name }?

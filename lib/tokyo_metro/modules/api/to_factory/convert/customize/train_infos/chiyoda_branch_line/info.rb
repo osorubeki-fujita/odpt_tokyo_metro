@@ -2,19 +2,13 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainInfos::Chiy
 
   def initialize( *variables )
     super( *variables )
-    convert_railway_line_name_of_chiyoda_branch_line_train
+    convert_infos_of_chiyoda_branch_line
   end
 
   private
 
-  def convert_railway_line_name_of_chiyoda_branch_line_train
-    if operated_only_on_chiyoda_branch_line_including_invalid?
-      regexp_for_replace = ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Dictionary::RegexpForReplace.chiyoda_branch_line_stations
-
-      @railway_line = "odpt.Railway:TokyoMetro.ChiyodaBranch"
-      @starting_station = @starting_station.gsub( regexp_for_replace , "ChiyodaBranch" )
-      @terminal_station = @terminal_station.gsub( regexp_for_replace , "ChiyodaBranch" )
-    end
+  def convert_infos_of_chiyoda_branch_line
+    raise "The method \'#{ __method__ }\' is not defined in this module \'#{ self.class }\'."
   end
 
 end

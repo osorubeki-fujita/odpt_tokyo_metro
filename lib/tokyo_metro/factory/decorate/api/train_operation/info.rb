@@ -40,7 +40,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
       end
     end
   end
-  
+
   def additional_info_precise_ja_to_a
     additional_info_precise_ja.try( :split , /\n/ )
   end
@@ -95,7 +95,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
       "Information"
     end
   end
-  
+
   # @note 親クラスで定義済
   # def render
   # end
@@ -166,11 +166,11 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Info < TokyoMetro::Fac
   def before_first_train_begins?
     no_train? and hour_before_first_train_begins.include?( object.dc_date.hour )
   end
-  
+
   def on_schedule?
     @status_type == :on_schedule or ( object.on_schedule? and @max_delay.on_schedule? )
   end
-  
+
   def nearly_on_schedule?
     @status_type == :nearly_on_schedule or @max_delay.nearly_on_schedule?
   end

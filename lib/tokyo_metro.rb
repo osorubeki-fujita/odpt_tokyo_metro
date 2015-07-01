@@ -372,8 +372,8 @@ module TokyoMetro
         :StartingStation ,
         :ReplaceStationName ,
         # :MarunouchiBranchLine ,
-        :ChiyodaBranchLine ,
         :TrainRelationsOnMarunouchiBranchLine ,
+        :ChiyodaBranchLine ,
         :RomanceCar ,
         :ToeiMitaLine
       )
@@ -385,6 +385,7 @@ module TokyoMetro
       )
 
       set_namespaces_to_module_library( h , :Customize , :TrainLocation ,
+        :ChiyodaBranchLine ,
         :RomanceCar ,
         :ToeiMitaLine
       )
@@ -393,8 +394,7 @@ module TokyoMetro
         :ConvertStation ,
         :ConvertTerminalStation ,
         :ConvertStartingStation ,
-        :MarunouchiBranchLine ,
-        :ChiyodaBranchLine
+        :MarunouchiBranchLine
       )
 
       h

@@ -3,9 +3,12 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   def initialize( request , obj , railway_line )
     super( request , obj )
     @railway_line = railway_line
+    set_station_infos
+    set_place_id
   end
 
   attr_reader :railway_line
+  attr_reader :place_id
 
   def render
     h_locals_i = {
@@ -36,7 +39,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   end
 
   def render_current_position
-    h.render inline: <<-HAML , type: :haml , locals: { request: request , station_infos: station_infos }
+    h.render inline: <<-HAML , type: :haml , locals: { request: request , station_infos: @station_infos }
 %div{ class: :current_position }
   %p{ class: [ :title_of_current_position , :text_ja ] }
     = "現在位置"
@@ -71,6 +74,33 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   private
 
+  def set_station_infos
+    ary = [ :from_station , :to_station ].map { | attr_name |
+      object.send( attr_name )
+    }.select( &:present? ).map { | station_info_same_as |
+      case station_info_same_as
+      when "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+        "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase"
+      else
+        station_info_same_as
+      end
+    }.map { | station_info_same_as |
+      ::Station::Info.find_by( same_as: station_info_same_as )
+    }
+    @station_infos = ary
+  end
+
+  def set_place_id
+    case @station_infos.length
+    when 1
+      @place_id = "at_#{ @station_infos.first.name_in_system }"
+    when 2
+      @place_id = "from_#{ @station_infos.first.name_in_system }_to_#{ @station_infos.last.name_in_system }"
+    else
+      raise
+    end
+  end
+
   def not_render_train_type?
     ( on_ginza_line_page? or on_marunouchi_line_page? or on_marunouchi_branch_line_page? or on_hibiya_line_page? ) and object.local_train?
   end
@@ -78,7 +108,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   def not_render_train_owner?
     on_ginza_line_page? or on_marunouchi_line_page? or on_marunouchi_branch_line_page?
   end
-  
+
   def railway_line_of_train
     if object.toei_mita_line?
       ::RailwayLine.find_by( same_as: "odpt.Railway:Toei.Mita" )
@@ -94,7 +124,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       end
     DEF
   end
-  
+
   [ :ginza , :marunouchi , :marunouchi_branch , :hibiya , :tozai , :chiyoda , :yurakucho , :hanzomon , :namboku , :fukutoshin ].each do | method_basename |
     eval <<-DEF
       def on_#{ method_basename }_line_page?
@@ -114,29 +144,14 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       end
     DEF
   end
-  
-  def station_infos
-    [ :from_station , :to_station ].map { | attr_name |
-      object.send( attr_name )
-    }.select( &:present? ).map { | station_info_same_as |
-      case station_info_same_as
-      when "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
-        "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase"
-      else
-        station_info_same_as
-      end
-    }.map { | station_info_same_as |
-      ::Station::Info.find_by( same_as: station_info_same_as )
-    }
-  end
 
   def train_type
     ::TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType.get( self )
   end
-  
+
   # def train_name
     # if object.romance_car_specific_train?
-        
+
     # else
   # end
 

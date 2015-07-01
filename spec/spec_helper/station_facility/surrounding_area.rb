@@ -2,7 +2,7 @@
 # @note 「誤：虎ノ門病院 → 正：虎の門病院」など
 def station_facility_surrounding_area
   dict = TokyoMetro::Modules::Api::ToFactory::Convert::Patches::StationFacility::SurroundingArea::Generate::Info::Platform::Info::SurroundingArea::DICTIONARY
-  
+
   surrounding_area_infos =::TokyoMetro::Api.station_facilities.map( &:platform_infos ).flatten.map( &:surrounding_areas ).flatten.select( &:present? )
 
   platform_infos_containing_invalid_surrounding_area = surrounding_area_infos.select { | info | dict.keys.include?( info.name_ja ) }

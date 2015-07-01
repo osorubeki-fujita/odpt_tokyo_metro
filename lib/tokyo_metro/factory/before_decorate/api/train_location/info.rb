@@ -85,5 +85,5 @@ class TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::Info
 
     return rd
   end
-  
+
 end

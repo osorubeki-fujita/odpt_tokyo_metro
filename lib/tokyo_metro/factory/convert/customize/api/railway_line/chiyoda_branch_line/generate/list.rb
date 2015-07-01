@@ -80,7 +80,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
       item.between?( "odpt.Station:TokyoMetro.Chiyoda.Ayase" , "odpt.Station:TokyoMetro.Chiyoda.KitaAyase" )
     }
   end
-  
+
   # 千代田線（支線）の travel_time の綾瀬・北綾瀬の駅名を変換するメソッド
   def convert_station_name_in_travel_time_info_of_chiyoda_branch_line
     regexp = self.class.regexp_for_replace
@@ -92,7 +92,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
       end
     end
   end
-  
+
   # 路線情報の配列に千代田線（支線）のインスタンスを追加するメソッド
   def set_info_of_chiyoda_branch_line_to_ary
     @ary << @chiyoda_branch_line

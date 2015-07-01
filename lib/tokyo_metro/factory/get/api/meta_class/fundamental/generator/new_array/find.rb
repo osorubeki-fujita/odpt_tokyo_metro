@@ -25,7 +25,7 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental::Generator::NewArray
   def set_namespace
     @namespace = ::TokyoMetro::Api.const_get( namespace_basename )
   end
-  
+
   def namespace_basename
     _rdf_type_from_api = rdf_type_from_api
 
