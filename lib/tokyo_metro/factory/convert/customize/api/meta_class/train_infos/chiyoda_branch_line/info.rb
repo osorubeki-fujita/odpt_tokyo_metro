@@ -11,8 +11,8 @@ class TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::Chiyo
       regexp_for_replace = ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Dictionary::RegexpForReplace.chiyoda_branch_line_stations
 
       object.instance_variable_set( :@railway_line , "odpt.Railway:TokyoMetro.ChiyodaBranch" )
-      object.instance_variable_set( :@starting_station , @starting_station.gsub( regexp_for_replace , "ChiyodaBranch" ) )
-      object.instance_variable_set( :@terminal_station , @terminal_station.gsub( regexp_for_replace , "ChiyodaBranch" ) )
+      object.instance_variable_set( :@starting_station , object.starting_station.gsub( regexp_for_replace , "ChiyodaBranch" ) )
+      object.instance_variable_set( :@terminal_station , object.terminal_station.gsub( regexp_for_replace , "ChiyodaBranch" ) )
     end
   end
 
