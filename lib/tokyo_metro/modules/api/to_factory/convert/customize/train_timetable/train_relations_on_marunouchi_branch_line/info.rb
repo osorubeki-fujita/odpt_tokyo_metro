@@ -127,7 +127,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainTimetable::
           #{ first_or_last }_station_time_of_this_train.instance_eval do
             @#{ previous_or_following }_trains = self.class.#{ previous_or_following }_train_list_class.new( [
               self.class.#{ previous_or_following }_train_info_class.new( _#{ previous_or_following }_train )
-            ] ) 
+            ] )
           end
         end
       end
