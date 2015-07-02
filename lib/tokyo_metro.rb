@@ -42,7 +42,7 @@ module TokyoMetro
 # データベースのディレクトリ
   const_set( :GEM_DB_DIR , "#{ TOP_DIR }/db" )
   const_set( :API_LOG_DIR , "#{ GEM_DB_DIR }/api_log" )
-    const_set( :API_LOG_DEFAULT_DIR , "#{ API_LOG_DIR }/201412" )
+  const_set( :API_LOG_DEFAULT_DIR , "#{ API_LOG_DIR }/201412" )
 
   # @!group API へのアクセス
 
