@@ -4,22 +4,22 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
   include ::OdptCommon::CalcTime
 
   # Constructor
-  # @param perse_json [Boolean] JSON をパースするか否かの設定
+  # @param parse_json [Boolean] JSON をパースするか否かの設定
   # @param generate_instance [Boolean] JSON を変換し Ruby のインスタンスを作成するか否かの設定
-  # @note generate_instance を true にする場合は、perse_json も true にしなければならない。
-  def initialize( perse_json , generate_instance , to_inspect )
-    if generate_instance and !( perse_json )
-      raise "Error: If you want to generate instance, you must set \"generate_instance\" to true and \"perse_json\" to true."
+  # @note generate_instance を true にする場合は、parse_json も true にしなければならない。
+  def initialize( parse_json , generate_instance , to_inspect )
+    if generate_instance and !( parse_json )
+      raise "Error: If you want to generate instance, you must set \"generate_instance\" to true and \"parse_json\" to true."
     end
-    @perse_json = perse_json
+    @parse_json = parse_json
     @generate_instance = generate_instance
     @to_inspect = to_inspect
   end
 
   # API からデータを取得するメソッド
   # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
-  # @return [::Array <Hash>] インスタンス変数 perse_json が true の場合は、JSON を配列に変換して返す。
-  # @return [String] インスタンス変数 perse_json が false の場合は、JSON を文字列として返す。
+  # @return [::Array <Hash>] インスタンス変数 parse_json が true の場合は、JSON を配列に変換して返す。
+  # @return [String] インスタンス変数 parse_json が false の場合は、JSON を文字列として返す。
   def get_data( http_client )
     check_validity_of_settings( http_client )
     if @to_inspect
@@ -70,8 +70,8 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
   # @return [::Array] JSON をパースするだけで、Ruby のインスタンスを作成しない場合
   # @return [String] JSON をパースしない場合
   def process_response( response )
-    if @perse_json
-      ary = persed_json( response )
+    if @parse_json
+      ary = parsed_json( response )
       if @generate_instance
         generate_new_array_instance( ary )
       else
@@ -92,7 +92,7 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
   # レスポンスの body 部分の JSON をパースし、配列やハッシュに変換するメソッド
   # @param response [HTTPClient] API のレスポンス
   # @return [::Array or Hash]
-  def persed_json( response )
+  def parsed_json( response )
     ::JSON.parse( body_of_response( response ) )
   end
 
