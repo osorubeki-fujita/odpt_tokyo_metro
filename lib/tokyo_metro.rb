@@ -278,7 +278,7 @@ module TokyoMetro
           filename = #{ const_name }_filename
           # puts filename
           if ::File.exist?( filename )
-            open( filename , "r:utf-8" ).read
+            open( filename , "r:utf-8" ).read.chomp
           else
             nil
           end

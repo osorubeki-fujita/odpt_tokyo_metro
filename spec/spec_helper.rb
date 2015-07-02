@@ -2,7 +2,7 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'tokyo_metro'
 
 # TokyoMetro.initialize_in_local_environment( "C:/RubyPj/rails/tokyo_metro" )
-TokyoMetro.initialize_in_local_environment( "/Users/shufujita/RubyPj/Rails/tokyo_metro" )
+TokyoMetro.initialize_in_local_environment( "/Users/shufujita/RubyPj/Rails/tokyo_metro_app" )
 
 
 #--------------------------------

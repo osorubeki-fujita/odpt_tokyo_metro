@@ -13,7 +13,7 @@ module TokyoMetro::Modules::Api::Common::DbDirname
     # データを保存するディレクトリ
     # @return [String]
     def db_dirname
-      "#{::TokyoMetro::GEM_DB_DEFAULT_DIR}/#{db_dirname_sub}"
+      "#{::TokyoMetro::API_LOG_DEFAULT_DIR}/#{db_dirname_sub}"
     end
 
   end
