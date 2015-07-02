@@ -142,12 +142,12 @@ module TokyoMetro::Api
     ::TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::PlatformNumber::LIST
   end
 
-  def self.get( http_client , id_urn , perse_json: false , generate_instance: false , to_inspect: false )
-    factory_for_getting.process( http_client , id_urn , perse_json , generate_instance , to_inspect )
+  def self.get( http_client , id_urn , parse_json: false , generate_instance: false , to_inspect: false )
+    factory_for_getting.process( http_client , id_urn , parse_json , generate_instance , to_inspect )
   end
 
-  def self.get_geo( http_client , id_urn , perse_json: false , generate_instance: false , to_inspect: false )
-    factory_for_getting_geo.process( http_client , id_urn , perse_json , generate_instance , to_inspect )
+  def self.get_geo( http_client , id_urn , parse_json: false , generate_instance: false , to_inspect: false )
+    factory_for_getting_geo.process( http_client , id_urn , parse_json , generate_instance , to_inspect )
   end
 
   def self.factory_for_getting

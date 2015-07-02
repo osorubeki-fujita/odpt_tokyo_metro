@@ -16,19 +16,19 @@ class TokyoMetro::Api::TrainOperation < TokyoMetro::Api::MetaClass::RealTime
   # @param railway_line [String] 発生路線 <odpt:railway - odpt:Railway>
   # @param info_status [String] 運行ステータス <odpt:trainInformationStatus - xsd:string>
   # @param info_text [String] 運行情報テキスト <odpt:trainInformationText - xsd:string>
-  # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
+  # @param parse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定
   # @note 運行ステータスは、平常時は省略。運行情報が存在する場合は「運行情報あり」を格納。遅延などの情報を取得可能な場合は、「遅延」等のテキストを格納。
   # @return [::Array]
   def self.get( http_client ,
     id_urn: nil , operator: nil , railway_line: nil , info_status: nil , info_text: nil ,
-    perse_json: false , generate_instance: false , to_inspect: false )
+    parse_json: false , generate_instance: false , to_inspect: false )
 
     factory_for_getting.process(
       http_client , id_urn , operator , railway_line ,
       info_status , info_text ,
-      perse_json , generate_instance , to_inspect
+      parse_json , generate_instance , to_inspect
     )
   end
 
@@ -54,7 +54,7 @@ class TokyoMetro::Api::TrainOperation < TokyoMetro::Api::MetaClass::RealTime
       railway_line: railway_line ,
       info_status: info_status ,
       info_text: info_text ,
-      perse_json: true ,
+      parse_json: true ,
       generate_instance: false ,
       to_inspect: to_inspect
     )
@@ -71,7 +71,7 @@ class TokyoMetro::Api::TrainOperation < TokyoMetro::Api::MetaClass::RealTime
   def self.get_test( http_client )
     puts "● Train operation"
     puts ""
-    train_operation_info = get( http_client , to_inspect: true , perse_json: true , generate_instance: true )
+    train_operation_info = get( http_client , to_inspect: true , parse_json: true , generate_instance: true )
     puts train_operation_info.sort_by_railway_line_order.to_strf
     puts "\n" * 3
   end

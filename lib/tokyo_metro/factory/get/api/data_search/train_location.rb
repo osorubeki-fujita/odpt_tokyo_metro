@@ -6,9 +6,9 @@ class TokyoMetro::Factory::Get::Api::DataSearch::TrainLocation < TokyoMetro::Fac
   # Constructor
   def initialize( railway_line , id , same_as , train_number , train_type , train_owner , railway_direction , delay ,
     starting_station , terminal_station , from_station , to_station ,
-    perse_json , generate_instance , to_inspect )
+    parse_json , generate_instance , to_inspect )
 
-    super( perse_json , generate_instance , to_inspect )
+    super( parse_json , generate_instance , to_inspect )
     @railway_line = railway_line
 
     @id = id
@@ -50,16 +50,16 @@ class TokyoMetro::Factory::Get::Api::DataSearch::TrainLocation < TokyoMetro::Fac
 
   # API からデータを取得するメソッド
   # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
-  # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）【必須】
+  # @param parse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）【必須】
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定【必須】
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定【必須】
   def self.process( http_client , railway_line , id , same_as , train_number , train_type , train_owner , railway_direction , delay ,
     starting_station , terminal_station , from_station , to_station ,
-    perse_json , generate_instance , to_inspect )
+    parse_json , generate_instance , to_inspect )
 
     info = self.new( railway_line , id , same_as , train_number , train_type , train_owner , railway_direction , delay ,
       starting_station , terminal_station , from_station , to_station ,
-      perse_json , generate_instance , to_inspect )
+      parse_json , generate_instance , to_inspect )
 
     info.get_data( http_client )
   end

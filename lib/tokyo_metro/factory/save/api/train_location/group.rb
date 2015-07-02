@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Save::Api::TrainLocation::Group < TokyoMetro::Factory
   end
 
   def get_and_set_data( http_client )
-    ary = self.class.toplevel_namespace.get( http_client , @railway_line , perse_json: true , generate_instance: @generate_instance , to_inspect: @to_inspect )
+    ary = self.class.toplevel_namespace.get( http_client , @railway_line , parse_json: true , generate_instance: @generate_instance , to_inspect: @to_inspect )
     raise "Error" unless ary.kind_of?( ::Array )
     @data = ary
   end

@@ -25,11 +25,11 @@ class TokyoMetro::Factory::Get::Api::MetaClass::Search::Geo < TokyoMetro::Factor
   # @param long [Numeric] 検索範囲の中心点の経度（10進表記）【必須】
   # @param lat [Numeric] 検索範囲の中心点の緯度（10進表記）【必須】
   # @param radius [Numeric] 検索範囲の半径 (m)【必須】
-  # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）【必須】
+  # @param parse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）【必須】
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定【必須】
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定【必須】
-  def self.process( http_client , long , lat , radius , perse_json , generate_instance , to_inspect )
-    self.new( long , lat , radius , perse_json , generate_instance , to_inspect ).get_data( http_client )
+  def self.process( http_client , long , lat , radius , parse_json , generate_instance , to_inspect )
+    self.new( long , lat , radius , parse_json , generate_instance , to_inspect ).get_data( http_client )
   end
 
   private

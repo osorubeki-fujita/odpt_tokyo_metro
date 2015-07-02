@@ -15,7 +15,7 @@ namespace :tokyo_metro do
       namespace :station_timetable do
         desc "取得テスト - 駅時刻表 小竹向原（有楽町線）"
         task :kotake_m_y => :load do
-          ::TokyoMetro::Api::StationTimetable.get( ::HTTPClient.new , station: "odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara" , perse_json: true , generate_instance: true , to_inspect: true )
+          ::TokyoMetro::Api::StationTimetable.get( ::HTTPClient.new , station: "odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara" , parse_json: true , generate_instance: true , to_inspect: true )
         end
         desc "取得テスト - 駅時刻表 和光市"
         task :wakoshi => :load do

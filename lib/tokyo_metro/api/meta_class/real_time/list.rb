@@ -10,7 +10,7 @@ class TokyoMetro::Api::MetaClass::RealTime::List < TokyoMetro::Api::MetaClass::F
   def update!( *args , time: ::TokyoMetro.time_now )
     unless valid?( time )
       self.delete!( &:present? )
-      new_infos = self.class.toplevel_namespace.get( *args , perse_json: true , generate_instance: true )
+      new_infos = self.class.toplevel_namespace.get( *args , parse_json: true , generate_instance: true )
       new_infos.each do | info |
         self.push( info )
       end

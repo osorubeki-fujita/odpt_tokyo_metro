@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Save::Api::MetaClass::Group
   attr_reader :file_type
 
   def get_and_set_data( http_client )
-    @data = self.class.toplevel_namespace.get( http_client , perse_json: true , generate_instance: @generate_instance , to_inspect: @to_inspect )
+    @data = self.class.toplevel_namespace.get( http_client , parse_json: true , generate_instance: @generate_instance , to_inspect: @to_inspect )
   end
 
   # （JSON から生成した）インスタンスが与えられているか否かを判定するメソッド
@@ -34,7 +34,7 @@ class TokyoMetro::Factory::Save::Api::MetaClass::Group
   end
 
   # API の情報を取得し、ディレクトリに分けて保存するメソッド
-  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】 
+  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
   # @note 可変長引数 必須の引数
   #   [TokyoMetro::Factory::Save::Api::TrainLocation::Group のみ]
   #     @param railway_line [String] 鉄道路線【必須】 <odpt:railway - odpt:Railway>

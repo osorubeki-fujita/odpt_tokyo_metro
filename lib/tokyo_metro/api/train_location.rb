@@ -24,7 +24,7 @@ class TokyoMetro::Api::TrainLocation < TokyoMetro::Api::MetaClass::RealTime
   # @param terminal_station [String] 列車の終着駅 <odpt:terminalStation - odpt:Station>
   # @param from_station [String] 列車が出発した駅 <odpt:fromStation - odpt:Station>
   # @param to_station [String] 列車が向かっている駅 <odpt:toStation - odpt:Station>
-  # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
+  # @param parse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定
   # @return [::Array]
@@ -33,11 +33,11 @@ class TokyoMetro::Api::TrainLocation < TokyoMetro::Api::MetaClass::RealTime
     train_number: nil , train_type: nil , train_owner: nil ,
     railway_direction: nil , delay: nil ,
     starting_station: nil , terminal_station: nil , from_station: nil , to_station: nil ,
-    perse_json: false , generate_instance: false , to_inspect: false )
+    parse_json: false , generate_instance: false , to_inspect: false )
 
     factory_for_getting.process( http_client , railway_line , id_urn , same_as , train_number , train_type , train_owner , railway_direction , delay ,
       starting_station , terminal_station , from_station , to_station ,
-      perse_json , generate_instance , to_inspect )
+      parse_json , generate_instance , to_inspect )
   end
 
   # 列車ロケーション情報 odpt:Train を取得し保存するメソッド
@@ -69,7 +69,7 @@ class TokyoMetro::Api::TrainLocation < TokyoMetro::Api::MetaClass::RealTime
       train_number: train_number , train_type: train_type , train_owner: train_owner ,
       railway_direction: railway_direction , delay: delay ,
       starting_station: starting_station , terminal_station: terminal_station , from_station: from_station , to_station: to_station ,
-      perse_json: true , generate_instance: generate_instance , to_inspect: to_inspect )
+      parse_json: true , generate_instance: generate_instance , to_inspect: to_inspect )
 
     save_data( data , filename , file_type: file_type )
   end
@@ -117,7 +117,7 @@ class TokyoMetro::Api::TrainLocation < TokyoMetro::Api::MetaClass::RealTime
   def self.get_test( http_client , railway_line_name )
     puts "● Train location"
     railway_line_name = "odpt.Railway:#{railway_line_name}"
-    train_location = get( http_client , railway_line_name , to_inspect: true , perse_json: true , generate_instance: true )
+    train_location = get( http_client , railway_line_name , to_inspect: true , parse_json: true , generate_instance: true )
     puts train_location.to_strf
   end
 
