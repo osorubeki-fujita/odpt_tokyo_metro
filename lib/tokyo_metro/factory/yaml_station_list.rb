@@ -7,7 +7,7 @@ class TokyoMetro::Factory::YamlStationList
     puts "● #{self.name} - Make list of stations"
     puts ""
 
-    files = Dir.glob( "#{ ::TokyoMetro::DEV_DB_DIR }/dictionary/station/**/**.csv" )
+    files = Dir.glob( "#{ ::TokyoMetro::GEM_DB_DIR }/dictionary/station/**/**.csv" )
 
     files.each do | file |
       header , *rows = open( file , "r:Windows-31j" ).read.encode( "UTF-8" ).split( "\n" ).map { | row | row.split( "\," ) }
@@ -16,7 +16,7 @@ class TokyoMetro::Factory::YamlStationList
       hash_of_hash = make_hash_of_hash( header , rows )
       str = make_yaml_str( hash_of_hash )
 
-      file_generated = file.gsub( "#{ ::TokyoMetro::DEV_DB_DIR }/dictionary" , ::TokyoMetro.dictionary_dir ).gsub( /\.csv\Z/ , ".yaml" )
+      file_generated = file.gsub( "#{ ::TokyoMetro::GEM_DB_DIR }/dictionary" , ::TokyoMetro.dictionary_dir ).gsub( /\.csv\Z/ , ".yaml" )
       File.open( file_generated , "w:utf-8" ) do | file |
         file.print( str )
       end

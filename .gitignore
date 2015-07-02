@@ -1,17 +1,8 @@
-/.bundle/
-/.yardoc
 /Gemfile.lock
-/_yardoc/
-/coverage/
-/doc/
+/.yardoc
 /pkg/
-/spec/reports/
 /tmp/
 
 /db/
-
-/pending/
-/required_files.txt
-
+/doc/
 /.latest_version
-/.rails.yml

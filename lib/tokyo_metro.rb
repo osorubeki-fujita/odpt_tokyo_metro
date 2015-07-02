@@ -39,6 +39,11 @@ module TokyoMetro
   # 辞書ファイルのディレクトリ
   DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/tokyo_metro/dictionary" )
 
+# データベースのディレクトリ
+  const_set( :GEM_DB_DIR , "#{ TOP_DIR }/db" )
+  const_set( :API_LOG_DIR , "#{ GEM_DB_DIR }/api_log" )
+    const_set( :API_LOG_DEFAULT_DIR , "#{ API_LOG_DIR }/201412" )
+
   # @!group API へのアクセス
 
   # 東京メトロオープンデータ API のエンドポイント
@@ -173,9 +178,6 @@ module TokyoMetro
 
     # 開発のためのファイルを格納するディレクトリ
     const_set( :DEV_DIR , "#{ RAILS_DIR }/dev" ) # "C:/RubyPj/rails/tokyo_metro/dev"
-
-  # データベースのディレクトリ
-    const_set( :DEV_DB_DIR , "#{ RAILS_DIR }/dev/db/201412" ) # "C:/RubyPj/rails/tokyo_metro/dev/db"
 
     # fixture ファイルを格納するディレクトリ
     const_set( :RAILS_FIXTURES_DIR , "#{ RAILS_DIR }/test/fixtures" )
@@ -462,4 +464,8 @@ end
 
 #--------
 
-::TokyoMetro.require_files( settings: :development , file_type: :txt )
+
+require_setting = ENV[ 'RAILS_ENV' ]
+require_setting ||= "from_txt"
+
+::TokyoMetro.require_files( settings: require_setting, file_type: :txt )
