@@ -5,10 +5,7 @@
 /coverage/
 /doc/
 /pkg/
-/spec/reports/
 /tmp/
-
-/db/
 
 /pending/
 /required_files.txt
