@@ -129,7 +129,7 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
     selected_railway_lines_same_as = railway_lines_for_getting_train_operation_infos( railway_lines_same_as , all ).pluck( :same_as )
     train_operation_infos = ::TokyoMetro::Api::TrainOperation.get(
       @http_client ,
-      perse_json: true ,
+      parse_json: true ,
       generate_instance: true
     )
     sleep( 0.2 )

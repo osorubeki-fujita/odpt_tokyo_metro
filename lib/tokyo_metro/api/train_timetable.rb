@@ -19,7 +19,7 @@ class TokyoMetro::Api::TrainTimetable < TokyoMetro::Api::MetaClass::NotRealTime
   # @param terminal_station [String] 列車の終着駅<odpt:terminalStation - odpt:Station>
   # @param train_owner [String] 車両の所属会社<odpt:trainOwner - odpt:TrainOwner>
   # @param train [String] 列車のID（odpt:Trainのowl:sameAsの値）<odpt:train - odpt:Train>
-  # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
+  # @param parse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定
   # @return [::Array]
@@ -27,12 +27,12 @@ class TokyoMetro::Api::TrainTimetable < TokyoMetro::Api::MetaClass::NotRealTime
     id_urn: nil , same_as: nil , train_number: nil , railway_line: nil ,
     operator: nil , train_type: nil , railway_direction: nil ,
     starting_station: nil , terminal_station: nil , train_owner: nil , train: nil ,
-    perse_json: false , generate_instance: false , to_inspect: false )
+    parse_json: false , generate_instance: false , to_inspect: false )
 
     factory_for_getting.process( http_client , id_urn , same_as , train_number , railway_line ,
       operator , train_type , railway_direction ,
       starting_station , terminal_station , train_owner , train ,
-      perse_json , generate_instance , to_inspect )
+      parse_json , generate_instance , to_inspect )
   end
 
   # 列車時刻表 odpt:TrainTimetable を取得し保存するメソッド
@@ -62,7 +62,7 @@ class TokyoMetro::Api::TrainTimetable < TokyoMetro::Api::MetaClass::NotRealTime
       id_urn: id_urn , same_as: same_as , train_number: train_number , railway_line: railway_line ,
       operator: operator , train_type: train_type , railway_direction: railway_direction ,
       starting_station: starting_station , terminal_station: terminal_station , train_owner: train_owner , train: train ,
-      perse_json: true , generate_instance: false , to_inspect: to_inspect )
+      parse_json: true , generate_instance: false , to_inspect: to_inspect )
 
     save_data( data , filename , file_type: file_type )
   end

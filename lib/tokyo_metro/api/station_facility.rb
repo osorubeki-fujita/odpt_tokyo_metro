@@ -11,16 +11,16 @@ class TokyoMetro::Api::StationFacility < TokyoMetro::Api::MetaClass::NotRealTime
   # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
   # @param id_urn [String] 固有識別子 (ucode) <id - URN>
   # @param same_as [String] 固有識別子（命名ルールは、「odpt.StationFacility:TokyoMetro.駅名」） <owl:sameAs - URL>
-  # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
+  # @param parse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定
   # @return [::Array]
   def self.get( http_client ,
     id_urn: nil , same_as: nil ,
-    perse_json: false , generate_instance: false , to_inspect: false )
+    parse_json: false , generate_instance: false , to_inspect: false )
 
     factory_for_getting.process( http_client , id_urn , same_as ,
-      perse_json , generate_instance , to_inspect )
+      parse_json , generate_instance , to_inspect )
   end
 
   # 駅施設情報を取得し保存するメソッド
@@ -36,7 +36,7 @@ class TokyoMetro::Api::StationFacility < TokyoMetro::Api::MetaClass::NotRealTime
 
     data = get( http_client ,
       id_urn: id_urn , same_as: same_as ,
-      perse_json: true , generate_instance: false , to_inspect: to_inspect )
+      parse_json: true , generate_instance: false , to_inspect: to_inspect )
 
     data = eval( data.to_s.gsub( /(?:\r\n|\r)/ ,"\n" ).encode( "UTF-8" ) )
 
@@ -57,7 +57,7 @@ class TokyoMetro::Api::StationFacility < TokyoMetro::Api::MetaClass::NotRealTime
   def self.get_test( http_client , station )
     puts "● Station Facility"
     station = "odpt.StationFacility:#{station}"
-    facility_ary = get( http_client , same_as: station , to_inspect: true , perse_json: true , generate_instance: true )
+    facility_ary = get( http_client , same_as: station , to_inspect: true , parse_json: true , generate_instance: true )
     facility_ary.each do | facility |
       puts facility.to_strf
       puts "" * 2

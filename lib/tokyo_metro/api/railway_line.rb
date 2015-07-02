@@ -14,17 +14,17 @@ class TokyoMetro::Api::RailwayLine < TokyoMetro::Api::MetaClass::Hybrid
   # @param title [String] 運行系統名 <dc:title - xsd:string>
   # @param operator [String] 運行会社 <odpt:operator - odpt:Operator>
   # @param railway_line_code [String] 路線コード <odpt:lineCode - xsd:string>
-  # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
+  # @param parse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定
   # @return [::Array]
   # @note 固有識別子 id は、支線には別IDを割り当てる。
   def self.get( http_client ,
     id_urn: nil , same_as: nil , title: nil , operator: nil , railway_line_code: nil ,
-    perse_json: false , generate_instance: false , to_inspect: false )
+    parse_json: false , generate_instance: false , to_inspect: false )
 
     factory_for_getting.process( http_client , id_urn , same_as , title , operator , railway_line_code ,
-      perse_json , generate_instance , to_inspect )
+      parse_json , generate_instance , to_inspect )
   end
 
   # 路線情報を取得し保存するメソッド
@@ -42,7 +42,7 @@ class TokyoMetro::Api::RailwayLine < TokyoMetro::Api::MetaClass::Hybrid
 
     data = get( http_client ,
       id_urn: id_urn , same_as: same_as , title: title , operator: operator , railway_line_code: railway_line_code ,
-      perse_json: true , generate_instance: false , to_inspect: to_inspect )
+      parse_json: true , generate_instance: false , to_inspect: to_inspect )
 
     # data = eval( data.to_s.gsub( /(?:\r\n|\r)/ ,"\n" ).encode( "UTF-8" ) )
 
@@ -60,7 +60,7 @@ class TokyoMetro::Api::RailwayLine < TokyoMetro::Api::MetaClass::Hybrid
       railway_line = "odpt.Railway:#{railway_line}"
     end
     puts "● #{get_test_title}"
-    ary = get( http_client , same_as: railway_line , to_inspect: true , perse_json: true , generate_instance: true )
+    ary = get( http_client , same_as: railway_line , to_inspect: true , parse_json: true , generate_instance: true )
     puts "#{railway_line} (#{ary.length})"
     puts ary.sort_by_railway_line_order.to_strf
   end
@@ -73,7 +73,7 @@ class TokyoMetro::Api::RailwayLine < TokyoMetro::Api::MetaClass::Hybrid
   end
 
   def self.get_station_order_for_each_line( http_client )
-    ary = get( http_client , to_inspect: true , perse_json: true , generate_instance: true ).sort_by_railway_line_order
+    ary = get( http_client , to_inspect: true , parse_json: true , generate_instance: true ).sort_by_railway_line_order
 
     dirname_str = "#{db_dirname}/for_development"
     ::FileUtils.mkdir_p( dirname_str )
@@ -97,7 +97,7 @@ class TokyoMetro::Api::RailwayLine < TokyoMetro::Api::MetaClass::Hybrid
   # @return [nil]
   def self.get_geo_test( http_client , geo_long , geo_lat , radius )
     puts "● #{get_test_title} (geo)"
-    result = get_geo( http_client , geo_long , geo_lat , radius , to_inspect: true , perse_json: true , generate_instance: true )
+    result = get_geo( http_client , geo_long , geo_lat , radius , to_inspect: true , parse_json: true , generate_instance: true )
     puts "(#{result.length})"
     result.sort_by( &:operator ).each do | rail |
       puts rail.to_strf

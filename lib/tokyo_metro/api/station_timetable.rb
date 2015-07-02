@@ -15,16 +15,16 @@ class TokyoMetro::Api::StationTimetable < TokyoMetro::Api::MetaClass::NotRealTim
   # @param railway_line [String] 路線 <odpt:railway - odpt:Railway>
   # @param operator [String] 運行会社 <odpt:operator - odpt:Operator>
   # @param railway_direction [String] 方面 <odpt:railDirection - odpt:RailDirection>
-  # @param perse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
+  # @param parse_json [Boolean] JSONを配列とするか否かの設定（false の場合は文字列とする）
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定
   # @return [::Array]
   def self.get( http_client ,
     id_urn: nil , same_as: nil , station: nil , railway_line: nil , operator: nil , railway_direction: nil ,
-    perse_json: false , generate_instance: false , to_inspect: false )
+    parse_json: false , generate_instance: false , to_inspect: false )
 
     factory_for_getting.process( http_client , id_urn , same_as , station , railway_line , operator , railway_direction ,
-      perse_json , generate_instance , to_inspect )
+      parse_json , generate_instance , to_inspect )
   end
 
   # 駅時刻表 odpt:StationTimetable を取得し保存するメソッド
@@ -45,7 +45,7 @@ class TokyoMetro::Api::StationTimetable < TokyoMetro::Api::MetaClass::NotRealTim
 
     data = get( http_client ,
       id_urn: id_urn , same_as: same_as , station: station , railway_line: railway_line , operator: operator , railway_direction: railway_direction ,
-      perse_json: true , generate_instance: false , to_inspect: to_inspect )
+      parse_json: true , generate_instance: false , to_inspect: to_inspect )
 
     save_data( data , filename , file_type: file_type )
   end

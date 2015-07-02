@@ -36,7 +36,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
     case test_mode
     when nil
       begin
-        train_operation_infos = ::TokyoMetro::Api::TrainOperation.get( http_client , railway_line: @railway_line.same_as , perse_json: true , generate_instance: true )
+        train_operation_infos = ::TokyoMetro::Api::TrainOperation.get( http_client , railway_line: @railway_line.same_as , parse_json: true , generate_instance: true )
         if train_operation_infos.length > 1
           raise "Error"
         end
@@ -61,7 +61,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine < TokyoMetro::Fa
     case test_mode
     when nil
       begin
-        @train_location_infos = ::TokyoMetro::Api::TrainLocation.get( http_client , @railway_line.same_as , perse_json: true , generate_instance: true )
+        @train_location_infos = ::TokyoMetro::Api::TrainLocation.get( http_client , @railway_line.same_as , parse_json: true , generate_instance: true )
       rescue ::SocketError
         @train_operation_info = ::TokyoMetro::Api::TrainOperation::Info::NetworkError.instance
         @train_location_infos = nil
@@ -97,7 +97,7 @@ Completed 500 Internal Server Error in 2543ms (ActiveRecord: 0.0ms)
 
 JSON::ParserError - A JSON text must at least contain two octets!:
   json (1.8.3) lib/json/common.rb:155:in `parse'
-  tokyo_metro (0.6.2) lib/tokyo_metro/factory/get/api/meta_class/fundamental.rb:103:in `persed_json'
+  tokyo_metro (0.6.2) lib/tokyo_metro/factory/get/api/meta_class/fundamental.rb:103:in `parsed_json'
   tokyo_metro (0.6.2) lib/tokyo_metro/factory/get/api/meta_class/fundamental.rb:81:in `process_response'
   tokyo_metro (0.6.2) lib/tokyo_metro/factory/get/api/meta_class/fundamental.rb:51:in `get_data'
   tokyo_metro (0.6.2) lib/tokyo_metro/factory/get/api/data_search/train_location.rb:64:in `process'
