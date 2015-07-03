@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ToeiMitaLine::Info < TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::ToeiMitaLine::Info
+class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ToeiMitaLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::ToeiMitaLine::Info
 
   def process
     convert_station_name

@@ -62,7 +62,7 @@ end
 
 
 def connecting_railway_lines__ignored_railway_lines( station )
-  info_related_to_this_station = [ :Customize , :Patches ].map { | namespace |
+  info_related_to_this_station = [ :Customize , :Patch ].map { | namespace |
     eval( "::TokyoMetro::Modules::Api::ToFactory::Convert::#{namespace}::Station::ConnectingRailwayLine.ignored_railway_lines" )
   }.flatten.select { | item |
     item[ "stations" ].include?( station.same_as )

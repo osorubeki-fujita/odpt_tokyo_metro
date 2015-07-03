@@ -23,7 +23,8 @@ module TokyoMetro::Initializer::Modules
     def module_library
       h = ::Hash.new
 
-      #---------------- StationTimetable, TrainTimetable ... Patches と Customize で共通して用いるモジュール
+      #---------------- StationTimetable, TrainTimetable ...
+      # Patch と Customize で共通して用いるモジュール
 
       set_namespaces( h , :Common , :Station ,
         :ConnectingRailwayLine
@@ -39,13 +40,13 @@ module TokyoMetro::Initializer::Modules
         :ConvertTerminalStations
       )
 
-      #---------------- Patches
+      #---------------- Patch
 
-      set_namespaces( h , :Patches , :Station ,
+      set_namespaces( h , :Patch , :Station ,
         :ConnectingRailwayLine
       )
 
-      set_namespaces( h , :Patches , :StationFacility ,
+      set_namespaces( h , :Patch , :StationFacility ,
         :EscalatorDirection ,
         :EscalatorOperationDay ,
         :PlatformTransferInfoAtKudanshita ,
@@ -53,11 +54,11 @@ module TokyoMetro::Initializer::Modules
         :SurroundingArea
       )
 
-      set_namespaces( h , :Patches , :TrainInfos ,
+      set_namespaces( h , :Patch , :TrainInfos ,
         :MusashiKosugiInNambokuLine
       )
 
-      set_namespaces( h , :Patches , :StationTimetable ,
+      set_namespaces( h , :Patch , :StationTimetable ,
         :MusashiKosugiInNambokuLine ,
         :NakanoSakaueOnMarunouchiBranchLine ,
         :Origin ,
@@ -65,11 +66,11 @@ module TokyoMetro::Initializer::Modules
         :MarunouchiBranchLineForNakanoSakaue
       )
 
-      set_namespaces( h , :Patches , :TrainTimetable ,
+      set_namespaces( h , :Patch , :TrainTimetable ,
         :YurakuchoLine
       )
 
-      set_namespaces( h , :Patches , :TrainLocation ,
+      set_namespaces( h , :Patch , :TrainLocation ,
         :ChiyodaMainLine
       )
 

@@ -1,5 +1,9 @@
 module TokyoMetro::Modules::Common::Info::Decision::ToeiMitaLine
 
+  def toei_mita_line_train_including_on_namboku_line?
+    ( toei_mita_line? or namboku_line? ) and ( starting_on_toei_mita_line? or terminating_on_toei_mita_line? )
+  end
+
   private
 
   # 南北線内の都営三田線の列車か否かを判定するメソッド
@@ -35,10 +39,6 @@ module TokyoMetro::Modules::Common::Info::Decision::ToeiMitaLine
 
   def namboku_or_toei_mita_line_train_terminating_on_tokyu_lines?
     namboku_line_train_terminating_on_tokyu_line? or toei_mita_line_train_terminating_on_tokyu_line?
-  end
-
-  def toei_mita_line_train_including_on_namboku_line?
-    ( toei_mita_line? or namboku_line? ) and ( starting_on_toei_mita_line? or terminating_on_toei_mita_line? )
   end
 
   [

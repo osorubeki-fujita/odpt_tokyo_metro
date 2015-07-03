@@ -16,7 +16,7 @@ end
 
 
 def invalid_trains_in_yurakucho_line
-  ::TokyoMetro::ApiModules::Convert::Patches::TrainTimetable::YurakuchoLine.invalid_trains.each do | train_number |
+  ::TokyoMetro::ApiModules::Convert::Patch::TrainTimetable::YurakuchoLine.invalid_trains.each do | train_number |
     train = ::TokyoMetro::Api.train_timetables.find { | train |
       train.fukutoshin_line? and train.operated_on_weekdays? and train.train_number == train_number
     }
