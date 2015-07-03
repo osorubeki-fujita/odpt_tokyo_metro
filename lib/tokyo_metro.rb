@@ -109,11 +109,10 @@ module TokyoMetro
     # tokyo_metro/modules/common/convert_constant_to_class_method.rb で行う。
 
     module_library.each do | module_type , categories |
-      categories.each do | category , namespaces |
-        [ namespaces ].flatten.each do | namespace |
-          eval <<-SET
-            ::TokyoMetro::Modules::Api::ToFactory::Convert::#{module_type}::#{category}::#{namespace}.set_modules
-          SET
+      categories.each do | category , base_namespaces |
+        [ base_namespaces ].flatten.each do | base_namespace |
+          namespace = eval( "::TokyoMetro::Modules::Api::ToFactory::Convert::#{ module_type }::#{ category }::#{ base_namespace }")
+          namespace.set_modules
         end
       end
     end
@@ -150,7 +149,7 @@ module TokyoMetro
   # @!group 関連ファイルのロード
 
   def self.require_files( settings: nil , file_type: "txt" )
-    raise "Error" unless settings.nil? or ( [ "from_txt" , "update" , "development" , "production" , "test" ].include?( settings.to_s ) )
+    settings ||= :make_list_of_required_files
     required_files( settings , file_type ).each do | filename |
       require filename
     end
@@ -347,6 +346,10 @@ module TokyoMetro
         :YurakuchoLine
       )
 
+      set_namespaces_to_module_library( h , :Patches , :TrainLocation ,
+        :ChiyodaMainLine
+      )
+
       #---------------- Customize
 
       set_namespaces_to_module_library( h , :Customize , :Fare ,
@@ -435,7 +438,7 @@ module TokyoMetro
     end
 
     def required_files( settings , file_type )
-      raise "Error" unless [ "from_txt" , "production" , "test" , "staging" , "development" ].include?( settings.to_s )
+      raise "Error: settings '#{ settings }' is not valid." unless [ "from_txt" , "make_list_of_required_files" , "update" , "development" , "production" , "test" , "staging"].include?( settings.to_s )
       raise "Error" unless [ "txt" , "yaml" , "json" , "cson" ].include?( file_type.to_s )
 
       case settings.to_s
@@ -465,7 +468,4 @@ end
 #--------
 
 
-require_setting = ENV[ 'RAILS_ENV' ]
-require_setting ||= "from_txt"
-
-::TokyoMetro.require_files( settings: require_setting, file_type: :txt )
+::TokyoMetro.require_files( settings: ::ENV[ 'RAILS_ENV' ] , file_type: :txt )

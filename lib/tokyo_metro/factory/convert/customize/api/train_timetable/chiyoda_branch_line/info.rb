@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ChiyodaBranchLine::Info < TokyoMetro::Factory::Convert::Customize::Api::MetaClass::TrainInfos::ChiyodaBranchLine::Info
+class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ChiyodaBranchLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::ChiyodaBranchLine::Info
 
   def process
     super

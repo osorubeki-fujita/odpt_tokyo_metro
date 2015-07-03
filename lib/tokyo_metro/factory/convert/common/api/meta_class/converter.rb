@@ -23,7 +23,7 @@ class TokyoMetro::Factory::Convert::Common::Api::MetaClass::Converter
   end
 
   def self.class_of_info_for_conversion
-    ::TokyoMetro::Factory::Convert::Common::Api::MetaClass::InfoForConversion
+    ::TokyoMetro::Factory::Convert::Common::Api::MetaClass::Converter::InfoForConversion
   end
 
 end

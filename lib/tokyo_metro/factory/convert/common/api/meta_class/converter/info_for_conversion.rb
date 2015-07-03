@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Common::Api::MetaClass::InfoForConversion
+class TokyoMetro::Factory::Convert::Common::Api::MetaClass::Converter::InfoForConversion
 
   def initialize( for_conversion , attr_of_info , method_for_deciding_default_value , arrow_blank: true )
     @for_conversion = for_conversion

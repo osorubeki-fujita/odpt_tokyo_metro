@@ -9,7 +9,8 @@ class TokyoMetro::Required::All::Factory::Convert::Common::Api < TokyoMetro::Req
       MetaClass.files ,
       StationInfos.files ,
       Station.files ,
-      StationFacility.files
+      StationFacility.files ,
+      TrainInfos.files
     ]
   end
 

@@ -6,7 +6,8 @@ class TokyoMetro::Required::All::Factory::Convert::Patch < TokyoMetro::Required
 
   def self.other_files
     [
-      ForString.files
+      ForString.files ,
+      Api.files
     ]
   end
 
