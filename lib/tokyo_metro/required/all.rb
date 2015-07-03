@@ -20,7 +20,7 @@ class TokyoMetro::Required::All < TokyoMetro::Required
       Refinement.files ,
       TempLib.files ,
       Document.files ,
-      Test.files , 
+      Test.files ,
       Search.files ,
       Rake.files
     ]
