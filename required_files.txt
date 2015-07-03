@@ -1,6 +1,7 @@
 lib/tokyo_metro/dictionary.rb
 lib/tokyo_metro/initializer.rb
 lib/tokyo_metro/initializer/modules.rb
+lib/tokyo_metro/initializer/rails.rb
 lib/tokyo_metro/modules.rb
 lib/tokyo_metro/modules/api.rb
 lib/tokyo_metro/modules/common.rb

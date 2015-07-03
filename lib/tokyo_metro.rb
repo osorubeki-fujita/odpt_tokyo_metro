@@ -162,28 +162,7 @@ module TokyoMetro
   # @!group Rails 関連
 
   def self.set_rails_consts( rails_dir = ::Rails.root.to_s )
-    # Directory of Rails application
-    const_set( :RAILS_DIR , rails_dir ) # "C:/RubyPj/rails/tokyo_metro"
-
-    # 開発のためのファイルを格納するディレクトリ
-    const_set( :DEV_DIR , "#{ RAILS_DIR }/dev" ) # "C:/RubyPj/rails/tokyo_metro/dev"
-
-    # fixture ファイルを格納するディレクトリ
-    const_set( :RAILS_FIXTURES_DIR , "#{ RAILS_DIR }/test/fixtures" )
-
-    # HTML のディレクトリ
-    const_set( :HTML_DIR , "#{ DEV_DIR }/app/html" )
-
-    # HAML のディレクトリ
-    const_set( :HAML_DIR , "#{ DEV_DIR }/app/haml" )
-
-    # CSS のディレクトリ
-    const_set( :CSS_DIR , "#{ DEV_DIR }/app/assets/css" )
-
-    # SCSS のディレクトリ
-    const_set( :SCSS_DIR , "#{ DEV_DIR }/app/assets/scss" )
-
-    return nil
+    ::TokyoMetro::Initializer::Rails.consts_in_gem.set( as_for: rails_dir )
   end
 
   # @!group 運行日に関するメソッド

@@ -1,6 +1,7 @@
+# @note
+#   TokyoMetro::Modules::Common::ConvertConstantToClassMethod の TokyoMetro への include は、
+#    tokyo_metro/modules/common/convert_constant_to_class_method.rb で行う。
 module TokyoMetro::Initializer::Modules
-  # TokyoMetro::Modules::Common::ConvertConstantToClassMethod の TokyoMetro への include は、
-  # tokyo_metro/modules/common/convert_constant_to_class_method.rb で行う。
 
   def self.set
     module_library.each do | module_type , categories |
