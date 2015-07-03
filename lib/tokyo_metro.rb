@@ -59,12 +59,6 @@ module TokyoMetro
 
   STATION_DICTIONARY = ::YAML.load_file( "#{ DICTIONARY_DIR }/station/tokyo_metro.yaml" )
 
-  def self.reload_all_files!
-    open( "#{ TOP_DIR }/required_files.txt" , "r:utf-8" ).read.split( /\n/ ).each do |f|
-      load "#{ ::Rails.root }/#{ f }"
-    end
-  end
-
   def self.station_dictionary_including_main_info( stations_of_railway_lines = nil )
     if stations_of_railway_lines.nil?
       stations_of_railway_lines = ::Station::Info.where( operator_id: ::Operator.id_of_tokyo_metro )
@@ -105,19 +99,7 @@ module TokyoMetro
   # @!group モジュールの組み込み
 
   def self.set_modules
-    # TokyoMetro::Modules::Common::ConvertConstantToClassMethod の TokyoMetro への include は、
-    # tokyo_metro/modules/common/convert_constant_to_class_method.rb で行う。
-
-    module_library.each do | module_type , categories |
-      categories.each do | category , base_namespaces |
-        [ base_namespaces ].flatten.each do | base_namespace |
-          namespace = eval( "::TokyoMetro::Modules::Api::ToFactory::Convert::#{ module_type }::#{ category }::#{ base_namespace }")
-          namespace.set_modules
-        end
-      end
-    end
-
-    return nil
+    ::TokyoMetro::Initializer::Modules.set
   end
 
   # @!group 定数
@@ -148,6 +130,12 @@ module TokyoMetro
 
   # @!group 関連ファイルのロード
 
+  def self.reload_all_files!
+    open( "#{ TOP_DIR }/required_files.txt" , "r:utf-8" ).read.split( /\n/ ).each do |f|
+      load "#{ ::Rails.root }/#{ f }"
+    end
+  end
+
   def self.require_files( settings: nil , file_type: "txt" )
     settings ||= :make_list_of_required_files
     required_files( settings , file_type ).each do | filename |
@@ -161,12 +149,14 @@ module TokyoMetro
     set_fundamental_constants
 
     set_access_token
-    set_google_map_api_key
+    set_google_maps_api_key
   end
 
+  # @!group GoogleMaps
+
   # @see https://developers.google.com/maps/documentation/javascript/tutorial?hl=ja
-  def self.google_map_javasciprt_uri
-    "https://maps.googleapis.com/maps/api/js?key=#{ GOOGLE_MAP_API_KEY }&sensor=true"
+  def self.google_maps_javasciprt_uri
+    "https://maps.googleapis.com/maps/api/js?key=#{ GOOGLE_MAPS_API_KEY }&sensor=true"
   end
 
   # @!group Rails 関連
@@ -217,8 +207,7 @@ module TokyoMetro
     diagram_as_of( current_operation_day )
   end
 
-  # @!endgroup
-
+  # @!group Class methods
   class << self
 
     def method_missing( method_name , *args )
@@ -244,7 +233,7 @@ module TokyoMetro
     #   @note  【公開禁止】
     #   @note ファイル名称を .gitignore に記載すること
     #   @return [String]
-    [ :access_token , :google_map_api_key ].each do | const_name |
+    [ :access_token , :google_maps_api_key ].each do | const_name |
       eval <<-DEF
 
         def set_#{ const_name }
@@ -293,129 +282,10 @@ module TokyoMetro
         private :#{ const_name }_filename
 
       DEF
+
     end
 
     private
-
-    def module_library
-      h = ::Hash.new
-
-      #---------------- StationTimetable, TrainTimetable ... Patches と Customize で共通して用いるモジュール
-
-      set_namespaces_to_module_library( h , :Common , :Station ,
-        :ConnectingRailwayLine
-      )
-
-      set_namespaces_to_module_library( h , :Common , :TrainInfos ,
-        :ConvertStation ,
-        :ConvertTerminalStation ,
-        :ConvertStartingStation
-      )
-
-      set_namespaces_to_module_library( h , :Common , :StationTimetable ,
-        :ConvertTerminalStations
-      )
-
-      #---------------- Patches
-
-      set_namespaces_to_module_library( h , :Patches , :Station ,
-        :ConnectingRailwayLine
-      )
-
-      set_namespaces_to_module_library( h , :Patches , :StationFacility ,
-        :EscalatorDirection ,
-        :EscalatorOperationDay ,
-        :PlatformTransferInfoAtKudanshita ,
-        :BarrierFreeFacilityLocatedArea ,
-        :SurroundingArea
-      )
-
-      set_namespaces_to_module_library( h , :Patches , :TrainInfos ,
-        :MusashiKosugiInNambokuLine
-      )
-
-      set_namespaces_to_module_library( h , :Patches , :StationTimetable ,
-        :MusashiKosugiInNambokuLine ,
-        :NakanoSakaueOnMarunouchiBranchLine ,
-        :Origin ,
-        :FukutoshinLineForWakoshi ,
-        :MarunouchiBranchLineForNakanoSakaue
-      )
-
-      set_namespaces_to_module_library( h , :Patches , :TrainTimetable ,
-        :YurakuchoLine
-      )
-
-      set_namespaces_to_module_library( h , :Patches , :TrainLocation ,
-        :ChiyodaMainLine
-      )
-
-      #---------------- Customize
-
-      set_namespaces_to_module_library( h , :Customize , :Fare ,
-        :ChiyodaBranchLine
-      )
-
-      set_namespaces_to_module_library( h , :Customize , :RailwayLine ,
-        :ChiyodaBranchLine
-      )
-
-      set_namespaces_to_module_library( h , :Customize , :Station ,
-        :ChiyodaBranchLine ,
-        :StationCodeOfNakanoSakaueOnMarunouchiBranchLine ,
-        :ConnectingRailwayLine
-      )
-
-      set_namespaces_to_module_library( h , :Customize , :StationFacility ,
-        :RailwayLineNameInPlatformTransferInfo ,
-        :PlatformTransferInfoAtNakanoSakaue ,
-        :MarunouchiBranchLine ,
-        :ChiyodaBranchLine
-      )
-
-      set_namespaces_to_module_library( h , :Customize , :TrainTimetable ,
-        :StartingStation ,
-        :ReplaceStationName ,
-        # :MarunouchiBranchLine ,
-        :TrainRelationsOnMarunouchiBranchLine ,
-        :ChiyodaBranchLine ,
-        :RomanceCar ,
-        :ToeiMitaLine
-      )
-
-      set_namespaces_to_module_library( h , :Customize , :StationTimetable ,
-        # :MarunouchiBranchLine ,
-        :ChiyodaBranchLine ,
-        :AdditionalInfos
-      )
-
-      set_namespaces_to_module_library( h , :Customize , :TrainLocation ,
-        :ChiyodaBranchLine ,
-        :RomanceCar ,
-        :ToeiMitaLine
-      )
-
-      set_namespaces_to_module_library( h , :Customize , :TrainInfos ,
-        :ConvertStation ,
-        :ConvertTerminalStation ,
-        :ConvertStartingStation ,
-        :MarunouchiBranchLine
-      )
-
-      h
-    end
-
-    def set_namespaces_to_module_library( h , module_type , category , *namespaces )
-      if h[ module_type ].nil?
-        h[ module_type ] = ::Hash.new
-      end
-      if h[ module_type ][ category ].nil?
-        h[ module_type ][ category ] = ::Array.new
-      end
-      namespaces.flatten.each do | namespace |
-        h[ module_type ][ category ] << namespace
-      end
-    end
 
     def config_of_api_constants_when_load_all
       h = ::Hash.new

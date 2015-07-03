@@ -1,0 +1,144 @@
+module TokyoMetro::Initializer::Modules
+  # TokyoMetro::Modules::Common::ConvertConstantToClassMethod の TokyoMetro への include は、
+  # tokyo_metro/modules/common/convert_constant_to_class_method.rb で行う。
+
+  def self.set
+    module_library.each do | module_type , categories |
+      categories.each do | category , base_namespaces |
+        [ base_namespaces ].flatten.each do | base_namespace |
+          namespace = eval( "::TokyoMetro::Modules::Api::ToFactory::Convert::#{ module_type }::#{ category }::#{ base_namespace }")
+          namespace.set_modules
+        end
+      end
+    end
+
+    return nil
+  end
+
+  class << self
+
+    private
+
+    def module_library
+      h = ::Hash.new
+
+      #---------------- StationTimetable, TrainTimetable ... Patches と Customize で共通して用いるモジュール
+
+      set_namespaces( h , :Common , :Station ,
+        :ConnectingRailwayLine
+      )
+
+      set_namespaces( h , :Common , :TrainInfos ,
+        :ConvertStation ,
+        :ConvertTerminalStation ,
+        :ConvertStartingStation
+      )
+
+      set_namespaces( h , :Common , :StationTimetable ,
+        :ConvertTerminalStations
+      )
+
+      #---------------- Patches
+
+      set_namespaces( h , :Patches , :Station ,
+        :ConnectingRailwayLine
+      )
+
+      set_namespaces( h , :Patches , :StationFacility ,
+        :EscalatorDirection ,
+        :EscalatorOperationDay ,
+        :PlatformTransferInfoAtKudanshita ,
+        :BarrierFreeFacilityLocatedArea ,
+        :SurroundingArea
+      )
+
+      set_namespaces( h , :Patches , :TrainInfos ,
+        :MusashiKosugiInNambokuLine
+      )
+
+      set_namespaces( h , :Patches , :StationTimetable ,
+        :MusashiKosugiInNambokuLine ,
+        :NakanoSakaueOnMarunouchiBranchLine ,
+        :Origin ,
+        :FukutoshinLineForWakoshi ,
+        :MarunouchiBranchLineForNakanoSakaue
+      )
+
+      set_namespaces( h , :Patches , :TrainTimetable ,
+        :YurakuchoLine
+      )
+
+      set_namespaces( h , :Patches , :TrainLocation ,
+        :ChiyodaMainLine
+      )
+
+      #---------------- Customize
+
+      set_namespaces( h , :Customize , :Fare ,
+        :ChiyodaBranchLine
+      )
+
+      set_namespaces( h , :Customize , :RailwayLine ,
+        :ChiyodaBranchLine
+      )
+
+      set_namespaces( h , :Customize , :Station ,
+        :ChiyodaBranchLine ,
+        :StationCodeOfNakanoSakaueOnMarunouchiBranchLine ,
+        :ConnectingRailwayLine
+      )
+
+      set_namespaces( h , :Customize , :StationFacility ,
+        :RailwayLineNameInPlatformTransferInfo ,
+        :PlatformTransferInfoAtNakanoSakaue ,
+        :MarunouchiBranchLine ,
+        :ChiyodaBranchLine
+      )
+
+      set_namespaces( h , :Customize , :TrainTimetable ,
+        :StartingStation ,
+        :ReplaceStationName ,
+        # :MarunouchiBranchLine ,
+        :TrainRelationsOnMarunouchiBranchLine ,
+        :ChiyodaBranchLine ,
+        :RomanceCar ,
+        :ToeiMitaLine
+      )
+
+      set_namespaces( h , :Customize , :StationTimetable ,
+        # :MarunouchiBranchLine ,
+        :ChiyodaBranchLine ,
+        :AdditionalInfos
+      )
+
+      set_namespaces( h , :Customize , :TrainLocation ,
+        :ChiyodaBranchLine ,
+        :RomanceCar ,
+        :ToeiMitaLine
+      )
+
+      set_namespaces( h , :Customize , :TrainInfos ,
+        :ConvertStation ,
+        :ConvertTerminalStation ,
+        :ConvertStartingStation ,
+        :MarunouchiBranchLine
+      )
+
+      h
+    end
+
+    def set_namespaces( h , module_type , category , *namespaces )
+      if h[ module_type ].nil?
+        h[ module_type ] = ::Hash.new
+      end
+      if h[ module_type ][ category ].nil?
+        h[ module_type ][ category ] = ::Array.new
+      end
+      namespaces.flatten.each do | namespace |
+        h[ module_type ][ category ] << namespace
+      end
+    end
+
+  end
+
+end
