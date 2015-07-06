@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::RomanceCar::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental
+class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::RomanceCar::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental::Normal
 
   def process
     if romance_car_on_chiyoda_line?

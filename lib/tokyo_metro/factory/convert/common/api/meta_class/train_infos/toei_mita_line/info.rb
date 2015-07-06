@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::ToeiMitaLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental
+class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::ToeiMitaLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental::Normal
 
   def process
     if toei_mita_line_train_including_on_namboku_line?

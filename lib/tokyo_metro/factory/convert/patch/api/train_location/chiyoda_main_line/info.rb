@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Patch::Api::TrainLocation::ChiyodaMainLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental
+class TokyoMetro::Factory::Convert::Patch::Api::TrainLocation::ChiyodaMainLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental::Normal
 
   def process
     convert_invalid_station_name_of_chiyoda_main_line_train

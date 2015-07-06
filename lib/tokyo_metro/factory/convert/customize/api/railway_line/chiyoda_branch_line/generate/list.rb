@@ -1,10 +1,14 @@
-class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLine::Generate::List
+class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLine::Generate::List < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental::Updated
 
-  def initialize( ary )
-    @ary = ary
-    @chiyoda_main_line = ary.find { | item | item.same_as == "odpt.Railway:TokyoMetro.Chiyoda" }
+  def initialize( object )
+    super( object )
+    @chiyoda_main_line = @object.find { | item |
+      item.same_as == ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_same_as
+    }
     set_chiyoda_branch
   end
+
+  private
 
   def process
     if @chiyoda_branch_line.present?
@@ -20,9 +24,9 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
 
       set_info_of_chiyoda_branch_line_to_ary
     end
-  end
 
-  private
+    return nil
+  end
 
   # 千代田線（本線）のデータを複製し、千代田線（支線）のデータを生成するメソッド
   def set_chiyoda_branch
@@ -37,10 +41,13 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
   def delete_infos_related_to_kita_ayase_from_chiyoda_main_line
     @chiyoda_main_line.instance_eval do
       @station_order = @station_order.delete_if { | item |
-        item.station == "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"
+        item.station == ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kita_ayase_on_chiyoda_main_line
       }
       @travel_time = @travel_time.delete_if { | item |
-        item.between?( "odpt.Station:TokyoMetro.Chiyoda.Ayase" , "odpt.Station:TokyoMetro.Chiyoda.KitaAyase" )
+        item.between?(
+          ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ayase_on_chiyoda_main_line ,
+          ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kita_ayase_on_chiyoda_main_line
+        )
       }
     end
   end
@@ -52,14 +59,17 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
       @dc_date = nil
       @region = nil
       @id_urn = nil
-      @same_as = "odpt.Railway:TokyoMetro.ChiyodaBranch"
+      @same_as = ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_branch_same_as
     end
   end
 
   # 千代田線（支線）の station_order から綾瀬・北綾瀬以外の情報を削除し、駅名を変換するメソッド
   def delete_station_order_infos_related_to_stations_on_chiyoda_main_line_from_chiyoda_branch_line
     @chiyoda_branch_line.station_order.keep_if { | item |
-      [ "odpt.Station:TokyoMetro.Chiyoda.KitaAyase" , "odpt.Station:TokyoMetro.Chiyoda.Ayase" ].include?( item.station )
+      [
+        ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kita_ayase_on_chiyoda_main_line ,
+        ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ayase_on_chiyoda_main_line
+      ].include?( item.station )
     }
   end
 
@@ -68,7 +78,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
     regexp = self.class.regexp_for_replace
     @chiyoda_branch_line.station_order.each_with_index do | item , i |
       item.instance_eval do
-        @station = @station.gsub( regexp , "ChiyodaBranch" )
+        @station = @station.gsub( regexp , ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_branch_in_system )
         @index = i
       end
     end
@@ -77,7 +87,10 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
   # 千代田線（支線）の travel_time から綾瀬・北綾瀬以外の情報を削除するメソッド
   def delete_travel_time_infos_related_to_stations_on_chiyoda_main_line_from_chiyoda_branch_line
     @chiyoda_branch_line.travel_time.keep_if { | item |
-      item.between?( "odpt.Station:TokyoMetro.Chiyoda.Ayase" , "odpt.Station:TokyoMetro.Chiyoda.KitaAyase" )
+      item.between?(
+        ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ayase_on_chiyoda_main_line ,
+        ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kita_ayase_on_chiyoda_main_line
+      )
     }
   end
 
@@ -87,7 +100,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
     @chiyoda_branch_line.travel_time.each do | item |
       item.instance_eval do
         @from_station , @to_station = [ @from_station , @to_station ].map { | station_name |
-          station_name.gsub( regexp , "ChiyodaBranch" )
+          station_name.gsub( regexp , ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_branch_in_system )
         }
       end
     end
@@ -95,11 +108,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
 
   # 路線情報の配列に千代田線（支線）のインスタンスを追加するメソッド
   def set_info_of_chiyoda_branch_line_to_ary
-    @ary << @chiyoda_branch_line
-  end
-
-  def self.process( ary )
-    self.new( ary ).process
+    @object << @chiyoda_branch_line
   end
 
   def self.regexp_for_replace

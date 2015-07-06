@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStationName::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental
+class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStationName::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental::Normal
 
   def initialize( object , regexp_for_replaced_station , replacing_string )
     super( object )

@@ -16,6 +16,10 @@ class TokyoMetro::Api::Fare::Info < TokyoMetro::Api::MetaClass::NotRealTime::Inf
     @normal_fare = normal_fare
   end
 
+  def self.attr_names
+    [ :id_urn , :same_as , :dc_date , :operator , :from_station , :to_station , :normal_fare ]
+  end
+
   # 固有識別子
   # @return [String]
   # @note 命名ルールは「odpt.RailwayFare:TokyoMetro.出発駅の路線名.出発駅名.TokyoMetro.到着駅の路線名.到着駅名」

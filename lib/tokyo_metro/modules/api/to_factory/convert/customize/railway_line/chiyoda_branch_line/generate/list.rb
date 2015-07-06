@@ -2,14 +2,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::RailwayLine::Chi
 
   def generate( max = nil )
     ary = super( max )
-    process_chiyoda_main_line_and_add_chiyoda_branch_line( ary )
-    return ary
-  end
-
-  private
-
-  def process_chiyoda_main_line_and_add_chiyoda_branch_line( ary )
-    ::TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLine::Generate::List.process( ary )
+    return ::TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLine::Generate::List.updated( ary )
   end
 
 end

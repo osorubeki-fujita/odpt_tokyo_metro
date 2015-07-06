@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::ChiyodaBranchLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental
+class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::ChiyodaBranchLine::Info < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental::Normal
 
   def process
     convert_railway_line_name_of_chiyoda_branch_line_train

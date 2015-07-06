@@ -2,16 +2,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Station::Station
 
   def initialize( *variables )
     super( *variables )
-    convert_station_code_of_nakano_sakaue_on_marunouchi_branch_line
-  end
-
-  private
-
-  def convert_station_code_of_nakano_sakaue_on_marunouchi_branch_line
-    case @same_as
-    when "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
-      @station_code = "m06"
-    end
+    ::TokyoMetro::Factory::Convert::Common::Api::Station::StationCode.process( self , "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue" , "m06" )
   end
 
 end
