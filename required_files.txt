@@ -362,6 +362,8 @@ lib/tokyo_metro/factory/convert/common/api/meta_class.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/fundamental.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/converter.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/converter/info_for_conversion.rb
+lib/tokyo_metro/factory/convert/common/api/meta_class/fundamental/normal.rb
+lib/tokyo_metro/factory/convert/common/api/meta_class/fundamental/updated.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/chiyoda_branch_line.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/chiyoda_branch_line/info.rb
@@ -373,6 +375,7 @@ lib/tokyo_metro/factory/convert/common/api/station_infos.rb
 lib/tokyo_metro/factory/convert/common/api/station_infos/railway_line.rb
 lib/tokyo_metro/factory/convert/common/api/station.rb
 lib/tokyo_metro/factory/convert/common/api/station/connecting_railway_line.rb
+lib/tokyo_metro/factory/convert/common/api/station/station_code.rb
 lib/tokyo_metro/factory/convert/common/api/station_facility.rb
 lib/tokyo_metro/factory/convert/common/api/station_facility/platform.rb
 lib/tokyo_metro/factory/convert/common/api/station_facility/platform/transfer.rb
@@ -385,6 +388,7 @@ lib/tokyo_metro/factory/convert/customize/api/fare/chiyoda_branch_line.rb
 lib/tokyo_metro/factory/convert/customize/api/fare/chiyoda_branch_line/ayase.rb
 lib/tokyo_metro/factory/convert/customize/api/fare/chiyoda_branch_line/ayase/generate.rb
 lib/tokyo_metro/factory/convert/customize/api/fare/chiyoda_branch_line/ayase/generate/list.rb
+lib/tokyo_metro/factory/convert/customize/api/fare/chiyoda_branch_line/ayase/generate/list/each_condition.rb
 lib/tokyo_metro/factory/convert/customize/api/fare/chiyoda_branch_line/kita_ayase.rb
 lib/tokyo_metro/factory/convert/customize/api/fare/chiyoda_branch_line/kita_ayase/info.rb
 lib/tokyo_metro/factory/convert/customize/api/railway_line.rb

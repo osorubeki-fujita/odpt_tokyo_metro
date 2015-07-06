@@ -9,6 +9,7 @@ class TokyoMetro::Factory::Convert::Common::Api::Station::StationCode < TokyoMet
   def process
     if obj.same_as == @station_same_as
       obj.instance_variable_set( :@station_code , "m06" )
+    end
   end
 
 end
