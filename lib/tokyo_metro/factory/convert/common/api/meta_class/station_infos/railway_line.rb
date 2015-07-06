@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Common::Api::StationInfos::RailwayLine
+class TokyoMetro::Factory::Convert::Common::Api::MetaClass::StationInfos::RailwayLine
 
   def initialize( info , list , replacing_dictionary , ignored_dictionary )
     @info = info

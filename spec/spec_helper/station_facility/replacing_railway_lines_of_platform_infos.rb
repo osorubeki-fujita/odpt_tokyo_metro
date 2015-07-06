@@ -1,5 +1,5 @@
 def station_facility_replacing_railway_lines_of_platform_infos
-  list_of_replacing_railway_lines = ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::StationFacility::RailwayLineNameInPlatformTransferInfo.replacing_railway_lines
+  list_of_replacing_railway_lines = ::TokyoMetro::Factory::Convert::Customize::Api::StationFacility::RailwayLineNameInPlatformTransferInfos.replacing_railway_lines
   describe ::TokyoMetro::Api::StationFacility::Info::Platform::Info::Transfer::Info , "after converting railway line name" do
 
     ::TokyoMetro::Api.station_facilities.each do | station_facility_info |

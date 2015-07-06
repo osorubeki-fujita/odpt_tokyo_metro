@@ -8,6 +8,7 @@ class TokyoMetro::Required::All::Factory::Convert::Customize::Api < TokyoMetro::
     [
       Fare.files ,
       RailwayLine.files ,
+      Station.files ,
       StationFacility.files ,
       TrainTimetable.files ,
       TrainLocation.files

@@ -2,8 +2,12 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ChiyodaBranchLine::
 
   def initialize( object )
     super( object )
-    @ayase_main = @object.find { | item | item.same_as == ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ayase_on_chiyoda_main_line }
-    @kita_ayase = @object.find { | item | item.same_as == ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kita_ayase_on_chiyoda_main_line }
+    @ayase_main = @object.find { | item |
+      item.same_as == ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ayase_on_chiyoda_main_line
+    }
+    @kita_ayase = @object.find { | item |
+      item.same_as == ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kita_ayase_on_chiyoda_main_line
+    }
     initialize_ayase_branch
   end
 

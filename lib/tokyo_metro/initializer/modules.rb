@@ -91,7 +91,7 @@ module TokyoMetro::Initializer::Modules
       )
 
       set_namespaces( h , :Customize , :StationFacility ,
-        :RailwayLineNameInPlatformTransferInfo ,
+        :RailwayLineNameInPlatformTransferInfos ,
         :PlatformTransferInfoAtNakanoSakaue ,
         :MarunouchiBranchLine ,
         :ChiyodaBranchLine
