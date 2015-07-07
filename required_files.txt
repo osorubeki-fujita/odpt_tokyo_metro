@@ -407,6 +407,14 @@ lib/tokyo_metro/factory/convert/customize/api/station_facility/platform_transfer
 lib/tokyo_metro/factory/convert/customize/api/station_facility/railway_line_name_in_platform_transfer_infos.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/railway_line_name_in_platform_transfer_infos/info.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/railway_line_name_in_platform_transfer_infos/info/each_transfer_info.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/additional_infos.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/additional_infos/generate.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/additional_infos/generate/list.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/chiyoda_branch_line.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/chiyoda_branch_line/info.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/marunouchi_branch_line.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/marunouchi_branch_line/info.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/chiyoda_branch_line.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/chiyoda_branch_line/info.rb

@@ -1,6 +1,3 @@
-
-__END__
-
 module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::StationTimetable::MarunouchiBranchLine
 
   def self.set_modules

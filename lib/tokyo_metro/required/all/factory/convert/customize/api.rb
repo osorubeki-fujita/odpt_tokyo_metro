@@ -10,6 +10,7 @@ class TokyoMetro::Required::All::Factory::Convert::Customize::Api < TokyoMetro::
       RailwayLine.files ,
       Station.files ,
       StationFacility.files ,
+      StationTimetable.files ,
       TrainTimetable.files ,
       TrainLocation.files
     ]
