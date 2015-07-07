@@ -400,6 +400,10 @@ lib/tokyo_metro/factory/convert/customize/api/station/chiyoda_branch_line/genera
 lib/tokyo_metro/factory/convert/customize/api/station_facility.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/chiyoda_branch_line.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/chiyoda_branch_line/info.rb
+lib/tokyo_metro/factory/convert/customize/api/station_facility/marunouchi_branch_line.rb
+lib/tokyo_metro/factory/convert/customize/api/station_facility/marunouchi_branch_line/info.rb
+lib/tokyo_metro/factory/convert/customize/api/station_facility/platform_transfer_info_at_nakano_sakaue.rb
+lib/tokyo_metro/factory/convert/customize/api/station_facility/platform_transfer_info_at_nakano_sakaue/info.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/railway_line_name_in_platform_transfer_infos.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/railway_line_name_in_platform_transfer_infos/info.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/railway_line_name_in_platform_transfer_infos/info/each_transfer_info.rb

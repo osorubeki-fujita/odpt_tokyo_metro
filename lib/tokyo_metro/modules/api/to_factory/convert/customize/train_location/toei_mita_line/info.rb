@@ -2,7 +2,6 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainLocation::T
 
   def initialize( *variables )
     super( *variables )
-
     ::TokyoMetro::Factory::Convert::Customize::Api::TrainLocation::ToeiMitaLine::Info.process( self )
   end
 
