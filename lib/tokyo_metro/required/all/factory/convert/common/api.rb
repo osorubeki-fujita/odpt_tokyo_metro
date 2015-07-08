@@ -10,7 +10,7 @@ class TokyoMetro::Required::All::Factory::Convert::Common::Api < TokyoMetro::Req
       StationInfos.files ,
       Station.files ,
       StationFacility.files ,
-      TrainInfos.files
+      StationTimetable.files
     ]
   end
 

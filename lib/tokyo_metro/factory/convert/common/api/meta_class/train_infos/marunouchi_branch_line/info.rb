@@ -8,12 +8,12 @@ class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::Marunouc
 
   private
 
-  def convert_railway_line_name
-    @object.instance_variable_set( :@railway_line , ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.marunouchi_branch_same_as  )
-  end
-
   def to_process?
     @object.operated_only_on_marunouchi_branch_line_including_invalid?
+  end
+
+  def convert_railway_line_name
+    @object.instance_variable_set( :@railway_line , ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.marunouchi_branch_same_as  )
   end
 
 end

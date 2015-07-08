@@ -46,10 +46,6 @@ module TokyoMetro::Initializer::Modules
         :SurroundingArea
       )
 
-      set_namespaces( h , :Patch , :TrainInfos ,
-        :MusashiKosugiInNambokuLine
-      )
-
       set_namespaces( h , :Patch , :StationTimetable ,
         :MusashiKosugiInNambokuLine ,
         :NakanoSakaueOnMarunouchiBranchLine ,
@@ -59,10 +55,12 @@ module TokyoMetro::Initializer::Modules
       )
 
       set_namespaces( h , :Patch , :TrainTimetable ,
+        :MusashiKosugiInNambokuLine ,
         :YurakuchoLine
       )
 
       set_namespaces( h , :Patch , :TrainLocation ,
+        :MusashiKosugiInNambokuLine ,
         :ChiyodaMainLine
       )
 
@@ -126,9 +124,11 @@ module TokyoMetro::Initializer::Modules
       if h[ module_type ].nil?
         h[ module_type ] = ::Hash.new
       end
+
       if h[ module_type ][ category ].nil?
         h[ module_type ][ category ] = ::Array.new
       end
+
       namespaces.flatten.each do | namespace |
         h[ module_type ][ category ] << namespace
       end
