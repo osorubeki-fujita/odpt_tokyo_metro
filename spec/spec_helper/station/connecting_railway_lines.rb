@@ -30,7 +30,7 @@ end
 
 
 def connecting_railway_lines__replacing_railway_lines( station )
-  infos_related_to_this_station = ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Station::ConnectingRailwayLine.replacing_railway_lines[ station.same_as ]
+  infos_related_to_this_station = ::TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLine::Info.replacing_railway_lines[ station.same_as ]
 
   if infos_related_to_this_station.present?
 
@@ -63,7 +63,7 @@ end
 
 def connecting_railway_lines__ignored_railway_lines( station )
   info_related_to_this_station = [ :Customize , :Patch ].map { | namespace |
-    eval( "::TokyoMetro::Modules::Api::ToFactory::Convert::#{namespace}::Station::ConnectingRailwayLine.ignored_railway_lines" )
+    eval( "::TokyoMetro::Factory::Convert::#{namespace}::Api::Station::ConnectingRailwayLine::Info.ignored_railway_lines" )
   }.flatten.select { | item |
     item[ "stations" ].include?( station.same_as )
   }
@@ -84,7 +84,7 @@ end
 
 
 def connecting_railway_lines__optional_railway_lines( station )
-  info_related_to_this_station = ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Station::ConnectingRailwayLine.optional_railway_lines.select { | item |
+  info_related_to_this_station = ::TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLine::Info.optional_railway_lines.select { | item |
     item[ "stations" ].include?( station.same_as )
   }
   if info_related_to_this_station.present?
@@ -103,7 +103,7 @@ end
 
 
 def connecting_railway_lines__new_and_old_railway_lines( station )
-  info_related_to_this_station = ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Station::ConnectingRailwayLine.new_and_old_railway_lines.select { | new_railway_line_name , info |
+  info_related_to_this_station = ::TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLine::Info.new_and_old_railway_lines.select { | new_railway_line_name , info |
     info[ "stations" ].include?( station.same_as )
   }
 
@@ -155,7 +155,7 @@ end
 
 
 def connecting_railway_lines__index_in_stations( station )
-  info_related_to_this_station = ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Station::ConnectingRailwayLine.index_in_stations[ station.same_as ]
+  info_related_to_this_station = ::TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLine::Info.index_in_stations[ station.same_as ]
   if info_related_to_this_station.present?
 
     railway_lines_from_yaml = info_related_to_this_station.keys
@@ -189,7 +189,7 @@ def connecting_railway_lines__index_in_stations( station )
 end
 
 def connecting_railway_lines__transfer_additional_infos( station )
-  info_related_to_this_station = ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Station::ConnectingRailwayLine.transfer_additional_infos.select { | item |
+  info_related_to_this_station = ::TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLine::Info.transfer_additional_infos.select { | item |
     item[ "stations" ].include?( station.same_as )
   }
   if info_related_to_this_station.present?

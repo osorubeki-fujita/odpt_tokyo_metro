@@ -375,6 +375,9 @@ lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/toei_mita_line
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/toei_mita_line/info.rb
 lib/tokyo_metro/factory/convert/common/api/station.rb
 lib/tokyo_metro/factory/convert/common/api/station/connecting_railway_line.rb
+lib/tokyo_metro/factory/convert/common/api/station/connecting_railway_line/info.rb
+lib/tokyo_metro/factory/convert/common/api/station/connecting_railway_line/info/connecting_railway_line.rb
+lib/tokyo_metro/factory/convert/common/api/station/connecting_railway_line/info/connecting_railway_line/info.rb
 lib/tokyo_metro/factory/convert/common/api/station/station_code.rb
 lib/tokyo_metro/factory/convert/common/api/station_facility.rb
 lib/tokyo_metro/factory/convert/common/api/station_facility/platform.rb
@@ -397,6 +400,8 @@ lib/tokyo_metro/factory/convert/customize/api/station.rb
 lib/tokyo_metro/factory/convert/customize/api/station/chiyoda_branch_line.rb
 lib/tokyo_metro/factory/convert/customize/api/station/chiyoda_branch_line/generate.rb
 lib/tokyo_metro/factory/convert/customize/api/station/chiyoda_branch_line/generate/list.rb
+lib/tokyo_metro/factory/convert/customize/api/station/connecting_railway_line.rb
+lib/tokyo_metro/factory/convert/customize/api/station/connecting_railway_line/info.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/chiyoda_branch_line.rb
 lib/tokyo_metro/factory/convert/customize/api/station_facility/chiyoda_branch_line/info.rb
@@ -438,6 +443,9 @@ lib/tokyo_metro/factory/convert/patch/for_string/barrier_free_facility/info.rb
 lib/tokyo_metro/factory/convert/patch/for_string/barrier_free_facility/info/remark.rb
 lib/tokyo_metro/factory/convert/patch/for_string/barrier_free_facility/place_name.rb
 lib/tokyo_metro/factory/convert/patch/api.rb
+lib/tokyo_metro/factory/convert/patch/api/station.rb
+lib/tokyo_metro/factory/convert/patch/api/station/connecting_railway_line.rb
+lib/tokyo_metro/factory/convert/patch/api/station/connecting_railway_line/info.rb
 lib/tokyo_metro/factory/convert/patch/api/train_location.rb
 lib/tokyo_metro/factory/convert/patch/api/train_location/chiyoda_main_line.rb
 lib/tokyo_metro/factory/convert/patch/api/train_location/chiyoda_main_line/info.rb
