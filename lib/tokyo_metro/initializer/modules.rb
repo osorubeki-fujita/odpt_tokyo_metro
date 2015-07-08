@@ -99,7 +99,6 @@ module TokyoMetro::Initializer::Modules
 
       set_namespaces( h , :Customize , :TrainTimetable ,
         :StartingStation ,
-        :ReplaceStationName ,
         # :MarunouchiBranchLine ,
         :TrainRelationsOnMarunouchiBranchLine ,
         :ChiyodaBranchLine ,
@@ -115,6 +114,7 @@ module TokyoMetro::Initializer::Modules
 
       set_namespaces( h , :Customize , :TrainLocation ,
         :ChiyodaBranchLine ,
+        :MarunouchiBranchLine ,
         :RomanceCar ,
         :ToeiMitaLine
       )
@@ -122,8 +122,7 @@ module TokyoMetro::Initializer::Modules
       set_namespaces( h , :Customize , :TrainInfos ,
         :ConvertStation ,
         :ConvertTerminalStation ,
-        :ConvertStartingStation ,
-        :MarunouchiBranchLine
+        :ConvertStartingStation
       )
 
       h
