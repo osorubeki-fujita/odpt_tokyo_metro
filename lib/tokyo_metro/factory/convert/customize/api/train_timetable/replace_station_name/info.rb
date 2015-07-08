@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStati
           station_name = station_time.send( method )
           if station_name.present? and @regexp_for_replaced_station === station_name
             station_name_new = station_name.gsub( @regexp_for_replaced_station , @replacing_string )
-            station_time.instance_variable_set( ":@#{ method }" , station_name_new )
+            station_time.instance_variable_set( "@#{ method }" , station_name_new )
           end
         end
 

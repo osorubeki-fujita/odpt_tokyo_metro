@@ -16,6 +16,7 @@ end
 # options = [ ]
 # options = [ :station ]
 # options = [ :station_facility ]
+
 # options = [ :station , :station_facility , :railway_line , :fare , :train_location , :get_info_from_api ]
 options = [ :station , :station_facility , :railway_line , :train_location ]
 
@@ -98,3 +99,5 @@ end
 if to_test( :get_info_from_api , options )
   get_info_from_api
 end
+
+  ::TokyoMetro.set_api_constants( { station_timetable: true , train_timetable: true } )

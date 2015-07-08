@@ -94,30 +94,32 @@ module TokyoMetro::Initializer::Modules
       )
 
       set_namespaces( h , :Customize , :TrainTimetable ,
-        :StartingStation ,
         # :MarunouchiBranchLine ,
         :TrainRelationsOnMarunouchiBranchLine ,
         :ChiyodaBranchLine ,
         :RomanceCar ,
-        :ToeiMitaLine
+        :ToeiMitaLine ,
+        :StartingStation ,
+        :TerminalStation
       )
 
       set_namespaces( h , :Customize , :StationTimetable ,
         # :MarunouchiBranchLine ,
         :ChiyodaBranchLine ,
-        :AdditionalInfos
+        :AdditionalInfos ,
+        :TerminalStation
       )
 
       set_namespaces( h , :Customize , :TrainLocation ,
         :ChiyodaBranchLine ,
         :MarunouchiBranchLine ,
         :RomanceCar ,
-        :ToeiMitaLine
+        :ToeiMitaLine ,
+        :TerminalStation
       )
 
       set_namespaces( h , :Customize , :TrainInfos ,
         :ConvertStation ,
-        :ConvertTerminalStation ,
         :ConvertStartingStation
       )
 

@@ -32,7 +32,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::StationTimetable::Additional
           item.instance_variable_set( :@same_as , replacing_name )
         end
 
-        replacing_fundamental_infos = replacing_infos_of_this_station_timetableacing_infos_of_this[ "replacing_fundamental_infos" ]
+        replacing_fundamental_infos = replacing_infos_of_this_station_timetable[ "replacing_fundamental_infos" ]
         if replacing_fundamental_infos.present?
           new_ary_of_fundamental_infos = self.class.fundamental_list_class.new( replacing_fundamental_infos.map { | info |
             infos_send_to_new_fundamental_info = [ "stations" , "railway_lines" , "operators" , "railway_directions" ].map { | key | info[ key ] }

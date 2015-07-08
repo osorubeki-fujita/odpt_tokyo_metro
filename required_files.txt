@@ -159,6 +159,10 @@ lib/tokyo_metro/modules/api/to_factory/convert/customize/station_timetable/chiyo
 lib/tokyo_metro/modules/api/to_factory/convert/customize/station_timetable/chiyoda_branch_line/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/station_timetable/marunouchi_branch_line.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/station_timetable/marunouchi_branch_line/info.rb
+lib/tokyo_metro/modules/api/to_factory/convert/customize/station_timetable/terminal_station.rb
+lib/tokyo_metro/modules/api/to_factory/convert/customize/station_timetable/terminal_station/info.rb
+lib/tokyo_metro/modules/api/to_factory/convert/customize/station_timetable/terminal_station/info/train_time.rb
+lib/tokyo_metro/modules/api/to_factory/convert/customize/station_timetable/terminal_station/info/train_time/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_starting_station.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_starting_station/initializer.rb
@@ -168,11 +172,6 @@ lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_sta
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_station.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_station/methods.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_station/methods/info.rb
-lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_terminal_station.rb
-lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_terminal_station/initializer.rb
-lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_terminal_station/initializer/info.rb
-lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_terminal_station/methods.rb
-lib/tokyo_metro/modules/api/to_factory/convert/customize/train_infos/convert_terminal_station/methods/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/chiyoda_branch_line.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/chiyoda_branch_line/info.rb
@@ -180,6 +179,8 @@ lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/marunouc
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/marunouchi_branch_line/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/romance_car.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/romance_car/info.rb
+lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/terminal_station.rb
+lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/terminal_station/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/toei_mita_line.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_location/toei_mita_line/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable.rb
@@ -191,6 +192,8 @@ lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/romance
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/romance_car/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/starting_station.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/starting_station/info.rb
+lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/terminal_station.rb
+lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/terminal_station/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/toei_mita_line.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/toei_mita_line/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/customize/train_timetable/train_relations_on_marunouchi_branch_line.rb
@@ -364,6 +367,8 @@ lib/tokyo_metro/factory/convert/common/api/meta_class/station_infos/railway_line
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/chiyoda_branch_line.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/chiyoda_branch_line/info.rb
+lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/customize_terminal_station.rb
+lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/customize_terminal_station/info.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/marunouchi_branch_line.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/marunouchi_branch_line/info.rb
 lib/tokyo_metro/factory/convert/common/api/meta_class/train_infos/romance_car.rb
@@ -417,6 +422,10 @@ lib/tokyo_metro/factory/convert/customize/api/station_timetable/chiyoda_branch_l
 lib/tokyo_metro/factory/convert/customize/api/station_timetable/chiyoda_branch_line/info.rb
 lib/tokyo_metro/factory/convert/customize/api/station_timetable/marunouchi_branch_line.rb
 lib/tokyo_metro/factory/convert/customize/api/station_timetable/marunouchi_branch_line/info.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/terminal_station.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/terminal_station/info.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/terminal_station/info/train_time.rb
+lib/tokyo_metro/factory/convert/customize/api/station_timetable/terminal_station/info/train_time/info.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/chiyoda_branch_line.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/chiyoda_branch_line/info.rb
@@ -426,6 +435,8 @@ lib/tokyo_metro/factory/convert/customize/api/train_timetable/replace_station_na
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/replace_station_name/info.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/romance_car.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/romance_car/info.rb
+lib/tokyo_metro/factory/convert/customize/api/train_timetable/terminal_station.rb
+lib/tokyo_metro/factory/convert/customize/api/train_timetable/terminal_station/info.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/toei_mita_line.rb
 lib/tokyo_metro/factory/convert/customize/api/train_timetable/toei_mita_line/info.rb
 lib/tokyo_metro/factory/convert/customize/api/train_location.rb
@@ -435,6 +446,8 @@ lib/tokyo_metro/factory/convert/customize/api/train_location/marunouchi_branch_l
 lib/tokyo_metro/factory/convert/customize/api/train_location/marunouchi_branch_line/info.rb
 lib/tokyo_metro/factory/convert/customize/api/train_location/romance_car.rb
 lib/tokyo_metro/factory/convert/customize/api/train_location/romance_car/info.rb
+lib/tokyo_metro/factory/convert/customize/api/train_location/terminal_station.rb
+lib/tokyo_metro/factory/convert/customize/api/train_location/terminal_station/info.rb
 lib/tokyo_metro/factory/convert/customize/api/train_location/toei_mita_line.rb
 lib/tokyo_metro/factory/convert/customize/api/train_location/toei_mita_line/info.rb
 lib/tokyo_metro/factory/convert/patch.rb
