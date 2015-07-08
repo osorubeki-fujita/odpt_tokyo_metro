@@ -1,7 +1,7 @@
 module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainTimetable::StartingStation::Info
 
-  def initialize( *variables )
-    super( *variables )
+  def initialize( *args )
+    super( *args )
     set_starting_station
   end
 

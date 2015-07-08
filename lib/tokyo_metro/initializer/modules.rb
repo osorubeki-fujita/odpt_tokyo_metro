@@ -32,10 +32,6 @@ module TokyoMetro::Initializer::Modules
         :ConvertStartingStation
       )
 
-      set_namespaces( h , :Common , :StationTimetable ,
-        :ConvertTerminalStations
-      )
-
       #---------------- Patch
 
       set_namespaces( h , :Patch , :Station ,

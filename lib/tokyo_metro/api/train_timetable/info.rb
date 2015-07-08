@@ -1,7 +1,7 @@
 # 個別の列車時刻表のクラス
 class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRealTime::Info
 
-  include ::TokyoMetro::ClassNameLibrary::Api::TrainTimetable  
+  include ::TokyoMetro::ClassNameLibrary::Api::TrainTimetable
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
 
   include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
@@ -146,8 +146,6 @@ class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRea
       @holidays
     end
   end
-
-  # @!endgroup
 
   # @!group 停車駅に関するメソッド
 
