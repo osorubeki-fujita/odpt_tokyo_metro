@@ -16,7 +16,7 @@ class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::MetaClas
   private
 
   def to_process?
-    true
+    raise "This method '#{ __method__ }' is not defined in this class '#{ self.class }'."
   end
 
   def convert_station_name

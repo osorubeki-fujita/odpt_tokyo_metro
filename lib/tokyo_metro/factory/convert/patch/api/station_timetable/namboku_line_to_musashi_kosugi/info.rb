@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Patch::Api::StationTimetable::NambokuLineToMusashiKosugi::Info < TokyoMetro::Factory::Convert::Common::Api::StationTimetable::ConvertTerminalStationsVerTwo::Info
+class TokyoMetro::Factory::Convert::Patch::Api::StationTimetable::NambokuLineToMusashiKosugi::Info < TokyoMetro::Factory::Convert::Common::Api::StationTimetable::ConvertTerminalStations::Info
 
   def initialize( object )
     super( object , ::TokyoMetro::Factory::Convert::Patch::Api::StationTimetable::NambokuLineToMusashiKosugi::Info::TrainTime::Info )

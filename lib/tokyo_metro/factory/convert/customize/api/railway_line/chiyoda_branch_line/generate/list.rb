@@ -112,7 +112,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::RailwayLine::ChiyodaBranchLi
   end
 
   def self.regexp_for_replace
-    ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Dictionary::RegexpForReplace.chiyoda_branch_line_stations
+    ::TokyoMetro::Factory::Convert::Dictionary::RegexpForReplace.chiyoda_branch_line_stations
   end
 
 end

@@ -6,6 +6,7 @@ class TokyoMetro::Required::All::Factory::Convert < TokyoMetro::Required
 
   def self.other_files
     [
+      Dictionary.files ,
       Common.files ,
       Customize.files ,
       Patch.files

@@ -9,8 +9,6 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Patch::StationTimetable::Na
     ::TokyoMetro::Api::StationTimetable::Info.class_eval do
       prepend ::TokyoMetro::Modules::Api::ToFactory::Convert::Patch::StationTimetable::NakanoSakaueOnMarunouchiBranchLine::Info
     end
-
-    return nil
   end
 
 end

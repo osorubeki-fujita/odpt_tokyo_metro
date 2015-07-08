@@ -6,7 +6,7 @@ class TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental::Updated
   end
 
   def self.updated( *args )
-    self.new( *args ).updated
+    return self.new( *args ).updated
   end
 
 end

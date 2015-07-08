@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::MarunouchiBr
     [ :marunouchi_branch_line_stations , :nakano_sakaue ].each do | method |
       ::TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStationName::Info.process(
         @object ,
-        ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Dictionary::RegexpForReplace.send( method ) ,
+        ::TokyoMetro::Factory::Convert::Dictionary::RegexpForReplace.send( method ) ,
         ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.marunouchi_branch_in_system
       )
     end

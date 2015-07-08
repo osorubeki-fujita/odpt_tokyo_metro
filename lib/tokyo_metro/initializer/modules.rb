@@ -23,15 +23,6 @@ module TokyoMetro::Initializer::Modules
     def module_library
       h = ::Hash.new
 
-      #---------------- StationTimetable, TrainTimetable ...
-      # Patch と Customize で共通して用いるモジュール
-
-      set_namespaces( h , :Common , :TrainInfos ,
-        :ConvertStation ,
-        :ConvertTerminalStation ,
-        :ConvertStartingStation
-      )
-
       #---------------- Patch
 
       set_namespaces( h , :Patch , :Station ,
@@ -110,11 +101,6 @@ module TokyoMetro::Initializer::Modules
         :RomanceCar ,
         :ToeiMitaLine ,
         :TerminalStation
-      )
-
-      set_namespaces( h , :Customize , :TrainInfos ,
-        :ConvertStation ,
-        :ConvertStartingStation
       )
 
       h
