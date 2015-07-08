@@ -26,10 +26,6 @@ module TokyoMetro::Initializer::Modules
       #---------------- StationTimetable, TrainTimetable ...
       # Patch と Customize で共通して用いるモジュール
 
-      set_namespaces( h , :Common , :Station ,
-        :ConnectingRailwayLine
-      )
-
       set_namespaces( h , :Common , :TrainInfos ,
         :ConvertStation ,
         :ConvertTerminalStation ,

@@ -103,9 +103,6 @@ lib/tokyo_metro/modules/api/list/selection/railway_lines.rb
 lib/tokyo_metro/modules/api/to_factory.rb
 lib/tokyo_metro/modules/api/to_factory/convert.rb
 lib/tokyo_metro/modules/api/to_factory/convert/common.rb
-lib/tokyo_metro/modules/api/to_factory/convert/common/station.rb
-lib/tokyo_metro/modules/api/to_factory/convert/common/station/connecting_railway_line.rb
-lib/tokyo_metro/modules/api/to_factory/convert/common/station/connecting_railway_line/info.rb
 lib/tokyo_metro/modules/api/to_factory/convert/common/station_timetable.rb
 lib/tokyo_metro/modules/api/to_factory/convert/common/station_timetable/convert_terminal_stations.rb
 lib/tokyo_metro/modules/api/to_factory/convert/common/station_timetable/convert_terminal_stations/info.rb
