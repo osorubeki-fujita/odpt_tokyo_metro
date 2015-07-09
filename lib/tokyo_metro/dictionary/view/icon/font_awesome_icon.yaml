@@ -216,3 +216,4 @@ files: files-o
 #-------- その他
 
 ban: ban
+ruby_gems: diamond
