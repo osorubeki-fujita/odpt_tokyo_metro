@@ -100,6 +100,7 @@ module TokyoMetro::Initializer::Modules
         :MarunouchiBranchLine ,
         :RomanceCar ,
         :ToeiMitaLine ,
+        :StartingStation ,
         :TerminalStation
       )
 
