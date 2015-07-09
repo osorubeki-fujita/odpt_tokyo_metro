@@ -45,7 +45,7 @@ module TokyoMetro::ClassNameLibrary::Api::TrainTimetable
       ::TokyoMetro::Api::TrainTimetable::Info::StationTime::List
     end
 
-    def station_time_class
+    def station_time_info_class
       ::TokyoMetro::Api::TrainTimetable::Info::StationTime::Info
     end
 

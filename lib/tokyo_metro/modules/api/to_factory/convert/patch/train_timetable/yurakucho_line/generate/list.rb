@@ -2,9 +2,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Patch::TrainTimetable::Yura
 
   def generate( max = nil )
     ary = super( max )
-    ary = ary.move_station_time_infos_from_invalid_fukutoshin_line_trains_in_yurakucho_line
-    ary = ary.delete_invalid_fukutoshin_line_trains_in_yurakucho_line
-    ary
+    return ::TokyoMetro::Factory::Convert::Patch::Api::TrainTimetable::YurakuchoLine::Generate::List.updated( ary )
   end
 
 end

@@ -37,7 +37,7 @@ class TokyoMetro::Factory::Generate::Api::TrainTimetable::Info < TokyoMetro::Fac
       #puts @hash.keys.to_s
       #puts @hash[ "owl:sameAs" ]
       self.class.station_time_list_class.new( @hash[ key ].map { | train |
-        self.class.station_time_class.generate_from_hash( train )
+        self.class.station_time_info_class.generate_from_hash( train )
       })
     else
       nil

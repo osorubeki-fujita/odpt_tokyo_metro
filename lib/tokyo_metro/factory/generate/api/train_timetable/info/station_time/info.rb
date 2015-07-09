@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Generate::Api::TrainTimetable::Info::StationTime::Inf
   end
 
   def self.instance_class
-    station_time_class
+    station_time_info_class
   end
 
   private

@@ -13,11 +13,13 @@ class TokyoMetro::Required::All < TokyoMetro::Required
       ClassNameLibrary.files ,
       #
       Others.files ,
-      Factory.files ,
-      App.files ,
       #
       Static.files ,
       Api.files ,
+      #
+      Factory.files ,
+      App.files ,
+      #
       Refinement.files ,
       TempLib.files ,
       Document.files ,
