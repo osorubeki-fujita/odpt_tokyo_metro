@@ -6,7 +6,7 @@ def platform_transfer_infos_at_kudanshita
   raise unless p_infos.present?
 
   toei_shinjuku = "odpt.Railway:Toei.Shinjuku"
-  invalid_railway_direction = "odpt.Railway:Toei.Shinjuku"
+  invalid_railway_direction = toei_shinjuku
 
   describe TokyoMetro::Api::StationFacility::Info::Platform::Info , "after converting invalid railway direction in platform transfer info at Kudanshita" do
     it "does not have railway direction name \'#{ invalid_railway_direction }\'." do

@@ -1,7 +1,7 @@
 #-------- 駅周辺の名所・施設
 # @note 「誤：虎ノ門病院 → 正：虎の門病院」など
 def station_facility_surrounding_area
-  dict = TokyoMetro::Modules::Api::ToFactory::Convert::Patch::StationFacility::SurroundingArea::Generate::Info::Platform::Info::SurroundingArea::DICTIONARY
+  dict = ::TokyoMetro::Factory::Convert::Patch::Api::StationFacility::SurroundingArea::DICTIONARY
 
   surrounding_area_infos =::TokyoMetro::Api.station_facilities.map( &:platform_infos ).flatten.map( &:surrounding_areas ).flatten.select( &:present? )
 
