@@ -4,9 +4,8 @@ class TokyoMetro::Factory::Generate::Api::StationFacility::Info::BarrierFree::In
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility::BarrierFree::Escalator
 
-  def initialize( var )
-    raise "Error" if var.nil?
-    super( var )
+  def initialize( arg )
+    super( arg )
   end
 
   def variables
@@ -20,11 +19,11 @@ class TokyoMetro::Factory::Generate::Api::StationFacility::Info::BarrierFree::In
   private
 
   def up
-    /上り/ === @string
+    !!( /上り/ === @string )
   end
 
   def down
-    /下り/ === @string
+    !!( /下り/ === @string )
   end
 
 end

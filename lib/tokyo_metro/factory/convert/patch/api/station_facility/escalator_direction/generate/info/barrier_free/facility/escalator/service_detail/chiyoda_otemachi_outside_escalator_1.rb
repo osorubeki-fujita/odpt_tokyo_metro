@@ -1,6 +1,6 @@
 # 千代田線大手町駅のエスカレーター odpt.StationFacility:TokyoMetro.Chiyoda.Otemachi.Outside.Escalator.1 の方向に関する情報を扱うモジュール
 # @note {TokyoMetro::Modules::Api::ToFactory::Convert::Patch::StationFacility::EscalatorDirection::Generate::Info::BarrierFree::Facility::Escalator}#service_detail の内部で、変数に対し、特異メソッドを追加するために prepend される。
-module TokyoMetro::Modules::Api::ToFactory::Convert::Patch::StationFacility::EscalatorDirection::Generate::Info::BarrierFree::Facility::Escalator::ServiceDetail::ChiyodaOtemachiOutsideEscalator1
+module TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorDirection::Generate::Info::BarrierFree::Facility::Escalator::ServiceDetail::ChiyodaOtemachiOutsideEscalator1
 
   private
 
