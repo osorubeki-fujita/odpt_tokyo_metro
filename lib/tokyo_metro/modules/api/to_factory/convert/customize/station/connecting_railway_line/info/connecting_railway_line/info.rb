@@ -11,6 +11,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Station::Connect
   # Constructor
   def initialize( railway_line , start_on: nil , end_on: nil , index_in_station: nil , cleared: false , connecting_another_station: nil , not_recommended: false , note: nil , hidden_on_railway_line_page: false )
     # puts railway_line
+
     super( railway_line )
     @start_on = set_time_of( start_on , type: :start_on )
     @end_on = set_time_of( end_on , type: :end_on )

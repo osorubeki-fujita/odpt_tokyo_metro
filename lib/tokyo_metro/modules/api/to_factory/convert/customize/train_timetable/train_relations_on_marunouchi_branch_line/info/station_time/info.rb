@@ -2,6 +2,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainTimetable::
 
   def initialize( arrival_time , arrival_station , departure_time , departure_station , previous_trains = nil , following_trains = nil )
     super( arrival_time , arrival_station , departure_time , departure_station )
+
     @previous_trains = previous_trains
     @following_trains = following_trains
   end

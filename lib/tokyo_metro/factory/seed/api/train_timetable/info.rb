@@ -15,7 +15,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info < TokyoMetro::Factory
   include ::TokyoMetro::Factory::Seed::Reference::TrainName
 
   def self.train_type_factory
-    ::TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::TrainType
+    ::TokyoMetro::Factory::BeforeSeed::Api::TrainTimetable::Info::TrainType
   end
 
   private

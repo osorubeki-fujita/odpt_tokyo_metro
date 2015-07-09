@@ -6,6 +6,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainTimetable::
       include ::TokyoMetro::Modules::Api::Info::Decision::ActualTerminalStation
 
       include ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainTimetable::TrainRelationsOnMarunouchiBranchLine::Dictionary
+
       prepend ::TokyoMetro::Modules::Api::ToFactory::Convert::Customize::TrainTimetable::TrainRelationsOnMarunouchiBranchLine::Info
     end
 

@@ -153,7 +153,7 @@ module TokyoMetro::ClassNameLibrary::Api::StationTimetable
     end
 
     def factory_for_train_type
-      ::TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info::TrainType
+      ::TokyoMetro::Factory::BeforeSeed::Api::StationTimetable::Info::TrainTime::Info::TrainType
     end
 
     # API の情報（generate_instance が true のときの、インスタンスの配列）の各成分をディレクトリ分けするときに使用するキーの設定

@@ -12,10 +12,14 @@ class TokyoMetro::Required::All::Factory < TokyoMetro::Required
       Save.files ,
       Scss.files ,
       YamlStationList.files ,
-      Seed.files ,
+      #
       Common.files ,
-      BeforeDecorate.files ,
-      Decorate.files
+      #
+      Seed.files ,
+      BeforeSeed.files ,
+      #
+      Decorate.files ,
+      BeforeDecorate.files
     ]
   end
 

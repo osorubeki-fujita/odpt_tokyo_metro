@@ -138,7 +138,7 @@ class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRea
 
   # 運行日の列車時刻
   # @return [::TokyoMetro::Api::TrainTimetable::Info::StationTime::List <::TokyoMetro::Api::TrainTimetable::Info::StationTime::Info>]
-  # @note 平日運行の場合は @weekdays , 土休日運行の場合は @holidays を返す。
+  # @note 平日運行の場合は @weekdays の値を, 土休日運行の場合は @holidays の値を返す。
   def valid_list
     if operated_on_weekdays?
       @weekdays
