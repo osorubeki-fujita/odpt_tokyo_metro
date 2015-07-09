@@ -30,10 +30,10 @@ module TokyoMetro::Initializer::Modules
       )
 
       set_namespaces( h , :Patch , :StationFacility ,
-        :EscalatorDirection ,
+        :BarrierFreeFacilityLocatedAreaAtNakanoShimbashi ,
+        :EscalatorDirectionAtOtemachi ,
         :EscalatorOperationDay ,
         :PlatformTransferInfoAtKudanshita ,
-        :BarrierFreeFacilityLocatedArea ,
         :SurroundingArea
       )
 

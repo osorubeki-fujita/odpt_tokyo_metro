@@ -3,8 +3,8 @@
 # @note 正：odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Inside.Toilet.1
 def station_facility_toilet_location_in_nakano_shimbashi
 
-  valid_barrier_free_info_name = "odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Inside.Toilet.1"
   invalid_barrier_free_info_name = "odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Outside.Toilet.1"
+  valid_barrier_free_info_name = "odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Inside.Toilet.1"
 
   proc_for_searching_barrier_free_facility = ::Proc.new { | barrier_free_info |
     barrier_free_info.same_as == valid_barrier_free_info_name
@@ -26,12 +26,12 @@ def station_facility_toilet_location_in_nakano_shimbashi
     info.barrier_free_facilities.present? and info.barrier_free_facilities.any?{ | facility | facility.same_as == invalid_barrier_free_info_name }
   }
 
-  describe ::TokyoMetro::Api::StationFacility::List , "after processing invalid info \"#{ valid_barrier_free_info_name }\"" do
+  describe ::TokyoMetro::Api::StationFacility::List , "after processing invalid info \"#{ invalid_barrier_free_info_name }\"" do
     describe ::TokyoMetro::Api::StationFacility::Info do
       it "\'#{ valid_barrier_free_info_name }\' is located in outside area." do
         expect( barrier_free_info ).to be_present
-        expect( barrier_free_info ).not_to be_inside
-        expect( barrier_free_info ).to be_outside
+        expect( barrier_free_info ).not_to be_outside
+        expect( barrier_free_info ).to be_inside
       end
 
       describe ::TokyoMetro::Api::StationFacility::Info::Platform::Info::BarrierFree::Info do
