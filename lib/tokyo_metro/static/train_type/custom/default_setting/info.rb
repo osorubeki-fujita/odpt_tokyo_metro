@@ -16,7 +16,7 @@ class TokyoMetro::Static::TrainType::Custom::DefaultSetting::Info < TokyoMetro::
   #   custom.TrainType:TokyoMetro.Default.Express.ToTokyu
   #   custom.TrainType:TokyoMetro.Default.HolidayExpress
   def same_as_alias
-    self.same_as
+    same_as
   end
 
   #  API 内部の種別情報（インスタンス変数）
@@ -29,7 +29,7 @@ class TokyoMetro::Static::TrainType::Custom::DefaultSetting::Info < TokyoMetro::
   #   custom.TrainType:TokyoMetro.Default.Express.ToTokyu      TokyoMetro::Static::TrainType::InApi::Info
   #   custom.TrainType:TokyoMetro.Default.HolidayExpress       TokyoMetro::Static::TrainType::InApi::Info
   def train_type_alias
-    self.train_type
+    train_type
   end
 
 # @!group 種別の色に関するメソッド
@@ -44,7 +44,7 @@ class TokyoMetro::Static::TrainType::Custom::DefaultSetting::Info < TokyoMetro::
   #   custom.TrainType:TokyoMetro.Default.Express.ToTokyu      TokyoMetro::Static::Color
   #   custom.TrainType:TokyoMetro.Default.HolidayExpress       TokyoMetro::Static::TrainType::Color::Info
   def bgcolor_alias
-    self.bgcolor
+    bgcolor
   end
 
   #  文字色の情報（インスタンス変数）
@@ -57,7 +57,7 @@ class TokyoMetro::Static::TrainType::Custom::DefaultSetting::Info < TokyoMetro::
   #   custom.TrainType:TokyoMetro.Default.Express.ToTokyu      TokyoMetro::Static::TrainType::Color::Info
   #   custom.TrainType:TokyoMetro.Default.HolidayExpress       TokyoMetro::Static::TrainType::Color::Info
   def color_alias
-    self.color
+    color
   end
 
 # @!endgroup

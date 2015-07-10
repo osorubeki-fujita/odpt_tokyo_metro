@@ -17,15 +17,17 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
   # @return [String] 補足情報
   attr_reader :note
 
-# @!group 文字色に関するメソッド (1)
+  # @!group 文字色に関するメソッド (1)
   include ::TokyoMetro::Modules::Static::GetColorInfo::Base
-# @!group 文字色に関するメソッド (2)
+  # @!group 文字色に関するメソッド (2)
   include ::TokyoMetro::Modules::Static::GetColorInfo::EachRgbElement
-# @!group 背景色に関するメソッド (1)
+  # @!group 背景色に関するメソッド (1)
   include ::TokyoMetro::Modules::Static::GetBackgroundColorInfo::Base
-# @!group 背景色に関するメソッド (2)
+  # @!group 背景色に関するメソッド (2)
   include ::TokyoMetro::Modules::Static::GetBackgroundColorInfo::EachRgbElement
-# @!endgroup
+  # @!endgroup
+
+  include ::TokyoMetro::Modules::Common::Info::TrainType::CssClass
 
   alias :name_ja_to_haml :note
   alias :name_en_to_haml :name_en_normal
@@ -33,19 +35,10 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
   # インスタンスの情報を文字列にして返すメソッド
   # @return [String]
   def to_s( indent = 0 )
-    str_1 = super( indent )
     key_css = "css_class_name"
-    str_1 + "\n" + " " * indent + key_css.ljust(32) + self.__send__( key_css )
+    super( indent ) + "\n" + " " * indent + key_css.ljust(32) + self.__send__( key_css )
   end
 
-# @!group CSS に関するメソッド
-
-  # CSS のクラスの名称
-  # @return [String]
-  def css_class_name
-    "train_type_" + @same_as.gsub( /\Acustom\.TrainType\:/ , "" ).gsub( "TokyoMetro." , "" ).gsub( "\." , "_" ).underscore.downcase
-  end
-
-# @!endgroup
+  # @!endgroup
 
 end

@@ -11,8 +11,8 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
     h = ::Hash.new
 
     [
-      :same_as , :note ,
-      :css_class_name
+      :same_as ,
+      :note
     ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end

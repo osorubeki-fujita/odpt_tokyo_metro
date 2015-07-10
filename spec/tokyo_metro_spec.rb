@@ -17,9 +17,9 @@ end
 # options = [ :station ]
 # options = [ :station_facility ]
 
-# options = [ :station , :station_facility , :railway_line , :fare , :train_location , :get_info_from_api ]
+# options = [ :static , :station , :station_facility , :railway_line , :fare , :train_location , :get_info_from_api ]
 # options = [ :station , :station_facility , :railway_line , :train_location ]
-options = [ :station_facility ]
+options = [ :static ]
 
 #--------
 
