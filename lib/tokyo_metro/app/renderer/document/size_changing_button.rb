@@ -15,10 +15,10 @@ class TokyoMetro::App::Renderer::Document::SizeChangingButton < TokyoMetro::Fact
   def h_locals
     super.merge({
       icon_names: [
-        [ :display_all , :display_all ] ,
-        [ :display , :display_small ] ,
+        [ :minimize_all , :minimize_all ] ,
         [ :minimize , :minimize_small ] ,
-        [ :minimize_all , :minimize_all ]
+        [ :display , :display_small ] ,
+        [ :display_all , :display_all ]
       ]
     })
   end
