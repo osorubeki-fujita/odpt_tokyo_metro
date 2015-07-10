@@ -6,7 +6,7 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::F
 
   def render_infos
     h.render inline: <<-HAML , type: :haml , locals: { infos: infos_to_render }
-%ul{ class: [ :sub_infos , :clearfix ] }
+%ul{ class: [ :sub_infos , :display , :clearfix ] }
   - infos.each do | title , group |
     %li{ class: [ :title , :text_en ] }<
       = title
