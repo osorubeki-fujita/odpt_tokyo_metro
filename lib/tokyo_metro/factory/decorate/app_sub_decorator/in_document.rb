@@ -4,6 +4,15 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::F
     h.content_tag( :div , '' , class: [ :button_area , :clearfix ] )
   end
 
+  def render_id_and_size_changing_buttons
+    h.render inline: <<-HAML , type: :haml , locals: { number: object.id }
+%div{ class: [ :header , :clearfix ] }
+  %div{ class: [ :number , :text_en ] }<
+    = number
+  = ::TokyoMetro::App::Renderer::Document::SizeChangingButton.new( nil ).render
+    HAML
+  end
+
   def render_infos
     h.render inline: <<-HAML , type: :haml , locals: { infos: infos_to_render }
 %ul{ class: [ :sub_infos , :display , :clearfix ] }
