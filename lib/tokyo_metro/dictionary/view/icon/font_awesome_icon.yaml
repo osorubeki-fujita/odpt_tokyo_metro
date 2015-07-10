@@ -193,6 +193,8 @@ train: train
 truck: truck
 wheelchair: wheelchair
 
+airplane: plane
+
 #-------- 時間
 
 clock: &clock
