@@ -1,7 +1,7 @@
 # 都営大江戸線
 
 odpt.Station:Toei.Oedo.ShinjukuNishiguchi:
-  station_facility: odpt.StationFacility:Toei.ShinjukuNishiguchi
+  station_facility_info: odpt.StationFacility:Toei.ShinjukuNishiguchi
   name_ja: 新宿西口
   name_hira: しんじゅくにしぐち
   name_in_system: ShinjukuNishiguchi
@@ -11,7 +11,7 @@ odpt.Station:Toei.Oedo.ShinjukuNishiguchi:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.HigashiShinjuku:
-  station_facility: odpt.StationFacility:Toei.HigashiShinjuku
+  station_facility_info: odpt.StationFacility:Toei.HigashiShinjuku
   name_ja: 東新宿
   name_hira: ひがししんじゅく
   name_in_system: HigashiShinjuku
@@ -21,7 +21,7 @@ odpt.Station:Toei.Oedo.HigashiShinjuku:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.WakamatsuKawada:
-  station_facility: odpt.StationFacility:Toei.WakamatsuKawada
+  station_facility_info: odpt.StationFacility:Toei.WakamatsuKawada
   name_ja: 若松河田
   name_hira: わかまつかわだ
   name_in_system: WakamatsuKawada
@@ -31,7 +31,7 @@ odpt.Station:Toei.Oedo.WakamatsuKawada:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.UshigomeYanagicho:
-  station_facility: odpt.StationFacility:Toei.UshigomeYanagicho
+  station_facility_info: odpt.StationFacility:Toei.UshigomeYanagicho
   name_ja: 牛込柳町
   name_hira: うしごめやなぎちょう
   name_in_system: UshigomeYanagicho
@@ -41,7 +41,7 @@ odpt.Station:Toei.Oedo.UshigomeYanagicho:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.UshigomeKagurazaka:
-  station_facility: odpt.StationFacility:Toei.UshigomeKagurazaka
+  station_facility_info: odpt.StationFacility:Toei.UshigomeKagurazaka
   name_ja: 牛込神楽坂
   name_hira: うしごめかぐらざか
   name_in_system: UshigomeKagurazaka
@@ -51,7 +51,7 @@ odpt.Station:Toei.Oedo.UshigomeKagurazaka:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Iidabashi:
-  station_facility: odpt.StationFacility:Toei.Iidabashi
+  station_facility_info: odpt.StationFacility:Toei.Iidabashi
   name_ja: 飯田橋
   name_hira: いいだばし
   name_in_system: Iidabashi
@@ -61,7 +61,7 @@ odpt.Station:Toei.Oedo.Iidabashi:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Kasuga:
-  station_facility: odpt.StationFacility:Toei.Kasuga
+  station_facility_info: odpt.StationFacility:Toei.Kasuga
   name_ja: 春日
   name_hira: かすが
   name_in_system: Kasuga
@@ -71,7 +71,7 @@ odpt.Station:Toei.Oedo.Kasuga:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.HongoSanchome:
-  station_facility: odpt.StationFacility:Toei.HongoSanchome
+  station_facility_info: odpt.StationFacility:Toei.HongoSanchome
   name_ja: 本郷三丁目
   name_hira: ほんごうさんちょうめ
   name_in_system: HongoSanchome
@@ -81,7 +81,7 @@ odpt.Station:Toei.Oedo.HongoSanchome:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.UenoOkachimachi:
-  station_facility: odpt.StationFacility:Toei.UenoOkachimachi
+  station_facility_info: odpt.StationFacility:Toei.UenoOkachimachi
   name_ja: 上野御徒町
   name_hira: うえのおかちまち
   name_in_system: UenoOkachimachi
@@ -91,7 +91,7 @@ odpt.Station:Toei.Oedo.UenoOkachimachi:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.ShinOkachimachi:
-  station_facility: odpt.StationFacility:Toei.ShinOkachimachi
+  station_facility_info: odpt.StationFacility:Toei.ShinOkachimachi
   name_ja: 新御徒町
   name_hira: しんおかちまち
   name_in_system: ShinOkachimachi
@@ -101,7 +101,7 @@ odpt.Station:Toei.Oedo.ShinOkachimachi:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Kuramae:
-  station_facility: odpt.StationFacility:Toei.Kuramae
+  station_facility_info: odpt.StationFacility:Toei.Kuramae
   name_ja: 蔵前
   name_hira: くらまえ
   name_in_system: Kuramae
@@ -111,7 +111,7 @@ odpt.Station:Toei.Oedo.Kuramae:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Ryogoku:
-  station_facility: odpt.StationFacility:Toei.Ryogoku
+  station_facility_info: odpt.StationFacility:Toei.Ryogoku
   name_ja: 両国
   name_hira: りょうごく
   name_in_system: Ryogoku
@@ -121,7 +121,7 @@ odpt.Station:Toei.Oedo.Ryogoku:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Morishita:
-  station_facility: odpt.StationFacility:Toei.Morishita
+  station_facility_info: odpt.StationFacility:Toei.Morishita
   name_ja: 森下
   name_hira: もりした
   name_in_system: Morishita
@@ -131,7 +131,7 @@ odpt.Station:Toei.Oedo.Morishita:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.KiyosumiShirakawa:
-  station_facility: odpt.StationFacility:Toei.KiyosumiShirakawa
+  station_facility_info: odpt.StationFacility:Toei.KiyosumiShirakawa
   name_ja: 清澄白河
   name_hira: きよすみしらかわ
   name_in_system: KiyosumiShirakawa
@@ -141,7 +141,7 @@ odpt.Station:Toei.Oedo.KiyosumiShirakawa:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.MonzenNakacho:
-  station_facility: odpt.StationFacility:Toei.MonzenNakacho
+  station_facility_info: odpt.StationFacility:Toei.MonzenNakacho
   name_ja: 門前仲町
   name_hira: もんぜんなかちょう
   name_in_system: MonzenNakacho
@@ -151,7 +151,7 @@ odpt.Station:Toei.Oedo.MonzenNakacho:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Tsukishima:
-  station_facility: odpt.StationFacility:Toei.Tsukishima
+  station_facility_info: odpt.StationFacility:Toei.Tsukishima
   name_ja: 月島
   name_hira: つきしま
   name_in_system: Tsukishima
@@ -161,7 +161,7 @@ odpt.Station:Toei.Oedo.Tsukishima:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Kachidoki:
-  station_facility: odpt.StationFacility:Toei.Kachidoki
+  station_facility_info: odpt.StationFacility:Toei.Kachidoki
   name_ja: 勝どき
   name_hira: かちどき
   name_in_system: Kachidoki
@@ -171,7 +171,7 @@ odpt.Station:Toei.Oedo.Kachidoki:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.TsukijiShijo:
-  station_facility: odpt.StationFacility:Toei.TsukijiShijo
+  station_facility_info: odpt.StationFacility:Toei.TsukijiShijo
   name_ja: 築地市場
   name_hira: つきじしじょう
   name_in_system: TsukijiShijo
@@ -181,7 +181,7 @@ odpt.Station:Toei.Oedo.TsukijiShijo:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Shiodome:
-  station_facility: odpt.StationFacility:Toei.Shiodome
+  station_facility_info: odpt.StationFacility:Toei.Shiodome
   name_ja: 汐留
   name_hira: しおどめ
   name_in_system: Shiodome
@@ -191,7 +191,7 @@ odpt.Station:Toei.Oedo.Shiodome:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Daimon:
-  station_facility: odpt.StationFacility:Toei.Daimon
+  station_facility_info: odpt.StationFacility:Toei.Daimon
   name_ja: 大門
   name_hira: だいもん
   name_in_system: Daimon
@@ -201,7 +201,7 @@ odpt.Station:Toei.Oedo.Daimon:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Akabanebashi:
-  station_facility: odpt.StationFacility:Toei.Akabanebashi
+  station_facility_info: odpt.StationFacility:Toei.Akabanebashi
   name_ja: 赤羽橋
   name_hira: あかばねばし
   name_in_system: Akabanebashi
@@ -211,7 +211,7 @@ odpt.Station:Toei.Oedo.Akabanebashi:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.AzabuJuban:
-  station_facility: odpt.StationFacility:Toei.AzabuJuban
+  station_facility_info: odpt.StationFacility:Toei.AzabuJuban
   name_ja: 麻布十番
   name_hira: あざぶじゅうばん
   name_in_system: AzabuJuban
@@ -221,7 +221,7 @@ odpt.Station:Toei.Oedo.AzabuJuban:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Roppongi:
-  station_facility: odpt.StationFacility:Toei.Roppongi
+  station_facility_info: odpt.StationFacility:Toei.Roppongi
   name_ja: 六本木
   name_hira: ろっぽんぎ
   name_in_system: Roppongi
@@ -231,7 +231,7 @@ odpt.Station:Toei.Oedo.Roppongi:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.AoyamaItchome:
-  station_facility: odpt.StationFacility:Toei.AoyamaItchome
+  station_facility_info: odpt.StationFacility:Toei.AoyamaItchome
   name_ja: 青山一丁目
   name_hira: あおやまいっちょうめ
   name_in_system: AoyamaItchome
@@ -241,7 +241,7 @@ odpt.Station:Toei.Oedo.AoyamaItchome:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.KokuritsuKyogijo:
-  station_facility: odpt.StationFacility:Toei.KokuritsuKyogijo
+  station_facility_info: odpt.StationFacility:Toei.KokuritsuKyogijo
   name_ja: 国立競技場
   name_hira: こくりつきょうぎじょう
   name_in_system: KokuritsuKyogijo
@@ -251,7 +251,7 @@ odpt.Station:Toei.Oedo.KokuritsuKyogijo:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Yoyogi:
-  station_facility: odpt.StationFacility:Toei.Yoyogi
+  station_facility_info: odpt.StationFacility:Toei.Yoyogi
   name_ja: 代々木
   name_hira: よよぎ
   name_in_system: Yoyogi
@@ -263,7 +263,7 @@ odpt.Station:Toei.Oedo.Yoyogi:
 odpt.Station:Toei.Oedo.Shinjuku:
   station_alias:
     - odpt.Railway:Keio.New.Shinjuku
-  station_facility: odpt.StationFacility:Toei.Shinjuku
+  station_facility_info: odpt.StationFacility:Toei.Shinjuku
   station_facility_custom: odpt.StationFacility:Toei.Shinjuku
   station_facility_custom_alias:
     - odpt.StationFacility:Keio.Shinjuku.New
@@ -276,7 +276,7 @@ odpt.Station:Toei.Oedo.Shinjuku:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Tochomae:
-  station_facility: odpt.StationFacility:Toei.Tochomae
+  station_facility_info: odpt.StationFacility:Toei.Tochomae
   name_ja: 都庁前
   name_hira: とちょうまえ
   name_in_system: Tochomae
@@ -286,7 +286,7 @@ odpt.Station:Toei.Oedo.Tochomae:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.NishiShinjukuGochome:
-  station_facility: odpt.StationFacility:Toei.NishiShinjukuGochome
+  station_facility_info: odpt.StationFacility:Toei.NishiShinjukuGochome
   name_ja: 西新宿五丁目
   name_hira: にししんじゅくごちょうめ
   name_in_system: NishiShinjukuGochome
@@ -296,7 +296,7 @@ odpt.Station:Toei.Oedo.NishiShinjukuGochome:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.NakanoSakaue:
-  station_facility: odpt.StationFacility:Toei.NakanoSakaue
+  station_facility_info: odpt.StationFacility:Toei.NakanoSakaue
   name_ja: 中野坂上
   name_hira: なかのさかうえ
   name_in_system: NakanoSakaue
@@ -306,7 +306,7 @@ odpt.Station:Toei.Oedo.NakanoSakaue:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.HigashiNakano:
-  station_facility: odpt.StationFacility:Toei.HigashiNakano
+  station_facility_info: odpt.StationFacility:Toei.HigashiNakano
   name_ja: 東中野
   name_hira: ひがしなかの
   name_in_system: HigashiNakano
@@ -316,7 +316,7 @@ odpt.Station:Toei.Oedo.HigashiNakano:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Nakai:
-  station_facility: odpt.StationFacility:Toei.Nakai
+  station_facility_info: odpt.StationFacility:Toei.Nakai
   name_ja: 中井
   name_hira: なかい
   name_in_system: Nakai
@@ -326,7 +326,7 @@ odpt.Station:Toei.Oedo.Nakai:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.OchiaiMinamiNagasaki:
-  station_facility: odpt.StationFacility:Toei.OchiaiMinamiNagasaki
+  station_facility_info: odpt.StationFacility:Toei.OchiaiMinamiNagasaki
   name_ja: 落合南長崎
   name_hira: おちあいみなみながさき
   name_in_system: OchiaiMinamiNagasaki
@@ -336,7 +336,7 @@ odpt.Station:Toei.Oedo.OchiaiMinamiNagasaki:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.ShinEgota:
-  station_facility: odpt.StationFacility:Toei.ShinEgota
+  station_facility_info: odpt.StationFacility:Toei.ShinEgota
   name_ja: 新江古田
   name_hira: しんえごた
   name_in_system: ShinEgota
@@ -346,7 +346,7 @@ odpt.Station:Toei.Oedo.ShinEgota:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Nerima:
-  station_facility: odpt.StationFacility:Toei.Nerima
+  station_facility_info: odpt.StationFacility:Toei.Nerima
   name_ja: 練馬
   name_hira: ねりま
   name_in_system: Nerima
@@ -356,7 +356,7 @@ odpt.Station:Toei.Oedo.Nerima:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Toshimaen:
-  station_facility: odpt.StationFacility:Toei.Toshimaen
+  station_facility_info: odpt.StationFacility:Toei.Toshimaen
   name_ja: 豊島園
   name_hira: としまえん
   name_in_system: Toshimaen
@@ -366,7 +366,7 @@ odpt.Station:Toei.Oedo.Toshimaen:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.NerimaKasugacho:
-  station_facility: odpt.StationFacility:Toei.NerimaKasugacho
+  station_facility_info: odpt.StationFacility:Toei.NerimaKasugacho
   name_ja: 練馬春日町
   name_hira: ねりまかすがちょう
   name_in_system: NerimaKasugacho
@@ -376,7 +376,7 @@ odpt.Station:Toei.Oedo.NerimaKasugacho:
     - custom.StoppingPattern:Toei.Oedo.Local
 
 odpt.Station:Toei.Oedo.Hikarigaoka:
-  station_facility: odpt.StationFacility:Toei.Hikarigaoka
+  station_facility_info: odpt.StationFacility:Toei.Hikarigaoka
   name_ja: 光が丘
   name_hira: ひかりがおか
   name_in_system: Hikarigaoka

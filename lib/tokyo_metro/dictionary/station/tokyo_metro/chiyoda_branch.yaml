@@ -2,7 +2,7 @@ odpt.Station:TokyoMetro.ChiyodaBranch.Ayase:
   station_alias:
     - odpt.Station:TokyoMetro.Chiyoda.Ayase
     - odpt.Station:JR-East.Ayase
-  station_facility: odpt.StationFacility:TokyoMetro.Ayase
+  station_facility_info: odpt.StationFacility:TokyoMetro.Ayase
   station_facility_custom_alias: odpt.StationFacility:JR-East.Ayase
   name_ja: 綾瀬
   name_hira: あやせ
@@ -16,7 +16,7 @@ odpt.Station:TokyoMetro.ChiyodaBranch.Ayase:
 
 odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase:
   station_alias: odpt.Station:TokyoMetro.Chiyoda.KitaAyase
-  station_facility: odpt.StationFacility:TokyoMetro.KitaAyase
+  station_facility_info: odpt.StationFacility:TokyoMetro.KitaAyase
   name_ja: 北綾瀬
   name_hira: きたあやせ
   name_in_system: KitaAyase

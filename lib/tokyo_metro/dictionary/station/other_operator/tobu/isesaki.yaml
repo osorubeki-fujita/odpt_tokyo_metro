@@ -1,6 +1,6 @@
 odpt.Station:Tobu.Isesaki.TobuDoubutsuKoen:
-  station_facility: odpt.StationFacility:Tobu.TobuDobutsuKoen
-  # station_facility: odpt.StationFacility:Tobu.TobuDoubutuKouen
+  station_facility_info: odpt.StationFacility:Tobu.TobuDobutsuKoen
+  # station_facility_info: odpt.StationFacility:Tobu.TobuDoubutuKouen
   name_ja: 東武動物公園
   name_hira: とうぶどうぶつこうえん
   name_in_system: TobuDoubutsuKoen
@@ -15,7 +15,7 @@ odpt.Station:Tobu.Isesaki.TobuDoubutsuKoen:
     - custom.StoppingPattern:Tobu.Isesaki.Express
 
 odpt.Station:Tobu.Isesaki.Wado:
-  station_facility: odpt.StationFacility:Tobu.Wado
+  station_facility_info: odpt.StationFacility:Tobu.Wado
   name_ja: 和戸
   name_hira: わど
   name_in_system: Wado
@@ -29,7 +29,7 @@ odpt.Station:Tobu.Isesaki.Wado:
     - custom.StoppingPattern:Tobu.Isesaki.Express
 
 odpt.Station:Tobu.Isesaki.Kuki:
-  station_facility: odpt.StationFacility:Tobu.Kuki
+  station_facility_info: odpt.StationFacility:Tobu.Kuki
   name_ja: 久喜
   name_hira: くき
   name_in_system: Kuki
@@ -43,7 +43,7 @@ odpt.Station:Tobu.Isesaki.Kuki:
     - custom.StoppingPattern:Tobu.Isesaki.Express
 
 odpt.Station:Tobu.Isesaki.Washinomiya:
-  station_facility: odpt.StationFacility:Tobu.Washinomiya
+  station_facility_info: odpt.StationFacility:Tobu.Washinomiya
   name_ja: 鷲宮
   name_hira: わしのみや
   name_in_system: Washinomiya
@@ -55,7 +55,7 @@ odpt.Station:Tobu.Isesaki.Washinomiya:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Hanasaki:
-  station_facility: odpt.StationFacility:Tobu.Hanasaki
+  station_facility_info: odpt.StationFacility:Tobu.Hanasaki
   name_ja: 花崎
   name_hira: はなさき
   name_in_system: Hanasaki
@@ -67,7 +67,7 @@ odpt.Station:Tobu.Isesaki.Hanasaki:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Kazo:
-  station_facility: odpt.StationFacility:Tobu.Kazo
+  station_facility_info: odpt.StationFacility:Tobu.Kazo
   name_ja: 加須
   name_hira: かぞ
   name_in_system: Kazo
@@ -79,7 +79,7 @@ odpt.Station:Tobu.Isesaki.Kazo:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.MinamiHanyu:
-  station_facility: odpt.StationFacility:Tobu.MinamiHanyu
+  station_facility_info: odpt.StationFacility:Tobu.MinamiHanyu
   name_ja: 南羽生
   name_hira: みなみはにゅう
   name_in_system: MinamiHanyu
@@ -91,7 +91,7 @@ odpt.Station:Tobu.Isesaki.MinamiHanyu:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Hanyu:
-  station_facility: odpt.StationFacility:Tobu.Hanyu
+  station_facility_info: odpt.StationFacility:Tobu.Hanyu
   name_ja: 羽生
   name_hira: はにゅう
   name_in_system: Hanyu
@@ -103,7 +103,7 @@ odpt.Station:Tobu.Isesaki.Hanyu:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Kawamata:
-  station_facility: odpt.StationFacility:Tobu.Kawamata
+  station_facility_info: odpt.StationFacility:Tobu.Kawamata
   name_ja: 川俣
   name_hira: かわまた
   name_in_system: Kawamata
@@ -115,7 +115,7 @@ odpt.Station:Tobu.Isesaki.Kawamata:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Morinjimae:
-  station_facility: odpt.StationFacility:Tobu.Morinjimae
+  station_facility_info: odpt.StationFacility:Tobu.Morinjimae
   name_ja: 茂林寺前
   name_hira: もりんじまえ
   name_in_system: Morinjimae
@@ -127,7 +127,7 @@ odpt.Station:Tobu.Isesaki.Morinjimae:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Tatebayashi:
-  station_facility: odpt.StationFacility:Tobu.Tatebayashi
+  station_facility_info: odpt.StationFacility:Tobu.Tatebayashi
   name_ja: 館林
   name_hira: たてばやし
   name_in_system: Tatebayashi
@@ -139,7 +139,7 @@ odpt.Station:Tobu.Isesaki.Tatebayashi:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Tatara:
-  station_facility: odpt.StationFacility:Tobu.Tatara
+  station_facility_info: odpt.StationFacility:Tobu.Tatara
   name_ja: 多々良
   name_hira: たたら
   name_in_system: Tatara
@@ -151,7 +151,7 @@ odpt.Station:Tobu.Isesaki.Tatara:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Agata:
-  station_facility: odpt.StationFacility:Tobu.Agata
+  station_facility_info: odpt.StationFacility:Tobu.Agata
   name_ja: 県
   name_hira: あがた
   name_in_system: Agata
@@ -163,7 +163,7 @@ odpt.Station:Tobu.Isesaki.Agata:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Fukui:
-  station_facility: odpt.StationFacility:Tobu.Fukui
+  station_facility_info: odpt.StationFacility:Tobu.Fukui
   name_ja: 福居
   name_hira: ふくい
   name_in_system: Fukui
@@ -175,7 +175,7 @@ odpt.Station:Tobu.Isesaki.Fukui:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.TobuIzumi:
-  station_facility: odpt.StationFacility:Tobu.TobuIzumi
+  station_facility_info: odpt.StationFacility:Tobu.TobuIzumi
   name_ja: 東武和泉
   name_hira: とうぶいずみ
   name_in_system: TobuIzumi
@@ -187,7 +187,7 @@ odpt.Station:Tobu.Isesaki.TobuIzumi:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Ashikagashi:
-  station_facility: odpt.StationFacility:Tobu.Ashikagashi
+  station_facility_info: odpt.StationFacility:Tobu.Ashikagashi
   name_ja: 足利市
   name_hira: あしかがし
   name_in_system: Ashikagashi
@@ -199,7 +199,7 @@ odpt.Station:Tobu.Isesaki.Ashikagashi:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.YashuYamabe:
-  station_facility: odpt.StationFacility:Tobu.YashuYamabe
+  station_facility_info: odpt.StationFacility:Tobu.YashuYamabe
   name_ja: 野州山辺
   name_hira: やしゅうやまべ
   name_in_system: YashuYamabe
@@ -211,7 +211,7 @@ odpt.Station:Tobu.Isesaki.YashuYamabe:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Niragawa:
-  station_facility: odpt.StationFacility:Tobu.Niragawa
+  station_facility_info: odpt.StationFacility:Tobu.Niragawa
   name_ja: 韮川
   name_hira: にらがわ
   name_in_system: Niragawa
@@ -223,7 +223,7 @@ odpt.Station:Tobu.Isesaki.Niragawa:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Ota:
-  station_facility: odpt.StationFacility:Tobu.Ota
+  station_facility_info: odpt.StationFacility:Tobu.Ota
   name_ja: 太田
   name_hira: おおた
   name_in_system: Ota
@@ -235,7 +235,7 @@ odpt.Station:Tobu.Isesaki.Ota:
     - custom.StoppingPattern:Tobu.Isesaki.SectionExpress
 
 odpt.Station:Tobu.Isesaki.Hosoya:
-  station_facility: odpt.StationFacility:Tobu.Hosoya
+  station_facility_info: odpt.StationFacility:Tobu.Hosoya
   name_ja: 細谷
   name_hira: ほそや
   name_in_system: Hosoya
@@ -245,7 +245,7 @@ odpt.Station:Tobu.Isesaki.Hosoya:
     - custom.StoppingPattern:Tobu.Isesaki.Local
 
 odpt.Station:Tobu.Isesaki.Kizaki:
-  station_facility: odpt.StationFacility:Tobu.Kizaki
+  station_facility_info: odpt.StationFacility:Tobu.Kizaki
   name_ja: 木崎
   name_hira: きざき
   name_in_system: Kizaki
@@ -255,7 +255,7 @@ odpt.Station:Tobu.Isesaki.Kizaki:
     - custom.StoppingPattern:Tobu.Isesaki.Local
 
 odpt.Station:Tobu.Isesaki.Serada:
-  station_facility: odpt.StationFacility:Tobu.Serada
+  station_facility_info: odpt.StationFacility:Tobu.Serada
   name_ja: 世良田
   name_hira: せらだ
   name_in_system: Serada
@@ -265,7 +265,7 @@ odpt.Station:Tobu.Isesaki.Serada:
     - custom.StoppingPattern:Tobu.Isesaki.Local
 
 odpt.Station:Tobu.Isesaki.Sakaimachi:
-  station_facility: odpt.StationFacility:Tobu.Sakaimachi
+  station_facility_info: odpt.StationFacility:Tobu.Sakaimachi
   name_ja: 境町
   name_hira: さかいまち
   name_in_system: Sakaimachi
@@ -275,7 +275,7 @@ odpt.Station:Tobu.Isesaki.Sakaimachi:
     - custom.StoppingPattern:Tobu.Isesaki.Local
 
 odpt.Station:Tobu.Isesaki.Goshi:
-  station_facility: odpt.StationFacility:Tobu.Goshi
+  station_facility_info: odpt.StationFacility:Tobu.Goshi
   name_ja: 剛志
   name_hira: ごうし
   name_in_system: Goshi
@@ -285,7 +285,7 @@ odpt.Station:Tobu.Isesaki.Goshi:
     - custom.StoppingPattern:Tobu.Isesaki.Local
 
 odpt.Station:Tobu.Isesaki.ShinIsesaki:
-  station_facility: odpt.StationFacility:Tobu.ShinIsesaki
+  station_facility_info: odpt.StationFacility:Tobu.ShinIsesaki
   name_ja: 新伊勢崎
   name_hira: しんいせさき
   name_in_system: ShinIsesaki
@@ -295,7 +295,7 @@ odpt.Station:Tobu.Isesaki.ShinIsesaki:
     - custom.StoppingPattern:Tobu.Isesaki.Local
 
 odpt.Station:Tobu.Isesaki.Isesaki:
-  station_facility: odpt.StationFacility:Tobu.Isesaki
+  station_facility_info: odpt.StationFacility:Tobu.Isesaki
   name_ja: 伊勢崎
   name_hira: いせさき
   name_in_system: Isesaki

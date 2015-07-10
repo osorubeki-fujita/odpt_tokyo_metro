@@ -1,5 +1,5 @@
 odpt.Station:Tobu.Tojo.Ikebukuro:
-  station_facility: odpt.StationFacility:Tobu.Ikebukuro
+  station_facility_info: odpt.StationFacility:Tobu.Ikebukuro
   name_ja: 池袋
   name_hira: いけぶくろ
   name_in_system: Ikebukuro
@@ -15,7 +15,7 @@ odpt.Station:Tobu.Tojo.Ikebukuro:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.KitaIkebukuro:
-  station_facility: odpt.StationFacility:Tobu.KitaIkebukuro
+  station_facility_info: odpt.StationFacility:Tobu.KitaIkebukuro
   name_ja: 北池袋
   name_hira: きたいけぶくろ
   name_in_system: KitaIkebukuro
@@ -25,7 +25,7 @@ odpt.Station:Tobu.Tojo.KitaIkebukuro:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.ShimoItabashi:
-  station_facility: odpt.StationFacility:Tobu.ShimoItabashi
+  station_facility_info: odpt.StationFacility:Tobu.ShimoItabashi
   name_ja: 下板橋
   name_hira: しもいたばし
   name_in_system: ShimoItabashi
@@ -35,7 +35,7 @@ odpt.Station:Tobu.Tojo.ShimoItabashi:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.Ooyama:
-  station_facility: odpt.StationFacility:Tobu.Ooyama
+  station_facility_info: odpt.StationFacility:Tobu.Ooyama
   name_ja: 大山
   name_hira: おおやま
   name_in_system: Ooyama
@@ -45,7 +45,7 @@ odpt.Station:Tobu.Tojo.Ooyama:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.NakaItabashi:
-  station_facility: odpt.StationFacility:Tobu.NakaItabashi
+  station_facility_info: odpt.StationFacility:Tobu.NakaItabashi
   name_ja: 中板橋
   name_hira: なかいたばし
   name_in_system: NakaItabashi
@@ -55,7 +55,7 @@ odpt.Station:Tobu.Tojo.NakaItabashi:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.Tokiwadai:
-  station_facility: odpt.StationFacility:Tobu.Tokiwadai
+  station_facility_info: odpt.StationFacility:Tobu.Tokiwadai
   name_ja: ときわ台
   name_hira: ときわだい
   name_in_system: Tokiwadai
@@ -65,7 +65,7 @@ odpt.Station:Tobu.Tojo.Tokiwadai:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.KamiItabashi:
-  station_facility: odpt.StationFacility:Tobu.KamiItabashi
+  station_facility_info: odpt.StationFacility:Tobu.KamiItabashi
   name_ja: 上板橋
   name_hira: かみいたばし
   name_in_system: KamiItabashi
@@ -75,7 +75,7 @@ odpt.Station:Tobu.Tojo.KamiItabashi:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.TobuNerima:
-  station_facility: odpt.StationFacility:Tobu.TobuNerima
+  station_facility_info: odpt.StationFacility:Tobu.TobuNerima
   name_ja: 東武練馬
   name_hira: とうぶねりま
   name_in_system: TobuNerima
@@ -85,7 +85,7 @@ odpt.Station:Tobu.Tojo.TobuNerima:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.ShimoAkatsuka:
-  station_facility: odpt.StationFacility:Tobu.ShimoAkatsuka
+  station_facility_info: odpt.StationFacility:Tobu.ShimoAkatsuka
   name_ja: 下赤塚
   name_hira: しもあかつか
   name_in_system: ShimoAkatsuka
@@ -95,7 +95,7 @@ odpt.Station:Tobu.Tojo.ShimoAkatsuka:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.Narimasu:
-  station_facility: odpt.StationFacility:Tobu.Narimasu
+  station_facility_info: odpt.StationFacility:Tobu.Narimasu
   name_ja: 成増
   name_hira: なります
   name_in_system: Narimasu
@@ -112,7 +112,7 @@ odpt.Station:Tobu.Tojo.Wakoshi:
   station_alias:
     - odpt.Station:TokyoMetro.Yurakucho.Wakoshi
     - odpt.Station:TokyoMetro.Fukutoshin.Wakoshi
-  station_facility: odpt.StationFacility:Tobu.Wakoshi
+  station_facility_info: odpt.StationFacility:Tobu.Wakoshi
   station_facility_custom_alias: odpt.StationFacility:TokyoMetro.Wakoshi
   name_ja: 和光市
   name_hira: わこうし
@@ -128,7 +128,7 @@ odpt.Station:Tobu.Tojo.Wakoshi:
     - custom.StoppingPattern:Tobu.Tojo.RapidExpress
 
 odpt.Station:Tobu.Tojo.Asaka:
-  station_facility: odpt.StationFacility:Tobu.Asaka
+  station_facility_info: odpt.StationFacility:Tobu.Asaka
   name_ja: 朝霞
   name_hira: あさか
   name_in_system: Asaka
@@ -139,7 +139,7 @@ odpt.Station:Tobu.Tojo.Asaka:
     - custom.StoppingPattern:Tobu.Tojo.SemiExpress
 
 odpt.Station:Tobu.Tojo.Asakadai:
-  station_facility: odpt.StationFacility:Tobu.Asakadai
+  station_facility_info: odpt.StationFacility:Tobu.Asakadai
   name_ja: 朝霞台
   name_hira: あさかだい
   name_in_system: Asakadai
@@ -152,7 +152,7 @@ odpt.Station:Tobu.Tojo.Asakadai:
     - custom.StoppingPattern:Tobu.Tojo.Rapid
 
 odpt.Station:Tobu.Tojo.Shiki:
-  station_facility: odpt.StationFacility:Tobu.Shiki
+  station_facility_info: odpt.StationFacility:Tobu.Shiki
   name_ja: 志木
   name_hira: しき
   name_in_system: Shiki
@@ -167,7 +167,7 @@ odpt.Station:Tobu.Tojo.Shiki:
     - custom.StoppingPattern:Tobu.Tojo.RapidExpress
 
 odpt.Station:Tobu.Tojo.Yanasegawa:
-  station_facility: odpt.StationFacility:Tobu.Yanasegawa
+  station_facility_info: odpt.StationFacility:Tobu.Yanasegawa
   name_ja: 柳瀬川
   name_hira: やなせがわ
   name_in_system: Yanasegawa
@@ -179,7 +179,7 @@ odpt.Station:Tobu.Tojo.Yanasegawa:
     - custom.StoppingPattern:Tobu.Tojo.CommuterExpress
 
 odpt.Station:Tobu.Tojo.Mizuhodai:
-  station_facility: odpt.StationFacility:Tobu.Mizuhodai
+  station_facility_info: odpt.StationFacility:Tobu.Mizuhodai
   name_ja: みずほ台
   name_hira: みずほだい
   name_in_system: Mizuhodai
@@ -191,7 +191,7 @@ odpt.Station:Tobu.Tojo.Mizuhodai:
     - custom.StoppingPattern:Tobu.Tojo.CommuterExpress
 
 odpt.Station:Tobu.Tojo.Tsuruse:
-  station_facility: odpt.StationFacility:Tobu.Tsuruse
+  station_facility_info: odpt.StationFacility:Tobu.Tsuruse
   name_ja: 鶴瀬
   name_hira: つるせ
   name_in_system: Tsuruse
@@ -203,7 +203,7 @@ odpt.Station:Tobu.Tojo.Tsuruse:
     - custom.StoppingPattern:Tobu.Tojo.CommuterExpress
 
 odpt.Station:Tobu.Tojo.Fujimino:
-  station_facility: odpt.StationFacility:Tobu.Fujimino
+  station_facility_info: odpt.StationFacility:Tobu.Fujimino
   name_ja: ふじみ野
   name_hira: ふじみの
   name_in_system: Fujimino
@@ -218,7 +218,7 @@ odpt.Station:Tobu.Tojo.Fujimino:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.KamiFukuoka:
-  station_facility: odpt.StationFacility:Tobu.KamiFukuoka
+  station_facility_info: odpt.StationFacility:Tobu.KamiFukuoka
   name_ja: 上福岡
   name_hira: かみふくおか
   name_in_system: KamiFukuoka
@@ -230,7 +230,7 @@ odpt.Station:Tobu.Tojo.KamiFukuoka:
     - custom.StoppingPattern:Tobu.Tojo.CommuterExpress
 
 odpt.Station:Tobu.Tojo.Shingashi:
-  station_facility: odpt.StationFacility:Tobu.Shingashi
+  station_facility_info: odpt.StationFacility:Tobu.Shingashi
   name_ja: 新河岸
   name_hira: しんがし
   name_in_system: Shingashi
@@ -242,7 +242,7 @@ odpt.Station:Tobu.Tojo.Shingashi:
     - custom.StoppingPattern:Tobu.Tojo.CommuterExpress
 
 odpt.Station:Tobu.Tojo.Kawagoe:
-  station_facility: odpt.StationFacility:Tobu.Kawagoe
+  station_facility_info: odpt.StationFacility:Tobu.Kawagoe
   name_ja: 川越
   name_hira: かわごえ
   name_in_system: Kawagoe
@@ -258,7 +258,7 @@ odpt.Station:Tobu.Tojo.Kawagoe:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.Kawagoeshi:
-  station_facility: odpt.StationFacility:Tobu.Kawagoeshi
+  station_facility_info: odpt.StationFacility:Tobu.Kawagoeshi
   name_ja: 川越市
   name_hira: かわごえし
   name_in_system: Kawagoeshi
@@ -274,7 +274,7 @@ odpt.Station:Tobu.Tojo.Kawagoeshi:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.Kasumigaseki:
-  station_facility: odpt.StationFacility:Tobu.Kasumigaseki
+  station_facility_info: odpt.StationFacility:Tobu.Kasumigaseki
   name_ja: 霞ヶ関
   name_hira: かすみがせき
   name_in_system: Kasumigaseki
@@ -287,7 +287,7 @@ odpt.Station:Tobu.Tojo.Kasumigaseki:
     - custom.StoppingPattern:Tobu.Tojo.Express
 
 odpt.Station:Tobu.Tojo.Tsurugashima:
-  station_facility: odpt.StationFacility:Tobu.Tsurugashima
+  station_facility_info: odpt.StationFacility:Tobu.Tsurugashima
   name_ja: 鶴ヶ島
   name_hira: つるがしま
   name_in_system: Tsurugashima
@@ -300,7 +300,7 @@ odpt.Station:Tobu.Tojo.Tsurugashima:
     - custom.StoppingPattern:Tobu.Tojo.Express
 
 odpt.Station:Tobu.Tojo.Wakaba:
-  station_facility: odpt.StationFacility:Tobu.Wakaba
+  station_facility_info: odpt.StationFacility:Tobu.Wakaba
   name_ja: 若葉
   name_hira: わかば
   name_in_system: Wakaba
@@ -314,7 +314,7 @@ odpt.Station:Tobu.Tojo.Wakaba:
     - custom.StoppingPattern:Tobu.Tojo.Rapid
 
 odpt.Station:Tobu.Tojo.Sakado:
-  station_facility: odpt.StationFacility:Tobu.Sakado
+  station_facility_info: odpt.StationFacility:Tobu.Sakado
   name_ja: 坂戸
   name_hira: さかど
   name_in_system: Sakado
@@ -330,7 +330,7 @@ odpt.Station:Tobu.Tojo.Sakado:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.KitaSakado:
-  station_facility: odpt.StationFacility:Tobu.KitaSakado
+  station_facility_info: odpt.StationFacility:Tobu.KitaSakado
   name_ja: 北坂戸
   name_hira: きたさかど
   name_in_system: KitaSakado
@@ -343,7 +343,7 @@ odpt.Station:Tobu.Tojo.KitaSakado:
     - custom.StoppingPattern:Tobu.Tojo.Express
 
 odpt.Station:Tobu.Tojo.Takasaka:
-  station_facility: odpt.StationFacility:Tobu.Takasaka
+  station_facility_info: odpt.StationFacility:Tobu.Takasaka
   name_ja: 高坂
   name_hira: たかさか
   name_in_system: Takasaka
@@ -356,7 +356,7 @@ odpt.Station:Tobu.Tojo.Takasaka:
     - custom.StoppingPattern:Tobu.Tojo.Express
 
 odpt.Station:Tobu.Tojo.HigashiMatsuyama:
-  station_facility: odpt.StationFacility:Tobu.HigashiMatsuyama
+  station_facility_info: odpt.StationFacility:Tobu.HigashiMatsuyama
   name_ja: 東松山
   name_hira: ひがしまつやま
   name_in_system: HigashiMatsuyama
@@ -372,7 +372,7 @@ odpt.Station:Tobu.Tojo.HigashiMatsuyama:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.ShinrinKoen:
-  station_facility: odpt.StationFacility:Tobu.ShinrinKoen
+  station_facility_info: odpt.StationFacility:Tobu.ShinrinKoen
   name_ja: 森林公園
   name_hira: しんりんこうえん
   name_in_system: ShinrinKoen
@@ -388,7 +388,7 @@ odpt.Station:Tobu.Tojo.ShinrinKoen:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.Tsukinowa:
-  station_facility: odpt.StationFacility:Tobu.Tsukinowa
+  station_facility_info: odpt.StationFacility:Tobu.Tsukinowa
   name_ja: つきのわ
   name_hira: つきのわ
   name_in_system: Tsukinowa
@@ -404,7 +404,7 @@ odpt.Station:Tobu.Tojo.Tsukinowa:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.MusashiRanzan:
-  station_facility: odpt.StationFacility:Tobu.MusashiRanzan
+  station_facility_info: odpt.StationFacility:Tobu.MusashiRanzan
   name_ja: 武蔵嵐山
   name_hira: むさしらんざん
   name_in_system: MusashiRanzan
@@ -420,7 +420,7 @@ odpt.Station:Tobu.Tojo.MusashiRanzan:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.Ogawamachi:
-  station_facility: odpt.StationFacility:Tobu.Ogawamachi
+  station_facility_info: odpt.StationFacility:Tobu.Ogawamachi
   name_ja: 小川町
   name_hira: おがわまち
   name_in_system: Ogawamachi
@@ -436,7 +436,7 @@ odpt.Station:Tobu.Tojo.Ogawamachi:
     - custom.StoppingPattern:Tobu.Tojo.TjLiner
 
 odpt.Station:Tobu.Tojo.TobuTakezawa:
-  station_facility: odpt.StationFacility:Tobu.TobuTakezawa
+  station_facility_info: odpt.StationFacility:Tobu.TobuTakezawa
   name_ja: 東武竹沢
   name_hira: とうぶたけざわ
   name_in_system: TobuTakezawa
@@ -446,7 +446,7 @@ odpt.Station:Tobu.Tojo.TobuTakezawa:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.Obusuma:
-  station_facility: odpt.StationFacility:Tobu.Obusuma
+  station_facility_info: odpt.StationFacility:Tobu.Obusuma
   name_ja: 男衾
   name_hira: おぶすま
   name_in_system: Obusuma
@@ -456,7 +456,7 @@ odpt.Station:Tobu.Tojo.Obusuma:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.Hachigata:
-  station_facility: odpt.StationFacility:Tobu.Hachigata
+  station_facility_info: odpt.StationFacility:Tobu.Hachigata
   name_ja: 鉢形
   name_hira: はちがた
   name_in_system: Hachigata
@@ -466,7 +466,7 @@ odpt.Station:Tobu.Tojo.Hachigata:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.Tamayodo:
-  station_facility: odpt.StationFacility:Tobu.Tamayodo
+  station_facility_info: odpt.StationFacility:Tobu.Tamayodo
   name_ja: 玉淀
   name_hira: たまよど
   name_in_system: Tamayodo
@@ -476,7 +476,7 @@ odpt.Station:Tobu.Tojo.Tamayodo:
     - custom.StoppingPattern:Tobu.Tojo.Local
 
 odpt.Station:Tobu.Tojo.Yorii:
-  station_facility: odpt.StationFacility:Tobu.Yorii
+  station_facility_info: odpt.StationFacility:Tobu.Yorii
   name_ja: 寄居
   name_hira: よりい
   name_in_system: Yorii

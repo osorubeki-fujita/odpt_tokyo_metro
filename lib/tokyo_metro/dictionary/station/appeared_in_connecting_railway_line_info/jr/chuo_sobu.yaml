@@ -1,5 +1,5 @@
 odpt.Station:JR-East.ChuoSobu.Ochanomizu:
-  station_facility: odpt.StationFacility:JR-East.Ochanomizu
+  station_facility_info: odpt.StationFacility:JR-East.Ochanomizu
   name_ja: 御茶ノ水
   name_hira: おちゃのみず
   name_in_system: Ochanomizu

@@ -1,5 +1,5 @@
 odpt.Station:TokyoMetro.Marunouchi.Ogikubo:
-  station_facility: odpt.StationFacility:TokyoMetro.Ogikubo
+  station_facility_info: odpt.StationFacility:TokyoMetro.Ogikubo
   name_ja: 荻窪
   name_hira: おぎくぼ
   name_in_system: Ogikubo
@@ -9,7 +9,7 @@ odpt.Station:TokyoMetro.Marunouchi.Ogikubo:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.MinamiAsagaya:
-  station_facility: odpt.StationFacility:TokyoMetro.MinamiAsagaya
+  station_facility_info: odpt.StationFacility:TokyoMetro.MinamiAsagaya
   name_ja: 南阿佐ケ谷
   name_hira: みなみあさがや
   name_in_system: MinamiAsagaya
@@ -19,7 +19,7 @@ odpt.Station:TokyoMetro.Marunouchi.MinamiAsagaya:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.ShinKoenji:
-  station_facility: odpt.StationFacility:TokyoMetro.ShinKoenji
+  station_facility_info: odpt.StationFacility:TokyoMetro.ShinKoenji
   name_ja: 新高円寺
   name_hira: しんこうえんじ
   name_in_system: ShinKoenji
@@ -29,7 +29,7 @@ odpt.Station:TokyoMetro.Marunouchi.ShinKoenji:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.HigashiKoenji:
-  station_facility: odpt.StationFacility:TokyoMetro.HigashiKoenji
+  station_facility_info: odpt.StationFacility:TokyoMetro.HigashiKoenji
   name_ja: 東高円寺
   name_hira: ひがしこうえんじ
   name_in_system: HigashiKoenji
@@ -39,7 +39,7 @@ odpt.Station:TokyoMetro.Marunouchi.HigashiKoenji:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.ShinNakano:
-  station_facility: odpt.StationFacility:TokyoMetro.ShinNakano
+  station_facility_info: odpt.StationFacility:TokyoMetro.ShinNakano
   name_ja: 新中野
   name_hira: しんなかの
   name_in_system: ShinNakano
@@ -49,7 +49,7 @@ odpt.Station:TokyoMetro.Marunouchi.ShinNakano:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue:
-  station_facility: odpt.StationFacility:TokyoMetro.NakanoSakaue
+  station_facility_info: odpt.StationFacility:TokyoMetro.NakanoSakaue
   name_ja: 中野坂上
   name_hira: なかのさかうえ
   name_in_system: NakanoSakaue
@@ -59,7 +59,7 @@ odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.NishiShinjuku:
-  station_facility: odpt.StationFacility:TokyoMetro.NishiShinjuku
+  station_facility_info: odpt.StationFacility:TokyoMetro.NishiShinjuku
   name_ja: 西新宿
   name_hira: にししんじゅく
   name_in_system: NishiShinjuku
@@ -69,7 +69,7 @@ odpt.Station:TokyoMetro.Marunouchi.NishiShinjuku:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Shinjuku:
-  station_facility: odpt.StationFacility:TokyoMetro.Shinjuku
+  station_facility_info: odpt.StationFacility:TokyoMetro.Shinjuku
   name_ja: 新宿
   name_hira: しんじゅく
   name_in_system: Shinjuku
@@ -79,7 +79,7 @@ odpt.Station:TokyoMetro.Marunouchi.Shinjuku:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome:
-  station_facility: odpt.StationFacility:TokyoMetro.ShinjukuSanchome
+  station_facility_info: odpt.StationFacility:TokyoMetro.ShinjukuSanchome
   name_ja: 新宿三丁目
   name_hira: しんじゅくさんちょうめ
   name_in_system: ShinjukuSanchome
@@ -89,7 +89,7 @@ odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.ShinjukuGyoemmae:
-  station_facility: odpt.StationFacility:TokyoMetro.ShinjukuGyoemmae
+  station_facility_info: odpt.StationFacility:TokyoMetro.ShinjukuGyoemmae
   name_ja: 新宿御苑前
   name_hira: しんじゅくぎょえんまえ
   name_in_system: ShinjukuGyoemmae
@@ -99,7 +99,7 @@ odpt.Station:TokyoMetro.Marunouchi.ShinjukuGyoemmae:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.YotsuyaSanchome:
-  station_facility: odpt.StationFacility:TokyoMetro.YotsuyaSanchome
+  station_facility_info: odpt.StationFacility:TokyoMetro.YotsuyaSanchome
   name_ja: 四谷三丁目
   name_hira: よつやさんちょうめ
   name_in_system: YotsuyaSanchome
@@ -109,7 +109,7 @@ odpt.Station:TokyoMetro.Marunouchi.YotsuyaSanchome:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Yotsuya:
-  station_facility: odpt.StationFacility:TokyoMetro.Yotsuya
+  station_facility_info: odpt.StationFacility:TokyoMetro.Yotsuya
   name_ja: 四ツ谷
   name_hira: よつや
   name_in_system: Yotsuya
@@ -119,7 +119,7 @@ odpt.Station:TokyoMetro.Marunouchi.Yotsuya:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke:
-  station_facility: odpt.StationFacility:TokyoMetro.AkasakaMitsuke
+  station_facility_info: odpt.StationFacility:TokyoMetro.AkasakaMitsuke
   name_ja: 赤坂見附
   name_hira: あかさかみつけ
   name_in_system: AkasakaMitsuke
@@ -129,7 +129,7 @@ odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.KokkaiGijidomae:
-  station_facility: odpt.StationFacility:TokyoMetro.KokkaiGijidomae
+  station_facility_info: odpt.StationFacility:TokyoMetro.KokkaiGijidomae
   name_ja: 国会議事堂前
   name_hira: こっかいぎじどうまえ
   name_in_system: KokkaiGijidomae
@@ -139,7 +139,7 @@ odpt.Station:TokyoMetro.Marunouchi.KokkaiGijidomae:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Kasumigaseki:
-  station_facility: odpt.StationFacility:TokyoMetro.Kasumigaseki
+  station_facility_info: odpt.StationFacility:TokyoMetro.Kasumigaseki
   name_ja: 霞ケ関
   name_hira: かすみがせき
   name_in_system: Kasumigaseki
@@ -149,7 +149,7 @@ odpt.Station:TokyoMetro.Marunouchi.Kasumigaseki:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Ginza:
-  station_facility: odpt.StationFacility:TokyoMetro.Ginza
+  station_facility_info: odpt.StationFacility:TokyoMetro.Ginza
   name_ja: 銀座
   name_hira: ぎんざ
   name_in_system: Ginza
@@ -159,7 +159,7 @@ odpt.Station:TokyoMetro.Marunouchi.Ginza:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Tokyo:
-  station_facility: odpt.StationFacility:TokyoMetro.Tokyo
+  station_facility_info: odpt.StationFacility:TokyoMetro.Tokyo
   name_ja: 東京
   name_hira: とうきょう
   name_in_system: Tokyo
@@ -169,7 +169,7 @@ odpt.Station:TokyoMetro.Marunouchi.Tokyo:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Otemachi:
-  station_facility: odpt.StationFacility:TokyoMetro.Otemachi
+  station_facility_info: odpt.StationFacility:TokyoMetro.Otemachi
   name_ja: 大手町
   name_hira: おおてまち
   name_in_system: Otemachi
@@ -179,7 +179,7 @@ odpt.Station:TokyoMetro.Marunouchi.Otemachi:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Awajicho:
-  station_facility: odpt.StationFacility:TokyoMetro.Awajicho
+  station_facility_info: odpt.StationFacility:TokyoMetro.Awajicho
   name_ja: 淡路町
   name_hira: あわじちょう
   name_in_system: Awajicho
@@ -189,7 +189,7 @@ odpt.Station:TokyoMetro.Marunouchi.Awajicho:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Ochanomizu:
-  station_facility: odpt.StationFacility:TokyoMetro.Ochanomizu
+  station_facility_info: odpt.StationFacility:TokyoMetro.Ochanomizu
   name_ja: 御茶ノ水
   name_hira: おちゃのみず
   name_in_system: Ochanomizu
@@ -199,7 +199,7 @@ odpt.Station:TokyoMetro.Marunouchi.Ochanomizu:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.HongoSanchome:
-  station_facility: odpt.StationFacility:TokyoMetro.HongoSanchome
+  station_facility_info: odpt.StationFacility:TokyoMetro.HongoSanchome
   name_ja: 本郷三丁目
   name_hira: ほんごうさんちょうめ
   name_in_system: HongoSanchome
@@ -209,7 +209,7 @@ odpt.Station:TokyoMetro.Marunouchi.HongoSanchome:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Korakuen:
-  station_facility: odpt.StationFacility:TokyoMetro.Korakuen
+  station_facility_info: odpt.StationFacility:TokyoMetro.Korakuen
   name_ja: 後楽園
   name_hira: こうらくえん
   name_in_system: Korakuen
@@ -219,7 +219,7 @@ odpt.Station:TokyoMetro.Marunouchi.Korakuen:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Myogadani:
-  station_facility: odpt.StationFacility:TokyoMetro.Myogadani
+  station_facility_info: odpt.StationFacility:TokyoMetro.Myogadani
   name_ja: 茗荷谷
   name_hira: みょうがだに
   name_in_system: Myogadani
@@ -229,7 +229,7 @@ odpt.Station:TokyoMetro.Marunouchi.Myogadani:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.ShinOtsuka:
-  station_facility: odpt.StationFacility:TokyoMetro.ShinOtsuka
+  station_facility_info: odpt.StationFacility:TokyoMetro.ShinOtsuka
   name_ja: 新大塚
   name_hira: しんおおつか
   name_in_system: ShinOtsuka
@@ -239,7 +239,7 @@ odpt.Station:TokyoMetro.Marunouchi.ShinOtsuka:
     - custom.StoppingPattern:TokyoMetro.Marunouchi.Local
 
 odpt.Station:TokyoMetro.Marunouchi.Ikebukuro:
-  station_facility: odpt.StationFacility:TokyoMetro.Ikebukuro
+  station_facility_info: odpt.StationFacility:TokyoMetro.Ikebukuro
   name_ja: 池袋
   name_hira: いけぶくろ
   name_in_system: Ikebukuro

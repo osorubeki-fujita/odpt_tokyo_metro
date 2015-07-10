@@ -2,7 +2,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.NishiFunabashi:
   station_alias:
     - odpt.Station:TokyoMetro.Tozai.NishiFunabashi
     - odpt.Station:JR-East.ChuoChikatetsuTozai.NishiFunabashi
-  station_facility: odpt.StationFacility:ToyoRapidRailway.ToyoRapid.NishiFunabashi
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.ToyoRapid.NishiFunabashi
   station_facility_custom_alias:
     - odpt.StationFacility:TokyoMetro.NishiFunabashi
     - odpt.StationFacility:JR-East.NishiFunabashiTokyoMetro
@@ -16,7 +16,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.NishiFunabashi:
     - custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.ToyoRapid
 
 odpt.Station:ToyoRapidRailway.ToyoRapid.HigashiKaijin:
-  station_facility: odpt.StationFacility:ToyoRapidRailway.HigashiKaijin
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.HigashiKaijin
   name_ja: 東海神
   name_hira: ひがしかいじん
   name_in_system: HigashiKaijin
@@ -26,7 +26,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.HigashiKaijin:
     - custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
 
 odpt.Station:ToyoRapidRailway.ToyoRapid.Hasama:
-  station_facility: odpt.StationFacility:ToyoRapidRailway.Hasama
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.Hasama
   name_ja: 飯山満
   name_hira: はさま
   name_in_system: Hasama
@@ -36,7 +36,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.Hasama:
     - custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
 
 odpt.Station:ToyoRapidRailway.ToyoRapid.KitaNarashino:
-  station_facility: odpt.StationFacility:ToyoRapidRailway.KitaNarashino
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.KitaNarashino
   name_ja: 北習志野
   name_hira: きたならしの
   name_in_system: KitaNarashino
@@ -47,7 +47,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.KitaNarashino:
     - custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.ToyoRapid
 
 odpt.Station:ToyoRapidRailway.ToyoRapid.FunabashiNichidaiMae:
-  station_facility: odpt.StationFacility:ToyoRapidRailway.FunabashiNichidaiMae
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.FunabashiNichidaiMae
   name_ja: 船橋日大前
   name_hira: ふなばしにちだいまえ
   name_in_system: FunabashiNichidaiMae
@@ -57,7 +57,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.FunabashiNichidaiMae:
     - custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
 
 odpt.Station:ToyoRapidRailway.ToyoRapid.YachiyoMidorigaoka:
-  station_facility: odpt.StationFacility:ToyoRapidRailway.YachiyoMidorigaoka
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.YachiyoMidorigaoka
   name_ja: 八千代緑が丘
   name_hira: やちよみどりがおか
   name_in_system: YachiyoMidorigaoka
@@ -68,7 +68,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.YachiyoMidorigaoka:
     - custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.ToyoRapid
 
 odpt.Station:ToyoRapidRailway.ToyoRapid.YachiyoChuo:
-  station_facility: odpt.StationFacility:ToyoRapidRailway.YachiyoChuo
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.YachiyoChuo
   name_ja: 八千代中央
   name_hira: やちよちゅうおう
   name_in_system: YachiyoChuo
@@ -78,7 +78,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.YachiyoChuo:
     - custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
 
 odpt.Station:ToyoRapidRailway.ToyoRapid.Murakami:
-  station_facility: odpt.StationFacility:ToyoRapidRailway.Murakami
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.Murakami
   name_ja: 村上
   name_hira: むらかみ
   name_in_system: Murakami
@@ -88,7 +88,7 @@ odpt.Station:ToyoRapidRailway.ToyoRapid.Murakami:
     - custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
 
 odpt.Station:ToyoRapidRailway.ToyoRapid.ToyoKatsutadai:
-  station_facility: odpt.StationFacility:ToyoRapidRailway.ToyoKatsutadai
+  station_facility_info: odpt.StationFacility:ToyoRapidRailway.ToyoKatsutadai
   name_ja: 東葉勝田台
   name_hira: とうようかつただい
   name_in_system: ToyoKatsutadai

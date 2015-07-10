@@ -1,7 +1,7 @@
 # 都電荒川線
 
 odpt.Station:Toei.TodenArakawa.Waseda:
-  station_facility: odpt.StationFacility:Toei.Toden.Waseda
+  station_facility_info: odpt.StationFacility:Toei.Toden.Waseda
   name_ja: 早稲田
   name_hira: わせだ
   name_in_system: Waseda
@@ -10,7 +10,7 @@ odpt.Station:Toei.TodenArakawa.Waseda:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Omokagebashi:
-  station_facility: odpt.StationFacility:Toei.Toden.Omokagebashi
+  station_facility_info: odpt.StationFacility:Toei.Toden.Omokagebashi
   name_ja: 面影橋
   name_hira: おもかげばし
   name_in_system: Omokagebashi
@@ -19,7 +19,7 @@ odpt.Station:Toei.TodenArakawa.Omokagebashi:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.GakushuinShita:
-  station_facility: odpt.StationFacility:Toei.Toden.GakushuinShita
+  station_facility_info: odpt.StationFacility:Toei.Toden.GakushuinShita
   name_ja: 学習院下
   name_hira: がくしゅういんした
   name_in_system: GakushuinShita
@@ -28,7 +28,7 @@ odpt.Station:Toei.TodenArakawa.GakushuinShita:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Kishibojinmae:
-  station_facility: odpt.StationFacility:Toei.Toden.Kishibojinmae
+  station_facility_info: odpt.StationFacility:Toei.Toden.Kishibojinmae
   name_ja: 鬼子母神前
   name_hira: きしぼじんまえ
   name_in_system: Kishibojinmae
@@ -37,7 +37,7 @@ odpt.Station:Toei.TodenArakawa.Kishibojinmae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.TodenZoshigaya:
-  station_facility: odpt.StationFacility:Toei.Toden.TodenZoshigaya
+  station_facility_info: odpt.StationFacility:Toei.Toden.TodenZoshigaya
   name_ja: 都電雑司ケ谷
   name_hira: とでんぞうしがや
   name_in_system: TodenZoshigaya
@@ -46,7 +46,7 @@ odpt.Station:Toei.TodenArakawa.TodenZoshigaya:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.HigashiIkebukuroYonchome:
-  station_facility: odpt.StationFacility:Toei.Toden.HigashiIkebukuroYonchome
+  station_facility_info: odpt.StationFacility:Toei.Toden.HigashiIkebukuroYonchome
   name_ja: 東池袋四丁目
   name_hira: ひがしいけぶくろよんちょうめ
   name_in_system: HigashiIkebukuroYonchome
@@ -55,7 +55,7 @@ odpt.Station:Toei.TodenArakawa.HigashiIkebukuroYonchome:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Mukohara:
-  station_facility: odpt.StationFacility:Toei.Toden.Mukohara
+  station_facility_info: odpt.StationFacility:Toei.Toden.Mukohara
   name_ja: 向原
   name_hira: むこうはら
   name_in_system: Mukohara
@@ -64,7 +64,7 @@ odpt.Station:Toei.TodenArakawa.Mukohara:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.OtsukaEkimae:
-  station_facility: odpt.StationFacility:Toei.Toden.OtsukaEkimae
+  station_facility_info: odpt.StationFacility:Toei.Toden.OtsukaEkimae
   name_ja: 大塚駅前
   name_hira: おおつかえきまえ
   name_in_system: OtsukaEkimae
@@ -73,7 +73,7 @@ odpt.Station:Toei.TodenArakawa.OtsukaEkimae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.SugamoShinden:
-  station_facility: odpt.StationFacility:Toei.Toden.SugamoShinden
+  station_facility_info: odpt.StationFacility:Toei.Toden.SugamoShinden
   name_ja: 巣鴨新田
   name_hira: すがもしんでん
   name_in_system: SugamoShinden
@@ -82,7 +82,7 @@ odpt.Station:Toei.TodenArakawa.SugamoShinden:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Koshinzuka:
-  station_facility: odpt.StationFacility:Toei.Toden.Koshinzuka
+  station_facility_info: odpt.StationFacility:Toei.Toden.Koshinzuka
   name_ja: 庚申塚
   name_hira: こうしんづか
   name_in_system: Koshinzuka
@@ -91,7 +91,7 @@ odpt.Station:Toei.TodenArakawa.Koshinzuka:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.ShinKoshinzuka:
-  station_facility: odpt.StationFacility:Toei.Toden.ShinKoshinzuka
+  station_facility_info: odpt.StationFacility:Toei.Toden.ShinKoshinzuka
   name_ja: 新庚申塚
   name_hira: しんこうしんづか
   name_in_system: ShinKoshinzuka
@@ -100,7 +100,7 @@ odpt.Station:Toei.TodenArakawa.ShinKoshinzuka:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.NishigaharaYonchome:
-  station_facility: odpt.StationFacility:Toei.Toden.NishigaharaYonchome
+  station_facility_info: odpt.StationFacility:Toei.Toden.NishigaharaYonchome
   name_ja: 西ヶ原四丁目
   name_hira: にしがはらよんちょうめ
   name_in_system: NishigaharaYonchome
@@ -109,7 +109,7 @@ odpt.Station:Toei.TodenArakawa.NishigaharaYonchome:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.TakinogawaItchome:
-  station_facility: odpt.StationFacility:Toei.Toden.TakinogawaItchome
+  station_facility_info: odpt.StationFacility:Toei.Toden.TakinogawaItchome
   name_ja: 滝野川一丁目
   name_hira: たきのがわいっちょうめ
   name_in_system: TakinogawaItchome
@@ -118,7 +118,7 @@ odpt.Station:Toei.TodenArakawa.TakinogawaItchome:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Asukayama:
-  station_facility: odpt.StationFacility:Toei.Toden.Asukayama
+  station_facility_info: odpt.StationFacility:Toei.Toden.Asukayama
   name_ja: 飛鳥山
   name_hira: あすかやま
   name_in_system: Asukayama
@@ -127,7 +127,7 @@ odpt.Station:Toei.TodenArakawa.Asukayama:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.OjiEkimae:
-  station_facility: odpt.StationFacility:Toei.Toden.OjiEkimae
+  station_facility_info: odpt.StationFacility:Toei.Toden.OjiEkimae
   name_ja: 王子駅前
   name_hira: おうじえきまえ
   name_in_system: OjiEkimae
@@ -136,7 +136,7 @@ odpt.Station:Toei.TodenArakawa.OjiEkimae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Sakaecho:
-  station_facility: odpt.StationFacility:Toei.Toden.Sakaecho
+  station_facility_info: odpt.StationFacility:Toei.Toden.Sakaecho
   name_ja: 栄町
   name_hira: さかえちょう
   name_in_system: Sakaecho
@@ -145,7 +145,7 @@ odpt.Station:Toei.TodenArakawa.Sakaecho:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Kajiwara:
-  station_facility: odpt.StationFacility:Toei.Toden.Kajiwara
+  station_facility_info: odpt.StationFacility:Toei.Toden.Kajiwara
   name_ja: 梶原
   name_hira: かじわら
   name_in_system: Kajiwara
@@ -154,7 +154,7 @@ odpt.Station:Toei.TodenArakawa.Kajiwara:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.ArakawaShakomae:
-  station_facility: odpt.StationFacility:Toei.Toden.ArakawaShakomae
+  station_facility_info: odpt.StationFacility:Toei.Toden.ArakawaShakomae
   name_ja: 荒川車庫前
   name_hira: あらかわしゃこまえ
   name_in_system: ArakawaShakomae
@@ -163,7 +163,7 @@ odpt.Station:Toei.TodenArakawa.ArakawaShakomae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.ArakawaYuenchimae:
-  station_facility: odpt.StationFacility:Toei.Toden.ArakawaYuenchimae
+  station_facility_info: odpt.StationFacility:Toei.Toden.ArakawaYuenchimae
   name_ja: 荒川遊園地前
   name_hira: あらかわゆうえんちまえ
   name_in_system: ArakawaYuenchimae
@@ -172,7 +172,7 @@ odpt.Station:Toei.TodenArakawa.ArakawaYuenchimae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Odai:
-  station_facility: odpt.StationFacility:Toei.Toden.Odai
+  station_facility_info: odpt.StationFacility:Toei.Toden.Odai
   name_ja: 小台
   name_hira: おだい
   name_in_system: Odai
@@ -181,7 +181,7 @@ odpt.Station:Toei.TodenArakawa.Odai:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Miyanomae:
-  station_facility: odpt.StationFacility:Toei.Toden.Miyanomae
+  station_facility_info: odpt.StationFacility:Toei.Toden.Miyanomae
   name_ja: 宮ノ前
   name_hira: みやのまえ
   name_in_system: Miyanomae
@@ -190,7 +190,7 @@ odpt.Station:Toei.TodenArakawa.Miyanomae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Kumanomae:
-  station_facility: odpt.StationFacility:Toei.Toden.Kumanomae
+  station_facility_info: odpt.StationFacility:Toei.Toden.Kumanomae
   name_ja: 熊野前
   name_hira: くまのまえ
   name_in_system: Kumanomae
@@ -199,7 +199,7 @@ odpt.Station:Toei.TodenArakawa.Kumanomae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.HigashiOguSanchome:
-  station_facility: odpt.StationFacility:Toei.Toden.HigashiOguSanchome
+  station_facility_info: odpt.StationFacility:Toei.Toden.HigashiOguSanchome
   name_ja: 東尾久三丁目
   name_hira: ひがしおぐさんちょうめ
   name_in_system: HigashiOguSanchome
@@ -208,7 +208,7 @@ odpt.Station:Toei.TodenArakawa.HigashiOguSanchome:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.MachiyaNichome:
-  station_facility: odpt.StationFacility:Toei.Toden.MachiyaNichome
+  station_facility_info: odpt.StationFacility:Toei.Toden.MachiyaNichome
   name_ja: 町屋二丁目
   name_hira: まちやにちょうめ
   name_in_system: MachiyaNichome
@@ -217,7 +217,7 @@ odpt.Station:Toei.TodenArakawa.MachiyaNichome:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.MachiyaEkimae:
-  station_facility: odpt.StationFacility:Toei.Toden.MachiyaEkimae
+  station_facility_info: odpt.StationFacility:Toei.Toden.MachiyaEkimae
   name_ja: 町屋駅前
   name_hira: まちやえきまえ
   name_in_system: MachiyaEkimae
@@ -226,7 +226,7 @@ odpt.Station:Toei.TodenArakawa.MachiyaEkimae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.ArakawaNanachome:
-  station_facility: odpt.StationFacility:Toei.Toden.ArakawaNanachome
+  station_facility_info: odpt.StationFacility:Toei.Toden.ArakawaNanachome
   name_ja: 荒川七丁目
   name_hira: あらかわななちょうめ
   name_in_system: ArakawaNanachome
@@ -235,7 +235,7 @@ odpt.Station:Toei.TodenArakawa.ArakawaNanachome:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.ArakawaNichome:
-  station_facility: odpt.StationFacility:Toei.Toden.ArakawaNichome
+  station_facility_info: odpt.StationFacility:Toei.Toden.ArakawaNichome
   name_ja: 荒川二丁目
   name_hira: あらかわにちょうめ
   name_in_system: ArakawaNichome
@@ -244,7 +244,7 @@ odpt.Station:Toei.TodenArakawa.ArakawaNichome:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.ArakawaKuyakushomae:
-  station_facility: odpt.StationFacility:Toei.Toden.ArakawaKuyakushomae
+  station_facility_info: odpt.StationFacility:Toei.Toden.ArakawaKuyakushomae
   name_ja: 荒川区役所前
   name_hira: あらかわくやくしょまえ
   name_in_system: ArakawaKuyakushomae
@@ -253,7 +253,7 @@ odpt.Station:Toei.TodenArakawa.ArakawaKuyakushomae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.ArakawaItchumae:
-  station_facility: odpt.StationFacility:Toei.Toden.ArakawaItchumae
+  station_facility_info: odpt.StationFacility:Toei.Toden.ArakawaItchumae
   name_ja: 荒川一中前
   name_hira: あらかわいっちゅうまえ
   name_in_system: ArakawaItchumae
@@ -262,7 +262,7 @@ odpt.Station:Toei.TodenArakawa.ArakawaItchumae:
     - custom.StoppingPattern:Toei.TodenArakawa.Local
 
 odpt.Station:Toei.TodenArakawa.Minowabashi:
-  station_facility: odpt.StationFacility:Toei.Toden.Minowabashi
+  station_facility_info: odpt.StationFacility:Toei.Toden.Minowabashi
   name_ja: 三ノ輪橋
   name_hira: みのわばし
   name_in_system: Minowabashi

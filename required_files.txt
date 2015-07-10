@@ -66,6 +66,8 @@ lib/tokyo_metro/modules/common/info/station_facility/barrier_free/wheel_chair/av
 lib/tokyo_metro/modules/common/info/station_facility/barrier_free/wheel_chair/availability/alias_towards_accessibility.rb
 lib/tokyo_metro/modules/common/info/station_facility/barrier_free/wheel_chair/availability/escalator.rb
 lib/tokyo_metro/modules/common/info/station_facility/barrier_free/wheel_chair/method_missing.rb
+lib/tokyo_metro/modules/common/info/train_type.rb
+lib/tokyo_metro/modules/common/info/train_type/css_class.rb
 lib/tokyo_metro/modules/common/to_factory.rb
 lib/tokyo_metro/modules/common/to_factory/generate.rb
 lib/tokyo_metro/modules/common/to_factory/generate/info.rb

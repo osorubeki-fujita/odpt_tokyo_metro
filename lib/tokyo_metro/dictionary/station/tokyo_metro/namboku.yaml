@@ -2,7 +2,7 @@ odpt.Station:TokyoMetro.Namboku.Meguro:
   station_alias:
     - odpt.Station:Toei.Mita.Meguro
     - odpt.Station:Tokyu.Meguro.Meguro
-  station_facility: odpt.StationFacility:TokyoMetro.Meguro
+  station_facility_info: odpt.StationFacility:TokyoMetro.Meguro
   station_facility_custom: odpt.StationFacility:Tokyu.Meguro
   station_facility_custom_alias:
     - odpt.StationFacility:TokyoMetro.Meguro
@@ -22,7 +22,7 @@ odpt.Station:TokyoMetro.Namboku.Meguro:
 
 odpt.Station:TokyoMetro.Namboku.Shirokanedai:
   station_alias: odpt.Station:Toei.Mita.Shirokanedai
-  station_facility: odpt.StationFacility:TokyoMetro.Shirokanedai
+  station_facility_info: odpt.StationFacility:TokyoMetro.Shirokanedai
   station_facility_custom_alias: odpt.StationFacility:Toei.Shirokanedai
   name_ja: 白金台
   name_hira: しろかねだい
@@ -37,7 +37,7 @@ odpt.Station:TokyoMetro.Namboku.Shirokanedai:
 
 odpt.Station:TokyoMetro.Namboku.ShirokaneTakanawa:
   station_alias: odpt.Station:Toei.Mita.ShirokaneTakanawa
-  station_facility: odpt.StationFacility:TokyoMetro.ShirokaneTakanawa
+  station_facility_info: odpt.StationFacility:TokyoMetro.ShirokaneTakanawa
   station_facility_custom_alias: odpt.StationFacility:Toei.ShirokaneTakanawa
   name_ja: 白金高輪
   name_hira: しろかねたかなわ
@@ -51,7 +51,7 @@ odpt.Station:TokyoMetro.Namboku.ShirokaneTakanawa:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:TokyoMetro.Namboku.AzabuJuban:
-  station_facility: odpt.StationFacility:TokyoMetro.AzabuJuban
+  station_facility_info: odpt.StationFacility:TokyoMetro.AzabuJuban
   name_ja: 麻布十番
   name_hira: あざぶじゅうばん
   name_in_system: AzabuJuban
@@ -61,7 +61,7 @@ odpt.Station:TokyoMetro.Namboku.AzabuJuban:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.RoppongiItchome:
-  station_facility: odpt.StationFacility:TokyoMetro.RoppongiItchome
+  station_facility_info: odpt.StationFacility:TokyoMetro.RoppongiItchome
   name_ja: 六本木一丁目
   name_hira: ろっぽんぎいっちょうめ
   name_in_system: RoppongiItchome
@@ -71,7 +71,7 @@ odpt.Station:TokyoMetro.Namboku.RoppongiItchome:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.TameikeSanno:
-  station_facility: odpt.StationFacility:TokyoMetro.TameikeSanno
+  station_facility_info: odpt.StationFacility:TokyoMetro.TameikeSanno
   name_ja: 溜池山王
   name_hira: ためいけさんのう
   name_in_system: TameikeSanno
@@ -81,7 +81,7 @@ odpt.Station:TokyoMetro.Namboku.TameikeSanno:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Nagatacho:
-  station_facility: odpt.StationFacility:TokyoMetro.Nagatacho
+  station_facility_info: odpt.StationFacility:TokyoMetro.Nagatacho
   name_ja: 永田町
   name_hira: ながたちょう
   name_in_system: Nagatacho
@@ -91,7 +91,7 @@ odpt.Station:TokyoMetro.Namboku.Nagatacho:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Yotsuya:
-  station_facility: odpt.StationFacility:TokyoMetro.Yotsuya
+  station_facility_info: odpt.StationFacility:TokyoMetro.Yotsuya
   name_ja: 四ツ谷
   name_hira: よつや
   name_in_system: Yotsuya
@@ -101,7 +101,7 @@ odpt.Station:TokyoMetro.Namboku.Yotsuya:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Ichigaya:
-  station_facility: odpt.StationFacility:TokyoMetro.Ichigaya
+  station_facility_info: odpt.StationFacility:TokyoMetro.Ichigaya
   name_ja: 市ケ谷
   name_hira: いちがや
   name_in_system: Ichigaya
@@ -111,7 +111,7 @@ odpt.Station:TokyoMetro.Namboku.Ichigaya:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Iidabashi:
-  station_facility: odpt.StationFacility:TokyoMetro.Iidabashi
+  station_facility_info: odpt.StationFacility:TokyoMetro.Iidabashi
   name_ja: 飯田橋
   name_hira: いいだばし
   name_in_system: Iidabashi
@@ -121,7 +121,7 @@ odpt.Station:TokyoMetro.Namboku.Iidabashi:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Korakuen:
-  station_facility: odpt.StationFacility:TokyoMetro.Korakuen
+  station_facility_info: odpt.StationFacility:TokyoMetro.Korakuen
   name_ja: 後楽園
   name_hira: こうらくえん
   name_in_system: Korakuen
@@ -131,7 +131,7 @@ odpt.Station:TokyoMetro.Namboku.Korakuen:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Todaimae:
-  station_facility: odpt.StationFacility:TokyoMetro.Todaimae
+  station_facility_info: odpt.StationFacility:TokyoMetro.Todaimae
   name_ja: 東大前
   name_hira: とうだいまえ
   name_in_system: Todaimae
@@ -141,7 +141,7 @@ odpt.Station:TokyoMetro.Namboku.Todaimae:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.HonKomagome:
-  station_facility: odpt.StationFacility:TokyoMetro.HonKomagome
+  station_facility_info: odpt.StationFacility:TokyoMetro.HonKomagome
   name_ja: 本駒込
   name_hira: ほんこまごめ
   name_in_system: HonKomagome
@@ -151,7 +151,7 @@ odpt.Station:TokyoMetro.Namboku.HonKomagome:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Komagome:
-  station_facility: odpt.StationFacility:TokyoMetro.Komagome
+  station_facility_info: odpt.StationFacility:TokyoMetro.Komagome
   name_ja: 駒込
   name_hira: こまごめ
   name_in_system: Komagome
@@ -161,7 +161,7 @@ odpt.Station:TokyoMetro.Namboku.Komagome:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Nishigahara:
-  station_facility: odpt.StationFacility:TokyoMetro.Nishigahara
+  station_facility_info: odpt.StationFacility:TokyoMetro.Nishigahara
   name_ja: 西ケ原
   name_hira: にしがはら
   name_in_system: Nishigahara
@@ -171,7 +171,7 @@ odpt.Station:TokyoMetro.Namboku.Nishigahara:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Oji:
-  station_facility: odpt.StationFacility:TokyoMetro.Oji
+  station_facility_info: odpt.StationFacility:TokyoMetro.Oji
   name_ja: 王子
   name_hira: おうじ
   name_in_system: Oji
@@ -181,7 +181,7 @@ odpt.Station:TokyoMetro.Namboku.Oji:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.OjiKamiya:
-  station_facility: odpt.StationFacility:TokyoMetro.OjiKamiya
+  station_facility_info: odpt.StationFacility:TokyoMetro.OjiKamiya
   name_ja: 王子神谷
   name_hira: おうじかみや
   name_in_system: OjiKamiya
@@ -191,7 +191,7 @@ odpt.Station:TokyoMetro.Namboku.OjiKamiya:
     - custom.StoppingPattern:TokyoMetro.Namboku.Local
 
 odpt.Station:TokyoMetro.Namboku.Shimo:
-  station_facility: odpt.StationFacility:TokyoMetro.Shimo
+  station_facility_info: odpt.StationFacility:TokyoMetro.Shimo
   name_ja: 志茂
   name_hira: しも
   name_in_system: Shimo
@@ -202,7 +202,7 @@ odpt.Station:TokyoMetro.Namboku.Shimo:
 
 odpt.Station:TokyoMetro.Namboku.AkabaneIwabuchi:
   station_alias: odpt.Station:SaitamaRailway.SaitamaRailway.AkabaneIwabuchi
-  station_facility: odpt.StationFacility:TokyoMetro.AkabaneIwabuchi
+  station_facility_info: odpt.StationFacility:TokyoMetro.AkabaneIwabuchi
   station_facility_custom_alias: odpt.StationFacility:SaitamaRailway.AkabaneIwabuchi
   name_ja: 赤羽岩淵
   name_hira: あかばねいわぶち

@@ -1,6 +1,6 @@
 odpt.Station:SaitamaRailway.SaitamaRailway.AkabaneIwabuchi:
   station_alias: odpt.Station:TokyoMetro.Namboku.AkabaneIwabuchi
-  station_facility: odpt.StationFacility:SaitamaRailway.AkabaneIwabuchi
+  station_facility_info: odpt.StationFacility:SaitamaRailway.AkabaneIwabuchi
   station_facility_custom: odpt.StationFacility:TokyoMetro.AkabaneIwabuchi
   station_facility_custom_alias: odpt.StationFacility:SaitamaRailway.AkabaneIwabuchi
   name_ja: 赤羽岩淵
@@ -11,7 +11,7 @@ odpt.Station:SaitamaRailway.SaitamaRailway.AkabaneIwabuchi:
     - custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
 
 odpt.Station:SaitamaRailway.SaitamaRailway.KawaguchiMotogou:
-  station_facility: odpt.StationFacility:SaitamaRailway.KawaguchiMotogou
+  station_facility_info: odpt.StationFacility:SaitamaRailway.KawaguchiMotogou
   name_ja: 川口元郷
   name_hira: かわぐちもとごう
   name_in_system: KawaguchiMotogou
@@ -20,7 +20,7 @@ odpt.Station:SaitamaRailway.SaitamaRailway.KawaguchiMotogou:
     - custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
 
 odpt.Station:SaitamaRailway.SaitamaRailway.MinamiHatogaya:
-  station_facility: odpt.StationFacility:SaitamaRailway.MinamiHatogaya
+  station_facility_info: odpt.StationFacility:SaitamaRailway.MinamiHatogaya
   name_ja: 南鳩ヶ谷
   name_hira: みなみはとがや
   name_in_system: MinamiHatogaya
@@ -29,7 +29,7 @@ odpt.Station:SaitamaRailway.SaitamaRailway.MinamiHatogaya:
     - custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
 
 odpt.Station:SaitamaRailway.SaitamaRailway.Hatogaya:
-  station_facility: odpt.StationFacility:SaitamaRailway.Hatogaya
+  station_facility_info: odpt.StationFacility:SaitamaRailway.Hatogaya
   name_ja: 鳩ヶ谷
   name_hira: はとがや
   name_in_system: Hatogaya
@@ -38,7 +38,7 @@ odpt.Station:SaitamaRailway.SaitamaRailway.Hatogaya:
     - custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
 
 odpt.Station:SaitamaRailway.SaitamaRailway.Araijuku:
-  station_facility: odpt.StationFacility:SaitamaRailway.Araijuku
+  station_facility_info: odpt.StationFacility:SaitamaRailway.Araijuku
   name_ja: 新井宿
   name_hira: あらいじゅく
   name_in_system: Araijuku
@@ -47,7 +47,7 @@ odpt.Station:SaitamaRailway.SaitamaRailway.Araijuku:
     - custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
 
 odpt.Station:SaitamaRailway.SaitamaRailway.TozukaAngyou:
-  station_facility: odpt.StationFacility:SaitamaRailway.TozukaAngyou
+  station_facility_info: odpt.StationFacility:SaitamaRailway.TozukaAngyou
   name_ja: 戸塚安行
   name_hira: とづかあんぎょう
   name_in_system: TozukaAngyou
@@ -56,7 +56,7 @@ odpt.Station:SaitamaRailway.SaitamaRailway.TozukaAngyou:
     - custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
 
 odpt.Station:SaitamaRailway.SaitamaRailway.HigashiKawaguchi:
-  station_facility: odpt.StationFacility:SaitamaRailway.HigashiKawaguchi
+  station_facility_info: odpt.StationFacility:SaitamaRailway.HigashiKawaguchi
   name_ja: 東川口
   name_hira: ひがしかわぐち
   name_in_system: HigashiKawaguchi
@@ -65,7 +65,7 @@ odpt.Station:SaitamaRailway.SaitamaRailway.HigashiKawaguchi:
     - custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
 
 odpt.Station:SaitamaRailway.SaitamaRailway.UrawaMisono:
-  station_facility: odpt.StationFacility:SaitamaRailway.UrawaMisono
+  station_facility_info: odpt.StationFacility:SaitamaRailway.UrawaMisono
   name_ja: 浦和美園
   name_hira: うらわみその
   name_in_system: UrawaMisono

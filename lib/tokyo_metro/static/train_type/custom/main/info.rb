@@ -32,13 +32,4 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
   alias :name_ja_to_haml :note
   alias :name_en_to_haml :name_en_normal
 
-  # インスタンスの情報を文字列にして返すメソッド
-  # @return [String]
-  def to_s( indent = 0 )
-    key_css = "css_class_name"
-    super( indent ) + "\n" + " " * indent + key_css.ljust(32) + self.__send__( key_css )
-  end
-
-  # @!endgroup
-
 end

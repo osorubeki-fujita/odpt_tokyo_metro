@@ -2,7 +2,7 @@ odpt.Station:Toei.Mita.Meguro:
   station_alias:
     - odpt.Station:TokyoMetro.Namboku.Meguro
     - odpt.Station:Tokyu.Meguro.Meguro
-  station_facility: odpt.StationFacility:Toei.Meguro
+  station_facility_info: odpt.StationFacility:Toei.Meguro
   station_facility_custom: odpt.StationFacility:Tokyu.Meguro
   station_facility_custom_alias:
     - odpt.StationFacility:TokyoMetro.Meguro
@@ -17,7 +17,7 @@ odpt.Station:Toei.Mita.Meguro:
 
 odpt.Station:Toei.Mita.Shirokanedai:
   station_alias: odpt.Station:TokyoMetro.Namboku.Shirokanedai
-  station_facility: odpt.StationFacility:Toei.Shirokanedai
+  station_facility_info: odpt.StationFacility:Toei.Shirokanedai
   station_facility_custom: odpt.StationFacility:TokyoMetro.Shirokanedai
   station_facility_custom_alias: odpt.StationFacility:Toei.Shirokanedai
   name_ja: 白金台
@@ -30,7 +30,7 @@ odpt.Station:Toei.Mita.Shirokanedai:
 
 odpt.Station:Toei.Mita.ShirokaneTakanawa:
   station_alias: odpt.Station:TokyoMetro.Namboku.ShirokaneTakanawa
-  station_facility: odpt.StationFacility:Toei.ShirokaneTakanawa
+  station_facility_info: odpt.StationFacility:Toei.ShirokaneTakanawa
   station_facility_custom: odpt.StationFacility:TokyoMetro.ShirokaneTakanawa
   station_facility_custom_alias: odpt.StationFacility:Toei.ShirokaneTakanawa
   name_ja: 白金高輪
@@ -42,7 +42,7 @@ odpt.Station:Toei.Mita.ShirokaneTakanawa:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Mita:
-  station_facility: odpt.StationFacility:Toei.Mita
+  station_facility_info: odpt.StationFacility:Toei.Mita
   name_ja: 三田
   name_hira: みた
   name_in_system: Mita
@@ -52,7 +52,7 @@ odpt.Station:Toei.Mita.Mita:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Shibakoen:
-  station_facility: odpt.StationFacility:Toei.Shibakoen
+  station_facility_info: odpt.StationFacility:Toei.Shibakoen
   name_ja: 芝公園
   name_hira: しばこうえん
   name_in_system: Shibakoen
@@ -62,7 +62,7 @@ odpt.Station:Toei.Mita.Shibakoen:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Onarimon:
-  station_facility: odpt.StationFacility:Toei.Onarimon
+  station_facility_info: odpt.StationFacility:Toei.Onarimon
   name_ja: 御成門
   name_hira: おなりもん
   name_in_system: Onarimon
@@ -72,7 +72,7 @@ odpt.Station:Toei.Mita.Onarimon:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Uchisaiwaicho:
-  station_facility: odpt.StationFacility:Toei.Uchisaiwaicho
+  station_facility_info: odpt.StationFacility:Toei.Uchisaiwaicho
   name_ja: 内幸町
   name_hira: うちさいわいちょう
   name_in_system: Uchisaiwaicho
@@ -82,7 +82,7 @@ odpt.Station:Toei.Mita.Uchisaiwaicho:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Hibiya:
-  station_facility: odpt.StationFacility:Toei.Hibiya
+  station_facility_info: odpt.StationFacility:Toei.Hibiya
   name_ja: 日比谷
   name_hira: ひびや
   name_in_system: Hibiya
@@ -92,7 +92,7 @@ odpt.Station:Toei.Mita.Hibiya:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Otemachi:
-  station_facility: odpt.StationFacility:Toei.Otemachi
+  station_facility_info: odpt.StationFacility:Toei.Otemachi
   name_ja: 大手町
   name_hira: おおてまち
   name_in_system: Otemachi
@@ -102,7 +102,7 @@ odpt.Station:Toei.Mita.Otemachi:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Jimbocho:
-  station_facility: odpt.StationFacility:Toei.Jimbocho
+  station_facility_info: odpt.StationFacility:Toei.Jimbocho
   name_ja: 神保町
   name_hira: じんぼうちょう
   name_in_system: Jimbocho
@@ -112,7 +112,7 @@ odpt.Station:Toei.Mita.Jimbocho:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Suidobashi:
-  station_facility: odpt.StationFacility:Toei.Suidobashi
+  station_facility_info: odpt.StationFacility:Toei.Suidobashi
   name_ja: 水道橋
   name_hira: すいどうばし
   name_in_system: Suidobashi
@@ -122,7 +122,7 @@ odpt.Station:Toei.Mita.Suidobashi:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Kasuga:
-  station_facility: odpt.StationFacility:Toei.Kasuga
+  station_facility_info: odpt.StationFacility:Toei.Kasuga
   name_ja: 春日
   name_hira: かすが
   name_in_system: Kasuga
@@ -132,7 +132,7 @@ odpt.Station:Toei.Mita.Kasuga:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Hakusan:
-  station_facility: odpt.StationFacility:Toei.Hakusan
+  station_facility_info: odpt.StationFacility:Toei.Hakusan
   name_ja: 白山
   name_hira: はくさん
   name_in_system: Hakusan
@@ -142,7 +142,7 @@ odpt.Station:Toei.Mita.Hakusan:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Sengoku:
-  station_facility: odpt.StationFacility:Toei.Sengoku
+  station_facility_info: odpt.StationFacility:Toei.Sengoku
   name_ja: 千石
   name_hira: せんごく
   name_in_system: Sengoku
@@ -152,7 +152,7 @@ odpt.Station:Toei.Mita.Sengoku:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Sugamo:
-  station_facility: odpt.StationFacility:Toei.Sugamo
+  station_facility_info: odpt.StationFacility:Toei.Sugamo
   name_ja: 巣鴨
   name_hira: すがも
   name_in_system: Sugamo
@@ -162,7 +162,7 @@ odpt.Station:Toei.Mita.Sugamo:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.NishiSugamo:
-  station_facility: odpt.StationFacility:Toei.NishiSugamo
+  station_facility_info: odpt.StationFacility:Toei.NishiSugamo
   name_ja: 西巣鴨
   name_hira: にしすがも
   name_in_system: NishiSugamo
@@ -172,7 +172,7 @@ odpt.Station:Toei.Mita.NishiSugamo:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.ShinItabashi:
-  station_facility: odpt.StationFacility:Toei.ShinItabashi
+  station_facility_info: odpt.StationFacility:Toei.ShinItabashi
   name_ja: 新板橋
   name_hira: しんいたばし
   name_in_system: ShinItabashi
@@ -182,7 +182,7 @@ odpt.Station:Toei.Mita.ShinItabashi:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Itabashikuyakushomae:
-  station_facility: odpt.StationFacility:Toei.Itabashikuyakushomae
+  station_facility_info: odpt.StationFacility:Toei.Itabashikuyakushomae
   name_ja: 板橋区役所前
   name_hira: いたばしくやくしょまえ
   name_in_system: Itabashikuyakushomae
@@ -192,7 +192,7 @@ odpt.Station:Toei.Mita.Itabashikuyakushomae:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Itabashihoncho:
-  station_facility: odpt.StationFacility:Toei.Itabashihoncho
+  station_facility_info: odpt.StationFacility:Toei.Itabashihoncho
   name_ja: 板橋本町
   name_hira: いたばしほんちょう
   name_in_system: Itabashihoncho
@@ -202,7 +202,7 @@ odpt.Station:Toei.Mita.Itabashihoncho:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Motohasunuma:
-  station_facility: odpt.StationFacility:Toei.Motohasunuma
+  station_facility_info: odpt.StationFacility:Toei.Motohasunuma
   name_ja: 本蓮沼
   name_hira: もとはすぬま
   name_in_system: Motohasunuma
@@ -212,7 +212,7 @@ odpt.Station:Toei.Mita.Motohasunuma:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.ShimuraSakaue:
-  station_facility: odpt.StationFacility:Toei.ShimuraSakaue
+  station_facility_info: odpt.StationFacility:Toei.ShimuraSakaue
   name_ja: 志村坂上
   name_hira: しむらさかうえ
   name_in_system: ShimuraSakaue
@@ -222,7 +222,7 @@ odpt.Station:Toei.Mita.ShimuraSakaue:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.ShimuraSanchome:
-  station_facility: odpt.StationFacility:Toei.ShimuraSanchome
+  station_facility_info: odpt.StationFacility:Toei.ShimuraSanchome
   name_ja: 志村三丁目
   name_hira: しむらさんちょうめ
   name_in_system: ShimuraSanchome
@@ -232,7 +232,7 @@ odpt.Station:Toei.Mita.ShimuraSanchome:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Hasune:
-  station_facility: odpt.StationFacility:Toei.Hasune
+  station_facility_info: odpt.StationFacility:Toei.Hasune
   name_ja: 蓮根
   name_hira: はすね
   name_in_system: Hasune
@@ -242,7 +242,7 @@ odpt.Station:Toei.Mita.Hasune:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Nishidai:
-  station_facility: odpt.StationFacility:Toei.Nishidai
+  station_facility_info: odpt.StationFacility:Toei.Nishidai
   name_ja: 西台
   name_hira: にしだい
   name_in_system: Nishidai
@@ -252,7 +252,7 @@ odpt.Station:Toei.Mita.Nishidai:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.Takashimadaira:
-  station_facility: odpt.StationFacility:Toei.Takashimadaira
+  station_facility_info: odpt.StationFacility:Toei.Takashimadaira
   name_ja: 高島平
   name_hira: たかしまだいら
   name_in_system: Takashimadaira
@@ -262,7 +262,7 @@ odpt.Station:Toei.Mita.Takashimadaira:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.ShinTakashimadaira:
-  station_facility: odpt.StationFacility:Toei.ShinTakashimadaira
+  station_facility_info: odpt.StationFacility:Toei.ShinTakashimadaira
   name_ja: 新高島平
   name_hira: しんたかしまだいら
   name_in_system: ShinTakashimadaira
@@ -272,7 +272,7 @@ odpt.Station:Toei.Mita.ShinTakashimadaira:
     - custom.StoppingPattern:Toei.Mita.Local
 
 odpt.Station:Toei.Mita.NishiTakashimadaira:
-  station_facility: odpt.StationFacility:Toei.NishiTakashimadaira
+  station_facility_info: odpt.StationFacility:Toei.NishiTakashimadaira
   name_ja: 西高島平
   name_hira: にしたかしまだいら
   name_in_system: NishiTakashimadaira

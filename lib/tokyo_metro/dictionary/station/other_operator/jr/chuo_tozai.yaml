@@ -1,6 +1,6 @@
 odpt.Station:JR-East.ChuoTozai.Nakano:
   station_alias: odpt.Station:TokyoMetro.Tozai.Nakano
-  station_facility: odpt.StationFacility:JR-East.Nakano
+  station_facility_info: odpt.StationFacility:JR-East.Nakano
   station_facility_custom_alias: odpt.StationFacility:TokyoMetro.Nakano
   name_ja: 中野
   name_hira: なかの
@@ -10,7 +10,7 @@ odpt.Station:JR-East.ChuoTozai.Nakano:
     - custom.StoppingPattern:JR-East.ChuoTozai.Local
 
 odpt.Station:JR-East.ChuoTozai.Koenji:
-  station_facility: odpt.StationFacility:JR-East.Koenji
+  station_facility_info: odpt.StationFacility:JR-East.Koenji
   name_ja: 高円寺
   name_hira: こうえんじ
   name_in_system: Koenji
@@ -19,7 +19,7 @@ odpt.Station:JR-East.ChuoTozai.Koenji:
     - custom.StoppingPattern:JR-East.ChuoTozai.Local
 
 odpt.Station:JR-East.ChuoTozai.Asagaya:
-  station_facility: odpt.StationFacility:JR-East.Asagaya
+  station_facility_info: odpt.StationFacility:JR-East.Asagaya
   name_ja: 阿佐ヶ谷
   name_hira: あさがや
   name_in_system: Asagaya
@@ -28,7 +28,7 @@ odpt.Station:JR-East.ChuoTozai.Asagaya:
     - custom.StoppingPattern:JR-East.ChuoTozai.Local
 
 odpt.Station:JR-East.ChuoTozai.Ogikubo:
-  station_facility: odpt.StationFacility:JR-East.Ogikubo
+  station_facility_info: odpt.StationFacility:JR-East.Ogikubo
   name_ja: 荻窪
   name_hira: おぎくぼ
   name_in_system: Ogikubo
@@ -37,7 +37,7 @@ odpt.Station:JR-East.ChuoTozai.Ogikubo:
     - custom.StoppingPattern:JR-East.ChuoTozai.Local
 
 odpt.Station:JR-East.ChuoTozai.NishiOgikubo:
-  station_facility: odpt.StationFacility:JR-East.NishiOgikubo
+  station_facility_info: odpt.StationFacility:JR-East.NishiOgikubo
   name_ja: 西荻窪
   name_hira: にしおぎくぼ
   name_in_system: NishiOgikubo
@@ -46,7 +46,7 @@ odpt.Station:JR-East.ChuoTozai.NishiOgikubo:
     - custom.StoppingPattern:JR-East.ChuoTozai.Local
 
 odpt.Station:JR-East.ChuoTozai.Kichijoji:
-  station_facility: odpt.StationFacility:JR-East.Kichijoji
+  station_facility_info: odpt.StationFacility:JR-East.Kichijoji
   name_ja: 吉祥寺
   name_hira: きちじょうじ
   name_in_system: Kichijoji
@@ -55,7 +55,7 @@ odpt.Station:JR-East.ChuoTozai.Kichijoji:
     - custom.StoppingPattern:JR-East.ChuoTozai.Local
 
 odpt.Station:JR-East.ChuoTozai.Mitaka:
-  station_facility: odpt.StationFacility:JR-East.Mitaka
+  station_facility_info: odpt.StationFacility:JR-East.Mitaka
   name_ja: 三鷹
   name_hira: みたか
   name_in_system: Mitaka

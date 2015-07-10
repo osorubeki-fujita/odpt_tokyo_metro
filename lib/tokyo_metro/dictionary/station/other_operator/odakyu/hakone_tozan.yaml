@@ -1,6 +1,6 @@
 odpt.Station:HakoneTozan.Rail.Odawara:
   station_alias: odpt.Station:Odakyu.Odawara.Odawara
-  station_facility: odpt.StationFacility:HakoneTozan.Odawara
+  station_facility_info: odpt.StationFacility:HakoneTozan.Odawara
   station_facility_custom: odpt.StationFacility:Odakyu.Odawara
   station_facility_custom_alias: odpt.StationFacility:HakoneTozan.Odawara
   name_ja: 小田原
@@ -10,11 +10,11 @@ odpt.Station:HakoneTozan.Rail.Odawara:
   station_code: OH47
   stop:
     - custom.StoppingPattern:HakoneTozan.OdawaraSide.Local
-    - custom.StoppingPattern:HakoneTozan.OdawaraSide.RomanceCar 
+    - custom.StoppingPattern:HakoneTozan.OdawaraSide.RomanceCar
 
 odpt.Station:HakoneTozan.Rail.HakoneItabashi:
   station_alias: odpt.Station:Odakyu.Odawara.HakoneItabashi
-  station_facility: odpt.StationFacility:HakoneTozan.HakoneItabashi
+  station_facility_info: odpt.StationFacility:HakoneTozan.HakoneItabashi
   station_facility_custom_alias: odpt.StationFacility:Odakyu.HakoneItabashi
   name_ja: 箱根板橋
   name_hira: はこねいたばし
@@ -26,7 +26,7 @@ odpt.Station:HakoneTozan.Rail.HakoneItabashi:
 
 odpt.Station:HakoneTozan.Rail.Kazamatsuri:
   station_alias: odpt.Station:Odakyu.Odawara.Kazamatsuri
-  station_facility: odpt.StationFacility:HakoneTozan.Kazamatsuri
+  station_facility_info: odpt.StationFacility:HakoneTozan.Kazamatsuri
   station_facility_custom_alias: odpt.StationFacility:Odakyu.Kazamatsuri
   name_ja: 風祭
   name_hira: かざまつり
@@ -38,7 +38,7 @@ odpt.Station:HakoneTozan.Rail.Kazamatsuri:
 
 odpt.Station:HakoneTozan.Rail.Iriuda:
   station_alias: odpt.Station:Odakyu.Odawara.Iriuda
-  station_facility: odpt.StationFacility:HakoneTozan.Iriuda
+  station_facility_info: odpt.StationFacility:HakoneTozan.Iriuda
   station_facility_custom_alias: odpt.StationFacility:Odakyu.Iriuda
   name_ja: 入生田
   name_hira: いりうだ
@@ -50,7 +50,7 @@ odpt.Station:HakoneTozan.Rail.Iriuda:
 
 odpt.Station:HakoneTozan.Rail.HakoneYumoto:
   station_alias: odpt.Station:Odakyu.Odawara.HakoneYumoto
-  station_facility: odpt.StationFacility:HakoneTozan.HakoneYumoto
+  station_facility_info: odpt.StationFacility:HakoneTozan.HakoneYumoto
   station_facility_custom_alias: odpt.StationFacility:Odakyu.HakoneYumoto
   name_ja: 箱根湯本
   name_hira: はこねゆもと
@@ -59,4 +59,4 @@ odpt.Station:HakoneTozan.Rail.HakoneYumoto:
   station_code: OH51
   stop:
     - custom.StoppingPattern:HakoneTozan.OdawaraSide.Local
-    - custom.StoppingPattern:HakoneTozan.OdawaraSide.RomanceCar 
+    - custom.StoppingPattern:HakoneTozan.OdawaraSide.RomanceCar

@@ -1,5 +1,5 @@
 odpt.Station:Odakyu.Odawara.Shinjuku:
-  station_facility: odpt.StationFacility:Odakyu.Shinjuku
+  station_facility_info: odpt.StationFacility:Odakyu.Shinjuku
   name_ja: 新宿
   name_hira: しんじゅく
   name_in_system: Shinjuku
@@ -13,7 +13,7 @@ odpt.Station:Odakyu.Odawara.Shinjuku:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.MinamiShinjuku:
-  station_facility: odpt.StationFacility:Odakyu.MinamiShinjuku
+  station_facility_info: odpt.StationFacility:Odakyu.MinamiShinjuku
   name_ja: 南新宿
   name_hira: みなみしんじゅく
   name_in_system: MinamiShinjuku
@@ -23,7 +23,7 @@ odpt.Station:Odakyu.Odawara.MinamiShinjuku:
     - custom.StoppingPattern:Odakyu.Odawara.Local
 
 odpt.Station:Odakyu.Odawara.Sangubashi:
-  station_facility: odpt.StationFacility:Odakyu.Sangubashi
+  station_facility_info: odpt.StationFacility:Odakyu.Sangubashi
   name_ja: 参宮橋
   name_hira: さんぐうばし
   name_in_system: Sangubashi
@@ -33,7 +33,7 @@ odpt.Station:Odakyu.Odawara.Sangubashi:
     - custom.StoppingPattern:Odakyu.Odawara.Local
 
 odpt.Station:Odakyu.Odawara.YoyogiHachiman:
-  station_facility: odpt.StationFacility:Odakyu.YoyogiHachiman
+  station_facility_info: odpt.StationFacility:Odakyu.YoyogiHachiman
   name_ja: 代々木八幡
   name_hira: よよぎはちまん
   name_in_system: YoyogiHachiman
@@ -44,7 +44,7 @@ odpt.Station:Odakyu.Odawara.YoyogiHachiman:
 
 odpt.Station:Odakyu.Odawara.YoyogiUehara:
   station_alias: odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara
-  station_facility: odpt.StationFacility:Odakyu.YoyogiUehara
+  station_facility_info: odpt.StationFacility:Odakyu.YoyogiUehara
   station_facility_custom_alias: odpt.StationFacility:TokyoMetro.YoyogiUehara
   name_ja: 代々木上原
   name_hira: よよぎうえはら
@@ -68,7 +68,7 @@ odpt.Station:Odakyu.Odawara.YoyogiUehara:
     - custom.StoppingPattern:Odakyu.Odawara.RomanceCar.MetroSagami.SaturdaysHolidays.80
 
 odpt.Station:Odakyu.Odawara.HigashiKitazawa:
-  station_facility: odpt.StationFacility:Odakyu.HigashiKitazawa
+  station_facility_info: odpt.StationFacility:Odakyu.HigashiKitazawa
   name_ja: 東北沢
   name_hira: ひがしきたざわ
   name_in_system: HigashiKitazawa
@@ -78,7 +78,7 @@ odpt.Station:Odakyu.Odawara.HigashiKitazawa:
     - custom.StoppingPattern:Odakyu.Odawara.Local
 
 odpt.Station:Odakyu.Odawara.ShimoKitazawa:
-  station_facility: odpt.StationFacility:Odakyu.ShimoKitazawa
+  station_facility_info: odpt.StationFacility:Odakyu.ShimoKitazawa
   name_ja: 下北沢
   name_hira: しもきたざわ
   name_in_system: ShimoKitazawa
@@ -93,7 +93,7 @@ odpt.Station:Odakyu.Odawara.ShimoKitazawa:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.SetagayaDaita:
-  station_facility: odpt.StationFacility:Odakyu.SetagayaDaita
+  station_facility_info: odpt.StationFacility:Odakyu.SetagayaDaita
   name_ja: 世田谷代田
   name_hira: せたがやだいた
   name_in_system: SetagayaDaita
@@ -103,7 +103,7 @@ odpt.Station:Odakyu.Odawara.SetagayaDaita:
     - custom.StoppingPattern:Odakyu.Odawara.Local
 
 odpt.Station:Odakyu.Odawara.Umegaoka:
-  station_facility: odpt.StationFacility:Odakyu.Umegaoka
+  station_facility_info: odpt.StationFacility:Odakyu.Umegaoka
   name_ja: 梅ヶ丘
   name_hira: うめがおか
   name_in_system: Umegaoka
@@ -114,7 +114,7 @@ odpt.Station:Odakyu.Odawara.Umegaoka:
     - custom.StoppingPattern:Odakyu.Odawara.SectionSemiExpress
 
 odpt.Station:Odakyu.Odawara.Gotokuji:
-  station_facility: odpt.StationFacility:Odakyu.Gotokuji
+  station_facility_info: odpt.StationFacility:Odakyu.Gotokuji
   name_ja: 豪徳寺
   name_hira: ごうとくじ
   name_in_system: Gotokuji
@@ -125,7 +125,7 @@ odpt.Station:Odakyu.Odawara.Gotokuji:
     - custom.StoppingPattern:Odakyu.Odawara.SectionSemiExpress
 
 odpt.Station:Odakyu.Odawara.Kyodo:
-  station_facility: odpt.StationFacility:Odakyu.Kyodo
+  station_facility_info: odpt.StationFacility:Odakyu.Kyodo
   name_ja: 経堂
   name_hira: きょうどう
   name_in_system: Kyodo
@@ -144,7 +144,7 @@ odpt.Station:Odakyu.Odawara.Kyodo:
       - 平日は日中のみ停車します。土休日はすべての急行列車が停車します。
 
 odpt.Station:Odakyu.Odawara.ChitoseFunabashi:
-  station_facility: odpt.StationFacility:Odakyu.ChitoseFunabashi
+  station_facility_info: odpt.StationFacility:Odakyu.ChitoseFunabashi
   name_ja: 千歳船橋
   name_hira: ちとせふなばし
   name_in_system: ChitoseFunabashi
@@ -155,7 +155,7 @@ odpt.Station:Odakyu.Odawara.ChitoseFunabashi:
     - custom.StoppingPattern:Odakyu.Odawara.SectionSemiExpress
 
 odpt.Station:Odakyu.Odawara.SoshigayaOkura:
-  station_facility: odpt.StationFacility:Odakyu.SoshigayaOkura
+  station_facility_info: odpt.StationFacility:Odakyu.SoshigayaOkura
   name_ja: 祖師ヶ谷大蔵
   name_hira: そしがやおおくら
   name_in_system: SoshigayaOkura
@@ -166,7 +166,7 @@ odpt.Station:Odakyu.Odawara.SoshigayaOkura:
     - custom.StoppingPattern:Odakyu.Odawara.SectionSemiExpress
 
 odpt.Station:Odakyu.Odawara.SeijoGakuenMae:
-  station_facility: odpt.StationFacility:Odakyu.SeijoGakuenMae
+  station_facility_info: odpt.StationFacility:Odakyu.SeijoGakuenMae
   name_ja: 成城学園前
   name_hira: せいじょうがくえんまえ
   name_in_system: SeijoGakuenMae
@@ -184,7 +184,7 @@ odpt.Station:Odakyu.Odawara.SeijoGakuenMae:
     - custom.StoppingPattern:Odakyu.Odawara.RomanceCar.MetroSagami.SaturdaysHolidays.80
 
 odpt.Station:Odakyu.Odawara.Kitami:
-  station_facility: odpt.StationFacility:Odakyu.Kitami
+  station_facility_info: odpt.StationFacility:Odakyu.Kitami
   name_ja: 喜多見
   name_hira: きたみ
   name_in_system: Kitami
@@ -195,7 +195,7 @@ odpt.Station:Odakyu.Odawara.Kitami:
     - custom.StoppingPattern:Odakyu.Odawara.SectionSemiExpress
 
 odpt.Station:Odakyu.Odawara.Komae:
-  station_facility: odpt.StationFacility:Odakyu.Komae
+  station_facility_info: odpt.StationFacility:Odakyu.Komae
   name_ja: 狛江
   name_hira: こまえ
   name_in_system: Komae
@@ -206,7 +206,7 @@ odpt.Station:Odakyu.Odawara.Komae:
     - custom.StoppingPattern:Odakyu.Odawara.SectionSemiExpress
 
 odpt.Station:Odakyu.Odawara.IzumiTamagawa:
-  station_facility: odpt.StationFacility:Odakyu.IzumiTamagawa
+  station_facility_info: odpt.StationFacility:Odakyu.IzumiTamagawa
   name_ja: 和泉多摩川
   name_hira: いずみたまがわ
   name_in_system: IzumiTamagawa
@@ -217,7 +217,7 @@ odpt.Station:Odakyu.Odawara.IzumiTamagawa:
     - custom.StoppingPattern:Odakyu.Odawara.SectionSemiExpress
 
 odpt.Station:Odakyu.Odawara.Noborito:
-  station_facility: odpt.StationFacility:Odakyu.Noborito
+  station_facility_info: odpt.StationFacility:Odakyu.Noborito
   name_ja: 登戸
   name_hira: のぼりと
   name_in_system: Noborito
@@ -231,7 +231,7 @@ odpt.Station:Odakyu.Odawara.Noborito:
     - custom.StoppingPattern:Odakyu.Odawara.Express
 
 odpt.Station:Odakyu.Odawara.MukogaokaYuen:
-  station_facility: odpt.StationFacility:Odakyu.MukogaokaYuen
+  station_facility_info: odpt.StationFacility:Odakyu.MukogaokaYuen
   name_ja: 向ヶ丘遊園
   name_hira: むこうがおかゆうえん
   name_in_system: MukogaokaYuen
@@ -244,7 +244,7 @@ odpt.Station:Odakyu.Odawara.MukogaokaYuen:
     - custom.StoppingPattern:Odakyu.Odawara.Express
 
 odpt.Station:Odakyu.Odawara.Ikuta:
-  station_facility: odpt.StationFacility:Odakyu.Ikuta
+  station_facility_info: odpt.StationFacility:Odakyu.Ikuta
   name_ja: 生田
   name_hira: いくた
   name_in_system: Ikuta
@@ -256,7 +256,7 @@ odpt.Station:Odakyu.Odawara.Ikuta:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.YomiuriLandMae:
-  station_facility: odpt.StationFacility:Odakyu.YomiuriLandMae
+  station_facility_info: odpt.StationFacility:Odakyu.YomiuriLandMae
   name_ja: 読売ランド前
   name_hira: よみうりらんどまえ
   name_in_system: YomiuriLandMae
@@ -268,7 +268,7 @@ odpt.Station:Odakyu.Odawara.YomiuriLandMae:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.Yurigaoka:
-  station_facility: odpt.StationFacility:Odakyu.Yurigaoka
+  station_facility_info: odpt.StationFacility:Odakyu.Yurigaoka
   name_ja: 百合ヶ丘
   name_hira: ゆりがおか
   name_in_system: Yurigaoka
@@ -280,7 +280,7 @@ odpt.Station:Odakyu.Odawara.Yurigaoka:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.ShinYurigaoka:
-  station_facility: odpt.StationFacility:Odakyu.ShinYurigaoka
+  station_facility_info: odpt.StationFacility:Odakyu.ShinYurigaoka
   name_ja: 新百合ヶ丘
   name_hira: しんゆりがおか
   name_in_system: ShinYurigaoka
@@ -300,7 +300,7 @@ odpt.Station:Odakyu.Odawara.ShinYurigaoka:
     - custom.StoppingPattern:Odakyu.Odawara.RomanceCar.MetroSagami.SaturdaysHolidays.80
 
 odpt.Station:Odakyu.Odawara.Kakio:
-  station_facility: odpt.StationFacility:Odakyu.Kakio
+  station_facility_info: odpt.StationFacility:Odakyu.Kakio
   name_ja: 柿生
   name_hira: かきお
   name_in_system: Kakio
@@ -312,7 +312,7 @@ odpt.Station:Odakyu.Odawara.Kakio:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.Tsurukawa:
-  station_facility: odpt.StationFacility:Odakyu.Tsurukawa
+  station_facility_info: odpt.StationFacility:Odakyu.Tsurukawa
   name_ja: 鶴川
   name_hira: つるかわ
   name_in_system: Tsurukawa
@@ -324,7 +324,7 @@ odpt.Station:Odakyu.Odawara.Tsurukawa:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.TamagawaGakuenMae:
-  station_facility: odpt.StationFacility:Odakyu.TamagawaGakuenMae
+  station_facility_info: odpt.StationFacility:Odakyu.TamagawaGakuenMae
   name_ja: 玉川学園前
   name_hira: たまがわがくえんまえ
   name_in_system: TamagawaGakuenMae
@@ -336,7 +336,7 @@ odpt.Station:Odakyu.Odawara.TamagawaGakuenMae:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.Machida:
-  station_facility: odpt.StationFacility:Odakyu.Machida
+  station_facility_info: odpt.StationFacility:Odakyu.Machida
   name_ja: 町田
   name_hira: まちだ
   name_in_system: Machida
@@ -356,7 +356,7 @@ odpt.Station:Odakyu.Odawara.Machida:
     - custom.StoppingPattern:Odakyu.Odawara.RomanceCar.MetroSagami.SaturdaysHolidays.80
 
 odpt.Station:Odakyu.Odawara.SagamiOono:
-  station_facility: odpt.StationFacility:Odakyu.SagamiOono
+  station_facility_info: odpt.StationFacility:Odakyu.SagamiOono
   name_ja: 相模大野
   name_hira: さがみおおの
   name_in_system: SagamiOono
@@ -370,7 +370,7 @@ odpt.Station:Odakyu.Odawara.SagamiOono:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.OdakyuSagamihara:
-  station_facility: odpt.StationFacility:Odakyu.OdakyuSagamihara
+  station_facility_info: odpt.StationFacility:Odakyu.OdakyuSagamihara
   name_ja: 小田急相模原
   name_hira: おだきゅうさがみはら
   name_in_system: OdakyuSagamihara
@@ -382,7 +382,7 @@ odpt.Station:Odakyu.Odawara.OdakyuSagamihara:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.SobudaiMae:
-  station_facility: odpt.StationFacility:Odakyu.SobudaiMae
+  station_facility_info: odpt.StationFacility:Odakyu.SobudaiMae
   name_ja: 相武台前
   name_hira: そうぶだいまえ
   name_in_system: SobudaiMae
@@ -394,7 +394,7 @@ odpt.Station:Odakyu.Odawara.SobudaiMae:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.Zama:
-  station_facility: odpt.StationFacility:Odakyu.Zama
+  station_facility_info: odpt.StationFacility:Odakyu.Zama
   name_ja: 座間
   name_hira: ざま
   name_in_system: Zama
@@ -406,7 +406,7 @@ odpt.Station:Odakyu.Odawara.Zama:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.Ebina:
-  station_facility: odpt.StationFacility:Odakyu.Ebina
+  station_facility_info: odpt.StationFacility:Odakyu.Ebina
   name_ja: 海老名
   name_hira: えびな
   name_in_system: Ebina
@@ -420,7 +420,7 @@ odpt.Station:Odakyu.Odawara.Ebina:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.Atsugi:
-  station_facility: odpt.StationFacility:Odakyu.Atsugi
+  station_facility_info: odpt.StationFacility:Odakyu.Atsugi
   name_ja: 厚木
   name_hira: あつぎ
   name_in_system: Atsugi
@@ -432,7 +432,7 @@ odpt.Station:Odakyu.Odawara.Atsugi:
     - custom.StoppingPattern:Odakyu.Odawara.SemiExpress
 
 odpt.Station:Odakyu.Odawara.HonAtsugi:
-  station_facility: odpt.StationFacility:Odakyu.HonAtsugi
+  station_facility_info: odpt.StationFacility:Odakyu.HonAtsugi
   name_ja: 本厚木
   name_hira: ほんあつぎ
   name_in_system: HonAtsugi
@@ -451,7 +451,7 @@ odpt.Station:Odakyu.Odawara.HonAtsugi:
     - custom.StoppingPattern:Odakyu.Odawara.RomanceCar.MetroSagami.SaturdaysHolidays.80
 
 odpt.Station:Odakyu.Odawara.AikoIshida:
-  station_facility: odpt.StationFacility:Odakyu.AikoIshida
+  station_facility_info: odpt.StationFacility:Odakyu.AikoIshida
   name_ja: 愛甲石田
   name_hira: あいこういしだ
   name_in_system: AikoIshida
@@ -465,7 +465,7 @@ odpt.Station:Odakyu.Odawara.AikoIshida:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.Isehara:
-  station_facility: odpt.StationFacility:Odakyu.Isehara
+  station_facility_info: odpt.StationFacility:Odakyu.Isehara
   name_ja: 伊勢原
   name_hira: いせはら
   name_in_system: Isehara
@@ -479,7 +479,7 @@ odpt.Station:Odakyu.Odawara.Isehara:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.TsurumakiOnsen:
-  station_facility: odpt.StationFacility:Odakyu.TsurumakiOnsen
+  station_facility_info: odpt.StationFacility:Odakyu.TsurumakiOnsen
   name_ja: 鶴巻温泉
   name_hira: つるまきおんせん
   name_in_system: TsurumakiOnsen
@@ -492,7 +492,7 @@ odpt.Station:Odakyu.Odawara.TsurumakiOnsen:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.TokaiDaigakuMae:
-  station_facility: odpt.StationFacility:Odakyu.TokaiDaigakuMae
+  station_facility_info: odpt.StationFacility:Odakyu.TokaiDaigakuMae
   name_ja: 東海大学前
   name_hira: とうかいだいがくまえ
   name_in_system: TokaiDaigakuMae
@@ -505,7 +505,7 @@ odpt.Station:Odakyu.Odawara.TokaiDaigakuMae:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.Hadano:
-  station_facility: odpt.StationFacility:Odakyu.Hadano
+  station_facility_info: odpt.StationFacility:Odakyu.Hadano
   name_ja: 秦野
   name_hira: はだの
   name_in_system: Hadano
@@ -518,7 +518,7 @@ odpt.Station:Odakyu.Odawara.Hadano:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.Shibusawa:
-  station_facility: odpt.StationFacility:Odakyu.Shibusawa
+  station_facility_info: odpt.StationFacility:Odakyu.Shibusawa
   name_ja: 渋沢
   name_hira: しぶさわ
   name_in_system: Shibusawa
@@ -531,7 +531,7 @@ odpt.Station:Odakyu.Odawara.Shibusawa:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.ShinMatsuda:
-  station_facility: odpt.StationFacility:Odakyu.ShinMatsuda
+  station_facility_info: odpt.StationFacility:Odakyu.ShinMatsuda
   name_ja: 新松田
   name_hira: しんまつだ
   name_in_system: ShinMatsuda
@@ -544,7 +544,7 @@ odpt.Station:Odakyu.Odawara.ShinMatsuda:
     - custom.StoppingPattern:Odakyu.Odawara.RapidExpress
 
 odpt.Station:Odakyu.Odawara.Kaisei:
-  station_facility: odpt.StationFacility:Odakyu.Kaisei
+  station_facility_info: odpt.StationFacility:Odakyu.Kaisei
   name_ja: 開成
   name_hira: かいせい
   name_in_system: Kaisei
@@ -558,7 +558,7 @@ odpt.Station:Odakyu.Odawara.Kaisei:
       - 停車しない急行列車があります。
 
 odpt.Station:Odakyu.Odawara.Kayama:
-  station_facility: odpt.StationFacility:Odakyu.Kayama
+  station_facility_info: odpt.StationFacility:Odakyu.Kayama
   name_ja: 栢山
   name_hira: かやま
   name_in_system: Kayama
@@ -572,7 +572,7 @@ odpt.Station:Odakyu.Odawara.Kayama:
       - 停車しない急行列車があります。
 
 odpt.Station:Odakyu.Odawara.Tomizu:
-  station_facility: odpt.StationFacility:Odakyu.Tomizu
+  station_facility_info: odpt.StationFacility:Odakyu.Tomizu
   name_ja: 富水
   name_hira: とみず
   name_in_system: Tomizu
@@ -586,7 +586,7 @@ odpt.Station:Odakyu.Odawara.Tomizu:
       - 停車しない急行列車があります。
 
 odpt.Station:Odakyu.Odawara.Hotaruda:
-  station_facility: odpt.StationFacility:Odakyu.Hotaruda
+  station_facility_info: odpt.StationFacility:Odakyu.Hotaruda
   name_ja: 蛍田
   name_hira: ほたるだ
   name_in_system: Hotaruda
@@ -600,7 +600,7 @@ odpt.Station:Odakyu.Odawara.Hotaruda:
       - 停車しない急行列車があります。
 
 odpt.Station:Odakyu.Odawara.Ashigara:
-  station_facility: odpt.StationFacility:Odakyu.Ashigara
+  station_facility_info: odpt.StationFacility:Odakyu.Ashigara
   name_ja: 足柄
   name_hira: あしがら
   name_in_system: Ashigara
@@ -615,7 +615,7 @@ odpt.Station:Odakyu.Odawara.Ashigara:
 
 odpt.Station:Odakyu.Odawara.Odawara:
   station_alias: odpt.Station:HakoneTozan.Rail.Odawara
-  station_facility: odpt.StationFacility:Odakyu.Odawara
+  station_facility_info: odpt.StationFacility:Odakyu.Odawara
   station_facility_custom_alias: odpt.StationFacility:HakoneTozan.Odawara
   name_ja: 小田原
   name_hira: おだわら

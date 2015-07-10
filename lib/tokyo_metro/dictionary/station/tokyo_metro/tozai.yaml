@@ -1,6 +1,6 @@
 odpt.Station:TokyoMetro.Tozai.Nakano:
   station_alias: odpt.StationFacility:JR-East.Nakano
-  station_facility: odpt.StationFacility:TokyoMetro.Nakano
+  station_facility_info: odpt.StationFacility:TokyoMetro.Nakano
   station_facility_custom: odpt.StationFacility:JR-East.Nakano
   station_facility_custom_alias: odpt.StationFacility:TokyoMetro.Nakano
   name_ja: 中野
@@ -16,7 +16,7 @@ odpt.Station:TokyoMetro.Tozai.Nakano:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Ochiai:
-  station_facility: odpt.StationFacility:TokyoMetro.Ochiai
+  station_facility_info: odpt.StationFacility:TokyoMetro.Ochiai
   name_ja: 落合
   name_hira: おちあい
   name_in_system: Ochiai
@@ -28,7 +28,7 @@ odpt.Station:TokyoMetro.Tozai.Ochiai:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Takadanobaba:
-  station_facility: odpt.StationFacility:TokyoMetro.Takadanobaba
+  station_facility_info: odpt.StationFacility:TokyoMetro.Takadanobaba
   name_ja: 高田馬場
   name_hira: たかだのばば
   name_in_system: Takadanobaba
@@ -40,7 +40,7 @@ odpt.Station:TokyoMetro.Tozai.Takadanobaba:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Waseda:
-  station_facility: odpt.StationFacility:TokyoMetro.Waseda
+  station_facility_info: odpt.StationFacility:TokyoMetro.Waseda
   name_ja: 早稲田
   name_hira: わせだ
   name_in_system: Waseda
@@ -52,7 +52,7 @@ odpt.Station:TokyoMetro.Tozai.Waseda:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Kagurazaka:
-  station_facility: odpt.StationFacility:TokyoMetro.Kagurazaka
+  station_facility_info: odpt.StationFacility:TokyoMetro.Kagurazaka
   name_ja: 神楽坂
   name_hira: かぐらざか
   name_in_system: Kagurazaka
@@ -64,7 +64,7 @@ odpt.Station:TokyoMetro.Tozai.Kagurazaka:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Iidabashi:
-  station_facility: odpt.StationFacility:TokyoMetro.Iidabashi
+  station_facility_info: odpt.StationFacility:TokyoMetro.Iidabashi
   name_ja: 飯田橋
   name_hira: いいだばし
   name_in_system: Iidabashi
@@ -76,7 +76,7 @@ odpt.Station:TokyoMetro.Tozai.Iidabashi:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Kudanshita:
-  station_facility: odpt.StationFacility:TokyoMetro.Kudanshita
+  station_facility_info: odpt.StationFacility:TokyoMetro.Kudanshita
   station_facility_custom: odpt.StationFacility:TokyoMetro.Kudanshita.Tozai
   station_facility_custom_alias: odpt.StationFacility:TokyoMetro.Kudanshita
   name_ja: 九段下
@@ -90,7 +90,7 @@ odpt.Station:TokyoMetro.Tozai.Kudanshita:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Takebashi:
-  station_facility: odpt.StationFacility:TokyoMetro.Takebashi
+  station_facility_info: odpt.StationFacility:TokyoMetro.Takebashi
   name_ja: 竹橋
   name_hira: たけばし
   name_in_system: Takebashi
@@ -102,7 +102,7 @@ odpt.Station:TokyoMetro.Tozai.Takebashi:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Otemachi:
-  station_facility: odpt.StationFacility:TokyoMetro.Otemachi
+  station_facility_info: odpt.StationFacility:TokyoMetro.Otemachi
   name_ja: 大手町
   name_hira: おおてまち
   name_in_system: Otemachi
@@ -114,7 +114,7 @@ odpt.Station:TokyoMetro.Tozai.Otemachi:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Nihombashi:
-  station_facility: odpt.StationFacility:TokyoMetro.Nihombashi
+  station_facility_info: odpt.StationFacility:TokyoMetro.Nihombashi
   name_ja: 日本橋
   name_hira: にほんばし
   name_in_system: Nihombashi
@@ -126,7 +126,7 @@ odpt.Station:TokyoMetro.Tozai.Nihombashi:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Kayabacho:
-  station_facility: odpt.StationFacility:TokyoMetro.Kayabacho
+  station_facility_info: odpt.StationFacility:TokyoMetro.Kayabacho
   name_ja: 茅場町
   name_hira: かやばちょう
   name_in_system: Kayabacho
@@ -138,7 +138,7 @@ odpt.Station:TokyoMetro.Tozai.Kayabacho:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.MonzenNakacho:
-  station_facility: odpt.StationFacility:TokyoMetro.MonzenNakacho
+  station_facility_info: odpt.StationFacility:TokyoMetro.MonzenNakacho
   name_ja: 門前仲町
   name_hira: もんぜんなかちょう
   name_in_system: MonzenNakacho
@@ -150,7 +150,7 @@ odpt.Station:TokyoMetro.Tozai.MonzenNakacho:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Kiba:
-  station_facility: odpt.StationFacility:TokyoMetro.Kiba
+  station_facility_info: odpt.StationFacility:TokyoMetro.Kiba
   name_ja: 木場
   name_hira: きば
   name_in_system: Kiba
@@ -162,7 +162,7 @@ odpt.Station:TokyoMetro.Tozai.Kiba:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.Toyocho:
-  station_facility: odpt.StationFacility:TokyoMetro.Toyocho
+  station_facility_info: odpt.StationFacility:TokyoMetro.Toyocho
   name_ja: 東陽町
   name_hira: とうようちょう
   name_in_system: Toyocho
@@ -174,7 +174,7 @@ odpt.Station:TokyoMetro.Tozai.Toyocho:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.MinamiSunamachi:
-  station_facility: odpt.StationFacility:TokyoMetro.MinamiSunamachi
+  station_facility_info: odpt.StationFacility:TokyoMetro.MinamiSunamachi
   name_ja: 南砂町
   name_hira: みなみすなまち
   name_in_system: MinamiSunamachi
@@ -185,7 +185,7 @@ odpt.Station:TokyoMetro.Tozai.MinamiSunamachi:
     - custom.StoppingPattern:TokyoMetro.Tozai.CommuterRapid
 
 odpt.Station:TokyoMetro.Tozai.NishiKasai:
-  station_facility: odpt.StationFacility:TokyoMetro.NishiKasai
+  station_facility_info: odpt.StationFacility:TokyoMetro.NishiKasai
   name_ja: 西葛西
   name_hira: にしかさい
   name_in_system: NishiKasai
@@ -196,7 +196,7 @@ odpt.Station:TokyoMetro.Tozai.NishiKasai:
     - custom.StoppingPattern:TokyoMetro.Tozai.CommuterRapid
 
 odpt.Station:TokyoMetro.Tozai.Kasai:
-  station_facility: odpt.StationFacility:TokyoMetro.Kasai
+  station_facility_info: odpt.StationFacility:TokyoMetro.Kasai
   name_ja: 葛西
   name_hira: かさい
   name_in_system: Kasai
@@ -207,7 +207,7 @@ odpt.Station:TokyoMetro.Tozai.Kasai:
     - custom.StoppingPattern:TokyoMetro.Tozai.CommuterRapid
 
 odpt.Station:TokyoMetro.Tozai.Urayasu:
-  station_facility: odpt.StationFacility:TokyoMetro.Urayasu
+  station_facility_info: odpt.StationFacility:TokyoMetro.Urayasu
   name_ja: 浦安
   name_hira: うらやす
   name_in_system: Urayasu
@@ -219,7 +219,7 @@ odpt.Station:TokyoMetro.Tozai.Urayasu:
     - custom.StoppingPattern:TokyoMetro.Tozai.Rapid
 
 odpt.Station:TokyoMetro.Tozai.MinamiGyotoku:
-  station_facility: odpt.StationFacility:TokyoMetro.MinamiGyotoku
+  station_facility_info: odpt.StationFacility:TokyoMetro.MinamiGyotoku
   name_ja: 南行徳
   name_hira: みなみぎょうとく
   name_in_system: MinamiGyotoku
@@ -229,7 +229,7 @@ odpt.Station:TokyoMetro.Tozai.MinamiGyotoku:
     - custom.StoppingPattern:TokyoMetro.Tozai.Local
 
 odpt.Station:TokyoMetro.Tozai.Gyotoku:
-  station_facility: odpt.StationFacility:TokyoMetro.Gyotoku
+  station_facility_info: odpt.StationFacility:TokyoMetro.Gyotoku
   name_ja: 行徳
   name_hira: ぎょうとく
   name_in_system: Gyotoku
@@ -239,7 +239,7 @@ odpt.Station:TokyoMetro.Tozai.Gyotoku:
     - custom.StoppingPattern:TokyoMetro.Tozai.Local
 
 odpt.Station:TokyoMetro.Tozai.Myoden:
-  station_facility: odpt.StationFacility:TokyoMetro.Myoden
+  station_facility_info: odpt.StationFacility:TokyoMetro.Myoden
   name_ja: 妙典
   name_hira: みょうでん
   name_in_system: Myoden
@@ -249,7 +249,7 @@ odpt.Station:TokyoMetro.Tozai.Myoden:
     - custom.StoppingPattern:TokyoMetro.Tozai.Local
 
 odpt.Station:TokyoMetro.Tozai.BarakiNakayama:
-  station_facility: odpt.StationFacility:TokyoMetro.BarakiNakayama
+  station_facility_info: odpt.StationFacility:TokyoMetro.BarakiNakayama
   name_ja: 原木中山
   name_hira: ばらきなかやま
   name_in_system: BarakiNakayama
@@ -262,7 +262,7 @@ odpt.Station:TokyoMetro.Tozai.NishiFunabashi:
   station_alias:
     - odpt.Station:JR-East.ChuoChikatetsuTozai.NishiFunabashi
     - odpt.Station:ToyoRapidRailway.ToyoRapid.NishiFunabashi
-  station_facility: odpt.StationFacility:TokyoMetro.NishiFunabashi
+  station_facility_info: odpt.StationFacility:TokyoMetro.NishiFunabashi
   station_facility_custom_alias:
     - odpt.StationFacility:JR-East.NishiFunabashi.DirectOperationToTokyoMetro
     - odpt.StationFacility:ToyoRapidRailway.ToyoRapid.NishiFunabashi

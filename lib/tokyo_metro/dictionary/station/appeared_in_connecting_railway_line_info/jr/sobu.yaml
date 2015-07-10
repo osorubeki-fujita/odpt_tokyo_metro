@@ -1,5 +1,5 @@
 odpt.Station:JR-East.Sobu.ShinNihombashi:
-  station_facility: odpt.StationFacility:JR-East.ShinNihombashi
+  station_facility_info: odpt.StationFacility:JR-East.ShinNihombashi
   name_ja: 新日本橋
   name_hira: しんにほんばし
   name_in_system: ShinNihombashi

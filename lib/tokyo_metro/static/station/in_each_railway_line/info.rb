@@ -6,15 +6,15 @@ class TokyoMetro::Static::Station::InEachRailwayLine::Info
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
 
   # Constructor
-  def initialize( same_as , station_name_alias , station_facility , station_facility_custom , station_facility_custom_alias ,
-      name_ja , name_hira , name_in_system , name_en , station_code , 
+  def initialize( same_as , station_name_alias , station_facility_info , station_facility_custom , station_facility_custom_alias ,
+      name_ja , name_hira , name_in_system , name_en , station_code ,
       administrator , other_operator , stop ,
       some_trains_stop , stop_for_drivers ,
       index_in_railway_line )
     @same_as = same_as
     @station_name_alias = station_name_alias
 
-    @station_facility = station_facility
+    @station_facility_info = station_facility_info
     @station_facility_custom = station_facility_custom
     @station_facility_custom_alias = station_facility_custom_alias
 
@@ -38,7 +38,7 @@ class TokyoMetro::Static::Station::InEachRailwayLine::Info
   attr_reader :station_name_alias
 
   # @return [String]
-  attr_reader :station_facility
+  attr_reader :station_facility_info
   # @return [String or nil]
   attr_reader :station_facility_custom
   # @return [String, ::Array or nil]

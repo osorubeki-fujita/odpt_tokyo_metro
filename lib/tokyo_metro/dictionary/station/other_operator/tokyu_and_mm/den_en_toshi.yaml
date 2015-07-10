@@ -1,6 +1,6 @@
 odpt.Station:Tokyu.DenEnToshi.Shibuya:
   station_alias: odpt.Station:TokyoMetro.Hanzomon.Shibuya
-  station_facility: odpt.StationFacility:Tokyu.Shibuya
+  station_facility_info: odpt.StationFacility:Tokyu.Shibuya
   station_facility_custom_alias:
     - odpt.StationFacility:TokyoMetro.Shibuya.HanzomonFukutoshin
     - odpt.StationFacility:TokyoMetro.Shibiya
@@ -16,7 +16,7 @@ odpt.Station:Tokyu.DenEnToshi.Shibuya:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.IkejiriOhashi:
-  station_facility: odpt.StationFacility:Tokyu.IkejiriOhashi
+  station_facility_info: odpt.StationFacility:Tokyu.IkejiriOhashi
   name_ja: 池尻大橋
   name_hira: いけじりおおはし
   name_in_system: IkejiriOhashi
@@ -27,7 +27,7 @@ odpt.Station:Tokyu.DenEnToshi.IkejiriOhashi:
     - custom.StoppingPattern:Tokyu.DenEnToshi.SemiExpress
 
 odpt.Station:Tokyu.DenEnToshi.Sangendyaya:
-  station_facility: odpt.StationFacility:Tokyu.Sangendyaya
+  station_facility_info: odpt.StationFacility:Tokyu.Sangendyaya
   name_ja: 三軒茶屋
   name_hira: さんげんぢゃや
   name_in_system: Sangendyaya
@@ -40,7 +40,7 @@ odpt.Station:Tokyu.DenEnToshi.Sangendyaya:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.KomazawaDaigaku:
-  station_facility: odpt.StationFacility:Tokyu.KomazawaDaigaku
+  station_facility_info: odpt.StationFacility:Tokyu.KomazawaDaigaku
   name_ja: 駒沢大学
   name_hira: こまざわだいがく
   name_in_system: KomazawaDaigaku
@@ -51,7 +51,7 @@ odpt.Station:Tokyu.DenEnToshi.KomazawaDaigaku:
     - custom.StoppingPattern:Tokyu.DenEnToshi.SemiExpress
 
 odpt.Station:Tokyu.DenEnToshi.SakuraShinmachi:
-  station_facility: odpt.StationFacility:Tokyu.SakuraShinmachi
+  station_facility_info: odpt.StationFacility:Tokyu.SakuraShinmachi
   name_ja: 桜新町
   name_hira: さくらしんまち
   name_in_system: SakuraShinmachi
@@ -62,7 +62,7 @@ odpt.Station:Tokyu.DenEnToshi.SakuraShinmachi:
     - custom.StoppingPattern:Tokyu.DenEnToshi.SemiExpress
 
 odpt.Station:Tokyu.DenEnToshi.Yoga:
-  station_facility: odpt.StationFacility:Tokyu.Yoga
+  station_facility_info: odpt.StationFacility:Tokyu.Yoga
   name_ja: 用賀
   name_hira: ようが
   name_in_system: Yoga
@@ -73,7 +73,7 @@ odpt.Station:Tokyu.DenEnToshi.Yoga:
     - custom.StoppingPattern:Tokyu.DenEnToshi.SemiExpress
 
 odpt.Station:Tokyu.DenEnToshi.FutakoTamagawa:
-  station_facility: odpt.StationFacility:Tokyu.FutakoTamagawa
+  station_facility_info: odpt.StationFacility:Tokyu.FutakoTamagawa
   name_ja: 二子玉川
   name_hira: ふたこたまがわ
   name_in_system: FutakoTamagawa
@@ -86,7 +86,7 @@ odpt.Station:Tokyu.DenEnToshi.FutakoTamagawa:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.FutakoShinchi:
-  station_facility: odpt.StationFacility:Tokyu.FutakoShinchi
+  station_facility_info: odpt.StationFacility:Tokyu.FutakoShinchi
   name_ja: 二子新地
   name_hira: ふたこしんち
   name_in_system: FutakoShinchi
@@ -96,7 +96,7 @@ odpt.Station:Tokyu.DenEnToshi.FutakoShinchi:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Takatsu:
-  station_facility: odpt.StationFacility:Tokyu.Takatsu
+  station_facility_info: odpt.StationFacility:Tokyu.Takatsu
   name_ja: 高津
   name_hira: たかつ
   name_in_system: Takatsu
@@ -106,7 +106,7 @@ odpt.Station:Tokyu.DenEnToshi.Takatsu:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Mizonokuchi:
-  station_facility: odpt.StationFacility:Tokyu.Mizonokuchi
+  station_facility_info: odpt.StationFacility:Tokyu.Mizonokuchi
   name_ja: 溝の口
   name_hira: みぞのくち
   name_in_system: Mizonokuchi
@@ -119,7 +119,7 @@ odpt.Station:Tokyu.DenEnToshi.Mizonokuchi:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.Kajigaya:
-  station_facility: odpt.StationFacility:Tokyu.Kajigaya
+  station_facility_info: odpt.StationFacility:Tokyu.Kajigaya
   name_ja: 梶が谷
   name_hira: かじがや
   name_in_system: Kajigaya
@@ -129,7 +129,7 @@ odpt.Station:Tokyu.DenEnToshi.Kajigaya:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Miyazakidai:
-  station_facility: odpt.StationFacility:Tokyu.Miyazakidai
+  station_facility_info: odpt.StationFacility:Tokyu.Miyazakidai
   name_ja: 宮崎台
   name_hira: みやざきだい
   name_in_system: Miyazakidai
@@ -139,7 +139,7 @@ odpt.Station:Tokyu.DenEnToshi.Miyazakidai:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Miyamaedaira:
-  station_facility: odpt.StationFacility:Tokyu.Miyamaedaira
+  station_facility_info: odpt.StationFacility:Tokyu.Miyamaedaira
   name_ja: 宮前平
   name_hira: みやまえだいら
   name_in_system: Miyamaedaira
@@ -149,7 +149,7 @@ odpt.Station:Tokyu.DenEnToshi.Miyamaedaira:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Saginuma:
-  station_facility: odpt.StationFacility:Tokyu.Saginuma
+  station_facility_info: odpt.StationFacility:Tokyu.Saginuma
   name_ja: 鷺沼
   name_hira: さぎぬま
   name_in_system: Saginuma
@@ -162,7 +162,7 @@ odpt.Station:Tokyu.DenEnToshi.Saginuma:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.TamaPlaza:
-  station_facility: odpt.StationFacility:Tokyu.TamaPlaza
+  station_facility_info: odpt.StationFacility:Tokyu.TamaPlaza
   name_ja: たまプラーザ
   name_hira: たまぷらーざ
   name_in_system: TamaPlaza
@@ -175,7 +175,7 @@ odpt.Station:Tokyu.DenEnToshi.TamaPlaza:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.Azamino:
-  station_facility: odpt.StationFacility:Tokyu.Azamino
+  station_facility_info: odpt.StationFacility:Tokyu.Azamino
   name_ja: あざみ野
   name_hira: あざみの
   name_in_system: Azamino
@@ -188,7 +188,7 @@ odpt.Station:Tokyu.DenEnToshi.Azamino:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.Eda:
-  station_facility: odpt.StationFacility:Tokyu.Eda
+  station_facility_info: odpt.StationFacility:Tokyu.Eda
   name_ja: 江田
   name_hira: えだ
   name_in_system: Eda
@@ -198,7 +198,7 @@ odpt.Station:Tokyu.DenEnToshi.Eda:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Ichigao:
-  station_facility: odpt.StationFacility:Tokyu.Ichigao
+  station_facility_info: odpt.StationFacility:Tokyu.Ichigao
   name_ja: 市が尾
   name_hira: いちがお
   name_in_system: Ichigao
@@ -208,7 +208,7 @@ odpt.Station:Tokyu.DenEnToshi.Ichigao:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Fujigaoka:
-  station_facility: odpt.StationFacility:Tokyu.Fujigaoka
+  station_facility_info: odpt.StationFacility:Tokyu.Fujigaoka
   name_ja: 藤が丘
   name_hira: ふじがおか
   name_in_system: Fujigaoka
@@ -218,7 +218,7 @@ odpt.Station:Tokyu.DenEnToshi.Fujigaoka:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Aobadai:
-  station_facility: odpt.StationFacility:Tokyu.Aobadai
+  station_facility_info: odpt.StationFacility:Tokyu.Aobadai
   name_ja: 青葉台
   name_hira: あおばだい
   name_in_system: Aobadai
@@ -231,7 +231,7 @@ odpt.Station:Tokyu.DenEnToshi.Aobadai:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.Tana:
-  station_facility: odpt.StationFacility:Tokyu.Tana
+  station_facility_info: odpt.StationFacility:Tokyu.Tana
   name_ja: 田奈
   name_hira: たな
   name_in_system: Tana
@@ -241,7 +241,7 @@ odpt.Station:Tokyu.DenEnToshi.Tana:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Nagatsuta:
-  station_facility: odpt.StationFacility:Tokyu.Nagatsuta
+  station_facility_info: odpt.StationFacility:Tokyu.Nagatsuta
   name_ja: 長津田
   name_hira: ながつた
   name_in_system: Nagatsuta
@@ -254,7 +254,7 @@ odpt.Station:Tokyu.DenEnToshi.Nagatsuta:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Express
 
 odpt.Station:Tokyu.DenEnToshi.Tsukushino:
-  station_facility: odpt.StationFacility:Tokyu.Tsukushino
+  station_facility_info: odpt.StationFacility:Tokyu.Tsukushino
   name_ja: つくし野
   name_hira: つくしの
   name_in_system: Tsukushino
@@ -264,7 +264,7 @@ odpt.Station:Tokyu.DenEnToshi.Tsukushino:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.Suzukakedai:
-  station_facility: odpt.StationFacility:Tokyu.Suzukakedai
+  station_facility_info: odpt.StationFacility:Tokyu.Suzukakedai
   name_ja: すずかけ台
   name_hira: すずかけだい
   name_in_system: Suzukakedai
@@ -274,7 +274,7 @@ odpt.Station:Tokyu.DenEnToshi.Suzukakedai:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.MinamiMachida:
-  station_facility: odpt.StationFacility:Tokyu.MinamiMachida
+  station_facility_info: odpt.StationFacility:Tokyu.MinamiMachida
   name_ja: 南町田
   name_hira: みなみまちだ
   name_in_system: MinamiMachida
@@ -286,7 +286,7 @@ odpt.Station:Tokyu.DenEnToshi.MinamiMachida:
     - custom.StoppingPattern:Tokyu.DenEnToshi.HolidayExpress
 
 odpt.Station:Tokyu.DenEnToshi.Tsukimino:
-  station_facility: odpt.StationFacility:Tokyu.Tsukimino
+  station_facility_info: odpt.StationFacility:Tokyu.Tsukimino
   name_ja: つきみ野
   name_hira: つきみの
   name_in_system: Tsukimino
@@ -296,7 +296,7 @@ odpt.Station:Tokyu.DenEnToshi.Tsukimino:
     - custom.StoppingPattern:Tokyu.DenEnToshi.Local
 
 odpt.Station:Tokyu.DenEnToshi.ChuoRinkan:
-  station_facility: odpt.StationFacility:Tokyu.ChuoRinkan
+  station_facility_info: odpt.StationFacility:Tokyu.ChuoRinkan
   name_ja: 中央林間
   name_hira: ちゅうおうりんかん
   name_in_system: ChuoRinkan

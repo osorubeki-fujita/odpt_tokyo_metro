@@ -1,7 +1,7 @@
 # 都営浅草線
 
 odpt.Station:Toei.Asakusa.NishiMagome:
-  station_facility: odpt.StationFacility:Toei.NishiMagome
+  station_facility_info: odpt.StationFacility:Toei.NishiMagome
   name_ja: 西馬込
   name_hira: にしまごめ
   name_in_system: NishiMagome
@@ -11,7 +11,7 @@ odpt.Station:Toei.Asakusa.NishiMagome:
     - custom.StoppingPattern:Toei.Asakusa.Local
 
 odpt.Station:Toei.Asakusa.Magome:
-  station_facility: odpt.StationFacility:Toei.Magome
+  station_facility_info: odpt.StationFacility:Toei.Magome
   name_ja: 馬込
   name_hira: まごめ
   name_in_system: Magome
@@ -21,7 +21,7 @@ odpt.Station:Toei.Asakusa.Magome:
     - custom.StoppingPattern:Toei.Asakusa.Local
 
 odpt.Station:Toei.Asakusa.Nakanobu:
-  station_facility: odpt.StationFacility:Toei.Nakanobu
+  station_facility_info: odpt.StationFacility:Toei.Nakanobu
   name_ja: 中延
   name_hira: なかのぶ
   name_in_system: Nakanobu
@@ -31,7 +31,7 @@ odpt.Station:Toei.Asakusa.Nakanobu:
     - custom.StoppingPattern:Toei.Asakusa.Local
 
 odpt.Station:Toei.Asakusa.Togoshi:
-  station_facility: odpt.StationFacility:Toei.Togoshi
+  station_facility_info: odpt.StationFacility:Toei.Togoshi
   name_ja: 戸越
   name_hira: とごし
   name_in_system: Togoshi
@@ -41,7 +41,7 @@ odpt.Station:Toei.Asakusa.Togoshi:
     - custom.StoppingPattern:Toei.Asakusa.Local
 
 odpt.Station:Toei.Asakusa.Gotanda:
-  station_facility: odpt.StationFacility:Toei.Gotanda
+  station_facility_info: odpt.StationFacility:Toei.Gotanda
   name_ja: 五反田
   name_hira: ごたんだ
   name_in_system: Gotanda
@@ -51,7 +51,7 @@ odpt.Station:Toei.Asakusa.Gotanda:
     - custom.StoppingPattern:Toei.Asakusa.Local
 
 odpt.Station:Toei.Asakusa.Takanawadai:
-  station_facility: odpt.StationFacility:Toei.Takanawadai
+  station_facility_info: odpt.StationFacility:Toei.Takanawadai
   name_ja: 高輪台
   name_hira: たかなわだい
   name_in_system: Takanawadai
@@ -59,11 +59,11 @@ odpt.Station:Toei.Asakusa.Takanawadai:
   station_code: A-06
   stop:
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Sengakuji:
   station_alias:
     - odpt.Station:Keikyu.Main.Sengakuji
-  station_facility: odpt.StationFacility:Toei.Sengakuji
+  station_facility_info: odpt.StationFacility:Toei.Sengakuji
   station_facility_custom: odpt.StationFacility:Keikyu.Sengakuji
   station_facility_custom_alias:
     - odpt.StationFacility:Toei.Sengakuji
@@ -75,9 +75,9 @@ odpt.Station:Toei.Asakusa.Sengakuji:
   stop:
     - custom.StoppingPattern:Toei.Asakusa.AirportLimitedExpress
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Mita:
-  station_facility: odpt.StationFacility:Toei.Mita
+  station_facility_info: odpt.StationFacility:Toei.Mita
   name_ja: 三田
   name_hira: みた
   name_in_system: Mita
@@ -86,9 +86,9 @@ odpt.Station:Toei.Asakusa.Mita:
   stop:
     - custom.StoppingPattern:Toei.Asakusa.AirportLimitedExpress
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Daimon:
-  station_facility: odpt.StationFacility:Toei.Mita
+  station_facility_info: odpt.StationFacility:Toei.Mita
   name_ja: 大門
   name_hira: だいもん
   name_in_system: Daimon
@@ -97,9 +97,9 @@ odpt.Station:Toei.Asakusa.Daimon:
   stop:
     - custom.StoppingPattern:Toei.Asakusa.AirportLimitedExpress
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Shimbashi:
-  station_facility: odpt.StationFacility:Toei.Shimbashi
+  station_facility_info: odpt.StationFacility:Toei.Shimbashi
   name_ja: 新橋
   name_hira: しんばし
   name_in_system: Shimbashi
@@ -108,9 +108,9 @@ odpt.Station:Toei.Asakusa.Shimbashi:
   stop:
     - custom.StoppingPattern:Toei.Asakusa.AirportLimitedExpress
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.HigashiGinza:
-  station_facility: odpt.StationFacility:Toei.HigashiGinza
+  station_facility_info: odpt.StationFacility:Toei.HigashiGinza
   name_ja: 東銀座
   name_hira: ひがしぎんざ
   name_in_system: HigashiGinza
@@ -118,9 +118,9 @@ odpt.Station:Toei.Asakusa.HigashiGinza:
   station_code: A-11
   stop:
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Takaracho:
-  station_facility: odpt.StationFacility:Toei.Takaracho
+  station_facility_info: odpt.StationFacility:Toei.Takaracho
   name_ja: 宝町
   name_hira: たからちょう
   name_in_system: Takaracho
@@ -128,9 +128,9 @@ odpt.Station:Toei.Asakusa.Takaracho:
   station_code: A-12
   stop:
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Nihombashi:
-  station_facility: odpt.StationFacility:Toei.Nihombashi
+  station_facility_info: odpt.StationFacility:Toei.Nihombashi
   name_ja: 日本橋
   name_hira: にほんばし
   name_in_system: Nihombashi
@@ -139,9 +139,9 @@ odpt.Station:Toei.Asakusa.Nihombashi:
   stop:
     - custom.StoppingPattern:Toei.Asakusa.AirportLimitedExpress
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Ningyocho:
-  station_facility: odpt.StationFacility:Toei.Ningyocho
+  station_facility_info: odpt.StationFacility:Toei.Ningyocho
   name_ja: 人形町
   name_hira: にんぎょうちょう
   name_in_system: Ningyocho
@@ -149,9 +149,9 @@ odpt.Station:Toei.Asakusa.Ningyocho:
   station_code: A-14
   stop:
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.HigashiNihombashi:
-  station_facility: odpt.StationFacility:Toei.HigashiNihombashi
+  station_facility_info: odpt.StationFacility:Toei.HigashiNihombashi
   name_ja: 東日本橋
   name_hira: ひがしにほんばし
   name_in_system: HigashiNihombashi
@@ -160,9 +160,9 @@ odpt.Station:Toei.Asakusa.HigashiNihombashi:
   stop:
     - custom.StoppingPattern:Toei.Asakusa.AirportLimitedExpress
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Asakusabashi:
-  station_facility: odpt.StationFacility:Toei.Asakusabashi
+  station_facility_info: odpt.StationFacility:Toei.Asakusabashi
   name_ja: 浅草橋
   name_hira: あさくさばし
   name_in_system: Asakusabashi
@@ -170,9 +170,9 @@ odpt.Station:Toei.Asakusa.Asakusabashi:
   station_code: A-16
   stop:
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Kuramae:
-  station_facility: odpt.StationFacility:Toei.Kuramae
+  station_facility_info: odpt.StationFacility:Toei.Kuramae
   name_ja: 蔵前
   name_hira: くらまえ
   name_in_system: Kuramae
@@ -180,9 +180,9 @@ odpt.Station:Toei.Asakusa.Kuramae:
   station_code: A-17
   stop:
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Asakusa:
-  station_facility: odpt.StationFacility:Toei.Asakusa
+  station_facility_info: odpt.StationFacility:Toei.Asakusa
   name_ja: 浅草
   name_hira: あさくさ
   name_in_system: Asakusa
@@ -191,9 +191,9 @@ odpt.Station:Toei.Asakusa.Asakusa:
   stop:
     - custom.StoppingPattern:Toei.Asakusa.AirportLimitedExpress
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.HonjoAzumabashi:
-  station_facility: odpt.StationFacility:Toei.HonjoAzumabashi
+  station_facility_info: odpt.StationFacility:Toei.HonjoAzumabashi
   name_ja: 本所吾妻橋
   name_hira: ほんじょあづまばし
   name_in_system: HonjoAzumabashi
@@ -201,11 +201,11 @@ odpt.Station:Toei.Asakusa.HonjoAzumabashi:
   station_code: A-19
   stop:
     - custom.StoppingPattern:Toei.Asakusa.Local
-    
+
 odpt.Station:Toei.Asakusa.Oshiage:
   station_alias:
     - odpt.Station:Keisei.KeiseiOshiage.Oshiage
-  station_facility: odpt.StationFacility:Toei.Oshiage
+  station_facility_info: odpt.StationFacility:Toei.Oshiage
   station_facility_custom: odpt.StationFacility:Keisei.Oshiage
   station_facility_custom_alias:
     - odpt.StationFacility:Toei.Oshiage

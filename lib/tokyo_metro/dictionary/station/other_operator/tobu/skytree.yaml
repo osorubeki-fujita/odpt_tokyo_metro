@@ -1,5 +1,5 @@
 odpt.Station:Tobu.SkyTree.Asakusa:
-  station_facility: odpt.StationFacility:Tobu.Asakusa
+  station_facility_info: odpt.StationFacility:Tobu.Asakusa
   name_ja: 浅草
   name_hira: あさくさ
   name_in_system: Asakusa
@@ -13,7 +13,7 @@ odpt.Station:Tobu.SkyTree.Asakusa:
     - custom.StoppingPattern:Tobu.SkyTree.Rapid
 
 odpt.Station:Tobu.SkyTree.TokyoSkytree:
-  station_facility: odpt.StationFacility:Tobu.TokyoSkytree
+  station_facility_info: odpt.StationFacility:Tobu.TokyoSkytree
   name_ja: とうきょうスカイツリー
   name_hira: とうきょうすかいつりー
   name_in_system: TokyoSkytree
@@ -27,7 +27,7 @@ odpt.Station:Tobu.SkyTree.TokyoSkytree:
     - custom.StoppingPattern:Tobu.SkyTree.Rapid
 
 odpt.Station:Tobu.SkyTree.Hikifune:
-  station_facility: odpt.StationFacility:Tobu.Hikifune
+  station_facility_info: odpt.StationFacility:Tobu.Hikifune
   name_ja: 曳舟
   name_hira: ひきふね
   name_in_system: Hikifune
@@ -41,7 +41,7 @@ odpt.Station:Tobu.SkyTree.Hikifune:
     - custom.StoppingPattern:Tobu.SkyTree.Express
 
 odpt.Station:Tobu.SkyTree.HigashiMukoujima:
-  station_facility: odpt.StationFacility:Tobu.HigashiMukoujima
+  station_facility_info: odpt.StationFacility:Tobu.HigashiMukoujima
   name_ja: 東向島
   name_hira: ひがしむこうじま
   name_in_system: HigashiMukoujima
@@ -53,7 +53,7 @@ odpt.Station:Tobu.SkyTree.HigashiMukoujima:
     - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
 
 odpt.Station:Tobu.SkyTree.Kanegafuchi:
-  station_facility: odpt.StationFacility:Tobu.Kanegafuchi
+  station_facility_info: odpt.StationFacility:Tobu.Kanegafuchi
   name_ja: 鐘ヶ淵
   name_hira: かねがふち
   name_in_system: Kanegafuchi
@@ -65,7 +65,7 @@ odpt.Station:Tobu.SkyTree.Kanegafuchi:
     - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
 
 odpt.Station:Tobu.SkyTree.Horikiri:
-  station_facility: odpt.StationFacility:Tobu.Horikiri
+  station_facility_info: odpt.StationFacility:Tobu.Horikiri
   name_ja: 堀切
   name_hira: ほりきり
   name_in_system: Horikiri
@@ -77,7 +77,7 @@ odpt.Station:Tobu.SkyTree.Horikiri:
     - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
 
 odpt.Station:Tobu.SkyTree.Ushida:
-  station_facility: odpt.StationFacility:Tobu.Ushida
+  station_facility_info: odpt.StationFacility:Tobu.Ushida
   name_ja: 牛田
   name_hira: うしだ
   name_in_system: Ushida
@@ -90,7 +90,7 @@ odpt.Station:Tobu.SkyTree.Ushida:
 
 odpt.Station:Tobu.SkyTree.KitaSenju:
   station_alias: odpt.Station:TokyoMetro.Hibiya.KitaSenju
-  station_facility: odpt.StationFacility:Tobu.KitaSenju
+  station_facility_info: odpt.StationFacility:Tobu.KitaSenju
   station_facility_custom_alias: odpt.StationFacility:TokyoMetro.KitaSenju.Hibiya
   name_ja: 北千住
   name_hira: きたせんじゅ
@@ -107,7 +107,7 @@ odpt.Station:Tobu.SkyTree.KitaSenju:
     - custom.StoppingPattern:Tobu.SkyTree.Rapid
 
 odpt.Station:Tobu.SkyTree.Kosuge:
-  station_facility: odpt.StationFacility:Tobu.Kosuge
+  station_facility_info: odpt.StationFacility:Tobu.Kosuge
   name_ja: 小菅
   name_hira: こすげ
   name_in_system: Kosuge
@@ -117,7 +117,7 @@ odpt.Station:Tobu.SkyTree.Kosuge:
     - custom.StoppingPattern:Tobu.SkyTree.Local
 
 odpt.Station:Tobu.SkyTree.Gotanno:
-  station_facility: odpt.StationFacility:Tobu.Gotanno
+  station_facility_info: odpt.StationFacility:Tobu.Gotanno
   name_ja: 五反野
   name_hira: ごたんの
   name_in_system: Gotanno
@@ -127,7 +127,7 @@ odpt.Station:Tobu.SkyTree.Gotanno:
     - custom.StoppingPattern:Tobu.SkyTree.Local
 
 odpt.Station:Tobu.SkyTree.Umejima:
-  station_facility: odpt.StationFacility:Tobu.Umejima
+  station_facility_info: odpt.StationFacility:Tobu.Umejima
   name_ja: 梅島
   name_hira: うめじま
   name_in_system: Umejima
@@ -137,7 +137,7 @@ odpt.Station:Tobu.SkyTree.Umejima:
     - custom.StoppingPattern:Tobu.SkyTree.Local
 
 odpt.Station:Tobu.SkyTree.NishiArai:
-  station_facility: odpt.StationFacility:Tobu.NishiArai
+  station_facility_info: odpt.StationFacility:Tobu.NishiArai
   name_ja: 西新井
   name_hira: にしあらい
   name_in_system: NishiArai
@@ -151,7 +151,7 @@ odpt.Station:Tobu.SkyTree.NishiArai:
     - custom.StoppingPattern:Tobu.SkyTree.Express
 
 odpt.Station:Tobu.SkyTree.Takenotsuka:
-  station_facility: odpt.StationFacility:Tobu.Takenotsuka
+  station_facility_info: odpt.StationFacility:Tobu.Takenotsuka
   name_ja: 竹ノ塚
   name_hira: たけのつか
   name_in_system: Takenotsuka
@@ -161,7 +161,7 @@ odpt.Station:Tobu.SkyTree.Takenotsuka:
     - custom.StoppingPattern:Tobu.SkyTree.Local
 
 odpt.Station:Tobu.SkyTree.Yatsuka:
-  station_facility: odpt.StationFacility:Tobu.Yatsuka
+  station_facility_info: odpt.StationFacility:Tobu.Yatsuka
   name_ja: 谷塚
   name_hira: やつか
   name_in_system: Yatsuka
@@ -171,7 +171,7 @@ odpt.Station:Tobu.SkyTree.Yatsuka:
     - custom.StoppingPattern:Tobu.SkyTree.Local
 
 odpt.Station:Tobu.SkyTree.Soka:
-  station_facility: odpt.StationFacility:Tobu.Soka
+  station_facility_info: odpt.StationFacility:Tobu.Soka
   name_ja: 草加
   name_hira: そうか
   name_in_system: Soka
@@ -185,7 +185,7 @@ odpt.Station:Tobu.SkyTree.Soka:
     - custom.StoppingPattern:Tobu.SkyTree.Express
 
 odpt.Station:Tobu.SkyTree.MatsubaraDanchi:
-  station_facility: odpt.StationFacility:Tobu.MatsubaraDanchi
+  station_facility_info: odpt.StationFacility:Tobu.MatsubaraDanchi
   name_ja: 松原団地
   name_hira: まつばらだんち
   name_in_system: MatsubaraDanchi
@@ -195,7 +195,7 @@ odpt.Station:Tobu.SkyTree.MatsubaraDanchi:
     - custom.StoppingPattern:Tobu.SkyTree.Local
 
 odpt.Station:Tobu.SkyTree.Shinden:
-  station_facility: odpt.StationFacility:Tobu.Shinden
+  station_facility_info: odpt.StationFacility:Tobu.Shinden
   name_ja: 新田
   name_hira: しんでん
   name_in_system: Shinden
@@ -205,7 +205,7 @@ odpt.Station:Tobu.SkyTree.Shinden:
     - custom.StoppingPattern:Tobu.SkyTree.Local
 
 odpt.Station:Tobu.SkyTree.Gamou:
-  station_facility: odpt.StationFacility:Tobu.Gamou
+  station_facility_info: odpt.StationFacility:Tobu.Gamou
   name_ja: 蒲生
   name_hira: がもう
   name_in_system: Gamou
@@ -215,7 +215,7 @@ odpt.Station:Tobu.SkyTree.Gamou:
     - custom.StoppingPattern:Tobu.SkyTree.Local
 
 odpt.Station:Tobu.SkyTree.ShinKoshigaya:
-  station_facility: odpt.StationFacility:Tobu.ShinKoshigaya
+  station_facility_info: odpt.StationFacility:Tobu.ShinKoshigaya
   name_ja: 新越谷
   name_hira: しんこしがや
   name_in_system: ShinKoshigaya
@@ -229,7 +229,7 @@ odpt.Station:Tobu.SkyTree.ShinKoshigaya:
     - custom.StoppingPattern:Tobu.SkyTree.Express
 
 odpt.Station:Tobu.SkyTree.Koshigaya:
-  station_facility: odpt.StationFacility:Tobu.Koshigaya
+  station_facility_info: odpt.StationFacility:Tobu.Koshigaya
   name_ja: 越谷
   name_hira: こしがや
   name_in_system: Koshigaya
@@ -243,7 +243,7 @@ odpt.Station:Tobu.SkyTree.Koshigaya:
     - custom.StoppingPattern:Tobu.SkyTree.Express
 
 odpt.Station:Tobu.SkyTree.KitaKoshigaya:
-  station_facility: odpt.StationFacility:Tobu.KitaKoshigaya
+  station_facility_info: odpt.StationFacility:Tobu.KitaKoshigaya
   name_ja: 北越谷
   name_hira: きたこしがや
   name_in_system: KitaKoshigaya
@@ -255,7 +255,7 @@ odpt.Station:Tobu.SkyTree.KitaKoshigaya:
     - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
 
 odpt.Station:Tobu.SkyTree.Obukuro:
-  station_facility: odpt.StationFacility:Tobu.Obukuro
+  station_facility_info: odpt.StationFacility:Tobu.Obukuro
   name_ja: 大袋
   name_hira: おおぶくろ
   name_in_system: Oobukuro
@@ -267,7 +267,7 @@ odpt.Station:Tobu.SkyTree.Obukuro:
     - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
 
 odpt.Station:Tobu.SkyTree.Sengendai:
-  station_facility: odpt.StationFacility:Tobu.Sengendai
+  station_facility_info: odpt.StationFacility:Tobu.Sengendai
   name_ja: せんげん台
   name_hira: せんげんだい
   name_in_system: Sengendai
@@ -281,7 +281,7 @@ odpt.Station:Tobu.SkyTree.Sengendai:
     - custom.StoppingPattern:Tobu.SkyTree.Express
 
 odpt.Station:Tobu.SkyTree.Takesato:
-  station_facility: odpt.StationFacility:Tobu.Takesato
+  station_facility_info: odpt.StationFacility:Tobu.Takesato
   name_ja: 武里
   name_hira: たけさと
   name_in_system: Takesato
@@ -293,7 +293,7 @@ odpt.Station:Tobu.SkyTree.Takesato:
     - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
 
 odpt.Station:Tobu.SkyTree.Ichinowari:
-  station_facility: odpt.StationFacility:Tobu.Ichinowari
+  station_facility_info: odpt.StationFacility:Tobu.Ichinowari
   name_ja: 一ノ割
   name_hira: いちのわり
   name_in_system: Ichinowari
@@ -305,7 +305,7 @@ odpt.Station:Tobu.SkyTree.Ichinowari:
     - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
 
 odpt.Station:Tobu.SkyTree.Kasukabe:
-  station_facility: odpt.StationFacility:Tobu.Kasukabe
+  station_facility_info: odpt.StationFacility:Tobu.Kasukabe
   name_ja: 春日部
   name_hira: かすかべ
   name_in_system: Kasukabe
@@ -321,7 +321,7 @@ odpt.Station:Tobu.SkyTree.Kasukabe:
     - custom.StoppingPattern:Tobu.SkyTree.Rapid
 
 odpt.Station:Tobu.SkyTree.KitaKasukabe:
-  station_facility: odpt.StationFacility:Tobu.KitaKasukabe
+  station_facility_info: odpt.StationFacility:Tobu.KitaKasukabe
   name_ja: 北春日部
   name_hira: きたかすかべ
   name_in_system: KitaKasukabe
@@ -333,7 +333,7 @@ odpt.Station:Tobu.SkyTree.KitaKasukabe:
     - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
 
 odpt.Station:Tobu.SkyTree.Himemiya:
-  station_facility: odpt.StationFacility:Tobu.Himemiya
+  station_facility_info: odpt.StationFacility:Tobu.Himemiya
   name_ja: 姫宮
   name_hira: ひめみや
   name_in_system: Himemiya
@@ -346,9 +346,9 @@ odpt.Station:Tobu.SkyTree.Himemiya:
 
 odpt.Station:Tobu.SkyTree.TobuDobutsuKoen:
   station_alias: odpt.Station:Tobu.Nikko.TobuDobutsuKoen
-  station_facility: odpt.StationFacility:Tobu.TobuDobutsuKoen
+  station_facility_info: odpt.StationFacility:Tobu.TobuDobutsuKoen
   # station_alias: odpt.Station:Tobu.Nikko.TobuDoubutuKouen
-  # station_facility: odpt.StationFacility:Tobu.TobuDoubutuKouen
+  # station_facility_info: odpt.StationFacility:Tobu.TobuDoubutuKouen
   name_ja: 東武動物公園
   name_hira: とうぶどうぶつこうえん
   name_in_system: TobuDobutsuKoen

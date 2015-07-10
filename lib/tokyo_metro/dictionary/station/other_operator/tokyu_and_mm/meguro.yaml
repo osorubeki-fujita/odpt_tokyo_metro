@@ -2,7 +2,7 @@ odpt.Station:Tokyu.Meguro.Meguro:
   station_alias:
     - odpt.Station:TokyoMetro.Namboku.Meguro
     - odpt.Station:Toei.Mita.Meguro
-  station_facility: odpt.StationFacility:Tokyu.Meguro
+  station_facility_info: odpt.StationFacility:Tokyu.Meguro
   station_facility_custom_alias:
     - odpt.StationFacility:TokyoMetro.Meguro
     - odpt.StationFacility:Toei.Meguro
@@ -16,7 +16,7 @@ odpt.Station:Tokyu.Meguro.Meguro:
     - custom.StoppingPattern:Tokyu.Meguro.Express
 
 odpt.Station:Tokyu.Meguro.Fudomae:
-  station_facility: odpt.StationFacility:Tokyu.Fudomae
+  station_facility_info: odpt.StationFacility:Tokyu.Fudomae
   name_ja: 不動前
   name_hira: ふどうまえ
   name_in_system: Fudomae
@@ -26,7 +26,7 @@ odpt.Station:Tokyu.Meguro.Fudomae:
     - custom.StoppingPattern:Tokyu.Meguro.Local
 
 odpt.Station:Tokyu.Meguro.MusashiKoyama:
-  station_facility: odpt.StationFacility:Tokyu.MusashiKoyama
+  station_facility_info: odpt.StationFacility:Tokyu.MusashiKoyama
   name_ja: 武蔵小山
   name_hira: むさしこやま
   name_in_system: MusashiKoyama
@@ -37,7 +37,7 @@ odpt.Station:Tokyu.Meguro.MusashiKoyama:
     - custom.StoppingPattern:Tokyu.Meguro.Express
 
 odpt.Station:Tokyu.Meguro.NishiKoyama:
-  station_facility: odpt.StationFacility:Tokyu.NishiKoyama
+  station_facility_info: odpt.StationFacility:Tokyu.NishiKoyama
   name_ja: 西小山
   name_hira: にしこやま
   name_in_system: NishiKoyama
@@ -47,7 +47,7 @@ odpt.Station:Tokyu.Meguro.NishiKoyama:
     - custom.StoppingPattern:Tokyu.Meguro.Local
 
 odpt.Station:Tokyu.Meguro.Senzoku:
-  station_facility: odpt.StationFacility:Tokyu.Senzoku
+  station_facility_info: odpt.StationFacility:Tokyu.Senzoku
   name_ja: 洗足
   name_hira: せんぞく
   name_in_system: Senzoku
@@ -57,7 +57,7 @@ odpt.Station:Tokyu.Meguro.Senzoku:
     - custom.StoppingPattern:Tokyu.Meguro.Local
 
 odpt.Station:Tokyu.Meguro.Oookayama:
-  station_facility: odpt.StationFacility:Tokyu.Oookayama
+  station_facility_info: odpt.StationFacility:Tokyu.Oookayama
   name_ja: 大岡山
   name_hira: おおおかやま
   name_in_system: Oookayama
@@ -68,7 +68,7 @@ odpt.Station:Tokyu.Meguro.Oookayama:
     - custom.StoppingPattern:Tokyu.Meguro.Express
 
 odpt.Station:Tokyu.Meguro.Okusawa:
-  station_facility: odpt.StationFacility:Tokyu.Okusawa
+  station_facility_info: odpt.StationFacility:Tokyu.Okusawa
   name_ja: 奥沢
   name_hira: おくさわ
   name_in_system: Okusawa
@@ -79,7 +79,7 @@ odpt.Station:Tokyu.Meguro.Okusawa:
 
 odpt.Station:Tokyu.Meguro.DenEnChofu:
   station_alias: odpt.Station:Tokyu.Toyoko.DenEnChofu
-  station_facility: odpt.StationFacility:Tokyu.DenEnChofu
+  station_facility_info: odpt.StationFacility:Tokyu.DenEnChofu
   name_ja: 田園調布
   name_hira: でんえんちょうふ
   name_in_system: DenEnChofu
@@ -91,7 +91,7 @@ odpt.Station:Tokyu.Meguro.DenEnChofu:
 
 odpt.Station:Tokyu.Meguro.Tamagawa:
   station_alias: odpt.Station:Tokyu.Toyoko.Tamagawa
-  station_facility: odpt.StationFacility:Tokyu.Tamagawa
+  station_facility_info: odpt.StationFacility:Tokyu.Tamagawa
   name_ja: 多摩川
   name_hira: たまがわ
   name_in_system: Tamagawa
@@ -103,7 +103,7 @@ odpt.Station:Tokyu.Meguro.Tamagawa:
 
 odpt.Station:Tokyu.Meguro.ShinMaruko:
   station_alias: odpt.Station:Tokyu.Toyoko.ShinMaruko
-  station_facility: odpt.StationFacility:Tokyu.ShinMaruko
+  station_facility_info: odpt.StationFacility:Tokyu.ShinMaruko
   name_ja: 新丸子
   name_hira: しんまるこ
   name_in_system: ShinMaruko
@@ -114,7 +114,7 @@ odpt.Station:Tokyu.Meguro.ShinMaruko:
 
 odpt.Station:Tokyu.Meguro.MusashiKosugi:
   station_alias: odpt.Station:Tokyu.Toyoko.MusashiKosugi
-  station_facility: odpt.StationFacility:Tokyu.MusashiKosugi
+  station_facility_info: odpt.StationFacility:Tokyu.MusashiKosugi
   name_ja: 武蔵小杉
   name_hira: むさしこすぎ
   name_in_system: MusashiKosugi
@@ -126,7 +126,7 @@ odpt.Station:Tokyu.Meguro.MusashiKosugi:
 
 odpt.Station:Tokyu.Meguro.Motosumiyoshi:
   station_alias: odpt.Station:Tokyu.Toyoko.Motosumiyoshi
-  station_facility: odpt.StationFacility:Tokyu.Motosumiyoshi
+  station_facility_info: odpt.StationFacility:Tokyu.Motosumiyoshi
   name_ja: 元住吉
   name_hira: もとすみよし
   name_in_system: Motosumiyoshi
@@ -137,7 +137,7 @@ odpt.Station:Tokyu.Meguro.Motosumiyoshi:
 
 odpt.Station:Tokyu.Meguro.Hiyoshi:
   station_alias: odpt.Station:Tokyu.Toyoko.Hiyoshi
-  station_facility: odpt.StationFacility:Tokyu.Hiyoshi
+  station_facility_info: odpt.StationFacility:Tokyu.Hiyoshi
   name_ja: 日吉
   name_hira: ひよし
   name_in_system: Hiyoshi

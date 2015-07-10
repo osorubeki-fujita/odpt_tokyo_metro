@@ -1,6 +1,6 @@
 odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.Yokohama:
   station_alias: odpt.Station:Tokyu.Toyoko.Yokohama
-  station_facility: odpt.StationFacility:Minatomirai.Yokohama
+  station_facility_info: odpt.StationFacility:Minatomirai.Yokohama
   station_facility_custom: odpt.StationFacility:Tokyu.Yokohama
   station_facility_custom_alias: odpt.StationFacility:Minatomirai.Yokohama
   name_ja: 横浜
@@ -14,7 +14,7 @@ odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.Yokohama:
     - custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.LimitedExpress
 
 odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.ShinTakashima:
-  station_facility: odpt.StationFacility:Minatomirai.ShinTakashima
+  station_facility_info: odpt.StationFacility:Minatomirai.ShinTakashima
   name_ja: 新高島
   name_hira: しんたかしま
   name_in_system: ShinTakashima
@@ -24,7 +24,7 @@ odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.ShinTakashima:
     - custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.Local
 
 odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.Minatomirai:
-  station_facility: odpt.StationFacility:Minatomirai.Minatomirai
+  station_facility_info: odpt.StationFacility:Minatomirai.Minatomirai
   name_ja: みなとみらい
   name_hira: みなとみらい
   name_in_system: Minatomirai
@@ -36,7 +36,7 @@ odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.Minatomirai:
     - custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.LimitedExpress
 
 odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.Bashamichi:
-  station_facility: odpt.StationFacility:Minatomirai.Bashamichi
+  station_facility_info: odpt.StationFacility:Minatomirai.Bashamichi
   name_ja: 馬車道
   name_hira: ばしゃみち
   name_in_system: Bashamichi
@@ -47,7 +47,7 @@ odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.Bashamichi:
     - custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.Express
 
 odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.NihonOdori:
-  station_facility: odpt.StationFacility:Minatomirai.NihonOdori
+  station_facility_info: odpt.StationFacility:Minatomirai.NihonOdori
   name_ja: 日本大通り
   name_hira: にほんおおどおり
   name_in_system: NihonOdori
@@ -58,7 +58,7 @@ odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.NihonOdori:
     - custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.Express
 
 odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.MotomachiChukagai:
-  station_facility: odpt.StationFacility:Minatomirai.MotomachiChukagai
+  station_facility_info: odpt.StationFacility:Minatomirai.MotomachiChukagai
   name_ja: 元町・中華街
   name_hira: もとまちちゅうかがい
   name_in_system: MotomachiChukagai

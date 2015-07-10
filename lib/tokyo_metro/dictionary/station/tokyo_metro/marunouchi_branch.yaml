@@ -1,5 +1,5 @@
 odpt.Station:TokyoMetro.MarunouchiBranch.Honancho:
-  station_facility: odpt.StationFacility:TokyoMetro.Honancho
+  station_facility_info: odpt.StationFacility:TokyoMetro.Honancho
   name_ja: 方南町
   name_hira: ほうなんちょう
   name_in_system: Honancho
@@ -9,7 +9,7 @@ odpt.Station:TokyoMetro.MarunouchiBranch.Honancho:
     - custom.StoppingPattern:TokyoMetro.MarunouchiBranch.Local
 
 odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho:
-  station_facility: odpt.StationFacility:TokyoMetro.NakanoFujimicho
+  station_facility_info: odpt.StationFacility:TokyoMetro.NakanoFujimicho
   name_ja: 中野富士見町
   name_hira: なかのふじみちょう
   name_in_system: NakanoFujimicho
@@ -19,7 +19,7 @@ odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho:
     - custom.StoppingPattern:TokyoMetro.MarunouchiBranch.Local
 
 odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi:
-  station_facility: odpt.StationFacility:TokyoMetro.NakanoShimbashi
+  station_facility_info: odpt.StationFacility:TokyoMetro.NakanoShimbashi
   name_ja: 中野新橋
   name_hira: なかのしんばし
   name_in_system: NakanoShimbashi
@@ -29,7 +29,7 @@ odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi:
     - custom.StoppingPattern:TokyoMetro.MarunouchiBranch.Local
 
 odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue:
-  station_facility: odpt.StationFacility:TokyoMetro.NakanoSakaue
+  station_facility_info: odpt.StationFacility:TokyoMetro.NakanoSakaue
   name_ja: 中野坂上
   name_hira: なかのさかうえ
   name_in_system: NakanoSakaue

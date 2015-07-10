@@ -2,7 +2,7 @@ odpt.Station:Seibu.Yurakucho.KotekeMukaihara:
   station_alias:
     - odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara
     - odpt.Station:TokyoMetro.Fukutoshin.KotekeMukaihara
-  station_facility: odpt.StationFacility:Seibu.KotekeMukaihara
+  station_facility_info: odpt.StationFacility:Seibu.KotekeMukaihara
   station_facility_custom: odpt.StationFacility:TokyoMetro.KotekeMukaihara
   station_facility_custom_alias: odpt.StationFacility:Seibu.KotekeMukaihara
   name_ja: 小竹向原
@@ -14,7 +14,7 @@ odpt.Station:Seibu.Yurakucho.KotekeMukaihara:
     - custom.StoppingPattern:Seibu.Yurakucho.Local
 
 odpt.Station:Seibu.Yurakucho.ShinSakuradai:
-  station_facility: odpt.StationFacility:Seibu.ShinSakuradai
+  station_facility_info: odpt.StationFacility:Seibu.ShinSakuradai
   name_ja: 新桜台
   name_hira: しんさくらだい
   name_in_system: ShinSakuradai
@@ -27,7 +27,7 @@ odpt.Station:Seibu.Yurakucho.Nerima:
   station_alias:
     - odpt.Seibu.Ikebukuro.Nerima
     - odpt.Seibu.Toshima.Nerima
-  station_facility: odpt.StationFacility:Seibu.Nerima
+  station_facility_info: odpt.StationFacility:Seibu.Nerima
   name_ja: 練馬
   name_hira: ねりま
   name_in_system: Nerima

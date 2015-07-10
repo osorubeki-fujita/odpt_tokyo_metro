@@ -1,6 +1,6 @@
 odpt.Station:TokyoMetro.Hanzomon.Shibuya:
   station_alias: odpt.Station:Tokyu.DenEnToshi.Shibuya
-  station_facility: odpt.StationFacility:TokyoMetro.Shibuya
+  station_facility_info: odpt.StationFacility:TokyoMetro.Shibuya
   station_facility_custom: odpt.StationFacility:Tokyu.Shibuya
   station_facility_custom_alias:
     - odpt.StationFacility:TokyoMetro.Shibuya.HanzomonFukutoshin
@@ -16,7 +16,7 @@ odpt.Station:TokyoMetro.Hanzomon.Shibuya:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.OmoteSando:
-  station_facility: odpt.StationFacility:TokyoMetro.OmoteSando
+  station_facility_info: odpt.StationFacility:TokyoMetro.OmoteSando
   name_ja: 表参道
   name_hira: おもてさんどう
   name_in_system: OmoteSando
@@ -26,7 +26,7 @@ odpt.Station:TokyoMetro.Hanzomon.OmoteSando:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.AoyamaItchome:
-  station_facility: odpt.StationFacility:TokyoMetro.AoyamaItchome
+  station_facility_info: odpt.StationFacility:TokyoMetro.AoyamaItchome
   name_ja: 青山一丁目
   name_hira: あおやまいっちょうめ
   name_in_system: AoyamaItchome
@@ -36,7 +36,7 @@ odpt.Station:TokyoMetro.Hanzomon.AoyamaItchome:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.Nagatacho:
-  station_facility: odpt.StationFacility:TokyoMetro.Nagatacho
+  station_facility_info: odpt.StationFacility:TokyoMetro.Nagatacho
   name_ja: 永田町
   name_hira: ながたちょう
   name_in_system: Nagatacho
@@ -46,7 +46,7 @@ odpt.Station:TokyoMetro.Hanzomon.Nagatacho:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.Hanzomon:
-  station_facility: odpt.StationFacility:TokyoMetro.Hanzomon
+  station_facility_info: odpt.StationFacility:TokyoMetro.Hanzomon
   name_ja: 半蔵門
   name_hira: はんぞうもん
   name_in_system: Hanzomon
@@ -58,7 +58,7 @@ odpt.Station:TokyoMetro.Hanzomon.Hanzomon:
 odpt.Station:TokyoMetro.Hanzomon.Kudanshita:
   station_alias:
     - odpt.Station:Toei.Shinjuku.Kudanshita
-  station_facility: odpt.StationFacility:TokyoMetro.Kudanshita
+  station_facility_info: odpt.StationFacility:TokyoMetro.Kudanshita
   station_facility_custom: odpt.StationFacility:TokyoMetro.Kudanshita.Hanzomon
   station_facility_custom_alias:
     - odpt.StationFacility:TokyoMetro.Kudanshita
@@ -75,7 +75,7 @@ odpt.Station:TokyoMetro.Hanzomon.Kudanshita:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.Jimbocho:
-  station_facility: odpt.StationFacility:TokyoMetro.Jimbocho
+  station_facility_info: odpt.StationFacility:TokyoMetro.Jimbocho
   name_ja: 神保町
   name_hira: じんぼうちょう
   name_in_system: Jimbocho
@@ -85,7 +85,7 @@ odpt.Station:TokyoMetro.Hanzomon.Jimbocho:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.Otemachi:
-  station_facility: odpt.StationFacility:TokyoMetro.Otemachi
+  station_facility_info: odpt.StationFacility:TokyoMetro.Otemachi
   name_ja: 大手町
   name_hira: おおてまち
   name_in_system: Otemachi
@@ -95,7 +95,7 @@ odpt.Station:TokyoMetro.Hanzomon.Otemachi:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.Mitsukoshimae:
-  station_facility: odpt.StationFacility:TokyoMetro.Mitsukoshimae
+  station_facility_info: odpt.StationFacility:TokyoMetro.Mitsukoshimae
   name_ja: 三越前
   name_hira: みつこしまえ
   name_in_system: Mitsukoshimae
@@ -105,7 +105,7 @@ odpt.Station:TokyoMetro.Hanzomon.Mitsukoshimae:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.Suitengumae:
-  station_facility: odpt.StationFacility:TokyoMetro.Suitengumae
+  station_facility_info: odpt.StationFacility:TokyoMetro.Suitengumae
   name_ja: 水天宮前
   name_hira: すいてんぐうまえ
   name_in_system: Suitengumae
@@ -115,7 +115,7 @@ odpt.Station:TokyoMetro.Hanzomon.Suitengumae:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.KiyosumiShirakawa:
-  station_facility: odpt.StationFacility:TokyoMetro.KiyosumiShirakawa
+  station_facility_info: odpt.StationFacility:TokyoMetro.KiyosumiShirakawa
   name_ja: 清澄白河
   name_hira: きよすみしらかわ
   name_in_system: KiyosumiShirakawa
@@ -125,7 +125,7 @@ odpt.Station:TokyoMetro.Hanzomon.KiyosumiShirakawa:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.Sumiyoshi:
-  station_facility: odpt.StationFacility:TokyoMetro.Sumiyoshi
+  station_facility_info: odpt.StationFacility:TokyoMetro.Sumiyoshi
   name_ja: 住吉
   name_hira: すみよし
   name_in_system: Sumiyoshi
@@ -135,7 +135,7 @@ odpt.Station:TokyoMetro.Hanzomon.Sumiyoshi:
     - custom.StoppingPattern:TokyoMetro.Hanzomon.Local
 
 odpt.Station:TokyoMetro.Hanzomon.Kinshicho:
-  station_facility: odpt.StationFacility:TokyoMetro.Kinshicho
+  station_facility_info: odpt.StationFacility:TokyoMetro.Kinshicho
   name_ja: 錦糸町
   name_hira: きんしちょう
   name_in_system: Kinshicho
@@ -146,7 +146,7 @@ odpt.Station:TokyoMetro.Hanzomon.Kinshicho:
 
 odpt.Station:TokyoMetro.Hanzomon.Oshiage:
   station_alias: odpt.Station:Tobu.Isesaki.Oshiage
-  station_facility: odpt.StationFacility:TokyoMetro.Oshiage
+  station_facility_info: odpt.StationFacility:TokyoMetro.Oshiage
   station_facility_custom_alias: odpt.StationFacility:Tobu.Oshiage
   name_ja: 押上<スカイツリー前>
   name_hira: おしあげ（すかいつりーまえ）
