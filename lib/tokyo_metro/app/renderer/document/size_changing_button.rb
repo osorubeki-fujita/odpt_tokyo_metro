@@ -2,9 +2,9 @@ class TokyoMetro::App::Renderer::Document::SizeChangingButton < TokyoMetro::Fact
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%div{ class: [ :size_changing_buttons , :clearfix ] }
+%ul{ class: [ :size_changing_buttons , :clearfix ] }
   - icon_names.each do | icon_name |
-    %div{ class: [ :size_changing_button_in_document , icon_name ] }
+    %li{ class: [ :size_changing_button_in_document , icon_name ] }
       = button_tag( type: :button ) do
         = ::TokyoMetro::App::Renderer::Icon.send( icon_name , nil , 1 ).render
     HAML
