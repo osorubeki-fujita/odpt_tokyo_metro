@@ -1,4 +1,4 @@
-class TokyoMetro::App::Renderer::Document::SizeChangingButton < ::Factory::Decorate::MetaClass
+class TokyoMetro::App::Renderer::Document::SizeChangingButton < TokyoMetro::Factory::Decorate::MetaClass
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
