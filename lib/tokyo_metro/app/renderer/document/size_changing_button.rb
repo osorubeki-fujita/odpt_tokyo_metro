@@ -3,8 +3,8 @@ class TokyoMetro::App::Renderer::Document::SizeChangingButton < TokyoMetro::Fact
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %ul{ class: [ :size_changing_buttons , :clearfix ] }
-  - icon_names.each do | icon_name |
-    %li{ class: [ :size_changing_button_in_document , icon_name ] }
+  - icon_names.each do | li_class_name , icon_name |
+    %li{ class: [ :size_changing_button_in_document , li_class_name ] }
       = button_tag( type: :button ) do
         = ::TokyoMetro::App::Renderer::Icon.send( icon_name , nil , 1 ).render
     HAML
@@ -15,10 +15,10 @@ class TokyoMetro::App::Renderer::Document::SizeChangingButton < TokyoMetro::Fact
   def h_locals
     super.merge({
       icon_names: [
-        :display_all ,
-        :display ,
-        :minimize ,
-        :minimize_all
+        [ :display_all , :display_all ] ,
+        [ :display , :display_small ] ,
+        [ :minimize , :minimize_small ] ,
+        [ :minimize_all , :minimize_all ]
       ]
     })
   end

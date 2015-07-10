@@ -88,12 +88,12 @@ real_time_infos: spinner
 #-------- サイズ変更ボタン
 
 display_all: angle-double-down
-# display: angle-down
-# minimize: angle-up
-minimize_all: angle-double-up
-
 display: chevron-down
 minimize: chevron-up
+minimize_all: angle-double-up
+
+display_small: angle-down
+minimize_small: angle-up
 
 #-------- 矢印
 
