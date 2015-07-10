@@ -32,7 +32,7 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
   %td{ rowspan: 3 , class: [ :station_name_top , :header_bottom ] }<
     - # 出発駅を表示
     %div{ class: [ :starting_station_info , :clearfix ] }
-      = starting_station_info_decorated.render_station_code_image( all: true )
+      = starting_station_info_decorated.code.render_image( all: true )
       %div{ class: :text }
         = starting_station_info_decorated.render_name_ja_and_en( with_subname: true , suffix_ja: "から" , prefix_en: "From " )
     %div{ class: :arrow }

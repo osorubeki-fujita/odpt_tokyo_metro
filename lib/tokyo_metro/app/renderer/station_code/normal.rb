@@ -24,7 +24,7 @@ class TokyoMetro::App::Renderer::StationCode::Normal < TokyoMetro::Factory::Deco
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %div{ class: :station_codes }<
   - station_infos.each do | info |
-    = info.decorate.render_each_station_code_image_tag
+    = info.decorate.code.render_image_tag
     HAML
   end
 
