@@ -21,7 +21,7 @@ module TokyoMetro::Rake::Assets::Sass::Make
       private
 
       def set_instance_variables
-        @erb_dir = "#{ ::TokyoMetro::RAILS_DIR }/app/assets/sass-partial-erbs"
+        @erb_dir = "#{ ::TokyoMetro::RAILS_DIR }/lib/assets/sass-partial-erbs"
         @style_sheet_dir = "#{ ::TokyoMetro::RAILS_DIR }/app/assets/stylesheets"
       end
 
