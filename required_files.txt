@@ -1324,6 +1324,7 @@ lib/tokyo_metro/app/renderer/concerns/link/to_railway_line_page/passenger_survey
 lib/tokyo_metro/app/renderer/concerns/link/to_railway_line_page/real_time_infos.rb
 lib/tokyo_metro/app/renderer/document.rb
 lib/tokyo_metro/app/renderer/document/link.rb
+lib/tokyo_metro/app/renderer/document/size_changing_button.rb
 lib/tokyo_metro/app/renderer/passenger_survey.rb
 lib/tokyo_metro/app/renderer/passenger_survey/side_menu.rb
 lib/tokyo_metro/app/renderer/passenger_survey/side_menu/meta_class.rb
