@@ -85,6 +85,12 @@ real_time_info: spinner
 real_time_infos: spinner
 
 #-------- 表示・非表示 切り替え
+#-------- サイズ変更ボタン
+
+display_all: angle-double-down
+# display: angle-down
+# minimize: angle-up
+minimize_all: angle-double-up
 
 display: chevron-down
 minimize: chevron-up
@@ -214,13 +220,6 @@ file: file-o
 file_text_black: file-text
 file_text: file-text-o
 files: files-o
-
-#-------- サイズ変更ボタン
-
-display_all: angle-double-down
-display: angle-down
-minimize: angle-up
-minimize_all: angle-double-up
 
 #-------- その他
 
