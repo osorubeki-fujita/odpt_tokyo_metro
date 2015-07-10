@@ -215,6 +215,13 @@ file_text_black: file-text
 file_text: file-text-o
 files: files-o
 
+#-------- サイズ変更ボタン
+
+display_all: angle-double-down
+display: angle-down
+minimize: angle-up
+minimize_all: angle-double-up
+
 #-------- その他
 
 ban: ban
