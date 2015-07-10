@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::Main::Info < Tok
   end
 
   def self.hash_keys_3
-    [ :note , :css_class_name_in_document ]
+    [ :note ]
   end
 
   private

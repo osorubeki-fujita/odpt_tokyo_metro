@@ -8,18 +8,14 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
   # Constructor
   # @param ary [::Array] 変数の配列（内部で展開する）
   def initialize( *ary )
-    *defined_in_superclass , note , css_class_name_in_document = ary
+    *defined_in_superclass , note = ary
     super( *defined_in_superclass )
     @note = note
-    @css_class_name_in_document = css_class_name_in_document
     raise "Error: #{@same_as}" if @railway_line.nil?
   end
 
   # @return [String] 補足情報
   attr_reader :note
-
-  # @return [String or nil] ドキュメント内で使用する CSS のクラス名
-  attr_reader :css_class_name_in_document
 
 # @!group 文字色に関するメソッド (1)
   include ::TokyoMetro::Modules::Static::GetColorInfo::Base

@@ -12,7 +12,7 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
 
     [
       :same_as , :note ,
-      :css_class_name , :css_class_name_in_document
+      :css_class_name
     ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end

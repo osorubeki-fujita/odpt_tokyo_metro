@@ -14,6 +14,9 @@ odpt.Railway:TokyoMetro.Ginza:
     red : 243
     green : 151
     blue : 0
+  # ガイドライン準拠 - #ff9500
+  # Wikipedia - #f39700
+  # 画像 - #f6a90f
 
 odpt.Railway:TokyoMetro.Marunouchi:
   name_ja: 丸ノ内線
@@ -29,6 +32,9 @@ odpt.Railway:TokyoMetro.Marunouchi:
     red : 230
     green : 0
     blue : 18
+  # ガイドライン準拠 - #f62e36
+  # Wikipedia - #e60012
+  # 画像 - #e61018
 
 odpt.Railway:TokyoMetro.MarunouchiBranch:
   name_ja: 丸ノ内線（中野坂上 - 方南町）
@@ -42,6 +48,9 @@ odpt.Railway:TokyoMetro.MarunouchiBranch:
     red : 230
     green : 0
     blue : 18
+  # ガイドライン準拠 - #f62e36
+  # Wikipedia - #e60012
+  # 画像 - #e61018
 
 odpt.Railway:TokyoMetro.Hibiya:
   name_ja: 日比谷線
@@ -57,6 +66,9 @@ odpt.Railway:TokyoMetro.Hibiya:
     red : 156
     green : 174
     blue : 183
+  # ガイドライン準拠 - #b5b5ac
+  # Wikipedia - #9caeb7
+  # 画像 - #d0c7b8
 
 odpt.Railway:TokyoMetro.Tozai:
   name_ja: 東西線
@@ -72,6 +84,9 @@ odpt.Railway:TokyoMetro.Tozai:
     red : 0
     green : 167
     blue : 219
+  # ガイドライン準拠 - #009bbf
+  # Wikipedia - #00a7db
+  # 画像 - #00a1e9
 
 odpt.Railway:TokyoMetro.Chiyoda:
   name_ja: 千代田線
@@ -87,6 +102,9 @@ odpt.Railway:TokyoMetro.Chiyoda:
     red : 0
     green : 153
     blue : 69
+  # ガイドライン準拠 - #00bb85
+  # Wikipedia - #009945
+  # 画像 - #0daa5d
 
 odpt.Railway:TokyoMetro.ChiyodaBranch:
   name_ja: 千代田線（綾瀬 - 北綾瀬）
@@ -100,6 +118,9 @@ odpt.Railway:TokyoMetro.ChiyodaBranch:
     red : 0
     green : 153
     blue : 69
+  # ガイドライン準拠 - #00bb85
+  # Wikipedia - #009945
+  # 画像 - #0daa5d
 
 odpt.Railway:TokyoMetro.Yurakucho:
   name_ja: 有楽町線
@@ -115,6 +136,9 @@ odpt.Railway:TokyoMetro.Yurakucho:
     red : 215
     green : 196
     blue : 71
+  # ガイドライン準拠 - #c1a470
+  # Wikipedia - #d7c447
+  # 画像 - #d6ae59
 
 odpt.Railway:TokyoMetro.Hanzomon:
   name_ja: 半蔵門線
@@ -130,6 +154,9 @@ odpt.Railway:TokyoMetro.Hanzomon:
     red : 155
     green : 124
     blue : 182
+  # ガイドライン準拠 - #8f76d6
+  # Wikipedia - #9b7cb6
+  # 画像 - #937eb7
 
 odpt.Railway:TokyoMetro.Namboku:
   name_ja: 南北線
@@ -145,6 +172,9 @@ odpt.Railway:TokyoMetro.Namboku:
     red : 0
     green : 173
     blue : 169
+  # ガイドライン準拠 - #00ac9b
+  # Wikipedia - #00ada9
+  # 画像 - #01ad95
 
 odpt.Railway:TokyoMetro.Fukutoshin:
   name_ja: 副都心線
@@ -160,6 +190,9 @@ odpt.Railway:TokyoMetro.Fukutoshin:
     red : 187
     green : 100
     blue : 29
+  # ガイドライン準拠 - #9c5e31
+  # Wikipedia - #bb641d
+  # 画像 - #ab5a23
 
 #-------- 東京都交通局
 
@@ -275,7 +308,7 @@ odpt.Railway:JR-East.KeihinTohoku:
   color :
     web : "#00b2e5"
     red : 0
-    green : 178 
+    green : 178
     blue : 229
 
 odpt.Railway:JR-East.Tokaido:
@@ -297,7 +330,7 @@ odpt.Railway:JR-East.Yokosuka:
   color :
     web : "#007ac0"
     red : 0
-    green : 122 
+    green : 122
     blue : 192
 
 odpt.Railway:JR-East.Takasaki:
@@ -350,7 +383,6 @@ odpt.Railway:JR-East.UenoTokyo:
     # green : 139
     # blue : 30
 
-
 odpt.Railway:JR-East.Chuo:
   # name_ja: 中央本線
   # name_en : Chuo Line
@@ -361,7 +393,7 @@ odpt.Railway:JR-East.Chuo:
   color :
     web : "#007ac0"
     red : 0
-    green : 122 
+    green : 122
     blue : 192
 
 odpt.Railway:JR-East.ChuoKaisoku:
@@ -419,7 +451,7 @@ odpt.Railway:JR-East.Sobu:
   color :
     web : "#007ac0"
     red : 0
-    green : 122 
+    green : 122
     blue : 192
 
 odpt.Railway:JR-East.NaritaExpress:
@@ -441,7 +473,7 @@ odpt.Railway:JR-East.Saikyo:
   color :
     web : "#00b48d"
     red : 0
-    green : 180 
+    green : 180
     blue : 141
 
 odpt.Railway:JR-East.Joban:
@@ -453,12 +485,12 @@ odpt.Railway:JR-East.Joban:
     -
       web : "#00b261"
       red : 0
-      green : 178 
+      green : 178
       blue : 97
     -
       web : "#007ac0"
       red : 0
-      green : 122 
+      green : 122
       blue : 192
 
 odpt.Railway:JR-East.Keiyo:
@@ -504,7 +536,7 @@ odpt.Railway:JR-East.Shinkansen.2015:
   color :
     web : "#008000" # "green"
     red : 0
-    green : 128 
+    green : 128
     blue : 0
 
 odpt.Railway:JR-East.Shinkansen.2016:
@@ -516,7 +548,7 @@ odpt.Railway:JR-East.Shinkansen.2016:
   color :
     web : "#008000" # "green"
     red : 0
-    green : 128 
+    green : 128
     blue : 0
 
 odpt.Railway:JR-Central.Shinkansen:
@@ -525,7 +557,7 @@ odpt.Railway:JR-Central.Shinkansen:
   operator : odpt.Operator:JR-Central
   index : 1
   color :
-    web : "#00008b" # "darkblue"	
+    web : "#00008b" # "darkblue"
     red : 0
     green : 0
     blue : 139
@@ -553,7 +585,7 @@ odpt.Railway:Tokyu.Meguro:
   color :
     web : "#009cd2"
     red : 0
-    green : 156 
+    green : 156
     blue : 210
 
 odpt.Railway:Tokyu.DenEnToshi:
@@ -688,7 +720,7 @@ odpt.Railway:Seibu.Shinjuku:
   color :
     web : "#0099cc"
     red : 0
-    green : 153 
+    green : 153
     blue : 204
 
 #-------- 東武鉄道
@@ -869,6 +901,7 @@ odpt.Railway:Yurikamome.Yurikamome:
   operator : odpt.Operator:Yurikamome
   index : 1
   color :
+    # 【要検討】
     web : "#00418e"
     red : 0
     green : 65
