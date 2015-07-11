@@ -39,6 +39,7 @@ lib/tokyo_metro/modules/common/info/decision/train_type.rb
 lib/tokyo_metro/modules/common/info/new_and_old_railway_line.rb
 lib/tokyo_metro/modules/common/info/new_and_old_railway_line/set_time.rb
 lib/tokyo_metro/modules/common/info/operator.rb
+lib/tokyo_metro/modules/common/info/operator/info.rb
 lib/tokyo_metro/modules/common/info/railway_line.rb
 lib/tokyo_metro/modules/common/info/railway_line/branch_line.rb
 lib/tokyo_metro/modules/common/info/station.rb
@@ -68,6 +69,7 @@ lib/tokyo_metro/modules/common/info/station_facility/barrier_free/wheel_chair/av
 lib/tokyo_metro/modules/common/info/station_facility/barrier_free/wheel_chair/method_missing.rb
 lib/tokyo_metro/modules/common/info/train_type.rb
 lib/tokyo_metro/modules/common/info/train_type/css_class.rb
+lib/tokyo_metro/modules/common/info/train_type/in_api.rb
 lib/tokyo_metro/modules/common/to_factory.rb
 lib/tokyo_metro/modules/common/to_factory/generate.rb
 lib/tokyo_metro/modules/common/to_factory/generate/info.rb

@@ -129,7 +129,7 @@ class TokyoMetro::Static::TrainType::Custom::OtherOperator::Info
       val = self.instance_variable_get(v)
       unless v == :@same_as or v == :@note
         val = "\n" + val.to_s( indent + 2 )
-      end 
+      end
       " " * indent + k + val.to_s
     }.join( "\n" )
 
@@ -198,7 +198,7 @@ class TokyoMetro::Static::TrainType::Custom::OtherOperator::Info
 
   # 種別の名称（日本語、標準）
   # @return [String]
-  # @note name_ja_display については特に定義しない。
+  # @note name_ja_short については特に定義しない。
   # @example
   #   TokyoMetro::Static.train_types_other_operator.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_ja_normal }
   #   =>
@@ -227,7 +227,7 @@ class TokyoMetro::Static::TrainType::Custom::OtherOperator::Info
 
   # 種別の名称（ローマ字、標準）
   # @return [String]
-  # @note name_en_display については特に定義しない。
+  # @note name_en_short については特に定義しない。
   # @example
   #   TokyoMetro::Static.train_types_other_operator.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_en_normal }
   #   =>
