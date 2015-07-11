@@ -11,7 +11,7 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
   include ::TokyoMetro::Modules::Common::Info::Decision::Operator
 
   include ::TokyoMetro::Modules::Api::Info::Decision::RailwayLine
-  include ::TokyoMetro::Modules::Common::Info::RailwayLine
+  include ::TokyoMetro::Modules::Common::Info::RailwayLine::Info
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::BranchLine
 
   include ::TokyoMetro::Modules::Api::Info::ToStringWithArray
