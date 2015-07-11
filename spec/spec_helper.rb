@@ -11,8 +11,9 @@ require_relative 'spec_helper/dictionary/station.rb'
 
 #--------
 
-require_relative 'spec_helper/static/stations.rb'
+require_relative 'spec_helper/static/operators.rb'
 require_relative 'spec_helper/static/railway_lines.rb'
+require_relative 'spec_helper/static/stations.rb'
 require_relative 'spec_helper/static/train_types.rb'
 
 #--------

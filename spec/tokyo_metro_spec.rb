@@ -38,8 +38,9 @@ end
 #--------
 
 if to_test( :static , options )
-  static_stations
+  static_operators
   static_railway_lines
+  static_stations
   static_train_types
 end
 

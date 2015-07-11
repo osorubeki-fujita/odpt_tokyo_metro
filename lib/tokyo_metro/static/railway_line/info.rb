@@ -436,14 +436,14 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # 鉄道事業者の事業者の名称（日本語、略称・表示用）
   # @return [::String or nil]
-  def operator_name_ja_display
-    @operator.name_ja_display
+  def operator_name_ja_short
+    @operator.name_ja_short
   end
 
   # 鉄道事業者の事業者の名称（ローマ字表記、略称・表示用）
   # @return [::String or nil]
-  def operator_name_en_display
-    @operator.name_en_display
+  def operator_name_en_short
+    @operator.name_en_short
   end
 
   # @!group 鉄道事業者の名称に関するメソッド (3) - 標準の名称（詳細版）
@@ -492,14 +492,14 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # HAML での表示に使用する名称（日本語）
   # @return [::String]
-  def oprerator_name_ja_to_haml
-    @operator.name_ja_to_haml
+  def oprerator_name_ja_very_precise
+    @operator.name_ja_very_precise
   end
 
   # HAML での表示に使用する名称（ローマ字表記）
   # @return [::String]
-  def oprerator_name_en_to_haml
-    @operator.name_en_to_haml
+  def oprerator_name_en_very_precise
+    @operator.name_en_very_precise
   end
 
   # @!endgroup
@@ -913,7 +913,7 @@ class TokyoMetro::Static::RailwayLine::Info
     # 標準の路線名（路線名のみ）
     name_ja_normal_str = self.name_ja_normal
 
-    str = set_name_ja_display( operator_name_ja_normal_str , name_ja_normal_str , en: false )
+    str = set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: false )
 
     if str.string?
       return str
@@ -1007,7 +1007,7 @@ class TokyoMetro::Static::RailwayLine::Info
     # 標準の路線名（路線名のみ）
     name_ja_normal_str = self.name_en_normal
 
-    str = set_name_ja_display( operator_name_ja_normal_str , name_ja_normal_str , en: true )
+    str = set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: true )
 
     if str.string?
       return str
@@ -1106,7 +1106,7 @@ class TokyoMetro::Static::RailwayLine::Info
     # 事業者名を付けるか否かの設定
     with_operator_setting = name_ja_with_operator_name__set_operator_setting
 
-    set_name_ja_display( operator_name_ja_normal_str , name_ja_normal_str , en: false , with_operator: with_operator_setting )
+    set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: false , with_operator: with_operator_setting )
   end
 
   # 路線名（標準・ローマ字表記・【原則】事業者名あり）を取得するメソッド
@@ -1194,7 +1194,7 @@ class TokyoMetro::Static::RailwayLine::Info
     # 事業者名を付けるか否かの設定
     with_operator_setting = name_ja_with_operator_name__set_operator_setting
 
-    set_name_ja_display( operator_name_ja_normal_str , name_ja_normal_str , en: true , with_operator: with_operator_setting )
+    set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: true , with_operator: with_operator_setting )
   end
 
 # @!group 路線色に関するメソッド (1)
@@ -1703,7 +1703,7 @@ class TokyoMetro::Static::RailwayLine::Info
 
   private
 
-  def set_name_ja_display( operator , railway_line , en: false , with_operator: true )
+  def set_name_ja_short( operator , railway_line , en: false , with_operator: true )
     # 路線名が定義されていない場合
     if railway_line.nil?
       # 事業者名を返す

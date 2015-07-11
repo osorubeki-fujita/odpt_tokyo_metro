@@ -130,7 +130,7 @@ class TokyoMetro::Static::TrainOwner::Info
   # 事業者の名称（日本語、略称・表示用）
   # @return [String]
   # @example
-  #   ::TokyoMetro::Static.train_owners.each_value { | train_owner | puts train_owner.same_as.ljust(32) + " : " + train_owner.name_ja_display }
+  #   ::TokyoMetro::Static.train_owners.each_value { | train_owner | puts train_owner.same_as.ljust(32) + " : " + train_owner.name_ja_short }
   #   =>
   #   odpt.TrainOwner:TokyoMetro       : (nil)
   #   odpt.TrainOwner:Toei             : 都営
@@ -141,14 +141,14 @@ class TokyoMetro::Static::TrainOwner::Info
   #   odpt.TrainOwner:Tobu             : 東武
   #   odpt.TrainOwner:SaitamaRailway   : (nil)
   #   odpt.TrainOwner:ToyoRapidRailway : (nil)
-  def name_ja_display
-    @operator.name_ja_display
+  def name_ja_short
+    @operator.name_ja_short
   end
 
   # 事業者の名称（ローマ字表記、略称・表示用）
   # @return [String]
   # @example
-  #   ::TokyoMetro::Static.train_owners.each_value { | train_owner | puts train_owner.same_as.ljust(32) + " : " + train_owner.name_en_display }
+  #   ::TokyoMetro::Static.train_owners.each_value { | train_owner | puts train_owner.same_as.ljust(32) + " : " + train_owner.name_en_short }
   #   =>
   #   odpt.TrainOwner:TokyoMetro       : (nil)
   #   odpt.TrainOwner:Toei             : Toei
@@ -159,8 +159,8 @@ class TokyoMetro::Static::TrainOwner::Info
   #   odpt.TrainOwner:Tobu             : Tobu
   #   odpt.TrainOwner:SaitamaRailway   : (nil)
   #   odpt.TrainOwner:ToyoRapidRailway : (nil)
-  def name_en_display
-    @operator.name_en_display
+  def name_en_short
+    @operator.name_en_short
   end
 
 # @!group 運行事業者の名称に関するメソッド (3) - 標準の名称（詳細版）
@@ -282,7 +282,7 @@ class TokyoMetro::Static::TrainOwner::Info
   # HAML に表示する名称（日本語）
   # @return [String]
   # @example
-  #   ::TokyoMetro::Static.train_owners.each_value { | train_owner | puts train_owner.same_as.ljust(32) + " : " + train_owner.name_ja_to_haml }
+  #   ::TokyoMetro::Static.train_owners.each_value { | train_owner | puts train_owner.same_as.ljust(32) + " : " + train_owner.name_ja_very_precise }
   #   =>
   #   odpt.TrainOwner:TokyoMetro       : 東京メトロ（東京地下鉄）
   #   odpt.TrainOwner:Toei             : 都営地下鉄（東京都交通局）
@@ -293,14 +293,14 @@ class TokyoMetro::Static::TrainOwner::Info
   #   odpt.TrainOwner:Tobu             : 東武鉄道
   #   odpt.TrainOwner:SaitamaRailway   : 埼玉高速鉄道
   #   odpt.TrainOwner:ToyoRapidRailway : 東葉高速鉄道
-  def name_ja_to_haml
-    @operator.name_ja_to_haml
+  def name_ja_very_precise
+    @operator.name_ja_very_precise
   end
 
   # HAML に表示する名称（ローマ字表記）
   # @return [String]
   # @example
-  #   ::TokyoMetro::Static.train_owners.each_value { | train_owner | puts train_owner.same_as.ljust(32) + " : " + train_owner.name_en_to_haml }
+  #   ::TokyoMetro::Static.train_owners.each_value { | train_owner | puts train_owner.same_as.ljust(32) + " : " + train_owner.name_en_very_precise }
   #   =>
   #   odpt.TrainOwner:TokyoMetro       : Tokyo Metro
   #   odpt.TrainOwner:Toei             : Toei Subway (Bureau of Transportation Tokyo Metropolitan Government)
@@ -311,8 +311,8 @@ class TokyoMetro::Static::TrainOwner::Info
   #   odpt.TrainOwner:Tobu             : Tobu Railway
   #   odpt.TrainOwner:SaitamaRailway   : Saitama Railway
   #   odpt.TrainOwner:ToyoRapidRailway : Toyo Rapid Railway
-  def name_en_to_haml
-    @operator.name_en_to_haml
+  def name_en_very_precise
+    @operator.name_en_very_precise
   end
 
 # @!group 運行事業者の駅番号・路線番号に関するメソッド

@@ -91,9 +91,9 @@ def static_train_types
     ["odpt.TrainType:TokyoMetro.CommuterSemiExpress", "通勤準急", nil, "通勤準急", "Commuter Semi Express", nil, "Commuter Semi Express"],
     ["odpt.TrainType:TokyoMetro.Unknown", "不明", nil, "不明", "Unknown", nil, "Unknown"],
     ["odpt.TrainType:TokyoMetro.Extra", "臨時", nil, "臨時", "Extra", nil, "Extra"],
-    ["odpt.TrainType:Toei.AirportLimitedExpress", "エアポート快特", nil, "エアポート快特", "Airport Limited Express", nil, "Airport Limited Express"],
     ["odpt.TrainType:Toei.Local", "各停", nil, "各停", "Local", nil, "Local"],
-    ["odpt.TrainType:Toei.Express", "急行", nil, "急行", "Express", nil, "Express"]
+    ["odpt.TrainType:Toei.Express", "急行", nil, "急行", "Express", nil, "Express"],
+    ["odpt.TrainType:Toei.AirportLimitedExpress", "エアポート快特", nil, "エアポート快特", "Airport Limited Express", nil, "Airport Limited Express"]
  ]
 
 

@@ -14,9 +14,9 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
 
     [
       :same_as ,
-      :name_ja_display , :name_ja_normal_precise , :name_ja_normal , :name_ja_for_transfer_info , :name_ja_to_haml ,
+      :name_ja_short ,
       # :name_hira ,
-      :name_en_display , :name_en_normal_precise , :name_en_normal , :name_en_for_transfer_info , :name_en_to_haml ,
+      :name_en_short ,
       :index , :operator_code , :numbering , :railway_line_code_shape , :station_code_shape ,
       :css_class_name # , :twitter_widget_id , :twitter_account_name
     ].each do | key_name |

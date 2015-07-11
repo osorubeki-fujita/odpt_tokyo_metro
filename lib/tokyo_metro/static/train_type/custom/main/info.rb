@@ -29,7 +29,4 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
 
   include ::TokyoMetro::Modules::Common::Info::TrainType::CssClass
 
-  alias :name_ja_to_haml :note
-  alias :name_en_to_haml :name_en_normal
-
 end
