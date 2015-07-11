@@ -310,34 +310,6 @@ class TokyoMetro::Static::Operator::Info
 
   # @!endgroup
 
-  # CSS のクラスの名称
-  # @return [String]
-  # @example
-  #   ::TokyoMetro::Static.operators.each_value { | operator | puts operator.css_class_name }
-  #   =>
-  #   tokyo_metro
-  #   toei_subway
-  #   toei
-  #   toden
-  #   jr_east
-  #   jr_central
-  #   tokyu
-  #   yokohama_minatomirai
-  #   odakyu
-  #   hakone_tozan
-  #   seibu
-  #   tobu
-  #   saitama
-  #   toyo_rapid
-  #   keio
-  #   keisei
-  #   tsukuba_exp
-  #   yurikamome
-  #   rinkai
-  def css_class_name
-    super( "" , :name_en_normal_precise )
-  end
-
 # @!group インスタンスの基本的な情報を取得するメソッド
 
   # インスタンスの比較に用いるメソッド

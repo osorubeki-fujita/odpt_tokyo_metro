@@ -43,7 +43,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
       :same_as ,
       :name_ja_normal , :name_ja_with_operator_name_precise , :name_ja_with_operator_name ,
       :name_en_normal , :name_en_with_operator_name_precise , :name_en_with_operator_name ,
-      :index , :css_class_name , :start_on , :end_on # , :twitter_widget_id , :twitter_account_name
+      :index , :start_on , :end_on # , :twitter_widget_id , :twitter_account_name
     ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end

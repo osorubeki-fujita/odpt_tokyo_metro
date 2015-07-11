@@ -17,8 +17,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
       :name_ja_short ,
       # :name_hira ,
       :name_en_short ,
-      :index , :operator_code , :numbering , :railway_line_code_shape , :station_code_shape ,
-      :css_class_name # , :twitter_widget_id , :twitter_account_name
+      :index , :operator_code , :numbering , :railway_line_code_shape , :station_code_shape
     ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end

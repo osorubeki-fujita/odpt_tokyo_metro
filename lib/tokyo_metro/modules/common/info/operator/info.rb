@@ -1,5 +1,7 @@
 module TokyoMetro::Modules::Common::Info::Operator::Info
 
+  include ::TokyoMetro::Modules::Common::Info::Fundamental::CssClass
+
   # @!group 鉄道事業者の名称に関するメソッド (1) - 標準の名称（詳細版）
 
   # 鉄道事業者の標準の名称（日本語・詳細版）
@@ -268,6 +270,34 @@ module TokyoMetro::Modules::Common::Info::Operator::Info
     else
       name_en_normal_precise
     end
+  end
+
+  # CSS のクラスの名称
+  # @return [String]
+  # @example
+  #   ::TokyoMetro::Static.operators.each_value { | operator | puts operator.css_class_name }
+  #   =>
+  #   tokyo_metro
+  #   toei_subway
+  #   toei
+  #   toden
+  #   jr_east
+  #   jr_central
+  #   tokyu
+  #   yokohama_minatomirai
+  #   odakyu
+  #   hakone_tozan
+  #   seibu
+  #   tobu
+  #   saitama
+  #   toyo_rapid
+  #   keio
+  #   keisei
+  #   tsukuba_exp
+  #   yurikamome
+  #   rinkai
+  def css_class_name
+    super( :name_en_normal_precise )
   end
 
   # @!endgroup

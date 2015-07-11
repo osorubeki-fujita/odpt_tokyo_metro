@@ -5,6 +5,7 @@ class TokyoMetro::Static::RailwayLine::Info
   include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
   include ::TokyoMetro::Modules::Static::GetName
+  include ::TokyoMetro::Modules::Common::Info::Fundamental::CssClass
 
   include ::TokyoMetro::Modules::Common::Info::Decision::SameAs
   include ::TokyoMetro::Modules::Common::Info::Decision::Operator
@@ -744,7 +745,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Yurikamome.Yurikamome               : ゆりかもめ
   #   odpt.Railway:TWR.Rinkai                          : (nil)
   def name_ja_normal
-    get_name( @name_ja , allow_nil: true )
+    get_name( name_ja , allow_nil: true )
   end
 
   # 路線名（標準・ローマ字表記・路線名のみ）を取得するメソッド
@@ -825,7 +826,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Yurikamome.Yurikamome               : Yurikamome
   #   odpt.Railway:TWR.Rinkai                          : (nil)
   def name_en_normal
-    get_name( @name_en , allow_nil: true )
+    get_name( name_en , allow_nil: true )
   end
 
 # @!group 路線名に関するメソッド (3) - 表示用（事業者名 + 路線名）
@@ -909,7 +910,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:TWR.Rinkai                          : りんかい線
   def name_ja_with_operator_name_precise
     # 標準の事業者名
-    operator_name_ja_normal_str = self.operator_name_ja_normal
+    operator_name_ja_normal_str = operator_name_ja_normal
     # 標準の路線名（路線名のみ）
     name_ja_normal_str = self.name_ja_normal
 
@@ -1583,7 +1584,7 @@ class TokyoMetro::Static::RailwayLine::Info
     when "odpt.Railway:Yurikamome.Yurikamome"
       "yurikamome_line"
     else
-      super( "" , :name_en_with_operator_name )
+      super( :name_en_with_operator_name )
     end
   end
 

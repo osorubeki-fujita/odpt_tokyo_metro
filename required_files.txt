@@ -21,6 +21,8 @@ lib/tokyo_metro/modules/common/dictionary/barrier_free_facility.rb
 lib/tokyo_metro/modules/common/dictionary/operation_day.rb
 lib/tokyo_metro/modules/common/dictionary/romance_car.rb
 lib/tokyo_metro/modules/common/info.rb
+lib/tokyo_metro/modules/common/info/fundamental.rb
+lib/tokyo_metro/modules/common/info/fundamental/css_class.rb
 lib/tokyo_metro/modules/common/info/decision.rb
 lib/tokyo_metro/modules/common/info/decision/actual_starting_station.rb
 lib/tokyo_metro/modules/common/info/decision/actual_terminal_station.rb
