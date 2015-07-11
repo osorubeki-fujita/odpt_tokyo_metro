@@ -98,7 +98,7 @@ module TokyoMetro::Modules::Common::Info::RailwayLine::Info
       "yokohama_minatomirai_mm"
     elsif keio_line?
       "keio_line"
-    when yurikamome_line?
+    elsif yurikamome_line?
       "yurikamome_line"
     else
       super( :name_en_with_operator_name )
