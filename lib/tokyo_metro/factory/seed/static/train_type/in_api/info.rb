@@ -9,8 +9,8 @@ class TokyoMetro::Factory::Seed::Static::TrainType::InApi::Info < TokyoMetro::Fa
 
     [
       :same_as ,
-      :name_ja , :name_ja_display , :name_ja_normal ,
-      :name_en , :name_en_display , :name_en_normal
+      :name_ja , :name_ja_short ,
+      :name_en , :name_en_short
     ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end

@@ -5,20 +5,22 @@ class TokyoMetro::Static::TrainType::InApi::Info
   include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
 
+  include ::TokyoMetro::Modules::Common::Info::TrainType::InApi
+
   # @!group Constructor
 
   # Constructor
   # @param same_as [String] インスタンスの ID
   # @param name_ja [String] 種別の名称（日本語、正式名称）
-  # @param name_ja_display [String] 種別の名称（日本語、略称・表示用）
+  # @param name_ja_short [String] 種別の名称（日本語、略称・表示用）
   # @param name_en [String] 種別の名称（ローマ字表記、正式名称）
-  # @param name_en_display [String] 種別の名称（ローマ字表記、略称・表示用）
-  def initialize( same_as , name_ja , name_ja_display , name_en , name_en_display )
+  # @param name_en_short [String] 種別の名称（ローマ字表記、略称・表示用）
+  def initialize( same_as , name_ja , name_ja_short , name_en , name_en_short )
     @same_as = same_as
     @name_ja = name_ja
-    @name_ja_display = name_ja_display
+    @name_ja_short = name_ja_short
     @name_en = name_en
-    @name_en_display = name_en_display
+    @name_en_short = name_en_short
   end
 
   # @!group 種別の ID、番号に関するメソッド
@@ -113,7 +115,7 @@ class TokyoMetro::Static::TrainType::InApi::Info
 
   # @return [String] 種別の名称（日本語、略称・表示用）
   # @example
-  #   TokyoMetro::Static.train_types_in_api.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_ja_display }
+  #   TokyoMetro::Static.train_types_in_api.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_ja_short }
   #   =>
   #   odpt.TrainType:TokyoMetro.Local                  (nil)
   #   odpt.TrainType:TokyoMetro.LimitedExpress         (nil)
@@ -131,11 +133,11 @@ class TokyoMetro::Static::TrainType::InApi::Info
   #   odpt.TrainType:TokyoMetro.CommuterSemiExpress    (nil)
   #   odpt.TrainType:TokyoMetro.Unknown                (nil)
   #   odpt.TrainType:TokyoMetro.Extra                  (nil)
-  attr_reader :name_ja_display
+  attr_reader :name_ja_short
 
   # @return [String] 種別の名称（ローマ字表記、略称・表示用）
   # @example
-  #   TokyoMetro::Static.train_types_in_api.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_en_display }
+  #   TokyoMetro::Static.train_types_in_api.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_en_short }
   #   =>
   #   odpt.TrainType:TokyoMetro.Local                  (nil)
   #   odpt.TrainType:TokyoMetro.LimitedExpress         (nil)
@@ -153,67 +155,7 @@ class TokyoMetro::Static::TrainType::InApi::Info
   #   odpt.TrainType:TokyoMetro.CommuterSemiExpress    (nil)
   #   odpt.TrainType:TokyoMetro.Unknown                (nil)
   #   odpt.TrainType:TokyoMetro.Extra                  (nil)
-  attr_reader :name_en_display
-
-  # @!group 種別の名称に関するメソッド (3) - 標準の名称
-
-  # 種別の名称（日本語、標準）
-  # @return [String]
-  # @example
-  #   TokyoMetro::Static.train_types_in_api.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_ja_normal }
-  #   =>
-  #   odpt.TrainType:TokyoMetro.Local                  各停
-  #   odpt.TrainType:TokyoMetro.LimitedExpress         特急
-  #   odpt.TrainType:TokyoMetro.Express                急行
-  #   odpt.TrainType:TokyoMetro.HolidayExpress         急行
-  #   odpt.TrainType:TokyoMetro.SemiExpress            準急
-  #   odpt.TrainType:TokyoMetro.Rapid                  快速
-  #   odpt.TrainType:TokyoMetro.CommuterRapid          通勤快速
-  #   odpt.TrainType:TokyoMetro.ToyoRapid              東葉快速
-  #   odpt.TrainType:TokyoMetro.TamaExpress            多摩急行
-  #   odpt.TrainType:TokyoMetro.RomanceCar             特急
-  #   odpt.TrainType:TokyoMetro.RapidExpress           快速急行
-  #   odpt.TrainType:TokyoMetro.CommuterLimitedExpress 通勤特急
-  #   odpt.TrainType:TokyoMetro.CommuterExpress        通勤急行
-  #   odpt.TrainType:TokyoMetro.CommuterSemiExpress    通勤準急
-  #   odpt.TrainType:TokyoMetro.Unknown                不明
-  #   odpt.TrainType:TokyoMetro.Extra                  臨時
-  def name_ja_normal
-    if @name_ja_display.present?
-      @name_ja_display
-    else
-      @name_ja
-    end
-  end
-
-  # 種別の名称（ローマ字、標準）
-  # @return [String]
-  # @example
-  #   TokyoMetro::Static.train_types_in_api.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_en_normal }
-  #   =>
-  #   odpt.TrainType:TokyoMetro.Local                  Local
-  #   odpt.TrainType:TokyoMetro.LimitedExpress         Limited Express
-  #   odpt.TrainType:TokyoMetro.Express                Express
-  #   odpt.TrainType:TokyoMetro.HolidayExpress         Express
-  #   odpt.TrainType:TokyoMetro.SemiExpress            Semi Express
-  #   odpt.TrainType:TokyoMetro.Rapid                  Rapid
-  #   odpt.TrainType:TokyoMetro.CommuterRapid          Commuter Rapid
-  #   odpt.TrainType:TokyoMetro.ToyoRapid              Toyo Rapid
-  #   odpt.TrainType:TokyoMetro.TamaExpress            Tama Express
-  #   odpt.TrainType:TokyoMetro.RomanceCar             Limited Express "Romance Car"
-  #   odpt.TrainType:TokyoMetro.RapidExpress           Rapid Express
-  #   odpt.TrainType:TokyoMetro.CommuterLimitedExpress Commuter Limited Express
-  #   odpt.TrainType:TokyoMetro.CommuterExpress        Commuter Express
-  #   odpt.TrainType:TokyoMetro.CommuterSemiExpress    Commuter Semi Express
-  #   odpt.TrainType:TokyoMetro.Unknown                Unknown
-  #   odpt.TrainType:TokyoMetro.Extra                  Extra
-  def name_en_normal
-    if @name_en_display.present?
-      @name_en_display
-    else
-      @name_en
-    end
-  end
+  attr_reader :name_en_short
 
   # @!endgroup
 

@@ -6,7 +6,7 @@ class TokyoMetro::Static::Operator::Info
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
   include ::TokyoMetro::Modules::Static::GetName
 
-  include ::TokyoMetro::Modules::Common::Info::Operator
+  include ::TokyoMetro::Modules::Common::Info::Operator::Info
 
 # @!group Constructor
 
