@@ -91,8 +91,8 @@ def static_train_types
 
   describe ::TokyoMetro::Static::TrainType::Custom::Main::Info , 'color_basename' do
     ::TokyoMetro::Static.train_types.each do | train_type_name , info |
-      same_as , valid_color_basename = train_types_and_class_classes.find { | same_as , color_basename | same_as == train_type_name }
-      it "has method 'css_class_name'" do
+      same_as , valid_color_basename = train_types_and_color_basenames.find { | same_as , color_basename | same_as == train_type_name }
+      it "has method 'color_basename'" do
         # puts info.color_basename
         # puts valid_color_basename
         expect( info.color_basename ).to eq( valid_color_basename )

@@ -1025,8 +1025,6 @@ lib/tokyo_metro/factory/save/api/train_timetable/each_file.rb
 lib/tokyo_metro/factory/save/api/train_timetable/group.rb
 lib/tokyo_metro/factory/save/api/train_timetable/group/file_info.rb
 lib/tokyo_metro/factory/save/api/train_timetable/group/list.rb
-lib/tokyo_metro/factory/scss.rb
-lib/tokyo_metro/factory/scss/train_type.rb
 lib/tokyo_metro/factory/yaml_station_list.rb
 lib/tokyo_metro/factory/yaml_station_list/each_station.rb
 lib/tokyo_metro/factory/common.rb
