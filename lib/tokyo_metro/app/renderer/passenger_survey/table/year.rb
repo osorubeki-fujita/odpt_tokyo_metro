@@ -2,7 +2,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::Year < TokyoMetro::App:
 
   def initialize( request , passenger_survey_infos , make_graph )
     super( request , passenger_survey_infos , make_graph )
-    @css_class_name_of_tables = :tokyo_metro
+    @css_class_of_tables = :tokyo_metro
   end
 
   def render_header_of_table

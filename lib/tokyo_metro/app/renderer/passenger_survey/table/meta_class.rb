@@ -10,7 +10,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass < TokyoMetro:
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%div{ id: :passenger_survey_table , class: css_class_name_of_tables }
+%div{ id: :passenger_survey_table , class: css_class_of_tables }
   %table{ class: [ :table , "table-striped" ] }
     = this.render_header_of_table
     - rows.each do | row |
@@ -47,7 +47,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass < TokyoMetro:
     super.merge({
       this: self ,
       rows: rows ,
-      css_class_name_of_tables: @css_class_name_of_tables
+      css_class_of_tables: @css_class_of_tables
     })
   end
 

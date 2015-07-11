@@ -8,7 +8,7 @@ module TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakosh
     "Yurakucho and Fukutoshin Line"
   end
 
-  def railway_line_css_class_name
+  def railway_line_css_class
     :yurakucho_and_fukutoshin
   end
 

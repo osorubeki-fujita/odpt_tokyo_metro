@@ -7,7 +7,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::RailwayLine < TokyoMetr
     @passenger_survey_infos_of_the_same_operator = passenger_survey_infos_of_the_same_operator
 
     raise "Error" unless @railway_lines_including_branch.present?
-    @css_class_name_of_tables = @railway_lines_including_branch.first.css_class_name
+    @css_class_of_tables = @railway_lines_including_branch.first.css_class
   end
 
   def render_header_of_table

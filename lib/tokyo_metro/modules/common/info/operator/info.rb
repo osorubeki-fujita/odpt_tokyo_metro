@@ -275,7 +275,7 @@ module TokyoMetro::Modules::Common::Info::Operator::Info
   # CSS のクラスの名称
   # @return [String]
   # @example
-  #   ::TokyoMetro::Static.operators.each_value { | operator | puts operator.css_class_name }
+  #   ::TokyoMetro::Static.operators.each_value { | operator | puts operator.css_class }
   #   =>
   #   tokyo_metro
   #   toei_subway
@@ -296,7 +296,7 @@ module TokyoMetro::Modules::Common::Info::Operator::Info
   #   tsukuba_exp
   #   yurikamome
   #   rinkai
-  def css_class_name
+  def css_class
     super( :name_en_normal_precise )
   end
 

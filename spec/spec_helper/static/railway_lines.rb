@@ -1,7 +1,7 @@
 def static_railway_lines
-  columns_for_check_css_class_name = [ :same_as , :css_class_name ]
+  columns_for_check_css_class = [ :same_as , :css_class ]
 
-  railway_line_and_css_class_name = [
+  railway_line_and_css_class = [
     ["odpt.Railway:TokyoMetro.Ginza", "ginza"],
     ["odpt.Railway:TokyoMetro.Marunouchi", "marunouchi"],
     ["odpt.Railway:TokyoMetro.MarunouchiBranch", "marunouchi_branch"],
@@ -97,10 +97,10 @@ def static_railway_lines
         expect( info.operator ).to be_instance_of( ::TokyoMetro::Static::Operator::Info )
       end
 
-      valid_same_as_and_css_class_name = railway_line_and_css_class_name.find { | same_as , css_class_name | same_as == info.same_as }
-      it "has method 'css_class_name'" do
-        expect( valid_same_as_and_css_class_name ).to be_present
-        expect( info.css_class_name ).to eq( valid_same_as_and_css_class_name[1] )
+      valid_same_as_and_css_class = railway_line_and_css_class.find { | same_as , css_class | same_as == info.same_as }
+      it "has method 'css_class'" do
+        expect( valid_same_as_and_css_class ).to be_present
+        expect( info.css_class ).to eq( valid_same_as_and_css_class[1] )
       end
     end
 

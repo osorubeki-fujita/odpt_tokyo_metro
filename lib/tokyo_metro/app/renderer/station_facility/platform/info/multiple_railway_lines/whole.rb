@@ -9,7 +9,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MultipleRailwa
   %div{ class: [ :railway_line_name , :clearfix ] , onclick: raw( onclick ) }
     - this.railway_lines.each do | railway_line |
       - railway_line_decorated = railway_line.decorate
-      %div{ class: railway_line_decorated.css_class_name }
+      %div{ class: railway_line_decorated.css_class }
         = railway_line_decorated.render_railway_line_code( small: true )
     = this.render_railway_line_text_name
     HAML

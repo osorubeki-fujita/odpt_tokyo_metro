@@ -2,7 +2,7 @@ module TokyoMetro::Modules::Common::Info::Fundamental::CssClass
 
   # CSS のクラスの名称を取得するメソッド
   # @return [String]
-  def css_class_name( base_method_name , header: nil )
+  def css_class( base_method_name , header: nil )
     str = self.__send__( base_method_name )
     str = str.gsub( / Line(?:r?)/ , "" )
     str = str.gsub( / Electric/ , "" )

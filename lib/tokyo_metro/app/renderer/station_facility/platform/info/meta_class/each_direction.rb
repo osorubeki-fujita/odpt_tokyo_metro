@@ -47,14 +47,14 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Eac
   = this.render_surrounding_area_infos
       HAML
     else
-      # h.platform_infos_of_each_platform( @platform_infos , railway_line_css_class_name , car_composition_types , has_transfer_infos? , has_barrier_free_facility_infos? , has_surrounding_area_infos? )
+      # h.platform_infos_of_each_platform( @platform_infos , railway_line_css_class , car_composition_types , has_transfer_infos? , has_barrier_free_facility_infos? , has_surrounding_area_infos? )
       raise "Error"
     end
   end
 
   def render_car_number_array_if_one_car_composition_type
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%tr{ class: [ info.railway_line_css_class_name , :car_numbers , :text_en ] }
+%tr{ class: [ info.railway_line_css_class , :car_numbers , :text_en ] }
   = ::StationFacilityPlatformInfoDecorator.render_an_empty_cell
   - ( 1..( info.max_car_composition ) ).each do | n |
     %td{ class: :car_number }<

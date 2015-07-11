@@ -8,7 +8,7 @@ module TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenMeguro
     "Namboku and Toei Mita Line"
   end
 
-  def railway_line_css_class_name
+  def railway_line_css_class
     :namboku_and_toei_mita
   end
 

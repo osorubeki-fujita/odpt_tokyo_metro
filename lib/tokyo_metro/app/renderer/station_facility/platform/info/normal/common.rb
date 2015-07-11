@@ -10,8 +10,8 @@ module TokyoMetro::App::Renderer::StationFacility::Platform::Info::Normal::Commo
     @railway_line.name_en
   end
 
-  def railway_line_css_class_name
-    @railway_line.css_class_name
+  def railway_line_css_class
+    @railway_line.css_class
   end
 
   def railway_line_info

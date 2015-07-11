@@ -33,9 +33,9 @@ module TokyoMetro::TempLib::RailwayLineArrayModule
     if self.empty?
       "default"
     elsif normal_line? or marunouchi_line_including_branch? or chiyoda_line?
-      self.first.css_class_name
+      self.first.css_class
     else
-      self.map( &:css_class_name ).join( "_" )
+      self.map( &:css_class ).join( "_" )
     end
   end
 

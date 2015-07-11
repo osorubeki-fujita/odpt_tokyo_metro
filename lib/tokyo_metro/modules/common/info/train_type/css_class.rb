@@ -2,7 +2,7 @@ module TokyoMetro::Modules::Common::Info::TrainType::CssClass
 
   # @!group CSS に関するメソッド
 
-  def css_class_name
+  def css_class
     regexp = /\Acustom\.TrainType\:(?:[a-zA-Z]+)\.(?:[a-zA-Z]+)\./
     same_as.gsub( regexp , "" ).gsub( /\./ , "_" ).underscore
   end

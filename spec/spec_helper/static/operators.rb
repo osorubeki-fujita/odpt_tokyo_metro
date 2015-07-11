@@ -11,7 +11,7 @@ def static_operators
     :name_en_normal ,
     :name_en_for_transfer_info ,
     :name_en_very_precise ,
-    :css_class_name
+    :css_class
   ]
 
   operator_infos_in_db = [

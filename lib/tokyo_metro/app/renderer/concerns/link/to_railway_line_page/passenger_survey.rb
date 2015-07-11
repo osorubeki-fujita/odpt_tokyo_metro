@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%ul{ class: [ :each_railway_line , railway_line_decorated.css_class_name , :clearfix ] }
+%ul{ class: [ :each_railway_line , railway_line_decorated.css_class , :clearfix ] }
   = this.render_railway_line_name
   - survey_year_max = survey_years.max
   - survey_years.each do | survey_year |
@@ -25,7 +25,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
 
   private
 
-  def add_railway_line_css_class_name_to_li_classes?
+  def add_railway_line_css_class_to_li_classes?
     false
   end
 

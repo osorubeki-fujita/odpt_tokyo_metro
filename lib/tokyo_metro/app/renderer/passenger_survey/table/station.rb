@@ -5,7 +5,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::Station < TokyoMetro::A
 
     @passenger_survey_infos_all = passenger_survey_infos_all
 
-    @css_class_name_of_tables = :station
+    @css_class_of_tables = :station
   end
 
   def render_header_of_table

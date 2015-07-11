@@ -72,7 +72,7 @@ class TokyoMetro::Static::RailwayLine::Info
       " " * indent + k + val
     }.join( "\n" )
 
-    str_2 = [ :name_ja_with_operator_name , :name_en_with_operator_name , :css_class_name ].map { |v|
+    str_2 = [ :name_ja_with_operator_name , :name_en_with_operator_name , :css_class ].map { |v|
       k = v.to_s.ljust(32)
       val = self.__send__(v)
       " " * indent + k + val
@@ -434,7 +434,7 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.name_en
   end
 
-  # @!group 鉄道事業者の名称に関するメソッド (2) - インスタンス変数 略称・表示用
+  # @!group 鉄道事業者の名称に関するメソッド (2) - インスタン���変数 略称・表示用
 
   # 鉄道事業者の事業者の名称（日本語、略称・表示用）
   # @return [::String or nil]

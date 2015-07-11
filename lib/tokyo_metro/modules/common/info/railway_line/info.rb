@@ -12,7 +12,7 @@ module TokyoMetro::Modules::Common::Info::RailwayLine::Info
   # CSS のクラスの名称
   # @return [String]
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.css_class_name }
+  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.css_class }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : ginza
   #   odpt.Railway:TokyoMetro.Marunouchi               : marunouchi
@@ -85,7 +85,7 @@ module TokyoMetro::Modules::Common::Info::RailwayLine::Info
   #   odpt.Railway:MIR.TX                              : tsukuba_exp
   #   odpt.Railway:Yurikamome.Yurikamome               : yurikamome_line
   #   odpt.Railway:TWR.Rinkai                          : rinkai
-  def css_class_name
+  def css_class
     if marunouchi_branch_line?
       "marunouchi_branch"
     elsif chiyoda_branch_line?

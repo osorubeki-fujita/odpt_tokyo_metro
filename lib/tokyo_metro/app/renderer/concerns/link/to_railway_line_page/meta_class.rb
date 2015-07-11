@@ -40,8 +40,8 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass < 
   def li_classes
     ary = [ :railway_line , :small ]
 
-    if add_railway_line_css_class_name_to_li_classes?
-      ary << railway_line_object.css_class_name
+    if add_railway_line_css_class_to_li_classes?
+      ary << railway_line_object.css_class
     end
 
     if @additional_class_of_li.present?
@@ -70,7 +70,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass < 
     ary
   end
 
-  def add_railway_line_css_class_name_to_li_classes?
+  def add_railway_line_css_class_to_li_classes?
     true
   end
 

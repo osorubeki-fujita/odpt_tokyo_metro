@@ -23,7 +23,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%table{ class: [ :station_timetable , operation_day.decorate.css_class_name ] }
+%table{ class: [ :station_timetable , operation_day.decorate.css_class ] }
   = this.render_header
   = this.station_train_times.render_body
     HAML
@@ -31,7 +31,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
 
   def render_header
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%thead{ class: railway_line.css_class_name }
+%thead{ class: railway_line.css_class }
   %tr
     %td{ colspan: 2 , class: :top_header }
       = railway_line.decorate.render_in_station_timetable_header

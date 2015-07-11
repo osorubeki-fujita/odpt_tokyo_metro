@@ -8,12 +8,12 @@ module TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Co
     raise "Error: The method \'#{ __method__ }\' is not defined yet in this class."
   end
 
-  def railway_line_css_class_name
+  def railway_line_css_class
     raise "Error: The method \'#{ __method__ }\' is not defined yet in this class."
   end
 
   def tab_name
-    "platform_info_#{ railway_line_css_class_name }_line"
+    "platform_info_#{ railway_line_css_class }_line"
   end
 
   # @!group 方面別の情報

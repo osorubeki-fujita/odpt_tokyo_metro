@@ -28,7 +28,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Who
   def render_content
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %li{ id: info.tab_name , name: info.tab_name , class: :platform_info_tab_content }
-  %div{ class: info.railway_line_css_class_name }
+  %div{ class: info.railway_line_css_class }
     %div{ class: :title_of_railway_line }
       %h3{ class: :text_ja }<
         = info.railway_line_name_ja

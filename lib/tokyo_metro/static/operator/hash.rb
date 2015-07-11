@@ -12,7 +12,7 @@ class TokyoMetro::Static::Operator::Hash < ::TokyoMetro::Static::Fundamental::Ha
     super( title )
     puts ""
     puts "○ CSS class name"
-    puts self.values.map( &:css_class_name )
+    puts self.values.map( &:css_class )
 
     return nil
   end
