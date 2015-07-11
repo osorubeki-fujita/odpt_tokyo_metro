@@ -148,7 +148,7 @@ module TokyoMetro::Modules::Common::Info::RailwayLine::Info
   end
 
   def yurikamome_line?
-    "odpt.Railway:Yurikamome.Yurikamome"
+    same_as == "odpt.Railway:Yurikamome.Yurikamome"
   end
 
   def method_missing( method_name , *args )

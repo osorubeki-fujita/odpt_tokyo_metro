@@ -44,6 +44,7 @@ lib/tokyo_metro/modules/common/info/operator.rb
 lib/tokyo_metro/modules/common/info/operator/info.rb
 lib/tokyo_metro/modules/common/info/railway_line.rb
 lib/tokyo_metro/modules/common/info/railway_line/branch_line.rb
+lib/tokyo_metro/modules/common/info/railway_line/info.rb
 lib/tokyo_metro/modules/common/info/station.rb
 lib/tokyo_metro/modules/common/info/station/connecting_railway_line.rb
 lib/tokyo_metro/modules/common/info/station_facility.rb
