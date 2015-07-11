@@ -48,14 +48,6 @@ module TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::Main
       "列車種別"
     end
 
-    # SCCS の color ファイルを作成する Factory Pattern Class の名称を返すメソッド
-    # @return [Const (class)]
-    # @note おそらく、もう使うことはない。
-    # @todo 削除？
-    def scss_color_factory
-      ::TokyoMetro::Factory::Scss::TrainTypes::Colors
-    end
-
     # Hash のインスタンスを作成するときに必要な YAML ファイルのリスト
     # @return [::Array <String (filename)>]
     def yaml_files

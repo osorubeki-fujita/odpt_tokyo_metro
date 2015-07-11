@@ -41,12 +41,6 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
       ::RailwayLine
     end
 
-    # SCCS の color ファイルを作成する Factory Pattern Class の名称を返すメソッド
-    # @return [Const (class)]
-    def scss_color_factory
-      ::TokyoMetro::Factory::Scss::RailwayLines::Colors
-    end
-
     private
 
     def yaml_file_basename

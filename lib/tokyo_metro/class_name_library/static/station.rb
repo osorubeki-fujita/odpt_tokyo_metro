@@ -46,14 +46,7 @@ module TokyoMetro::ClassNameLibrary::Static::Station
     end
 
     def db_instance_class
-      ::Station
-    end
-
-    # SCCS の color ファイルを作成する Factory Pattern Class の名称を返すメソッド
-    # @return [Const (class)]
-    # @note おそらく、もう使うことはない。
-    def scss_color_factory
-      ::TokyoMetro::Factory::Scss::Station::Colors
+      ::Station::Info
     end
 
     # タイトル

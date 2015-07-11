@@ -18,7 +18,7 @@ def static_train_types
     end
   end
 
-  train_types_and_class_classes = [["custom.TrainType:TokyoMetro.Ginza.Local.Normal", "train_type_ginza_local_normal"],
+  train_types_and_color_basenames = [["custom.TrainType:TokyoMetro.Ginza.Local.Normal", "train_type_ginza_local_normal"],
     ["custom.TrainType:TokyoMetro.Marunouchi.Local.Normal", "train_type_marunouchi_local_normal"],
     ["custom.TrainType:TokyoMetro.MarunouchiBranch.Local.Normal", "train_type_marunouchi_branch_local_normal"],
     ["custom.TrainType:TokyoMetro.Hibiya.Local.Normal", "train_type_hibiya_local_normal"],
@@ -89,13 +89,13 @@ def static_train_types
     ["custom.TrainType:Undefined", "train_type_undefined"]
   ]
 
-  describe ::TokyoMetro::Static::TrainType::Custom::Main::Info , 'css_class_name' do
+  describe ::TokyoMetro::Static::TrainType::Custom::Main::Info , 'color_basename' do
     ::TokyoMetro::Static.train_types.each do | train_type_name , info |
-      same_as , valid_css_class_name = train_types_and_class_classes.find { | same_as , css_class_name | same_as == train_type_name }
+      same_as , valid_color_basename = train_types_and_class_classes.find { | same_as , color_basename | same_as == train_type_name }
       it "has method 'css_class_name'" do
-        # puts info.css_class_name
-        # puts valid_css_class_name
-        expect( info.css_class_name ).to eq( valid_css_class_name )
+        # puts info.color_basename
+        # puts valid_color_basename
+        expect( info.color_basename ).to eq( valid_color_basename )
       end
     end
   end

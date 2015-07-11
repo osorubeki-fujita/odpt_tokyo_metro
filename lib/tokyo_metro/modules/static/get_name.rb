@@ -3,7 +3,7 @@ module TokyoMetro::Modules::Static::GetName
 
   # CSS のクラスの名称を取得するメソッド
   # @return [String]
-  def css_class_name( title , base_method_name )
+  def css_class_name( header , base_method_name )
     str = self.__send__( base_method_name )
     str = str.gsub( / Line(?:r?)/ , "" )
     str = str.gsub( / Electric/ , "" )
@@ -17,8 +17,8 @@ module TokyoMetro::Modules::Static::GetName
     str = str.gsub( /_{2,}/ , "_" )
     str = str.downcase
 
-    if title.present?
-      "#{title}_#{str}"
+    if header.present?
+      "#{ header }_#{ str }"
     else
       str
     end

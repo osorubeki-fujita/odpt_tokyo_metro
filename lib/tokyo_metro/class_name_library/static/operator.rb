@@ -37,13 +37,6 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
       ::Operator
     end
 
-    # SCCS の color ファイルを作成する Factory Pattern Class の名称を返すメソッド
-    # @return [Const (class)]
-    # @note おそらく、もう使うことはない。
-    def scss_color_factory
-      ::TokyoMetro::Factory::Scss::Operators::Colors
-    end
-
     private
 
     def yaml_file_basename
