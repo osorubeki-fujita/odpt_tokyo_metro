@@ -138,7 +138,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
   def seed_normal_stopping_patterns( s_id )
     @info.stop.each do | pattern |
       p_id = create_and_get_pattern_id( pattern )
-      ::StationStoppingPattern.find_or_create_by(
+      ::StationStoppingPattern::Info.find_or_create_by(
         station_info_id: s_id ,
         stopping_pattern_id: p_id ,
         partial: false ,
@@ -151,13 +151,13 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
     if @info.some_trains_stop.present?
       @info.some_trains_stop.each do | pattern , note |
         p_id = create_and_get_pattern_id( pattern )
-        note_id = ::StationStoppingPatternNote.find_or_create_by( text: note ).id
-        ::StationStoppingPattern.find_or_create_by(
+        note_id = ::StationStoppingPattern::Note.find_or_create_by( text: note ).id
+        ::StationStoppingPattern::Info.find_or_create_by(
           station_info_id: s_id ,
           stopping_pattern_id: p_id ,
           partial: true ,
           for_driver: false ,
-          station_stopping_pattern_note_id: note_id
+          note_id: note_id
         )
       end
     end
@@ -167,7 +167,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
     if @info.stop_for_drivers.present?
       @info.stop_for_drivers.each do | pattern |
         p_id = create_and_get_pattern_id( pattern )
-        ::StationStoppingPattern.find_or_create_by(
+        ::StationStoppingPattern::Info.find_or_create_by(
           station_info_id: s_id ,
           stopping_pattern_id: p_id ,
           partial: false ,

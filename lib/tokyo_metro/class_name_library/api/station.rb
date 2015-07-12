@@ -194,11 +194,11 @@ module TokyoMetro::ClassNameLibrary::Api::Station
     end
 
     def db_instance_class_of_exit
-      ::StationPoint
+      ::Station::Point
     end
 
     def db_instance_class_of_link_to_passenger_survey
-      ::StationPassengerSurvey
+      ::Station::PassengerSurvey
     end
 
     # @!endgroup

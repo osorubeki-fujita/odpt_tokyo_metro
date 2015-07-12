@@ -751,7 +751,7 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # 路線名（標準・ローマ字表記・路線名のみ）を取得するメソッド
   # @return [String] 路線名（インスタンス変数 name_en）が定義されている場合
-  # @return [nil] 路線名（インスタンス変数 name_en）が定義されていない場合
+  # @return [nil] 路線名（イン���タンス変数 name_en）が定義されていない場合
   # @example
   #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_en_normal }
   #   =>
@@ -887,7 +887,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:HakoneTozan.Rail.OdawaraSide        : 箱根登山鉄道線（小田原 - 箱根湯本）
   #   odpt.Railway:HakoneTozan.Rail.GoraSide           : 箱根登山鉄道線（箱根湯本 - 強羅）
   #   odpt.Railway:Seibu.Ikebukuro                     : 西武池袋線
-  #   odpt.Railway:Seibu.SeibuChichibu                 : 西武秩父線
+  #   odpt.Railway:Seibu.SeibuChichibu                 : 西���秩父線
   #   odpt.Railway:Seibu.Toshima                       : 西武豊島線
   #   odpt.Railway:Seibu.Sayama                        : 西武狭山線
   #   odpt.Railway:Seibu.SeibuYurakucho                : 西武有楽町線

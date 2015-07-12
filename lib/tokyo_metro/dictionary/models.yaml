@@ -17,8 +17,8 @@ TrainType:
 
 StoppingPattern:
   - StoppingPattern
-  - StationStoppingPattern
-  - StationStoppingPatternNote
+  - "StationStoppingPattern::Info"
+  - "StationStoppingPattern::Note"
 
 Station:
   - "Station::Info"
@@ -52,7 +52,7 @@ BarrierFreeFacility:
 
 PassengerSurvey:
   - PassengerSurvey
-  - StationPassengerSurvey
+  - "Station::PassengerSurvey"
 
 Fare:
   - Fare
@@ -65,7 +65,7 @@ Point:
   - "Point::Info"
   - "Point::Category"
   - "Point::AdditionalName"
-  - StationPoint
+  - "Station::Point"
 
 Timetable:
   - StationTimetable

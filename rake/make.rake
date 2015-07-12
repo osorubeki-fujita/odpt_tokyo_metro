@@ -42,21 +42,6 @@ namespace :tokyo_metro do
       end
     end
 
-    namespace :scss do
-      desc "SCSSファイルの生成 - 鉄道事業者の色"
-      task :operators => :load do
-        ::TokyoMetro::Static.operators.make_scss_color_file
-      end
-      desc "SCSSファイルの生成 - 路線の色"
-      task :railway_lines => :load do
-        ::TokyoMetro::Static.railway_lines.make_scss_color_file
-      end
-      desc "SCSSファイルの生成 - 列車種別の色"
-      task :train_types => :load do
-        ::TokyoMetro::Static.train_types.make_scss_color_file
-      end
-    end
-
     desc "駅名辞書の生成 (YAML <- CSV)"
     task :yaml_station_list => :load do
       ::TokyoMetro::Factory::YamlStationList.process
