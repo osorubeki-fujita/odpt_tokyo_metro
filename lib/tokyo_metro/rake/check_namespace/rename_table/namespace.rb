@@ -67,7 +67,7 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace
 
   private
 
-  def regexp_list
+  def set_regexp_list
     ary = ::Array.new
 
     ary << /(?:#{ @namespace }(?:Decorator)?|#{ @namespace.underscore }|#{ @namespace.underscore.pluralize })(?: |\.|\:|\Z)/
