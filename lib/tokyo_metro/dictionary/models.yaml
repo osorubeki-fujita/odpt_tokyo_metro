@@ -17,12 +17,13 @@ TrainType:
 
 StoppingPattern:
   - StoppingPattern
-  - "StationStoppingPattern::Info"
-  - "StationStoppingPattern::Note"
+  - "Station::StoppingPattern::Info"
+  - "Station::StoppingPattern::Note"
 
 Station:
   - "Station::Info"
   - "Station::NameAlias"
+  - "Station::TrainTime"
 
 "(Relation from station)":
   - "Station::PassengerSurvey"
@@ -79,7 +80,6 @@ Timetable:
   - TrainTimetableArrivalInfo
   - TrainTimetableTrainTypeInOtherOperator
   - TrainRelation
-  - StationTrainTime
 
 TrainOperation:
   - "TrainOperation::Info"

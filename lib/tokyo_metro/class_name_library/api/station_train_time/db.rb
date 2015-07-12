@@ -5,7 +5,7 @@ module TokyoMetro::ClassNameLibrary::Api::StationTrainTime::Db
   module ClassMethods
 
     def db_instance_class_of_station_train_time
-      ::StationTrainTime
+      ::Station::TrainTime
     end
 
     def db_instance_class_of_train_relation

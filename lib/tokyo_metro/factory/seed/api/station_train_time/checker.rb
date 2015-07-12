@@ -18,8 +18,8 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
 
     #--------
 
-    @station_train_times_from_station_timetables = ::StationTrainTime.where( station_timetable_id: @station_timetable_ids ).pluck( :id ).sort
-    @station_train_times_from_train_timetables = ::StationTrainTime.where( train_timetable_id: @train_timetable_ids ).pluck( :id ).sort
+    @station_train_times_from_station_timetables = ::Station::TrainTime.where( station_timetable_id: @station_timetable_ids ).pluck( :id ).sort
+    @station_train_times_from_train_timetables = ::Station::TrainTime.where( train_timetable_id: @train_timetable_ids ).pluck( :id ).sort
 
     @number_of_station_train_times_in_api = ::TokyoMetro::Api.train_timetables.send( :select_railway_line , *( @symbol_of_railway_lines ) ).map { | train_timetable |
       train_timetable.valid_list.length
@@ -36,7 +36,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
     display_before_destroy
     a = ::STDIN.gets.chomp
     @station_train_times_from_train_timetables.each do | station_train_time_id |
-      ::StationTrainTime.find( station_train_time_id ).destroy
+      ::Station::TrainTime.find( station_train_time_id ).destroy
     end
     return nil
   end
@@ -71,8 +71,8 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
   end
 
   def display_normal_info
-    puts "- StationTrainTimes from station timetables".ljust(64) + " "+ @station_train_times_from_station_timetables.length.to_s.rjust(5)
-    puts "* StationTrainTimes from train timetables".ljust(64) + " "+ @station_train_times_from_train_timetables.length.to_s.rjust(5)
+    puts "- Station::TrainTimes from station timetables".ljust(64) + " "+ @station_train_times_from_station_timetables.length.to_s.rjust(5)
+    puts "* Station::TrainTimes from train timetables".ljust(64) + " "+ @station_train_times_from_train_timetables.length.to_s.rjust(5)
     puts "* Number of datas from api".ljust(64) + " "+ @number_of_station_train_times_in_api.to_s.rjust(5)
   end
 
@@ -154,7 +154,7 @@ __END__
       puts h[ :station_train_times_from_train_timetables ].length
 
       # 和光市着（副都心線） - ::StationTimetable とはリンクしていないので、そもそも重複しない
-      # h[ :station_train_times_from_train_timetables ] -= ::StationTrainTime.where(
+      # h[ :station_train_times_from_train_timetables ] -= ::Station::TrainTime.where(
         # arrival_station_info_id: ::Station::Info.where( same_as: "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi" ).pluck( :id )
       # ).pluck( :id )
 
@@ -167,7 +167,7 @@ __END__
         } )
       ).pluck( :id )
 
-      h[ :station_train_times_from_train_timetables ] -= ::StationTrainTime.where(
+      h[ :station_train_times_from_train_timetables ] -= ::Station::TrainTime.where(
         station_timetable_id: station_timetable_ids_of_fukutoshin_line_between_wakoshi_and_hikawadai
       ).pluck( :id )
 
@@ -178,7 +178,7 @@ __END__
         same_as: "odpt.StationTimetable:TokyoMetro.Fukutoshin.KotakeMukaihara.Wakoshi"
       ).id
 
-      h[ :station_train_times_from_train_timetables ] -= ::StationTrainTime.where(
+      h[ :station_train_times_from_train_timetables ] -= ::Station::TrainTime.where(
         station_timetable_id: station_timetable_id_of_kotakemukaihara_on_fukutoshin_line_for_wakoshi
       ).pluck( :id )
 
