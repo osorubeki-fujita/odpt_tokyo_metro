@@ -72,13 +72,13 @@ class TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainType
   end
 
   def get_id_in_db_when_pattern_does_not_exist
-    train_type_id = train_type_in_db.id
-    add_pattern( train_type_id )
+    train_type_info_id = train_type_info_in_db.id
+    add_pattern( train_type_info_id )
 
-    return train_type_id
+    return train_type_info_id
   end
 
-  def train_type_in_db
+  def train_type_info_in_db
     # 特急ロマンスカー
     if romance_car_on_chiyoda_line?
       romance_car
@@ -100,32 +100,32 @@ class TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainType
   end
 
   def get_train_type
-    _considered_train_types = considered_train_types
+    _considered_train_type_infos = considered_train_type_infos
 
-    case _considered_train_types.length
+    case _considered_train_type_infos.length
     when 1
-      _considered_train_types.first
+      _considered_train_type_infos.first
     else
       _regexp = regexp_to_select_train_type
-      selected_train_types = _considered_train_types.select { | train_type | _regexp =~ train_type.same_as }
-      select_one_from_multiple_train_types( selected_train_types , _regexp )
+      selected_train_type_infos = _considered_train_type_infos.select { | train_type | _regexp =~ train_type.same_as }
+      select_one_from_multiple_train_type_infos( selected_train_type_infos , _regexp )
     end
   end
 
-  def considered_train_types
-    t = train_types
+  def considered_train_type_infos
+    t = train_type_infos
     if t.blank?
       raise "Error: The train type \"#{ @train_type }\" in \"#{ @railway_line_in_db.same_as }\" is not defined."
     end
     t
   end
 
-  def select_one_from_multiple_train_types( selected_train_types , regexp = nil )
-    case selected_train_types.length
+  def select_one_from_multiple_train_type_infos( selected_train_type_infos , regexp = nil )
+    case selected_train_type_infos.length
     when 1
-      selected_train_types.first
+      selected_train_type_infos.first
     else
-      puts selected_train_types.map( &:same_as )
+      puts selected_train_type_infos.map( &:same_as )
       raise error_msg( regexp )
     end
   end

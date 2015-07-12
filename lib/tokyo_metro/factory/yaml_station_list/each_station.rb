@@ -33,7 +33,7 @@ class TokyoMetro::Factory::YamlStationList::EachStation
         when "administrator" , "other_operator"
           h[ title ] = set_content( title , content )
         else
-          set_train_types_to_hash( h , title , content )
+          set_train_type_infos_to_hash( h , title , content )
         end
       end
     end
@@ -91,22 +91,22 @@ class TokyoMetro::Factory::YamlStationList::EachStation
     return content
   end
 
-  def set_train_types_to_hash( h , title , content )
-    train_types = title.split( / *\/ */ )
+  def set_train_type_infos_to_hash( h , title , content )
+    train_type_infos = title.split( / *\/ */ )
     case content
     # 停車
     when "○"
-      set_train_types_to_hash__sub( h , train_types , "stop")
+      set_train_type_infos_to_hash__sub( h , train_type_infos , "stop")
     # 一部停車
     when "・" , "※" , "△"
-      set_train_types_to_hash__sub( h , train_types , "some_trains_stop" )
+      set_train_type_infos_to_hash__sub( h , train_type_infos , "some_trains_stop" )
     # 運転停車（代々木上原）
     when "―"
-      set_train_types_to_hash__sub( h , train_types , "stop_for_drivers" )
+      set_train_type_infos_to_hash__sub( h , train_type_infos , "stop_for_drivers" )
     end
   end
 
-  def set_train_types_to_hash__sub( h , ary , key )
+  def set_train_type_infos_to_hash__sub( h , ary , key )
     if h[ key ].nil?
       h[ key ] = ary
     elsif h[ key ].instance_of?( ::Array )

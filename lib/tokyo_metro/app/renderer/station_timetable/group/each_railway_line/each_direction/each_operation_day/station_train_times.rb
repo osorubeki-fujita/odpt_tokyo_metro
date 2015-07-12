@@ -79,7 +79,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   end
 
   def train_type_info_ids
-    ids_in_station_train_times( :train_type_id )
+    ids_in_station_train_times( :train_type_info_id )
   end
 
   def get_major_terminal_station_info_id

@@ -40,7 +40,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info < TokyoMetro::Factory
 
     h[ :railway_direction_id ] = railway_direction_id( _railway_line_in_db.id )
 
-    h[ :train_type_id ] = train_type_id( _railway_line_in_db , _starting_station_info_in_db , _terminal_station_info_in_db , _operation_day_in_db )
+    h[ :train_type_info_id ] = train_type_info_id( _railway_line_in_db , _starting_station_info_in_db , _terminal_station_info_in_db , _operation_day_in_db )
 
     [ :id_urn , :same_as , :train_number ].each do | column_name |
       h[ column_name ] = @info.send( column_name )

@@ -4,8 +4,8 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::YurakuchoF
   # Constructor
   # @param train_type 種別の名称
   # @note 境界駅：和光市／路線名：東武東上
-  def initialize( train_type , train_type_in_db )
-    super( "和光市" , "東武東上" , train_type , train_type_in_db )
+  def initialize( train_type , train_type_info_in_db )
+    super( "和光市" , "東武東上" , train_type , train_type_info_in_db )
   end
 
   def railway_line_in_db

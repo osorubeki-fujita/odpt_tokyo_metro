@@ -6,8 +6,8 @@ module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeMod
 
   # @!group クラスインスタンス変数を操作するためのインスタンスメソッド
 
-  def add_pattern( train_type_id )
-    self.class.add_pattern( self.class.train_type_pattern_class.new( train_type_id , *( self.to_a ) ) )
+  def add_pattern( train_type_info_id )
+    self.class.add_pattern( self.class.train_type_pattern_class.new( train_type_info_id , *( self.to_a ) ) )
   end
 
   def pattern

@@ -31,11 +31,11 @@ class TokyoMetro::Factory::BeforeSeed::Api::StationTimetable::Info::TrainTime::I
 
   alias :is_toei_mita_line_train_for_nishi_takashimadaira? :toei_mita_line_train_for_nishi_takashimadaira?
 
-  def considered_train_types_of_yurakucho_and_fukutoshin_line
+  def considered_train_type_infos_of_yurakucho_and_fukutoshin_line
 
     #-------- 有楽町線・副都心線の単独区間の駅の場合
     if !( at_yurakucho_and_fukutoshin_common_station? )
-      train_types.select( &:normal? )
+      train_type_infos.select( &:normal? )
 
     #-------- 有楽町線・副都心線の共用区間の駅の場合
 
@@ -43,10 +43,10 @@ class TokyoMetro::Factory::BeforeSeed::Api::StationTimetable::Info::TrainTime::I
     elsif ( terminating_on_tobu_tojo_line? or terminating_at_wakoshi? ) or terminating_on_seibu_line?
       # 「有楽町線急行」「有楽町線通勤急行」対策
       process_railway_line_of_between_wakoshi_and_kotake_mukaihara
-      train_types.select( &:normal? )
+      train_type_infos.select( &:normal? )
 
     else
-     select_train_types_to_yurakucho_fukutoshin_or_tokyu_mm_line
+     select_train_type_infos_to_yurakucho_fukutoshin_or_tokyu_mm_line
     end
   end
 

@@ -20,16 +20,16 @@ class TokyoMetro::Factory::BeforeSeed::Api::TrainTimetable::Info::TrainType < To
     ::TokyoMetro::Factory::BeforeSeed::Api::TrainTimetable::Info::TrainType::Pattern
   end
 
-  undef :select_train_types_to_yurakucho_fukutoshin_or_tokyu_mm_line
+  undef :select_train_type_infos_to_yurakucho_fukutoshin_or_tokyu_mm_line
 
   private
 
-  def considered_train_types_of_yurakucho_and_fukutoshin_line
+  def considered_train_type_infos_of_yurakucho_and_fukutoshin_line
 
     #-------- 路線名の変換
     process_railway_line_name_of_yurakucho_and_fukutoshin_line
 
-    train_types.select_colored_if_exist
+    train_type_infos.select_colored_if_exist
   end
 
   # 路線名の変換

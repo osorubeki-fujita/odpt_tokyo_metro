@@ -13,7 +13,7 @@ RailwayDirection:
 TrainType:
   - "TrainType::Info"
   - TrainTypeInApi
-  - TrainTypeStoppingPattern
+  - "TrainType::StoppingPattern"
 
 Station:
   - "Station::Info"
@@ -78,7 +78,7 @@ Timetable:
   - StationTimetableConnectionInfo
   - TrainTimetable
   - TrainTimetableArrivalInfo
-  - TrainTimetableTrainTypeInOtherOperator
+  - "TrainTimetableTrainTypeInfoInOtherOperator"
   - TrainRelation
 
 TrainOperation:
