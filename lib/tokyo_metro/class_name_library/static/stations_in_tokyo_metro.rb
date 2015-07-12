@@ -36,13 +36,4 @@ module TokyoMetro::ClassNameLibrary::Static::StationsInTokyoMetro
 
   end
 
-  private
-
-  # 書き出すファイルの名称
-  # @note HAML ファイル等で使用
-  # @return [String (filename)]
-  def filename_base
-    "stations_in_tokyo_metro"
-  end
-
 end

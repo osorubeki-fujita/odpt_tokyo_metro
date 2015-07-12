@@ -38,7 +38,7 @@ module TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::Main
     end
 
     def db_instance_class
-      ::TrainType
+      ::TrainType::Info
     end
 
     # タイトル
@@ -117,15 +117,6 @@ module TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::Main
 
     end
 
-  end
-
-  private
-
-  # 書き出すファイルの名称
-  # @note HAML ファイル等で使用
-  # @return [String (filename)]
-  def filename_base
-    "train_types"
   end
 
 end

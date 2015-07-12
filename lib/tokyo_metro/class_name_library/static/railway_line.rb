@@ -49,13 +49,4 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
 
   end
 
-  private
-
-  # 書き出すファイルの名称
-  # @note HAML ファイル等で使用
-  # @return [String (filename)]
-  def filename_base
-    "railway_lines"
-  end
-
 end
