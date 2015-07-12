@@ -10,7 +10,6 @@ class TokyoMetro::Required::All::Factory < TokyoMetro::Required
       Generate.files ,
       Get.files ,
       Save.files ,
-      Scss.files ,
       YamlStationList.files ,
       #
       Common.files ,
