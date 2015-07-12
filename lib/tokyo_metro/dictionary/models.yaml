@@ -15,11 +15,6 @@ TrainType:
   - TrainTypeInApi
   - TrainTypeStoppingPattern
 
-StoppingPattern:
-  - StoppingPattern
-  - "Station::StoppingPattern::Info"
-  - "Station::StoppingPattern::Note"
-
 Station:
   - "Station::Info"
   - "Station::NameAlias"
@@ -28,6 +23,11 @@ Station:
 "(Relation from station)":
   - "Station::PassengerSurvey"
   - "Station::Point"
+
+StoppingPattern:
+  - StoppingPattern
+  - "Station::StoppingPattern::Info"
+  - "Station::StoppingPattern::Note"
 
 
 ConnectingRailwayLine:
