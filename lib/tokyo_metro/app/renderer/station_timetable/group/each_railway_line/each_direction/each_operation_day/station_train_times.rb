@@ -106,7 +106,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     if one_terminal_station_info or one_train_type_info
       str << "列車はすべて "
       if one_train_type_info
-        str << @train_type_infos.first.train_type_in_api.name_ja
+        str << @train_type_infos.first.in_api.name_ja
         str << " "
       end
       if one_terminal_station_info
@@ -135,7 +135,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
       str << "All trains are"
       if one_train_type_info
         str << " "
-        str << @train_type_infos.first.train_type_in_api.name_en
+        str << @train_type_infos.first.in_api.name_en
       end
       if one_terminal_station_info
         str << " "
