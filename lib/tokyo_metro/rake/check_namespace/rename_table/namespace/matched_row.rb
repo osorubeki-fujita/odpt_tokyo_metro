@@ -15,7 +15,7 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace::MatchedRow
     @filename.length
   end
 
-  def to_s( filename_length_max )
+  def to_s( filename_length_max = 0 )
     [
       [ @filename.ljust( filename_length_max ) , @row_number.to_s.rjust(4) ].join( " " ) ,
       " - " ,

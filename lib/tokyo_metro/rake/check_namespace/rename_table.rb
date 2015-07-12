@@ -1,6 +1,6 @@
 module TokyoMetro::Rake::CheckNamespace::RenameTable
 
-  def self.filenames
+  def self.files
     ary = ::Array.new
 
     ary  << Dir.glob( "#{ ::TokyoMetro::RAILS_DIR }/app/**/**.rb" )

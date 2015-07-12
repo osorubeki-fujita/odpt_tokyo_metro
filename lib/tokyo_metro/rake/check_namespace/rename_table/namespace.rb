@@ -20,19 +20,20 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace
 
   end
 
-  def initialize( namespace , filenames )
+  def initialize( namespace , files )
     @namespace = namespace
-    @filenames = filenames
+    @files = files
     @matched_rows = ::Array.new
-    @regexp_list = regexp_list
+
+    set_regexp_list
   end
 
   include InfoOfRows
 
   def search
-    @filenames.each do | filename |
+    @files.each do | filename |
       #-------- [begin] processing each file
-      ::File.open( filename , "r:UTF-8" ).read.split( "\n" ).each.with_index(1) do | row_content , row_number |
+      ::File.open( filename , "r:UTF-8" ).read.split( /\n/ ).each.with_index(1) do | row_content , row_number |
         match = false
         #-------- [begin] processing each regexp
         @regexp_list.each_with_index do | regexp , i |
@@ -77,7 +78,7 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace
     # ary << /(?:#{ @namespace }(?:Decorator)?|#{ @namespace.underscore }|#{ @namespace.underscore.pluralize })(?: |\.|\:|\Z)/
     # ary << /\"(?:#{ @namespace }(?:Decorator)?|#{ @namespace.underscore }|#{ @namespace.underscore.pluralize })(?:_id)?\"/
 
-    ary
+    @regexp_list = ary
   end
 
   def filename_length_max
