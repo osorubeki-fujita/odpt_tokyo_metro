@@ -273,7 +273,6 @@ lib/tokyo_metro/modules/static/get_color_info/each_rgb_element.rb
 lib/tokyo_metro/modules/static/get_name.rb
 lib/tokyo_metro/modules/static/hash.rb
 lib/tokyo_metro/modules/static/hash/define_test.rb
-lib/tokyo_metro/modules/static/hash/make_scss.rb
 lib/tokyo_metro/modules/static/hash/process_haml.rb
 lib/tokyo_metro/modules/static/to_factory.rb
 lib/tokyo_metro/modules/static/to_factory/generate.rb
