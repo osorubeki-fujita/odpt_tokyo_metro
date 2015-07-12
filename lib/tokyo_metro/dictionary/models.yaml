@@ -10,11 +10,6 @@ RailwayLine:
 RailwayDirection:
   - RailwayDirection
 
-TrainType:
-  - "Train::Type::Info"
-  - "Train::Type::InApi"
-  - "Train::Type::StoppingPattern"
-
 Station:
   - "Station::Info"
   - "Station::NameAlias"
@@ -81,12 +76,17 @@ Timetable:
   - "TrainTimetableTrainTypeInfoInOtherOperator"
   - "Train::Relation"
 
-TrainOperation:
-  - "TrainOperation::Info"
-  - "TrainOperation::Status"
-  - "TrainOperation::Text"
+"Train::Type":
+  - "Train::Type::Info"
+  - "Train::Type::InApi"
+  - "Train::Type::StoppingPattern"
 
-TrainLocation:
+TrainOperation:
+  - "Train::Operation::Info"
+  - "Train::Operation::Status"
+  - "Train::Operation::Text"
+
+"Train::Location":
   - "Train::Location::Info"
 
 Rss:

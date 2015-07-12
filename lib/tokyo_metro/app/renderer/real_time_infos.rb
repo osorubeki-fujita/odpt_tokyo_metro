@@ -119,8 +119,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
       @request ,
       :title_of_train_operation_infos ,
       :train_operation ,
-      ::TrainOperation::InfoDecorator.common_title_ja ,
-      ::TrainOperation::InfoDecorator.common_title_en ,
+      ::Train::Operation::InfoDecorator.common_title_ja ,
+      ::Train::Operation::InfoDecorator.common_title_en ,
       additional_content: proc_for_additional_content
     ).render
   end

@@ -6,8 +6,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinksToRailwayLinePage
 
     @controllers = {
       train_operation: {
-        ja: ::TrainOperation::InfoDecorator.common_title_ja ,
-        en: ::TrainOperation::InfoDecorator.common_title_en
+        ja: ::Train::Operation::InfoDecorator.common_title_ja ,
+        en: ::Train::Operation::InfoDecorator.common_title_en
       } ,
       train_location: {
         ja: ::Train::Location::InfoDecorator.common_title_ja ,

@@ -34,7 +34,7 @@ module TokyoMetro::ClassNameLibrary::Static::TrainOperationStatus
     end
 
     def db_instance_class
-      ::TrainOperation::Status
+      ::Train::Operation::Status
     end
 
     private
