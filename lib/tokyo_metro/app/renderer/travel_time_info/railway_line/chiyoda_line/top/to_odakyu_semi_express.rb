@@ -3,7 +3,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Top::
   def initialize( request )
     super( request )
 
-    @train_type = ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.SemiExpress.ForOdakyu" )
+    @train_type = ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.SemiExpress.ForOdakyu" )
     @direction = [
       ::Station::Info.find_by( same_as: "odpt.Station:Odakyu.Odawara.SeijoGakuenMae" ) ,
       ::Station::Info.find_by( same_as: "odpt.Station:Odakyu.Odawara.Noborito" ) ,

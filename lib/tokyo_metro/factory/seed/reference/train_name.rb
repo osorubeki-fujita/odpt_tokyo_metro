@@ -7,7 +7,7 @@ module TokyoMetro::Factory::Seed::Reference::TrainName
       if whole.present?
         whole.find_by_same_as( search_by )
       else
-        ::TrainType.find_by_same_as( search_by )
+        ::TrainType::Info.find_by_same_as( search_by )
       end
     else
       nil

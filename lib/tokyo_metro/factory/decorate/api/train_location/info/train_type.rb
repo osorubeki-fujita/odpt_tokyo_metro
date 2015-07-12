@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
   def in_db
     #-------- 【千代田線】（小田急ロマンスカー）
     if object.romance_car_on_chiyoda_line?
-      return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
+      return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
 
     #-------- 【有楽町線・副都心線】小竹向原
 
@@ -23,13 +23,13 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
       #-------- 西武池袋線（など）
 
       if object.local_train?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToSeibu" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToSeibu" )
       elsif object.semi_express_train?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu" )
       elsif object.rapid_train?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu" )
       elsif object.rapid_express_train?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu" )
       end
 
     #-------- 【有楽町線・副都心線】和光市
@@ -39,7 +39,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
       #-------- 東武東上線
 
       if object.local_train?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToTobuTojo" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToTobuTojo" )
       end
 
     #-------- 【副都心線】渋谷
@@ -49,9 +49,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
       #-------- 東急東横線・みなとみらい線
 
       if object.commuter_limited_express_train?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu" )
       elsif object.limited_express_train?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu" )
       end
 
     #-------- 【南北線・三田線】目黒 - 白金高輪
@@ -59,22 +59,22 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
     elsif object.on_namboku_line? and object.local_train?
 
       if object.terminate_on_tokyu_meguro_line?
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Namboku.Local.ToTokyu" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.Namboku.Local.ToTokyu" )
       else
-        return ::TrainType.find_by( same_as: "custom.TrainType:TokyoMetro.Namboku.Local.Normal" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:TokyoMetro.Namboku.Local.Normal" )
       end
 
     elsif object.on_toei_mita_line? and object.local_train?
 
       if object.terminate_on_tokyu_meguro_line?
-        return ::TrainType.find_by( same_as: "custom.TrainType:Toei.Mita.Local.ToTokyu" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:Toei.Mita.Local.ToTokyu" )
       else
-        return ::TrainType.find_by( same_as: "custom.TrainType:Toei.Mita.Local.Normal" )
+        return ::TrainType::Info.find_by( same_as: "custom.TrainType:Toei.Mita.Local.Normal" )
       end
 
     end
 
-    t = ::TrainType.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
+    t = ::TrainType::Info.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
     if t.present?
       return t
     end
