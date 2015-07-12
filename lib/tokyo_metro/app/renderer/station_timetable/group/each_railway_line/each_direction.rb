@@ -30,7 +30,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   def station_train_times
     station_timetable_of_a_direction.station_train_times.includes(
       :train_timetable ,
-      train_timetable: [ :terminal_station_info , :train_type , :operation_day ]
+      train_timetable: [ :terminal_station_info , :train_type_info , :operation_day ]
     )
   end
 
