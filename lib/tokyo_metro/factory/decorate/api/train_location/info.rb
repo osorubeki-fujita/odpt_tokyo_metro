@@ -14,19 +14,19 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     h_locals_i = {
       this: self ,
       railway_line_of_train: railway_line_of_train ,
-      train_type_decorated: train_type_decorated ,
+      train_type_info_decorated: train_type_info_decorated ,
       starting_station_decorated: starting_station_decorated ,
       terminal_station_decorated: terminal_station_decorated ,
       train_owner_decorated: train_owner_decorated ,
-      to_render_train_type: render_train_type? ,
+      to_render_train_type_info: render_train_type_info? ,
       to_render_train_owner: render_train_owner?
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %li{ class: [ :train_location , railway_line_of_train.css_class , :clearfix ] , id: this.object.train_number.downcase }
   %div{ class: :train_fundamental_infos }
     = railway_line_of_train.decorate.render_matrix( make_link_to_railway_line: false , size: :very_small )
-    - if to_render_train_type
-      = train_type_decorated.render_in_train_location
+    - if to_render_train_type_info
+      = train_type_info_decorated.render_in_train_location
     = terminal_station_decorated.render_as_terminal_station
   = this.render_current_position
   %ul{ class: :sub_infos }
@@ -101,7 +101,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     end
   end
 
-  def not_render_train_type?
+  def not_render_train_type_info?
     ( on_ginza_line_page? or on_marunouchi_line_page? or on_marunouchi_branch_line_page? or on_hibiya_line_page? ) and object.local_train?
   end
 
@@ -117,7 +117,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     end
   end
 
-  [ :train_type , :train_owner ].each do | method_basename |
+  [ :train_type_info , :train_owner ].each do | method_basename |
     eval <<-DEF
       def render_#{ method_basename }?
         !( not_render_#{ method_basename }? )
@@ -145,7 +145,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     DEF
   end
 
-  def train_type
+  def train_type_info
     ::TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType.get( self )
   end
 
@@ -155,8 +155,8 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     # else
   # end
 
-  def train_type_decorated
-    train_type.decorate
+  def train_type_info_decorated
+    train_type_info.decorate
   end
 
   def train_owner_in_db

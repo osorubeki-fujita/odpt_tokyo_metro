@@ -5,7 +5,7 @@ module TokyoMetro::Modules::Common::Info::TrainType::InApi
 # 種別の名称（日本語、標準）
 # @return [String]
 # @example
-#   TokyoMetro::Static.train_types_in_api.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_ja_normal }
+#   TokyoMetro::Static.train_types_in_api.each_value { | train_type_info | puts train_type_info.same_as.ljust(48) + " " + train_type_info.name_ja_normal }
 #   =>
 #   odpt.TrainType:TokyoMetro.Local                  各停
 #   odpt.TrainType:TokyoMetro.LimitedExpress         特急
@@ -34,7 +34,7 @@ end
 # 種別の名称（ローマ字、標準）
 # @return [String]
 # @example
-#   TokyoMetro::Static.train_types_in_api.each_value { | train_type | puts train_type.same_as.ljust(48) + " " + train_type.name_en_normal }
+#   TokyoMetro::Static.train_types_in_api.each_value { | train_type_info | puts train_type_info.same_as.ljust(48) + " " + train_type_info.name_en_normal }
 #   =>
 #   odpt.TrainType:TokyoMetro.Local                  Local
 #   odpt.TrainType:TokyoMetro.LimitedExpress         Limited Express
