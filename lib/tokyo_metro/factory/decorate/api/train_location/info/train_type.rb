@@ -74,7 +74,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
 
     end
 
-    t = ::TrainType::Info.find_by( train_type_in_api_id: train_type_in_api_id , railway_line_id: railway_line_id )
+    t = ::TrainType::Info.find_by( in_api_id: in_api_id , railway_line_id: railway_line_id )
     if t.present?
       return t
     end
@@ -97,10 +97,10 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
   end
 
   def train_type_in_api
-    ::TrainTypeInApi.find_by( same_as: object.train_type )
+    ::TrainType::InApi.find_by( same_as: object.train_type )
   end
 
-  def train_type_in_api_id
+  def in_api_id
     train_type_in_api.id
   end
 

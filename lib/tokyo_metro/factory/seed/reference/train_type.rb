@@ -6,11 +6,11 @@ module TokyoMetro::Factory::Seed::Reference::TrainType
 
   def train_type_infos( whole = nil ,
     __railway_line_id__: railway_line_id ,
-    __train_type_in_api_id__: train_type_in_api_id
+    __in_api_id__: in_api_id
   )
     h = {
       railway_line_id: __railway_line_id__ ,
-      train_type_in_api_id: __train_type_in_api_id__
+      in_api_id: __in_api_id__
     }
 
     if whole.present?

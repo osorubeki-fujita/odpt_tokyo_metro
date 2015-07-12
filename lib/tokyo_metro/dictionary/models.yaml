@@ -12,7 +12,7 @@ RailwayDirection:
 
 TrainType:
   - "TrainType::Info"
-  - TrainTypeInApi
+  - "TrainType::InApi"
   - "TrainType::StoppingPattern"
 
 Station:

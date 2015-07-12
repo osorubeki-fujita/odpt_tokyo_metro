@@ -34,7 +34,7 @@ module TokyoMetro::ClassNameLibrary::Static::TrainType::InApi
     end
 
     def db_instance_class
-      ::TrainTypeInApi
+      ::TrainType::InApi
     end
 
     private
