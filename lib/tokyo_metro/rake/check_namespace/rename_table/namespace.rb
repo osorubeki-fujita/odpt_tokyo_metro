@@ -70,13 +70,8 @@ class TokyoMetro::Rake::CheckNamespace::RenameTable::Namespace
   def regexp_list
     ary = ::Array.new
 
-    # ary << /#{ @namespace }(?:Decorator)?(?: |\.|\Z)/
-
-    ary << /(?:#{ @namespace }(?:Decorator)?|#{ @namespace.underscore }|#{ @namespace.underscore.pluralize })(?: |\.|\Z)/
+    ary << /(?:#{ @namespace }(?:Decorator)?|#{ @namespace.underscore }|#{ @namespace.underscore.pluralize })(?: |\.|\:|\Z)/
     ary << /\"(?:#{ @namespace }(?:Decorator)?|#{ @namespace.underscore }|#{ @namespace.underscore.pluralize })(?:_id)?\"/
-
-    # ary << /(?:#{ @namespace }(?:Decorator)?|#{ @namespace.underscore }|#{ @namespace.underscore.pluralize })(?: |\.|\:|\Z)/
-    # ary << /\"(?:#{ @namespace }(?:Decorator)?|#{ @namespace.underscore }|#{ @namespace.underscore.pluralize })(?:_id)?\"/
 
     @regexp_list = ary
   end
