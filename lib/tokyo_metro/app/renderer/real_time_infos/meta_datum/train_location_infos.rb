@@ -41,7 +41,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainLocationInfos < 
   end
 
   def render_title_of_train_location_infos
-    render_title_of_each_content( :train_location , ::TrainLocationDecorator.common_title_ja , ::TrainLocationDecorator.common_title_en )
+    render_title_of_each_content( :train_location , ::Train::Location::InfoDecorator.common_title_ja , ::Train::Location::InfoDecorator.common_title_en )
   end
 
   def render_meta_data

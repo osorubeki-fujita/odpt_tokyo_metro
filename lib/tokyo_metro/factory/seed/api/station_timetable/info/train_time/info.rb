@@ -44,7 +44,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
     end
 
     [
-      :station_timetable_id ,
+      :station_timetable_info_id ,
       :train_timetable_id ,
       :departure_station_info_id ,
       :index_in_train_timetable ,
@@ -110,7 +110,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
 
   #-------- 定義されるメソッド
   #
-  # station_timetable_id
+  # station_timetable_info_id
   # train_timetable_id
   # departure_station_info_id
   #

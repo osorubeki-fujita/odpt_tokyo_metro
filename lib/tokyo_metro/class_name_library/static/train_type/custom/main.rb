@@ -38,7 +38,7 @@ module TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::Main
     end
 
     def db_instance_class
-      ::TrainType::Info
+      ::Train::Type::Info
     end
 
     # タイトル

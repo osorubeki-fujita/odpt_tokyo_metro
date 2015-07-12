@@ -11,9 +11,9 @@ RailwayDirection:
   - RailwayDirection
 
 TrainType:
-  - "TrainType::Info"
-  - "TrainType::InApi"
-  - "TrainType::StoppingPattern"
+  - "Train::Type::Info"
+  - "Train::Type::InApi"
+  - "Train::Type::StoppingPattern"
 
 Station:
   - "Station::Info"
@@ -72,14 +72,14 @@ Point:
   - "Point::AdditionalName"
 
 Timetable:
-  - StationTimetable
-  - StationTimetableFundamentalInfo
-  - StationTimetableStartingStationInfo
-  - StationTimetableConnectionInfo
+  - "Station::Timetable::Info"
+  - "Station::Timetable::FundamentalInfo"
+  - "Station::Timetable::StartingStationInfo"
+  - "Station::Timetable::ConnectionInfo"
   - TrainTimetable
   - TrainTimetableArrivalInfo
   - "TrainTimetableTrainTypeInfoInOtherOperator"
-  - TrainRelation
+  - "Train::Relation"
 
 TrainOperation:
   - "TrainOperation::Info"
@@ -87,7 +87,7 @@ TrainOperation:
   - "TrainOperation::Text"
 
 TrainLocation:
-  - "TrainLocation::Info"
+  - "Train::Location::Info"
 
 Rss:
   - "Rss::Info"

@@ -3,7 +3,7 @@ def get_info_from_api
 
     describe "\#.get" do
 
-      station_timetable_id_urns = [
+      station_timetable_info_id_urns = [
         "urn:ucode:_00001C000000000000010000030C3D4B" ,
         "urn:ucode:_00001C000000000000010000030C3D4A" ,
         "urn:ucode:_00001C000000000000010000030C3D57"
@@ -68,8 +68,8 @@ def get_info_from_api
       #--------
 
       it "returns an instance of \'TokyoMetro::Api::StationTimetable::Info\'." do
-        station_timetable_id_urns.each do | station_timetable_id_urn |
-          station_timetable = ::TokyoMetro::Api.get( ::HTTPClient.new , station_timetable_id_urn , parse_json: true , generate_instance: true )
+        station_timetable_info_id_urns.each do | station_timetable_info_id_urn |
+          station_timetable = ::TokyoMetro::Api.get( ::HTTPClient.new , station_timetable_info_id_urn , parse_json: true , generate_instance: true )
           expect( station_timetable.first ).to be_instance_of( ::TokyoMetro::Api::StationTimetable::Info )
         end
       end
@@ -77,8 +77,8 @@ def get_info_from_api
       sleep( 0.2 )
 
       it "returns an instance of \'TokyoMetro::Api::StationTimetable::Info\'." do
-        station_timetable_id_urns.each do | station_timetable_id_urn |
-          station_timetable = ::TokyoMetro::Api::StationTimetable.get( ::HTTPClient.new , id_urn: station_timetable_id_urn , parse_json: true , generate_instance: true )
+        station_timetable_info_id_urns.each do | station_timetable_info_id_urn |
+          station_timetable = ::TokyoMetro::Api::StationTimetable.get( ::HTTPClient.new , id_urn: station_timetable_info_id_urn , parse_json: true , generate_instance: true )
           expect( station_timetable.first ).to be_instance_of( ::TokyoMetro::Api::StationTimetable::Info )
         end
       end

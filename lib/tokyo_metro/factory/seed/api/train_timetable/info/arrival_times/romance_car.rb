@@ -35,22 +35,22 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Romanc
 
     {
       train_type_in_this_station_info_id: train_type_in_this_station_info_id ,
-      station_timetable_id: station_timetable_id( _arrival_station_info_id , _hash_to_select_station_timetable_base ) ,
+      station_timetable_info_id: station_timetable_info_id( _arrival_station_info_id , _hash_to_select_station_timetable_base ) ,
       arrival_station_info_id: _arrival_station_info_id ,
       stop_for_drivers: false
     }.merge( station_time.time_to_h ).merge( base_hash_for_seeding_additional_arrival_times )
   end
 
-  def station_timetable_id( _arrival_station_info_id , _hash_to_select_station_timetable_base )
-    _station_timetable_ids = station_timetable_ids( _arrival_station_info_id , _hash_to_select_station_timetable_base ).uniq.sort
-    unless _station_timetable_ids.length == 1
-      raise "Error: #{ _station_timetable_ids.to_s }"
+  def station_timetable_info_id( _arrival_station_info_id , _hash_to_select_station_timetable_base )
+    _station_timetable_info_ids = station_timetable_info_ids( _arrival_station_info_id , _hash_to_select_station_timetable_base ).uniq.sort
+    unless _station_timetable_info_ids.length == 1
+      raise "Error: #{ _station_timetable_info_ids.to_s }"
     end
-    _station_timetable_ids.first
+    _station_timetable_info_ids.first
   end
 
-  def station_timetable_ids( _arrival_station_info_id , _hash_to_select_station_timetable_base )
-    ::StationTimetableFundamentalInfo.where( hash_to_select_station_timetable( _arrival_station_info_id , _hash_to_select_station_timetable_base ) ).pluck( :station_timetable_id )
+  def station_timetable_info_ids( _arrival_station_info_id , _hash_to_select_station_timetable_base )
+    ::StationTimetableFundamentalInfo.where( hash_to_select_station_timetable( _arrival_station_info_id , _hash_to_select_station_timetable_base ) ).pluck( :station_timetable_info_id )
   end
 
   def hash_to_select_station_timetable( _arrival_station_info_id , _hash_to_select_station_timetable_base )

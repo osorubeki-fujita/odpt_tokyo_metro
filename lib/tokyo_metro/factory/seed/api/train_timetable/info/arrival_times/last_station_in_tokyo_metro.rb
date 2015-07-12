@@ -32,7 +32,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::LastSt
   def hash_to_db
     _info_of_last_station_in_tokyo_metro = info_of_last_station_in_tokyo_metro
     {
-      station_timetable_id: nil ,
+      station_timetable_info_id: nil ,
       train_type_info_in_this_station_id: nil ,
       arrival_station_info_id: arrival_station_info_id( _info_of_last_station_in_tokyo_metro ) ,
       stop_for_drivers: stop_for_drivers?

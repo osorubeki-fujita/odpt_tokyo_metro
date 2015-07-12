@@ -130,8 +130,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
       @request ,
       :title_of_train_location_infos ,
       :train_location ,
-      ::TrainLocationDecorator.common_title_ja ,
-      ::TrainLocationDecorator.common_title_en
+      ::Train::Location::InfoDecorator.common_title_ja ,
+      ::Train::Location::InfoDecorator.common_title_en
     ).render
   end
 

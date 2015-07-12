@@ -9,7 +9,7 @@ module TokyoMetro::ClassNameLibrary::Api::StationTrainTime::Db
     end
 
     def db_instance_class_of_train_relation
-      ::TrainRelation
+      ::Train::Relation
     end
 
     def factory_for_seeding_previous_train_relation_list

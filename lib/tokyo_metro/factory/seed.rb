@@ -106,7 +106,7 @@ module TokyoMetro::Factory::Seed
 
   def self.destroy_all_items_related_to_station_timetables
     destroy_all_items_of(
-      ::StationTimetable ,
+      ::StationTimetable::Info ,
       ::StationTimetableFundamentalInfo
     )
   end

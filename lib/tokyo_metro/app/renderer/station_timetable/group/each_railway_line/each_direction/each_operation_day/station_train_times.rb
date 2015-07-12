@@ -4,7 +4,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     @grouped_by_hour = station_train_times.group_by( &:hour_in_station_timetable )
 
     @terminal_station_infos = ::Station::Info.where( id: terminal_station_info_ids )
-    @train_type_infos = ::TrainType::Info.includes( :train_type_in_api ).where( id: train_type_info_ids )
+    @train_type_infos = ::Train::Type::Info.includes( :train_type_in_api ).where( id: train_type_info_ids )
     @car_compositions = ids_in_station_train_times( :car_composition ).select( &:present? )
     @major_terminal_station_info_id = get_major_terminal_station_info_id
   end

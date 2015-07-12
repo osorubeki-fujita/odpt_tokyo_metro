@@ -10,8 +10,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinksToRailwayLinePage
         en: ::TrainOperation::InfoDecorator.common_title_en
       } ,
       train_location: {
-        ja: ::TrainLocationDecorator.common_title_ja ,
-        en: ::TrainLocationDecorator.common_title_en
+        ja: ::Train::Location::InfoDecorator.common_title_ja ,
+        en: ::Train::Location::InfoDecorator.common_title_en
       } ,
       railway_line: {
         ja: ::RailwayLineDecorator.common_title_ja ,

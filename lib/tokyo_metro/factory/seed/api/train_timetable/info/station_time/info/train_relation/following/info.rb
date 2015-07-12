@@ -4,8 +4,8 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::StationTime::Info::T
 
   def hash_to_db
     {
-      previous_train_timetable_id: @train_timetable_id ,
-      following_train_timetable_id: related_train_id
+      previous_train_timetable_info_id: @train_timetable_id ,
+      following_train_timetable_info_id: related_train_info_id
     }
   end
 

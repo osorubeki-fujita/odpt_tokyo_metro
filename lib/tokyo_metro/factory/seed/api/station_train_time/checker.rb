@@ -13,12 +13,12 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
 
     #--------
 
-    @station_timetable_ids = ::StationTimetableFundamentalInfo.where( railway_line_id: @railway_line_ids ).pluck( :station_timetable_id ).sort
+    @station_timetable_info_ids = ::Station::Timetable::FundamentalInfo.where( railway_line_id: @railway_line_ids ).pluck( :info_id ).sort
     @train_timetable_ids = ::TrainTimetable.where( railway_line_id: @railway_line_ids ).pluck( :id ).sort
 
     #--------
 
-    @station_train_times_from_station_timetables = ::Station::TrainTime.where( station_timetable_id: @station_timetable_ids ).pluck( :id ).sort
+    @station_train_times_from_station_timetables = ::Station::TrainTime.where( station_timetable_info_id: @station_timetable_info_ids ).pluck( :id ).sort
     @station_train_times_from_train_timetables = ::Station::TrainTime.where( train_timetable_id: @train_timetable_ids ).pluck( :id ).sort
 
     @number_of_station_train_times_in_api = ::TokyoMetro::Api.train_timetables.send( :select_railway_line , *( @symbol_of_railway_lines ) ).map { | train_timetable |
@@ -161,25 +161,25 @@ __END__
       # puts h[ :station_train_times_from_train_timetables ].length
 
       # 和光市～氷川台発（副都心線）
-      station_timetable_ids_of_fukutoshin_line_between_wakoshi_and_hikawadai = ::StationTimetable.where(
+      station_timetable_info_ids_of_fukutoshin_line_between_wakoshi_and_hikawadai = ::Station::Timetable::Info.where(
       station_info_id: ::Station::Info.where( same_as: %W( Wakoshi ChikatetsuNarimasu ChikatetsuAkatsuka Heiwadai Hikawadai ).map { | station |
           "odpt.Station:TokyoMetro.Fukutoshin.#{station}"
         } )
       ).pluck( :id )
 
       h[ :station_train_times_from_train_timetables ] -= ::Station::TrainTime.where(
-        station_timetable_id: station_timetable_ids_of_fukutoshin_line_between_wakoshi_and_hikawadai
+        station_timetable_info_id: station_timetable_info_ids_of_fukutoshin_line_between_wakoshi_and_hikawadai
       ).pluck( :id )
 
       puts h[ :station_train_times_from_train_timetables ].length
 
       # 小竹向原発（副都心線 和光市方面）
-      station_timetable_id_of_kotakemukaihara_on_fukutoshin_line_for_wakoshi = ::StationTimetable.find_by(
+      station_timetable_info_id_of_kotakemukaihara_on_fukutoshin_line_for_wakoshi = ::Station::Timetable::Info.find_by(
         same_as: "odpt.StationTimetable:TokyoMetro.Fukutoshin.KotakeMukaihara.Wakoshi"
       ).id
 
       h[ :station_train_times_from_train_timetables ] -= ::Station::TrainTime.where(
-        station_timetable_id: station_timetable_id_of_kotakemukaihara_on_fukutoshin_line_for_wakoshi
+        station_timetable_info_id: station_timetable_info_id_of_kotakemukaihara_on_fukutoshin_line_for_wakoshi
       ).pluck( :id )
 
       puts h[ :station_train_times_from_train_timetables ].length

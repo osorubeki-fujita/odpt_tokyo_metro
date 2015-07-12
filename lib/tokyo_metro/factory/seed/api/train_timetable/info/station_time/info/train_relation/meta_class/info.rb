@@ -24,7 +24,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::StationTime::Info::T
     raise "#{self.class.name}\##{__method__} is not defined yet."
   end
 
-  def related_train_id
+  def related_train_info_id
     ::TrainTimetable.find_by( same_as: @info.same_as ).id
   end
 
