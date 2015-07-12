@@ -20,7 +20,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   end
 
   def has_one_train_type_info?
-    @train_type_infos.map( &:train_type_in_api ).map( &:id ).uniq.length == 1
+    @train_type_infos.map( &:in_api ).map( &:id ).uniq.length == 1
   end
 
   def hours
