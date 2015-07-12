@@ -24,6 +24,11 @@ Station:
   - "Station::Info"
   - "Station::NameAlias"
 
+"(Relation from station)":
+  - "Station::PassengerSurvey"
+  - "Station::Point"
+
+
 ConnectingRailwayLine:
   - "ConnectingRailwayLine::Info"
   - "ConnectingRailwayLine::Note"
@@ -52,7 +57,6 @@ BarrierFreeFacility:
 
 PassengerSurvey:
   - PassengerSurvey
-  - "Station::PassengerSurvey"
 
 Fare:
   - Fare
@@ -65,7 +69,6 @@ Point:
   - "Point::Info"
   - "Point::Category"
   - "Point::AdditionalName"
-  - "Station::Point"
 
 Timetable:
   - StationTimetable
@@ -80,13 +83,11 @@ Timetable:
 
 TrainOperation:
   - "TrainOperation::Info"
-  - "TrainOperation::OldInfo"
   - "TrainOperation::Status"
   - "TrainOperation::Text"
 
 TrainLocation:
   - "TrainLocation::Info"
-  - "TrainLocation::OldInfo"
 
 Rss:
   - "Rss::Info"
