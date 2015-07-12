@@ -5,7 +5,6 @@ require "rspec/core/rake_task"
 
 require_relative "rake/count_rows.rb"
 require_relative "rake/loop.rb"
-require_relative "rake/rename_table.rb"
 
 RSpec::Core::RakeTask.new(:spec)
 
