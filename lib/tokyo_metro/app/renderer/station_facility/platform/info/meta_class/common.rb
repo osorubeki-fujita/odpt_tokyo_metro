@@ -39,7 +39,7 @@ module TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Co
   # @!group 含まれている情報の判定
 
   def has_transfer_infos?
-    @platform_infos.any? { | info | info.station_facility_platform_info_transfer_infos.present? }
+    @platform_infos.any? { | info | info.platform_transfer_infos.present? }
   end
 
   def has_barrier_free_facility_infos?
@@ -53,7 +53,7 @@ module TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Co
   # @!group 含まれている情報
 
   def transfer_infos
-    @platform_infos.map( &:station_facility_platform_info_transfer_infos )
+    @platform_infos.map( &:platform_transfer_infos )
   end
 
   def barrier_free_facility_infos
