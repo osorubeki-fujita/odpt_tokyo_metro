@@ -6,14 +6,15 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     @terminal_station_infos = ::Station::Info.where( id: terminal_station_info_ids )
     @train_type_infos = ::Train::Type::Info.includes( :in_api ).where( id: train_type_info_ids )
     @car_compositions = ids_in_station_train_times( :car_composition ).select( &:present? )
-    @major_terminal_station_info_id = get_major_terminal_station_info_id
+
+    set_major_terminal_station_info
   end
 
   attr_reader :grouped_by_hour
   attr_reader :terminal_station_infos
   attr_reader :train_type_infos
   attr_reader :car_compositions
-  attr_reader :major_terminal_station_info_id
+  attr_reader :major_terminal_station_info
 
   def has_one_terminal_station_info?
     @terminal_station_infos.length == 1
@@ -49,7 +50,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
         = h
       %td{ class: [ :station_train_times , cycle( :odd , :even ) ] }
         - station_train_times_in_an_hour.each do | station_train_time |
-          = station_train_time.decorate.render_in_station_timetable( this.terminal_station_infos , this.train_type_infos , one_train_type_info , one_terminal_station_info , this.major_terminal_station_info_id )
+          = station_train_time.decorate.render_in_station_timetable( this.terminal_station_infos , this.train_type_infos , one_train_type_info , one_terminal_station_info , major_terminal_station_info_id )
     HAML
   end
 
@@ -82,20 +83,14 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     ids_in_station_train_times( :train_type_info_id )
   end
 
-  def get_major_terminal_station_info_id
-    nishi_takashimadaira_id = ::Station::Info.find_by( same_as: "odpt.Station:Toei.Mita.NishiTakashimadaira" ).id
-    terminal_station_info_ids.delete_if { |n| n == nishi_takashimadaira_id }.max { | terminal_station_info_id_1 , terminal_station_info_id_2 |
-      number_of_trains_for( terminal_station_info_id_1 ) <=> number_of_trains_for( terminal_station_info_id_2 )
-    }
-  end
-
-  def number_of_trains_for( station_info_id )
-    ary.count { | station_train_time | station_train_time.terminal_station_info_id == station_info_id }
+  def set_major_terminal_station_info
+    @major_terminal_station_info = ::TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachRailwayDirection::EachOperationDay::StationTrainTimes::MajorTerminalStation.new( ary , terminal_station_info_ids )
   end
 
   def h_locals
     super.merge({
-      this: self
+      this: self ,
+      major_terminal_station_info_id: major_terminal_station_info_id
     })
   end
 
@@ -157,7 +152,11 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   end
 
   def major_terminal_station_info
-    @terminal_station_infos.find_by( id: @major_terminal_station_info_id )
+    @terminal_station_infos.find_by( id: major_terminal_station_info_id )
+  end
+
+  def major_terminal_station_info_id
+    @major_terminal_station_info.terminal_station_id
   end
 
 end
