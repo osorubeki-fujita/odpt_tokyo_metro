@@ -14,12 +14,12 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
     #--------
 
     @station_timetable_info_ids = ::Station::Timetable::FundamentalInfo.where( railway_line_id: @railway_line_ids ).pluck( :info_id ).sort
-    @train_timetable_ids = ::TrainTimetable.where( railway_line_id: @railway_line_ids ).pluck( :id ).sort
+    @train_timetable_info_ids = ::Train::Timetable::Info.where( railway_line_id: @railway_line_ids ).pluck( :id ).sort
 
     #--------
 
     @station_train_times_from_station_timetables = ::Station::TrainTime.where( station_timetable_info_id: @station_timetable_info_ids ).pluck( :id ).sort
-    @station_train_times_from_train_timetables = ::Station::TrainTime.where( train_timetable_id: @train_timetable_ids ).pluck( :id ).sort
+    @station_train_times_from_train_timetables = ::Station::TrainTime.where( train_timetable_info_id: @train_timetable_info_ids ).pluck( :id ).sort
 
     @number_of_station_train_times_in_api = ::TokyoMetro::Api.train_timetables.send( :select_railway_line , *( @symbol_of_railway_lines ) ).map { | train_timetable |
       train_timetable.valid_list.length

@@ -66,14 +66,18 @@ Point:
   - "Point::Category"
   - "Point::AdditionalName"
 
-Timetable:
+"Station::Timetable":
   - "Station::Timetable::Info"
   - "Station::Timetable::FundamentalInfo"
   - "Station::Timetable::StartingStationInfo"
   - "Station::Timetable::ConnectionInfo"
-  - TrainTimetable
-  - TrainTimetableArrivalInfo
-  - "TrainTimetableTrainTypeInfoInOtherOperator"
+
+"Train::Timetable":
+  - "Train::Timetable::Info"
+  - "Train::Timetable::ArrivalInfo"
+  - "Train::Timetable::TrainTypeInOtherOperatorInfo"
+
+"Train::Relation":
   - "Train::Relation"
 
 "Train::Type":
@@ -81,7 +85,7 @@ Timetable:
   - "Train::Type::InApi"
   - "Train::Type::StoppingPattern"
 
-TrainOperation:
+"Train::Operation":
   - "Train::Operation::Info"
   - "Train::Operation::Status"
   - "Train::Operation::Text"

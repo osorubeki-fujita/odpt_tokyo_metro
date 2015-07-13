@@ -2,9 +2,9 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info::U
 
   TRAIN_TIMETABLE_OPTIONAL_INFOS = [
     :car_composition ,
-    :train_timetable_arrival_info_id ,
+    :arrival_info_id ,
     # :train_timetable_connection_info_id , # 接続情報は station_train_time に対して定義する。
-    :train_timetable_train_type_in_other_operator_id
+    :train_type_in_other_operator_info_id
   ]
 
   include ::TokyoMetro::Modules::Common::ConvertConstantToClassMethod

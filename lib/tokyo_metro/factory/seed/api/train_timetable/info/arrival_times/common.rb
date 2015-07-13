@@ -32,13 +32,13 @@ module TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Commo
     station_info_id( search_by: station_time.station[ :arrival ] )
   end
 
-  def train_timetable_id
+  def train_timetable_info_id
     @info.instance_in_db.id
   end
 
   def base_hash_for_seeding_additional_arrival_times
     {
-      train_timetable_id: train_timetable_id ,
+      train_timetable_info_id: train_timetable_info_id ,
       is_last: nil ,
       is_origin: nil ,
       platform_number: nil ,

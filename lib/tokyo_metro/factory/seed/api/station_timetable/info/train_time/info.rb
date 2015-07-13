@@ -45,9 +45,9 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
 
     [
       :station_timetable_info_id ,
-      :train_timetable_id ,
+      :train_timetable_info_id ,
       :departure_station_info_id ,
-      :index_in_train_timetable ,
+      :index_in_train_timetable_info ,
       :station_timetable_starting_station_info_id ,
       :train_type_in_this_station_info_id ,
       :station_timetable_connection_info_id # 接続情報は station_train_time に対して定義する。（train_timetable_connection_info_id でないことに注意）
@@ -73,7 +73,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
   end
 
   def seed_train_relations
-    station_time_in_train_timetable.seed_train_relations( @id , train_timetable_id )
+    station_time_in_train_timetable.seed_train_relations( @id , train_timetable_info_id )
   end
 
   def train_time_in_station_timetable_seed_completed!
@@ -111,10 +111,10 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
   #-------- 定義されるメソッド
   #
   # station_timetable_info_id
-  # train_timetable_id
+  # train_timetable_info_id
   # departure_station_info_id
   #
-  [ :station_timetable , :train_timetable , :departure_station ].each do | method_base_name |
+  [ :station_timetable , :train_timetable_info , :departure_station ].each do | method_base_name |
     eval <<-DEF
       def #{method_base_name}_id
         #{method_base_name}_in_db.id

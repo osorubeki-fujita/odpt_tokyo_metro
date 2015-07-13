@@ -58,8 +58,8 @@ def get_info_from_api
       sleep( 0.2 )
 
       it "returns an instance of \'TokyoMetro::Api::TrainTimetable::Info\'." do
-        train_timetable_id_urn = "urn:ucode:_00001C000000000000010000030D16E4"
-        train_timetable = ::TokyoMetro::Api.get( ::HTTPClient.new , train_timetable_id_urn , parse_json: true , generate_instance: true )
+        train_timetable_info_id_urn = "urn:ucode:_00001C000000000000010000030D16E4"
+        train_timetable = ::TokyoMetro::Api.get( ::HTTPClient.new , train_timetable_info_id_urn , parse_json: true , generate_instance: true )
         expect( train_timetable.first ).to be_instance_of( ::TokyoMetro::Api::TrainTimetable::Info )
       end
 

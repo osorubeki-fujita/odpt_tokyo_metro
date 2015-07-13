@@ -2,11 +2,11 @@ module TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::StationTime::Info::
 
   def set_optional_infos( *args )
     raise "Error" unless args.length == 2
-    @station_train_time_id , @train_timetable_id = args
+    @station_train_time_id , @train_timetable_info_id = args
   end
 
   def optional_infos
-    [ @station_train_time_id , @train_timetable_id ]
+    [ @station_train_time_id , @train_timetable_info_id ]
   end
 
 end

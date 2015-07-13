@@ -30,7 +30,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::YurakuchoF
       train_type_info_id: train_type_instance.id ,
       note: self.to_s
     }
-    ::TrainTimetableTrainTypeInfoInOtherOperator.find_or_create_by(h).id
+    ::Train::Timetable::TrainTypeInOtherOperatorInfo.find_or_create_by(h).id
   end
 
 end
