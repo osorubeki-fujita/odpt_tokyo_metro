@@ -13,11 +13,11 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   end
 
   def terminal_station_info
-    @terminal_station_infos.find_by( id: object.terminal_station_info_id )
+    @terminal_station_infos.find_by( id: @object.terminal_station_info_id )
   end
 
   def train_type_info
-    @train_type_infos.find_by( id: object.train_type_info_id )
+    @train_type_infos.find_by( id: @object.train_type_info_id )
   end
 
   def of_displayed_terminal_station_info

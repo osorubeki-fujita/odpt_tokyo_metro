@@ -97,7 +97,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info::TrainType
   end
 
   def train_type_in_api
-    ::TrainType::InApi.find_by( same_as: object.train_type )
+    ::Train::Type::InApi.find_by( same_as: object.train_type )
   end
 
   def in_api_id
