@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   end
 
   def major_terminal_station_info_id
-    @major_terminal_station_info_id.id
+    @major_terminal_station_info.id
   end
 
   def major_terminal_station_info_in_db
