@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::MetaDatum::TrainOperationInfos <
   end
 
   def render_title
-    render_title_of_each_content( :train_operation , ::TrainOperation::InfoDecorator.common_title_ja , ::TrainOperation::InfoDecorator.common_title_en )
+    render_title_of_each_content( :train_operation , ::Train::Operation::InfoDecorator.common_title_ja , ::Train::Operation::InfoDecorator.common_title_en )
   end
 
 end
