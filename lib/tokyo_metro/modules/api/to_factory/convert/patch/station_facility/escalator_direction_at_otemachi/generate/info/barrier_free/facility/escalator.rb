@@ -5,7 +5,7 @@ module TokyoMetro::Modules::Api::ToFactory::Convert::Patch::StationFacility::Esc
 
   private
 
-  def service_details
+  def service_detail_infos
     ary = super()
     ::TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorDirectionAtOtemachi::Generate::Info::BarrierFree::Facility::Escalator.updated( ary , self )
   end

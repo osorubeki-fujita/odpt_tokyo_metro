@@ -77,8 +77,8 @@ class TokyoMetro::Api::StationFacility::Info::Platform::Info
 
   [ :transfer_infos , :barrier_free_facilities , :surrounding_areas ].each do | method_base_name |
     eval <<-DEF
-      def seed_#{ method_base_name }( station_facility_platform_info_id )
-        @#{ method_base_name }.try( :seed , station_facility_platform_info_id )
+      def seed_#{ method_base_name }( platform_info_id )
+        @#{ method_base_name }.try( :seed , platform_info_id )
       end
       private :seed_#{ method_base_name }
     DEF

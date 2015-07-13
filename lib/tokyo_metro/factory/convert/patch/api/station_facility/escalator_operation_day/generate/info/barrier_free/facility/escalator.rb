@@ -24,12 +24,12 @@ class TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorOperat
     when CHIYODA_KASUMIGASEKI_OUTSIDE_ESCALATOR_4 , CHIYODA_KASUMIGASEKI_OUTSIDE_ESCALATOR_5
       module_name = ::TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorOperationDay::Generate::Info::BarrierFree::Facility::Escalator::ServiceDetail::ChiyodaKasumigasekiOutsideEscalators
       proc = proc_for_deciding_invalidity( "20:00" , "終車時"  )
-      @object = service_details_after_prepending_patch_module( module_name , proc )
+      @object = service_detail_infos_after_prepending_patch_module( module_name , proc )
 
     when GINZA_AKASAKA_MITSUKE_OUTSIDE_ESCALATOR_1
       module_name = ::TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorOperationDay::Generate::Info::BarrierFree::Facility::Escalator::ServiceDetail::GinzaAkasakaMitsukeOutsideEscalator
       proc = proc_for_deciding_invalidity( "始発" , "終車時" )
-      @object = service_details_after_prepending_patch_module( module_name , proc )
+      @object = service_detail_infos_after_prepending_patch_module( module_name , proc )
     end
   end
 

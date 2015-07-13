@@ -6,12 +6,12 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Facili
 
   def set_optional_variables( args )
     set_optional_variables__check_length_of_args( args , 1 )
-    @barrier_free_facility_id = args.first
+    @barrier_free_facility_info_id = args.first
   end
 
   def hash_to_db
     {
-      barrier_free_facility_id: @barrier_free_facility_id ,
+      info_id: @barrier_free_facility_info_id ,
       pattern_id: pattern_id
     }
   end

@@ -30,7 +30,7 @@ class TokyoMetro::Factory::Convert::Common::Api::StationFacility::BarrierFree::F
     raise "This method '#{ __method__ }' is not defined yet in this class '#{ self.class }'."
   end
 
-  def service_details_after_prepending_patch_module( module_name , proc = nil )
+  def service_detail_infos_after_prepending_patch_module( module_name , proc = nil )
     service_detail_ary_new = hash_in_generator_instance[ "odpt:serviceDetail" ].map { | info_h |
       factory_instance = self.class.factory_for_generating_barrier_free_escalator_service_detail_from_hash.new( info_h )
       # puts "★ " + same_as

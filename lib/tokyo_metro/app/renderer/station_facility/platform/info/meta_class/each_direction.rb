@@ -55,7 +55,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Eac
   def render_car_number_array_if_one_car_composition_type
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %tr{ class: [ info.railway_line_css_class , :car_numbers , :text_en ] }
-  = ::StationFacilityPlatformInfoDecorator.render_an_empty_cell
+  = ::StationFacility::Platform::InfoDecorator.render_an_empty_cell
   - ( 1..( info.max_car_composition ) ).each do | n |
     %td{ class: :car_number }<
       = n
@@ -70,7 +70,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Eac
       }
       h.render inline: <<-HAML , type: :haml , locals: hl
 %tr{ class: :transfer_infos }
-  = ::StationFacilityPlatformInfoDecorator.render_transfer_info_title
+  = ::StationFacility::Platform::InfoDecorator.render_transfer_info_title
   = ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::TransferInfos.new( request , transfer_infos ).render
       HAML
     end
@@ -88,12 +88,12 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Eac
       h.render inline: <<-HAML , type: :haml , locals: hl
 - if inside.any?( &:present? )
   %tr{ class: :barrier_free_infos_inside }
-    = ::StationFacilityPlatformInfoDecorator.render_inside_barrier_free_facility_title
+    = ::StationFacility::Platform::InfoDecorator.render_inside_barrier_free_facility_title
     = ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::BarrierFreeFacilityInfos::Inside.new( request , inside ).render
 
 - if outside.any?( &:present? )
   %tr{ class: :barrier_free_infos_outside }
-    = ::StationFacilityPlatformInfoDecorator.render_outside_barrier_free_facility_title
+    = ::StationFacility::Platform::InfoDecorator.render_outside_barrier_free_facility_title
     = ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::BarrierFreeFacilityInfos::Outside.new( request , outside ).render
       HAML
     end
@@ -107,7 +107,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Eac
       }
       h.render inline: <<-HAML , type: :haml , locals: hl
 %tr{ class: :surrounding_areas }
-  = ::StationFacilityPlatformInfoDecorator.render_surrounding_area_info_title
+  = ::StationFacility::Platform::InfoDecorator.render_surrounding_area_info_title
   = ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::TableRow::SurroundingAreaInfos.new( request , surrounding_area_infos ).render
       HAML
     end

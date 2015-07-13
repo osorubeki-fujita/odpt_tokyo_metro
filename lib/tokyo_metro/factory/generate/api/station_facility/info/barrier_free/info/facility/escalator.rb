@@ -31,7 +31,7 @@ class TokyoMetro::Factory::Generate::Api::StationFacility::Info::BarrierFree::In
     end
   end
 
-  def service_details
+  def service_detail_infos
     covert_and_set_array_data(
       "odpt:serviceDetail" ,
       self.class.escalator_service_detail_list_class ,

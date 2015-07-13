@@ -11,12 +11,12 @@ def escalator_operation_day_in_kasumigaseki
     describe TokyoMetro::Api::StationFacility::Info , "after processing invalid info \"#{ escalator_name }\"" do
       describe TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::Info do
         it "has 3 ServiceDetail infos" do
-          expect( barrier_free_info.service_details.length ).to eq(3)
+          expect( barrier_free_info.service_detail_infos.length ).to eq(3)
         end
 
-        service_detail_1 = barrier_free_info.service_details[0]
-        service_detail_2 = barrier_free_info.service_details[1]
-        service_detail_3 = barrier_free_info.service_details[2]
+        service_detail_1 = barrier_free_info.service_detail_infos[0]
+        service_detail_2 = barrier_free_info.service_detail_infos[1]
+        service_detail_3 = barrier_free_info.service_detail_infos[2]
 
         it "is operated only to upper side until 20:00 on weekdays." do
           expect( service_detail_1.operation_day ).to eq( "平日" )

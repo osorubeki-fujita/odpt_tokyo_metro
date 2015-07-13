@@ -8,7 +8,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::Platform::Info::Tra
   def hash_to_db
     _railway_line_id = railway_line_id
     {
-      station_facility_platform_info_id: @station_facility_platform_info_id ,
+      platform_info_id: @platform_info_id ,
       railway_line_id: _railway_line_id ,
       railway_direction_id: railway_direction_id( _railway_line_id ) ,
       necessary_time: @info.necessary_time
@@ -16,7 +16,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::Platform::Info::Tra
   end
 
   def method_name_for_db_instance_class
-    :db_instance_class_of_platform_info_transfer_info
+    :db_instance_class_of_platform_transfer_info
   end
 
   def railway_direction_id( _railway_line_id )

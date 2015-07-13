@@ -73,8 +73,8 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
   def set_invalid_pattern
     @facility_info_ids.each do | facility_info_id |
       facility_info = ::BarrierFreeFacility::Info.find( facility_info_id )
-      service_details = facility_info.service_details
-      service_details.each.with_index(1) do | detail_info , i |
+      service_detail_infos = facility_info.service_detail_infos
+      service_detail_infos.each.with_index(1) do | detail_info , i |
         pattern = detail_info.barrier_free_facility_service_detail_pattern
 
         if @proc_for_deciding_invalidity.call( pattern )

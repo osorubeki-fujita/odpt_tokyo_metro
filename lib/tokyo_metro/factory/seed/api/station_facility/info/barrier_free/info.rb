@@ -65,15 +65,15 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Info <
   end
 
   def seed_barrier_free_facility_root_info( place_name , i )
-    ::BarrierFreeFacilityRootInfo.find_or_create_by(
-      barrier_free_facility_id: @id ,
-      barrier_free_facility_place_name_id: place_name_id( place_name ) ,
+    ::BarrierFreeFacility::RootInfo.find_or_create_by(
+      info_id: @id ,
+      place_name_id: place_name_id( place_name ) ,
       index_in_root: i
     )
   end
 
   def place_name_id( place_name )
-    ::BarrierFreeFacilityPlaceName.find_or_create_by( name_ja: place_name.zen_num_to_han ).id
+    ::BarrierFreeFacility::PlaceName.find_or_create_by( name_ja: place_name.zen_num_to_han ).id
   end
 
 end

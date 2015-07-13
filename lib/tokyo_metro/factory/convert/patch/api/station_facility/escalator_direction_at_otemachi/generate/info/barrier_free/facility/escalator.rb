@@ -17,7 +17,7 @@ class TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorDirect
   def replace_infos
     if same_as == CHIYODA_OTEMACHI_OUTSIDE_ESCALATOR_1
       module_name = ::TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorDirectionAtOtemachi::Generate::Info::BarrierFree::Facility::Escalator::ServiceDetail::ChiyodaOtemachiOutsideEscalator1
-      @object = service_details_after_prepending_patch_module( module_name )
+      @object = service_detail_infos_after_prepending_patch_module( module_name )
     end
   end
 

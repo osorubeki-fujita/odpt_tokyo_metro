@@ -8,10 +8,10 @@ def station_facility_escalator_direction_in_otemachi
   describe TokyoMetro::Api::StationFacility::Info , "after processing invalid info \"#{ invalid_barrier_free_info_name }\"" do
     describe TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::Info do
       it "has one ServiceDetail" do
-        expect( barrier_free_info.service_details.length ).to eq(1)
+        expect( barrier_free_info.service_detail_infos.length ).to eq(1)
       end
 
-      service_detail = barrier_free_info.service_details.first
+      service_detail = barrier_free_info.service_detail_infos.first
 
       it "is operated only to upper side." do
         expect( service_detail.direction ).to be_up

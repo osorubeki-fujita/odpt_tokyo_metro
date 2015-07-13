@@ -23,7 +23,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Servic
 
   def hash_to_db( operation_day_id )
     {
-      info_id: @barrier_free_facility_id ,
+      info_id: @barrier_free_facility_info_id ,
       pattern_id: pattern_id( operation_day_id )
     }
   end

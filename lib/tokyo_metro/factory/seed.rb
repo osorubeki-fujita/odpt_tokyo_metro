@@ -97,10 +97,10 @@ module TokyoMetro::Factory::Seed
 
   def self.destroy_all_items_related_to_platform_infos
     destroy_all_items_of(
-      ::StationFacilityPlatformInfo ,
-      ::StationFacilityPlatformInfoTransferInfo ,
-      ::StationFacilityPlatformInfoSurroundingArea ,
-      ::StationFacilityPlatformInfoBarrierFreeFacility
+      ::StationFacility::Platform::Info ,
+      ::StationFacility::Platform::TransferInfo ,
+      ::StationFacility::Platform::SurroundingArea ,
+      ::StationFacility::Platform::BarrierFreeFacility
     )
   end
 

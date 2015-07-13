@@ -14,10 +14,10 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Info < TokyoMetro::Ap
   include ::TokyoMetro::Modules::Common::Info::StationFacility::BarrierFree::LocatedArea
 
   # Constructor
-  def initialize( id_urn , same_as , service_details , place_name , located_area_name , remark )
+  def initialize( id_urn , same_as , service_detail_infos , place_name , located_area_name , remark )
     @id_urn = id_urn
     @same_as = same_as
-    @service_details = service_details
+    @service_detail_infos = service_detail_infos
     @place_name = place_name
     @located_area_name = located_area_name
     @remark = remark
@@ -29,7 +29,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Info < TokyoMetro::Ap
   # @note 命名ルールは「odpt.Facility:TokyoMetro.路線名.駅名.改札の内外.カテゴリ名.通し番号」
   attr_reader :same_as
   # @return [ServiceDetail::List] 施設の詳細情報
-  attr_reader :service_details
+  attr_reader :service_detail_infos
   # @return [String] 施設の設置されている場所の名前
   attr_reader :place_name
   # @return [String] 施設の設置場所（改札内／改札外）
@@ -58,7 +58,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Info < TokyoMetro::Ap
 
       set_data_to_hash( h , "\@id" , @id_urn )
       set_data_to_hash( h , "owl:sameAs" , @same_as )
-      set_data_to_hash( h , "odpt:serviceDetail" , @service_details )
+      set_data_to_hash( h , "odpt:serviceDetail" , @service_detail_infos )
       set_data_to_hash( h , "odpt:placeName" , @place_name )
       set_data_to_hash( h , "odpt:locatedAreaName" , @located_area_name )
       set_data_to_hash( h , "ugsrv:remark" , @remark )
@@ -88,9 +88,9 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Info < TokyoMetro::Ap
 
   private
 
-  def seed_service_detail( barrier_free_facility_id )
-    raise unless barrier_free_facility_id.integer?
-    @service_details.try( :seed , barrier_free_facility_id )
+  def seed_service_detail( barrier_free_facility_info_id )
+    raise unless barrier_free_facility_info_id.integer?
+    @service_detail_infos.try( :seed , barrier_free_facility_info_id )
   end
 
 end

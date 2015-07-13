@@ -24,18 +24,13 @@ StoppingPattern:
   - "Station::StoppingPattern::Info"
   - "Station::StoppingPattern::Note"
 
-
-ConnectingRailwayLine:
-  - "ConnectingRailwayLine::Info"
-  - "ConnectingRailwayLine::Note"
-
 StationFacility:
   - "StationFacility::Info"
   - "StationFacility::NameAlias"
-  - StationFacilityPlatformInfo
-  - StationFacilityPlatformInfoTransferInfo
-  - StationFacilityPlatformInfoBarrierFreeFacilityInfo
-  - StationFacilityPlatformInfoSurroundingArea
+  - "StationFacility::Platform::Info"
+  - "StationFacility::Platform::TransferInfo"
+  - "StationFacility::Platform::BarrierFreeFacilityInfo"
+  - "StationFacility::Platform::SurroundingArea"
   - SurroundingArea
 
 BarrierFreeFacility:
@@ -50,6 +45,10 @@ BarrierFreeFacility:
   - "BarrierFreeFacility::EscalatorDirection::Pattern"
   - "BarrierFreeFacility::ToiletAssistant::Info"
   - "BarrierFreeFacility::ToiletAssistant::Pattern"
+
+ConnectingRailwayLine:
+  - "ConnectingRailwayLine::Info"
+  - "ConnectingRailwayLine::Note"
 
 PassengerSurvey:
   - PassengerSurvey

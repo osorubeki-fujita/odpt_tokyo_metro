@@ -357,19 +357,19 @@ module TokyoMetro::ClassNameLibrary::Api::StationFacility
     end
 
     def db_instance_class_of_platform_info
-      ::StationFacilityPlatformInfo
+      ::StationFacility::Platform::Info
     end
 
-    def db_instance_class_of_platform_info_transfer_info
-      ::StationFacilityPlatformInfoTransferInfo
+    def db_instance_class_of_platform_transfer_info
+      ::StationFacility::Platform::TransferInfo
     end
 
-    def db_instance_class_of_platform_info_barrier_free_facility
-      ::StationFacilityPlatformInfoBarrierFreeFacility
+    def db_instance_class_of_platform_barrier_free_facility
+      ::StationFacility::Platform::BarrierFreeFacility
     end
 
-    def db_instance_class_of_platform_info_surrounding_area
-      ::StationFacilityPlatformInfoSurroundingArea
+    def db_instance_class_of_platform_surrounding_area
+      ::StationFacility::Platform::SurroundingArea
     end
 
     # @!endgroup

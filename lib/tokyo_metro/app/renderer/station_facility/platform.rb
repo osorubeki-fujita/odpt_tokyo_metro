@@ -68,7 +68,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
       :railway_direction ,
       :station_facility_platform_info_barrier_free_facility_infos ,
       :station_facility_platform_info_transfer_infos ,
-      :station_facility_platform_info_surrounding_areas ,
+      :platform_surrounding_areas ,
       :barrier_free_facility_infos ,
       :surrounding_areas
     ).group_by( &:railway_line_id )
