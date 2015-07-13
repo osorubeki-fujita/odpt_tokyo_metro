@@ -7,22 +7,19 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     @train_type_infos = ::Train::Type::Info.includes( :in_api ).where( id: train_type_info_ids )
     @car_compositions = ids_in_station_train_times( :car_composition ).select( &:present? )
 
-    set_major_terminal_station_info
+    # ::TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachRailwayDirection::EachOperationDay::StationTrainTimes::MajorTerminalStation
+    major_terminal_station_info = MajorTerminalStation.new( station_train_times_flattened , @terminal_station_infos )
+
+    # TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachRailwayDirection::EachOperationDay::StationTrainTimes::RenderingSettings
+    @rendering_settings = RenderingSettings.new( @terminal_station_infos , @train_type_infos , major_terminal_station_info )
   end
 
   attr_reader :grouped_by_hour
   attr_reader :terminal_station_infos
   attr_reader :train_type_infos
   attr_reader :car_compositions
+
   attr_reader :major_terminal_station_info
-
-  def has_one_terminal_station_info?
-    @terminal_station_infos.length == 1
-  end
-
-  def has_one_train_type_info?
-    @train_type_infos.map( &:in_api ).map( &:id ).uniq.length == 1
-  end
 
   def hours
     midnight_hours = [ 0 , 1 , 2 ]
@@ -40,8 +37,6 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
 
   def render_body
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-- one_terminal_station_info = this.has_one_terminal_station_info?
-- one_train_type_info = this.has_one_train_type_info?
 %tbody
   - this.hours.each do |h|
     - station_train_times_in_an_hour = this.grouped_by_hour[h].sort_by( &:min_in_station_timetable )
@@ -50,7 +45,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
         = h
       %td{ class: [ :station_train_times , cycle( :odd , :even ) ] }
         - station_train_times_in_an_hour.each do | station_train_time |
-          = station_train_time.decorate.render_in_station_timetable( this.terminal_station_infos , this.train_type_infos , one_train_type_info , one_terminal_station_info , major_terminal_station_info_id )
+          = station_train_time.decorate.render_in_station_timetable( rendering_settings )
     HAML
   end
 
@@ -67,12 +62,12 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
 
   private
 
-  def ary
+  def station_train_times_flattened
     @grouped_by_hour.values.flatten
   end
 
   def ids_in_station_train_times( method_name )
-    ary.map { | station_train_time | station_train_time.send( method_name ) }.uniq
+    station_train_times_flattened.map { | station_train_time | station_train_time.send( method_name ) }.uniq
   end
 
   def terminal_station_info_ids
@@ -83,40 +78,42 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     ids_in_station_train_times( :train_type_info_id )
   end
 
-  def set_major_terminal_station_info
-    @major_terminal_station_info = ::TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachRailwayDirection::EachOperationDay::StationTrainTimes::MajorTerminalStation.new( ary , terminal_station_info_ids )
-  end
-
   def h_locals
     super.merge({
       this: self ,
-      major_terminal_station_info_id: major_terminal_station_info_id
+      rendering_settings: @rendering_settings
     })
+  end
+
+  [ :has_one_terminal_station_info? , :has_one_train_type_info? ].each do | method_name |
+    eval <<-DEF
+      def #{ method_name }
+        @rendering_settings.#{ method_name }
+      end
+    DEF
   end
 
   def message_in_header_ja
     str = ::String.new
-    one_terminal_station_info = has_one_terminal_station_info?
-    one_train_type_info = has_one_train_type_info?
-    if one_terminal_station_info or one_train_type_info
+    if has_one_terminal_station_info? or has_one_train_type_info?
       str << "列車はすべて "
-      if one_train_type_info
+      if has_one_train_type_info?
         str << @train_type_infos.first.in_api.name_ja
         str << " "
       end
-      if one_terminal_station_info
+      if has_one_terminal_station_info?
         str << @terminal_station_infos.first.name_ja
         str << " 行き "
       end
       str << "です。"
-      unless one_terminal_station_info
+      unless has_one_terminal_station_info?
         str << "なお、"
       end
     end
 
-    unless one_terminal_station_info
+    unless has_one_terminal_station_info?
       str << "行先の記載がない列車はすべて "
-      str << major_terminal_station_info.name_ja
+      str << major_terminal_station_info_in_db.name_ja
       str << " 行きです。"
     end
     str
@@ -124,39 +121,33 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
 
   def message_in_header_en
     str = ::String.new
-    one_terminal_station_info = has_one_terminal_station_info?
-    one_train_type_info = has_one_train_type_info?
-    if one_terminal_station_info or one_train_type_info
+    if has_one_terminal_station_info? or has_one_train_type_info?
       str << "All trains are"
-      if one_train_type_info
+      if has_one_train_type_info?
         str << " "
         str << @train_type_infos.first.in_api.name_en
       end
-      if one_terminal_station_info
+      if has_one_terminal_station_info?
         str << " "
         str << "bound for "
         str << @terminal_station_infos.first.name_en
       end
       str << "."
-      unless one_terminal_station_info
+      unless has_one_terminal_station_info?
         str << " "
       end
     end
 
-    unless one_terminal_station_info
+    unless has_one_terminal_station_info?
       str << "All trains with no description of destination are bound for "
-      str << major_terminal_station_info.name_en
+      str << major_terminal_station_info_in_db.name_en
       str << "."
     end
     str
   end
 
-  def major_terminal_station_info
-    @terminal_station_infos.find_by( id: major_terminal_station_info_id )
-  end
-
-  def major_terminal_station_info_id
-    @major_terminal_station_info.terminal_station_id
+  def major_terminal_station_info_in_db
+    @rendering_settings.major_terminal_station_info_in_db
   end
 
 end
