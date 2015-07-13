@@ -337,11 +337,11 @@ module TokyoMetro::ClassNameLibrary::Api::StationFacility
     end
 
     def db_instance_class_of_barrier_free_service_detail
-      ::BarrierFreeFacilityServiceDetail
+      ::BarrierFreeFacility::ServiceDetail::Info
     end
 
     def db_instance_class_of_barrier_free_service_detail_pattern
-      ::BarrierFreeFacilityServiceDetailPattern
+      ::BarrierFreeFacility::ServiceDetail::Pattern
     end
 
     def db_instance_class_of_escalator_direction

@@ -87,8 +87,8 @@ module TokyoMetro::Factory::Seed
   def self.destroy_all_items_related_to_barrier_free_facilities
     destroy_all_items_of(
       ::BarrierFreeFacility::Info ,
-      ::BarrierFreeFacilityServiceDetail ,
-      ::BarrierFreeFacilityServiceDetailPattern ,
+      ::BarrierFreeFacility::ServiceDetail::Info ,
+      ::BarrierFreeFacility::ServiceDetail::Pattern ,
       ::BarrierFreeFacilityEscalatorDirection ,
       ::BarrierFreeFacilityToiletAssistant ,
       ::BarrierFreeFacilityToiletAssistantPattern
@@ -106,8 +106,8 @@ module TokyoMetro::Factory::Seed
 
   def self.destroy_all_items_related_to_station_timetables
     destroy_all_items_of(
-      ::StationTimetable::Info ,
-      ::StationTimetableFundamentalInfo
+      ::Station::Timetable::Info ,
+      ::Station::Timetable::FundamentalInfo
     )
   end
 

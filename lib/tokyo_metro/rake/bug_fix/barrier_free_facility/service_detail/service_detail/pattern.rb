@@ -6,10 +6,10 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
     @facility_names = [ facility_names ].flatten
     @proc_for_deciding_invalidity = proc_for_deciding_invalidity
     @facility_info_ids = []
-    @invalid_service_detail_pattern_id = nil
+    @invalid_pattern_id = nil
 
     set_facility_info_ids
-    set_invalid_service_detail_pattern
+    set_invalid_pattern
     set_facility_info_ids_related_to_invalid_pattern
   end
 
@@ -20,7 +20,7 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
         raise "Info for updating is not present."
       end
       unless to_test
-        @invalid_service_detail_pattern.update( h_for_updating )
+        @invalid_pattern.update( h_for_updating )
       end
       puts "Update instance"
       puts "by #{ h_for_updating }"
@@ -28,22 +28,22 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
 
     else
       puts "Create new instance - Begin"
-      h_for_new_pattern_instance = proc_for_creating_h_for_new_pattern_instance.call( info_for_updating , @invalid_service_detail_pattern )
-      new_pattern_instance = ::BarrierFreeFacilityServiceDetailPattern.find_by( h_for_new_pattern_instance )
+      h_for_new_pattern_instance = proc_for_creating_h_for_new_pattern_instance.call( info_for_updating , @invalid_pattern )
+      new_pattern_instance = ::BarrierFreeFacility::ServiceDetail::Pattern.find_by( h_for_new_pattern_instance )
       unless new_pattern_instance.present?
-        new_pattern_instance = ::BarrierFreeFacilityServiceDetailPattern.create( h_for_new_pattern_instance.merge({
-          id: ::BarrierFreeFacilityServiceDetailPattern.all.pluck(:id).max + 1
+        new_pattern_instance = ::BarrierFreeFacility::ServiceDetail::Pattern.create( h_for_new_pattern_instance.merge({
+          id: ::BarrierFreeFacility::ServiceDetail::Pattern.all.pluck(:id).max + 1
         }))
         puts "A new instance is created."
       end
 
-      ::BarrierFreeFacilityServiceDetail.where(
+      ::BarrierFreeFacility::ServiceDetail::Info.where(
         info_id: @facility_info_ids ,
-        barrier_free_facility_service_detail_pattern_id: @invalid_service_detail_pattern_id
+        pattern_id: @invalid_pattern_id
       ).to_a.each do | service_detail |
-        puts "Update service_detail instance \##{ service_detail.id } (barrier_free_facility_service_detail_pattern_id: #{ new_pattern_instance.id })"
+        puts "Update service_detail instance \##{ service_detail.id } (pattern_id: #{ new_pattern_instance.id })"
         unless to_test
-          service_detail.update( barrier_free_facility_service_detail_pattern_id: new_pattern_instance.id )
+          service_detail.update( pattern_id: new_pattern_instance.id )
         end
       end
 
@@ -70,7 +70,7 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
     puts "facility_info_ids: #{ @facility_info_ids.to_s }"
   end
 
-  def set_invalid_service_detail_pattern
+  def set_invalid_pattern
     @facility_info_ids.each do | facility_info_id |
       facility_info = ::BarrierFreeFacility::Info.find( facility_info_id )
       service_details = facility_info.service_details
@@ -78,9 +78,9 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
         pattern = detail_info.barrier_free_facility_service_detail_pattern
 
         if @proc_for_deciding_invalidity.call( pattern )
-          if @invalid_service_detail_pattern_id.blank?
-            @invalid_service_detail_pattern_id = pattern.id
-          elsif @invalid_service_detail_pattern_id != pattern.id
+          if @invalid_pattern_id.blank?
+            @invalid_pattern_id = pattern.id
+          elsif @invalid_pattern_id != pattern.id
              raise "Pattern \#1 of \"#{ facility_info.same_as }\" is not valid."
           end
         end
@@ -88,12 +88,12 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
       end
     end
 
-    @invalid_service_detail_pattern = ::BarrierFreeFacilityServiceDetailPattern.find( @invalid_service_detail_pattern_id )
-    puts "invalid_service_detail_pattern_id: #{ @invalid_service_detail_pattern_id }"
+    @invalid_pattern = ::BarrierFreeFacility::ServiceDetail::Pattern.find( @invalid_pattern_id )
+    puts "invalid_pattern_id: #{ @invalid_pattern_id }"
   end
 
   def set_facility_info_ids_related_to_invalid_pattern
-    @facility_info_ids_related_to_invalid_pattern = ::BarrierFreeFacilityServiceDetailPattern.find( @invalid_service_detail_pattern_id ).barrier_free_facility_infos.pluck( :id ).sort
+    @facility_info_ids_related_to_invalid_pattern = ::BarrierFreeFacility::ServiceDetail::Pattern.find( @invalid_pattern_id ).barrier_free_facility_infos.pluck( :id ).sort
     puts "facility_info_ids_related_to_invalid_pattern: #{ @facility_info_ids_related_to_invalid_pattern }"
   end
 

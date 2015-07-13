@@ -43,8 +43,8 @@ BarrierFreeFacility:
   - "BarrierFreeFacility::LocatedArea"
   - "BarrierFreeFacility::PlaceName"
   - "BarrierFreeFacility::RootInfo"
-  - BarrierFreeFacilityServiceDetail
-  - BarrierFreeFacilityServiceDetailPattern
+  - "BarrierFreeFacility::ServiceDetail::Info"
+  - "BarrierFreeFacility::ServiceDetail::Pattern"
   - "BarrierFreeFacility::Type"
   - BarrierFreeFacilityEscalatorDirection
   - BarrierFreeFacilityEscalatorDirectionPattern
