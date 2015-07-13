@@ -16,7 +16,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Info <
       station_facility_info_id: @station_facility_info_id ,
       id_urn: @info.id_urn ,
       same_as: @info.same_as ,
-      remark: @info.remark ,
+      remark_id: remark_id ,
       located_area_id: located_area_id ,
       type_id: type_id
     }
@@ -24,6 +24,10 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Info <
 
   def method_name_for_db_instance_class
     :db_instance_class_of_barrier_free_facility_info
+  end
+
+  def remark_id
+    ::BarrierFreeFacility::Remark.find_or_create_by( ja: @info.remark ).id
   end
 
   def located_area_id
