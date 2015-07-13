@@ -16,7 +16,7 @@ namespace :tokyo_metro do
       task :station do
         system( "rspec -c test\\tokyo_metro\\station_spec.rb" )
       end
-      
+
       desc "確認 - 駅施設情報"
       task :station_facility do
         system( "rspec -c test\\tokyo_metro\\station_facility_spec.rb" )

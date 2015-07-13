@@ -1,9 +1,9 @@
 class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos::GroupInfo < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , normal_fare_group_id , station_info , normal_fare_groups )
+  def initialize( request , fare_normal_group_id , station_info , fare_normal_groups )
     super( request )
 
-    @normal_fare_group = set_normal_fare_group( normal_fare_group_id , normal_fare_groups )
+    @fare_normal_group = set_fare_normal_group( fare_normal_group_id , fare_normal_groups )
     @station_infos = [ station_info ]
   end
 
@@ -12,10 +12,10 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos::Gro
   end
 
   def render
-    if @normal_fare_group.present?
-      render_when_normal_fare_group_is_present
+    if @fare_normal_group.present?
+      render_when_fare_normal_group_is_present
     else
-      render_when_normal_fare_group_is_not_present
+      render_when_fare_normal_group_is_not_present
     end
   end
 
@@ -23,24 +23,24 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos::Gro
 
   def h_locals
     super.merge({
-      normal_fare_group: @normal_fare_group ,
+      fare_normal_group: @fare_normal_group ,
       station_infos: @station_infos ,
       number_of_station_infos: @station_infos.length
     })
   end
 
-  def set_normal_fare_group( normal_fare_group_id , normal_fare_groups )
-    if normal_fare_group_id == 0
+  def set_fare_normal_group( fare_normal_group_id , fare_normal_groups )
+    if fare_normal_group_id == 0
       nil
     else
-      normal_fare_groups.find( normal_fare_group_id )
+      fare_normal_groups.find( fare_normal_group_id )
     end
   end
 
-  # normal_fare_group_id が定義されている場合
-  def render_when_normal_fare_group_is_present
+  # fare_normal_group_id が定義されている場合
+  def render_when_fare_normal_group_is_present
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-- normal_fare_decorated = normal_fare_group.decorate
+- normal_fare_decorated = fare_normal_group.decorate
 - station_infos.each.with_index(1) do | station_info , i |
   - case i
   - when number_of_station_infos
@@ -56,9 +56,9 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos::Gro
     HAML
   end
 
-  def render_when_normal_fare_group_is_not_present
+  def render_when_fare_normal_group_is_not_present
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-- # normal_fare_group_id が定義されている場合
+- # fare_normal_group_id が定義されている場合
 - # （運賃が設定されていない場合）
 - station_infos.each.with_index(1) do | station_info , i |
   %tr<

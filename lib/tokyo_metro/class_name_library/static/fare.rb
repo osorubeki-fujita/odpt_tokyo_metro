@@ -44,7 +44,7 @@ module TokyoMetro::ClassNameLibrary::Static::Fare
     end
 
     def db_instance_class_of_normal_table_pattern
-      ::NormalFareGroup
+      ::Fare::NormalGroup
     end
 
   end

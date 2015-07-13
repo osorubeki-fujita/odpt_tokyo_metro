@@ -2,7 +2,7 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
 
   def initialize( request , station_info , railway_line_of_terminal_station )
     super( request )
-    @normal_fare_groups = ::NormalFareGroup.all
+    @fare_normal_groups = ::Fare::NormalGroup.all
     @station_info = station_info
     @railway_lines_of_terminal_station = [ railway_line_of_terminal_station ].flatten
   end
@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %div{ id: :fare_tables }
   - railway_lines_of_terminal_station.each do | railway_line |
-    = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine.new( request , railway_line , station_infos_including_other_railway_lines , starting_station_info , fares , normal_fare_groups ).render
+    = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine.new( request , railway_line , station_infos_including_other_railway_lines , starting_station_info , fares , fare_normal_groups ).render
     HAML
   end
 
@@ -22,7 +22,7 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
       station_infos_including_other_railway_lines: station_infos_including_other_railway_lines ,
       starting_station_info: starting_station_info ,
       fares: fares ,
-      normal_fare_groups: @normal_fare_groups ,
+      fare_normal_groups: @fare_normal_groups ,
       railway_lines_of_terminal_station: @railway_lines_of_terminal_station
     })
   end
@@ -40,10 +40,10 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
   end
 
   def fares
-    ::Fare.where( from_station_info_id: starting_station_info.id , to_station_info_id: to_station_info_ids ).includes(
+    ::Fare::Info.where( from_station_info_id: starting_station_info.id , to_station_info_id: to_station_info_ids ).includes(
       :from_station_info ,
       :to_station_info ,
-      :normal_fare_group
+      :normal_group
     )
   end
 

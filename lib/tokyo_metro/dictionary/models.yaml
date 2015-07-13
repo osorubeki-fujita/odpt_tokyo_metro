@@ -55,8 +55,8 @@ PassengerSurvey:
   - PassengerSurvey
 
 Fare:
-  - Fare
-  - NormalFareGroup
+  - "Fare::Info"
+  - "Fare::NormalGroup"
 
 OperationDay:
   - OperationDay

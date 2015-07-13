@@ -1,10 +1,10 @@
 class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , station_infos , fares , normal_fare_groups , to_make_empty_row_when_no_station: false )
+  def initialize( request , station_infos , fares , fare_normal_groups , to_make_empty_row_when_no_station: false )
     super( request )
     @station_infos = station_infos
     @fares = fares
-    @normal_fare_groups = normal_fare_groups
+    @fare_normal_groups = fare_normal_groups
     @to_make_empty_row_when_no_station = to_make_empty_row_when_no_station
   end
 
@@ -26,14 +26,14 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows < TokyoMetro
   end
 
   def render_normal_rows
-    ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos.make_group_from( request , @station_infos , @fares , @normal_fare_groups ).render
+    ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos.make_group_from( request , @station_infos , @fares , @fare_normal_groups ).render
   end
 
   def h_locals
     super.merge({
       # station_infos: @station_infos ,
       # fares: @fares ,
-      normal_fare_groups: @normal_fare_groups ,
+      fare_normal_groups: @fare_normal_groups ,
       station_infos_grouped_by_fare: station_infos_grouped_by_fare
     })
   end

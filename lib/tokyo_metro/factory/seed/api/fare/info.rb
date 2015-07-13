@@ -6,7 +6,7 @@ class TokyoMetro::Factory::Seed::Api::Fare::Info < TokyoMetro::Factory::Seed::Ap
 
   include ::TokyoMetro::Factory::Seed::Reference::FromAndToStation
   include ::TokyoMetro::Factory::Seed::Reference::Operator
-  include ::TokyoMetro::Factory::Seed::Reference::NormalFareGroup
+  include ::TokyoMetro::Factory::Seed::Reference::FareNormalGroup
   include ::TokyoMetro::Factory::Seed::Reference::DcDate
 
   private
@@ -18,15 +18,15 @@ class TokyoMetro::Factory::Seed::Api::Fare::Info < TokyoMetro::Factory::Seed::Ap
       h[ key_name ] = @info.send( key_name )
     end
 
-    [ :dc_date , :normal_fare_group_id , :operator_id , :from_station_info_id , :to_station_info_id ].each do | key_name |
+    [ :dc_date , :normal_group_id , :operator_id , :from_station_info_id , :to_station_info_id ].each do | key_name |
       h[ key_name ] = self.send( key_name )
     end
 
     h
   end
 
-  def normal_fare_group_id
-    super( @normal_fares )
+  def normal_group_id
+    super( @normal_fare_groups )
   end
 
   def operator_id
