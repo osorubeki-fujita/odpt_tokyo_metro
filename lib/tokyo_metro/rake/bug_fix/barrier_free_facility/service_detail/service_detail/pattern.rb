@@ -38,7 +38,7 @@ class TokyoMetro::Rake::BugFix::BarrierFreeFacility::Pattern
       end
 
       ::BarrierFreeFacilityServiceDetail.where(
-        barrier_free_facility_info_id: @facility_info_ids ,
+        info_id: @facility_info_ids ,
         barrier_free_facility_service_detail_pattern_id: @invalid_service_detail_pattern_id
       ).to_a.each do | service_detail |
         puts "Update service_detail instance \##{ service_detail.id } (barrier_free_facility_service_detail_pattern_id: #{ new_pattern_instance.id })"

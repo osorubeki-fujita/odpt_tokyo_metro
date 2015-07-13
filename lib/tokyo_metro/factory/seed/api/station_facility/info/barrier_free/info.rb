@@ -17,8 +17,8 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Info <
       id_urn: @info.id_urn ,
       same_as: @info.same_as ,
       remark: @info.remark ,
-      barrier_free_facility_located_area_id: barrier_free_facility_located_area_id ,
-      barrier_free_facility_type_id: barrier_free_facility_type_id
+      located_area_id: located_area_id ,
+      type_id: type_id
     }
   end
 
@@ -26,12 +26,12 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Info <
     :db_instance_class_of_barrier_free_facility_info
   end
 
-  def barrier_free_facility_located_area_id
-    ::BarrierFreeFacilityLocatedArea.find_or_create_by( name_ja: @info.located_area_name_ja , name_en: @info.located_area_name_en ).id
+  def located_area_id
+    ::BarrierFreeFacility::LocatedArea.find_or_create_by( name_ja: @info.located_area_name_ja , name_en: @info.located_area_name_en ).id
   end
 
-  def barrier_free_facility_type_id
-    ::BarrierFreeFacilityType.find_or_create_by(
+  def type_id
+    ::BarrierFreeFacility::Type.find_or_create_by(
       name_ja: @info.class.category_name ,
       name_en: @info.class.category_name_en
     ).id
