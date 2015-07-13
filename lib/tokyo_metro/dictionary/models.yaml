@@ -40,12 +40,12 @@ StationFacility:
 
 BarrierFreeFacility:
   - "BarrierFreeFacility::Info"
+  - "BarrierFreeFacility::Type"
   - "BarrierFreeFacility::LocatedArea"
   - "BarrierFreeFacility::PlaceName"
   - "BarrierFreeFacility::RootInfo"
   - "BarrierFreeFacility::ServiceDetail::Info"
   - "BarrierFreeFacility::ServiceDetail::Pattern"
-  - "BarrierFreeFacility::Type"
   - BarrierFreeFacilityEscalatorDirection
   - BarrierFreeFacilityEscalatorDirectionPattern
   - BarrierFreeFacilityToiletAssistant

@@ -58,7 +58,7 @@ module TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Co
 
   def barrier_free_facility_infos
     @platform_infos.map { | info |
-      info.barrier_free_facility_infos.includes( :barrier_free_facility_located_area , :barrier_free_facility_type , :barrier_free_facility_service_details )
+      info.barrier_free_facility_infos.includes( :located_area , :type , :service_details )
     }
   end
 
