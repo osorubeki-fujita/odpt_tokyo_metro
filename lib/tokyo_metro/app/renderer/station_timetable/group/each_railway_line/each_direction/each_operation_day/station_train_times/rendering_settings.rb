@@ -43,7 +43,6 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   # @!group 行先
 
   def terminal_station_info_to_display
-    raise unless object.present?
     if to_render_terminal_station_info?
       @terminal_station_infos.find_by( id: @object.terminal_station_info_id )
     else
@@ -54,7 +53,6 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   # @!group 列車種別
 
   def train_type_info_to_display
-    raise unless object.present?
     if to_render_train_type_info?
       @train_type_infos.find_by( id: @object.train_type_info_id )
     else
@@ -91,7 +89,6 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   end
 
   def bound_for_major_terminal_station?
-    raise unless object.present?
     @object.terminal_station_info_id == major_terminal_station_info_id
   end
 
@@ -99,7 +96,6 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   # @!group 補足情報
 
   def has_additional_infos?
-    raise unless object.present?
     @object.has_additional_infos?
   end
 
@@ -110,7 +106,6 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   # @!group 終電
 
   def last_train?
-    raise unless object.present?
     @object.last_train?
   end
 
@@ -122,6 +117,10 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
 
   def set_object( object )
     @object = object
+  end
+
+  def check_presence_of_object
+    raise unless @object.present?
   end
 
 end
