@@ -64,6 +64,7 @@ OperationDay:
 Point:
   - "Point::Info"
   - "Point::Category"
+  - "Point::Code"
   - "Point::AdditionalName"
 
 "Station::Timetable":
