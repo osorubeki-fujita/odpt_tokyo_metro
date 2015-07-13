@@ -13,7 +13,7 @@ class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRea
   include ::TokyoMetro::Modules::Api::Info::Decision::StartingStation
   include ::TokyoMetro::Modules::Api::Info::Decision::TerminalStation
 
-  include ::TokyoMetro::Modules::Api::Info::Decision::RailwayLine
+  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
   include ::TokyoMetro::Modules::Api::Info::Decision::TrainType
   include ::TokyoMetro::Modules::Api::Info::Decision::OperatedSection
   include ::TokyoMetro::Modules::Api::Info::Decision::TrainDirection

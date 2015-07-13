@@ -41,14 +41,52 @@ module TokyoMetro::Modules::Common::Info::Decision::RailwayLine
     ALIAS
   end
 
+  def shinkansen?
+    shinkansen_of_jr_east? or shinkansen_of_jr_central?
+  end
+
+  def toden_arakawa_line?
+    on_the_railway_line_of?( "odpt.Railway:Toei.TodenArakawa" )
+  end
+
+  def jr_lines?
+    on_the_railway_line_of?( "odpt.Railway:JR-East" )
+  end
+
+  def shinkansen_of_jr_east?
+    on_the_railway_line_of?( "odpt.Railway:JR-East.Shinkansen" , "odpt.Railway:JR-East.Shinkansen.2015" , "odpt.Railway:JR-East.Shinkansen.2016" )
+  end
+
+  def shinkansen_of_jr_central?
+    on_the_railway_line_of?( "odpt.Railway:JR-Central.Shinkansen" )
+  end
+
+  def minatomirai_line?
+    on_the_railway_line_of?( "odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai" )
+  end
+
+  def tobu_sky_tree_isesaki_line?
+    on_the_railway_line_of?( "odpt.Railway:Tobu.SkyTreeIsesaki" )
+  end
+
+  def seibu_yurakucho_line?
+    on_the_railway_line_of?( "odpt.Railway:Seibu.SeibuYurakucho" )
+  end
+
+  def keio_line?
+    on_the_railway_line_of?( "odpt.Railway:Keio.Keio" )
+  end
+
+  def yurikamome_line?
+    on_the_railway_line_of?( "odpt.Railway:Yurikamome.Yurikamome" )
+  end
+
   # @!endgroup
 
   private
 
-  def on_the_railway_line_of?( *args , compared )
+  def on_the_railway_line_of?( *args , compared: railway_line.same_as )
     compare_base( args , compared )
   end
-
-  alias :is_on_the_railway_line_of? :on_the_railway_line_of?
 
 end

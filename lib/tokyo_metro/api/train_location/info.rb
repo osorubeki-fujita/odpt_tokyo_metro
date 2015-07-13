@@ -9,7 +9,7 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
   include ::TokyoMetro::Modules::Common::Info::Decision::ToeiMitaLine
   include ::TokyoMetro::Modules::Common::Info::Decision::RomanceCar
 
-  include ::TokyoMetro::Modules::Api::Info::Decision::RailwayLine
+  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
   include ::TokyoMetro::Modules::Api::Info::Decision::TrainType
   include ::TokyoMetro::Modules::Api::Info::Decision::TrainDirection
   include ::TokyoMetro::Modules::Api::Info::Decision::StartingStation

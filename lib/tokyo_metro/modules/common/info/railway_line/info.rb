@@ -107,50 +107,6 @@ module TokyoMetro::Modules::Common::Info::RailwayLine::Info
 
   # @!endgroup
 
-  def marunouchi_branch_line?
-    same_as == "odpt.Railway:TokyoMetro.MarunouchiBranch"
-  end
-
-  def chiyoda_branch_line?
-    same_as == "odpt.Railway:TokyoMetro.ChiyodaBranch"
-  end
-
-  def toden_arakawa_line?
-    same_as == "odpt.Railway:Toei.TodenArakawa"
-  end
-
-  def jr_lines?
-    same_as == "odpt.Railway:JR-East"
-  end
-
-  def shinkansen_of_jr_east?
-    [ "odpt.Railway:JR-East.Shinkansen" , "odpt.Railway:JR-East.Shinkansen.2015" , "odpt.Railway:JR-East.Shinkansen.2016" ].include?( same_as )
-  end
-
-  def shinkansen_of_jr_central?
-    same_as == "odpt.Railway:JR-Central.Shinkansen"
-  end
-
-  def minatomirai_line?
-    same_as == "odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai"
-  end
-
-  def tobu_sky_tree_isesaki_line?
-    same_as == "odpt.Railway:Tobu.SkyTreeIsesaki"
-  end
-
-  def seibu_yurakucho_line?
-    same_as == "odpt.Railway:Seibu.SeibuYurakucho"
-  end
-
-  def keio_line?
-    same_as == "odpt.Railway:Keio.Keio"
-  end
-
-  def yurikamome_line?
-    same_as == "odpt.Railway:Yurikamome.Yurikamome"
-  end
-
   def method_missing( method_name , *args )
     if args.empty?
       if /\A((?:is|is_not|not)_)?branch(?:_railway)?(?:_line)?\?\Z/ =~ method_name.to_s

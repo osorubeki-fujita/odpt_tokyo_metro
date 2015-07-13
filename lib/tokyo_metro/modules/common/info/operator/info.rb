@@ -96,7 +96,7 @@ module TokyoMetro::Modules::Common::Info::Operator::Info
     end
   end
 
-  # 標準の名称（ローマ字表記）
+  # 標準の名称（ローマ字表記・簡易版）
   # @return [::String]
   # @note インスタンス変数 name_en_short の値が存在する場合は、インスタンス変数 name_en_short の値を返す。
   # @note インスタンス変数 name_en_short の値が nil の場合は、name_en_normal_precise を返す。
@@ -202,7 +202,7 @@ module TokyoMetro::Modules::Common::Info::Operator::Info
 
   # @!group 鉄道事業者の名称に関するメソッド (4) - 超詳細
 
-  # HAML での表示に使用する名称（日本語）
+  # 日本語・超詳細版
   # @return [::String]
   # @example
   #   ::TokyoMetro::Static.operators.each_value { | operator | puts operator.name_ja_very_precise }
@@ -237,7 +237,7 @@ module TokyoMetro::Modules::Common::Info::Operator::Info
     end
   end
 
-  # HAML での表示に使用する名称（ローマ字表記）
+  # ローマ字表記・超詳細版
   # @return [::String]
   # @example
   #   ::TokyoMetro::Static.operators.each_value { | operator | puts operator.name_en_very_precise }
@@ -301,17 +301,5 @@ module TokyoMetro::Modules::Common::Info::Operator::Info
   end
 
   # @!endgroup
-
-  def tokyo_metro?
-    same_as == "odpt.Operator:TokyoMetro"
-  end
-
-  def nippori_toneri_liner?
-    same_as == "odpt.Operator:ToeiNipporiToneri"
-  end
-
-  def not_tokyo_metro?
-    !( tokyo_metro? )
-  end
 
 end

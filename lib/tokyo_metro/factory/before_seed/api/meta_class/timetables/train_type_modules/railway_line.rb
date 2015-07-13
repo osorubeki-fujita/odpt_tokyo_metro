@@ -8,6 +8,4 @@ module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeMod
     super( *variables , @railway_line_in_db.same_as )
   end
 
-  alias :is_on_the_railway_line_of? :on_the_railway_line_of?
-
 end

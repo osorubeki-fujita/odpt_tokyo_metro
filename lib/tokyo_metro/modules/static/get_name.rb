@@ -20,6 +20,8 @@ module TokyoMetro::Modules::Static::GetName
       name_base.join( "/" )
     elsif name_base.instance_of?( ::String )
       name_base
+    else
+      nil
     end
   end
 

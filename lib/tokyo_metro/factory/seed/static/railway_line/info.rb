@@ -18,14 +18,6 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
 
   private
 
-  def dc_date
-    if @dc_date.present?
-      super( create_from: @dc_date )
-    else
-      nil
-    end
-  end
-
   def hash_to_db
     h = {
       color: @info.color_normal_web ,
@@ -35,8 +27,8 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
       geo_json: @geo_json
     }
 
-    [ :name_ja , :name_hira , :name_en , :dc_date , :operator_id ].each do | key_name |
-      h[ key_name ] = self.send( key_name )
+    [ :name_ja , :name_hira , :name_en , :operator_id , :dc_date ].each do | key_name |
+      h[ key_name ] = send( key_name )
     end
 
     [
@@ -78,6 +70,14 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
         super( whole , search_by: search_by )
       end
     DEF
+  end
+
+  def dc_date
+    if @dc_date.present?
+      super( create_from: @dc_date )
+    else
+      nil
+    end
   end
 
   def seed_optional_infos

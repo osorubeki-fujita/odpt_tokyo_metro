@@ -9,8 +9,8 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
   include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
   include ::TokyoMetro::Modules::Common::Info::Decision::SameAs
   include ::TokyoMetro::Modules::Common::Info::Decision::Operator
+  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
 
-  include ::TokyoMetro::Modules::Api::Info::Decision::RailwayLine
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::Info
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::BranchLine
 
@@ -145,10 +145,12 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
 
   private
 
-  def on_the_railway_line_of?( *variables )
-    super( *variables , @same_as )
+  def on_the_railway_line_of?( *args )
+    super( *args , compared: @same_as )
   end
 
-  alias :is_on_the_railway_line_of? :on_the_railway_line_of?
+  def operator_of?( *args )
+    super( *args , compared: @operator )
+  end
 
 end

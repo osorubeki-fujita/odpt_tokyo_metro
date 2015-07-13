@@ -6,8 +6,10 @@ class TokyoMetro::Static::RailwayLine::Info
   include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
   include ::TokyoMetro::Modules::Static::GetName
 
+  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
   include ::TokyoMetro::Modules::Common::Info::Decision::SameAs
   include ::TokyoMetro::Modules::Common::Info::Decision::Operator
+  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
 
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::Info
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::BranchLine
@@ -420,7 +422,7 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.index
   end
 
-  # @!group 鉄道事業者の名称に関するメソッド (1) - インスタンス変数 正式名称
+  # @!group 鉄道事業者の名称に関するメソッド (1) - 正式名称
 
   # 鉄道事業者の事業者の名称（日本語、正式名称）
   # @return [::Array <::String>]
@@ -434,7 +436,7 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.name_en
   end
 
-  # @!group 鉄道事業者の名称に関するメソッド (2) - インスタン���変数 略称・表示用
+  # @!group 鉄道事業者の名称に関するメソッド (2) - 表示用
 
   # 鉄道事業者の事業者の名称（日本語、略称・表示用）
   # @return [::String or nil]
@@ -470,7 +472,7 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.name_ja_normal
   end
 
-  # 標準の名称（ローマ字表記）
+  # 標準の名称（ローマ字表記・簡易版）
   # @return [::String]
   def operator_name_en_normal
     @operator.name_en_normal
@@ -490,15 +492,15 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.name_en_for_transfer_info
   end
 
-  # @!group 鉄道事業者の名称に関するメソッド (6) - HAML
+  # @!group 鉄道事業者の名称に関するメソッド (6) - 超詳細
 
-  # HAML での表示に使用する名称（日本語）
+  # 日本語・超詳細版
   # @return [::String]
   def oprerator_name_ja_very_precise
     @operator.name_ja_very_precise
   end
 
-  # HAML での表示に使用する名称（ローマ字表記）
+  # ローマ字表記・超詳細版
   # @return [::String]
   def oprerator_name_en_very_precise
     @operator.name_en_very_precise
@@ -751,7 +753,7 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # 路線名（標準・ローマ字表記・路線名のみ）を取得するメソッド
   # @return [String] 路線名（インスタンス変数 name_en）が定義されている場合
-  # @return [nil] 路線名（イン���タンス変数 name_en）が定義されていない場合
+  # @return [nil] 路線名（インスタンス変数 name_en）が定義されていない場合
   # @example
   #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_en_normal }
   #   =>
@@ -887,7 +889,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:HakoneTozan.Rail.OdawaraSide        : 箱根登山鉄道線（小田原 - 箱根湯本）
   #   odpt.Railway:HakoneTozan.Rail.GoraSide           : 箱根登山鉄道線（箱根湯本 - 強羅）
   #   odpt.Railway:Seibu.Ikebukuro                     : 西武池袋線
-  #   odpt.Railway:Seibu.SeibuChichibu                 : 西���秩父線
+  #   odpt.Railway:Seibu.SeibuChichibu                 : 西武秩父線
   #   odpt.Railway:Seibu.Toshima                       : 西武豊島線
   #   odpt.Railway:Seibu.Sayama                        : 西武狭山線
   #   odpt.Railway:Seibu.SeibuYurakucho                : 西武有楽町線
@@ -913,7 +915,7 @@ class TokyoMetro::Static::RailwayLine::Info
     # 標準の事業者名
     operator_name_ja_normal_str = operator_name_ja_normal
     # 標準の路線名（路線名のみ）
-    name_ja_normal_str = self.name_ja_normal
+    name_ja_normal_str = name_ja_normal
 
     str = set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: false )
 
@@ -1005,9 +1007,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:TWR.Rinkai                          : Rinkai Line
   def name_en_with_operator_name_precise
     # 標準の事業者名
-    operator_name_ja_normal_str = self.operator_name_en_normal
+    operator_name_ja_normal_str = operator_name_en_normal
     # 標準の路線名（路線名のみ）
-    name_ja_normal_str = self.name_en_normal
+    name_ja_normal_str = name_en_normal
 
     str = set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: true )
 
@@ -1102,13 +1104,13 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:TWR.Rinkai                          : りんかい線
   def name_ja_with_operator_name
     # 標準の事業者名
-    operator_name_ja_normal_str = self.operator_name_ja_normal
+    operator_name_ja_normal_str = operator_name_ja_normal
     # 標準の路線名（路線名のみ）
-    name_ja_normal_str = self.name_ja_normal
+    name_ja_normal_str = name_ja_normal
     # 事業者名を付けるか否かの設定
-    with_operator_setting = name_ja_with_operator_name__set_operator_setting
+    with_operator_name = with_operator_name?
 
-    set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: false , with_operator: with_operator_setting )
+    set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: false , with_operator: with_operator_name )
   end
 
   # 路線名（標準・ローマ字表記・【原則】事業者名あり）を取得するメソッド
@@ -1190,13 +1192,13 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:TWR.Rinkai                          : Rinkai Line
   def name_en_with_operator_name
     # 標準の事業者名
-    operator_name_ja_normal_str = self.operator_name_en_normal
+    operator_name_en_normal_str = operator_name_en_normal
     # 標準の路線名（路線名のみ）
-    name_ja_normal_str = self.name_en_normal
+    name_en_normal_str = name_en_normal
     # 事業者名を付けるか否かの設定
-    with_operator_setting = name_ja_with_operator_name__set_operator_setting
+    with_operator_name = with_operator_name?
 
-    set_name_ja_short( operator_name_ja_normal_str , name_ja_normal_str , en: true , with_operator: with_operator_setting )
+    set_name_ja_short( operator_name_en_normal_str , name_en_normal_str , en: true , with_operator: with_operator_name )
   end
 
 # @!group 路線色に関するメソッド (1)
@@ -1293,8 +1295,8 @@ class TokyoMetro::Static::RailwayLine::Info
     # 路線の色が定義されていない場合
     if @color.nil?
       # 事業者の色が定義されている場合は、事業者の色をそのまま標準の路線色とする。
-      if self.operator_color.instance_of?( ::TokyoMetro::Static::Color )
-        self.operator_color
+      if operator_color.instance_of?( ::TokyoMetro::Static::Color )
+        operator_color
 
       # 事業者の色が定義されていない場合は、#999999 を標準の路線色とする。
       else
@@ -1387,7 +1389,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Yurikamome.Yurikamome               : #00418e
   #   odpt.Railway:TWR.Rinkai                          : #00418e
   def color_normal_web
-    self.color_normal.web_color
+    color_normal.web_color
   end
 
   # 標準の路線色の Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
@@ -1467,7 +1469,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Yurikamome.Yurikamome               : ( 0 , 65 , 142 )
   #   odpt.Railway:TWR.Rinkai                          : ( 0 , 65 , 142 )
   def to_color_normal_rgb_in_parentheses
-    self.color_normal.to_rgb_color_in_parentheses
+    color_normal.to_rgb_color_in_parentheses
   end
 
 # @!group 路線色に関するメソッド (2)
@@ -1475,19 +1477,19 @@ class TokyoMetro::Static::RailwayLine::Info
   # 標準の路線色の R 成分を取得するメソッド
   # @return [Integer]
   def color_normal_red
-    self.color_normal.red
+    color_normal.red
   end
 
   # 標準の路線色の G 成分を取得するメソッド
   # @return [Integer]
   def color_normal_green
-    self.color_normal.green
+    color_normal.green
   end
 
   # 標準の路線色の B 成分を取得するメソッド
   # @return [Integer]
   def color_normal_blue
-    self.color_normal.blue
+    color_normal.blue
   end
 
 # @!group 鉄道事業者の駅番号・路線番号に関するメソッド
@@ -1555,13 +1557,13 @@ class TokyoMetro::Static::RailwayLine::Info
   # SCSS で include する、形状を表す mixin を返すメソッド
   # @return [::String]
   def included_scss_mixin_for_railway_line_code_shape
-    case self.operator_railway_line_code_shape
+    case operator_railway_line_code_shape
     when nil
       "rounded_square"
     when "none"
       "rounded_square"
     when "filled_rounded_square" , "stroked_circle" , "stroked_rounded_square"
-      "railway_line_code_#{self.operator_railway_line_code_shape}"
+      "railway_line_code_#{ operator_railway_line_code_shape }"
     end
   end
 
@@ -1569,10 +1571,9 @@ class TokyoMetro::Static::RailwayLine::Info
   # @return [Numeric] 縁取り線を設定する場合
   # @return [nil] 縁取り線を設定しない場合
   def stroke_line_width_of_stroked_line_for_scss( rate: 1 )
-    case self.operator_railway_line_code_shape
+    case operator_railway_line_code_shape
     when "stroked_circle" , "stroked_rounded_square"
-      case self.operator.same_as
-      when "odpt.Operator:TokyoMetro" , "odpt.Operator:Toei"
+      if subways_in_tokyo?
         num = 9
       else
         num = 6
@@ -1588,23 +1589,59 @@ class TokyoMetro::Static::RailwayLine::Info
   def railway_line_code_text_settings_for_scss
     ary = ::Array.new
     # 路線記号が定義されている場合
-    if self.name_code_normal.string?
-      case self.name_code_normal.length
-      when 1
+    if name_code_normal.string?
+      if name_code_normal.length == 1
         ary << "railway_line_code_large_letter"
-        ary << "railway_line_code_bold"
       else
         ary << "railway_line_code_small_letter"
-        case @operator.same_as
-        when "odpt.Operator:Tokyu" , "odpt.Operator:YokohamaMinatomiraiRailway" , "odpt.Operator:ToyoRapidRailway"
-          ary << "railway_line_code_bold"
-        end
+      end
+
+      if with_bold_railway_line_code_text?
+        ary << "railway_line_code_bold"
       end
     end
     ary
   end
 
   private
+
+  def name_ja_to_a
+    name_ja
+  end
+
+  def name_en_to_a
+    name_en
+  end
+
+  def has_name_ja?
+    name_ja_to_a.present?
+  end
+
+  def has_name_en?
+    name_en_to_a.present?
+  end
+
+  def has_one_name_ja?
+    name_ja_to_a.length == 1
+  end
+
+  def has_one_name_en?
+    name_en_to_a.length == 1
+  end
+
+  def has_many_name_ja?
+    name_ja_to_a.length > 1
+  end
+
+  def has_many_name_en?
+    name_en_to_a.length > 1
+  end
+
+  def with_bold_railway_line_code_text?
+    operated_by_tokyu? or operated_by_yokohama_minatomirai_railway? or operated_by_toyo_rapid_railway? or name_code_normal.length == 1
+  end
+
+
 
   def set_name_ja_short( operator , railway_line , en: false , with_operator: true )
     # 路線名が定義されていない場合
@@ -1639,20 +1676,16 @@ class TokyoMetro::Static::RailwayLine::Info
     return nil
   end
 
-  def name_ja_with_operator_name__set_operator_setting
-    case @operator.same_as
-    when "odpt.Operator:TokyoMetro" , "odpt.Operator:ToeiNipporiToneri"
-      false
-    else
-      #---- 路線による判定 ここから
-      case @same_as
-      when "odpt.Railway:JR-East.Shinkansen" , "odpt.Railway:JR-Central.Shinkansen"
-        false
-      else
-        true
-      end
-      #---- 路線による判定 ここまで
-    end
+  def with_operator_name?
+    !( tokyo_metro? or nippori_toneri_liner? or shinkansen? )
+  end
+
+  def operator_of?( *args )
+    super( *args , compared: @operator.same_as  )
+  end
+
+  def railway_line
+    self
   end
 
 end

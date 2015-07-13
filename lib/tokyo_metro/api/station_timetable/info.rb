@@ -5,9 +5,10 @@ class TokyoMetro::Api::StationTimetable::Info < TokyoMetro::Api::MetaClass::NotR
 
   include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
   include ::TokyoMetro::Modules::Common::Info::Decision::SameAs
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
-  include ::TokyoMetro::Modules::Api::Info::Decision::RailwayLine
+  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
   include ::TokyoMetro::Modules::Api::Info::Decision::CurrentStation
+
+  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
 
   # Constructor
   def initialize( id_urn , same_as , dc_date , station_timetable_fundamental_infos ,
@@ -392,14 +393,14 @@ class TokyoMetro::Api::StationTimetable::Info < TokyoMetro::Api::MetaClass::NotR
     end
   end
 
-  def station_same_as__is_in?( *variables )
-    super( *variables , compared: self.stations )
+  private
+
+  def station_same_as__is_in?( *args )
+    super( *args , compared: stations )
   end
 
-  def on_the_railway_line_of?( *variables )
-    super( *variables , compared: self.railway_lines )
+  def on_the_railway_line_of?( *args )
+    super( *args , compared: railway_lines )
   end
-
-  alias :is_on_the_railway_line_of? :on_the_railway_line_of?
 
 end

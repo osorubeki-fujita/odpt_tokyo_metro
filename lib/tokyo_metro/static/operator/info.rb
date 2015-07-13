@@ -8,6 +8,9 @@ class TokyoMetro::Static::Operator::Info
 
   include ::TokyoMetro::Modules::Common::Info::Operator::Info
 
+  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
+  include ::TokyoMetro::Modules::Common::Info::Decision::Operator
+
 # @!group Constructor
 
   # Constructor
@@ -353,6 +356,10 @@ class TokyoMetro::Static::Operator::Info
 
   def has_many_name_en?
     name_en_to_a.length > 1
+  end
+
+  def operator_of?( *args )
+    super( *args , compared: @same_as  )
   end
 
 end

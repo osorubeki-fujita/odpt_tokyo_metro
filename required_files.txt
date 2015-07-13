@@ -92,7 +92,6 @@ lib/tokyo_metro/modules/api/info/decision/actual_terminal_station.rb
 lib/tokyo_metro/modules/api/info/decision/arrival_station.rb
 lib/tokyo_metro/modules/api/info/decision/current_station.rb
 lib/tokyo_metro/modules/api/info/decision/operated_section.rb
-lib/tokyo_metro/modules/api/info/decision/railway_line.rb
 lib/tokyo_metro/modules/api/info/decision/starting_station.rb
 lib/tokyo_metro/modules/api/info/decision/terminal_station.rb
 lib/tokyo_metro/modules/api/info/decision/train_direction.rb
@@ -259,7 +258,6 @@ lib/tokyo_metro/modules/api/to_factory/save/info/data_search.rb
 lib/tokyo_metro/modules/db/decision.rb
 lib/tokyo_metro/modules/db/decision/current_station.rb
 lib/tokyo_metro/modules/db/decision/operator.rb
-lib/tokyo_metro/modules/db/decision/railway_line.rb
 lib/tokyo_metro/modules/db/decision/train_type.rb
 lib/tokyo_metro/modules/db/model.rb
 lib/tokyo_metro/modules/db/select.rb
