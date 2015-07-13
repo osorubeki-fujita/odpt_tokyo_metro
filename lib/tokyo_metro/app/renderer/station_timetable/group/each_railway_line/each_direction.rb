@@ -29,8 +29,8 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   # 方面ごとの各列車の時刻を取得
   def station_train_times
     station_timetable_of_a_direction.station_train_times.includes(
-      :train_timetable ,
-      train_timetable: [ :terminal_station_info , :train_type_info , :operation_day ]
+      :train_timetable_info ,
+      train_timetable_info: [ :terminal_station_info , :train_type_info , :operation_day ]
     )
   end
 
