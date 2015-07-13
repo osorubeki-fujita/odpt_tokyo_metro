@@ -12,7 +12,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Facili
   def hash_to_db
     {
       barrier_free_facility_id: @barrier_free_facility_id ,
-      barrier_free_facility_toilet_assistant_pattern_id: barrier_free_facility_toilet_assistant_pattern_id
+      pattern_id: pattern_id
     }
   end
 
@@ -20,12 +20,12 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Facili
     :db_instance_class_of_toilet_assistant
   end
 
-  def barrier_free_facility_toilet_assistant_pattern_in_db
-    ::BarrierFreeFacilityToiletAssistantPattern.find_or_create_by( @info.to_h )
+  def pattern_in_db
+    ::BarrierFreeFacility::ToiletAssistant::Pattern.find_or_create_by( @info.to_h )
   end
 
-  def barrier_free_facility_toilet_assistant_pattern_id
-    barrier_free_facility_toilet_assistant_pattern_in_db.id
+  def pattern_id
+    pattern_in_db.id
   end
 
 end

@@ -90,8 +90,8 @@ module TokyoMetro::Factory::Seed
       ::BarrierFreeFacility::ServiceDetail::Info ,
       ::BarrierFreeFacility::ServiceDetail::Pattern ,
       ::BarrierFreeFacility::EscalatorDirection::Info ,
-      ::BarrierFreeFacilityToiletAssistant ,
-      ::BarrierFreeFacilityToiletAssistantPattern
+      ::BarrierFreeFacility::ToiletAssistant::Info ,
+      ::BarrierFreeFacility::ToiletAssistant::Pattern
     )
   end
 

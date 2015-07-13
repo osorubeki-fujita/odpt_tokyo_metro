@@ -48,8 +48,8 @@ BarrierFreeFacility:
   - "BarrierFreeFacility::ServiceDetail::Pattern"
   - "BarrierFreeFacility::EscalatorDirection::Info"
   - "BarrierFreeFacility::EscalatorDirection::Pattern"
-  - BarrierFreeFacilityToiletAssistant
-  - BarrierFreeFacilityToiletAssistantPattern
+  - "BarrierFreeFacility::ToiletAssistant::Info"
+  - "BarrierFreeFacility::ToiletAssistant::Pattern"
 
 PassengerSurvey:
   - PassengerSurvey

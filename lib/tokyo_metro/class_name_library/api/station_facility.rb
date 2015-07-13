@@ -353,7 +353,7 @@ module TokyoMetro::ClassNameLibrary::Api::StationFacility
     end
 
     def db_instance_class_of_toilet_assistant
-      ::BarrierFreeFacilityToiletAssistant
+      ::BarrierFreeFacility::ToiletAssistant::Info
     end
 
     def db_instance_class_of_platform_info
