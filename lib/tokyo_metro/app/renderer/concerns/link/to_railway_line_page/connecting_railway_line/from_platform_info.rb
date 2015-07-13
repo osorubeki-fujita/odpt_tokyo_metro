@@ -53,10 +53,10 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
   end
 
   def connecting_railway_line_info_in_initialize
-    station_facility_platform_info = object.station_facility_platform_info
-    station_infos = station_facility_platform_info.station_facility_info.station_infos
+    platform_info = object.platform_info
+    station_infos = platform_info.station_facility_info.station_infos
 
-    railway_line_for_this_platform_info = ::RailwayLine.find( station_facility_platform_info.railway_line_id )
+    railway_line_for_this_platform_info = ::RailwayLine.find( platform_info.railway_line_id )
     railway_line_connected = ::RailwayLine.find( object.railway_line_id )
 
     station_info = station_infos.find_by( railway_line: railway_line_for_this_platform_info )
@@ -85,8 +85,8 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
       ary = ::Array.new
       ary << "\n"
       ary << "object \[#{ object.class }\] : #{ object.id }"
-      ary << "station_facility_platform_info: #{ station_facility_platform_info.id }"
-      ary << "station_facility: #{ station_facility_platform_info.station_facility_info.id }"
+      ary << "platform_info: #{ platform_info.id }"
+      ary << "station_facility: #{ platform_info.station_facility_info.id }"
       ary << "station info: #{ station_info.same_as }"
       ary << "railway line for this platform info: #{ railway_line_for_this_platform_info.same_as }"
       ary << "railway line connected: #{ railway_line_connected.same_as }"
