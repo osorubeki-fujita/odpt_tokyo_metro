@@ -345,11 +345,11 @@ module TokyoMetro::ClassNameLibrary::Api::StationFacility
     end
 
     def db_instance_class_of_escalator_direction
-      ::BarrierFreeFacilityEscalatorDirection
+      ::BarrierFreeFacility::EscalatorDirection::Info
     end
 
     def db_instance_class_of_escalator_direction_pattern
-      ::BarrierFreeFacilityEscalatorDirectionPattern
+      ::BarrierFreeFacility::EscalatorDirection::Pattern
     end
 
     def db_instance_class_of_toilet_assistant

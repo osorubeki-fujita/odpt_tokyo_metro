@@ -6,13 +6,13 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Facili
 
   def set_optional_variables( args )
     raise "Error" unless args.length == 1
-    @barrier_free_facility_service_detail_id = args.first
+    @service_detail_info_id = args.first
   end
 
   def hash_to_db
     {
-      barrier_free_facility_service_detail_id: @barrier_free_facility_service_detail_id ,
-      barrier_free_facility_escalator_direction_pattern_id: barrier_free_facility_escalator_direction_pattern_id
+      service_detail_info_id: @service_detail_info_id ,
+      pattern_id: pattern_id
     }
   end
 
@@ -24,7 +24,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Facili
     :db_instance_class_of_escalator_direction_pattern
   end
 
-  def barrier_free_facility_escalator_direction_pattern_id
+  def pattern_id
     self.class.send( method_name_for_db_direction_pattern_instance_class ).find_or_create_by( @info.to_h ).id
   end
 

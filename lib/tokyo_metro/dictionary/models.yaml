@@ -46,8 +46,8 @@ BarrierFreeFacility:
   - "BarrierFreeFacility::RootInfo"
   - "BarrierFreeFacility::ServiceDetail::Info"
   - "BarrierFreeFacility::ServiceDetail::Pattern"
-  - BarrierFreeFacilityEscalatorDirection
-  - BarrierFreeFacilityEscalatorDirectionPattern
+  - "BarrierFreeFacility::EscalatorDirection::Info"
+  - "BarrierFreeFacility::EscalatorDirection::Pattern"
   - BarrierFreeFacilityToiletAssistant
   - BarrierFreeFacilityToiletAssistantPattern
 
