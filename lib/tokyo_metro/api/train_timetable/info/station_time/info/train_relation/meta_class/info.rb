@@ -13,9 +13,9 @@ class TokyoMetro::Api::TrainTimetable::Info::StationTime::Info::TrainRelation::M
   attr_reader :same_as
 
   def in_api
-    train_timetable = ::TokyoMetro::Api.train_timetables.find { | item | item.same_as?( @same_as ) }
-    raise "Error" unless train_timetable.present?
-    return train_timetable
+    train_timetable_info = ::TokyoMetro::Api.train_timetables.find { | item | item.same_as?( @same_as ) }
+    raise "Error" unless train_timetable_info.present?
+    return train_timetable_info
   end
 
 end
