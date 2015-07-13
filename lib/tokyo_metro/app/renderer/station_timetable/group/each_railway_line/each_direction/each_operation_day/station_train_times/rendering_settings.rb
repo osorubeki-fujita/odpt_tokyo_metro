@@ -12,12 +12,10 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     @major_terminal_station_info_id = major_terminal_station_info_id
   end
 
+  # @!group 行先
+
   def terminal_station_info
     @terminal_station_infos.find_by( id: @object.terminal_station_info_id )
-  end
-
-  def train_type_info
-    @train_type_infos.find_by( id: @object.train_type_info_id )
   end
 
   def of_displayed_terminal_station_info
@@ -28,6 +26,12 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     end
   end
 
+  # @!group 列車種別
+
+  def train_type_info
+    @train_type_infos.find_by( id: @object.train_type_info_id )
+  end
+
   def of_displayed_train_type_info
     if to_render_train_type_info?
       train_type_info
@@ -36,13 +40,17 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     end
   end
 
-  private
-
   # @!group 詳細情報
 
   def to_render_precise_infos?
     !( not_to_render_precise_infos? )
   end
+
+  # @!endgroup
+
+  private
+
+  # @!group 詳細情報
 
   def not_to_render_precise_infos?
     not_to_render_train_type_info? and @one_terminal_station_info and not_have_additional_infos?
