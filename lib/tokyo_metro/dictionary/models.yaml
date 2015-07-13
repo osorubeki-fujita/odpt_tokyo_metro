@@ -35,6 +35,7 @@ StationFacility:
 
 BarrierFreeFacility:
   - "BarrierFreeFacility::Info"
+  - "BarrierFreeFacility::Remark"
   - "BarrierFreeFacility::Type"
   - "BarrierFreeFacility::LocatedArea"
   - "BarrierFreeFacility::PlaceName"

@@ -12,7 +12,6 @@ class TokyoMetro::Factory::Generate::Api::StationFacility::Info::BarrierFree::In
 
     place_name = @hash[ "odpt:placeName" ]
     located_area_name = @hash[ "odpt:locatedAreaName" ]
-    remark = @hash[ "ugsrv:remark" ]
 
     unless located_area_name.string? and /\A改札(?:内|外)\Z/ === located_area_name
       located_area_name = "☆☆☆☆☆☆☆☆"
@@ -22,6 +21,15 @@ class TokyoMetro::Factory::Generate::Api::StationFacility::Info::BarrierFree::In
   end
 
   private
+
+  def remark
+    str = @hash[ "ugsrv:remark" ]
+
+    class << str
+      include ::TokyoMetro::Factory::Convert::Patch::ForString::BarrierFreeFacility::Info::Remark
+    end
+    str.process
+  end
 
   def to_check_validity?
     true

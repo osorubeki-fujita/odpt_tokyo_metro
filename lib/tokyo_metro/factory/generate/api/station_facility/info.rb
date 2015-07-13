@@ -26,7 +26,7 @@ class TokyoMetro::Factory::Generate::Api::StationFacility::Info < TokyoMetro::Fa
       #
       # ::TokyoMetro::Api::StationFacility::Info::BarrierFree
       # @note ::TokyoMetro::Api::StationFacility::Info::BarrierFree::Info (barrier_free_meta_info_class) ではない
-      self.class.barrier_free_top_level_class 
+      self.class.barrier_free_top_level_class
     )
   end
 
