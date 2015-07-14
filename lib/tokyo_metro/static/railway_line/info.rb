@@ -1535,7 +1535,7 @@ class TokyoMetro::Static::RailwayLine::Info
     name_en
   end
 
-  def name_code_to_a
+  def name_codes_to_a
     name_codes
   end
 
