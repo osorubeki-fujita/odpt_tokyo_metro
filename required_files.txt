@@ -5,6 +5,11 @@ lib/tokyo_metro/initializer/rails.rb
 lib/tokyo_metro/modules.rb
 lib/tokyo_metro/modules/fundamental.rb
 lib/tokyo_metro/modules/fundamental/convert_constant_to_class_method.rb
+lib/tokyo_metro/modules/fundamental/css_class.rb
+lib/tokyo_metro/modules/fundamental/get.rb
+lib/tokyo_metro/modules/fundamental/get/list.rb
+lib/tokyo_metro/modules/fundamental/get/main_name.rb
+lib/tokyo_metro/modules/fundamental/get/name_for_inspection.rb
 lib/tokyo_metro/modules/dictionary.rb
 lib/tokyo_metro/modules/dictionary/common.rb
 lib/tokyo_metro/modules/dictionary/common/railway_line.rb
@@ -54,8 +59,6 @@ lib/tokyo_metro/modules/decision/db/train_type.rb
 lib/tokyo_metro/modules/decision/static.rb
 lib/tokyo_metro/modules/common.rb
 lib/tokyo_metro/modules/common/info.rb
-lib/tokyo_metro/modules/common/info/fundamental.rb
-lib/tokyo_metro/modules/common/info/fundamental/css_class.rb
 lib/tokyo_metro/modules/common/info/new_and_old_railway_line.rb
 lib/tokyo_metro/modules/common/info/new_and_old_railway_line/set_time.rb
 lib/tokyo_metro/modules/common/info/operator.rb
@@ -280,7 +283,6 @@ lib/tokyo_metro/modules/static/get_background_color_info/each_rgb_element.rb
 lib/tokyo_metro/modules/static/get_color_info.rb
 lib/tokyo_metro/modules/static/get_color_info/base.rb
 lib/tokyo_metro/modules/static/get_color_info/each_rgb_element.rb
-lib/tokyo_metro/modules/static/get_name.rb
 lib/tokyo_metro/modules/static/hash.rb
 lib/tokyo_metro/modules/static/hash/define_test.rb
 lib/tokyo_metro/class_name_library.rb

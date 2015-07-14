@@ -61,7 +61,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
 
     station_info = station_infos.find_by( railway_line: railway_line_for_this_platform_info )
 
-    if railway_line_connected.jr_lines?
+    if railway_line_connected.on_jr_lines?
       puts "station info: #{ station_info.same_as }"
       puts "railway line of this station: #{ railway_line_for_this_platform_info.same_as }"
       puts "railway line connected: #{ railway_line_connected.same_as }"

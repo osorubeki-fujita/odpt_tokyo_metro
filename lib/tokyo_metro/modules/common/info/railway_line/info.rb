@@ -404,7 +404,7 @@ module TokyoMetro::Modules::Common::Info::RailwayLine::Info
   private
 
   def with_operator_name?
-    !( tokyo_metro? or nippori_toneri_liner? or shinkansen? )
+    !( tokyo_metro? or nippori_toneri_liner? or on_shinkansen? )
   end
 
   def railway_line

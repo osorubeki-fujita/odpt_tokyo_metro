@@ -16,40 +16,15 @@ module TokyoMetro::Modules::Decision::MetaClass::RailwayLine
     DEF
   end
 
-  def on_marunouchi_line_including_branch?
-    on_the_railway_line_of?( *( ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.marunouchi_main_and_branch_line_same_as ) )
-  end
-
-  def on_yurakucho_or_fukutoshin_line?
-    on_the_railway_line_of?( *( ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.yurakucho_and_fukutoshin_line_same_as ) )
-  end
-
   def on_toei_mita_line?
     on_the_railway_line_of?( "odpt.Railway:Toei.Mita" )
   end
 
-  def on_namboku_or_toei_mita_line?
-    on_namboku_line? or on_toei_mita_line?
-  end
-
-  #-------- [alias]
-  [ :marunouchi_line_including_branch , :yurakucho_or_fukutoshin_line , :namboku_or_toei_mita_line , :toei_mita_line ].each do | method_base_name |
-    eval <<-ALIAS
-      alias :#{method_base_name}? :on_#{method_base_name}?
-      alias :is_on_#{method_base_name}? :on_#{method_base_name}?
-      alias :is_#{method_base_name}? :on_#{method_base_name}?
-    ALIAS
-  end
-
-  def shinkansen?
-    shinkansen_of_jr_east? or shinkansen_of_jr_central?
-  end
-
-  def toden_arakawa_line?
+  def on_toden_arakawa_line?
     on_the_railway_line_of?( "odpt.Railway:Toei.TodenArakawa" )
   end
 
-  def jr_lines?
+  def on_jr_lines?
     on_the_railway_line_of?( "odpt.Railway:JR-East" )
   end
 
@@ -79,6 +54,33 @@ module TokyoMetro::Modules::Decision::MetaClass::RailwayLine
 
   def yurikamome_line?
     on_the_railway_line_of?( "odpt.Railway:Yurikamome.Yurikamome" )
+  end
+
+  # @!group 複数の路線の判定
+
+  def on_marunouchi_line_including_branch?
+    on_the_railway_line_of?( *( ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.marunouchi_main_and_branch_line_same_as ) )
+  end
+
+  def on_yurakucho_or_fukutoshin_line?
+    on_the_railway_line_of?( *( ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.yurakucho_and_fukutoshin_line_same_as ) )
+  end
+
+  def on_namboku_or_toei_mita_line?
+    on_namboku_line? or on_toei_mita_line?
+  end
+
+  def on_shinkansen?
+    shinkansen_of_jr_east? or shinkansen_of_jr_central?
+  end
+
+  #-------- [alias]
+  [ :marunouchi_line_including_branch , :yurakucho_or_fukutoshin_line , :namboku_or_toei_mita_line , :toei_mita_line , :shinkansen ].each do | method_base_name |
+    eval <<-ALIAS
+      alias :#{method_base_name}? :on_#{method_base_name}?
+      alias :is_on_#{method_base_name}? :on_#{method_base_name}?
+      alias :is_#{method_base_name}? :on_#{method_base_name}?
+    ALIAS
   end
 
   # @!endgroup

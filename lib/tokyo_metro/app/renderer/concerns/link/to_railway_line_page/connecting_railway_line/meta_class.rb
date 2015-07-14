@@ -60,7 +60,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
   end
 
   def connected_to_jr_lines?
-    @connecting_railway_line_decorated.instance_of?( ::RailwayLineDecorator ) and connecting_railway_line_object.jr_lines?
+    @connecting_railway_line_decorated.instance_of?( ::RailwayLineDecorator ) and connecting_railway_line_object.on_jr_lines?
   end
 
 end
