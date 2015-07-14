@@ -5,14 +5,16 @@ class TokyoMetro::Static::Operator::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Fundamental::Get::NameForInspection
-  include ::TokyoMetro::Modules::Fundamental::Get::MainName
-  include ::TokyoMetro::Modules::Fundamental::CssClass
+  include ::TokyoMetro::Modules::Name::Static::Fundamental::ForInspection
+  include ::TokyoMetro::Modules::Name::Common::Fundamental::GetMainName
+  include ::TokyoMetro::Modules::Name::Common::Fundamental::CssClass
 
-  include ::TokyoMetro::Modules::Common::Info::Operator::Info
+  include ::TokyoMetro::Modules::Name::Common::Operator
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::Operator
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::Operator
+
+  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::Operator
 
 # @!group Constructor
 

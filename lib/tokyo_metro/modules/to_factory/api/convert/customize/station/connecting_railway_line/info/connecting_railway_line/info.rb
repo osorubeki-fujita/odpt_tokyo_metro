@@ -4,7 +4,7 @@
 #     by {TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::ConnectingRailwayLine.set_modules} .
 module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::ConnectingRailwayLine::Info::ConnectingRailwayLine::Info
 
-  include ::TokyoMetro::Modules::Common::Info::Station::ConnectingRailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::Station::ConnectingRailwayLine
   include ::TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine
   include ::TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine::SetTime
 

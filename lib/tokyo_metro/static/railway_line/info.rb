@@ -5,19 +5,22 @@ class TokyoMetro::Static::RailwayLine::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Fundamental::Get::NameForInspection
-  include ::TokyoMetro::Modules::Fundamental::Get::MainName
-  include ::TokyoMetro::Modules::Fundamental::CssClass
+  include ::TokyoMetro::Modules::Name::Static::Fundamental::ForInspection
+  include ::TokyoMetro::Modules::Name::Common::Fundamental::GetMainName
+  include ::TokyoMetro::Modules::Name::Common::Fundamental::CssClass
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::SameAs
-  include ::TokyoMetro::Modules::Decision::MetaClass::Operator
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::SameAs
+  include ::TokyoMetro::Modules::Decision::Common::Operator
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
 
-  include ::TokyoMetro::Modules::Common::Info::RailwayLine::Info
-  include ::TokyoMetro::Modules::Common::Info::RailwayLine::BranchLine
+  include ::TokyoMetro::Modules::Name::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::BranchLine
+  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::RailwayLine::BranchLine
 
   include ::TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine
+
+  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::Operator
 
   # Constructor
   # @param same_as [::String]

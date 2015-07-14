@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Decision::Api::ArrivalStation
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::ArrivalStation
+  include ::TokyoMetro::Modules::Decision::Common::ArrivalStation
 
   private
 

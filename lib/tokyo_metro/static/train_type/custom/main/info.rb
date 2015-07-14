@@ -27,6 +27,6 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
   include ::TokyoMetro::Modules::Static::GetBackgroundColorInfo::EachRgbElement
   # @!endgroup
 
-  include ::TokyoMetro::Modules::Common::Info::TrainType::CssClass
+  include ::TokyoMetro::Modules::Name::Common::TrainType::CssClass
 
 end

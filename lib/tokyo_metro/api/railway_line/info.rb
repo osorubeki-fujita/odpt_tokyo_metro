@@ -6,14 +6,16 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
 
   include ::TokyoMetro::ClassNameLibrary::Api::RailwayLine
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::SameAs
-  include ::TokyoMetro::Modules::Decision::MetaClass::Operator
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::SameAs
+  include ::TokyoMetro::Modules::Decision::Common::Operator
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
 
-  include ::TokyoMetro::Modules::Common::Info::RailwayLine::BranchLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::BranchLine
 
   include ::TokyoMetro::Modules::Api::Info::ToStringWithArray
+
+  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::Operator
 
   # @!group Constructor
 

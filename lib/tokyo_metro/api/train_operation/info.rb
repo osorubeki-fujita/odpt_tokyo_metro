@@ -3,8 +3,8 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
 
   include ::TokyoMetro::ClassNameLibrary::Api::TrainOperation
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
 
   include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
 

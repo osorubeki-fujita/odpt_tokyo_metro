@@ -1,6 +1,6 @@
 module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeModules::RailwayLine
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
 
   private
 

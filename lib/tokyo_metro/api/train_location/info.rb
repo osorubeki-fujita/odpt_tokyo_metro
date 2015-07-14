@@ -5,11 +5,11 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
 
   include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::ToeiMitaLine
-  include ::TokyoMetro::Modules::Decision::MetaClass::RomanceCar
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::ToeiMitaLine
+  include ::TokyoMetro::Modules::Decision::Common::RomanceCar
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
   include ::TokyoMetro::Modules::Decision::Api::TrainType
   include ::TokyoMetro::Modules::Decision::Api::TrainDirection
   include ::TokyoMetro::Modules::Decision::Api::StartingStation

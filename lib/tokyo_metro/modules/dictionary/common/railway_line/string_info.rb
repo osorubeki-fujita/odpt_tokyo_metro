@@ -40,6 +40,7 @@
 module TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo
 
   include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Dictionary::Common::RailwayLine::StringInfo
 
   ::YAML.load_file( "#{ ::TokyoMetro::dictionary_dir }/railway_line/tokyo_metro_lines_in_system.yaml" ).each do | item |
     const_name_base = item.underscore.upcase
@@ -50,13 +51,5 @@ module TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo
 
   TOEI_MITA_SAME_AS = "odpt.Railway:Toei.Mita"
   TOEI_MITA = TOEI_MITA_SAME_AS
-
-  def self.method_missing( method_name , *args )
-    if /_line\Z/ === method_name.to_s
-      send( method_name.to_s.gsub( /_line\Z/ , "" ).intern , *args )
-    else
-      super( method_name , *args )
-    end
-  end
 
 end

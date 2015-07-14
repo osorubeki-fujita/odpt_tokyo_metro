@@ -4,16 +4,16 @@ class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRea
   include ::TokyoMetro::ClassNameLibrary::Api::TrainTimetable
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::RomanceCar
-  include ::TokyoMetro::Modules::Decision::MetaClass::ToeiMitaLine
-  include ::TokyoMetro::Modules::Decision::MetaClass::SameAs
+  include ::TokyoMetro::Modules::Decision::Common::RomanceCar
+  include ::TokyoMetro::Modules::Decision::Common::ToeiMitaLine
+  include ::TokyoMetro::Modules::Decision::Common::SameAs
 
   include ::TokyoMetro::Modules::Decision::Api::StartingStation
   include ::TokyoMetro::Modules::Decision::Api::TerminalStation
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
   include ::TokyoMetro::Modules::Decision::Api::TrainType
   include ::TokyoMetro::Modules::Decision::Api::OperatedSection
   include ::TokyoMetro::Modules::Decision::Api::TrainDirection

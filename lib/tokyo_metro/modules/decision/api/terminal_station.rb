@@ -2,7 +2,7 @@
 # @note 判定にはインスタンス変数 @terminal_station を利用する。
 module TokyoMetro::Modules::Decision::Api::TerminalStation
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::TerminalStation
+  include ::TokyoMetro::Modules::Decision::Common::TerminalStation
 
   # 列車の行先を判定するメソッド
   # @param list_of_train_terminal_station [::Array <::String>] 判定する駅名のリスト

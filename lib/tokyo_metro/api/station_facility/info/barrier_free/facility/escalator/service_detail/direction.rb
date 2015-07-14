@@ -5,7 +5,8 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Common::Info::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction
+  include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction
+  include ::TokyoMetro::Modules::Attributes::Common::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction
 
   def initialize( up , down )
     @up = up
@@ -26,6 +27,12 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::
 
   def self.factory_for_seeding_this_class
     factory_for_seeding_escalator_service_detail_direction
+  end
+
+  private
+
+  def direction_pattern_info
+    self
   end
 
 end

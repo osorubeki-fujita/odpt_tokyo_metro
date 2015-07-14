@@ -1,8 +1,8 @@
 # 乗り換えの情報を扱うクラス
 class TokyoMetro::Api::StationFacility::Info::Platform::Info::Transfer::Info < TokyoMetro::Api::StationFacility::Info::Platform::Info::Common::Info
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
 
   # Constructor
   def initialize( railway_line , railway_direction , necessary_time )

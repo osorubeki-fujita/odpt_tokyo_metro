@@ -4,11 +4,11 @@ class TokyoMetro::Static::OperationDay::List < Array
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
   def method_missing( method_name , *args )
-    info = self.find { | item | item.match?( method_name ) }
+    info = self.find { | item | item.try( :match? , method_name ) }
     if info.present?
       return info
     else
-      super( method_name , *args )
+      return super( method_name , *args )
     end
   end
 

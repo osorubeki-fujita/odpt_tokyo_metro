@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Decision::Api::ActualStartingStation
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::ActualStartingStation
+  include ::TokyoMetro::Modules::Decision::Common::ActualStartingStation
 
   private
 

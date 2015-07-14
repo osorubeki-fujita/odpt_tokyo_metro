@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Decision::Api::TrainType
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::TrainType
+  include ::TokyoMetro::Modules::Decision::Common::TrainType
 
   private
 

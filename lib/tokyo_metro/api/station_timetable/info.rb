@@ -3,9 +3,9 @@ class TokyoMetro::Api::StationTimetable::Info < TokyoMetro::Api::MetaClass::NotR
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::SameAs
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::SameAs
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
   include ::TokyoMetro::Modules::Decision::Api::CurrentStation
 
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info

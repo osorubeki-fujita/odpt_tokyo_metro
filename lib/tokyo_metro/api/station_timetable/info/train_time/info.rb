@@ -3,7 +3,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
 
   include ::TokyoMetro::Modules::Decision::Api::TerminalStation
   include ::TokyoMetro::Modules::Decision::Api::TrainType

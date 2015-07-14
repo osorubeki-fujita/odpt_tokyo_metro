@@ -5,8 +5,8 @@ class TokyoMetro::Api::StationFacility::Info::Platform::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
 
   include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
   include ::TokyoMetro::Modules::Api::Info::SetDataToHash

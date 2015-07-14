@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Decision::Api::TrainOperationDay
 
-  include ::TokyoMetro::Modules::Decision::MetaClass::TrainOperationDay
+  include ::TokyoMetro::Modules::Decision::Common::TrainOperationDay
 
   # @!group 運行日に関するメソッド
 

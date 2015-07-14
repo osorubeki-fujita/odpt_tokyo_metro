@@ -10,8 +10,8 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Info < TokyoMetro::Ap
   include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
   include ::TokyoMetro::Modules::Api::Info::SetDataToHash
 
-  include ::TokyoMetro::Modules::Common::Info::StationFacility::BarrierFree
-  include ::TokyoMetro::Modules::Common::Info::StationFacility::BarrierFree::LocatedArea
+  include ::TokyoMetro::Modules::Decision::Api::StationFacility::BarrierFree::Type
+  include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::LocatedArea
 
   # Constructor
   def initialize( id_urn , same_as , service_detail_infos , place_name , located_area_name , remark )

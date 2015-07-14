@@ -7,8 +7,8 @@ class TokyoMetro::Api::Station::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
   include ::TokyoMetro::Modules::Api::Info::ToStringWithArray
 
   include ::TokyoMetro::ClassNameLibrary::Api::Station
-  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
   include ::TokyoMetro::Modules::Decision::Api::CurrentStation
 
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
