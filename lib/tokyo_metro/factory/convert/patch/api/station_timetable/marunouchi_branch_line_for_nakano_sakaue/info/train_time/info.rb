@@ -2,7 +2,7 @@ class TokyoMetro::Factory::Convert::Patch::Api::StationTimetable::MarunouchiBran
 
   def initialize( object )
     super( object )
-    @invalid_terminal_station , @valid_terminal_station = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.nakano_sakaue
+    @invalid_terminal_station , @valid_terminal_station = ::TokyoMetro::Modules::Dictionary::Common::Station::StringList.nakano_sakaue
   end
 
   private

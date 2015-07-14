@@ -1,5 +1,5 @@
 # @note
-#   TokyoMetro::Modules::Common::ConvertConstantToClassMethod の TokyoMetro への include は、
+#   TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod の TokyoMetro への include は、
 #    tokyo_metro/modules/common/convert_constant_to_class_method.rb で行う。
 module TokyoMetro::Initializer::Modules
 
@@ -7,7 +7,7 @@ module TokyoMetro::Initializer::Modules
     module_library.each do | module_type , categories |
       categories.each do | category , base_namespaces |
         [ base_namespaces ].flatten.each do | base_namespace |
-          namespace = eval( "::TokyoMetro::Modules::Api::ToFactory::Convert::#{ module_type }::#{ category }::#{ base_namespace }")
+          namespace = eval( "::TokyoMetro::Modules::ToFactory::Api::Convert::#{ module_type }::#{ category }::#{ base_namespace }")
           namespace.set_modules
         end
       end

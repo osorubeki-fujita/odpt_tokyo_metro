@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Common::Info::StationFacility::BarrierFree
 
-  ::TokyoMetro::Modules::Common::Dictionary::BarrierFree.facility_types.each do | method_base_name |
+  ::TokyoMetro::Modules::Dictionary::Common::BarrierFree.facility_types.each do | method_base_name |
     eval <<-DEF
       def #{ method_base_name }?
         self.class.#{ method_base_name }?

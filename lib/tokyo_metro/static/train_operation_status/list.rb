@@ -1,6 +1,6 @@
 class TokyoMetro::Static::TrainOperationStatus::List < Array
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainOperationStatus
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::List
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
 end

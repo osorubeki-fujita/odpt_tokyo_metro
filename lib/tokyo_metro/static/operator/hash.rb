@@ -2,7 +2,7 @@
 class TokyoMetro::Static::Operator::Hash < ::TokyoMetro::Static::Fundamental::Hash
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Hash
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Hash
 
   # テスト用メソッド
   # @param title [Strng] 表示するタイトル（設定しない場合は、ハッシュの上位の名前空間の名称）

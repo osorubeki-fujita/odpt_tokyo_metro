@@ -16,7 +16,7 @@
 #   * TokyoMetro::Static.train_types
 module TokyoMetro::Static
 
-  include ::TokyoMetro::Modules::Common::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
 
   # 東京メトロ オープンデータに関する定数を定義するメソッド
   # @return [nil]

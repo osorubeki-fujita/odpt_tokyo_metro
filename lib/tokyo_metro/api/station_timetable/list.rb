@@ -2,7 +2,7 @@
 class TokyoMetro::Api::StationTimetable::List < TokyoMetro::Api::MetaClass::NotRealTime::List
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::List
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
   include ::TokyoMetro::Modules::Api::List::Selection::RailwayLines
 

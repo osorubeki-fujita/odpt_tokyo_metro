@@ -4,19 +4,30 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
   include ::TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine::SetTime
 
   def self.hash_keys
-    [ :name_ja , :name_hira , :name_en , :name_code , :operator , :index , :color , :start_on , :end_on , :twitter_widget_id , :twitter_account_name ]
+    [ :name_ja , :name_hira , :name_en , :name_codes , :operator , :index , :color , :start_on , :end_on , :twitter_widget_id , :twitter_account_name ]
   end
 
   private
 
   def set_values_to_hash_for_making_variables
-    super( hash_key_array: [ :name_ja , :name_hira , :name_en , :name_code ] , make_array: true )
+    super( hash_key_array: [ :name_ja , :name_hira , :name_en ] , make_array: true )
     super( hash_key_array: [ :twitter_widget_id , :twitter_account_name , :index ] )
 
+    @hash_for_making_variables[ :name_codes ] = name_codes
     @hash_for_making_variables[ :color ] = color_instance
     @hash_for_making_variables[ :operator ] = operator_instance
     @hash_for_making_variables[ :start_on ] = set_time_of( @h[ :start_on ] , type: :start_on )
     @hash_for_making_variables[ :end_on ] = set_time_of( @h[ :end_on ] , type: :end_on )
+  end
+
+  def name_codes
+    _name_codes = @h[ :name_codes ]
+    if _name_codes.present?
+      ary = ::Array.new
+    else
+      ary = [ _name_codes ].flatten
+    end
+    ary
   end
 
   # 事業者のインスタンスを取得するメソッド

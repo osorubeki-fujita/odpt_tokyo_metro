@@ -2,11 +2,11 @@
 class TokyoMetro::Api::StationFacility::Info::Platform::Info
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility
-  include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
-  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
+  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
 
   include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
   include ::TokyoMetro::Modules::Api::Info::SetDataToHash

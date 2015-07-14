@@ -2,7 +2,7 @@
 class TokyoMetro::Api::StationFacility::Info::BarrierFree::ServiceDetail::List < TokyoMetro::Api::MetaClass::Fundamental::List
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::List
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
   # インスタンスの情報を文字列に変換するメソッド
   # @return [String]

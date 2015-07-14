@@ -10,8 +10,8 @@ class TokyoMetro::Factory::Convert::Customize::Api::StationFacility::MarunouchiB
 
   def convert_railway_line_name_of_platform_infos_to_marunouchi_branch_line
     railway_lines = {
-      main: ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.marunouchi_same_as ,
-      branch: ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.marunouchi_branch_same_as
+      main: ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.marunouchi_same_as ,
+      branch: ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.marunouchi_branch_same_as
     }
     @object.platform_infos.each do | platform_info |
       if platform_info.railway_line == railway_lines[ :main ] and platform_info.car_composition == 3
@@ -21,7 +21,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::StationFacility::MarunouchiB
   end
 
   def to_convert?
-    list = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_shimbashi_in_system.map { | sta | "odpt.StationFacility:TokyoMetro.#{ sta }"}
+    list = ::TokyoMetro::Modules::Dictionary::Common::Station::StringList.between_honancho_and_nakano_shimbashi_in_system.map { | sta | "odpt.StationFacility:TokyoMetro.#{ sta }"}
     list.include?( @object.same_as )
   end
 

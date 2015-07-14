@@ -6,7 +6,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
     @symbol_of_railway_lines = symbol_of_railway_lines.flatten.sort
 
     railway_lines_same_as = @symbol_of_railway_lines.map { | symbol |
-      ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringList.railway_line_string_list_in_system( symbol )
+      ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.railway_line_string_list_in_system( symbol )
     }.flatten
 
     @railway_line_ids = ::RailwayLine.where( same_as: railway_lines_same_as ).pluck( :id )

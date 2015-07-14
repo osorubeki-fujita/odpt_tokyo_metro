@@ -2,6 +2,6 @@
 class TokyoMetro::Static::RailwayDirection::Hash < TokyoMetro::Static::Fundamental::Hash
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayDirection
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Hash
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Hash
 
 end

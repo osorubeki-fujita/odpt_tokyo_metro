@@ -7,11 +7,11 @@ class TokyoMetro::Api::Station::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
   include ::TokyoMetro::Modules::Api::Info::ToStringWithArray
 
   include ::TokyoMetro::ClassNameLibrary::Api::Station
-  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
-  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
-  include ::TokyoMetro::Modules::Api::Info::Decision::CurrentStation
+  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Api::CurrentStation
 
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   # Constructor
   def initialize( id_urn , same_as , title , dc_date , geo_long , geo_lat , region ,

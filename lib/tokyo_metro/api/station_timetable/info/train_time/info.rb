@@ -3,17 +3,17 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
+  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
 
-  include ::TokyoMetro::Modules::Api::Info::Decision::TerminalStation
-  include ::TokyoMetro::Modules::Api::Info::Decision::TrainType
+  include ::TokyoMetro::Modules::Decision::Api::TerminalStation
+  include ::TokyoMetro::Modules::Decision::Api::TrainType
 
   include ::TokyoMetro::Modules::Api::Info::SetDataToHash
   include ::TokyoMetro::Modules::Api::Info::ToJson
   include ::TokyoMetro::Modules::Api::Info::SeedCompleted
 
-  include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::TokyoMetro::Modules::Api::Common::NotRealTime
 

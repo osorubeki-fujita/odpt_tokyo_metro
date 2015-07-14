@@ -5,18 +5,18 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
 
   include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
-  include ::TokyoMetro::Modules::Common::Info::Decision::ToeiMitaLine
-  include ::TokyoMetro::Modules::Common::Info::Decision::RomanceCar
+  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::MetaClass::ToeiMitaLine
+  include ::TokyoMetro::Modules::Decision::MetaClass::RomanceCar
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
-  include ::TokyoMetro::Modules::Api::Info::Decision::TrainType
-  include ::TokyoMetro::Modules::Api::Info::Decision::TrainDirection
-  include ::TokyoMetro::Modules::Api::Info::Decision::StartingStation
-  include ::TokyoMetro::Modules::Api::Info::Decision::TerminalStation
-  include ::TokyoMetro::Modules::Api::Info::Decision::OperatedSection
+  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Api::TrainType
+  include ::TokyoMetro::Modules::Decision::Api::TrainDirection
+  include ::TokyoMetro::Modules::Decision::Api::StartingStation
+  include ::TokyoMetro::Modules::Decision::Api::TerminalStation
+  include ::TokyoMetro::Modules::Decision::Api::OperatedSection
 
-  include ::TokyoMetro::Modules::Api::Info::Decision::CurrentStation
+  include ::TokyoMetro::Modules::Decision::Api::CurrentStation
 
   # Constructor
   def initialize( id_urn , same_as , train_number , train_type , dc_date , valid , frequency ,
@@ -222,8 +222,12 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
     super( *args , compared: @from_station ) and @to_station.blank?
   end
 
+  def on_the_railway_line_of?( *args )
+    super( *args , compared: @railway_line )
+  end
+
   # def set_train_name
-    # @train_name = ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_names[ @train_number ]
+    # @train_name = ::TokyoMetro::Modules::Dictionary::Common::RomanceCar.train_names[ @train_number ]
   # end
 
 end

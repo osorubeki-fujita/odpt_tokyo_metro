@@ -2,6 +2,6 @@
 class TokyoMetro::Static::TrainType::InApi::Hash < TokyoMetro::Static::Fundamental::Hash
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainType::InApi
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Hash
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Hash
 
 end

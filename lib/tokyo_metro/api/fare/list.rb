@@ -3,7 +3,7 @@ class TokyoMetro::Api::Fare::List < TokyoMetro::Api::MetaClass::NotRealTime::Lis
 
   include ::TokyoMetro::ClassNameLibrary::Api::Fare
   include ::TokyoMetro::ClassNameLibrary::Static::Fare
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::List
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
   def seed
     super( ::Fare::NormalGroup.all , ::Operator.all )

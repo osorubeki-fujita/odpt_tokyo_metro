@@ -3,7 +3,7 @@ class TokyoMetro::Api::MetaClass::Fundamental::Info
 
   # クラスメソッドの追加
   include ::TokyoMetro::Modules::Api::Common::NotRealTime
-  include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
 
   # インスタンスメソッドの追加
   include ::TokyoMetro::Modules::Api::Info::ToJson

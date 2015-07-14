@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Db::Model
 
-  include ::TokyoMetro::Modules::Common::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
 
   GROUP = ::YAML.load_file( "#{ ::TokyoMetro.dictionary_dir }/models.yaml" )
 

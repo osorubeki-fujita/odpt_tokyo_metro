@@ -4,8 +4,8 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Info < TokyoMetro::Ap
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility::BarrierFree::MetaClass
 
-  include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
   include ::TokyoMetro::Modules::Api::Info::SetDataToHash

@@ -6,7 +6,7 @@ class TokyoMetro::Factory::Generate::Static::MetaClass::Group::Fundamental
 
   TO_INSPECT = false
 
-  include TokyoMetro::Modules::Common::ConvertConstantToClassMethod
+  include TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
 
   # Constructor
   # @param filename [String] YAML ファイルの名称

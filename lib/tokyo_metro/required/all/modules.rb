@@ -7,8 +7,15 @@ class TokyoMetro::Required::All::Modules < TokyoMetro::Required
   #-------- db
   def self.other_files
     [
-      Dir.glob( "#{ top_file }/**.rb" ) ,
+      #
+      Fundamental.files ,
+      Dictionary.files ,
+      Decision.files ,
+      #
       Common.files ,
+      #
+      ToFactory.files ,
+      #
       Api.files
     ]
   end

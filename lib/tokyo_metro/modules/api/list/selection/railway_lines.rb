@@ -58,7 +58,7 @@ module TokyoMetro::Modules::Api::List::Selection::RailwayLines
 
   def select_railway_line__list_of_railway_lines_same_as( symbol_of_railway_lines )
     symbol_of_railway_lines.map { | method_name |
-      ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringList.railway_line_string_list_in_system( method_name )
+      ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.railway_line_string_list_in_system( method_name )
     }.flatten
   end
 

@@ -115,7 +115,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
   # @!group 路線の判定
 
   def platform_infos_of_yurakucho_and_fukutoshin_line?
-    platform_infos_of?( *( ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringList.yurakucho_and_fukutoshin_line_same_as ) )
+    platform_infos_of?( *( ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.yurakucho_and_fukutoshin_line_same_as ) )
   end
 
   def platform_infos_of_namboku_line?
@@ -129,12 +129,12 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
   # @!group 駅の判定
 
   def between_wakoshi_and_hikawadai?
-    ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_wakoshi_and_hikawadai_in_system
+    ary = ::TokyoMetro::Modules::Dictionary::Common::Station::StringList.between_wakoshi_and_hikawadai_in_system
     at_these_stations?( ary )
   end
 
   def between_meguro_and_shirokane_takanawa?
-    ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.namboku_and_toei_mita_line_common_stations_in_system
+    ary = ::TokyoMetro::Modules::Dictionary::Common::Station::StringList.namboku_and_toei_mita_line_common_stations_in_system
     at_these_stations?( ary )
   end
 

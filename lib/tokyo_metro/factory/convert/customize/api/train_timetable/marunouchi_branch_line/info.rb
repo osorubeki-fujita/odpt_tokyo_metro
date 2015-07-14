@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::MarunouchiBr
       ::TokyoMetro::Factory::Convert::Customize::Api::TrainTimetable::ReplaceStationName::Info.process(
         @object ,
         ::TokyoMetro::Factory::Convert::Dictionary::RegexpForReplace.send( method ) ,
-        ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.marunouchi_branch_in_system
+        ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.marunouchi_branch_in_system
       )
     end
   end

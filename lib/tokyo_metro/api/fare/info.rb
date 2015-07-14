@@ -3,7 +3,7 @@ class TokyoMetro::Api::Fare::Info < TokyoMetro::Api::MetaClass::NotRealTime::Inf
 
   include ::TokyoMetro::ClassNameLibrary::Api::Fare
   include ::TokyoMetro::ClassNameLibrary::Static::Fare
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   # Constructor
   def initialize( id_urn , same_as , dc_date , operator , from_station , to_station , normal_fare )

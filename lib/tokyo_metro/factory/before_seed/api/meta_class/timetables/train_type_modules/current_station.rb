@@ -1,6 +1,6 @@
 module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeModules::CurrentStation
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CurrentStation
+  include ::TokyoMetro::Modules::Decision::MetaClass::CurrentStation
 
   private
 

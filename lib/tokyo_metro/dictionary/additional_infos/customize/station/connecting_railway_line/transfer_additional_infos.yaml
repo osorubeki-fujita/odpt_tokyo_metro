@@ -306,7 +306,7 @@
       connecting_another_station: odpt.Station:Toei.TodenArakawa.MachiyaEkimae
 
 # 【千代田線】綾瀬
-# 支線に関するデータは TokyoMetro::Modules::Api::ToFactory::Convert::Customize::Station::ChiyodaBranchLine::Generate::List によって追加されるため、
+# 支線に関するデータは TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::ChiyodaBranchLine::Generate::List によって追加されるため、
 # このファイルでは支線に関連する部分をコメントアウトしている。
 
 -

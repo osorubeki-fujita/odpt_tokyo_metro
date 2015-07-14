@@ -1,15 +1,15 @@
 # 個別の路線情報を扱うクラス
 # @note
-#   DB への流し込みは、{TokyoMetro::Static::RailwayLine::Info}#seed （{TokyoMetro::Modules::Common::ToFactory::Seed::Info} で定義）で行う。
+#   DB への流し込みは、{TokyoMetro::Static::RailwayLine::Info}#seed （{TokyoMetro::Modules::ToFactory::Common::Seed::Info} で定義）で行う。
 #   関連： {TokyoMetro::Factory::Seed::Static::RailwayLine::Info}
 class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   include ::TokyoMetro::ClassNameLibrary::Api::RailwayLine
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
-  include ::TokyoMetro::Modules::Common::Info::Decision::SameAs
-  include ::TokyoMetro::Modules::Common::Info::Decision::Operator
-  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
+  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::MetaClass::SameAs
+  include ::TokyoMetro::Modules::Decision::MetaClass::Operator
+  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
 
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::Info
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::BranchLine
@@ -19,8 +19,7 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
   # @!group Constructor
 
   # Constructor
-  def initialize( id_urn , same_as , title , region , operator , railway_line_code ,
-    station_order , travel_time , women_only_car , dc_date )
+  def initialize( id_urn , same_as , title , region , operator , railway_line_code , station_order , travel_time , women_only_car , dc_date )
     @id_urn = id_urn
     @same_as = same_as
     @title = title

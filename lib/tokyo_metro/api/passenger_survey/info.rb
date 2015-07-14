@@ -2,7 +2,7 @@
 class TokyoMetro::Api::PassengerSurvey::Info < TokyoMetro::Api::MetaClass::NotRealTime::Info
 
   include ::TokyoMetro::ClassNameLibrary::Api::PassengerSurvey
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
 

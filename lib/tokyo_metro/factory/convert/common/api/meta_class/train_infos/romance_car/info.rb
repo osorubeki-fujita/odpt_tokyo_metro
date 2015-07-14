@@ -26,7 +26,7 @@ class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::RomanceC
   end
 
   def specific_train_name
-    ::TokyoMetro::Modules::Common::Dictionary::RomanceCar.train_names[ @object.same_as ]
+    ::TokyoMetro::Modules::Dictionary::Common::RomanceCar.train_names[ @object.same_as ]
   end
 
 end

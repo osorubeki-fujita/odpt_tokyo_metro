@@ -2,14 +2,14 @@
 class TokyoMetro::Static::RailwayLine::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
-  include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
   include ::TokyoMetro::Modules::Static::GetName
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
-  include ::TokyoMetro::Modules::Common::Info::Decision::SameAs
-  include ::TokyoMetro::Modules::Common::Info::Decision::Operator
-  include ::TokyoMetro::Modules::Common::Info::Decision::RailwayLine
+  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::MetaClass::SameAs
+  include ::TokyoMetro::Modules::Decision::MetaClass::Operator
+  include ::TokyoMetro::Modules::Decision::MetaClass::RailwayLine
 
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::Info
   include ::TokyoMetro::Modules::Common::Info::RailwayLine::BranchLine
@@ -25,12 +25,12 @@ class TokyoMetro::Static::RailwayLine::Info
   # @param operator [::TokyoMetro::Static::Operator::Info]
   # @param index [::Numeric]
   # @param color
-  def initialize( same_as , name_ja , name_hira , name_en , name_code , operator , index , color , start_on , end_on , twitter_widget_id , twitter_account_name )
+  def initialize( same_as , name_ja , name_hira , name_en , name_codes , operator , index , color , start_on , end_on , twitter_widget_id , twitter_account_name )
     @same_as = same_as
     @name_ja = name_ja
     @name_hira = name_hira
     @name_en = name_en
-    @name_code = name_code
+    @name_codes = name_codes
     @index = index
     @color = color
     @operator = operator
@@ -166,7 +166,7 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # @return [::Array <::String>] 路線記号
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_code }
+  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_codes }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : ["G"]
   #   odpt.Railway:TokyoMetro.Marunouchi               : ["M"]
@@ -239,87 +239,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:MIR.TX                              : []
   #   odpt.Railway:Yurikamome.Yurikamome               : ["U"]
   #   odpt.Railway:TWR.Rinkai                          : []
-  attr_reader :name_code
-
-  # 標準の路線記号を取得するメソッド
-  # @return [::String or nil]
-  # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_code_normal }
-  #   =>
-  #   odpt.Railway:TokyoMetro.Ginza                    : G
-  #   odpt.Railway:TokyoMetro.Marunouchi               : M
-  #   odpt.Railway:TokyoMetro.MarunouchiBranch         : m
-  #   odpt.Railway:TokyoMetro.Hibiya                   : H
-  #   odpt.Railway:TokyoMetro.Tozai                    : T
-  #   odpt.Railway:TokyoMetro.Chiyoda                  : C
-  #   odpt.Railway:TokyoMetro.ChiyodaBranch            : C
-  #   odpt.Railway:TokyoMetro.Yurakucho                : Y
-  #   odpt.Railway:TokyoMetro.Hanzomon                 : Z
-  #   odpt.Railway:TokyoMetro.Namboku                  : N
-  #   odpt.Railway:TokyoMetro.Fukutoshin               : F
-  #   odpt.Railway:Toei.Asakusa                        : A
-  #   odpt.Railway:Toei.Mita                           : I
-  #   odpt.Railway:Toei.Shinjuku                       : S
-  #   odpt.Railway:Toei.Oedo                           : E
-  #   odpt.Railway:Toei.NipporiToneri                  : (nil)
-  #   odpt.Railway:Toei.TodenArakawa                   : (nil)
-  #   odpt.Railway:JR-East                             : (nil)
-  #   odpt.Railway:JR-East.Yamanote                    : (nil)
-  #   odpt.Railway:JR-East.KeihinTohoku                : (nil)
-  #   odpt.Railway:JR-East.Tokaido                     : (nil)
-  #   odpt.Railway:JR-East.Yokosuka                    : (nil)
-  #   odpt.Railway:JR-East.Takasaki                    : (nil)
-  #   odpt.Railway:JR-East.Utsunomiya                  : (nil)
-  #   odpt.Railway:JR-East.ShonanShinjuku              : (nil)
-  #   odpt.Railway:JR-East.UenoTokyo                   : (nil)
-  #   odpt.Railway:JR-East.Chuo                        : (nil)
-  #   odpt.Railway:JR-East.ChuoKaisoku                 : (nil)
-  #   odpt.Railway:JR-East.ChuoSobu                    : (nil)
-  #   odpt.Railway:JR-East.ChuoTozai                   : (nil)
-  #   odpt.Railway:JR-East.SobuTozai                   : (nil)
-  #   odpt.Railway:JR-East.Sobu                        : (nil)
-  #   odpt.Railway:JR-East.NaritaExpress               : (nil)
-  #   odpt.Railway:JR-East.Saikyo                      : (nil)
-  #   odpt.Railway:JR-East.Joban                       : (nil)
-  #   odpt.Railway:JR-East.Keiyo                       : (nil)
-  #   odpt.Railway:JR-East.Musashino                   : (nil)
-  #   odpt.Railway:JR-East.Shinkansen                  : (nil)
-  #   odpt.Railway:JR-Central.Shinkansen               : (nil)
-  #   odpt.Railway:Tokyu.Toyoko                        : TY
-  #   odpt.Railway:Tokyu.Meguro                        : MG
-  #   odpt.Railway:Tokyu.DenEnToshi                    : DT
-  #   odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai : MM
-  #   odpt.Railway:Odakyu.Odawara                      : OH
-  #   odpt.Railway:Odakyu.Tama                         : OT
-  #   odpt.Railway:Odakyu.Enoshima                     : OE
-  #   odpt.Railway:HakoneTozan.Rail.OdawaraSide        : OH
-  #   odpt.Railway:HakoneTozan.Rail.GoraSide           : OH
-  #   odpt.Railway:Seibu.Ikebukuro                     : SI
-  #   odpt.Railway:Seibu.SeibuChichibu                 : SI
-  #   odpt.Railway:Seibu.Toshima                       : SI
-  #   odpt.Railway:Seibu.Sayama                        : SY
-  #   odpt.Railway:Seibu.SeibuYurakucho                : SI
-  #   odpt.Railway:Seibu.Shinjuku                      : SS
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : TS
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : TS
-  #   odpt.Railway:Tobu.SkyTree                        : TS
-  #   odpt.Railway:Tobu.Isesaki                        : TI
-  #   odpt.Railway:Tobu.Nikko                          : TN
-  #   odpt.Railway:Tobu.Kinugawa                       : TN
-  #   odpt.Railway:Tobu.Tojo                           : TJ
-  #   odpt.Railway:SaitamaRailway.SaitamaRailway       : (nil)
-  #   odpt.Railway:ToyoRapidRailway.ToyoRapidRailway   : TR
-  #   odpt.Railway:Keio.Keio                           : KO
-  #   odpt.Railway:Keio.New                            : KO
-  #   odpt.Railway:Keio.Inokashira                     : IK
-  #   odpt.Railway:Keisei.KeiseiMain                   : KS
-  #   odpt.Railway:Keisei.KeiseiOshiage                : KS
-  #   odpt.Railway:MIR.TX                              : (nil)
-  #   odpt.Railway:Yurikamome.Yurikamome               : U
-  #   odpt.Railway:TWR.Rinkai                          : (nil)
-  def name_code_normal
-    get_name( @name_code , allow_nil: true )
-  end
+  attr_reader :name_codes
 
   # @return [Numeric] 同一事業者内での路線の番号（整列のために定義）
   # @example
@@ -542,7 +462,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:JR-East.Takasaki                    : ["高崎線"]
   #   odpt.Railway:JR-East.Utsunomiya                  : ["宇都宮線"]
   #   odpt.Railway:JR-East.ShonanShinjuku              : ["湘南新宿ライン"]
-  #   odpt.Railway:JR-East.UenoTokyo                   : ["上野東京ライン"]
+  #   odpt.Railway:JR-East.UenoTokyo                   : ["上野東京ライ���"]
   #   odpt.Railway:JR-East.Chuo                        : ["中央線 特急"]
   #   odpt.Railway:JR-East.ChuoKaisoku                 : ["中央線 快速"]
   #   odpt.Railway:JR-East.ChuoSobu                    : ["中央・総武線 各駅停車"]
@@ -923,7 +843,7 @@ class TokyoMetro::Static::RailwayLine::Info
       return str
     else
       puts "Error:"
-      puts "  \[\name_ja_normal\] #{name_ja_normal_str} (class: #{name_ja_normal_str.class.name})"
+      puts "  \[name_ja_normal\] #{name_ja_normal_str} (class: #{name_ja_normal_str.class.name})"
       puts "  \[operator_name_ja_normal\] #{operator_name_ja_normal} (class: #{operator_name_ja_normal.class.name})"
       raise "Error"
     end
@@ -1605,6 +1525,8 @@ class TokyoMetro::Static::RailwayLine::Info
 
   private
 
+  # @!group 基礎情報の配列
+
   def name_ja_to_a
     name_ja
   end
@@ -1613,32 +1535,14 @@ class TokyoMetro::Static::RailwayLine::Info
     name_en
   end
 
-  def has_name_ja?
-    name_ja_to_a.present?
+  def name_code_to_a
+    name_codes
   end
 
-  def has_name_en?
-    name_en_to_a.present?
-  end
+  # @!endgroup
 
-  def has_one_name_ja?
-    name_ja_to_a.length == 1
-  end
-
-  def has_one_name_en?
-    name_en_to_a.length == 1
-  end
-
-  def has_many_name_ja?
-    name_ja_to_a.length > 1
-  end
-
-  def has_many_name_en?
-    name_en_to_a.length > 1
-  end
-
-  def with_bold_railway_line_code_text?
-    operated_by_tokyu? or operated_by_yokohama_minatomirai_railway? or operated_by_toyo_rapid_railway? or name_code_normal.length == 1
+  def operator_of?( *args )
+    super( *args , compared: @operator.same_as  )
   end
 
 
@@ -1674,18 +1578,6 @@ class TokyoMetro::Static::RailwayLine::Info
     end
 
     return nil
-  end
-
-  def with_operator_name?
-    !( tokyo_metro? or nippori_toneri_liner? or shinkansen? )
-  end
-
-  def operator_of?( *args )
-    super( *args , compared: @operator.same_as  )
-  end
-
-  def railway_line
-    self
   end
 
 end

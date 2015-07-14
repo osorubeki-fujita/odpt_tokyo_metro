@@ -2,6 +2,6 @@
 class TokyoMetro::Static::TrainType::Custom::Main::Hash < TokyoMetro::Static::Fundamental::Hash
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::Main
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Hash
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Hash
 
 end

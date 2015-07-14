@@ -2,6 +2,6 @@
 class TokyoMetro::Api::MetaClass::RealTime < TokyoMetro::Api::MetaClass::DataSearch
 
   include ::TokyoMetro::Modules::Api::Common::RealTime
-  include ::TokyoMetro::Modules::Api::ToFactory::Generate::Group::Date
+  include ::TokyoMetro::Modules::ToFactory::Api::Generate::Group::Date
 
 end

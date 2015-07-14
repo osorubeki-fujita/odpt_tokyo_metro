@@ -4,7 +4,7 @@ odpt.Railway:TokyoMetro.Ginza:
   name_ja: 銀座線
   name_hira: ぎんざせん
   name_en : Ginza Line
-  name_code : G
+  name_codes : G
   operator : odpt.Operator:TokyoMetro
   index : 1
   twitter_widget_id: "532630018443059201"
@@ -22,7 +22,7 @@ odpt.Railway:TokyoMetro.Marunouchi:
   name_ja: 丸ノ内線
   name_hira: まるのうちせん
   name_en : Marunouchi Line
-  name_code : M
+  name_codes: M
   operator : odpt.Operator:TokyoMetro
   index : 2
   twitter_widget_id: "532630724893868032"
@@ -40,7 +40,7 @@ odpt.Railway:TokyoMetro.MarunouchiBranch:
   name_ja: 丸ノ内線（中野坂上 - 方南町）
   name_hira: まるのうちせん
   name_en : Marunouchi Line (Nakano-sakaue - Honancho)
-  name_code : m
+  name_codes: m
   operator : odpt.Operator:TokyoMetro
   index : 2.1
   color :
@@ -56,7 +56,7 @@ odpt.Railway:TokyoMetro.Hibiya:
   name_ja: 日比谷線
   name_hira: ひびやせん
   name_en : Hibiya Line
-  name_code : H
+  name_codes: H
   operator : odpt.Operator:TokyoMetro
   index : 3
   twitter_widget_id: "532631112032321536"
@@ -74,7 +74,7 @@ odpt.Railway:TokyoMetro.Tozai:
   name_ja: 東西線
   name_hira: とうざいせん
   name_en : Tozai Line
-  name_code : T
+  name_codes: T
   operator : odpt.Operator:TokyoMetro
   index : 4
   twitter_widget_id: "532631565486923777"
@@ -92,7 +92,7 @@ odpt.Railway:TokyoMetro.Chiyoda:
   name_ja: 千代田線
   name_hira: ちよだせん
   name_en : Chiyoda Line
-  name_code : C
+  name_codes: C
   operator : odpt.Operator:TokyoMetro
   index : 5
   twitter_widget_id: "532631847792959489"
@@ -110,7 +110,7 @@ odpt.Railway:TokyoMetro.ChiyodaBranch:
   name_ja: 千代田線（綾瀬 - 北綾瀬）
   name_hira: ちよだせん
   name_en : Chiyoda Line (Ayase - Kita-ayase)
-  name_code : C
+  name_codes: C
   operator : odpt.Operator:TokyoMetro
   index : 5.1
   color :
@@ -126,7 +126,7 @@ odpt.Railway:TokyoMetro.Yurakucho:
   name_ja: 有楽町線
   name_hira: ゆうらくちょうせん
   name_en : Yurakucho Line
-  name_code : Y
+  name_codes: Y
   operator : odpt.Operator:TokyoMetro
   index : 6
   twitter_widget_id: "532632847350112256"
@@ -144,7 +144,7 @@ odpt.Railway:TokyoMetro.Hanzomon:
   name_ja: 半蔵門線
   name_hira: はんぞうもんせん
   name_en : Hanzomon Line
-  name_code : Z
+  name_codes: Z
   operator : odpt.Operator:TokyoMetro
   index : 7
   twitter_widget_id: "532632130656825344"
@@ -162,7 +162,7 @@ odpt.Railway:TokyoMetro.Namboku:
   name_ja: 南北線
   name_hira: なんぼくせん
   name_en : Namboku Line
-  name_code : N
+  name_codes: N
   operator : odpt.Operator:TokyoMetro
   index : 8
   twitter_widget_id: "532632503169724416"
@@ -180,7 +180,7 @@ odpt.Railway:TokyoMetro.Fukutoshin:
   name_ja: 副都心線
   name_hira: ふくとしんせん
   name_en : Fukutoshin Line
-  name_code : F
+  name_codes: F
   operator : odpt.Operator:TokyoMetro
   index : 9
   twitter_widget_id: "532633227697991680"
@@ -202,7 +202,7 @@ odpt.Railway:Toei.Asakusa:
   name_ja: 浅草線
   name_hira: あさくさせん
   name_en : Asakusa Line
-  name_code : A
+  name_codes: A
   operator : odpt.Operator:Toei
   index : 1
   color :
@@ -215,7 +215,7 @@ odpt.Railway:Toei.Mita:
   name_ja: 三田線
   name_hira: みたせん
   name_en : Mita Line
-  name_code : I
+  name_codes: I
   operator : odpt.Operator:Toei
   index : 2
   color :
@@ -228,7 +228,7 @@ odpt.Railway:Toei.Shinjuku:
   name_ja: 新宿線
   name_hira: しんじゅくせん
   name_en : Shinjuku Line
-  name_code : S
+  name_codes: S
   operator : odpt.Operator:Toei
   index : 3
   color :
@@ -241,7 +241,7 @@ odpt.Railway:Toei.Oedo:
   name_ja: 大江戸線
   name_hira: おおえどせん
   name_en : Oedo Line
-  name_code : E
+  name_codes: E
   operator : odpt.Operator:Toei
   index : 4
   color :
@@ -567,7 +567,7 @@ odpt.Railway:JR-Central.Shinkansen:
 odpt.Railway:Tokyu.Toyoko:
   name_ja: 東横線
   name_en : Toyoko Line
-  name_code : TY
+  name_codes: TY
   operator : odpt.Operator:Tokyu
   index : 1
   color :
@@ -579,7 +579,7 @@ odpt.Railway:Tokyu.Toyoko:
 odpt.Railway:Tokyu.Meguro:
   name_ja: 目黒線
   name_en : Meguro Line
-  name_code : MG
+  name_codes: MG
   operator : odpt.Operator:Tokyu
   index : 2
   color :
@@ -591,7 +591,7 @@ odpt.Railway:Tokyu.Meguro:
 odpt.Railway:Tokyu.DenEnToshi:
   name_ja: 田園都市線
   name_en : Den-en-toshi Line
-  name_code : DT
+  name_codes: DT
   operator : odpt.Operator:Tokyu
   index : 3
   color :
@@ -603,7 +603,7 @@ odpt.Railway:Tokyu.DenEnToshi:
 odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai:
   name_ja: みなとみらい線
   name_en : Minatomirai Line
-  name_code : MM
+  name_codes: MM
   operator : odpt.Operator:YokohamaMinatomiraiRailway
   index : 1
   color :
@@ -617,35 +617,35 @@ odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai:
 odpt.Railway:Odakyu.Odawara:
   name_ja: 小田原線
   name_en : Odawara Line
-  name_code : OH
+  name_codes: OH
   operator : odpt.Operator:Odakyu
   index : 1
 
 odpt.Railway:Odakyu.Tama:
   name_ja: 多摩線
   name_en : Tama Line
-  name_code : OT
+  name_codes: OT
   operator : odpt.Operator:Odakyu
   index : 2
 
 odpt.Railway:Odakyu.Enoshima:
   name_ja: 江ノ島線
   name_en : Enoshima Line
-  name_code : OE
+  name_codes: OE
   operator : odpt.Operator:Odakyu
   index : 3
 
 odpt.Railway:HakoneTozan.Rail.OdawaraSide:
   name_ja: 箱根登山鉄道線（小田原 - 箱根湯本）
   name_en : Hakone Tozan Line
-  name_code : OH
+  name_codes: OH
   operator : odpt.Operator:HakoneTozan
   index : 4
 
 odpt.Railway:HakoneTozan.Rail.GoraSide:
   name_ja: 箱根登山鉄道線（箱根湯本 - 強羅）
   name_en : Hakone Tozan Line
-  name_code : OH
+  name_codes: OH
   operator : odpt.Operator:HakoneTozan
   index : 4.1
 
@@ -654,7 +654,7 @@ odpt.Railway:HakoneTozan.Rail.GoraSide:
 odpt.Railway:Seibu.Ikebukuro:
   name_ja: 池袋線
   name_en : Ikebukuro Line
-  name_code : SI
+  name_codes: SI
   operator : odpt.Operator:Seibu
   index : 1
   color :
@@ -666,7 +666,7 @@ odpt.Railway:Seibu.Ikebukuro:
 odpt.Railway:Seibu.SeibuChichibu:
   name_ja: 秩父線
   name_en : Chichibu Line
-  name_code : SI
+  name_codes: SI
   operator : odpt.Operator:Seibu
   index : 2
   color :
@@ -678,7 +678,7 @@ odpt.Railway:Seibu.SeibuChichibu:
 odpt.Railway:Seibu.Toshima:
   name_ja: 豊島線
   name_en : Toshima Line
-  name_code : SI
+  name_codes: SI
   operator : odpt.Operator:Seibu
   index : 3
   color :
@@ -690,7 +690,7 @@ odpt.Railway:Seibu.Toshima:
 odpt.Railway:Seibu.Sayama:
   name_ja: 狭山線
   name_en : Sayama Line
-  name_code : SY
+  name_codes: SY
   operator : odpt.Operator:Seibu
   index : 4
   color :
@@ -702,7 +702,7 @@ odpt.Railway:Seibu.Sayama:
 odpt.Railway:Seibu.SeibuYurakucho:
   name_ja: 西武有楽町線
   name_en : Seibu Yurakucho Line
-  name_code : SI
+  name_codes: SI
   operator : odpt.Operator:Seibu
   index : 5
   color :
@@ -714,7 +714,7 @@ odpt.Railway:Seibu.SeibuYurakucho:
 odpt.Railway:Seibu.Shinjuku:
   name_ja: 新宿線
   name_en : Shinjuku Line
-  name_code : SS
+  name_codes: SS
   operator : odpt.Operator:Seibu
   index : 6
   color :
@@ -730,7 +730,7 @@ odpt.Railway:Tobu.SkyTreeIsesaki:
     - スカイツリーライン（伊勢崎線）
     - 伊勢崎線
   name_en: Sky Tree and Isesaki Line
-  name_code:
+  name_codes:
     - TS
     - TI
   operator : odpt.Operator:Tobu
@@ -750,7 +750,7 @@ odpt.Railway:Tobu.SkyTreeIsesaki:
 odpt.Railway:Tobu.SkyTreeOshiage:
   name_ja: スカイツリーライン（押上 - 曳舟）
   name_en : Sky Tree Line (Oshiage - Hikifune)
-  name_code: TS
+  name_codes: TS
   operator : odpt.Operator:Tobu
   index : 1.09
   color :
@@ -762,7 +762,7 @@ odpt.Railway:Tobu.SkyTreeOshiage:
 odpt.Railway:Tobu.SkyTree:
   name_ja: スカイツリーライン
   name_en : Sky Tree Line
-  name_code: TS
+  name_codes: TS
   operator : odpt.Operator:Tobu
   index : 1.1
   color :
@@ -774,7 +774,7 @@ odpt.Railway:Tobu.SkyTree:
 odpt.Railway:Tobu.Isesaki:
   name_ja: 伊勢崎線
   name_en : Isesaki Line
-  name_code: TI
+  name_codes: TI
   operator : odpt.Operator:Tobu
   index : 2
   color :
@@ -786,7 +786,7 @@ odpt.Railway:Tobu.Isesaki:
 odpt.Railway:Tobu.Nikko:
   name_ja: 日光線
   name_en : Nikko Line
-  name_code : TN
+  name_codes: TN
   operator : odpt.Operator:Tobu
   index : 3
   color :
@@ -798,7 +798,7 @@ odpt.Railway:Tobu.Nikko:
 odpt.Railway:Tobu.Kinugawa:
   name_ja: 鬼怒川線
   name_en : Kinugawa Line
-  name_code : TN
+  name_codes: TN
   operator : odpt.Operator:Tobu
   index : 3.1
   color :
@@ -810,7 +810,7 @@ odpt.Railway:Tobu.Kinugawa:
 odpt.Railway:Tobu.Tojo:
   name_ja: 東上線
   name_en : Tojo Line
-  name_code : TJ
+  name_codes: TJ
   operator : odpt.Operator:Tobu
   index : 5
   color :
@@ -829,7 +829,7 @@ odpt.Railway:SaitamaRailway.SaitamaRailway:
 
 odpt.Railway:ToyoRapidRailway.ToyoRapidRailway:
   index : 1
-  name_code : TR
+  name_codes: TR
   operator : odpt.Operator:ToyoRapidRailway
 
 #-------- 京王電鉄
@@ -837,7 +837,7 @@ odpt.Railway:ToyoRapidRailway.ToyoRapidRailway:
 odpt.Railway:Keio.Keio:
   name_ja: 京王線
   name_en : Keio Line
-  name_code : KO
+  name_codes: KO
   operator : odpt.Operator:Keio
   index : 1
   color :
@@ -849,7 +849,7 @@ odpt.Railway:Keio.Keio:
 odpt.Railway:Keio.New:
   name_ja: 新線
   name_en : New Line
-  name_code : KO
+  name_codes: KO
   operator : odpt.Operator:Keio
   index : 2
   color :
@@ -861,7 +861,7 @@ odpt.Railway:Keio.New:
 odpt.Railway:Keio.Inokashira:
   name_ja: 井の頭線
   name_en : Inokashira Line
-  name_code : IK
+  name_codes: IK
   operator : odpt.Operator:Keio
   index : 3
   color :
@@ -875,14 +875,14 @@ odpt.Railway:Keio.Inokashira:
 odpt.Railway:Keisei.KeiseiMain:
   name_ja: 本線
   name_en : Main Line
-  name_code : KS
+  name_codes: KS
   operator : odpt.Operator:Keisei
   index : 1
 
 odpt.Railway:Keisei.KeiseiOshiage:
   name_ja: 押上線
   name_en : Oshiage Line
-  name_code : KS
+  name_codes: KS
   operator : odpt.Operator:Keisei
   index : 2
 
@@ -897,7 +897,7 @@ odpt.Railway:MIR.TX:
 odpt.Railway:Yurikamome.Yurikamome:
   name_ja: ゆりかもめ
   name_en : Yurikamome
-  name_code : U
+  name_codes: U
   operator : odpt.Operator:Yurikamome
   index : 1
   color :

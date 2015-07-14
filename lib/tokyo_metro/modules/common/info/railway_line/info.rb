@@ -3,6 +3,140 @@ module TokyoMetro::Modules::Common::Info::RailwayLine::Info
 
   include ::TokyoMetro::Modules::Common::Info::Fundamental::CssClass
 
+  # @!group 名称（日本語）
+
+  def has_name_ja?
+    name_ja_to_a.present?
+  end
+
+  def has_one_name_ja?
+    name_ja_to_a.length == 1
+  end
+
+  def has_many_name_ja?
+    name_ja_to_a.length > 1
+  end
+
+  # @!group 名称（ローマ字）
+
+  def has_name_en?
+    name_en_to_a.present?
+  end
+
+  def has_one_name_en?
+    name_en_to_a.length == 1
+  end
+
+  def has_many_name_en?
+    name_en_to_a.length > 1
+  end
+
+  # @!group 路線記号
+
+  def has_name_codes?
+    name_codes.present?
+  end
+
+  def has_one_name_code?
+    name_codes.length == 1
+  end
+
+  def has_many_name_codes?
+    name_codes.length > 1
+  end
+
+  # @!group 路線記号
+
+  # 標準の路線記号を取得するメソッド
+  # @return [::String or nil]
+  # @example
+  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_code_normal }
+  #   =>
+  #   odpt.Railway:TokyoMetro.Ginza                    : G
+  #   odpt.Railway:TokyoMetro.Marunouchi               : M
+  #   odpt.Railway:TokyoMetro.MarunouchiBranch         : m
+  #   odpt.Railway:TokyoMetro.Hibiya                   : H
+  #   odpt.Railway:TokyoMetro.Tozai                    : T
+  #   odpt.Railway:TokyoMetro.Chiyoda                  : C
+  #   odpt.Railway:TokyoMetro.ChiyodaBranch            : C
+  #   odpt.Railway:TokyoMetro.Yurakucho                : Y
+  #   odpt.Railway:TokyoMetro.Hanzomon                 : Z
+  #   odpt.Railway:TokyoMetro.Namboku                  : N
+  #   odpt.Railway:TokyoMetro.Fukutoshin               : F
+  #   odpt.Railway:Toei.Asakusa                        : A
+  #   odpt.Railway:Toei.Mita                           : I
+  #   odpt.Railway:Toei.Shinjuku                       : S
+  #   odpt.Railway:Toei.Oedo                           : E
+  #   odpt.Railway:Toei.NipporiToneri                  : (nil)
+  #   odpt.Railway:Toei.TodenArakawa                   : (nil)
+  #   odpt.Railway:JR-East                             : (nil)
+  #   odpt.Railway:JR-East.Yamanote                    : (nil)
+  #   odpt.Railway:JR-East.KeihinTohoku                : (nil)
+  #   odpt.Railway:JR-East.Tokaido                     : (nil)
+  #   odpt.Railway:JR-East.Yokosuka                    : (nil)
+  #   odpt.Railway:JR-East.Takasaki                    : (nil)
+  #   odpt.Railway:JR-East.Utsunomiya                  : (nil)
+  #   odpt.Railway:JR-East.ShonanShinjuku              : (nil)
+  #   odpt.Railway:JR-East.UenoTokyo                   : (nil)
+  #   odpt.Railway:JR-East.Chuo                        : (nil)
+  #   odpt.Railway:JR-East.ChuoKaisoku                 : (nil)
+  #   odpt.Railway:JR-East.ChuoSobu                    : (nil)
+  #   odpt.Railway:JR-East.ChuoTozai                   : (nil)
+  #   odpt.Railway:JR-East.SobuTozai                   : (nil)
+  #   odpt.Railway:JR-East.Sobu                        : (nil)
+  #   odpt.Railway:JR-East.NaritaExpress               : (nil)
+  #   odpt.Railway:JR-East.Saikyo                      : (nil)
+  #   odpt.Railway:JR-East.Joban                       : (nil)
+  #   odpt.Railway:JR-East.Keiyo                       : (nil)
+  #   odpt.Railway:JR-East.Musashino                   : (nil)
+  #   odpt.Railway:JR-East.Shinkansen                  : (nil)
+  #   odpt.Railway:JR-Central.Shinkansen               : (nil)
+  #   odpt.Railway:Tokyu.Toyoko                        : TY
+  #   odpt.Railway:Tokyu.Meguro                        : MG
+  #   odpt.Railway:Tokyu.DenEnToshi                    : DT
+  #   odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai : MM
+  #   odpt.Railway:Odakyu.Odawara                      : OH
+  #   odpt.Railway:Odakyu.Tama                         : OT
+  #   odpt.Railway:Odakyu.Enoshima                     : OE
+  #   odpt.Railway:HakoneTozan.Rail.OdawaraSide        : OH
+  #   odpt.Railway:HakoneTozan.Rail.GoraSide           : OH
+  #   odpt.Railway:Seibu.Ikebukuro                     : SI
+  #   odpt.Railway:Seibu.SeibuChichibu                 : SI
+  #   odpt.Railway:Seibu.Toshima                       : SI
+  #   odpt.Railway:Seibu.Sayama                        : SY
+  #   odpt.Railway:Seibu.SeibuYurakucho                : SI
+  #   odpt.Railway:Seibu.Shinjuku                      : SS
+  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : TS
+  #   odpt.Railway:Tobu.SkyTreeOshiage                 : TS
+  #   odpt.Railway:Tobu.SkyTree                        : TS
+  #   odpt.Railway:Tobu.Isesaki                        : TI
+  #   odpt.Railway:Tobu.Nikko                          : TN
+  #   odpt.Railway:Tobu.Kinugawa                       : TN
+  #   odpt.Railway:Tobu.Tojo                           : TJ
+  #   odpt.Railway:SaitamaRailway.SaitamaRailway       : (nil)
+  #   odpt.Railway:ToyoRapidRailway.ToyoRapidRailway   : TR
+  #   odpt.Railway:Keio.Keio                           : KO
+  #   odpt.Railway:Keio.New                            : KO
+  #   odpt.Railway:Keio.Inokashira                     : IK
+  #   odpt.Railway:Keisei.KeiseiMain                   : KS
+  #   odpt.Railway:Keisei.KeiseiOshiage                : KS
+  #   odpt.Railway:MIR.TX                              : (nil)
+  #   odpt.Railway:Yurikamome.Yurikamome               : U
+  #   odpt.Railway:TWR.Rinkai                          : (nil)
+  def name_code_normal
+    if has_name_codes?
+      name_codes_to_a.first
+    else
+      nil
+    end
+  end
+
+  def with_bold_railway_line_code_text?
+    operated_by_tokyu? or operated_by_yokohama_minatomirai_railway? or operated_by_toyo_rapid_railway? or ( name_code_normal.present? and name_code_normal.length == 1 )
+  end
+
+  # @!group 支線
+
   def is_not_branch_railway_line
     !( is_branch_railway_line )
   end
@@ -106,6 +240,16 @@ module TokyoMetro::Modules::Common::Info::RailwayLine::Info
   end
 
   # @!endgroup
+
+  private
+
+  def with_operator_name?
+    !( tokyo_metro? or nippori_toneri_liner? or shinkansen? )
+  end
+
+  def railway_line
+    self
+  end
 
   def method_missing( method_name , *args )
     if args.empty?

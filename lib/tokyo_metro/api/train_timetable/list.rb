@@ -2,7 +2,7 @@
 class TokyoMetro::Api::TrainTimetable::List < TokyoMetro::Api::MetaClass::NotRealTime::List
 
   include ::TokyoMetro::ClassNameLibrary::Api::TrainTimetable
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::List
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
   include ::TokyoMetro::Modules::Api::List::Selection::RailwayLines
 
   def seed

@@ -3,9 +3,9 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
   include ::TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Common
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
-  include ::TokyoMetro::Modules::Common::Info::Decision::CurrentStation
-  include ::TokyoMetro::Modules::Common::Info::Decision::TrainType
+  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::MetaClass::CurrentStation
+  include ::TokyoMetro::Modules::Decision::MetaClass::TrainType
 
   def initialize( *args )
     super( *args , get_id: true )

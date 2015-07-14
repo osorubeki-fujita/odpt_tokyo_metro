@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::Marunouc
   end
 
   def convert_railway_line_name
-    @object.instance_variable_set( :@railway_line , ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.marunouchi_branch_same_as  )
+    @object.instance_variable_set( :@railway_line , ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.marunouchi_branch_same_as  )
   end
 
 end

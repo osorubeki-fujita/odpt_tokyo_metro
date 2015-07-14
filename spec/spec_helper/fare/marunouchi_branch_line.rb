@@ -1,6 +1,6 @@
 def fares_related_to_marunouchi_branch_line
-  valid_and_invalid_station_name_ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_shimbashi_including_invalid
-  invalid_station_name_ary = ::TokyoMetro::Modules::Common::Dictionary::Station::StringList.between_honancho_and_nakano_shimbashi_invalid
+  valid_and_invalid_station_name_ary = ::TokyoMetro::Modules::Dictionary::Common::Station::StringList.between_honancho_and_nakano_shimbashi_including_invalid
+  invalid_station_name_ary = ::TokyoMetro::Modules::Dictionary::Common::Station::StringList.between_honancho_and_nakano_shimbashi_invalid
 
   describe ::TokyoMetro::Api::Fare::Info , "after converting invalid \'from\' station name in Marunouchi Branch Line" do
     it "is from station on Marunouchi Branch Line." do

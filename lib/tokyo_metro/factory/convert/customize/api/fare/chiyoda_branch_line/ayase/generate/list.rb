@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::Fare::ChiyodaBranchLine::Aya
   [ :from , :to ].each do | prefix |
     eval <<-DEF
       def fare_infos_#{ prefix }_ayase
-        @object.select { | item | item.#{ prefix }_station == ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ayase_on_chiyoda_main_line }
+        @object.select { | item | item.#{ prefix }_station == ::TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.ayase_on_chiyoda_main_line }
       end
     DEF
   end

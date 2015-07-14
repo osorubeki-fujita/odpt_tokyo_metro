@@ -3,8 +3,8 @@ class TokyoMetro::Factory::Convert::Customize::Api::StationFacility::ChiyodaBran
   def initialize( object )
     super( object )
     @hash_for_converting_railway_line = {
-      from: ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_same_as ,
-      to: ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_branch_same_as
+      from: ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.chiyoda_same_as ,
+      to: ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.chiyoda_branch_same_as
     }
   end
 

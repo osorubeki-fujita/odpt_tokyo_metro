@@ -2,8 +2,8 @@
 class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::TrainType::Custom::DefaultSetting::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::Main
-  include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   # Constructor
   # @param ary [::Array] 変数の配列（内部で展開する）

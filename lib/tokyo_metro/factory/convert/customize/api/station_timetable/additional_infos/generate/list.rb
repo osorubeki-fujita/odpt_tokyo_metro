@@ -1,6 +1,6 @@
 class TokyoMetro::Factory::Convert::Customize::Api::StationTimetable::AdditionalInfos::Generate::List < TokyoMetro::Factory::Convert::Common::Api::MetaClass::Fundamental::Updated
 
-  include ::TokyoMetro::Modules::Common::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
 
   [ :ignored_station_timetables , :replacing_infos ].each do | filename |
     const_set( filename.upcase , ::YAML.load_file( "#{::TokyoMetro.dictionary_dir}/additional_infos/customize/station_timetable/#{filename}.yaml" ) )

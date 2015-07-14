@@ -2,7 +2,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::StationTimetable::Marunouchi
 
   def process
     if to_convert?
-      @object.instance_variable_set( :@railway_line , ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.marunouchi_branch_same_as )
+      @object.instance_variable_set( :@railway_line , ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.marunouchi_branch_same_as )
     end
   end
 

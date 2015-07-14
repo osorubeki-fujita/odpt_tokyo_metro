@@ -21,7 +21,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
   def hash_to_db
     h = {
       color: @info.color_normal_web ,
-      name_code: @info.name_code_normal ,
+      name_codes: name_codes ,
       #
       id_urn: @id_urn ,
       geo_json: @geo_json
@@ -53,6 +53,14 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
         DEF
       end
 
+    end
+  end
+
+  def name_codes
+    if @info.has_name_codes?
+      @info.name_codes.join( "/" )
+    else
+      nil
     end
   end
 

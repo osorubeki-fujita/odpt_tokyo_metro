@@ -3,10 +3,10 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ChiyodaBranchLine::
   def initialize( object )
     super( object )
     @ayase_main = @object.find { | item |
-      item.same_as == ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ayase_on_chiyoda_main_line
+      item.same_as == ::TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.ayase_on_chiyoda_main_line
     }
     @kita_ayase = @object.find { | item |
-      item.same_as == ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kita_ayase_on_chiyoda_main_line
+      item.same_as == ::TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.kita_ayase_on_chiyoda_main_line
     }
     initialize_ayase_branch
   end
@@ -30,14 +30,14 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ChiyodaBranchLine::
 
   def connecting_railway_line_info_on_main_line
     ::TokyoMetro::Factory::Generate::Api::Station::List.connecting_railway_line_info_class.new(
-      ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_branch_same_as ,
+      ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.chiyoda_branch_same_as ,
       hidden_on_railway_line_page: true
     )
   end
 
   def connecting_railway_line_info_on_branch_line
     ::TokyoMetro::Factory::Generate::Api::Station::List.connecting_railway_line_info_class.new(
-      ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_same_as ,
+      ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.chiyoda_same_as ,
       hidden_on_railway_line_page: true
     )
   end
@@ -53,8 +53,8 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ChiyodaBranchLine::
 
   def update_ayase_branch
     @ayase_branch.instance_eval do
-      @same_as = ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.ayase_on_chiyoda_branch_line
-      @railway_line = ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_branch_same_as
+      @same_as = ::TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.ayase_on_chiyoda_branch_line
+      @railway_line = ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.chiyoda_branch_same_as
       @id_urn = nil
       @dc_date = nil
     end
@@ -63,8 +63,8 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ChiyodaBranchLine::
   def update_kita_ayase
     if @kita_ayase.present?
       @kita_ayase.instance_eval do
-        @same_as = ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kita_ayase_on_chiyoda_branch_line
-        @railway_line = ::TokyoMetro::Modules::Common::Dictionary::RailwayLine::StringInfo.chiyoda_branch_same_as
+        @same_as = ::TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.kita_ayase_on_chiyoda_branch_line
+        @railway_line = ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.chiyoda_branch_same_as
       end
     end
   end

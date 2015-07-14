@@ -2,7 +2,7 @@
 class TokyoMetro::Static::StationsInTokyoMetro::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::StationsInTokyoMetro
-  include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   # include ::TokyoMetro::Modules::Static::GetName
 
 # @!group Constructor

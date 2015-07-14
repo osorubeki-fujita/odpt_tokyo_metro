@@ -2,14 +2,14 @@
 class TokyoMetro::Static::Operator::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
-  include ::TokyoMetro::Modules::Common::ToFactory::Generate::Info
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
   include ::TokyoMetro::Modules::Static::GetName
 
   include ::TokyoMetro::Modules::Common::Info::Operator::Info
 
-  include ::TokyoMetro::Modules::Common::Info::Decision::CompareBase
-  include ::TokyoMetro::Modules::Common::Info::Decision::Operator
+  include ::TokyoMetro::Modules::Decision::MetaClass::Fundamental::CompareBase
+  include ::TokyoMetro::Modules::Decision::MetaClass::Operator
 
 # @!group Constructor
 

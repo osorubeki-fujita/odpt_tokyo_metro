@@ -54,7 +54,7 @@ class TokyoMetro::Factory::Convert::Patch::Api::TrainTimetable::YurakuchoLine::I
   end
 
   def station_time_of_kotake_mukaihara
-    station_name = ::TokyoMetro::Modules::Common::Dictionary::Station::StringInfo.kotake_mukaihara_on_fukutoshin_line
+    station_name = ::TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.kotake_mukaihara_on_fukutoshin_line
 
     arrival_t = arrival_time_of_kotake_mukaihara.arrival_time
     departure_t = departure_time_of_kotake_mukaihara.departure_time

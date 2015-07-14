@@ -1,6 +1,6 @@
 class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLine::Info < TokyoMetro::Factory::Convert::Common::Api::Station::ConnectingRailwayLine::Info
 
-  include ::TokyoMetro::Modules::Common::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
 
   [
     :replacing_railway_lines ,

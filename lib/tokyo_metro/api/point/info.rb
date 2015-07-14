@@ -2,7 +2,7 @@
 class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   include ::TokyoMetro::ClassNameLibrary::Api::Point
-  include ::TokyoMetro::Modules::Common::ToFactory::Seed::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   # インスタンスメソッドの追加
   include ::TokyoMetro::Modules::Api::Info::ToJson

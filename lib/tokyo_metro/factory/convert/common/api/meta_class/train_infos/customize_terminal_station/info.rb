@@ -5,7 +5,7 @@ class TokyoMetro::Factory::Convert::Common::Api::MetaClass::TrainInfos::Customiz
   private
 
   def station_name_new
-    ::TokyoMetro::Modules::Common::Dictionary::Station.station_same_as_in_db( @object.terminal_station , "Terminal station" )
+    ::TokyoMetro::Modules::Dictionary::Common::Station.station_same_as_in_db( @object.terminal_station , "Terminal station" )
   end
 
   def to_process?
