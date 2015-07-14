@@ -3,6 +3,8 @@ class TokyoMetro::Static::OperationDay::List < Array
   include ::TokyoMetro::ClassNameLibrary::Static::OperationDay
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
+  private
+
   def method_missing( method_name , *args )
     info = self.find { | item | item.try( :match? , method_name ) }
     if info.present?

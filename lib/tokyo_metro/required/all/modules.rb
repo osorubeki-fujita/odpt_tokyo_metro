@@ -9,6 +9,7 @@ class TokyoMetro::Required::All::Modules < TokyoMetro::Required
     [
       #
       Fundamental.files ,
+      MethodMissing.files ,
       Dictionary.files ,
       Decision.files ,
       #

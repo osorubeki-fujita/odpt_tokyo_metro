@@ -7,6 +7,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::
   include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::WheelChair::Availability::Escalator
   include ::TokyoMetro::Modules::Alias::Common::StationFacility::BarrierFree::WheelChair
   include ::TokyoMetro::Modules::MethodMissing::Decision::Common::StationFacility::BarrierFree::WheelChair
+  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::StationFacility::BarrierFree::WheelChair::Availability::Escalator
 
   include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::MobilityScooter::Availability::None
   include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::MobilityScooter::Availability::AliasTowardsAccessibility

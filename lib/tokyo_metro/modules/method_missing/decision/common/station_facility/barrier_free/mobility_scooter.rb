@@ -1,5 +1,7 @@
 module TokyoMetro::Modules::MethodMissing::Decision::Common::StationFacility::BarrierFree::MobilityScooter
 
+  private
+
   def method_missing( method_name , *args )
     if args.empty? and /mobility_scooter/ === method_name.to_s
       case method_name.to_s

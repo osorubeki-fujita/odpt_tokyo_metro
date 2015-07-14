@@ -11,6 +11,7 @@ class TokyoMetro::Required::All::Factory < TokyoMetro::Required
       Get.files ,
       Save.files ,
       YamlStationList.files ,
+      Db.files ,
       #
       Common.files ,
       #
