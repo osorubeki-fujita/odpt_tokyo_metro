@@ -1,4 +1,4 @@
-module TokyoMetro::Modules::Common::Info::Fundamental::CssClass
+module TokyoMetro::Modules::Fundamental::CssClass
 
   # CSS のクラスの名称を取得するメソッド
   # @return [String]

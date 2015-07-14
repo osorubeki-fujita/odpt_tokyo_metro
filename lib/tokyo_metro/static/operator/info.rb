@@ -4,7 +4,10 @@ class TokyoMetro::Static::Operator::Info
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
-  include ::TokyoMetro::Modules::Static::GetName
+
+  include ::TokyoMetro::Modules::Fundamental::Get::NameForInspection
+  include ::TokyoMetro::Modules::Fundamental::Get::MainName
+  include ::TokyoMetro::Modules::Fundamental::CssClass
 
   include ::TokyoMetro::Modules::Common::Info::Operator::Info
 
@@ -348,14 +351,6 @@ class TokyoMetro::Static::Operator::Info
 
   def name_en_to_a
     name_en
-  end
-
-  def has_many_name_ja?
-    name_ja_to_a.length > 1
-  end
-
-  def has_many_name_en?
-    name_en_to_a.length > 1
   end
 
   def operator_of?( *args )

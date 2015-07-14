@@ -1,7 +1,5 @@
 module TokyoMetro::Modules::Common::Info::Operator::Info
 
-  include ::TokyoMetro::Modules::Common::Info::Fundamental::CssClass
-
   # @!group 鉄道事業者の名称に関するメソッド (1) - 標準の名称（詳細版）
 
   # 鉄道事業者の標準の名称（日本語・詳細版）
@@ -301,5 +299,13 @@ module TokyoMetro::Modules::Common::Info::Operator::Info
   end
 
   # @!endgroup
+
+  def has_many_name_ja?
+    name_ja_to_a.length > 1
+  end
+
+  def has_many_name_en?
+    name_en_to_a.length > 1
+  end
 
 end
