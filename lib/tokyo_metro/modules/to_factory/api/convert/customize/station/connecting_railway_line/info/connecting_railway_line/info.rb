@@ -5,7 +5,7 @@
 module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::ConnectingRailwayLine::Info::ConnectingRailwayLine::Info
 
   include ::TokyoMetro::Modules::Decision::Common::Station::ConnectingRailwayLine
-  include ::TokyoMetro::Modules::Decision::Common::Info::RailwayLine::NewAndOld
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::NewAndOld
   include ::TokyoMetro::Modules::Time::Set
 
   # Constructor

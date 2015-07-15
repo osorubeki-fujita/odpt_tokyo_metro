@@ -18,7 +18,7 @@ class TokyoMetro::Static::RailwayLine::Info
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::BranchLine
   include ::TokyoMetro::Modules::MethodMissing::Decision::Common::RailwayLine::BranchLine
 
-  include ::TokyoMetro::Modules::Decision::Common::Info::RailwayLine::NewAndOld
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::NewAndOld
 
   include ::TokyoMetro::Modules::MethodMissing::Decision::Common::Operator
 

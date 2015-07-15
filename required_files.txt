@@ -47,6 +47,7 @@ lib/tokyo_metro/modules/decision/common/current_station.rb
 lib/tokyo_metro/modules/decision/common/operator.rb
 lib/tokyo_metro/modules/decision/common/railway_line.rb
 lib/tokyo_metro/modules/decision/common/railway_line/branch_line.rb
+lib/tokyo_metro/modules/decision/common/railway_line/new_and_old.rb
 lib/tokyo_metro/modules/decision/common/romance_car.rb
 lib/tokyo_metro/modules/decision/common/same_as.rb
 lib/tokyo_metro/modules/decision/common/starting_station.rb
@@ -99,10 +100,6 @@ lib/tokyo_metro/modules/decision/db/current_station.rb
 lib/tokyo_metro/modules/decision/db/operator.rb
 lib/tokyo_metro/modules/decision/db/train_type.rb
 lib/tokyo_metro/modules/decision/static.rb
-lib/tokyo_metro/modules/common.rb
-lib/tokyo_metro/modules/common/info.rb
-lib/tokyo_metro/modules/common/info/new_and_old_railway_line.rb
-lib/tokyo_metro/modules/common/info/new_and_old_railway_line/set_time.rb
 lib/tokyo_metro/modules/to_factory.rb
 lib/tokyo_metro/modules/to_factory/common.rb
 lib/tokyo_metro/modules/to_factory/common/generate.rb
@@ -295,9 +292,6 @@ lib/tokyo_metro/modules/attributes/common/station_facility/barrier_free/escalato
 lib/tokyo_metro/modules/attributes/common/station_facility/barrier_free/escalator/service_detail.rb
 lib/tokyo_metro/modules/attributes/common/station_facility/barrier_free/escalator/service_detail/direction.rb
 lib/tokyo_metro/modules/attributes/common/station_facility/barrier_free/toilet_assistant.rb
-lib/tokyo_metro/modules/db.rb
-lib/tokyo_metro/modules/db/select.rb
-lib/tokyo_metro/modules/db/select/operation_day.rb
 lib/tokyo_metro/modules/name.rb
 lib/tokyo_metro/modules/name/common.rb
 lib/tokyo_metro/modules/name/common/fundamental.rb
@@ -322,6 +316,8 @@ lib/tokyo_metro/modules/static/get_color_info/base.rb
 lib/tokyo_metro/modules/static/get_color_info/each_rgb_element.rb
 lib/tokyo_metro/modules/static/hash.rb
 lib/tokyo_metro/modules/static/hash/define_test.rb
+lib/tokyo_metro/modules/time.rb
+lib/tokyo_metro/modules/time/set.rb
 lib/tokyo_metro/class_name_library.rb
 lib/tokyo_metro/class_name_library/api.rb
 lib/tokyo_metro/class_name_library/api/station_train_time.rb
@@ -1076,6 +1072,7 @@ lib/tokyo_metro/factory/yaml_station_list.rb
 lib/tokyo_metro/factory/yaml_station_list/each_station.rb
 lib/tokyo_metro/factory/db.rb
 lib/tokyo_metro/factory/db/model.rb
+lib/tokyo_metro/factory/db/operation_day.rb
 lib/tokyo_metro/factory/common.rb
 lib/tokyo_metro/factory/seed.rb
 lib/tokyo_metro/factory/seed/reference.rb
