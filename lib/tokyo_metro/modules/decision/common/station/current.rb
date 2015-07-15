@@ -61,7 +61,6 @@ module TokyoMetro::Modules::Decision::Common::Station::Current
   #   at_senkawa?
   #   at_kanamecho?
   #   at_ikebukuro_on_yurakucho_or_fukutoshin_line?
-
   ::TokyoMetro::Modules::Dictionary::Common::Station::RegexpInfo.constants( false ).each do | const_name |
     base_method_name = const_name.to_s.downcase
     eval <<-DEF
