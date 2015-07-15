@@ -2,8 +2,8 @@ module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::TrainTimetable::
 
   def self.set_modules
     ::TokyoMetro::Api::TrainTimetable::Info.class_eval do
-      include ::TokyoMetro::Modules::Decision::Api::ActualStartingStation
-      include ::TokyoMetro::Modules::Decision::Api::ActualTerminalStation
+      include ::TokyoMetro::Modules::Decision::Api::Station::ActualStarting
+      include ::TokyoMetro::Modules::Decision::Api::Station::ActualTerminal
 
       include ::TokyoMetro::Modules::ToFactory::Api::Convert::Customize::TrainTimetable::TrainRelationsOnMarunouchiBranchLine::Dictionary
 

@@ -5,9 +5,9 @@ class TokyoMetro::Api::TrainTimetable::Info::StationTime::Info
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
 
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
-  include ::TokyoMetro::Modules::Api::Info::SeedCompleted
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::SeedCompleted
 
-  include ::TokyoMetro::Modules::Decision::Api::ArrivalStation
+  include ::TokyoMetro::Modules::Decision::Api::Station::Arrival
 
   def initialize( arrival_time , arrival_station , departure_time , departure_station )
     @arrival_time = arrival_time

@@ -7,11 +7,11 @@ class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRea
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
 
   include ::TokyoMetro::Modules::Decision::Common::RomanceCar
-  include ::TokyoMetro::Modules::Decision::Common::ToeiMitaLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::ToeiMitaLine
   include ::TokyoMetro::Modules::Decision::Common::SameAs
 
-  include ::TokyoMetro::Modules::Decision::Api::StartingStation
-  include ::TokyoMetro::Modules::Decision::Api::TerminalStation
+  include ::TokyoMetro::Modules::Decision::Api::Station::Starting
+  include ::TokyoMetro::Modules::Decision::Api::Station::Terminal
 
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine
   include ::TokyoMetro::Modules::Decision::Api::TrainType

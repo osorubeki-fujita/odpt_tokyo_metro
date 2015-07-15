@@ -1,7 +1,7 @@
 class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info::Separated::Info
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
-  include ::TokyoMetro::Modules::Api::Common::NotRealTime
+  include ::TokyoMetro::Modules::Fundamental::Api::Common::NotRealTime
 
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 

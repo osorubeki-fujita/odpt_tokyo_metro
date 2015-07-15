@@ -7,8 +7,8 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Info < TokyoMetro::Ap
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
-  include ::TokyoMetro::Modules::Api::Info::SetDataToHash
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::SetDataToHash
 
   include ::TokyoMetro::Modules::Decision::Api::StationFacility::BarrierFree::Type
   include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::LocatedArea

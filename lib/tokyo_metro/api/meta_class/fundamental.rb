@@ -1,8 +1,8 @@
 # API から提供されるデータのメタクラス
 class TokyoMetro::Api::MetaClass::Fundamental
 
-  include ::TokyoMetro::Modules::Api::Common::NotRealTime
-  include ::TokyoMetro::Modules::Api::Common::DbDirname
+  include ::TokyoMetro::Modules::Fundamental::Api::Common::NotRealTime
+  include ::TokyoMetro::Modules::Fundamental::Api::Common::DbDirname
 
   # @!group Factory Pattern のクラスの情報
 

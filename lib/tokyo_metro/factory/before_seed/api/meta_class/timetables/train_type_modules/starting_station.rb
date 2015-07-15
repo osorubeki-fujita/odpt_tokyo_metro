@@ -1,6 +1,6 @@
 module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeModules::StartingStation
 
-  include ::TokyoMetro::Modules::Decision::Common::StartingStation
+  include ::TokyoMetro::Modules::Decision::Common::Station::Starting
 
   private
 

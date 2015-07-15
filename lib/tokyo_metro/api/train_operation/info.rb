@@ -6,7 +6,7 @@ class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTi
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine
 
-  include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
 
   # Constructor
   # @param id_urn [String] 固有識別子 (ucode) <id - URN>

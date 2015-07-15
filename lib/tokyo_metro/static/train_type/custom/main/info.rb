@@ -5,6 +5,13 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
+  include ::TokyoMetro::Modules::Name::Common::TrainType::CssClass
+
+  include ::TokyoMetro::Modules::Color::Static::Fundamental::GetColorInfo
+  # 色に関するメソッド
+  include ::TokyoMetro::Modules::Color::Static::Background
+  include ::TokyoMetro::Modules::Color::Static::Normal
+
   # Constructor
   # @param ary [::Array] 変数の配列（内部で展開する）
   def initialize( *ary )
@@ -16,17 +23,5 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
 
   # @return [String] 補足情報
   attr_reader :note
-
-  # @!group 文字色に関するメソッド (1)
-  include ::TokyoMetro::Modules::Static::GetColorInfo::Base
-  # @!group 文字色に関するメソッド (2)
-  include ::TokyoMetro::Modules::Static::GetColorInfo::EachRgbElement
-  # @!group 背景色に関するメソッド (1)
-  include ::TokyoMetro::Modules::Static::GetBackgroundColorInfo::Base
-  # @!group 背景色に関するメソッド (2)
-  include ::TokyoMetro::Modules::Static::GetBackgroundColorInfo::EachRgbElement
-  # @!endgroup
-
-  include ::TokyoMetro::Modules::Name::Common::TrainType::CssClass
 
 end

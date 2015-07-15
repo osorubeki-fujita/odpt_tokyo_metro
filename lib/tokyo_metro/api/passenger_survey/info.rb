@@ -4,7 +4,7 @@ class TokyoMetro::Api::PassengerSurvey::Info < TokyoMetro::Api::MetaClass::NotRe
   include ::TokyoMetro::ClassNameLibrary::Api::PassengerSurvey
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
 
   # Constructor
   def initialize( id_urn , same_as , operator , survey_year , passenger_journeys )

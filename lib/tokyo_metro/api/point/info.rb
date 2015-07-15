@@ -5,9 +5,9 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   # インスタンスメソッドの追加
-  include ::TokyoMetro::Modules::Api::Info::ToJson
-  include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
-  include ::TokyoMetro::Modules::Api::Info::ToStringWithArray
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToJson
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringWithArray
 
   # Constructor
   def initialize( id_urn , title , geo_long , geo_lat , region , ug_floor , category_name )

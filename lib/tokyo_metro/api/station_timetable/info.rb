@@ -6,7 +6,7 @@ class TokyoMetro::Api::StationTimetable::Info < TokyoMetro::Api::MetaClass::NotR
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::SameAs
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine
-  include ::TokyoMetro::Modules::Decision::Api::CurrentStation
+  include ::TokyoMetro::Modules::Decision::Api::Station::Current
 
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 

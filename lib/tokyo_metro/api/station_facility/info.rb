@@ -4,7 +4,7 @@ class TokyoMetro::Api::StationFacility::Info < TokyoMetro::Api::MetaClass::NotRe
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Api::Info::ToStringWithArray
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringWithArray
 
   # Constructor
   def initialize( id_urn , same_as , barrier_free_facilities , platform_infos , dc_date )

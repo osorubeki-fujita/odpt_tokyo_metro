@@ -5,17 +5,17 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
 
-  include ::TokyoMetro::Modules::Decision::Api::TerminalStation
+  include ::TokyoMetro::Modules::Decision::Api::Station::Terminal
   include ::TokyoMetro::Modules::Decision::Api::TrainType
 
-  include ::TokyoMetro::Modules::Api::Info::SetDataToHash
-  include ::TokyoMetro::Modules::Api::Info::ToJson
-  include ::TokyoMetro::Modules::Api::Info::SeedCompleted
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::SetDataToHash
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToJson
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::SeedCompleted
 
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Api::Common::NotRealTime
+  include ::TokyoMetro::Modules::Fundamental::Api::Common::NotRealTime
 
   # Constructor
   def initialize( departure_time , terminal_station , train_type ,

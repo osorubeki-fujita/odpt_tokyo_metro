@@ -3,7 +3,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
 
-  include ::TokyoMetro::Modules::Api::Common::NotRealTime
+  include ::TokyoMetro::Modules::Fundamental::Api::Common::NotRealTime
 
   # Constructor
   def initialize( stations , railway_lines , operators , railway_directions )

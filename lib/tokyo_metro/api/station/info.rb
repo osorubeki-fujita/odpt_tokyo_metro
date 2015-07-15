@@ -2,14 +2,14 @@
 class TokyoMetro::Api::Station::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   # インスタンスメソッドの追加
-  include ::TokyoMetro::Modules::Api::Info::ToJson
-  include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
-  include ::TokyoMetro::Modules::Api::Info::ToStringWithArray
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToJson
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringWithArray
 
   include ::TokyoMetro::ClassNameLibrary::Api::Station
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine
-  include ::TokyoMetro::Modules::Decision::Api::CurrentStation
+  include ::TokyoMetro::Modules::Decision::Api::Station::Current
 
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 

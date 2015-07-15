@@ -306,15 +306,12 @@ class TokyoMetro::Static::Operator::Info
   #   odpt.Operator:TWR                : (nil)
   attr_reader :station_code_shape
 
-  # @!group 鉄道事業者の色に関するメソッド (1)
+  # @!group 鉄道事業者の色に関するメソッド
 
   # @return [::TokyoMetro::Static::Color] 事業者の色
   attr_reader :color
-  include ::TokyoMetro::Modules::Static::GetColorInfo::Base
-
-  # @!group 鉄道事業者の色に関するメソッド (2)
-
-  include ::TokyoMetro::Modules::Static::GetColorInfo::EachRgbElement
+  include ::TokyoMetro::Modules::Color::Static::Fundamental::GetColorInfo
+  include ::TokyoMetro::Modules::Color::Static::Normal
 
   # @!endgroup
 

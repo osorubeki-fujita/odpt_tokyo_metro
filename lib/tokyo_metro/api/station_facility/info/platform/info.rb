@@ -8,8 +8,8 @@ class TokyoMetro::Api::StationFacility::Info::Platform::Info
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine
 
-  include ::TokyoMetro::Modules::Api::Info::ToStringGeneral
-  include ::TokyoMetro::Modules::Api::Info::SetDataToHash
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
+  include ::TokyoMetro::Modules::Fundamental::Api::Info::SetDataToHash
 
   # Constructor
   def initialize( railway_line , car_composition , car_number , railway_direction , transfer_infos , barrier_free_facilities , surrounding_areas )

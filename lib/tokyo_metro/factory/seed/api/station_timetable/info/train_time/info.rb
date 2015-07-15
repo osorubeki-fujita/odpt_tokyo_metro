@@ -4,7 +4,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
   include ::TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Common
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::Common::CurrentStation
+  include ::TokyoMetro::Modules::Decision::Common::Station::Current
   include ::TokyoMetro::Modules::Decision::Common::TrainType
 
   def initialize( *args )
