@@ -27,12 +27,12 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     = railway_line_of_train.decorate.render_matrix( make_link_to_railway_line: false , size: :very_small )
     - if to_render_train_type_info
       = train_type_info_decorated.render_in_train_location
-    = terminal_station_decorated.render_as_terminal_station
+    = terminal_station_decorated.try( :render_as_terminal_station )
   = this.render_current_position
   %ul{ class: :sub_infos }
     = this.render_delay
     = this.render_train_number
-    = starting_station_decorated.render_as_starting_station
+    = starting_station_decorated.try( :render_as_starting_station )
     - if to_render_train_owner
       = train_owner_decorated.in_train_location.render
     HAML
@@ -140,7 +140,12 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       end
 
       def #{ method_basename }_decorated
-        #{ method_basename }.decorate.train_location
+        _#{ method_basename } = #{ method_basename }
+        if _#{ method_basename }.present?
+          _#{ method_basename }.decorate.train_location
+        else
+          nil
+        end
       end
     DEF
   end

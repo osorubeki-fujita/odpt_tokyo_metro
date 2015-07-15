@@ -7,8 +7,8 @@ class TokyoMetro::Factory::Convert::Patch::Api::TrainLocation::ChiyodaMainLine::
   private
 
   def convert_invalid_station_name_of_chiyoda_main_line_train
-    if object.chiyoda_line? and starting_on_yoyogi_uehara_side?
-      if invalid_chiyoda_main_line_train_terminating_at_kita_ayase?
+    if object.chiyoda_line?
+      if starting_on_yoyogi_uehara_side? and invalid_chiyoda_main_line_train_terminating_at_kita_ayase?
 
         if object.limited_express_or_romance_car?
           set_terminal_station_nil
@@ -16,10 +16,13 @@ class TokyoMetro::Factory::Convert::Patch::Api::TrainLocation::ChiyodaMainLine::
           set_terminal_station_ayase
         end
 
-      elsif invalid_chiyoda_main_line_train_terminating_at_invalid_seijo_gakuen_mae?
-        set_terminal_station_nil
+        set_direction_for_ayase
       end
+
+    elsif invalid_chiyoda_main_line_train_terminating_at_invalid_seijo_gakuen_mae?
+      set_terminal_station_nil
     end
+
   end
 
   def invalid_chiyoda_main_line_train_terminating_at_kita_ayase?
@@ -44,6 +47,10 @@ class TokyoMetro::Factory::Convert::Patch::Api::TrainLocation::ChiyodaMainLine::
 
   def set_terminal_station_nil
     object.instance_variable_set( :@terminal_station , nil )
+  end
+
+  def set_direction_for_ayase
+    object.instance_variable_set( :@railway_direction , "odpt.Station:TokyoMetro.Chiyoda.Ayase" )
   end
 
 end
