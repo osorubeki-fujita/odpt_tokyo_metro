@@ -10,7 +10,7 @@ class TokyoMetro::Api::TrainTimetable::List < TokyoMetro::Api::MetaClass::NotRea
       ::Operator.all ,
       ::RailwayLine.all ,
       ::Station::Info.all ,
-      ::RailwayDirection.all ,
+      ::Railway::Direction.all ,
       ::TrainOwner.all ,
       display_number: true
     )

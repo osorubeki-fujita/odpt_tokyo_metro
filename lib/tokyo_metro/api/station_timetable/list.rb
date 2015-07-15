@@ -11,7 +11,7 @@ class TokyoMetro::Api::StationTimetable::List < TokyoMetro::Api::MetaClass::NotR
       ::Operator.all ,
       ::RailwayLine.all ,
       ::Station::Info.all ,
-      ::RailwayDirection.all ,
+      ::Railway::Direction.all ,
       display_number: true
     )
   end

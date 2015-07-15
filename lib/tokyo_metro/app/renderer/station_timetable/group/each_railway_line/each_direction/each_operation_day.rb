@@ -4,7 +4,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
   # Constructor
   # @param station_train_times_of_a_direction_and_an_operation_day [Array <TrainTime>] 各列車の情報（路線・方面・運行日別）のリスト
   # @param railway_line [RailwayLine] 路線のインスタンス
-  # @param direction [RailwayDirection] 方面のインスタンス
+  # @param direction [Railway::Direction] 方面のインスタンス
   # @param operation_day [OperationDay] 運行日のインスタンス
   # @param station [Station] 駅のインスタンス（駅に複数の路線が乗り入れている場合は、代表する路線のインスタンス）
   def initialize( request , station_info , railway_line , railway_direction , operation_day , station_train_times )

@@ -34,7 +34,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine < Toky
         request ,
         @station_info ,
         @railway_line ,
-        ::RailwayDirection.find( railway_direction_id ) ,
+        ::Railway::Direction.find( railway_direction_id ) ,
         station_timetables
       )
     }

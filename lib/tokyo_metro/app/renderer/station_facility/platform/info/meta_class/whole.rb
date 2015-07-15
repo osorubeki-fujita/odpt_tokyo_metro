@@ -44,7 +44,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Who
   def grouped_by_railway_direction
     if has_railway_direction_infos?
       @platform_infos.group_by( &:railway_direction_id ).map { | railway_direction_id , infos |
-        ( self.class.upper_namespace )::EachDirection.new( @request , infos , railway_line_info , ::RailwayDirection.find( railway_direction_id ) )
+        ( self.class.upper_namespace )::EachDirection.new( @request , infos , railway_line_info , ::Railway::Direction.find( railway_direction_id ) )
       }
     else
       [ ( self.class.upper_namespace )::EachDirection.new( @request , @platform_infos , railway_line_info , nil ) ]

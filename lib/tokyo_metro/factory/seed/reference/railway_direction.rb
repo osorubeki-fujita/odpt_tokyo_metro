@@ -6,7 +6,7 @@ module TokyoMetro::Factory::Seed::Reference::RailwayDirection
     if whole.present?
       whole.find_by( railway_line_id: _railway_line_id , in_api_same_as: search_by )
     else
-      ::RailwayDirection.find_by( railway_line_id: _railway_line_id , in_api_same_as: search_by )
+      ::Railway::Direction.find_by( railway_line_id: _railway_line_id , in_api_same_as: search_by )
     end
   end
 
