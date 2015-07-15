@@ -24,13 +24,20 @@ StoppingPattern:
   - "Station::StoppingPattern::Info"
   - "Station::StoppingPattern::Note"
 
+"Train::Type":
+  - "Train::Type::Info"
+  - "Train::Type::InApi"
+  - "Train::Type::StoppingPattern"
+
 StationFacility:
-  - "StationFacility::Info"
-  - "StationFacility::NameAlias"
-  - "StationFacility::Platform::Info"
-  - "StationFacility::Platform::TransferInfo"
-  - "StationFacility::Platform::BarrierFreeFacilityInfo"
-  - "StationFacility::Platform::SurroundingArea"
+  - "Station::Facility::Info"
+  - "Station::Facility::NameAlias"
+  - "Station::Facility::Platform::Info"
+  - "Station::Facility::Platform::TransferInfo"
+  - "Station::Facility::Platform::BarrierFreeFacilityInfo"
+  - "Station::Facility::Platform::SurroundingArea"
+
+SurroundingArea:
   - SurroundingArea
 
 BarrierFreeFacility:
@@ -80,11 +87,6 @@ Point:
 
 "Train::Relation":
   - "Train::Relation"
-
-"Train::Type":
-  - "Train::Type::Info"
-  - "Train::Type::InApi"
-  - "Train::Type::StoppingPattern"
 
 "Train::Operation":
   - "Train::Operation::Info"

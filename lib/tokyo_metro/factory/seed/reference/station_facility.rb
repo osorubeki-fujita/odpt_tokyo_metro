@@ -6,7 +6,7 @@ module TokyoMetro::Factory::Seed::Reference::StationFacility
     if whole.present?
       whole.find_by_same_as( search_by )
     else
-      ::StationFacility::Info.find_by_same_as( search_by )
+      ::Station::Facility::Info.find_by_same_as( search_by )
     end
   end
 

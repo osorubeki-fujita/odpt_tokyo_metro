@@ -68,7 +68,7 @@ class TokyoMetro::Api::StationFacility::Info < TokyoMetro::Api::MetaClass::NotRe
   end
 
   def instance_in_db
-    ::StationFacility::Info.find_by_same_as( @same_as )
+    ::Station::Facility::Info.find_by_same_as( @same_as )
   end
 
   # @!endgroup

@@ -29,7 +29,7 @@ class TokyoMetro::Api::Station::List < TokyoMetro::Api::MetaClass::Hybrid::List
   # @return [nil]
   # @note {TokyoMetro::Static::Station::RailwayLines.seed} を呼び出している。
   def seed
-    super( ::Operator.all , ::RailwayLine.all , ::StationFacility::Info.all , display_number: true )
+    super( ::Operator.all , ::RailwayLine.all , ::Station::Facility::Info.all , display_number: true )
   end
 
   # 配列に含まれる {TokyoMetro::Api::Station::Info} の各インスタンスの乗換路線情報を DB に流し込むメソッド

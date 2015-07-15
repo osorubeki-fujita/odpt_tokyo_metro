@@ -36,7 +36,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
   end
 
   def station_facility_info_already_exists_in_db?
-    ::StationFacility::Info.exists?( same_as: @info.station_facility_info )
+    ::Station::Facility::Info.exists?( same_as: @info.station_facility_info )
   end
 
   def update_station_info
@@ -44,7 +44,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
   end
 
   def create_station_facility_info
-    ::StationFacility::Info.find_or_create_by( same_as: @info.station_facility_info )
+    ::Station::Facility::Info.find_or_create_by( same_as: @info.station_facility_info )
   end
 
   def hash_for_updating_db
@@ -118,7 +118,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
           index_of_alias: i ,
           same_as: station_facility_name_alias
         }
-        ::StationFacility::NameAlias.find_or_create_by(h)
+        ::Station::Facility::NameAlias.find_or_create_by(h)
       end
     end
   end
