@@ -19,7 +19,7 @@
 #   TokyoMetro::Modules::Dictionary::Common::Station::RegexpInfo.ikebukuro_on_yurakucho_or_fukutoshin_line => /TokyoMetro\.(?:Yurakucho|Fukutoshin)\.Ikebukuro\Z/
 module TokyoMetro::Modules::Dictionary::Common::Station::RegexpInfo
 
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   # @!group 丸ノ内線、丸ノ内支線
 

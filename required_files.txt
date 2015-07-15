@@ -4,8 +4,10 @@ lib/tokyo_metro/initializer/modules.rb
 lib/tokyo_metro/initializer/rails.rb
 lib/tokyo_metro/modules.rb
 lib/tokyo_metro/modules/fundamental.rb
-lib/tokyo_metro/modules/fundamental/convert_constant_to_class_method.rb
 lib/tokyo_metro/modules/method_missing.rb
+lib/tokyo_metro/modules/method_missing/constant.rb
+lib/tokyo_metro/modules/method_missing/constant/common.rb
+lib/tokyo_metro/modules/method_missing/constant/common/convert_to_class_method.rb
 lib/tokyo_metro/modules/method_missing/decision.rb
 lib/tokyo_metro/modules/method_missing/decision/common.rb
 lib/tokyo_metro/modules/method_missing/decision/common/operator.rb

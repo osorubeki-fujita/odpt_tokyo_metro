@@ -1,7 +1,7 @@
 class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::OtherOperator
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   TITLE = "TrainTypeOtherOperator"
 

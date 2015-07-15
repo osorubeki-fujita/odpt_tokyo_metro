@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Dictionary::Common::OperationDay
 
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   ::YAML.load_file( "#{ ::TokyoMetro.dictionary_dir }/operation_day.yaml" ).each do | item |
     const_name = item[ "name_en" ].gsub( /\,? / , "_" ).upcase.intern

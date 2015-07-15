@@ -1,6 +1,6 @@
 module TokyoMetro::Factory::Convert::Dictionary::RegexpForReplace
 
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   MARUNOUCHI_BRANCH_LINE_STATIONS = /(?<=\Aodpt\.Station\:TokyoMetro\.)Marunouchi(?:Branch)?(?=\.(?:Honancho|Nakano(?:Fujimicho|Shimbashi)))/
   NAKANO_SAKAUE = /(?<=\Aodpt\.Station\:TokyoMetro\.)Marunouchi(?:Branch)?(?=\.NakanoSakaue)/

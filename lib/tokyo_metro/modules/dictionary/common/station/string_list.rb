@@ -1,7 +1,7 @@
 # 駅名のリストを定数・モジュール関数として提供する名前空間
 module TokyoMetro::Modules::Dictionary::Common::Station::StringList
 
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   # 丸ノ内線・丸ノ内支線の駅名リストをセットするためのモジュール関数
   def self.stations_same_as_in_marunouchi_main_and_branch_lines( station_names )
@@ -425,7 +425,7 @@ module TokyoMetro::Modules::Dictionary::Common::Station::StringList
   YURAKUCHO_AND_FUKUTOSHIN_COMMON_STATIONS_IN_SYSTEM = BETWEEN_WAKOSHI_AND_KANAMECHO_IN_SYSTEM + [ IKEBUKURO_IN_SYSTEM ]
   BETWEEN_WAKOSHI_AND_IKEBUKURO_IN_SYSTEM = YURAKUCHO_AND_FUKUTOSHIN_COMMON_STATIONS_IN_SYSTEM
 
-  # 有楽町線・�����都心線 共用区間の駅（和光市、地下鉄成増、地下鉄赤塚、平和台、氷川台、小竹向原、千川、要町、池袋）
+  # 有楽町���・�����都心線 共用区間の駅（和光市、地下鉄成増、地下鉄赤塚、平和台、氷川台、小竹向原、千川、要町、池袋）
   # @return [::Array <String>]
   # @example
   #   TokyoMetro::Modules::Dictionary::Common::Station::StringList.yurakucho_and_fukutoshin_common_stations => [

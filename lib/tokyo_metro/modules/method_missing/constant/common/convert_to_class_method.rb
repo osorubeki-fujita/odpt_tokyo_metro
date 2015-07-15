@@ -2,7 +2,7 @@
 # @note このモジュールを include したクラスやモジュールでは、定数をクラスメソッドのように呼び出すことができる。
 # @note クラスメソッドのように呼び出したくない定数がある場合は、include されたクラスの内部でその定数の名称（シンボル）のリスト（配列）を private なクラスメソッド constants_not_converted_by_method_missing で指定する。
 # @note {TokyoMetro} に対しては、このモジュールが定義されているファイルで include している。
-module TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+module TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   extend ::ActiveSupport::Concern
 
@@ -31,5 +31,5 @@ module TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
 end
 
 ::TokyoMetro.module_eval do
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 end

@@ -6,7 +6,7 @@ class TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorDirect
     CHIYODA_OTEMACHI_OUTSIDE_ESCALATOR_1
   ]
 
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   private
 

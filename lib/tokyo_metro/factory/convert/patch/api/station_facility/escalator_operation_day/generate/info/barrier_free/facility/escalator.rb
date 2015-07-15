@@ -11,7 +11,7 @@ class TokyoMetro::Factory::Convert::Patch::Api::StationFacility::EscalatorOperat
     GINZA_AKASAKA_MITSUKE_OUTSIDE_ESCALATOR_1
   ]
 
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   private
 

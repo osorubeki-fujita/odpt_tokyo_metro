@@ -7,7 +7,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info::U
     :train_type_in_other_operator_info_id
   ]
 
-  include ::TokyoMetro::Modules::Fundamental::ConvertConstantToClassMethod
+  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   def initialize( train , station_timetable_in_db , train_timetable_in_db )
     @train = train
