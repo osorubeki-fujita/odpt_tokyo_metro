@@ -4,8 +4,8 @@ Operator:
 
 RailwayLine:
   - RailwayLine
-  - TravelTimeInfo
-  - WomenOnlyCarInfo
+  - "Railway::Line::TravelTimeInfo"
+  - "Railway::Line::WomenOnlyCarInfo"
 
 RailwayDirection:
   - RailwayDirection

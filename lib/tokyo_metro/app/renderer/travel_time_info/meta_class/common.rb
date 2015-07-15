@@ -6,13 +6,13 @@ module TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Common
   %table{ class: [ :travel_time_info , :display_connecting_railway_line_name ] }
     - if additional_info_top.present?
       = additional_info_top.call
-      - # = ::TravelTimeInfoDecorator.render_empty_row
+      - # = ::Railway::Line::TravelTimeInfoDecorator.render_empty_row
     - #
     - rows.each do | row |
       = row.render
     - #
     - if additional_info_bottom.present?
-      - # = ::TravelTimeInfoDecorator.render_empty_row
+      - # = ::Railway::Line::TravelTimeInfoDecorator.render_empty_row
       = additional_info_bottom.call
     HAML
   end

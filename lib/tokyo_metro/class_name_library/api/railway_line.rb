@@ -162,11 +162,11 @@ module TokyoMetro::ClassNameLibrary::Api::RailwayLine
     end
 
     def db_instance_class_of_travel_time_infos
-      ::TravelTimeInfo
+      ::Railway::Line::TravelTimeInfo
     end
 
     def db_instance_class_of_women_only_car_infos
-      ::WomenOnlyCarInfo
+      ::Railway::Line::WomenOnlyCarInfo
     end
 
     # @!endgroup
