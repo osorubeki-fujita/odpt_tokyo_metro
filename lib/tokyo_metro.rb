@@ -179,7 +179,7 @@ module TokyoMetro
 
   def self.diagram_as_of( time )
     t = operation_day_as_of( time )
-    ::TokyoMetro::Modules::Db::Select::OperationDay.process(t)
+    ::TokyoMetro::Factory::Db::OperationDay.select_by(t)
   end
 
   def self.current_diagram

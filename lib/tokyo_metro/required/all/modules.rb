@@ -7,13 +7,11 @@ class TokyoMetro::Required::All::Modules < TokyoMetro::Required
   #-------- db
   def self.other_files
     [
-      #
       Fundamental.files ,
+      #
       MethodMissing.files ,
       Dictionary.files ,
       Decision.files ,
-      #
-      Common.files ,
       #
       ToFactory.files ,
       #

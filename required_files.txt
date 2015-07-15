@@ -15,7 +15,10 @@ lib/tokyo_metro/modules/method_missing/decision/common/station_facility.rb
 lib/tokyo_metro/modules/method_missing/decision/common/station_facility/barrier_free.rb
 lib/tokyo_metro/modules/method_missing/decision/common/station_facility/barrier_free/mobility_scooter.rb
 lib/tokyo_metro/modules/method_missing/decision/common/station_facility/barrier_free/toilet_assistant.rb
+lib/tokyo_metro/modules/method_missing/decision/common/station_facility/barrier_free/toilet_assistant/method_name.rb
 lib/tokyo_metro/modules/method_missing/decision/common/station_facility/barrier_free/wheel_chair.rb
+lib/tokyo_metro/modules/method_missing/decision/common/station_facility/barrier_free/wheel_chair/availability.rb
+lib/tokyo_metro/modules/method_missing/decision/common/station_facility/barrier_free/wheel_chair/availability/escalator.rb
 lib/tokyo_metro/modules/method_missing/dictionary.rb
 lib/tokyo_metro/modules/method_missing/dictionary/common.rb
 lib/tokyo_metro/modules/method_missing/dictionary/common/railway_line.rb

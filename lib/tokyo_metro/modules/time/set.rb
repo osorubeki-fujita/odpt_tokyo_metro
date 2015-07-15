@@ -1,9 +1,14 @@
-module TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine::SetTime
+module TokyoMetro::Modules::Time::Set
+
+  TYPES = [ :start_on , :end_on ]
 
   private
 
   def set_time_of( t , type: nil )
-    raise "Error" unless [ :start_on , :end_on ].include?( type )
+    types = ::TokyoMetro::Modules::Time::Set::TYPES
+
+    raise "Error" unless types.include?( type )
+
     if t.instance_of?( ::Time ) or t.instance_of?( ::DateTime ) or t.nil?
       return t
     end

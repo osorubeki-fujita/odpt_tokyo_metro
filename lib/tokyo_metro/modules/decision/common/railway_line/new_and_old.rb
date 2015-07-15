@@ -1,4 +1,4 @@
-module TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine
+module TokyoMetro::Modules::Decision::Common::Info::RailwayLine::NewAndOld
 
   def not_operated_yet?
     start_on.present? and ::Time.now < start_on

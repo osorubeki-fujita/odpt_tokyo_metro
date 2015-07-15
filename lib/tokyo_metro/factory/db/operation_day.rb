@@ -1,15 +1,7 @@
-class TokyoMetro::Modules::Db::Select::OperationDay
+class TokyoMetro::Factory::Db::OperationDay
 
   def initialize( datetime )
     @time = datetime
-  end
-
-  def saturday_or_sunday?
-    @time.saturday? or @time.sunday?
-  end
-
-  def holiday?
-    ::HolidayJapan.check( ::Date.new( @time.year , @time.month , @time.day ) )
   end
 
   def process
@@ -21,8 +13,18 @@ class TokyoMetro::Modules::Db::Select::OperationDay
     end
   end
 
-  def self.process( datetime )
+  def self.select_by( datetime )
     self.new( datetime ).process
+  end
+
+  private
+
+  def saturday_or_sunday?
+    @time.saturday? or @time.sunday?
+  end
+
+  def holiday?
+    ::HolidayJapan.check( ::Date.new( @time.year , @time.month , @time.day ) )
   end
 
 end

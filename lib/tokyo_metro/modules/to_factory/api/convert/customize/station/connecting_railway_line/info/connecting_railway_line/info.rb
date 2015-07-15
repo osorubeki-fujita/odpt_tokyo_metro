@@ -5,8 +5,8 @@
 module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::ConnectingRailwayLine::Info::ConnectingRailwayLine::Info
 
   include ::TokyoMetro::Modules::Decision::Common::Station::ConnectingRailwayLine
-  include ::TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine
-  include ::TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine::SetTime
+  include ::TokyoMetro::Modules::Decision::Common::Info::RailwayLine::NewAndOld
+  include ::TokyoMetro::Modules::Time::Set
 
   # Constructor
   def initialize( railway_line , start_on: nil , end_on: nil , index_in_station: nil , cleared: false , connecting_another_station: nil , not_recommended: false , note: nil , hidden_on_railway_line_page: false )

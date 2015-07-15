@@ -5,7 +5,7 @@ module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeMod
   # @!group 運行日に関するメソッド
 
   def operated_on_holiday?
-    [ "Holiday" , "Saturday and Holiday" ].include?( @operation_day_in_db.name_en )
+    @operation_day_in_db.holiday?
   end
 
   # @!endgroup

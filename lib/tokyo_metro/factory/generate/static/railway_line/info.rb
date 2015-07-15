@@ -1,7 +1,7 @@
 class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
-  include ::TokyoMetro::Modules::Common::Info::NewAndOldRailwayLine::SetTime
+  include ::TokyoMetro::Modules::Time::Set
 
   def self.hash_keys
     [ :name_ja , :name_hira , :name_en , :name_codes , :operator , :index , :color , :start_on , :end_on , :twitter_widget_id , :twitter_account_name ]
