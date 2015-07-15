@@ -12,7 +12,7 @@ class TokyoMetro::Required::All::Modules < TokyoMetro::Required
       MethodMissing.files ,
       Dictionary.files ,
       Decision.files ,
-      Time.files
+      Time.files ,
       #
       ToFactory.files ,
       #

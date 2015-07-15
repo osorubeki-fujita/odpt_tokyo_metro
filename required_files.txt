@@ -100,6 +100,8 @@ lib/tokyo_metro/modules/decision/db/current_station.rb
 lib/tokyo_metro/modules/decision/db/operator.rb
 lib/tokyo_metro/modules/decision/db/train_type.rb
 lib/tokyo_metro/modules/decision/static.rb
+lib/tokyo_metro/modules/time.rb
+lib/tokyo_metro/modules/time/set.rb
 lib/tokyo_metro/modules/to_factory.rb
 lib/tokyo_metro/modules/to_factory/common.rb
 lib/tokyo_metro/modules/to_factory/common/generate.rb
@@ -316,8 +318,6 @@ lib/tokyo_metro/modules/static/get_color_info/base.rb
 lib/tokyo_metro/modules/static/get_color_info/each_rgb_element.rb
 lib/tokyo_metro/modules/static/hash.rb
 lib/tokyo_metro/modules/static/hash/define_test.rb
-lib/tokyo_metro/modules/time.rb
-lib/tokyo_metro/modules/time/set.rb
 lib/tokyo_metro/class_name_library.rb
 lib/tokyo_metro/class_name_library/api.rb
 lib/tokyo_metro/class_name_library/api/station_train_time.rb
