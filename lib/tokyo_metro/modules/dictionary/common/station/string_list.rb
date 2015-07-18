@@ -1,11 +1,11 @@
 # 駅名のリストを定数・モジュール関数として提供する名前空間
 module TokyoMetro::Modules::Dictionary::Common::Station::StringList
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   # 丸ノ内線・丸ノ内支線の駅名リストをセットするためのモジュール関数
   def self.stations_same_as_in_marunouchi_main_and_branch_lines( station_names )
-    stations_same_as_in_railway_lines(
+    stations_same_as_in_railway_line_infos(
       ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.marunouchi_main_and_branch_line_in_system ,
       station_names
     )
@@ -13,7 +13,7 @@ module TokyoMetro::Modules::Dictionary::Common::Station::StringList
 
   # 有楽町線・副都心線の駅名リストをセットするためのモジュール関数
   def self.stations_same_as_in_yurakucho_and_fukutoshin_lines( station_names )
-    stations_same_as_in_railway_lines(
+    stations_same_as_in_railway_line_infos(
       ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.yurakucho_and_fukutoshin_line_in_system ,
       station_names
     )
@@ -28,8 +28,8 @@ module TokyoMetro::Modules::Dictionary::Common::Station::StringList
     }.flatten
   end
 
-  def self.stations_same_as_in_railway_lines( railway_lines_in_system , station_names )
-    [ railway_lines_in_system ].flatten.map { | railway_line |
+  def self.stations_same_as_in_railway_line_infos( railway_line_infos_in_system , station_names )
+    [ railway_line_infos_in_system ].flatten.map { | railway_line |
       if station_names.instance_of?( ::Array )
         station_names.map { | station_name | "odpt.Station:TokyoMetro.#{ railway_line }.#{station_name}" }
       elsif station_names.instance_of?( ::String )
@@ -80,7 +80,7 @@ module TokyoMetro::Modules::Dictionary::Common::Station::StringList
   #     "odpt.Station:TokyoMetro.Marunouchi.NakanoFujimicho",
   #     "odpt.Station:TokyoMetro.Marunouchi.NakanoShimbashi"
   #   ]
-  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_INVALID = stations_same_as_in_railway_lines( "Marunouchi" , BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM )
+  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_INVALID = stations_same_as_in_railway_line_infos( "Marunouchi" , BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM )
 
   # 丸ノ内支線の駅（方南町、中野富士見町、中野新橋）【支線】
   # @return [::Array <String>]
@@ -89,7 +89,7 @@ module TokyoMetro::Modules::Dictionary::Common::Station::StringList
   #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho",
   #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi"
   #   ]
-  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI = stations_same_as_in_railway_lines(
+  BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI = stations_same_as_in_railway_line_infos(
     "MarunouchiBranch" , BETWEEN_HONANCHO_AND_NAKANO_SHIMBASHI_IN_SYSTEM
   )
 
@@ -128,7 +128,7 @@ module TokyoMetro::Modules::Dictionary::Common::Station::StringList
   #     "odpt.Station:TokyoMetro.Marunouchi.NakanoShimbashi",
   #     "odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue"
   #   ]
-  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_ON_MAIN_LINE = stations_same_as_in_railway_lines(
+  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_ON_MAIN_LINE = stations_same_as_in_railway_line_infos(
     "Marunouchi" , BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_IN_SYSTEM
   )
 
@@ -141,7 +141,7 @@ module TokyoMetro::Modules::Dictionary::Common::Station::StringList
   #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi",
   #     "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
   #   ]
-  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE = stations_same_as_in_railway_lines(
+  BETWEEN_HONANCHO_AND_NAKANO_SAKAUE = stations_same_as_in_railway_line_infos(
     "MarunouchiBranch" , BETWEEN_HONANCHO_AND_NAKANO_SAKAUE_IN_SYSTEM
   )
 

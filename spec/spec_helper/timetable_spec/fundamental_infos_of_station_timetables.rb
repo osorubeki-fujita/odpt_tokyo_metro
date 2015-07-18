@@ -16,7 +16,7 @@ def fundamental_infos_of_station_timetables
         end
       end
 
-      [ :stations , :railway_lines , :operators , :railway_directions ].each do | method_name |
+      [ :stations , :railway_line_infos , :operators , :railway_directions ].each do | method_name |
         iv = fundamental_info.send( method_name )
 
         describe ::TokyoMetro::Api::StationTimetable::Info::Fundamental::Info do

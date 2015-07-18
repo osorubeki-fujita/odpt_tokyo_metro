@@ -1,9 +1,9 @@
 namespace :tokyo_metro do
   namespace :test do
     namespace :define do
-    
+
       namespace :static do
-      
+
         desc "定義 - 鉄道事業者"
         task :operators => :load do
           ::TokyoMetro::Static.operators.define_test
@@ -13,7 +13,7 @@ namespace :tokyo_metro do
           ::TokyoMetro::Static.train_owners.define_test
         end
         desc "定義 - 路線"
-        task :railway_lines => :load do
+        task :railway_line_infos => :load do
           ::TokyoMetro::Static.railway_lines.define_test
         end
         desc "定義 - 駅（東京メトロ）"
@@ -52,7 +52,7 @@ namespace :tokyo_metro do
         end
 
       end
-      
+
     end
   end
 end

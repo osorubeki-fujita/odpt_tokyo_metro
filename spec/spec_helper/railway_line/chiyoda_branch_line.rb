@@ -1,9 +1,9 @@
 def railway_line_info_of_chiyoda_branch_line
 
   # 千代田線（本線）
-  chiyoda_line = ::TokyoMetro::Api.railway_lines.find { | item | item.same_as == "odpt.Railway:TokyoMetro.Chiyoda" }
+  chiyoda_line = ::TokyoMetro::Api.railway_line_infos.find( &:chiyoda_line? )
   # 千代田線（支線）
-  chiyoda_branch_line = ::TokyoMetro::Api.railway_lines.find { | item | item.same_as == "odpt.Railway:TokyoMetro.ChiyodaBranch" }
+  chiyoda_branch_line = ::TokyoMetro::Api.railway_line_infos.find( &:chiyoda_branch_line? )
 
   # 千代田線（本線）の、北綾瀬駅の順番
   chiyoda_line_station_order_kita_ayase = chiyoda_line.station_order.find { | item | item.station == "odpt.Station:TokyoMetro.Chiyoda.KitaAyase"}

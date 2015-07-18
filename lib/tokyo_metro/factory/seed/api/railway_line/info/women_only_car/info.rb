@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Seed::Api::RailwayLine::Info::WomenOnlyCar::Info < To
 
   def hash_to_db( operation_day_id )
     {
-      railway_line_id: @railway_line_id ,
+      railway_line_info_id: @railway_line_info_id ,
       from_station_info_id: from_station_info_id ,
       to_station_info_id: to_station_info_id ,
       operation_day_id: operation_day_id ,

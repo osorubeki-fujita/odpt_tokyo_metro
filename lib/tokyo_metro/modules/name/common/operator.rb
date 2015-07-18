@@ -133,7 +133,7 @@ module TokyoMetro::Modules::Name::Common::Operator
   # 乗り換え等の情報で使用する名称（日本語）
   # @return [::String or nil]
   # @note name_ja_normal の値を返す。
-  # @note ただし、東京メトロ各線、日暮里・舎人ライナーについてはあえて表示をしない。
+  # @note 例外として、あえて表示をしない場合がある。（例：東京メトロ各線、日暮里・舎人ライナー）
   # @example
   #   ::TokyoMetro::Static.operators.each_value { | operator | puts operator.same_as.ljust(32) + " : " + operator.name_ja_for_transfer_info }
   #   =>
@@ -167,7 +167,7 @@ module TokyoMetro::Modules::Name::Common::Operator
   # 乗り換え等の情報で使用する名称（ローマ字表記）
   # @return [::String or nil]
   # @note name_en_normal の値を返す。
-  # @note ただし、東京メトロ各線、日暮里・舎人ライナーについてはあえて表示をしない。
+  # @note 例外として、あえて表示をしない場合がある。（例：東京メトロ各線、日暮里・舎人ライナー）
   # @example
   #   ::TokyoMetro::Static.operators.each_value { | operator | puts operator.same_as.ljust(32) + " : " + operator.name_en_for_transfer_info }
   #   =>

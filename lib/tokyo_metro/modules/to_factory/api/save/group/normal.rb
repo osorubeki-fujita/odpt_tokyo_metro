@@ -6,7 +6,7 @@ module TokyoMetro::Modules::ToFactory::Api::Save::Group::Normal
   module ClassMethods
 
     # API からの情報を取得し、ディレクトリに分けて保存するメソッド
-    # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】 
+    # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
     # @param file_type [Symbol] 保存するファイルの種類【必須】
     # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定
     # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定

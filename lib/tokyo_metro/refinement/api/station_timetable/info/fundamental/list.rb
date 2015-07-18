@@ -4,7 +4,7 @@ module TokyoMetro::Refinement::Api::StationTimetable::Info::Fundamental::List
 
   # refine TokyoMetro::Api::StationTimetable::Info::Fundamental::List do
 
-    def convert_railway_lines!( regexp , str )
+    def convert_railway_line_infos!( regexp , str )
       self.each do | item |
         item.convert_railway_line!( regexp , str )
       end

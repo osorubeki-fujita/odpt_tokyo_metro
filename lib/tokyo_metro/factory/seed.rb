@@ -1,6 +1,6 @@
 module TokyoMetro::Factory::Seed
 
-  extend ::OdptCommon::CalcTime
+  extend ::OdptCommon::Modules::ToFactory::Common::MetaFactory::CalcTime
 
   # @!group 各種設定
 
@@ -17,9 +17,9 @@ module TokyoMetro::Factory::Seed
     #-------- TokyoMetro::Static.Fare::Normal.seed
     process_fundamental_static(h)
 
-    #-------- TokyoMetro::Static.railway_lines
-    # TokyoMetro::Api.railway_lines の情報も同時に取り込む
-    process_static_of_railway_lines(h)
+    #-------- TokyoMetro::Static.railway_line_infos
+    # TokyoMetro::Api.railway_line_infos の情報も同時に取り込む
+    process_static_of_railway_line_infos(h)
 
     #-------- TokyoMetro::Api.station_facilities (1)
     process_station_facilities(h)
@@ -37,8 +37,8 @@ module TokyoMetro::Factory::Seed
     #-------- TokyoMetro::Api.points
     process_points(h)
 
-    #-------- TokyoMetro::Api.railway_lines
-    process_sub_info_of_railway_lines(h)
+    #-------- TokyoMetro::Api.railway_line_infos
+    process_sub_info_of_railway_line_infos(h)
 
     #-------- TokyoMetro::Api.passenger_surveys
     process_passenger_surveys(h)
@@ -130,21 +130,21 @@ module TokyoMetro::Factory::Seed
     end
 
     def check_validity(h)
-      if h[ :railway_lines ] and !( h[ :fundamental_static ] )
+      if h[ :railway_line_infos ] and !( h[ :fundamental_static ] )
         h[ :fundamental_static ] = true
       end
 
-      if h[ :train_types ] and !( h[ :railway_lines ] )
-        h[ :railway_lines ] = true
+      if h[ :train_types ] and !( h[ :railway_line_infos ] )
+        h[ :railway_line_infos ] = true
       end
 
-      if h[ :stations ] and !( h[ :station_facilities ] and h[ :railway_lines ] )
+      if h[ :stations ] and !( h[ :station_facilities ] and h[ :railway_line_infos ] )
         h[ :station_facilities ] = true
-        h[ :railway_lines ] = true
+        h[ :railway_line_infos ] = true
       end
 
-      if h[ :static_railway_directions ] and !( h[ :railway_lines ] and h[ :stations ] )
-        h[ :railway_lines ] = true
+      if h[ :static_railway_directions ] and !( h[ :railway_line_infos ] and h[ :stations ] )
+        h[ :railway_line_infos ] = true
         h[ :stations ] = true
       end
 
@@ -152,8 +152,8 @@ module TokyoMetro::Factory::Seed
         h[ :stations ] = true
       end
 
-      if h[ :sub_info_of_railway_lines ] and !( h[ :railway_lines ] )
-        h[ :railway_lines ] = true
+      if h[ :sub_info_of_railway_line_infos ] and !( h[ :railway_line_infos ] )
+        h[ :railway_line_infos ] = true
       end
 
       if h[ :passenger_surveys ] and !( h[ :stations ] )
@@ -182,7 +182,7 @@ module TokyoMetro::Factory::Seed
 
     def set_constants(h)
       config_of_api_constants = ::Hash.new
-      [ :railway_lines , :station_facilities , :passenger_surveys , :stations , :fares , :points ].each do | setting |
+      [ :railway_line_infos , :station_facilities , :passenger_surveys , :stations , :fares , :points ].each do | setting |
         if h[ setting ]
           config_of_api_constants[ setting.singularize ] = true
         end
@@ -232,13 +232,13 @@ module TokyoMetro::Factory::Seed
       )
     end
 
-    #-------- TokyoMetro::Static.railway_lines
-    # TokyoMetro::Api.railway_lines の情報も同時に取り込む
+    #-------- TokyoMetro::Static.railway_line_infos
+    # TokyoMetro::Api.railway_line_infos の情報も同時に取り込む
 
-    def process_static_of_railway_lines(h)
-      process_each_content( h , :railway_lines ,
+    def process_static_of_railway_line_infos(h)
+      process_each_content( h , :railway_line_infos ,
         Proc.new {
-          ::TokyoMetro::Static.railway_lines.seed
+          ::TokyoMetro::Static.railway_line_infos.seed
         }
       )
     end
@@ -260,7 +260,7 @@ module TokyoMetro::Factory::Seed
         Proc.new {
           ::TokyoMetro::Api.stations.seed
           ::TokyoMetro::Static.stations.seed
-          ::TokyoMetro::Api.stations.seed_connecting_railway_lines
+          ::TokyoMetro::Api.stations.seed_connecting_railway_line_infos
         }
       )
     end
@@ -297,14 +297,14 @@ module TokyoMetro::Factory::Seed
       )
     end
 
-    #-------- TokyoMetro::Api.railway_lines （補足情報）
+    #-------- TokyoMetro::Api.railway_line_infos （補足情報）
 
-    def process_sub_info_of_railway_lines(h)
-      process_each_content( h , :sub_info_of_railway_lines ,
+    def process_sub_info_of_railway_line_infos(h)
+      process_each_content( h , :sub_info_of_railway_line_infos ,
         Proc.new {
-          # ::TokyoMetro::Api.railway_lines.seed_station_order_infos （使用停止中）
-          ::TokyoMetro::Api.railway_lines.seed_travel_time_infos
-          ::TokyoMetro::Api.railway_lines.seed_women_only_car_infos
+          # ::TokyoMetro::Api.railway_line_infos.seed_station_order_infos （使用停止中）
+          ::TokyoMetro::Api.railway_line_infos.seed_travel_time_infos
+          ::TokyoMetro::Api.railway_line_infos.seed_women_only_car_infos
         }
       )
     end

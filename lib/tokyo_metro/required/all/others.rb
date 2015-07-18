@@ -21,7 +21,7 @@ class TokyoMetro::Required::All::Others < TokyoMetro::Required
     private
 
     def namespaces
-      [ "extend_builtin_libraries" , "search" , "scss" , "test" , "document" ]
+      [ "search" , "test" , "document" ]
     end
 
   end

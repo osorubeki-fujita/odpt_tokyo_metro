@@ -8,12 +8,12 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::YurakuchoF
     super( "小竹向原" , "西武" , train_type , train_type_info_in_db )
   end
 
-  def railway_line_in_db
-    ::RailwayLine.find_by_same_as( "odpt.Railway:Seibu.Ikebukuro" )
+  def railway_line_info_in_db
+    ::Railway::Line::Info.find_by_same_as( "odpt.Railway:Seibu.Ikebukuro" )
   end
 
-  def railway_line_on_the_border_station_info_in_db
-    ::RailwayLine.find_by_same_as( "odpt.Railway:Seibu.SeibuYurakucho" )
+  def railway_line_info_on_the_border_station_info_in_db
+    ::Railway::Line::Info.find_by_same_as( "odpt.Railway:Seibu.SeibuYurakucho" )
   end
 
 end

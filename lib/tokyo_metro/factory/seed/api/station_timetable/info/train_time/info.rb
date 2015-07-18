@@ -136,14 +136,14 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
     )
   end
 
-  def railway_line_ids
+  def railway_line_info_ids
     station_timetable_in_db.railway_lines.pluck( :id )
   end
 
   [ :starting_station_info_id , :connection_info_id ].each do | method_base_name |
     eval <<-DEF
       def station_timetable_#{ method_base_name }
-        @info.#{ method_base_name }( railway_line_ids )
+        @info.#{ method_base_name }( railway_line_info_ids )
       end
     DEF
   end

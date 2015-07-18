@@ -1,10 +1,9 @@
 class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom::ChiyodaBranchLine < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , branch_railway_line )
+  def initialize( request , branch_railway_line_info )
     super( request )
-    @branch_railway_line = branch_railway_line
-
-    @kita_ayase = @branch_railway_line.station_infos.find_by( same_as: "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase" )
+    @branch_railway_line_info = branch_railway_line_info
+    @kita_ayase = @branch_railway_line_info.station_infos.find_by( same_as: "odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase" )
   end
 
   def render
@@ -21,7 +20,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Botto
 
   def h_locals
     super.merge({
-      railway_line: @branch_railway_line ,
+      railway_line_info: @branch_railway_line_info ,
       kita_ayase: @kita_ayase
     })
   end

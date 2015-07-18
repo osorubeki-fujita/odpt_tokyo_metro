@@ -12,7 +12,7 @@ namespace :tokyo_metro do
       namespace :railway_line do
         desc "保存テスト - 路線情報【すべて】"
         task :all => :load do
-          ::TokyoMetro::Api::RailwayLine.save( ::HTTPClient.new , "info_of_all_railway_lines" , file_type: :json )
+          ::TokyoMetro::Api::RailwayLine.save( ::HTTPClient.new , "info_of_all_railway_line_infos" , file_type: :json )
         end
       end
 

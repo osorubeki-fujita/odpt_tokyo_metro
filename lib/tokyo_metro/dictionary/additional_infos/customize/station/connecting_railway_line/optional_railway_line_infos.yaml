@@ -1,0 +1,41 @@
+-
+    stations:
+        - odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue
+    railway_line_infos:
+        - odpt.Railway:TokyoMetro.MarunouchiBranch
+-
+    stations:
+        - odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue
+    railway_line_infos:
+        - odpt.Railway:TokyoMetro.Marunouchi
+-
+    stations:
+        - odpt.Station:TokyoMetro.Ginza.Ueno
+        - odpt.Station:TokyoMetro.Hibiya.Ueno
+    railway_line_infos:
+        - odpt.Railway:JR-East.Shinkansen
+-
+    stations:
+        - odpt.Station:TokyoMetro.Marunouchi.Tokyo
+    railway_line_infos:
+        - odpt.Railway:JR-East.Musashino
+        - odpt.Railway:JR-East.Shinkansen
+        - odpt.Railway:JR-East.Shinkansen.2015
+        - odpt.Railway:JR-East.Shinkansen.2016
+        - odpt.Railway:JR-Central.Shinkansen
+-
+    stations:
+        - odpt.Station:TokyoMetro.Hibiya.Akihabara
+    railway_line_infos:
+        - odpt.Railway:Toei.Shinjuku
+-
+    stations:
+        - odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara
+    railway_line_infos:
+        - odpt.Railway:TokyoMetro.Fukutoshin
+-
+    stations:
+        - odpt.Station:TokyoMetro.Namboku.TameikeSanno
+    railway_line_infos:
+        - odpt.Railway:TokyoMetro.Chiyoda
+        - odpt.Railway:TokyoMetro.Marunouchi

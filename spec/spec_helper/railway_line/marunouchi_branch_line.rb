@@ -1,6 +1,6 @@
 def railway_line_info_of_marunouchi_branch_line
-  marunouchi_line = ::TokyoMetro::Api.railway_lines.find { | item | item.same_as == "odpt.Railway:TokyoMetro.Marunouchi" }
-  marunouchi_branch_line = ::TokyoMetro::Api.railway_lines.find { | item | item.same_as == "odpt.Railway:TokyoMetro.MarunouchiBranch" }
+  marunouchi_line = ::TokyoMetro::Api.railway_line_infos.find { | item | item.same_as == "odpt.Railway:TokyoMetro.Marunouchi" }
+  marunouchi_branch_line = ::TokyoMetro::Api.railway_line_infos.find { | item | item.same_as == "odpt.Railway:TokyoMetro.MarunouchiBranch" }
 
   describe ::TokyoMetro::Api::RailwayLine::List , "check Marunouchi Main Line" do
 

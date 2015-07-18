@@ -4,7 +4,7 @@ module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeMod
 
   # 有楽町線・副都心線の列車種別を取得するメソッド
   # @note 必要に応じてサブクラスで上書きする。
-  # @return [TrainType(s)]
+  # @return [Train::Type::Info(s)]
   def yurakucho_and_fukutoshin_train_type
     process_holiday_express_of_fukutoshin_line
     select_one_from_multiple_train_type_infos( considered_train_type_infos_of_yurakucho_and_fukutoshin_line )
@@ -37,14 +37,14 @@ module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeMod
   # @!endgroup
 
   # 終着駅が有楽町線内・副都心線内・東急方面の場合の列車種別を取得するメソッド
-  # @return [TrainType(s)]
+  # @return [Train::Type::Info(s)]
   def select_train_type_infos_to_yurakucho_fukutoshin_or_tokyu_mm_line
 
     if terminating_on_yurakucho_line?
-      train_type_infos( __railway_line_id__: railway_line_id( search_by: "odpt.Railway:TokyoMetro.Yurakucho" ) ).select( &:colored? )
+      train_type_infos( __railway_line_info_id__: railway_line_info_id( search_by: "odpt.Railway:TokyoMetro.Yurakucho" ) ).select( &:colored? )
 
     elsif terminating_on_fukutoshin_line? or terminating_on_tokyu_toyoko_line? or terminating_on_minatomirai_line?
-      _train_type_infos = train_type_infos( __railway_line_id__: railway_line_id( search_by: "odpt.Railway:TokyoMetro.Fukutoshin" ) )
+      _train_type_infos = train_type_infos( __railway_line_info_id__: railway_line_info_id( search_by: "odpt.Railway:TokyoMetro.Fukutoshin" ) )
       # puts "#{ self.class.name }"
       # puts "☆ Train type #{ @train_type }"
 

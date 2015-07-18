@@ -6,9 +6,9 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info
   include ::TokyoMetro::Modules::Fundamental::Api::Common::NotRealTime
 
   # Constructor
-  def initialize( stations , railway_lines , operators , railway_directions )
+  def initialize( stations , railway_line_infos , operators , railway_directions )
     @stations = stations
-    @railway_lines = railway_lines
+    @railway_line_infos = railway_line_infos
     @operators = operators
     @railway_directions = railway_directions
   end
@@ -19,7 +19,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info
 
   # 路線 - odpt:Railway
   # @return [String]
-  attr_reader :railway_lines
+  attr_reader :railway_line_infos
 
   # 運行会社 - odpt:Operator
   # @return [String]
@@ -33,11 +33,11 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info
     ary = self.class.fundamental_info_separeted_list.new
 
     @stations.each do | station |
-      @railway_lines.each do | railway_line |
+      @railway_line_infos.each do | railway_line_info |
         @operators.each do | operator |
           @railway_directions.each do | railway_direction |
 
-            ary << self.class.fundamental_info_separeted_info.new( station , railway_line , operator , railway_direction )
+            ary << self.class.fundamental_info_separeted_info.new( station , railway_line_info , operator , railway_direction )
 
           end
         end

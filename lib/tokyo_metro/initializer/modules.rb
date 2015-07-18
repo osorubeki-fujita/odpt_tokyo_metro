@@ -1,5 +1,5 @@
 # @note
-#   TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod の TokyoMetro への include は、
+#   OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod の TokyoMetro への include は、
 #    tokyo_metro/modules/common/convert_constant_to_class_method.rb で行う。
 module TokyoMetro::Initializer::Modules
 

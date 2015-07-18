@@ -2,13 +2,13 @@ module TokyoMetro::Test::Api::TrainTimetable
 
   def self.yurakucho_and_fukutoshin_line_trains
     string_ary = ::Array.new
-    railway_lines = [ :yurakucho , :fukutoshin ]
-    operation_days = [ 
+    railway_line_infos = [ :yurakucho , :fukutoshin ]
+    operation_days = [
       [ :is_operated_on_weekdays? , "Weekday" ] ,
       [ :is_operated_on_saturdays_and_holidays? , "Holiday" ]
     ]
 
-    railway_lines.each do | railway_line |
+    railway_line_infos.each do | railway_line |
       operation_days.each do | method_name_for_determining_operation_day , operation_day_name |
         train_timetables_in_api = ::TokyoMetro::Api.train_timetables.send( railway_line ).select( &method_name_for_determining_operation_day ).sort_by( &:train_number )
         train_timetable_infos = train_timetables_in_api.map { | train | ::TokyoMetro::Test::Api::TrainTimetable::TrainInfo.new( train ) }

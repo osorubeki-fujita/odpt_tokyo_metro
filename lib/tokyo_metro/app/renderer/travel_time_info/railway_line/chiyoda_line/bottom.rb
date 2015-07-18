@@ -1,9 +1,9 @@
 class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom < TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation
 
-  def initialize( request , left_columns , columns_next_to_railway_line , right_columns , branch_railway_line )
+  def initialize( request , left_columns , columns_next_to_railway_line , right_columns , branch_railway_line_info )
     super( request , left_columns , columns_next_to_railway_line , right_columns )
     @position = :bottom
-    @branch_railway_line = branch_railway_line
+    @branch_railway_line_info = branch_railway_line_info
   end
 
   def render
@@ -43,7 +43,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Botto
   def h_locals
     h_locals_base.merge({
       jr_joban_line: ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom::ToJrJobanLine.new( @request ) ,
-      chiyoda_branch_line: ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom::ChiyodaBranchLine.new( @request , @branch_railway_line )
+      chiyoda_branch_line: ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom::ChiyodaBranchLine.new( @request , @branch_railway_line_info )
     })
   end
 

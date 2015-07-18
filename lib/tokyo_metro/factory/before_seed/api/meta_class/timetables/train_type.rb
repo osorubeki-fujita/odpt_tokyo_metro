@@ -28,20 +28,20 @@ class TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainType
   # include StartingStation
 
   # Constructor
-  def initialize( train_type , railway_line_in_db , terminal_station_info_in_db , operation_day_in_db )
+  def initialize( train_type , railway_line_info_in_db , terminal_station_info_in_db , operation_day_in_db )
     @train_type = train_type
-    @railway_line_in_db = railway_line_in_db
+    @railway_line_info_in_db = railway_line_info_in_db
     @terminal_station_info_in_db = terminal_station_info_in_db
     @operation_day_in_db = operation_day_in_db
   end
 
   attr_reader :train_type
-  attr_reader :railway_line_in_db
+  attr_reader :railway_line_info_in_db
   attr_reader :terminal_station_info_in_db
   attr_reader :operation_day_in_db
 
   def to_a
-    [ @train_type , @railway_line_in_db.id , @terminal_station_info_in_db.id , @operation_day_in_db.id ]
+    [ @train_type , @railway_line_info_in_db.id , @terminal_station_info_in_db.id , @operation_day_in_db.id ]
   end
 
   def self.id_in_db( *variables )
@@ -115,7 +115,7 @@ class TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainType
   def considered_train_type_infos
     t = train_type_infos
     if t.blank?
-      raise "Error: The train type \"#{ @train_type }\" in \"#{ @railway_line_in_db.same_as }\" is not defined."
+      raise "Error: The train type \"#{ @train_type }\" in \"#{ @railway_line_info_in_db.same_as }\" is not defined."
     end
     t
   end
@@ -163,7 +163,7 @@ class TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainType
   def error_msg__additional_ary_base
     [
       [ "Train type" , @train_type ] ,
-      [ "Railway line" , @railway_line_in_db.same_as ] ,
+      [ "Railway line" , @railway_line_info_in_db.same_as ] ,
       [ "Terminal station" , @terminal_station_info_in_db.same_as ] ,
       [ "Operation day" , @operation_day_in_db.name_en ]
     ]
@@ -173,17 +173,17 @@ class TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainType
     "Regexp".ljust(24) + " ... " + regexp.to_s
   end
 
-  def railway_line_in_db( whole = nil , search_by: nil )
+  def railway_line_info_in_db( whole = nil , search_by: nil )
     if whole.nil? and search_by.nil?
-      @railway_line_in_db
+      @railway_line_info_in_db
     else
       super( whole , search_by: search_by )
     end
   end
 
-  def railway_line_id( whole = nil , search_by: nil )
+  def railway_line_info_id( whole = nil , search_by: nil )
     if whole.nil? and search_by.nil?
-      @railway_line_in_db.id
+      @railway_line_info_in_db.id
     else
       super( whole , search_by: search_by )
     end

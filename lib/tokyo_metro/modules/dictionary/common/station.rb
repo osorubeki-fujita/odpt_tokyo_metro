@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Dictionary::Common::Station
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   STATION_NAME_SAME_AS_IN_DB = ::YAML.load_file( "#{ ::TokyoMetro::dictionary_dir }/station/same_as_in_db.yaml" )
 

@@ -6,7 +6,6 @@ version = ::File.open( "#{ ::File.dirname( __FILE__ ) }/../.current_version" , "
 
 describe TokyoMetro do
   it "has a version number \'#{ version }\'" do
-    # expect( ::TokyoMetro::VERSION ).to eq( version )
     expect( ::Deplo.version_check( ::TokyoMetro::VERSION , spec_filename ) ).to eq( true )
   end
 end
@@ -39,7 +38,7 @@ end
 
 if to_test( :static , options )
   static_operators
-  static_railway_lines
+  static_railway_line_infos
   static_stations
   static_train_types
 end
@@ -77,7 +76,7 @@ if to_test( :station_facility , options )
   escalator_operation_day_in_akasaka_mitsuke
   station_facility_surrounding_area
 
-  station_facility_replacing_railway_lines_of_platform_infos
+  station_facility_replacing_railway_line_infos_of_platform_infos
 end
 
 #--------
@@ -87,7 +86,7 @@ if to_test( :station , options )
 
   stations_on_marunouchi_branch_line
   stations_on_chiyoda_branch_line
-  connecting_railway_lines_of_station
+  connecting_railway_line_infos_of_station
 end
 
 #--------

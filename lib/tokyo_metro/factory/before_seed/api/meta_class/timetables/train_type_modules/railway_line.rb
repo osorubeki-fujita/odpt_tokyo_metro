@@ -5,7 +5,7 @@ module TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeMod
   private
 
   def on_the_railway_line_of?( *variables )
-    super( *variables , @railway_line_in_db.same_as )
+    super( *variables , @railway_line_info_in_db.same_as )
   end
 
 end

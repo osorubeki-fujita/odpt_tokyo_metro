@@ -43,11 +43,11 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ChiyodaBranchLine::
   end
 
   def add_connecting_railway_line_infos
-    @ayase_main.connecting_railway_lines << connecting_railway_line_info_on_main_line
-    @ayase_branch.connecting_railway_lines << connecting_railway_line_info_on_branch_line
+    @ayase_main.connecting_railway_line_infos << connecting_railway_line_info_on_main_line
+    @ayase_branch.connecting_railway_line_infos << connecting_railway_line_info_on_branch_line
 
     [ @ayase_main , @ayase_branch ].each do | item |
-      item.connecting_railway_lines.set_index_in_station!.sort!
+      item.connecting_railway_line_infos.set_index_in_station!.sort!
     end
   end
 

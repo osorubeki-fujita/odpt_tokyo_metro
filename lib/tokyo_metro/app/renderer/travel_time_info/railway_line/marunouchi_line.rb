@@ -3,12 +3,12 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::MarunouchiLine < T
   private
 
   def set_railway_lines( railway_lines )
-    @main_railway_line = railway_lines.find { | railway | railway.same_as == "odpt.Railway:TokyoMetro.Marunouchi" }
-    @branch_railway_line = railway_lines.find { | railway | railway.same_as == "odpt.Railway:TokyoMetro.MarunouchiBranch" }
+    @main_railway_line_info = railway_lines.find( &:marunouchi_line? )
+    @branch_railway_line_info = railway_lines.find( &:marunouchi_branch_line? )
   end
 
   def railway_line_base
-    @main_railway_line
+    @main_railway_line_info
   end
 
   def set_number_of_columns_next_to_railway_line

@@ -7,7 +7,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info::U
     :train_type_in_other_operator_info_id
   ]
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   def initialize( train , station_timetable_in_db , train_timetable_in_db )
     @train = train
@@ -59,7 +59,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info::U
   [ :arrival_info_id , :starting_station_info_id , :connection_info_id ].each do | method_base_name |
     eval <<-DEF
       def train_timetable_#{ method_base_name }
-        @train.#{ method_base_name }( railway_line_ids )
+        @train.#{ method_base_name }( railway_line_info_ids )
       end
     DEF
   end
@@ -68,8 +68,8 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info::U
     @train.train_type_in_other_operator_id
   end
 
-  def railway_line_ids
-    @station_timetable_in_db.railway_lines.pluck( :id )
+  def railway_line_info_ids
+    @station_timetable_in_db.railway_line_infos.pluck( :id )
   end
 
   def update_train_timetable

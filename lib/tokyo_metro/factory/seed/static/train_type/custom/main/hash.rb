@@ -9,7 +9,7 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Hash < TokyoMe
       same_as: "custom.TrainType:Undefined" ,
       note: "未定義" ,
       in_api_id: train_type_in_api.id ,
-      railway_line_id: ::RailwayLine.find_by_name_ja( "未定義" )
+      railway_line_info_id: ::Railway::Line.find_by_name_ja( "未定義" )
     }
     ::Train::Type::Info.find_or_create_by(h)
   end

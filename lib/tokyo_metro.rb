@@ -59,15 +59,17 @@ module TokyoMetro
 
   STATION_DICTIONARY = ::YAML.load_file( "#{ DICTIONARY_DIR }/station/tokyo_metro.yaml" )
 
-  def self.station_dictionary_including_main_info( stations_of_railway_lines = nil )
-    if stations_of_railway_lines.nil?
-      stations_of_railway_lines = ::Station::Info.where( operator_id: ::Operator.id_of_tokyo_metro )
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+
+  def self.station_dictionary_including_main_info( stations_of_railway_line_infos = nil )
+    if stations_of_railway_line_infos.nil?
+      stations_of_railway_line_infos = ::Station::Info.where( operator_id: ::Operator.id_of_tokyo_metro )
     end
 
     h = ::Hash.new
 
     station_dictionary.each do | name_in_system , name_ja |
-      stations_in_db = stations_of_railway_lines.where( name_in_system: name_in_system )
+      stations_in_db = stations_of_railway_line_infos.where( name_in_system: name_in_system )
       name_h = {
         :name_ja => stations_in_db.first.name_ja ,
         :name_hira => stations_in_db.first.name_hira ,
@@ -96,6 +98,27 @@ module TokyoMetro
     ::DateTime.now.new_offset( rational_for_time_zone )
   end
 
+  # @!group 運行日に関するメソッド
+
+  def self.current_operation_day
+    ::TokyoMetro::Static::OperationDay.of_current
+  end
+
+  def self.operation_day_as_of( time )
+    ::TokyoMetro::Static::OperationDay.as_of( time )
+  end
+
+  # @!group 運行ダイヤに関するメソッド
+
+  def self.diagram_as_of( time )
+    t = operation_day_as_of( time )
+    ::TokyoMetro::Factory::Db::OperationDay.select_by(t)
+  end
+
+  def self.current_diagram
+    diagram_as_of( current_operation_day )
+  end
+
   # @!group モジュールの組み込み
 
   def self.set_modules
@@ -106,14 +129,14 @@ module TokyoMetro
 
   # 定数の定義
 
-  def self.set_fundamental_constants
-    ::TokyoMetro::Static::set_constants
-    ::TokyoMetro::Api.set_constants_for_timetable
-  end
-
   def self.set_constants( config_of_api_constants = nil )
     set_fundamental_constants
     set_api_constants( config_of_api_constants )
+  end
+
+  def self.set_fundamental_constants
+    ::TokyoMetro::Static::set_constants
+    ::TokyoMetro::Api.set_constants_for_timetable
   end
 
   def self.set_api_constants( config_of_api_constants = nil )
@@ -148,8 +171,7 @@ module TokyoMetro
     set_modules
     set_fundamental_constants
 
-    set_access_token
-    set_google_maps_api_key
+    set_api_keys
   end
 
   # @!group GoogleMaps
@@ -165,25 +187,20 @@ module TokyoMetro
     ::TokyoMetro::Initializer::Rails.consts_in_gem.set( as_for: rails_dir )
   end
 
-  # @!group 運行日に関するメソッド
+  # @!group Api Keys
 
-  def self.current_operation_day
-    ::TokyoMetro::Static::OperationDay.of_current
-  end
-
-  def self.operation_day_as_of( time )
-    ::TokyoMetro::Static::OperationDay.as_of( time )
-  end
-
-  # @!group 運行ダイヤに関するメソッド
-
-  def self.diagram_as_of( time )
-    t = operation_day_as_of( time )
-    ::TokyoMetro::Factory::Db::OperationDay.select_by(t)
-  end
-
-  def self.current_diagram
-    diagram_as_of( current_operation_day )
+  # API への Access Token を返すメソッド
+  # @note Rails の環境によって形態が異なる。
+  # @note API アクセスのキー
+  # @note 東京メトロオープンデータのアクセストークンについては、【必須】【アプリケーションごとに固有】<acl:consumerKey - acl:ConsumerKey>
+  # @note 複数のアプリケーションを作成する場合は、それぞれについて取得すること。
+  # @note  【公開禁止】
+  # @note ファイル名称を .gitignore に記載すること
+  # @return [String]
+  # @note 'Google Maps Api Key' and the access token for open data of Tokyo Metro
+  # @note Called in TokyoMetro.#initialize_in_local_environment or 'config/application.rb' inRails application
+  def self.set_api_keys
+    ::TokyoMetro::Initializer::ApiKey.all.set
   end
 
   # @!group Class methods
@@ -198,70 +215,6 @@ module TokyoMetro
       end
 
       super( method_name , *args )
-    end
-
-    # @!group Access Token , Google Map Api Key
-
-    # @note access_token
-
-    # Access Token
-    #   API への Access Token を返すメソッド
-    #   @note Rails の環境によって形態が異なる。
-    #   @note API アクセス用のアクセストークン【必須】【アプリケーションごとに固有】<acl:consumerKey - acl:ConsumerKey>
-    #   @note 複数のアプリケーションを作成する場合は、それぞれについて取得すること。
-    #   @note  【公開禁止】
-    #   @note ファイル名称を .gitignore に記載すること
-    #   @return [String]
-    [ :access_token , :google_maps_api_key ].each do | const_name |
-      eval <<-DEF
-
-        def set_#{ const_name }
-          _#{ const_name } = #{ const_name }
-          if _#{ const_name }.present?
-            const_set( :#{ const_name.upcase } , _#{ const_name } )
-          else
-            filename = #{ const_name }_filename
-            error_msg = "Error: The file \\"" + filename + "\\" does not exist."
-            puts error_msg
-          end
-        end
-
-        def #{ const_name }
-          if on_rails_application?
-            case ::Rails.env
-            when "development" , "test"
-              #{ const_name }_from_file
-            when "production"
-              ::ENV[ "TOKYO_METRO_#{ const_name.upcase }" ]
-            end
-          else
-            #{ const_name }_from_file
-          end
-        end
-
-        private :#{ const_name }
-
-        def #{ const_name }_from_file
-          filename = #{ const_name }_filename
-          # puts filename
-          if ::File.exist?( filename )
-            open( filename , "r:utf-8" ).read.chomp
-          else
-            nil
-          end
-        end
-
-        private :#{ const_name }_from_file
-
-        def #{ const_name }_filename
-          # puts "TokyoMetro::RAILS_DIR: " + ::TokyoMetro::RAILS_DIR.to_s + " (" + ::TokyoMetro::RAILS_DIR.class.to_s + ")"
-          ::TokyoMetro::RAILS_DIR + "/#{ const_name.camelize }"
-        end
-
-        private :#{ const_name }_filename
-
-      DEF
-
     end
 
     private
@@ -315,6 +268,5 @@ def on_rails_application?
 end
 
 #--------
-
 
 ::TokyoMetro.require_files( settings: ::ENV[ 'RAILS_ENV' ] , file_type: :txt )

@@ -5,7 +5,7 @@
 #     => "odpt.StationFacility:TokyoMetro.Marunouchi.NakanoShimbashi.Inside.Toilet.1"
 module TokyoMetro::Factory::Convert::Patch::Api::StationFacility::BarrierFreeFacilityLocatedAreaAtNakanoShimbashi
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   # 中野新橋駅のトイレ - 不正確な名称（改札外）
   # @return [String]

@@ -6,7 +6,7 @@ module TokyoMetro::Factory::Seed::Reference::TrainTypeInApi
     if whole.present?
       whole.find_by_same_as( search_by )
     else
-      ::TrainType::InApi.find_by_same_as( search_by )
+      ::Train::Type::InApi.find_by_same_as( search_by )
     end
   end
 

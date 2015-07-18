@@ -35,12 +35,12 @@ def stations_on_chiyoda_branch_line
 
         describe TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info do
           # include odpt.Railway:TokyoMetro.ChiyodaBranch
-          connecting_info_to_chiyoda_branch = ayase.connecting_railway_lines.find { | item | item.railway_line == chiyoda_branch }
+          connecting_info_to_chiyoda_branch = ayase.connecting_railway_line_infos.find { | item | item.railway_line == chiyoda_branch }
           it "includes connecting railway info to Chiyoda Branch Line" do
             expect( connecting_info_to_chiyoda_branch ).to be_present
             expect( connecting_info_to_chiyoda_branch ).to be_hidden_on_railway_line_page
           end
-          connecting_info_to_jr_joban = ayase.connecting_railway_lines.find { | item | item.railway_line == jr_joban }
+          connecting_info_to_jr_joban = ayase.connecting_railway_line_infos.find { | item | item.railway_line == jr_joban }
           it "includes connecting railway info to JR Joban Line" do
             expect( connecting_info_to_jr_joban ).to be_present
             expect( connecting_info_to_jr_joban ).to be_hidden_on_railway_line_page
@@ -84,11 +84,11 @@ def stations_on_chiyoda_branch_line
 
         describe TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info do
           # include odpt.Railway:TokyoMetro.Chiyoda
-          connecting_info_to_chiyoda_main = ayase_branch.connecting_railway_lines.find { | item | item.railway_line == chiyoda_main }
+          connecting_info_to_chiyoda_main = ayase_branch.connecting_railway_line_infos.find { | item | item.railway_line == chiyoda_main }
           it "includes connecting railway info to Chiyoda Main Line" do
             expect( connecting_info_to_chiyoda_main ).to be_present
           end
-          connecting_info_to_jr_joban = ayase_branch.connecting_railway_lines.find { | item | item.railway_line == jr_joban }
+          connecting_info_to_jr_joban = ayase_branch.connecting_railway_line_infos.find { | item | item.railway_line == jr_joban }
           it "includes connecting railway info to JR Joban Line" do
             expect( connecting_info_to_jr_joban ).to be_present
             expect( connecting_info_to_jr_joban ).to be_hidden_on_railway_line_page

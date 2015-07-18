@@ -1,12 +1,12 @@
 namespace :tokyo_metro do
   namespace :list_up do
 
-    namespace :connecting_railway_lines do
+    namespace :connecting_railway_line_infos do
       desc "乗り換え可能路線の一覧 (API)"
       task :in_api => :load do
-        puts ::TokyoMetro::Api::Station.get( ::HTTPClient.new , parse_json: true , generate_instance: true , to_inspect: true ).connecting_railway_lines
-        # file = File.open( "connecting_railway_lines.txt" , "w:utf-8" )
-        # file.print( connecting_railway_lines.join( "\n" ) )
+        puts ::TokyoMetro::Api::Station.get( ::HTTPClient.new , parse_json: true , generate_instance: true , to_inspect: true ).connecting_railway_line_infos
+        # file = File.open( "connecting_railway_line_infos.txt" , "w:utf-8" )
+        # file.print( connecting_railway_line_infos.join( "\n" ) )
         # file.close
       end
     end

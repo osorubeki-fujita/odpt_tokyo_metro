@@ -15,7 +15,7 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
 
   include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringWithArray
 
-  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::Operator
+  include ::OdptCommon::Modules::MethodMissing::Decision::Common::Operator
 
   # @!group Constructor
 
@@ -130,15 +130,15 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
   end
 
   def seed_travel_time_infos
-    @travel_time.try( :seed , railway_line_id )
+    @travel_time.try( :seed , railway_line_info_id )
   end
 
   def seed_women_only_car_infos
-    @women_only_car.try( :seed , railway_line_id )
+    @women_only_car.try( :seed , railway_line_info_id )
   end
 
-  def railway_line_id
-    ::RailwayLine.find_by( same_as: @same_as ).id
+  def railway_line_info_id
+    ::Railway::Line.find_by( same_as: @same_as ).id
   end
 
   # @!endgroup

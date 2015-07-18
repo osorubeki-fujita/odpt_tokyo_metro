@@ -2,7 +2,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinksToRailwayLinePage
 
   def initialize( request )
     super( request )
-    @railway_lines = ::RailwayLine.tokyo_metro( including_branch_line: false )
+    @railway_line_infos = ::Railway::Line::Info.tokyo_metro( including_branch_line: false )
 
     @controllers = {
       train_operation: {
@@ -14,8 +14,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinksToRailwayLinePage
         en: ::Train::Location::InfoDecorator.common_title_en
       } ,
       railway_line: {
-        ja: ::RailwayLineDecorator.common_title_ja ,
-        en: ::RailwayLineDecorator.common_title_en
+        ja: ::Railway::Line::InfoDecorator.common_title_ja ,
+        en: ::Railway::Line::InfoDecorator.common_title_en
       }
     }
   end
@@ -29,7 +29,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinksToRailwayLinePage
     %div{ class: :text_en }<
       = "Pages related to railway lines"
   %ul{ id: :links_to_railway_line_pages , class: [ :links , :clearfix ] }
-    - railway_lines.each do | railway_line |
+    - railway_line_infos.each do | railway_line |
       = ::TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinkToRailwayLinePage.new( request , railway_line.decorate , controllers ).render
     HAML
   end
@@ -38,7 +38,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos::SideMenu::LinksToRailwayLinePage
 
   def h_locals
     super.merge({
-      railway_lines: @railway_lines ,
+      railway_line_infos: @railway_line_infos ,
       controllers: @controllers
     })
   end

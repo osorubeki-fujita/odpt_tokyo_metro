@@ -36,8 +36,8 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::ArriveAt
     end
   end
 
-  def seed_and_get_id( railway_line_ids )
-    station_info_in_db = ::Station::Info.find_by( name_ja: @station , railway_line_id: railway_line_ids )
+  def seed_and_get_id( railway_line_info_ids )
+    station_info_in_db = ::Station::Info.find_by( name_ja: @station , railway_line_info_id: railway_line_info_ids )
     h = {
       station_info_id: station_info_in_db.id ,
       platform_number: @number

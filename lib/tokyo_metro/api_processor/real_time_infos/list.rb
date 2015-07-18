@@ -16,11 +16,11 @@ class TokyoMetro::ApiProcessor::RealTimeInfos::RailwayLine::List < ::Array
     self.any?( &:has_any_train_location? )
   end
 
-  def railway_lines
+  def railway_line_infos
     self.map( &:railway_line )
   end
 
-  def railway_lines_same_as
+  def railway_line_infos_same_as
     self.map( &:railway_line_same_as )
   end
 

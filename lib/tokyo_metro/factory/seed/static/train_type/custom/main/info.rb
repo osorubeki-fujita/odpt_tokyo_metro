@@ -18,7 +18,7 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
     end
 
     h[ :in_api_id ] = in_api_id
-    h[ :railway_line_id ] = railway_line_id
+    h[ :railway_line_info_id ] = railway_line_info_id
     h[ :color ] = @info.color.web_color
     h[ :bgcolor ] = @info.bgcolor.web_color
 

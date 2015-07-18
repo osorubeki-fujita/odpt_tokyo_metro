@@ -9,12 +9,12 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
       ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.railway_line_string_list_in_system( symbol )
     }.flatten
 
-    @railway_line_ids = ::RailwayLine.where( same_as: railway_lines_same_as ).pluck( :id )
+    @railway_line_info_ids = ::RailwayLine.where( same_as: railway_lines_same_as ).pluck( :id )
 
     #--------
 
-    @station_timetable_info_ids = ::Station::Timetable::FundamentalInfo.where( railway_line_id: @railway_line_ids ).pluck( :info_id ).sort
-    @train_timetable_info_ids = ::Train::Timetable::Info.where( railway_line_id: @railway_line_ids ).pluck( :id ).sort
+    @station_timetable_info_ids = ::Station::Timetable::FundamentalInfo.where( railway_line_info_id: @railway_line_info_ids ).pluck( :info_id ).sort
+    @train_timetable_info_ids = ::Train::Timetable::Info.where( railway_line_info_id: @railway_line_info_ids ).pluck( :id ).sort
 
     #--------
 

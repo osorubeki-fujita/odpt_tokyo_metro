@@ -6,7 +6,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction
-  include ::TokyoMetro::Modules::Attributes::Common::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction
+  include ::OdptCommon::Modules::Attributes::Common::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction
 
   def initialize( up , down )
     @up = up

@@ -2,13 +2,13 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine < Toky
 
   private
 
-  def set_railway_lines( railway_lines )
-    @main_railway_line = railway_lines.find { | railway | railway.same_as == "odpt.Railway:TokyoMetro.Chiyoda" }
-    @branch_railway_line = railway_lines.find { | railway | railway.same_as == "odpt.Railway:TokyoMetro.ChiyodaBranch" }
+  def set_railway_line_infos( railway_line_infos )
+    @main_railway_line_info = railway_line_infos.find( &:chiyoda_line? )
+    @branch_railway_line_info = railway_line_infos.find( &:chiyoda_branch_line? )
   end
 
   def railway_line_base
-    @main_railway_line
+    @main_railway_line_info
   end
 
   def additional_info_top
@@ -19,7 +19,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine < Toky
 
   def additional_info_bottom
     ::Proc.new {
-      ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom.new( @request , @left_columns , @columns_next_to_railway_line , @right_columns , @branch_railway_line ).render
+      ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Bottom.new( @request , @left_columns , @columns_next_to_railway_line , @right_columns , @branch_railway_line_info ).render
     }
   end
 

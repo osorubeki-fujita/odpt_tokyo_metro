@@ -1,12 +1,12 @@
 class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , railway_lines , http_client = ::HTTPClient.new , visibility: :visible , test_mode: nil )
+  def initialize( request , railway_line_infos , http_client = ::HTTPClient.new , visibility: :visible , test_mode: nil )
     super( request )
     @http_client = http_client
     @visibility = visibility
     @test_mode = test_mode
 
-    set_railway_lines( railway_lines )
+    set_railway_line_infos( railway_line_infos )
     set_infos_of_each_railway_line
 
     raise unless has_any_railway_line?
@@ -19,15 +19,15 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   # @!group 判定 - 路線
 
   def has_any_railway_line?
-    @railway_lines.present?
+    @railway_line_infos.present?
   end
 
   def has_one_railway_line?
-    @railway_lines.length == 1
+    @railway_line_infos.length == 1
   end
 
-  def has_multiple_railway_lines?
-    @railway_lines.length > 1
+  def has_multiple_railway_line_infos?
+    @railway_line_infos.length > 1
   end
 
   # @!group 判定 - 列車位置情報
@@ -154,16 +154,16 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
 
   private
 
-  def set_railway_lines( railway_lines )
-    if railway_lines.instance_of?( ::RailwayLine )
-      @railway_lines = [ railway_lines ]
+  def set_railway_line_infos( railway_line_infos )
+    if railway_line_infos.instance_of?( ::RailwayLine )
+      @railway_line_infos = [ railway_line_infos ]
     else
-      @railway_lines = railway_lines.except_for_branch_lines
+      @railway_line_infos = railway_line_infos.except_for_branch_lines
     end
   end
 
   def set_infos_of_each_railway_line
-    @infos_of_each_railway_line = ::Array.new( @railway_lines.map { | railway_line |
+    @infos_of_each_railway_line = ::Array.new( @railway_line_infos.map { | railway_line |
       ::TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine.new( request , railway_line , @http_client , @test_mode)
     })
   end

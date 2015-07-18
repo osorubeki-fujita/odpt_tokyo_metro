@@ -6,12 +6,12 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Toilet::Ass
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::WheelChair::Accessibility::AliasTowardsAvailability
-  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::StationFacility::BarrierFree::WheelChair
-  include ::TokyoMetro::Modules::Alias::Common::StationFacility::BarrierFree::WheelChair
+  include ::OdptCommon::Modules::MethodMissing::Decision::Common::StationFacility::BarrierFree::WheelChair
+  include ::OdptCommon::Modules::Alias::Common::StationFacility::BarrierFree::WheelChair
 
   include ::TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::ToiletAssistant
-  include ::TokyoMetro::Modules::Attributes::Common::StationFacility::BarrierFree::ToiletAssistant
-  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::StationFacility::BarrierFree::ToiletAssistant
+  include ::OdptCommon::Modules::Attributes::Common::StationFacility::BarrierFree::ToiletAssistant
+  include ::OdptCommon::Modules::MethodMissing::Decision::Common::StationFacility::BarrierFree::ToiletAssistant
 
   def initialize( wheel_chair_accessible , baby_chair , baby_changing_table , ostomate )
     @wheel_chair_accessible = wheel_chair_accessible

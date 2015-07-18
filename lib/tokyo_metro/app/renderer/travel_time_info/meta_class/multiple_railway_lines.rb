@@ -13,7 +13,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::MultipleRailwayLines
 
   def h_locals
     super.merge({
-      railway_line: @main_railway_line ,
+      railway_line: @main_railway_line_info ,
       rows: rows ,
       additional_info_top: additional_info_top ,
       additional_info_bottom: additional_info_bottom
@@ -24,10 +24,12 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::MultipleRailwayLines
     @railway_lines = railway_lines
   end
 
+=begin
   def h_locals
     super.merge({
       railway_lines: @railway_lines
     })
   end
+=end
 
 end

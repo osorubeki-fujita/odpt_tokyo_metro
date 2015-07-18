@@ -1,5 +1,5 @@
 # @note
-#   The class that includes {::TokyoMetro::Modules::Attributes::Common::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction} should include this module.
+#   The class that includes {::OdptCommon::Modules::Attributes::Common::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction} should include this module.
 # @note
 #   The class that includes this module should contain private method 'direction_pattern_info'
 module TokyoMetro::Modules::Decision::Common::StationFacility::BarrierFree::Escalator::ServiceDetail::Direction

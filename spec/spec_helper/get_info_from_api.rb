@@ -50,8 +50,8 @@ def get_info_from_api
       sleep( 0.2 )
 
       it "returns an instance of \'TokyoMetro::Api::RailwayLine::Info\'." do
-        railway_line_id_urn = "urn:ucode:_00001C000000000000010000030C46AC"
-        railway_line = ::TokyoMetro::Api.get( ::HTTPClient.new , railway_line_id_urn , parse_json: true , generate_instance: true )
+        railway_line_info_id_urn = "urn:ucode:_00001C000000000000010000030C46AC"
+        railway_line = ::TokyoMetro::Api.get( ::HTTPClient.new , railway_line_info_id_urn , parse_json: true , generate_instance: true )
         expect( railway_line.first ).to be_instance_of( ::TokyoMetro::Api::RailwayLine::Info )
       end
 
@@ -104,8 +104,8 @@ def get_info_from_api
       sleep( 0.2 )
 
       it "returns an instance of \'TokyoMetro::Api::RailwayLine::Info\'." do
-        railway_line_id_urn = "urn:ucode:_00001C000000000000010000030C46AC"
-        railway_line = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , railway_line_id_urn , parse_json: true , generate_instance: true )
+        railway_line_info_id_urn = "urn:ucode:_00001C000000000000010000030C46AC"
+        railway_line = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , railway_line_info_id_urn , parse_json: true , generate_instance: true )
         expect( railway_line.first ).to be_instance_of( ::TokyoMetro::Api::RailwayLine::Info )
       end
 
@@ -120,8 +120,8 @@ def get_info_from_api
       sleep( 0.2 )
 
       it "returns an instance of \'TokyoMetro::Api::MlitRailway::Info\'." do
-        mlit_railway_line_id_urn = "urn:ucode:_00001C000000000000010000030BBBAB"
-        mlit_railway_line = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , mlit_railway_line_id_urn , parse_json: true , generate_instance: true )
+        mlit_railway_line_info_id_urn = "urn:ucode:_00001C000000000000010000030BBBAB"
+        mlit_railway_line = ::TokyoMetro::Api.get_geo( ::HTTPClient.new , mlit_railway_line_info_id_urn , parse_json: true , generate_instance: true )
         expect( mlit_railway_line.first ).to be_instance_of( ::TokyoMetro::Api::MlitRailwayLine::Info )
       end
 

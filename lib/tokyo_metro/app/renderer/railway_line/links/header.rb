@@ -1,6 +1,6 @@
 class TokyoMetro::App::Renderer::RailwayLine::Links::Header < TokyoMetro::App::Renderer::Concerns::Header::Content
 
-  def initialize( request , railway_lines )
+  def initialize( request , railway_line_infos )
     super(
       request ,
       :title ,

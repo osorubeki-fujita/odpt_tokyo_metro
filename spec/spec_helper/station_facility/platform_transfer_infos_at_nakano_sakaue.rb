@@ -5,7 +5,7 @@ def platform_transfer_infos_at_nakano_sakaue
 
   raise unless p_infos.present?
 
-  railway_lines = {
+  railway_line_infos = {
     main: "odpt.Railway:TokyoMetro.Marunouchi" ,
     branch: "odpt.Railway:TokyoMetro.MarunouchiBranch"
   }
@@ -18,12 +18,12 @@ def platform_transfer_infos_at_nakano_sakaue
     it "has platform transfer info for Honancho." do
       p_infos.each do | platform_info |
 
-        if platform_info.railway_line == railway_lines[ :main ] and platform_info.car_composition == 6
+        if platform_info.railway_line == railway_line_infos[ :main ] and platform_info.car_composition == 6
           t_infos = platform_info.transfer_infos
           if t_infos.present?
             t_infos.each do | transfer_info |
               if transfer_info.railway_line != oedo and transfer_info.railway_direction == for_honancho
-                expect( transfer_info.railway_line ).to eq( railway_lines[ :branch ] )
+                expect( transfer_info.railway_line ).to eq( railway_line_infos[ :branch ] )
               end
             end
           end

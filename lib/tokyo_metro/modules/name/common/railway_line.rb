@@ -1,4 +1,4 @@
-# @note Rails の model {::RailwayLine} には column 'is_branch_railway_line' が定義されているので、この module を include することができる。
+# @note Rails の model {::RailwayLine} には column 'is_branch_railway_line_info' が定義されているので、この module を include することができる。
 module TokyoMetro::Modules::Name::Common::RailwayLine
 
 # @!group 判定 - 名称（日本語）
@@ -49,7 +49,7 @@ end
   # @return [String] 路線名（インスタンス変数 name）が定義されている場合
   # @return [nil] 路線名（インスタンス変数 name）が定義されていない場合
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_ja_normal }
+  #   ::TokyoMetro::Static.railway_line_infos.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_ja_normal }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : 銀座線
   #   odpt.Railway:TokyoMetro.Marunouchi               : 丸ノ内線
@@ -130,7 +130,7 @@ end
   # @return [String] 路線名（インスタンス変数 name_en）が定義されている場合
   # @return [nil] 路線名（インスタンス変数 name_en）が定義されていない場合
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_en_normal }
+  #   ::TokyoMetro::Static.railway_line_infos.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_en_normal }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : Ginza Line
   #   odpt.Railway:TokyoMetro.Marunouchi               : Marunouchi Line
@@ -210,7 +210,7 @@ end
   # 標準の路線記号を取得するメソッド
   # @return [::String or nil]
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_code_normal }
+  #   ::TokyoMetro::Static.railway_line_infos.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_code_normal }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : G
   #   odpt.Railway:TokyoMetro.Marunouchi               : M
@@ -297,8 +297,8 @@ end
 
   # @!group 支線
 
-  def is_not_branch_railway_line
-    !( is_branch_railway_line )
+  def is_not_branch_railway_line_info
+    !( is_branch_railway_line_info )
   end
 
   # @!group CSS に関するメソッド
@@ -306,7 +306,7 @@ end
   # CSS のクラスの名称
   # @return [String]
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.css_class }
+  #   ::TokyoMetro::Static.railway_line_infos.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.css_class }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : ginza
   #   odpt.Railway:TokyoMetro.Marunouchi               : marunouchi

@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakoshiAndHikawadai::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
-        ::RailwayLine.where( id: railway_line_ids_of_platform_infos )
+        ::RailwayLine.where( id: railway_line_info_ids_of_platform_infos )
       )
 
     when :kotake_mukaihara
@@ -23,7 +23,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::KotakeMukaihara::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
-        ::RailwayLine.where( id: railway_line_ids_of_platform_infos )
+        ::RailwayLine.where( id: railway_line_info_ids_of_platform_infos )
       )
 
     when :meguro_and_shirokanedai
@@ -44,11 +44,11 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
 
     when :normal
       # puts @type_of_platform_infos
-      @platform_infos_grouped_by_railway_line.each do | railway_line_id , platform_infos |
+      @platform_infos_grouped_by_railway_line.each do | railway_line_info_id , platform_infos |
         ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::Normal::Whole.new(
           request ,
           platform_infos ,
-          ::RailwayLine.find( railway_line_id )
+          ::RailwayLine.find( railway_line_info_id )
         )
       end
 
@@ -71,7 +71,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
       :platform_surrounding_areas ,
       :barrier_free_facility_infos ,
       :surrounding_areas
-    ).group_by( &:railway_line_id )
+    ).group_by( &:railway_line_info_id )
   end
 
   def type_of_platform_infos
@@ -90,7 +90,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
     end
   end
 
-  def railway_line_ids_of_platform_infos
+  def railway_line_info_ids_of_platform_infos
     @platform_infos_grouped_by_railway_line.keys.sort
   end
 
@@ -123,7 +123,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
   end
 
   def platform_infos_of?( *ary )
-    railway_line_ids_of_platform_infos.map { | railway_line_id | ::RailwayLine.find( railway_line_id ).same_as } == ary
+    railway_line_info_ids_of_platform_infos.map { | railway_line_info_id | ::RailwayLine.find( railway_line_info_id ).same_as } == ary
   end
 
   # @!group 駅の判定

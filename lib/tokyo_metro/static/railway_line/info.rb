@@ -16,11 +16,11 @@ class TokyoMetro::Static::RailwayLine::Info
 
   include ::TokyoMetro::Modules::Name::Common::RailwayLine
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::BranchLine
-  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::RailwayLine::BranchLine
+  include ::OdptCommon::Modules::MethodMissing::Decision::Common::RailwayLine::BranchLine
 
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::NewAndOld
 
-  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::Operator
+  include ::OdptCommon::Modules::MethodMissing::Decision::Common::Operator
 
   # Constructor
   # @param same_as [::String]

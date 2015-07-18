@@ -14,7 +14,7 @@ class TokyoMetro::Static::Operator::Info
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::Operator
 
-  include ::TokyoMetro::Modules::MethodMissing::Decision::Common::Operator
+  include ::OdptCommon::Modules::MethodMissing::Decision::Common::Operator
 
 # @!group Constructor
 
@@ -310,8 +310,8 @@ class TokyoMetro::Static::Operator::Info
 
   # @return [::TokyoMetro::Static::Color] 事業者の色
   attr_reader :color
-  include ::TokyoMetro::Modules::Color::Static::Fundamental::GetColorInfo
-  include ::TokyoMetro::Modules::Color::Static::Normal
+  include ::OdptCommon::Modules::Color::Static::Fundamental::GetColorInfo
+  include ::OdptCommon::Modules::Color::Static::Normal
 
   # @!endgroup
 

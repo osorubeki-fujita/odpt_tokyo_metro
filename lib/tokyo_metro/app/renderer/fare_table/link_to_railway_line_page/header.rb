@@ -1,7 +1,7 @@
 class TokyoMetro::App::Renderer::FareTable::LinkToRailwayLinePage::Header < TokyoMetro::App::Renderer::Concerns::Header::Content
 
-  def initialize( request , station_info_decorated , *railway_lines )
-    @railway_line = railway_lines.flatten.first
+  def initialize( request , station_info_decorated , *railway_line_infos )
+    @railway_line = railway_line_infos.flatten.first
     @station_info_decorated = station_info_decorated
     super(
       request ,

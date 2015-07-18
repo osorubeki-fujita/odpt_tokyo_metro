@@ -5,18 +5,18 @@ module TokyoMetro::Factory::Seed::Reference::TrainType
   end
 
   def train_type_infos( whole = nil ,
-    __railway_line_id__: railway_line_id ,
+    __railway_line_info_id__: railway_line_info_id ,
     __in_api_id__: in_api_id
   )
     h = {
-      railway_line_id: __railway_line_id__ ,
+      railway_line_info_id: __railway_line_info_id__ ,
       in_api_id: __in_api_id__
     }
 
     if whole.present?
       whole.where(h)
     else
-      ::TrainType::Info.where(h)
+      ::Train::Type::Info.where(h)
     end
   end
 

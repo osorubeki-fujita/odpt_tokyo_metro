@@ -10,10 +10,10 @@ class TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::Info
     object.railway_direction
   end
 
-  def railway_direction( railway_line_in_db )
+  def railway_direction( railway_line_info_in_db )
     rd = railway_direction_in_api_same_as
     # 都営三田線（目黒 - 白金高輪）の列車
-    if railway_line_in_db.namboku_line? and object.toei_mita_line?
+    if railway_line_info_in_db.namboku_line? and object.toei_mita_line?
       case rd
       when "odpt.RailDirection:Toei.NishiTakashimadaira"
         return "odpt.RailDirection:TokyoMetro.AkabaneIwabuchi"
@@ -23,7 +23,7 @@ class TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::Info
     end
 
     # 有楽町・副都心線
-    if railway_line_in_db.yurakucho_or_fukutoshin_line?
+    if railway_line_info_in_db.yurakucho_or_fukutoshin_line?
 
       # 西武線直通列車
       if object.terminating_on_seibu_line?
@@ -50,7 +50,7 @@ class TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::Info
     end
 
     # 有楽町線
-    if railway_line_in_db.yurakucho_line?
+    if railway_line_info_in_db.yurakucho_line?
 
       # 池袋行き（和光市・東武線・西武線方面から）
       if object.terminating_at_ikebukuro_on_yurakucho_line?
@@ -62,7 +62,7 @@ class TokyoMetro::Factory::BeforeDecorate::Api::TrainLocation::Info
     end
 
     # 副都心線
-    if railway_line_in_db.fukutoshin_line?
+    if railway_line_info_in_db.fukutoshin_line?
 
       # 新宿三丁目行き（渋谷方面から）
       if object.terminating_at_shinjuku_sanchome_on_fukutoshin_line?

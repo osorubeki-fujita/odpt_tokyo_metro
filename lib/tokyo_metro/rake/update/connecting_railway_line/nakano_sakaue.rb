@@ -33,7 +33,7 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
         raise "The number of connecting railway line infos of station on #{k} line is not valid. (Now: #{l} / Valid: #{v})"
       end
 
-      c_oedo = station_info.connecting_railway_line_infos.find_by( railway_line_id: @oedo_line.id )
+      c_oedo = station_info.connecting_railway_line_infos.find_by( railway_line_info_id: @oedo_line.id )
 
       unless c_oedo.present?
         raise "Station info on #{k} line does not have connecting railway line info to Toei Oedo Line."
@@ -103,8 +103,8 @@ class TokyoMetro::Rake::Update::ConnectingRailwayLine::NakanoSakaue
 
   def fundamental_hashes_for_finding_connecting_railway_line_infos
     [
-      { station_info_id: @station_infos[ :main ].id , railway_line_id: @railway_lines[ :branch ].id , connecting_station_info_id: @station_infos[ :branch ].id } ,
-      { station_info_id: @station_infos[ :branch ].id , railway_line_id: @railway_lines[ :main ].id , connecting_station_info_id: @station_infos[ :main ].id }
+      { station_info_id: @station_infos[ :main ].id , railway_line_info_id: @railway_lines[ :branch ].id , connecting_station_info_id: @station_infos[ :branch ].id } ,
+      { station_info_id: @station_infos[ :branch ].id , railway_line_info_id: @railway_lines[ :main ].id , connecting_station_info_id: @station_infos[ :main ].id }
     ]
   end
 

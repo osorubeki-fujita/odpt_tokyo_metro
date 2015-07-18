@@ -12,7 +12,7 @@ module TokyoMetro::Factory::Save::Api::RealtimeInfos
       sleep(1)
 
       #-------- 列車ロケーション情報
-      TokyoMetro::Api::TrainLocation.save_datas_of_all_railway_lines( http_client , file_type: :json )
+      TokyoMetro::Api::TrainLocation.save_datas_of_all_railway_line_infos( http_client , file_type: :json )
 
       # clean memory
       system( "start empty.exe *" )

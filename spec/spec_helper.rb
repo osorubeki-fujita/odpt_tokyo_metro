@@ -12,7 +12,7 @@ require_relative 'spec_helper/dictionary/station.rb'
 #--------
 
 require_relative 'spec_helper/static/operators.rb'
-require_relative 'spec_helper/static/railway_lines.rb'
+require_relative 'spec_helper/static/railway_line_infos.rb'
 require_relative 'spec_helper/static/stations.rb'
 require_relative 'spec_helper/static/train_types.rb'
 
@@ -40,13 +40,13 @@ require_relative 'spec_helper/station_facility/escalator_operation_day_in_kasumi
 require_relative 'spec_helper/station_facility/escalator_operation_day_in_akasaka_mitsuke.rb'
 require_relative 'spec_helper/station_facility/surrounding_area.rb'
 
-require_relative 'spec_helper/station_facility/replacing_railway_lines_of_platform_infos.rb'
+require_relative 'spec_helper/station_facility/replacing_railway_line_infos_of_platform_infos.rb'
 
 #--------
 
 require_relative 'spec_helper/station/marunouchi_branch_line.rb'
 require_relative 'spec_helper/station/chiyoda_branch_line.rb'
-require_relative 'spec_helper/station/connecting_railway_lines.rb'
+require_relative 'spec_helper/station/connecting_railway_line_infos.rb'
 
 #--------
 

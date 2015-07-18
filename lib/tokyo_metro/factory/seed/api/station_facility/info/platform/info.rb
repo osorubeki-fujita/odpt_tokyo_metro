@@ -6,11 +6,11 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::Platform::Info < To
   private
 
   def hash_to_db
-    _railway_line_id = railway_line_id
+    _railway_line_info_id = railway_line_info_id
     {
       station_facility_info_id: @station_facility_info_id ,
-      railway_line_id: _railway_line_id ,
-      railway_direction_id: railway_direction_id( _railway_line_id ) ,
+      railway_line_info_id: _railway_line_info_id ,
+      railway_direction_id: railway_direction_id( _railway_line_info_id ) ,
       car_composition: @info.car_composition ,
       car_number: @info.car_number
     }

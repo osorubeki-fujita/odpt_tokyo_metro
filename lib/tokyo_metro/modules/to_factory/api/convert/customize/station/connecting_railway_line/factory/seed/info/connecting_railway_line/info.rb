@@ -14,11 +14,11 @@ module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::Connect
 
   private
 
-  # @todo railway_line_id の列を廃止する（他社線の駅名情報も DB に登録し、すべての railway_line_id へ station_info_id からアクセスできるようにする）
+  # @todo railway_line_info_id の列を廃止する（他社線の駅名情報も DB に登録し、すべての railway_line_info_id へ station_info_id からアクセスできるようにする）
   def hash_to_db
     super.merge({
       # station_info_id: @station_info_id ,
-      # railway_line_id: railway_line_id ,
+      # railway_line_info_id: railway_line_info_id ,
       index_in_station: @info.index_in_station ,
       connecting_station_info_id: connecting_station_info_id ,
       connecting_to_another_station: connecting_to_another_station? ,
@@ -41,14 +41,14 @@ module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::Connect
 
   def connecting_station
     if connecting_to_another_station?
-      station_info = ::Station::Info.find_by( railway_line_id: railway_line_id , same_as: @info.connecting_station )
+      station_info = ::Station::Info.find_by( railway_line_info_id: railway_line_info_id , same_as: @info.connecting_station )
       unless station_info.present?
-        raise "Error: railway_line_id: #{railway_line_id} / same_as: #{ @info.connecting_another_station }"
+        raise "Error: railway_line_info_id: #{railway_line_info_id} / same_as: #{ @info.connecting_another_station }"
       end
       return station_info
     else
       station_name_in_system = ::Station::Info.find( @station_info_id ).name_in_system
-      connecting_station = ::Station::Info.find_by( railway_line_id: railway_line_id , name_in_system: station_name_in_system )
+      connecting_station = ::Station::Info.find_by( railway_line_info_id: railway_line_info_id , name_in_system: station_name_in_system )
       if connecting_station.present?
         connecting_station
       else

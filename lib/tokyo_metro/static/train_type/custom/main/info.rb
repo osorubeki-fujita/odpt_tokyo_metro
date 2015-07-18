@@ -7,10 +7,10 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
 
   include ::TokyoMetro::Modules::Name::Common::TrainType::CssClass
 
-  include ::TokyoMetro::Modules::Color::Static::Fundamental::GetColorInfo
+  include ::OdptCommon::Modules::Color::Static::Fundamental::GetColorInfo
   # 色に関するメソッド
-  include ::TokyoMetro::Modules::Color::Static::Background
-  include ::TokyoMetro::Modules::Color::Static::Normal
+  include ::OdptCommon::Modules::Color::Static::Background
+  include ::OdptCommon::Modules::Color::Static::Normal
 
   # Constructor
   # @param ary [::Array] 変数の配列（内部で展開する）

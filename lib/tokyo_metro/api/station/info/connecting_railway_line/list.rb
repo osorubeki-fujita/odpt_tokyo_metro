@@ -2,7 +2,7 @@
 class TokyoMetro::Api::Station::Info::ConnectingRailwayLine::List < TokyoMetro::Api::Station::Info::Common::List
 
   def self.factory_for_seeding_this_class
-    factory_for_seeding_connecting_railway_lines_of_each_station
+    factory_for_seeding_connecting_railway_line_infos_of_each_station
   end
 
   def set_index_in_station!
@@ -16,7 +16,7 @@ class TokyoMetro::Api::Station::Info::ConnectingRailwayLine::List < TokyoMetro::
     self.sort_by!( &:index_in_station )
   end
 
-  def railway_lines
+  def railway_line_infos
     self.map( &:railway_line )
   end
 

@@ -2,7 +2,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
 
   def initialize( request )
     super( request )
-    @all_railway_lines = ::RailwayLine.tokyo_metro( including_branch_line: false )
+    @all_railway_line_infos = ::Railway::Line::Info.tokyo_metro( including_branch_line: false )
     @survey_years = ::PassengerSurvey.all.pluck( :survey_year ).uniq.sort
   end
 
@@ -28,13 +28,13 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass < TokyoMet
 
   def proc_for_links_to_railway_line_pages
     ::Proc.new {
-      h.render inline: <<-HAML , type: :haml , locals: { request: request , all_railway_lines: @all_railway_lines , survey_years: @survey_years }
+      h.render inline: <<-HAML , type: :haml , locals: { request: request , all_railway_line_infos: @all_railway_line_infos , survey_years: @survey_years }
 %ul{ id: :links_to_railway_line_pages , class: :links }
   %li{ class: [ :title , :in_station_page ] }<
     != "各路線 各駅の乗降客数"
     %span{ class: :small }<
       = "（年度別）"
-  - all_railway_lines.each do | railway_line |
+  - all_railway_line_infos.each do | railway_line |
     = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::LinkToRailwayLinePage.new( request , railway_line.decorate , survey_years ).render
       HAML
     }

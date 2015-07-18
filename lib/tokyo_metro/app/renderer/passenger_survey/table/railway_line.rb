@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::RailwayLine < TokyoMetr
   end
 
   def render_header_of_table
-    ::TokyoMetro::App::Renderer::PassengerSurvey::Table::RailwayLine::Header.new( @reqeust , @make_graph , main_railway_line ).render
+    ::TokyoMetro::App::Renderer::PassengerSurvey::Table::RailwayLine::Header.new( @reqeust , @make_graph , main_railway_line_info ).render
   end
 
   private
@@ -28,8 +28,8 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::RailwayLine < TokyoMetr
     @passenger_survey_infos
   end
 
-  def main_railway_line
-    [ @railway_lines_including_branch ].flatten.select { | item | !( item.is_branch_railway_line? ) }.first
+  def main_railway_line_info
+    [ @railway_lines_including_branch ].flatten.select { | item | !( item.is_branch_railway_line_info? ) }.first
   end
 
 end

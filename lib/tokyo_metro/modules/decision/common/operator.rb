@@ -1,5 +1,9 @@
 module TokyoMetro::Modules::Decision::Common::Operator
 
+  def this_operator?
+    tokyo_metro?
+  end
+
   def tokyo_metro?
     operator_of?( "odpt.Operator:TokyoMetro" )
   end

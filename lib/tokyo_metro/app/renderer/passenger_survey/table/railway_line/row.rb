@@ -3,13 +3,13 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::RailwayLine::Row < Toky
   def initialize(
     request ,
     passenger_survey_info , n , max_passenger_journey_in_graph , make_graph ,
-    passenger_survey_infos_of_the_same_railway_line , passenger_survey_infos_of_the_same_operator , railway_lines_including_branch
+    passenger_survey_infos_of_the_same_railway_line , passenger_survey_infos_of_the_same_operator , railway_line_infos_including_branch
   )
     super( request , passenger_survey_info , n , max_passenger_journey_in_graph , make_graph )
 
     set_order( passenger_survey_infos_of_the_same_railway_line , passenger_survey_infos_of_the_same_operator )
 
-    @station_info = passenger_survey_info.station_infos.where( railway_line_id: railway_lines_including_branch.map( &:id ) ).first
+    @station_info = passenger_survey_info.station_infos.where( railway_line_info_id: railway_line_infos_including_branch.map( &:id ) ).first
   end
 
   def render

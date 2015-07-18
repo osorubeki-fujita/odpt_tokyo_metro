@@ -110,7 +110,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass < 
   end
 
   def valid_railway_line_decorator_class?
-    @railway_line_decorated.instance_of?( ::RailwayLineDecorator )
+    @railway_line_decorated.instance_of?( ::Railway::Line::InfoDecorator )
   end
 
   def optional_infos_to_display

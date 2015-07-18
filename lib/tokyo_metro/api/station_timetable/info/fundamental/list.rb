@@ -17,7 +17,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::List < Array
     factory_for_seeding_fundamental_list
   end
 
-  [ :stations , :railway_lines , :operators , :railway_directions ].each do | method_name |
+  [ :stations , :railway_line_infos , :operators , :railway_directions ].each do | method_name |
     eval <<-DEF
       def #{ method_name }
         self.map( &:#{ method_name } ).flatten

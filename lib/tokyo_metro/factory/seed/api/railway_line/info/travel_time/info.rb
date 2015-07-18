@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Seed::Api::RailwayLine::Info::TravelTime::Info < Toky
 
   def hash_to_db
     {
-      railway_line_id: @railway_line_id ,
+      railway_line_info_id: @railway_line_info_id ,
       from_station_info_id: from_station_info_id ,
       to_station_info_id: to_station_info_id ,
       necessary_time: @info.necessary_time

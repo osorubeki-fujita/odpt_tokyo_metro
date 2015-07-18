@@ -3,10 +3,10 @@ Operator:
   - TrainOwner
 
 RailwayLine:
-  - RailwayLine
-  - "Railway::Direction"
+  - "Railway::Line::Info"
   - "Railway::Line::TravelTimeInfo"
   - "Railway::Line::WomenOnlyCarInfo"
+  - "Railway::Direction"
 
 Station:
   - "Station::Info"

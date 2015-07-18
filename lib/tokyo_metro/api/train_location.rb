@@ -75,8 +75,8 @@ class TokyoMetro::Api::TrainLocation < TokyoMetro::Api::MetaClass::RealTime
   end
 
   # 各路線の列車ロケーション情報を取得し保存するメソッド
-  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】 
-  def self.save_datas_of_all_railway_lines( http_client , file_type: :yaml , generate_instance: false , to_inspect: true )
+  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
+  def self.save_datas_of_all_railway_line_infos( http_client , file_type: :yaml , generate_instance: false , to_inspect: true )
 
     # 路線のリスト
     # @return [::Array]
@@ -88,7 +88,7 @@ class TokyoMetro::Api::TrainLocation < TokyoMetro::Api::MetaClass::RealTime
       "odpt.Railway:TokyoMetro.Chiyoda" ,
       "odpt.Railway:TokyoMetro.Yurakucho" ,
       "odpt.Railway:TokyoMetro.Hanzomon" ,
-      "odpt.Railway:TokyoMetro.Namboku" , 
+      "odpt.Railway:TokyoMetro.Namboku" ,
       "odpt.Railway:TokyoMetro.Fukutoshin" ]
 
     railway_line_list.each do | railway_line |
@@ -98,7 +98,7 @@ class TokyoMetro::Api::TrainLocation < TokyoMetro::Api::MetaClass::RealTime
   end
 
   # 個別の列車ロケーション情報を取得し保存するメソッド
-  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】 
+  # @param http_client [HTTPClient] HTTPClient のインスタンス【必須】
   # @param railway_line [String] 鉄道路線【必須】 <odpt:railway - odpt:Railway> - odpt:Train に路線名のクラス (rdf:type - odpt:Train) を指定している。
   # @param generate_instance [Boolean] データ取得後に Ruby のインスタンスを作成するか否かの設定
   # @param to_inspect [Boolean] データ取得後にコマンドツールに内容を表示するか否かの設定

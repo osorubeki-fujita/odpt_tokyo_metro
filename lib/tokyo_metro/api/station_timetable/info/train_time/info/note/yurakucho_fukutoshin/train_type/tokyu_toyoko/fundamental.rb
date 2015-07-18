@@ -8,10 +8,10 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info::Note::YurakuchoF
     super( "渋谷" , "東急東横" , train_type , train_type_info_in_db )
   end
 
-  def railway_line_in_db
-    ::RailwayLine.find_by_same_as( "odpt.Railway:Tokyu.Toyoko" )
+  def railway_line_info_in_db
+    ::Railway::Line::Info.find_by_same_as( "odpt.Railway:Tokyu.Toyoko" )
   end
 
-  alias :railway_line_on_the_border_station_info_in_db :railway_line_in_db
+  alias :railway_line_info_on_the_border_station_info_in_db :railway_line_info_in_db
 
 end

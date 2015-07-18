@@ -1,7 +1,7 @@
 # 路線名のリストを定数・モジュール関数として提供する名前空間
 module TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   class << self
 

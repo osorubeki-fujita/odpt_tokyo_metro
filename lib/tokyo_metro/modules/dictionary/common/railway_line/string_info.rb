@@ -39,8 +39,8 @@
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo.toei_mita                         => odpt.Railway:Toei.Mita
 module TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringInfo
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
-  include ::TokyoMetro::Modules::MethodMissing::Dictionary::Common::RailwayLine::StringInfo
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Dictionary::Common::RailwayLine::StringInfo
 
   ::YAML.load_file( "#{ ::TokyoMetro::dictionary_dir }/railway_line/tokyo_metro_lines_in_system.yaml" ).each do | item |
     const_name_base = item.underscore.upcase

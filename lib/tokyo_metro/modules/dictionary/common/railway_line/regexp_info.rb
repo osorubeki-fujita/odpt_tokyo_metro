@@ -29,7 +29,7 @@
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.minatomirai_line                  => (?-mix:YokohamaMinatomiraiRailway\.Minatomirai)
 module TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   # @!group 東京メトロ各線
 

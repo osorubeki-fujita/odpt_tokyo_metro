@@ -48,7 +48,7 @@ def additional_infos_of_station_timetables
     replacing_fundamental_infos.each do | replacing_fundamental_info |
 
       info_in_api = fundamental_infos_after_conversion.find { | in_api |
-        [ :stations , :railway_lines , :operators , :railway_directions ].all? { | method |
+        [ :stations , :railway_line_infos , :operators , :railway_directions ].all? { | method |
           in_api.send( method ).sort == replacing_fundamental_info[ method.to_s ].sort
         }
       }

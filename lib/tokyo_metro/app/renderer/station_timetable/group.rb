@@ -17,29 +17,29 @@ class TokyoMetro::App::Renderer::StationTimetable::Group < TokyoMetro::Factory::
 
   def grouped_by_railway_line
     h = ::Hash.new
-    _railway_line_ids = railway_line_ids
+    _railway_line_info_ids = railway_line_info_ids
     @station_timetables.each do | station_timetable |
-      r_ids = station_timetable.station_timetable_fundamental_infos.pluck( :railway_line_id )
-      r_ids.each do | railway_line_id |
-        if h[ railway_line_id ].nil?
-          h[ railway_line_id ] = ::Array.new
+      r_ids = station_timetable.station_timetable_fundamental_infos.pluck( :railway_line_info_id )
+      r_ids.each do | railway_line_info_id |
+        if h[ railway_line_info_id ].nil?
+          h[ railway_line_info_id ] = ::Array.new
         end
-        h[ railway_line_id ] << station_timetable
+        h[ railway_line_info_id ] << station_timetable
       end
     end
-    h.sort_keys.map { | railway_line_id , station_timetables |
+    h.sort_keys.map { | railway_line_info_id , station_timetables |
       ::TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine.new(
         request ,
         @station_info ,
-        ::RailwayLine.find( railway_line_id ) ,
+        ::Railway::Line.find( railway_line_info_id ) ,
         station_timetables
       )
     }
   end
 
-  def railway_line_ids
+  def railway_line_info_ids
     @station_timetables.map { | station_timetable |
-      station_timetable.railway_lines.pluck( :id )
+      station_timetable.railway_line_infos.pluck( :id )
     }.flatten.uniq.sort
   end
 

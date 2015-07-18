@@ -1,14 +1,14 @@
 # 東京メトロ オープンデータの API から提供される情報を扱うモジュール
 module TokyoMetro::Api
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   def self.station_train_time
     ::TokyoMetro::Api::StationTrainTime
   end
 
   def self.list_of_constants
-    [ :station_facility , :passenger_survey , :station , :railway_line , :point , :fare , :station_timetable , :train_timetable ]
+    [ :station_facility , :passenger_survey , :station , :railway_line_info , :point , :fare , :station_timetable , :train_timetable ]
   end
 
   # 東京メトロ オープンデータに関する定数を定義するメソッド (2) - API から取得し保存したデータからインスタンスを作成し、定数とする
@@ -44,7 +44,7 @@ module TokyoMetro::Api
     private
 
     def set_constant( const_name_underscore )
-      const_name_base = const_name_underscore.to_s.underscore.downcase
+      const_name_base = const_name_underscore.to_s.underscore.downcase.gsub( /_info\Z/ , "" )
       const_name = const_name_base.upcase.intern
       class_name = "::TokyoMetro::Api::#{ const_name_base.camelize }"
       puts const_name.to_s.ljust(48) + class_name

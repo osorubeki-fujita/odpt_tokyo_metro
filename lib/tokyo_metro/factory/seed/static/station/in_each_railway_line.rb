@@ -8,17 +8,17 @@ class TokyoMetro::Factory::Seed::Static::Station::InEachRailwayLine < TokyoMetro
   private
 
   def seed_main_infos
-    _railway_line_id = railway_line_id
+    _railway_line_info_id = railway_line_info_id
 
     @array_to_seed.each.with_index(1) do | item , now_at |
       display_number( item , now_at )
-      item.seed( _railway_line_id )
+      item.seed( _railway_line_info_id )
     end
   end
 
-  [ :railway_line_in_db , :railway_line_id ].each do | method_name |
+  [ :railway_line_info_in_db , :railway_line_info_id ].each do | method_name |
     eval <<-DEF
-      def #{method_name}( whole = nil , search_by: @railway_line_id )
+      def #{method_name}( whole = nil , search_by: @railway_line_info_id )
         super( whole , search_by: search_by )
       end
     DEF

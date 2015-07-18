@@ -1,12 +1,12 @@
 class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLine::Info < TokyoMetro::Factory::Convert::Common::Api::Station::ConnectingRailwayLine::Info
 
-  include ::TokyoMetro::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
 
   [
-    :replacing_railway_lines ,
-    :ignored_railway_lines ,
-    :optional_railway_lines ,
-    :new_and_old_railway_lines ,
+    :replacing_railway_line_infos ,
+    :ignored_railway_line_infos ,
+    :optional_railway_line_infos ,
+    :new_and_old_railway_line_infos ,
     :index_in_stations ,
     :transfer_additional_infos
   ].each do | filename |
@@ -19,21 +19,21 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLi
   def initialize( object )
     # puts "----"
     # puts @object.same_as
-    # if @object.connecting_railway_lines.present?
-      # puts @object.connecting_railway_lines.map( &:railway_line ).to_s
+    # if @object.connecting_railway_line_infos.present?
+      # puts @object.connecting_railway_line_infos.map( &:railway_line ).to_s
     # end
     super(
       object ,
-      REPLACING_RAILWAY_LINES ,
-      IGNORED_RAILWAY_LINES
+      REPLACING_RAILWAY_LINE_INFOS ,
+      IGNORED_RAILWAY_LINE_INFOS
     )
   end
 
   def process
     if to_process?
       convert_connecting_railway_line_infos
-      add_optional_railway_lines
-      set_new_and_old_railway_lines
+      add_optional_railway_line_infos
+      set_new_and_old_railway_line_infos
       set_index_in_station
       set_transfer_additional_infos
     end
@@ -41,48 +41,48 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLi
 
   private
 
-  # @!group add_optional_railway_lines
+  # @!group add_optional_railway_line_infos
 
-  def add_optional_railway_lines
-    @optional_railway_lines = optional_railway_lines_for_this_object
+  def add_optional_railway_line_infos
+    @optional_railway_line_infos = optional_railway_line_infos_for_this_object
 
-    if @optional_railway_lines.present?
+    if @optional_railway_line_infos.present?
       set_new_connecting_railway_line_list_unless_exist
-      @optional_railway_lines.each do | item |
-        item[ "railway_lines" ].each do | railway_line |
-          @object.connecting_railway_lines << self.class.connecting_railway_line_info_class.new( railway_line )
+      @optional_railway_line_infos.each do | item |
+        item[ "railway_line_infos" ].each do | railway_line |
+          @object.connecting_railway_line_infos << self.class.connecting_railway_line_info_class.new( railway_line )
         end
       end
     end
 
   end
 
-  def optional_railway_lines_for_this_object
-    OPTIONAL_RAILWAY_LINES.select { | item | item[ "stations" ].include?( @object.same_as ) }
+  def optional_railway_line_infos_for_this_object
+    OPTIONAL_RAILWAY_LINE_INFOS.select { | item | item[ "stations" ].include?( @object.same_as ) }
   end
 
-  # @!group set_new_and_old_railway_lines
+  # @!group set_new_and_old_railway_line_infos
 
-  def set_new_and_old_railway_lines
-    @new_or_old_railway_lines = new_or_old_railway_lines_for_this_object
+  def set_new_and_old_railway_line_infos
+    @new_or_old_railway_line_infos = new_or_old_railway_line_infos_for_this_object
 
-    if @new_or_old_railway_lines.present?
+    if @new_or_old_railway_line_infos.present?
       set_new_connecting_railway_line_list_unless_exist
-      @new_or_old_railway_lines.each do | railway_line_name , info |
-        info_of_this_railway_line = @object.connecting_railway_lines.find { | item | item.railway_line == railway_line_name }
+      @new_or_old_railway_line_infos.each do | railway_line_name , info |
+        info_of_this_railway_line = @object.connecting_railway_line_infos.find { | item | item.railway_line == railway_line_name }
         if info_of_this_railway_line.present?
           info_of_this_railway_line.send( :set_start_on , info[ "start_on" ] )
           info_of_this_railway_line.send( :set_end_on , info[ "end_on" ] )
         else
-          @object.connecting_railway_lines << self.class.connecting_railway_line_info_class.new( railway_line_name , start_on: info[ "start_on" ] , end_on: info[ "end_on" ] )
+          @object.connecting_railway_line_infos << self.class.connecting_railway_line_info_class.new( railway_line_name , start_on: info[ "start_on" ] , end_on: info[ "end_on" ] )
         end
       end
     end
 
   end
 
-  def new_or_old_railway_lines_for_this_object
-    NEW_AND_OLD_RAILWAY_LINES.select { | new_railway_line_name , info | info[ "stations" ].include?( @object.same_as ) }
+  def new_or_old_railway_line_infos_for_this_object
+    NEW_AND_OLD_RAILWAY_LINE_INFOS.select { | new_railway_line_name , info | info[ "stations" ].include?( @object.same_as ) }
   end
 
   # @!group set_index_in_station
@@ -90,7 +90,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLi
   def set_index_in_station
     @index_in_this_station = index_in_this_station
     if @index_in_this_station.present?
-      @object.connecting_railway_lines.each do | connecting_railway_line_info |
+      @object.connecting_railway_line_infos.each do | connecting_railway_line_info |
         index_info_of_this_railway_line = @index_in_this_station[ connecting_railway_line_info.railway_line ]
         unless index_info_of_this_railway_line.present?
           raise "Error: index of #{ connecting_railway_line_info.railway_line } in \"#{@same_as}\" is not defined."
@@ -103,9 +103,9 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLi
 
       end
 
-      @object.connecting_railway_lines.sort!
+      @object.connecting_railway_line_infos.sort!
     else
-      @object.connecting_railway_lines.try( :set_index_in_station! )
+      @object.connecting_railway_line_infos.try( :set_index_in_station! )
     end
 
   end
@@ -129,7 +129,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLi
     if ary.present?
       h = ::Hash.new
       ary.each do | item |
-        h.update( item[ "railway_lines" ] )
+        h.update( item[ "railway_line_infos" ] )
       end
       h
     else
@@ -143,7 +143,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLi
         error_msg = "\n"
         error_msg << "Error: \"#{ @object.same_as }\" on \"#{ @object.railway_line }\" should be connected to \"#{ railway_line }\".\n"
         error_msg << "connnected to:\n"
-        error_msg << @object.connecting_railway_lines.map( &:railway_line ).join( "\n" )
+        error_msg << @object.connecting_railway_line_infos.map( &:railway_line ).join( "\n" )
         error_msg << "\n"
         error_msg << "keys: \n"
         error_msg << @transfer_additional_infos_for_this_station.keys.join( "\n" )
@@ -153,7 +153,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLi
   end
 
   def set_transfer_additional_infos_to_each_railway_line_info
-    @object.connecting_railway_lines.each do | connecting_railway_line_info |
+    @object.connecting_railway_line_infos.each do | connecting_railway_line_info |
       additional_info_of_this_railway_line = @transfer_additional_infos_for_this_station[ connecting_railway_line_info.railway_line ]
 
       if additional_info_of_this_railway_line.present?
@@ -196,12 +196,12 @@ class TokyoMetro::Factory::Convert::Customize::Api::Station::ConnectingRailwayLi
   # @!group Common method
 
   def connecting_railway_line_names
-    @object.connecting_railway_lines.map( &:railway_line )
+    @object.connecting_railway_line_infos.map( &:railway_line )
   end
 
   def set_new_connecting_railway_line_list_unless_exist
-    unless @object.connecting_railway_lines.present?
-      @object.instance_variable_set( :@connecting_railway_lines , self.class.connecting_railway_line_list_class.new )
+    unless @object.connecting_railway_line_infos.present?
+      @object.instance_variable_set( :@connecting_railway_line_infos , self.class.connecting_railway_line_list_class.new )
     end
   end
 

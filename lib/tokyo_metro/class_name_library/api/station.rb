@@ -131,11 +131,11 @@ module TokyoMetro::ClassNameLibrary::Api::Station
       ::TokyoMetro::Factory::Seed::Api::Station::Info
     end
 
-    def factory_for_seeding_connecting_railway_lines
+    def factory_for_seeding_connecting_railway_line_infos
       ::TokyoMetro::Factory::Seed::Api::Station::List::ConnectingRailwayLine
     end
 
-    def factory_for_seeding_connecting_railway_lines_of_each_station
+    def factory_for_seeding_connecting_railway_line_infos_of_each_station
       ::TokyoMetro::Factory::Seed::Api::Station::Info::ConnectingRailwayLine::List
     end
 

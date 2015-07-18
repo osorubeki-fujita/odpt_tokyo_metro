@@ -11,14 +11,14 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::Fundamental::Info:
   private
 
   def hash_to_db
-    _railway_line_id = railway_line_id( @railway_lines )
+    _railway_line_info_id = railway_line_info_id( @railway_line_infos )
 
     {
       info_id: @info_id ,
       operator_id: operator_id( @operators ) ,
-      railway_line_id: _railway_line_id ,
+      railway_line_info_id: _railway_line_info_id ,
       station_info_id: station_info_id( @stations ) ,
-      railway_direction_id: railway_direction_id( _railway_line_id , @railway_directions )
+      railway_direction_id: railway_direction_id( _railway_line_info_id , @railway_directions )
     }
   end
 

@@ -1,7 +1,7 @@
 class TokyoMetro::Factory::Seed::Common::Group
 
   include ::TokyoMetro::Factory::Seed::Common::SetOptionalVariables
-  include ::OdptCommon::CalcTime
+  include ::OdptCommon::Modules::ToFactory::Common::MetaFactory::CalcTime
 
   def initialize( *args , class_name , method_name , indent , no_display , not_on_the_top_layer , display_number , other_info , interrupt )
     if no_display and display_number

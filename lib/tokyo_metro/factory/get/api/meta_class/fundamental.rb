@@ -1,7 +1,7 @@
 # API からデータを取得するための Factory Pattern のクラス（最上位クラス）
 class TokyoMetro::Factory::Get::Api::MetaClass::Fundamental
 
-  include ::OdptCommon::CalcTime
+  include ::OdptCommon::Modules::ToFactory::Common::MetaFactory::CalcTime
 
   # Constructor
   # @param parse_json [Boolean] JSON をパースするか否かの設定

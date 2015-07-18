@@ -58,7 +58,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable
   end
 
   # @note {::TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable::StationTimetableInfo} のメソッド
-  [ :railway_lines , :railway_lines_same_as , :railway_lines_to_s , :stations , :stations_same_as , :stations_to_s , :station_timetable_in_db ].each do | method_name |
+  [ :railway_line_infos , :railway_line_infos_same_as , :railway_line_infos_to_s , :stations , :stations_same_as , :stations_to_s , :station_timetable_in_db ].each do | method_name |
     eval <<-DEF
       def #{ method_name }
         @station_timetable_info.#{ method_name }
@@ -68,7 +68,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable
 
   # @note {::TokyoMetro::Refinement::Api::StationTimetable::Info::TrainTime::Info::TerminalStationsSameAs.terminal_stations_same_as} を呼び出す。
   def terminal_stations_same_as
-    @train.send( :terminal_stations_same_as , railway_lines )
+    @train.send( :terminal_stations_same_as , railway_line_infos )
   end
 
   def terminal_stations_to_s
@@ -80,7 +80,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::TrainInStationTimetable
     error_message_ary << "\n"
     error_message_ary << "Error: The train timetable including these informations does not exist."
     [
-      [ "Depart from" , stations_to_s + " (#{ railway_lines_to_s })" ] ,
+      [ "Depart from" , stations_to_s + " (#{ railway_line_infos_to_s })" ] ,
       [ "Departure time" , @train.departure_time_array.join( ":" ) ] ,
       [ "Terminal station" , terminal_stations_to_s ] ,
       [ "Operation day" , @operation_day_in_db.name_en ]

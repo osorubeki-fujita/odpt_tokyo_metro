@@ -102,8 +102,8 @@ class TokyoMetro::Static::Station::InEachRailwayLine::Info
     @stop.include?( train_type )
   end
 
-  def seed( railway_line_id )
-    super( railway_line_id )
+  def seed( railway_line_info_id )
+    super( railway_line_info_id )
   end
 
 # @!group クラスメソッド

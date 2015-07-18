@@ -60,10 +60,10 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Romanc
   end
 
   def hash_to_select_station_timetable_base
-    _railway_line_id = railway_line_id
+    _railway_line_info_id = railway_line_info_id
     {
-      railway_line_id: _railway_line_id ,
-      railway_direction_id: railway_direction_id( _railway_line_id )
+      railway_line_info_id: _railway_line_info_id ,
+      railway_direction_id: railway_direction_id( _railway_line_info_id )
     }
   end
 

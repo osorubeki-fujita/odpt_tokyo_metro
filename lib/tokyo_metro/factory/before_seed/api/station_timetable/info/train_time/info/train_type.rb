@@ -7,8 +7,8 @@ class TokyoMetro::Factory::BeforeSeed::Api::StationTimetable::Info::TrainTime::I
   include ::TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeModules::CurrentStation
   include ::TokyoMetro::Factory::BeforeSeed::Api::MetaClass::Timetables::TrainTypeModules::ConvertRailwayLine
 
-  def initialize( train_type , railway_line_in_db , terminal_station_info_in_db , operation_day_in_db , stations_in_db )
-    super( train_type , railway_line_in_db , terminal_station_info_in_db , operation_day_in_db )
+  def initialize( train_type , railway_line_info_in_db , terminal_station_info_in_db , operation_day_in_db , stations_in_db )
+    super( train_type , railway_line_info_in_db , terminal_station_info_in_db , operation_day_in_db )
     @stations_in_db = stations_in_db
   end
 
@@ -53,7 +53,7 @@ class TokyoMetro::Factory::BeforeSeed::Api::StationTimetable::Info::TrainTime::I
   def error_msg__additional_ary_base
     [
       [ "Train type" , @train_type ] ,
-      [ "Railway line" , @railway_line_in_db.same_as ] ,
+      [ "Railway line" , @railway_line_info_in_db.same_as ] ,
       [ "Station" , @stations_in_db.map( &:same_as ) ] ,
       [ "Terminal station" , @terminal_station_info_in_db.same_as ] ,
       [ "Operation day" , @operation_day_in_db.name_en ]

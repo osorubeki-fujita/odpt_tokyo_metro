@@ -8,7 +8,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.Wakoshi"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -17,7 +17,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.Wakoshi"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -32,7 +32,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.ChikatetsuNarimasu"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -41,7 +41,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.ChikatetsuNarimasu"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -56,7 +56,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.ChikatetsuAkatsuka"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -65,7 +65,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.ChikatetsuAkatsuka"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -80,7 +80,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.Heiwadai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -89,7 +89,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.Heiwadai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -104,7 +104,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.Hikawadai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -113,7 +113,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.Hikawadai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -130,7 +130,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -139,7 +139,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -154,7 +154,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.Hikawadai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -163,7 +163,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.Hikawadai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -178,7 +178,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.Heiwadai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -187,7 +187,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.Heiwadai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -202,7 +202,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.ChikatetsuAkatsuka"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -211,7 +211,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.ChikatetsuAkatsuka"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -226,7 +226,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Yurakucho.ChikatetsuNarimasu"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Yurakucho"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -235,7 +235,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Fukutoshin.ChikatetsuNarimasu"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Fukutoshin"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -251,7 +251,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.MarunouchiBranch"
         - "odpt.Railway:TokyoMetro.Marunouchi"
       operators:
@@ -266,7 +266,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.MarunouchiBranch"
         - "odpt.Railway:TokyoMetro.Marunouchi"
       operators:
@@ -281,7 +281,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.MarunouchiBranch"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -297,7 +297,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.MarunouchiBranch.Honancho"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.MarunouchiBranch"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -311,7 +311,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoFujimicho"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.MarunouchiBranch"
         - "odpt.Railway:TokyoMetro.Marunouchi"
       operators:
@@ -326,7 +326,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoShimbashi"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.MarunouchiBranch"
         - "odpt.Railway:TokyoMetro.Marunouchi"
       operators:
@@ -344,7 +344,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Namboku.ShirokaneTakanawa"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Namboku"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -353,7 +353,7 @@
     -
       stations:
         - "odpt.Station:Toei.Mita.ShirokaneTakanawa"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:Toei.Mita"
       operators:
         - "odpt.Operator:Toei"
@@ -368,7 +368,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Namboku.Shirokanedai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Namboku"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -377,7 +377,7 @@
     -
       stations:
         - "odpt.Station:Toei.Mita.Shirokanedai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:Toei.Mita"
       operators:
         - "odpt.Operator:Toei"
@@ -394,7 +394,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Namboku.Meguro"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Namboku"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -403,7 +403,7 @@
     -
       stations:
         - "odpt.Station:Toei.Mita.Meguro"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:Toei.Mita"
       operators:
         - "odpt.Operator:Toei"
@@ -418,7 +418,7 @@
     -
       stations:
         - "odpt.Station:TokyoMetro.Namboku.Shirokanedai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:TokyoMetro.Namboku"
       operators:
         - "odpt.Operator:TokyoMetro"
@@ -427,7 +427,7 @@
     -
       stations:
         - "odpt.Station:Toei.Mita.Shirokanedai"
-      railway_lines:
+      railway_line_infos:
         - "odpt.Railway:Toei.Mita"
       operators:
         - "odpt.Operator:Toei"

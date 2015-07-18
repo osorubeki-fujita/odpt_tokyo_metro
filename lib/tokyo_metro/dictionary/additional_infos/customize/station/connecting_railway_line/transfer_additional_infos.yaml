@@ -3,7 +3,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Ginza.Shibuya
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Hanzomon":
       hidden_on_railway_line_page: true
 
@@ -24,7 +24,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Hanzomon":
       connecting_another_station: odpt.Station:TokyoMetro.Hanzomon.Nagatacho
     "odpt.Railway:TokyoMetro.Yurakucho":
@@ -37,7 +37,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Marunouchi.AkasakaMitsuke
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Hanzomon":
       connecting_another_station: odpt.Station:TokyoMetro.Hanzomon.Nagatacho
     "odpt.Railway:TokyoMetro.Yurakucho":
@@ -50,7 +50,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Yurakucho.Nagatacho
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Ginza":
       connecting_another_station: odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke
     "odpt.Railway:TokyoMetro.Marunouchi":
@@ -58,7 +58,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Hanzomon.Nagatacho
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Ginza":
       connecting_another_station: odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke
       note: "銀座線外苑前駅をご利用の場合は、青山一丁目駅でのお乗り換えが便利です。また、銀座線渋谷駅をご利用の場合は、表参道駅でのお乗り換えが便利です。"
@@ -67,7 +67,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Namboku.Nagatacho
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Ginza":
       connecting_another_station: odpt.Station:TokyoMetro.Ginza.AkasakaMitsuke
       not_recommended: true
@@ -82,7 +82,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Ginza.TameikeSanno
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Chiyoda":
       connecting_another_station: odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae
     "odpt.Railway:TokyoMetro.Marunouchi":
@@ -93,7 +93,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Namboku.TameikeSanno
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Chiyoda":
       connecting_another_station: odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae
     "odpt.Railway:TokyoMetro.Marunouchi":
@@ -104,7 +104,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Marunouchi.KokkaiGijidomae
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Ginza":
       connecting_another_station: odpt.Station:TokyoMetro.Ginza.TameikeSanno
       not_recommended: true
@@ -116,7 +116,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Chiyoda.KokkaiGijidomae
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Ginza":
       connecting_another_station: odpt.Station:TokyoMetro.Ginza.TameikeSanno
       not_recommended: true
@@ -130,7 +130,7 @@
   stations:
     - odpt.Station:TokyoMetro.Ginza.Mitsukoshimae
     - odpt.Station:TokyoMetro.Hanzomon.Mitsukoshimae
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:JR-East.Sobu":
       connecting_another_station: odpt.Station:JR-East.Sobu.ShinNihombashi
 
@@ -139,7 +139,7 @@
   stations:
     - odpt.Station:TokyoMetro.Ginza.UenoHirokoji
     - odpt.Station:TokyoMetro.Hibiya.NakaOkachimachi
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.Oedo":
       connecting_another_station: odpt.Station:Toei.Oedo.UenoOkachimachi
     "odpt.Railway:JR-East.Yamanote":
@@ -150,7 +150,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Ginza.UenoHirokoji
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Hibiya":
       connecting_another_station: odpt.Station:TokyoMetro.Hibiya.NakaOkachimachi
       not_recommended: true
@@ -159,7 +159,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Hibiya.NakaOkachimachi
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Ginza":
       connecting_another_station: odpt.Station:TokyoMetro.Ginza.UenoHirokoji
       not_recommended: true
@@ -170,14 +170,14 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.MarunouchiBranch":
       hidden_on_railway_line_page: true
 
 -
   stations:
     - odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Marunouchi":
       hidden_on_railway_line_page: true
 
@@ -186,7 +186,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Marunouchi.Shinjuku
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.Oedo":
       connecting_another_station: odpt.Station:Toei.Oedo.ShinjukuNishiguchi
     "odpt.Railway:Toei.Shinjuku":
@@ -198,14 +198,14 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Marunouchi.ShinjukuSanchome
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Fukutoshin":
       note: 平日朝の通勤・通学時間帯 7:50 - 9:20 に限り、丸ノ内線から副都心線への連絡通路を経由してのお乗り換えはできません。丸ノ内線から副都心線へお乗り換えのお客さまは、一旦改札を出てお乗り換え下さい。混雑緩和にご協力をお願いいたします。
 
 -
   stations:
     - odpt.Station:TokyoMetro.Fukutoshin.ShinjukuSanchome
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Marunouchi":
       note: 平日朝の通勤・通学時間帯 7:50 - 9:20 に限り、丸ノ内線から副都心線への連絡通路を経由してのお乗り換えはできません。丸ノ内線から副都心線へお乗り換えのお客さまは、一旦改札を出てお乗り換え下さい。混雑緩和にご協力をお願いいたします。
 
@@ -214,7 +214,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Marunouchi.Awajicho
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.Shinjuku":
       connecting_another_station: odpt.Station:Toei.Shinjuku.Ogawamachi
     "odpt.Railway:TokyoMetro.Chiyoda":
@@ -226,7 +226,7 @@
   stations:
     - odpt.Station:TokyoMetro.Marunouchi.Korakuen
     - odpt.Station:TokyoMetro.Namboku.Korakuen
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.Mita":
       connecting_another_station: odpt.Station:Toei.Mita.Kasuga
     "odpt.Railway:Toei.Oedo":
@@ -238,14 +238,14 @@
   stations:
     - odpt.Station:TokyoMetro.Hibiya.Hibiya
     - odpt.Station:TokyoMetro.Chiyoda.Hibiya
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Yurakucho":
       connecting_another_station: odpt.Station:TokyoMetro.Yurakucho.Yurakucho
 
 -
   stations:
     - odpt.Station:TokyoMetro.Yurakucho.Yurakucho
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Hibiya":
       connecting_another_station: odpt.Station:TokyoMetro.Hibiya.Hibiya
     "odpt.Railway:TokyoMetro.Chiyoda":
@@ -258,7 +258,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Hibiya.Akihabara
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.Shinjuku":
       connecting_another_station: odpt.Station:Toei.Shinjuku.Iwamotocho
 
@@ -267,7 +267,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Tozai.NishiFunabashi
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:ToyoRapidRailway.ToyoRapidRailway":
       hidden_on_railway_line_page: true
 
@@ -277,7 +277,7 @@
   stations:
     - odpt.Station:TokyoMetro.Chiyoda.MeijiJingumae
     - odpt.Station:TokyoMetro.Fukutoshin.MeijiJingumae
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:JR-East.Yamanote":
       connecting_another_station: odpt.Station:JR-East.Yamanote.Harajuku
 
@@ -286,7 +286,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Chiyoda.ShinOchanomizu
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:JR-East.ChuoKaisoku":
       connecting_another_station: odpt.Station:JR-East.ChuoKaisoku.Ochanomizu
     "odpt.Railway:JR-East.ChuoSobu":
@@ -301,7 +301,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Chiyoda.Machiya
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.MachiyaEkimae
 
@@ -313,21 +313,21 @@
   stations:
     - odpt.Station:TokyoMetro.Chiyoda.Ayase
     # - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:JR-East.Joban":
       hidden_on_railway_line_page: true
 
 # -
   # stations:
     # - odpt.Station:TokyoMetro.Chiyoda.Ayase
-  # railway_lines:
+  # railway_line_infos:
     # "odpt.Railway:TokyoMetro.ChiyodaBranch":
       # hidden_on_railway_line_page: true
 
 # -
   # stations:
     # - odpt.Station:TokyoMetro.ChiyodaBranch.Ayase
-  # railway_lines:
+  # railway_line_infos:
     # "odpt.Railway:TokyoMetro.Chiyoda":
       # hidden_on_railway_line_page: true
 
@@ -336,7 +336,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Yurakucho.HigashiIkebukuro
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.HigashiIkebukuroYonchome
 
@@ -345,7 +345,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Hanzomon.Shibuya
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Ginza":
       hidden_on_railway_line_page: true
     "odpt.Railway:Tokyu.DenEnToshi":
@@ -356,7 +356,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Hanzomon.Jimbocho
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.Shinjuku":
       not_recommended: true
       note: 都営新宿線への乗り換えは九段下駅が便利です。
@@ -366,7 +366,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Hanzomon.Oshiage
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Tobu.SkyTreeIsesaki":
       hidden_on_railway_line_page: true
 
@@ -375,7 +375,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Namboku.Meguro
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Tokyu.Meguro":
       hidden_on_railway_line_page: true
     "odpt.Railway:Toei.Mita":
@@ -386,7 +386,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Namboku.Shirokanedai
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.Mita":
       hidden_on_railway_line_page: true
 
@@ -395,7 +395,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Namboku.Oji
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.OjiEkimae
 
@@ -404,7 +404,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Namboku.AkabaneIwabuchi
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:SaitamaRailway.SaitamaRailway":
       hidden_on_railway_line_page: true
 
@@ -413,7 +413,7 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Fukutoshin.Zoshigaya
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.Kishibojinmae
 
@@ -422,11 +422,11 @@
 -
   stations:
     - odpt.Station:TokyoMetro.Fukutoshin.Shibuya
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:TokyoMetro.Ginza":
       not_recommended: true
       note: 副都心線から銀座線へ乗り換える場合は、渋谷駅で半蔵門線に乗り換えの上、表参道駅で半蔵門線から副都心線に乗り換えると移動距離が少なく便利です。
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Tokyu.Toyoko":
       hidden_on_railway_line_page: true
 
@@ -435,6 +435,6 @@
 -
   stations:
     - odpt.Station:Toei.Mita.NishiSugamo
-  railway_lines:
+  railway_line_infos:
     "odpt.Railway:Toei.TodenArakawa":
       connecting_another_station: odpt.Station:Toei.TodenArakawa.ShinKoshinzuka
