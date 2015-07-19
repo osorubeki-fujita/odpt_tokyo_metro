@@ -1,7 +1,7 @@
 class TokyoMetro::Factory::Generate::Static::TrainType::Custom::DefaultSetting::Info < TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::DefaultSetting
-  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
 
   TITLE = "TrainTypeDefault"
 

@@ -18,9 +18,6 @@
 module TokyoMetro::Modules::Dictionary::Common::RomanceCar
 
   TRAIN_NAMES = ::YAML.load_file( "#{ ::TokyoMetro.dictionary_dir }/train_type/romance_car_train_names.yaml" )
-
-  def self.train_names
-    TRAIN_NAMES
-  end
+  include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
 
 end

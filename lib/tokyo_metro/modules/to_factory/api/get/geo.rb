@@ -16,8 +16,7 @@ module TokyoMetro::Modules::ToFactory::Api::Get::Geo
     # @return [::Array <Hash>] parse_json が true の場合は、JSON を配列に変換して返す。
     # @return [String] parse_json が false の場合は、JSON を文字列として返す。
     def get_geo( http_client , long , lat , radius , parse_json: false , generate_instance: false , to_inspect: false )
-      factory_for_getting_geo.process( http_client , long , lat , radius ,
-        parse_json , generate_instance , to_inspect )
+      factory_for_getting_geo.process( http_client , long , lat , radius , parse_json , generate_instance , to_inspect )
     end
 
     # 地物情報検索 API からデータを取得するための Factory Pattern クラス

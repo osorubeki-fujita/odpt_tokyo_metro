@@ -5,11 +5,11 @@ class TokyoMetro::Static::Operator::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Name::Static::Fundamental::ForInspection
-  include ::TokyoMetro::Modules::Name::Common::Fundamental::GetMainName
-  include ::TokyoMetro::Modules::Name::Common::Fundamental::CssClass
+  include ::OdptCommon::Modules::Name::Static::Fundamental::ForInspection
+  include ::OdptCommon::Modules::Name::Common::Fundamental::GetMainName
 
-  include ::TokyoMetro::Modules::Name::Common::Operator
+  include ::OdptCommon::Modules::Name::Common::Operator
+  include ::TokyoMetro::Modules::Name::Common::Operator::CssClass
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::Operator

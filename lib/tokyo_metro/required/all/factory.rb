@@ -19,7 +19,8 @@ class TokyoMetro::Required::All::Factory < TokyoMetro::Required
       BeforeSeed.files ,
       #
       Decorate.files ,
-      BeforeDecorate.files
+      BeforeDecorate.files ,
+      Design.files
     ]
   end
 

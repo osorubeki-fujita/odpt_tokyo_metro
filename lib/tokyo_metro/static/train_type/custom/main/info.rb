@@ -6,6 +6,7 @@ class TokyoMetro::Static::TrainType::Custom::Main::Info < TokyoMetro::Static::Tr
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::TokyoMetro::Modules::Name::Common::TrainType::CssClass
+  include ::TokyoMetro::Modules::Name::Common::TrainType::ColorBasename
 
   include ::OdptCommon::Modules::Color::Static::Fundamental::GetColorInfo
   # 色に関するメソッド

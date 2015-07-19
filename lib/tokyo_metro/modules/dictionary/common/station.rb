@@ -1,6 +1,6 @@
 module TokyoMetro::Modules::Dictionary::Common::Station
 
-  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
 
   STATION_NAME_SAME_AS_IN_DB = ::YAML.load_file( "#{ ::TokyoMetro::dictionary_dir }/station/same_as_in_db.yaml" )
 
@@ -39,33 +39,5 @@ module TokyoMetro::Modules::Dictionary::Common::Station
       same_as
     end
   end
-
-=begin
-  class << self
-
-    private
-
-    def set_station_same_as_in_db__raise_error_when_nil( station_same_as , title )
-      if station_same_as.nil?
-        puts "★ #{ title } of \"#{ @train_number }\" is not defined."
-        puts "Please investigate #{ title.downcase } of this train and input."
-        station_same_as_new = ::STDIN.gets.chomp
-        puts "#{ title } of \"#{ @train_number }\" is"
-        puts " " * 4 + station_same_as_new
-        puts "OK? \[Y/n\]"
-        yn = ::STDIN.gets.chomp
-        case yn.downcase
-        when "y"
-          station_same_as_new
-        else
-          set_station_same_as_in_db__raise_error_when_nil( station_same_as , title )
-        end
-      else
-        station_same_as
-      end
-    end
-
-  end
-=end
-
+  
 end

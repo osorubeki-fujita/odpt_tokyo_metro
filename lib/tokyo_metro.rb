@@ -59,7 +59,7 @@ module TokyoMetro
 
   STATION_DICTIONARY = ::YAML.load_file( "#{ DICTIONARY_DIR }/station/tokyo_metro.yaml" )
 
-  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
 
   def self.station_dictionary_including_main_info( stations_of_railway_line_infos = nil )
     if stations_of_railway_line_infos.nil?

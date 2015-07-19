@@ -7,7 +7,7 @@ class TokyoMetro::Initializer::ApiKey::MetaClass
   def set
     _key_info = key_info
     if _key_info.present?
-      ::TokyoMetro.const_set( @const_name.upcase , _key_info )
+      ::TokyoMetro.const_set( eval( ":#{ @const_name.upcase }" ) , _key_info )
     else
       raise "Error: The file \"#{ filename }\" does not exist."
     end

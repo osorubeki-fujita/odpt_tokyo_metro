@@ -1,7 +1,7 @@
 # 駅名のリストを定数・モジュール関数として提供する名前空間
 module TokyoMetro::Modules::Dictionary::Common::Station::StringList
 
-  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
 
   # 丸ノ内線・丸ノ内支線の駅名リストをセットするためのモジュール関数
   def self.stations_same_as_in_marunouchi_main_and_branch_lines( station_names )

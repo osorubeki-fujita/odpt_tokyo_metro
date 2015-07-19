@@ -5,7 +5,7 @@ class TokyoMetro::Static::TrainType::InApi::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
-  include ::TokyoMetro::Modules::Name::Common::TrainType::InApi
+  include ::OdptCommon::Modules::Name::Common::TrainType::InApi
 
   # @!group Constructor
 

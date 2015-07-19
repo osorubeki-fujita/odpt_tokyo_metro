@@ -29,7 +29,7 @@
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.minatomirai_line                  => (?-mix:YokohamaMinatomiraiRailway\.Minatomirai)
 module TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo
 
-  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
 
   # @!group 東京メトロ各線
 
@@ -66,7 +66,7 @@ module TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo
   # @!group 有楽町線・副都心線
 
   SEIBU_IKEBUKURO_LINE = /Seibu\.Ikebukuro/
-  SEIBU_LINE = /Seibu\.(?:Ikebukuro|Sayama|Chichibu)/
+  SEIBU_LINE = /Seibu\.(?:Ikebukuro|Sayama|Chichibu|Yurakucho)/
   TOBU_TOJO_LINE = /Tobu\.Tojo/
   TOKYU_TOYOKO_LINE = /Tokyu\.Toyoko/
   MINATOMIRAI_LINE = /YokohamaMinatomiraiRailway\.Minatomirai/

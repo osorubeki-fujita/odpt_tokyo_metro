@@ -36,7 +36,7 @@
 #   TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.shin_kiba             => odpt.Station:TokyoMetro.Yurakucho.ShinKiba
 module TokyoMetro::Modules::Dictionary::Common::Station::StringInfo
 
-  include ::OdptCommon::Modules::MethodMissing::Constant::Common::ConvertToClassMethod
+  include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
 
   ::YAML.load_file( "#{ ::TokyoMetro::dictionary_dir }/station/frequently_appeared.yaml" ).each do | const_name , v |
     const_set( eval( ":#{ const_name.upcase }" ) , v )
