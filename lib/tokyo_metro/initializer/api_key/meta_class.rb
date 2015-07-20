@@ -1,7 +1,7 @@
 class TokyoMetro::Initializer::ApiKey::MetaClass
 
-  def Initialize
-    @const_name = nil
+  def initialize( const_name = nil )
+    @const_name = const_name
   end
 
   def set
@@ -42,7 +42,7 @@ class TokyoMetro::Initializer::ApiKey::MetaClass
   end
 
   def filename
-    "#{ ::TokyoMetro::RAILS_DIR }/.#{ @const_name }"
+    "#{ ::TokyoMetro::RAILS_DIR }/#{ @const_name }"
   end
 
 end

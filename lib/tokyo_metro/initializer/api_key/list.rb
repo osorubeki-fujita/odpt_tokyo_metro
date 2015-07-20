@@ -1,6 +1,6 @@
 class TokyoMetro::Initializer::ApiKey::List < Array
 
-  def self.set
+  def set
     self.each do | namespace |
       namespace.set
     end

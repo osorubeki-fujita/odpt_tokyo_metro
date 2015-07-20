@@ -1,4 +1,4 @@
-class TokyoMetro::Modules::Name::Common::Operator::CssClass
+module TokyoMetro::Modules::Name::Common::Operator::CssClass
 
   # CSS のクラスの名称
   # @return [String]

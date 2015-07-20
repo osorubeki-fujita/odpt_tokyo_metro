@@ -2,11 +2,11 @@ class TokyoMetro::Factory::Design::RailwayLine::CssClass < OdptCommon::Factory::
 
   def to_s
     str = super()
-    if marunouchi_branch_line? or chiyoda_branch_line?
-      str.gsub( /Atokyo_metro_/ , "" )
-    elsif
-      str
+    if @object.marunouchi_branch_line? or @object.chiyoda_branch_line?
+      str = str.gsub( /Atokyo_metro_/ , "" )
     end
+
+    return str
   end
 
 end

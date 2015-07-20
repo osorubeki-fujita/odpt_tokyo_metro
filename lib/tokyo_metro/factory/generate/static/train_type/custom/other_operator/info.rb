@@ -75,7 +75,7 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::I
     when [ "line_color" ]
       key_of_line_color = info[ "line_color" ]
       # ラインカラーを取得する
-      ::TokyoMetro::Static.railway_lines.select_main_color( key_of_line_color )
+      ::TokyoMetro::Static.railway_line_infos.select_main_color( key_of_line_color )
 
     # キーに web, red, green, blue がそれぞれ指定されている場合
     when [ "web" , "red" , "green" , "blue" ]
