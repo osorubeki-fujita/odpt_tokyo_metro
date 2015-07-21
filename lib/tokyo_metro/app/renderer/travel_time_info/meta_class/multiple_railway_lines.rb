@@ -1,8 +1,8 @@
 class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::MultipleRailwayLines < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , railway_lines )
+  def initialize( request , railway_line_infos )
     super( request )
-    set_railway_lines( railway_lines )
+    set_railway_line_infos( railway_line_infos )
     common_procedures_when_initialize
   end
 
@@ -11,25 +11,12 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::MultipleRailwayLines
 
   private
 
-  def h_locals
-    super.merge({
-      railway_line: @main_railway_line_info ,
-      rows: rows ,
-      additional_info_top: additional_info_top ,
-      additional_info_bottom: additional_info_bottom
-    })
+  def set_railway_line_infos( railway_line_infos )
+    @railway_line_infos = railway_line_infos
   end
 
-  def set_railway_lines( railway_lines )
-    @railway_lines = railway_lines
+  def railway_line_info_base
+    @main_railway_line_info
   end
-
-=begin
-  def h_locals
-    super.merge({
-      railway_lines: @railway_lines
-    })
-  end
-=end
 
 end

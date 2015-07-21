@@ -95,8 +95,8 @@ module TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Common
   end
 
   def h_locals
-    super.merge({
-      railway_line: railway_line_base ,
+    super().merge({
+      railway_line_info: railway_line_info_base ,
       rows: @rows ,
       additional_info_top: additional_info_top ,
       additional_info_bottom: additional_info_bottom

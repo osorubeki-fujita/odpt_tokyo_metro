@@ -1,8 +1,8 @@
 class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::OneRailwayLine < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , railway_line )
+  def initialize( request , railway_line_info )
     super( request )
-    set_railway_line( railway_line )
+    set_railway_line_info( railway_line_info )
     common_procedures_when_initialize
   end
 
@@ -11,12 +11,12 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::OneRailwayLine < Tok
 
   private
 
-  def set_railway_line( railway_line )
-    @railway_line = railway_line
+  def set_railway_line_info( railway_line_info )
+    @railway_line_info = railway_line_info
   end
 
-  def railway_line_base
-    @railway_line
+  def railway_line_info_base
+    @railway_line_info
   end
 
 end
