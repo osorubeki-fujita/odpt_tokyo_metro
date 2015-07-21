@@ -32,7 +32,7 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
   end
 
   def starting_station_info
-    station_infos_including_other_railway_lines.first
+    station_infos_including_other_railway_line_infos.first
   end
 
   def to_station_info_ids

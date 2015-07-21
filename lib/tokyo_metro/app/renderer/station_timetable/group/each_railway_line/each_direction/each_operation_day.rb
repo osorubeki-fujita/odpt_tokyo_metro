@@ -51,7 +51,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
     #   railway_line を優先し、station と同名の駅に乗り入れている路線の中から railway_line と矛盾しない駅のインスタンスを取得する。
   def set_valid_station_info
     unless @station_info.railway_line_info_id == @railway_line.id
-      @station_info = @station_info.station_infos_including_other_railway_lines.find_by( railway_line_info_id: @railway_line.id )
+      @station_info = @station_info.station_infos_including_other_railway_line_infos.find_by( railway_line_info_id: @railway_line.id )
     end
   end
 
