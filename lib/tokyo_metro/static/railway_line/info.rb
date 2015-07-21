@@ -781,10 +781,11 @@ class TokyoMetro::Static::RailwayLine::Info
     if str.string?
       return str
     else
-      puts "Error:"
-      puts "  \[\name_ja_normal\] #{name_ja_normal_str} (class: #{name_ja_normal_str.class.name})"
-      puts "  \[operator_name_en_normal_str\] #{operator_name_en_normal_str} (class: #{operator_name_en_normal_str.class.name})"
-      raise "Error"
+      ary = ::Array.new
+      ary << "Error:"
+      ary << "  \[\name_ja_normal\] #{name_ja_normal_str} (class: #{name_ja_normal_str.class.name})"
+      ary << "  \[operator_name_en_normal_str\] #{operator_name_en_normal_str} (class: #{operator_name_en_normal_str.class.name})"
+      raise atr.join( "\n" )
     end
   end
 
@@ -1237,7 +1238,7 @@ class TokyoMetro::Static::RailwayLine::Info
     color_normal.to_rgb_color_in_parentheses
   end
 
-# @!group 路線色に関するメソッド (2)
+  # @!group 路線色に関するメソッド (2)
 
   # 標準の路線色の R 成分を取得するメソッド
   # @return [Integer]
@@ -1277,7 +1278,7 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.station_code_shape
   end
 
-# @!group 鉄道事業者の色に関するメソッド (1)
+  # @!group 鉄道事業者の色に関するメソッド (1)
 
   # 鉄道事業者の色を取得するメソッド
   # @return [::TokyoMetro::Static::Color]
@@ -1297,7 +1298,7 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.to_rgb_color_in_parentheses
   end
 
-# @!group 鉄道事業者の色に関するメソッド (2)
+  # @!group 鉄道事業者の色に関するメソッド (2)
 
   # 鉄道事業者の色の R 成分を取得するメソッド
   # @return [Integer]
@@ -1317,7 +1318,7 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.blue
   end
 
-# @!group SCSS に関するメソッド
+  # @!group SCSS に関するメソッド
 
   # SCSS で include する、形状を表す mixin を返すメソッド
   # @return [::String]
@@ -1389,8 +1390,6 @@ class TokyoMetro::Static::RailwayLine::Info
   def operator_of?( *args )
     super( *args , compared: operator.same_as )
   end
-
-
 
   def set_name_ja_short( operator , railway_line , en: false , with_operator: true )
     # 路線名が定義されていない場合

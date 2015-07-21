@@ -111,7 +111,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
 
   def railway_line_of_train
     if object.toei_mita_line?
-      ::RailwayLine.find_by( same_as: "odpt.Railway:Toei.Mita" )
+      ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Toei.Mita" )
     else
       @railway_line
     end

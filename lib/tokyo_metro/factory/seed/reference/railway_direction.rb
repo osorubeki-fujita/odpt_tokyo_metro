@@ -13,7 +13,7 @@ module TokyoMetro::Factory::Seed::Reference::RailwayDirection
   def railway_direction_id( _railway_line_info_id = railway_line_info_id , whole = nil , search_by: @info.railway_direction )
     # _railway_direction_in_db = railway_direction_in_db( _railway_line_info_id , whole , search_by: search_by )
     # if _railway_direction_in_db.nil?
-        # raise "Error: The railway direction \'#{search_by}\' of \'#{ ::RailwayLine.find_by( _railway_line_info_id ).same_as }\' is not defined."
+        # raise "Error: The railway direction \'#{search_by}\' of \'#{ ::Railway::Line::Info.find_by( _railway_line_info_id ).same_as }\' is not defined."
     # end
     # _railway_direction_in_db.id
     railway_direction_in_db( _railway_line_info_id , whole , search_by: search_by ).id

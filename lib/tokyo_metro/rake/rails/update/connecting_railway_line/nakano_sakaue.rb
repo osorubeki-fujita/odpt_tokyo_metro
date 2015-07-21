@@ -13,15 +13,15 @@ class TokyoMetro::Rake::Rails::Update::ConnectingRailwayLine::NakanoSakaue
       main: ::Station::Info.find_by( same_as: "odpt.Station:TokyoMetro.Marunouchi.NakanoSakaue" ) ,
       branch: ::Station::Info.find_by( same_as: "odpt.Station:TokyoMetro.MarunouchiBranch.NakanoSakaue" )
     }
-    @railway_lines = {
-      main: ::RailwayLine.find_by( same_as: "odpt.Railway:TokyoMetro.Marunouchi" ) ,
-      branch: ::RailwayLine.find_by( same_as: "odpt.Railway:TokyoMetro.MarunouchiBranch" )
+    @railway_line_infos = {
+      main: ::Railway::Line::Info.find_by( same_as: "odpt.Railway:TokyoMetro.Marunouchi" ) ,
+      branch: ::Railway::Line::Info.find_by( same_as: "odpt.Railway:TokyoMetro.MarunouchiBranch" )
     }
-    @oedo_line = ::RailwayLine.find_by( same_as: "odpt.Railway:Toei.Oedo" )
+    @oedo_line = ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Toei.Oedo" )
   end
 
   def update_connecting_railway_line
-    check_railway_lines
+    check_railway_line_infos
 
     @station_infos.each do | k , station_info |
       unless station_info.present?
@@ -95,16 +95,16 @@ class TokyoMetro::Rake::Rails::Update::ConnectingRailwayLine::NakanoSakaue
 
   private
 
-  def check_railway_lines
-    @railway_lines.each do | k , railway_line |
+  def check_railway_line_infos
+    @railway_line_infos.each do | k , railway_line |
       raise "Error: #{ k }" unless railway_line.present?
     end
   end
 
   def fundamental_hashes_for_finding_connecting_railway_line_infos
     [
-      { station_info_id: @station_infos[ :main ].id , railway_line_info_id: @railway_lines[ :branch ].id , connecting_station_info_id: @station_infos[ :branch ].id } ,
-      { station_info_id: @station_infos[ :branch ].id , railway_line_info_id: @railway_lines[ :main ].id , connecting_station_info_id: @station_infos[ :main ].id }
+      { station_info_id: @station_infos[ :main ].id , railway_line_info_id: @railway_line_infos[ :branch ].id , connecting_station_info_id: @station_infos[ :branch ].id } ,
+      { station_info_id: @station_infos[ :branch ].id , railway_line_info_id: @railway_line_infos[ :main ].id , connecting_station_info_id: @station_infos[ :main ].id }
     ]
   end
 

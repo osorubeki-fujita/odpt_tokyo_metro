@@ -1,12 +1,12 @@
 class TokyoMetro::App::Renderer::Twitter < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , setting , railway_lines = nil , visibility: :visible )
-    raise "Error" unless setting == :tokyo_metro or setting == :railway_lines
-    raise "Error" if setting == :railway_lines and railway_lines.blank?
+  def initialize( request , setting , railway_line_infos = nil , visibility: :visible )
+    raise "Error" unless setting == :tokyo_metro or setting == :railway_line_infos
+    raise "Error" if setting == :railway_line_infos and railway_line_infos.blank?
     raise "Error" unless visibility == :visible or visibility == :hidden
     super( request )
     @setting = setting
-    @railway_lines = [ railway_lines ].flatten
+    @railway_line_infos = [ railway_line_infos ].flatten
     @visibility = visibility
   end
 
@@ -21,11 +21,11 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::Factory::Decorate::MetaCl
     - if setting == :tokyo_metro
       %div{ id: :tweets_of_tokyo_metro , class: :twitter_account }
         = ::ApplicationHelper.tokyo_metro.decorate.render_twitter_widget
-    - elsif setting == :railway_lines
-      - if railway_lines.length == 1
-        = railway_lines.first.decorate.render_twitter_widget
+    - elsif setting == :railway_line_infos
+      - if railway_line_infos.length == 1
+        = railway_line_infos.first.decorate.render_twitter_widget
       - else
-        - railway_lines.each do | railway_line |
+        - railway_line_infos.each do | railway_line |
           = railway_line.decorate.render_twitter_widget
   = ::TwitterAccountDecorator.embed_twitter_script
     HAML
@@ -36,33 +36,33 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::Factory::Decorate::MetaCl
   def h_locals
     super.merge({
       setting: @setting ,
-      railway_lines: railway_lines_to_render ,
+      railway_line_infos: railway_line_infos_to_render ,
       visibility: @visibility
     })
   end
 
-  def railway_lines_to_render
-    unless @setting == :railway_lines
+  def railway_line_infos_to_render
+    unless @setting == :railway_line_infos
       return nil
     end
 
-    if @railway_lines.map( &:same_as ).include?( "odpt.Railway:TokyoMetro.MarunouchiBranch" )
-      if @railway_lines.length == 1
-        return ::RailwayLine.where( same_as: "odpt.Railway:TokyoMetro.Marunouchi" )
+    if @railway_line_infos.map( &:same_as ).include?( "odpt.Railway:TokyoMetro.MarunouchiBranch" )
+      if @railway_line_infos.length == 1
+        return ::Railway::Line::Info.where( same_as: "odpt.Railway:TokyoMetro.Marunouchi" )
       else
-        return @railway_lines.delete_if { | item | item.same_as == "odpt.Railway:TokyoMetro.MarunouchiBranch" }
+        return @railway_line_infos.delete_if { | item | item.same_as == "odpt.Railway:TokyoMetro.MarunouchiBranch" }
       end
     end
 
-    if @railway_lines.map( &:same_as ).include?( "odpt.Railway:TokyoMetro.ChiyodaBranch" )
-      if @railway_lines.length == 1
-        return ::RailwayLine.where( same_as: "odpt.Railway:TokyoMetro.Chiyoda" )
+    if @railway_line_infos.map( &:same_as ).include?( "odpt.Railway:TokyoMetro.ChiyodaBranch" )
+      if @railway_line_infos.length == 1
+        return ::Railway::Line::Info.where( same_as: "odpt.Railway:TokyoMetro.Chiyoda" )
       else
-        return @railway_lines.delete_if { | item | item.same_as == "odpt.Railway:TokyoMetro.ChiyodaBranch" }
+        return @railway_line_infos.delete_if { | item | item.same_as == "odpt.Railway:TokyoMetro.ChiyodaBranch" }
       end
     end
 
-    return @railway_lines
+    return @railway_line_infos
   end
 
 end

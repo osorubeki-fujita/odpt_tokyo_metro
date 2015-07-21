@@ -13,7 +13,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Top::
     ]
     @railway_line_and_terminal_station_info = ::TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::EachType::RailwayLineAndTerminalStation.new(
         @request ,
-      ::RailwayLine.find_by( same_as: "odpt.Railway:Odakyu.Odawara" ) ,
+      ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Odakyu.Odawara" ) ,
       ::Station::Info.find_by( same_as: "odpt.Station:Odakyu.Odawara.HonAtsugi" )
     )
   end

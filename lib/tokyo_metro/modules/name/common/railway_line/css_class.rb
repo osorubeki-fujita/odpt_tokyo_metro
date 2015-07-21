@@ -1,4 +1,4 @@
-# @note 【書き直し】Rails の model {::RailwayLine} には column 'is_branch_railway_line_info' が定義されているので、この module を include することができる。
+# @note 【書き直し】Rails の model {::Railway::Line::Info} には column 'is_branch_railway_line_info' が定義されているので、この module を include することができる。
 module TokyoMetro::Modules::Name::Common::RailwayLine::CssClass
 
   # @!group CSS に関するメソッド

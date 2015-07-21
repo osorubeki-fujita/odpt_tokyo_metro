@@ -9,7 +9,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime::Checker
       ::TokyoMetro::Modules::Dictionary::Common::RailwayLine::StringList.railway_line_string_list_in_system( symbol )
     }.flatten
 
-    @railway_line_info_ids = ::RailwayLine.where( same_as: railway_lines_same_as ).pluck( :id )
+    @railway_line_info_ids = ::Railway::Line::Info.where( same_as: railway_lines_same_as ).pluck( :id )
 
     #--------
 

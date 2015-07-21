@@ -22,7 +22,7 @@ class TokyoMetro::Factory::Seed::Static::Station::RailwayLines < TokyoMetro::Fac
       same_as: "odpt.Station:Undefined" ,
       name_ja: "未定義" ,
       name_en: "Undefined" ,
-      railway_line_info_id: ::RailwayLine.find_by( same_as: "odpt.Railway:Undefined" ).id ,
+      railway_line_info_id: ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Undefined" ).id ,
       operator_id: ::Operator.find_by( same_as: "odpt.Operator:Undefined" ).id
     )
   end

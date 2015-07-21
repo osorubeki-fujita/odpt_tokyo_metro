@@ -4,12 +4,12 @@ class TokyoMetro::Api::StationTimetable::List < TokyoMetro::Api::MetaClass::NotR
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
-  include ::TokyoMetro::Modules::Fundamental::Api::List::Selection::RailwayLines
+  include ::TokyoMetro::Modules::Fundamental::Api::List::Selection::Railway::Line::Infos
 
   def seed
     super(
       ::Operator.all ,
-      ::RailwayLine.all ,
+      ::Railway::Line::Info.all ,
       ::Station::Info.all ,
       ::Railway::Direction.all ,
       display_number: true

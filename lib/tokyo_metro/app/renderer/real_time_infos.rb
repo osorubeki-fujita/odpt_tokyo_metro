@@ -147,7 +147,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   def self.process_in_loop
     if on_rails_application?
       puts "process_in_loop"
-      self.new( nil , ::RailwayLine.tokyo_metro , visibility: :hidden ).update_train_operation_text_in_db
+      self.new( nil , ::Railway::Line::Info.tokyo_metro , visibility: :hidden ).update_train_operation_text_in_db
     end
     return nil
   end
@@ -155,7 +155,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   private
 
   def set_railway_line_infos( railway_line_infos )
-    if railway_line_infos.instance_of?( ::RailwayLine )
+    if railway_line_infos.instance_of?( ::Railway::Line::Info )
       @railway_line_infos = [ railway_line_infos ]
     else
       @railway_line_infos = railway_line_infos.except_for_branch_lines

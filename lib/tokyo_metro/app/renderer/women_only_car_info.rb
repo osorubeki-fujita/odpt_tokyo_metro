@@ -23,14 +23,14 @@ class TokyoMetro::App::Renderer::WomenOnlyCarInfo < TokyoMetro::Factory::Decorat
   private
 
   def set_infos
-    if @railway_lines.instance_of?( ::RailwayLine )
+    if @railway_lines.instance_of?( ::Railway::Line::Info )
       infos_in_db = ::Railway::Line::WomenOnlyCarInfo.where( railway_line_info_id: @railway_lines.id )
     else
       infos_in_db = ::Railway::Line::WomenOnlyCarInfo.where( railway_line_info_id: @railway_lines.pluck( :id ) )
     end
 
     @infos = infos_in_db.includes( :operation_day , :from_station_info , :to_station_info ).to_a.group_by( &:railway_line_info_id ).map { | railway_line_info_id , infos |
-      ::TokyoMetro::App::Renderer::WomenOnlyCarInfo::EachRailwayLine.new( @request , ::RailwayLine.find( railway_line_info_id ) , infos )
+      ::TokyoMetro::App::Renderer::WomenOnlyCarInfo::EachRailwayLine.new( @request , ::Railway::Line::Info.find( railway_line_info_id ) , infos )
     }
   end
 

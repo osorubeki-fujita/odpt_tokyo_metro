@@ -60,7 +60,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
 
     h[ :station_facility_info_id ] = station_facility_info_id
     h[ :railway_line_info_id ] = @railway_line_info_id
-    h[ :operator_id ] = ::RailwayLine.find( @railway_line_info_id ).operator_id
+    h[ :operator_id ] = ::Railway::Line::Info.find( @railway_line_info_id ).operator_id
 
     [
       :name_ja , :name_hira , :name_in_system , :name_en , :index_in_railway_line ,

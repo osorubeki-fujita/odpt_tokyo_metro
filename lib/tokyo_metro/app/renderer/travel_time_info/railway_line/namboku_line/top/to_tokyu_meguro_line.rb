@@ -9,7 +9,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::NambokuLine::Top::
     ]
     @railway_line_and_terminal_station_info = ::TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::EachType::RailwayLineAndTerminalStation.new(
       @request ,
-      ::RailwayLine.find_by_same_as( "odpt.Railway:Tokyu.Meguro" ) ,
+      ::Railway::Line::Info.find_by_same_as( "odpt.Railway:Tokyu.Meguro" ) ,
       ::Station::Info.find_by_same_as( "odpt.Station:Tokyu.Meguro.Hiyoshi" )
     )
   end

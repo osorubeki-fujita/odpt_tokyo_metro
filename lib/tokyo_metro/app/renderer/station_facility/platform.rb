@@ -15,7 +15,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::BetweenWakoshiAndHikawadai::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
-        ::RailwayLine.where( id: railway_line_info_ids_of_platform_infos )
+        ::Railway::Line::Info.where( id: railway_line_info_ids_of_platform_infos )
       )
 
     when :kotake_mukaihara
@@ -23,7 +23,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::KotakeMukaihara::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
-        ::RailwayLine.where( id: railway_line_info_ids_of_platform_infos )
+        ::Railway::Line::Info.where( id: railway_line_info_ids_of_platform_infos )
       )
 
     when :meguro_and_shirokanedai
@@ -31,7 +31,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::MeguroAndShirokanedai::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
-        ::RailwayLine.where( same_as: [ "odpt.Railway:TokyoMetro.Namboku" , "odpt.Railway:Toei.Mita" ] ).order( :id )
+        ::Railway::Line::Info.where( same_as: [ "odpt.Railway:TokyoMetro.Namboku" , "odpt.Railway:Toei.Mita" ] ).order( :id )
       )
 
     when :shirokane_takanawa
@@ -39,7 +39,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
       ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::ShirokaneTakanawa::Whole.new(
         request ,
         @platform_infos_grouped_by_railway_line.values.first ,
-        ::RailwayLine.where( same_as: [ "odpt.Railway:TokyoMetro.Namboku" , "odpt.Railway:Toei.Mita" ] ).order( :id )
+        ::Railway::Line::Info.where( same_as: [ "odpt.Railway:TokyoMetro.Namboku" , "odpt.Railway:Toei.Mita" ] ).order( :id )
       )
 
     when :normal
@@ -48,7 +48,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
         ary << ::TokyoMetro::App::Renderer::StationFacility::Platform::Info::Normal::Whole.new(
           request ,
           platform_infos ,
-          ::RailwayLine.find( railway_line_info_id )
+          ::Railway::Line::Info.find( railway_line_info_id )
         )
       end
 
@@ -123,7 +123,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform < TokyoMetro::Factory
   end
 
   def platform_infos_of?( *ary )
-    railway_line_info_ids_of_platform_infos.map { | railway_line_info_id | ::RailwayLine.find( railway_line_info_id ).same_as } == ary
+    railway_line_info_ids_of_platform_infos.map { | railway_line_info_id | ::Railway::Line::Info.find( railway_line_info_id ).same_as } == ary
   end
 
   # @!group 駅の判定

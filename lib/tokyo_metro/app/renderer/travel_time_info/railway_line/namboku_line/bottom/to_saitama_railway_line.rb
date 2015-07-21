@@ -9,7 +9,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::NambokuLine::Botto
     ]
     @railway_line_and_terminal_station_info = ::TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::EachType::RailwayLineAndTerminalStation.new(
       @request ,
-      ::RailwayLine.find_by( same_as: "odpt.Railway:SaitamaRailway.SaitamaRailway" ) ,
+      ::Railway::Line::Info.find_by( same_as: "odpt.Railway:SaitamaRailway.SaitamaRailway" ) ,
       ::Station::Info.find_by( same_as: "odpt.Station:SaitamaRailway.SaitamaRailway.UrawaMisono" )
     )
   end
