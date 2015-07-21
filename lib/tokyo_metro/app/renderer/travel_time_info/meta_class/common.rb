@@ -44,7 +44,7 @@ module TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Common
   end
 
   def set_station_infos
-    @station_infos = railway_line_base.station_infos.order( :index_in_railway_line )
+    @station_infos = railway_line_info_base.station_infos.order( :index_in_railway_line )
   end
 
   def set_section_infos
@@ -52,7 +52,7 @@ module TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Common
   end
 
   def set_travel_time_infos
-    @travel_time_infos = railway_line_base.travel_time_infos.includes( :from_station_info , :to_station_info )
+    @travel_time_infos = railway_line_info_base.travel_time_infos.includes( :from_station_info , :to_station_info )
   end
 
   def set_renderer_of_rows

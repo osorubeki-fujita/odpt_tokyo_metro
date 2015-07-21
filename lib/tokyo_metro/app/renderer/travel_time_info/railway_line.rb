@@ -1,15 +1,15 @@
 module TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine
 
-  def self.instance_of( request , railway_lines )
-    railway_lines = [ railway_lines ].flatten
-    case railway_lines.length
+  def self.instance_of( request , railway_line_infos )
+    railway_line_infos = [ railway_line_infos ].flatten
+    case railway_line_infos.length
     when 1
-      railway_line = railway_lines.first
-      class_name_of_instance_for_one_railway_line( railway_line ).new( request , railway_line )
+      railway_line_info = railway_line_infos.first
+      class_name_of_instance_for_one_railway_line( railway_line_info ).new( request , railway_line_info )
     when 2
-      class_name_of_instance_for_multiple_railway_lines( railway_lines ).new( request , railway_lines )
+      class_name_of_instance_for_multiple_railway_lines( railway_line_infos ).new( request , railway_line_infos )
     else
-      raise "Error: \"#{ railway_lines.pluck( :same_as ).to_s }\" is not valid."
+      raise "Error: \"#{ railway_line_infos.pluck( :same_as ).to_s }\" is not valid."
     end
   end
 
@@ -17,8 +17,8 @@ module TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine
 
     private
 
-    def class_name_of_instance_for_one_railway_line( railway_line )
-      case railway_line.same_as
+    def class_name_of_instance_for_one_railway_line( railway_line_info )
+      case railway_line_info.same_as
       when "odpt.Railway:TokyoMetro.Ginza"
         ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::GinzaLine
       when "odpt.Railway:TokyoMetro.Hibiya"
@@ -34,13 +34,13 @@ module TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine
       when "odpt.Railway:TokyoMetro.Fukutoshin"
         ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::FukutoshinLine
       else
-        raise "Error: \"#{ railway_line.same_as }\" is not valid."
+        raise "Error: \"#{ railway_line_info.same_as }\" is not valid."
       end
     end
 
-    def class_name_of_instance_for_multiple_railway_lines( railway_lines )
-      railway_lines_same_as = railway_lines.to_a.map( &:same_as ).sort
-      case railway_lines_same_as
+    def class_name_of_instance_for_multiple_railway_lines( railway_line_infos )
+      railway_line_infos_same_as = railway_line_infos.to_a.map( &:same_as ).sort
+      case railway_line_infos_same_as
       when [ "odpt.Railway:TokyoMetro.Marunouchi" , "odpt.Railway:TokyoMetro.MarunouchiBranch" ].sort
         ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::MarunouchiLine
       when [ "odpt.Railway:TokyoMetro.Chiyoda" , "odpt.Railway:TokyoMetro.ChiyodaBranch" ].sort
@@ -48,7 +48,7 @@ module TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine
       when [ "odpt.Railway:TokyoMetro.Yurakucho" , "odpt.Railway:TokyoMetro.Fukutoshin" ].sort
         ::TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::YurakuchoAndFukutoshinLine
       else
-        raise "Error: \"#{ railway_lines_same_as.to_s }\" is not valid."
+        raise "Error: \"#{ railway_line_infos_same_as.to_s }\" is not valid."
       end
     end
 

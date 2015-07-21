@@ -7,7 +7,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::MarunouchiLine < T
     @branch_railway_line_info = railway_lines.find( &:marunouchi_branch_line? )
   end
 
-  def railway_line_base
+  def railway_line_info_base
     @main_railway_line_info
   end
 
