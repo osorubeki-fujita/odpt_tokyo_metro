@@ -11,10 +11,10 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
   def li_classes
     ary = super()
     unless connected_to_jr_lines?
-      if connecting_railway_line_object.not_recommended?
+      if connecting_railway_line_info_object.not_recommended?
         ary << :not_recommended
       end
-      if connecting_railway_line_object.cleared?
+      if connecting_railway_line_info_object.cleared?
         ary << :cleared
       end
     end
@@ -30,7 +30,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
   end
 
   def has_additional_transfer_info_to_display?
-    @display_additional_transfer_info and connecting_railway_line_info_decorator? and ( connecting_railway_line_object.not_recommended? or connecting_railway_line_object.note.present? )
+    @display_additional_transfer_info and connecting_railway_line_info_decorator? and ( connecting_railway_line_info_object.not_recommended? or connecting_railway_line_info_object.note.present? )
   end
 
   def additional_transfer_info_to_display
@@ -38,7 +38,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
       h_locals_i = {
         request: request ,
         c_railway_line_decorated: @connecting_railway_line_decorated ,
-        note: connecting_railway_line_object.note
+        note: connecting_railway_line_info_object.note
       }
       h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 - if c_railway_line_decorated.not_recommended? and note.present?

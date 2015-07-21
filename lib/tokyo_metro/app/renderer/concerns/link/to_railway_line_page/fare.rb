@@ -24,19 +24,19 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::Fare < Tokyo
   end
 
   def link_to_this_page?
-    super() or ( railway_line_param_is_not_set? and railway_line_of_station_info_and_railway_line_object_is_the_same? )
+    super() or ( railway_line_param_is_not_set? and railway_line_of_station_info_and_railway_line_info_object_is_the_same? )
   end
 
   def railway_line_param_is_not_set?
     current_railway_line.blank?
   end
 
-  def railway_line_of_station_info_and_railway_line_object_is_the_same?
-    @station_info.railway_line.id == railway_line_object.id
+  def railway_line_of_station_info_and_railway_line_info_object_is_the_same?
+    @station_info.railway_line.id == railway_line_info_object.id
   end
 
   def railway_line_on_this_station?
-    @station_info.connected_to?( railway_line_object , only_tokyo_metro: true , include_myself: true )
+    @station_info.connected_to?( railway_line_info_object , only_tokyo_metro: true , include_myself: true )
   end
 
   def h_locals

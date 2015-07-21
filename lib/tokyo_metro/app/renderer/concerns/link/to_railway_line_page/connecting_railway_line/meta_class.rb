@@ -7,12 +7,12 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
 
   private
 
-  def connecting_railway_line_object
+  def connecting_railway_line_info_object
     @connecting_railway_line_decorated.object
   end
 
   def object
-    connecting_railway_line_object
+    connecting_railway_line_info_object
   end
 
   def to_render?
@@ -60,7 +60,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
   end
 
   def connected_to_jr_lines?
-    @connecting_railway_line_decorated.instance_of?( ::Railway::Line::InfoDecorator ) and connecting_railway_line_object.on_jr_lines?
+    @connecting_railway_line_decorated.instance_of?( ::Railway::Line::InfoDecorator ) and connecting_railway_line_info_object.on_jr_lines?
   end
 
 end

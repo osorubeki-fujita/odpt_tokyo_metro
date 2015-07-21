@@ -29,8 +29,8 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass < 
     @railway_line_decorated.object
   end
 
-  def railway_line_object
-    object.railway_line
+  def railway_line_info_object
+    object.railway_line_info
   end
 
   def railway_line_page_name
@@ -41,7 +41,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass < 
     ary = [ :railway_line , :small ]
 
     if add_railway_line_css_class_to_li_classes?
-      ary << railway_line_object.css_class
+      ary << railway_line_info_object.css_class
     end
 
     if @additional_class_of_li.present?
