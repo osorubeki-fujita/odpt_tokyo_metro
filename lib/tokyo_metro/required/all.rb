@@ -12,8 +12,6 @@ class TokyoMetro::Required::All < TokyoMetro::Required
       #
       ClassNameLibrary.files ,
       #
-      Others.files ,
-      #
       Static.files ,
       Api.files ,
       #
@@ -22,7 +20,6 @@ class TokyoMetro::Required::All < TokyoMetro::Required
       #
       Refinement.files ,
       TempLib.files ,
-      Document.files ,
       Test.files ,
       Search.files ,
       Rake.files

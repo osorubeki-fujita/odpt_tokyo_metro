@@ -12,45 +12,46 @@ namespace :tokyo_metro do
       end
     end
 
-    desc "YARD によるドキュメント生成"
-    task :document => :load_scripts_related_to_document do
-      ::TokyoMetro::Document.yard( verbose: true )
-    end
+    namespace :document do
 
-    namespace :gviz do
-      desc "Ruby のクラス図の生成"
-      task :ruby_graph => :load_scripts_related_to_document do
-        ::TokyoMetro::Document::Gviz::RubyGraph.process
+      desc "YARD によるドキュメント生成"
+      task :yard => :load_scripts_related_to_document do
+        ::TokyoMetro::Rake::Make::Document::Yard.process( verbose: true )
       end
 
-      desc "ファイルの階層図の生成"
-      task :dir_graph => :load_scripts_related_to_document do
-        ::TokyoMetro::Document::Gviz::DirGraph.process( dot_files: true , db_dot_files: true )
+      namespace :gviz do
+        desc "Ruby のクラス図の生成"
+        task :ruby_graph => :load_scripts_related_to_document do
+          ::TokyoMetro::Rake::Make::Document::Gviz::RubyGraph.process
+        end
+
+        desc "ファイルの階層図の生成"
+        task :dir_graph => :load_scripts_related_to_document do
+          ::TokyoMetro::Rake::Make::Document::Gviz::DirGraph.process( dot_files: true , db_dot_files: true )
+        end
+
+        desc "画像ファイルの生成（dot ファイルを変換）"
+        task :convert_images => :load_scripts_related_to_document do
+          ::TokyoMetro::Rake::Make::Document::Gviz::ConvertToImage.process( include_ruby_classes: false )
+        end
       end
 
-      desc "画像ファイルの生成（dot ファイルを変換）"
-      task :convert_images => :load_scripts_related_to_document do
-        ::TokyoMetro::Document::Gviz::ConvertToImage.process( include_ruby_classes: false )
-      end
     end
 
     namespace :examples do
       desc "ドキュメント内で使用する例の作成"
       task :static => :load do
         ::TokyoMetro.set_fundamental_constants
-        ::TokyoMetro::Document::MakeExamples::Static.process
+        ::TokyoMetro::Rake::Make::Document::Examples::Static.process
       end
     end
 
     desc "駅名辞書の生成 (YAML <- CSV)"
     task :yaml_station_list => :load do
-      ::TokyoMetro::Factory::YamlStationList.process
-    end
-
-    desc "Static Example の作成"
-    task :static_examples => :load do
-      ::TokyoMetro::Document::MakeExamples::Static.process
+      ::TokyoMetro::Rake::Make::YamlStationList.process
     end
 
   end
 end
+
+# ::TokyoMetro::Rake::Make::Document::Gviz.set_dir

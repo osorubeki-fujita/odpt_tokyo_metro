@@ -24,24 +24,8 @@ def set_tasks_to_count_rows
 =end
         "#{ ::Rails.root }/app/helpers/**/**.rb" ,
       ].map { | str | Dir.glob( str ) }.flatten.sort
-      ary_of_row_info = ::Array.new
 
-      all_rows = 0
-
-      files.each do | filename |
-        file_content = open( filename , "r:utf-8" ).read.split( /\n/ ).delete_if { | row | /\A +end\Z/ === row or /\A *\Z/ === row }
-        rows = file_content.length
-        all_rows += rows
-        ary_of_row_info << { filename: filename , rows: rows }
-      end
-
-      ary_of_row_info.sort_by { | item | item[ :rows ] }.each do | row_info |
-        i = 108
-        str = row_info[ :filename ] + " " + "." * [ 0 , ( i - row_info[ :filename ].length ) ].max + " " + row_info[ :rows ].to_s.rjust(4)
-        puts str
-      end
-      puts ""
-      puts "#{ files.length} files, #{ all_rows } rows"
+      ::PositiveCodeCounter.process( files )
     end
   end
 end
