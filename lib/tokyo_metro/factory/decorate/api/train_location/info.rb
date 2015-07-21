@@ -1,8 +1,8 @@
 class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Factory::Decorate::Api::MetaClass::RealTime::Info
 
-  def initialize( request , obj , railway_line )
+  def initialize( request , obj , railway_line_info )
     super( request , obj )
-    @railway_line = railway_line
+    @railway_line_info = railway_line_info
     set_station_infos
     set_place_id
   end
@@ -113,7 +113,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     if object.toei_mita_line?
       ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Toei.Mita" )
     else
-      @railway_line
+      @railway_line_info
     end
   end
 
@@ -128,7 +128,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
   [ :ginza , :marunouchi , :marunouchi_branch , :hibiya , :tozai , :chiyoda , :yurakucho , :hanzomon , :namboku , :fukutoshin ].each do | method_basename |
     eval <<-DEF
       def on_#{ method_basename }_line_page?
-        @railway_line.same_as == "odpt.Railway:TokyoMetro.#{ method_basename.camelize }"
+        @railway_line_info.same_as == "odpt.Railway:TokyoMetro.#{ method_basename.camelize }"
       end
     DEF
   end
