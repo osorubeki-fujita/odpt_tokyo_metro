@@ -1,11 +1,11 @@
 class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Factory::Decorate::MetaClass
 
-  # @params station_infos_including_other_railway_lines は、駅（全路線）のインスタンスとする。
+  # @params station_infos_including_other_railway_line_infos は、駅（全路線）のインスタンスとする。
   # @params railway_line [::RailwayLine]
-  def initialize( request , railway_line , station_infos_including_other_railway_lines , starting_station_info , fares , fare_normal_groups )
+  def initialize( request , railway_line , station_infos_including_other_railway_line_infos , starting_station_info , fares , fare_normal_groups )
     super( request )
     @railway_line = railway_line
-    @station_infos_including_other_railway_lines = station_infos_including_other_railway_lines
+    @station_infos_including_other_railway_line_infos = station_infos_including_other_railway_line_infos
     @starting_station_info = starting_station_info
     @fares = fares
     @fare_normal_groups = fare_normal_groups
@@ -68,7 +68,7 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
   def h_locals
     super.merge({
       this: self ,
-      station_infos_including_other_railway_lines: @station_infos_including_other_railway_lines ,
+      station_infos_including_other_railway_line_infos: @station_infos_including_other_railway_line_infos ,
       starting_station_info: @starting_station_info ,
       railway_line: @railway_line ,
       fares: @fares ,
@@ -108,13 +108,13 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
   end
 
   # 路線のインスタンス railway_line に、
-  # station_infos_including_other_railway_lines の要素である駅（路線別）が含まれている場合は、その駅の id を返す。
+  # station_infos_including_other_railway_line_infos の要素である駅（路線別）が含まれている場合は、その駅の id を返す。
   # 含まれていない場合は、nil を返す。
   # @param stations_of_this_instance 駅（路線）のインスタンス
   # @return [Integer or nil]
   # @note
   def set_id_of_starting_station_info
-    ids_of_station_infos = @station_infos_including_other_railway_lines.pluck( :id )
+    ids_of_station_infos = @station_infos_including_other_railway_line_infos.pluck( :id )
     ids_of_this_railway_line = @railway_line.station_infos.pluck( :id )
     common_station_info_ids = ( ids_of_station_infos & ids_of_this_railway_line )
     if common_station_info_ids.empty?

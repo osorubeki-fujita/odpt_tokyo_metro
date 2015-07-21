@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %div{ id: :fare_tables }
   - railway_lines_of_terminal_station.each do | railway_line |
-    = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine.new( request , railway_line , station_infos_including_other_railway_lines , starting_station_info , fares , fare_normal_groups ).render
+    = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine.new( request , railway_line , station_infos_including_other_railway_line_infos , starting_station_info , fares , fare_normal_groups ).render
     HAML
   end
 
@@ -19,7 +19,7 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
 
   def h_locals
     super.merge({
-      station_infos_including_other_railway_lines: station_infos_including_other_railway_lines ,
+      station_infos_including_other_railway_line_infos: station_infos_including_other_railway_line_infos ,
       starting_station_info: starting_station_info ,
       fares: fares ,
       fare_normal_groups: @fare_normal_groups ,
@@ -27,8 +27,8 @@ class TokyoMetro::App::Renderer::FareTable::Group < TokyoMetro::Factory::Decorat
     })
   end
 
-  def station_infos_including_other_railway_lines
-    @station_info.station_infos_including_other_railway_lines
+  def station_infos_including_other_railway_line_infos
+    @station_info.station_infos_including_other_railway_line_infos
   end
 
   def starting_station_info
