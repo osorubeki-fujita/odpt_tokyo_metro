@@ -4,7 +4,7 @@ class TokyoMetro::Api::StationTimetable::List < TokyoMetro::Api::MetaClass::NotR
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
-  include ::TokyoMetro::Modules::Fundamental::Api::List::Selection::Railway::Line::Infos
+  include ::TokyoMetro::Modules::Fundamental::Api::List::Selection::RailwayLines
 
   def seed
     super(

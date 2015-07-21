@@ -3,7 +3,7 @@ class TokyoMetro::Api::TrainTimetable::List < TokyoMetro::Api::MetaClass::NotRea
 
   include ::TokyoMetro::ClassNameLibrary::Api::TrainTimetable
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
-  include ::TokyoMetro::Modules::Fundamental::Api::List::Selection::Railway::Line::Infos
+  include ::TokyoMetro::Modules::Fundamental::Api::List::Selection::RailwayLines
 
   def seed
     super(
