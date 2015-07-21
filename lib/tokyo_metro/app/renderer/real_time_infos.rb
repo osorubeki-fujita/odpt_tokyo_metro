@@ -163,8 +163,8 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   end
 
   def set_infos_of_each_railway_line
-    @infos_of_each_railway_line = ::Array.new( @railway_line_infos.map { | railway_line |
-      ::TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine.new( request , railway_line , @http_client , @test_mode)
+    @infos_of_each_railway_line = ::Array.new( @railway_line_infos.map { | railway_line_info |
+      ::TokyoMetro::App::Renderer::RealTimeInfos::EachRailwayLine.new( request , railway_line_info , @http_client , @test_mode)
     })
   end
 
