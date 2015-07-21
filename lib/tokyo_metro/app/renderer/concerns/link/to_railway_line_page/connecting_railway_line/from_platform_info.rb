@@ -59,7 +59,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
     railway_line_for_this_platform_info = ::Railway::Line::Info.find( platform_info.railway_line_info_id )
     railway_line_connected = ::Railway::Line::Info.find( object.railway_line_info_id )
 
-    station_info = station_infos.find_by( railway_line: railway_line_for_this_platform_info )
+    station_info = station_infos.find_by( railway_line_info: railway_line_for_this_platform_info )
 
     if railway_line_connected.on_jr_lines?
       puts "station info: #{ station_info.same_as }"
@@ -72,7 +72,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
       r = nil
 
     else
-      connecting_railway_line_info = station_info.connecting_railway_line_infos.find_by( railway_line: railway_line_connected )
+      connecting_railway_line_info = station_info.connecting_railway_line_infos.find_by( railway_line_info: railway_line_connected )
       unless connecting_railway_line_info.present?
         puts "station info: #{ station_info.same_as }"
         puts "railway line of this station: #{ railway_line_for_this_platform_info.same_as }"
