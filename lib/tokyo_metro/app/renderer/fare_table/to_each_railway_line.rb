@@ -10,7 +10,7 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
     @fares = fares
     @fare_normal_groups = fare_normal_groups
 
-    @station_infos_of_railway_line = set_station_infos_of_railway_line
+    @station_infos_of_railway_line_info = set_station_infos_of_railway_line_info
     @id_of_starting_station_info = set_id_of_starting_station_info
   end
 
@@ -81,7 +81,7 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %table{ class: [ :fare_table , railway_line_info.css_class ] }
   = this.render_header_of_table
-  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_before_starting_station , fares , fare_normal_groups , to_make_empty_row_when_no_station: true ).render
+  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info_before_starting_station , fares , fare_normal_groups , to_make_empty_row_when_no_station: true ).render
   - #
   %tr<
     = ::Station::Info.find( id_of_starting_station_info ).decorate.render_in_fare_table( starting_station_info: true )
@@ -91,7 +91,7 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
       %div{ class: :text_en }
         = "Fares from this station are displayed now."
   - #
-  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_after_starting_station , fares , fare_normal_groups ).render
+  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info_after_starting_station , fares , fare_normal_groups ).render
     HAML
   end
 
