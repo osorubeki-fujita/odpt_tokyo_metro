@@ -28,38 +28,39 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
       starting_station_info_decorated: @starting_station_info.decorate
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
-%tr{ class: :header }
-  %td{ rowspan: 3 , class: [ :station_name_top , :header_bottom ] }<
-    - # 出発駅を表示
-    %div{ class: [ :starting_station_info , :clearfix ] }
-      = starting_station_info_decorated.code.render_image( all: true )
-      %div{ class: :text }
-        = starting_station_info_decorated.render_name_ja_and_en( with_subname: true , suffix_ja: "から" , prefix_en: "From " )
-    %div{ class: :arrow }
-      = ::TokyoMetro::App::Renderer::Icon.angle_double_down( request ).render
-  %td{ colspan: 4 , class: :normal_fare }<
-    != "普通運賃"
-    %span{ class: [ :small , :text_en ] }<
-      = "Normal fare"
-%tr{ class: [ :header , :fare_type ] }
-  %td{ colspan: 2 , class: :ic_card }<
-    != "ICカード利用"
-    %span{ class: [ :small , :text_en ] }<
-      = "IC card"
-  %td{ colspan: 2 , class: :ticket }<
-    != "切符"
-    %span{ class: [ :small , :text_en ] }<
-      = "Ticket"
-%tr{ class: :header , class: :fares }
-  - [ :ic_card , :ticket ].each do | group |
-    %td{ class: [ group , :adult , :header_bottom ] }<
-      != "大人"
+%thead
+  %tr{ class: :header }
+    %td{ rowspan: 3 , class: [ :station_name_top , :header_bottom ] }<
+      - # 出発駅を表示
+      %div{ class: [ :starting_station_info , :clearfix ] }
+        = starting_station_info_decorated.code.render_image( all: true )
+        %div{ class: :text }
+          = starting_station_info_decorated.render_name_ja_and_en( with_subname: true , suffix_ja: "から" , prefix_en: "From " )
+      %div{ class: :arrow }
+        = ::TokyoMetro::App::Renderer::Icon.angle_double_down( request ).render
+    %td{ colspan: 4 , class: :normal_fare }<
+      != "普通運賃"
       %span{ class: [ :small , :text_en ] }<
-        = "Adult"
-    %td{ class: [ group , :child , :header_bottom ] }<
-      != "小児"
+        = "Normal fare"
+  %tr{ class: [ :header , :fare_type ] }
+    %td{ colspan: 2 , class: :ic_card }<
+      != "ICカード利用"
       %span{ class: [ :small , :text_en ] }<
-        = "Child"
+        = "IC card"
+    %td{ colspan: 2 , class: :ticket }<
+      != "切符"
+      %span{ class: [ :small , :text_en ] }<
+        = "Ticket"
+  %tr{ class: :header , class: :fares }
+    - [ :ic_card , :ticket ].each do | group |
+      %td{ class: [ group , :adult , :header_bottom ] }<
+        != "大人"
+        %span{ class: [ :small , :text_en ] }<
+          = "Adult"
+      %td{ class: [ group , :child , :header_bottom ] }<
+        != "小児"
+        %span{ class: [ :small , :text_en ] }<
+          = "Child"
     HAML
   end
 
@@ -81,17 +82,18 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %table{ class: [ :fare_table , railway_line_info.css_class ] }
   = this.render_header_of_table
-  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info_before_starting_station , fares , fare_normal_groups , to_make_empty_row_when_no_station: true ).render
-  - #
-  %tr<
-    = ::Station::Info.find( id_of_starting_station_info ).decorate.render_in_fare_table( starting_station_info: true )
-    %td{ class: :starting_station , colspan: 4 }<
-      %div{ class: :text_ja }
-        = "この駅からの運賃を表示しています"
-      %div{ class: :text_en }
-        = "Fares from this station are displayed now."
-  - #
-  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info_after_starting_station , fares , fare_normal_groups ).render
+  %tbody
+    = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info_before_starting_station , fares , fare_normal_groups , to_make_empty_row_when_no_station: true ).render
+    - #
+    %tr<
+      = ::Station::Info.find( id_of_starting_station_info ).decorate.render_in_fare_table( starting_station_info: true )
+      %td{ class: :starting_station , colspan: 4 }<
+        %div{ class: :text_ja }
+          = "この駅からの運賃を表示しています"
+        %div{ class: :text_en }
+          = "Fares from this station are displayed now."
+    - #
+    = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info_after_starting_station , fares , fare_normal_groups ).render
     HAML
   end
 
@@ -99,7 +101,8 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %table{ class: [ :fare_table , railway_line_info.css_class ] }
   = this.render_header_of_table
-  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info , fares , fare_normal_groups ).render
+  %tbody
+    = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info , fares , fare_normal_groups ).render
     HAML
   end
 
