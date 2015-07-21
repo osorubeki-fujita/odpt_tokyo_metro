@@ -7,8 +7,8 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::Ea
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
 %div{ class: :through_operation_info }
-  - if train_type.present?
-    = train_type.decorate.render_name_box_in_travel_time_info
+  - if train_type_info.present?
+    = train_type_info.decorate.render_name_box_in_travel_time_info
     %div{ class: :precise }
       = this.render_precise_infos
   - else
@@ -54,7 +54,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::Ea
   def h_locals
     super.merge({
       this: self ,
-      train_type: @train_type ,
+      train_type_info: @train_type_info ,
       from_station: @from_station ,
       directions: directions ,
       via: @via ,

@@ -3,7 +3,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Top::
   def initialize( request )
     super( request )
 
-    @train_type = ::Train::Type::Info.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
+    @train_type_info = ::Train::Type::Info.find_by( same_as: "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal" )
     @railway_line_and_terminal_station_info = [
       ::TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::EachType::RailwayLineAndTerminalStation.new(
         @request ,
