@@ -1304,6 +1304,7 @@ lib/tokyo_metro/factory/design/railway_line.rb
 lib/tokyo_metro/factory/design/railway_line/css_class.rb
 lib/tokyo_metro/factory/design/train_type.rb
 lib/tokyo_metro/factory/design/train_type/color_basename.rb
+lib/tokyo_metro/factory/design/train_type/css_class.rb
 lib/tokyo_metro/app.rb
 lib/tokyo_metro/app/renderer.rb
 lib/tokyo_metro/app/renderer/concerns.rb
