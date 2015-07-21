@@ -27,6 +27,7 @@ lib/tokyo_metro/modules/decision/common/fundamental/compare_base.rb
 lib/tokyo_metro/modules/decision/common/operator.rb
 lib/tokyo_metro/modules/decision/common/railway_line.rb
 lib/tokyo_metro/modules/decision/common/railway_line/branch_line.rb
+lib/tokyo_metro/modules/decision/common/railway_line/name.rb
 lib/tokyo_metro/modules/decision/common/railway_line/new_and_old.rb
 lib/tokyo_metro/modules/decision/common/railway_line/toei_mita_line.rb
 lib/tokyo_metro/modules/decision/common/romance_car.rb

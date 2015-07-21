@@ -31,7 +31,7 @@ module TokyoMetro::Modules::Decision::Common::RailwayLine::Name
   end
 
   #-------- [alias]
-  [ :marunouchi_line_including_branch , :yurakucho_or_fukutoshin_line , :namboku_or_toei_mita_line , :toei_mita_line , :shinkansen ].each do | method_base_name |
+  [ :marunouchi_line_including_branch , :yurakucho_or_fukutoshin_line , :namboku_or_toei_mita_line ].each do | method_base_name |
     eval <<-ALIAS
       alias :#{method_base_name}? :on_#{method_base_name}?
       alias :is_on_#{method_base_name}? :on_#{method_base_name}?

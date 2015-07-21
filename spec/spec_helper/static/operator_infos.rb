@@ -1,4 +1,4 @@
-def static_operators
+def static_operator_infos
   columns = [
     :same_as ,
     :name_ja_short ,
@@ -38,7 +38,7 @@ def static_operators
   ]
 
   describe ::TokyoMetro::Static::Operator::Info do
-    ::TokyoMetro::Static.operators.each do | operator , static_info |
+    ::TokyoMetro::Static.operator_infos.each do | operator , static_info |
       infos = operator_infos_in_db.find { | item | item[0] == operator }
       it "has valid infos" do
         for i in 1..( columns.length - 1 )

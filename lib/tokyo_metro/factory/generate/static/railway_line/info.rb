@@ -34,7 +34,7 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
   # @return [::TokyoMetro::Static::Operator::Info]
   def operator_instance
     operator_info = ::TokyoMetro::Static.operator_infos[ @h[ :operator ] ]
-    raise "Error: The operator is not defined." unless operator_info.nil?
+    raise "Error: The operator is not defined." unless operator_info.present?
     return operator_info
   end
 

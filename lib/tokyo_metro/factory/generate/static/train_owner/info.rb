@@ -17,7 +17,7 @@ class TokyoMetro::Factory::Generate::Static::TrainOwner::Info < TokyoMetro::Fact
   end
 
   def operator_instance_in_api
-    operator = ::TokyoMetro::Static.operators[ @operator_name ]
+    operator = ::TokyoMetro::Static.operator_infos[ @operator_name ]
 
     if operator.nil?
       puts @operator_name.class.name
