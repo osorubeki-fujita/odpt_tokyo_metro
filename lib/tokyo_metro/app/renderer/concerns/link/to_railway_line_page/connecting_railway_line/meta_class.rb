@@ -2,7 +2,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
 
   def initialize( request , connecting_railway_line_decorated )
     @connecting_railway_line_decorated = connecting_railway_line_decorated
-    super( request , connecting_railway_line_decorated.railway_line.decorate )
+    super( request , connecting_railway_line_decorated.railway_line_info.decorate )
   end
 
   private
