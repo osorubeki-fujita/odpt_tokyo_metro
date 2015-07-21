@@ -2,9 +2,9 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::MarunouchiLine < T
 
   private
 
-  def set_railway_lines( railway_lines )
-    @main_railway_line_info = railway_lines.find( &:marunouchi_line? )
-    @branch_railway_line_info = railway_lines.find( &:marunouchi_branch_line? )
+  def set_railway_line_infos( railway_line_infos )
+    @main_railway_line_info = railway_line_infos.find( &:marunouchi_line? )
+    @branch_railway_line_info = railway_line_infos.find( &:marunouchi_branch_line? )
   end
 
   def railway_line_info_base
