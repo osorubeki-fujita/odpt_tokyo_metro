@@ -56,8 +56,8 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
     platform_info = object.platform_info
     station_infos = platform_info.station_facility_info.station_infos
 
-    railway_line_for_this_platform_info = ::Railway::Line.find( platform_info.railway_line_info_id )
-    railway_line_connected = ::Railway::Line.find( object.railway_line_info_id )
+    railway_line_for_this_platform_info = ::Railway::Line::Info.find( platform_info.railway_line_info_id )
+    railway_line_connected = ::Railway::Line::Info.find( object.railway_line_info_id )
 
     station_info = station_infos.find_by( railway_line: railway_line_for_this_platform_info )
 
