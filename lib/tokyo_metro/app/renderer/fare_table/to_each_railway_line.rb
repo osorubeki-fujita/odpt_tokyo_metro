@@ -1,10 +1,10 @@
 class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Factory::Decorate::MetaClass
 
   # @params station_infos_including_other_railway_line_infos は、駅（全路線）のインスタンスとする。
-  # @params railway_line [::RailwayLine]
-  def initialize( request , railway_line , station_infos_including_other_railway_line_infos , starting_station_info , fares , fare_normal_groups )
+  # @params railway_line_info [::RailwayLine]
+  def initialize( request , railway_line_info , station_infos_including_other_railway_line_infos , starting_station_info , fares , fare_normal_groups )
     super( request )
-    @railway_line = railway_line
+    @railway_line_info = railway_line_info
     @station_infos_including_other_railway_line_infos = station_infos_including_other_railway_line_infos
     @starting_station_info = starting_station_info
     @fares = fares
@@ -70,16 +70,16 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
       this: self ,
       station_infos_including_other_railway_line_infos: @station_infos_including_other_railway_line_infos ,
       starting_station_info: @starting_station_info ,
-      railway_line: @railway_line ,
+      railway_line_info: @railway_line_info ,
       fares: @fares ,
       fare_normal_groups: @fare_normal_groups ,
       id_of_starting_station_info: @id_of_starting_station_info
-    }).merge( station_infos_of_railway_line_in_h_locals )
+    }).merge( station_infos_of_railway_line_info_in_h_locals )
   end
 
   def render_when_having_starting_station_info
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%table{ class: [ :fare_table , railway_line.css_class ] }
+%table{ class: [ :fare_table , railway_line_info.css_class ] }
   = this.render_header_of_table
   = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_before_starting_station , fares , fare_normal_groups , to_make_empty_row_when_no_station: true ).render
   - #
@@ -97,17 +97,17 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
 
   def render_when_not_having_starting_station_info
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%table{ class: [ :fare_table , railway_line.css_class ] }
+%table{ class: [ :fare_table , railway_line_info.css_class ] }
   = this.render_header_of_table
-  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line , fares , fare_normal_groups ).render
+  = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info , fares , fare_normal_groups ).render
     HAML
   end
 
-  def set_station_infos_of_railway_line
-    @railway_line.station_infos.order( :index_in_railway_line )
+  def set_station_infos_of_railway_line_info
+    @railway_line_info.station_infos.order( :index_in_railway_line )
   end
 
-  # 路線のインスタンス railway_line に、
+  # 路線のインスタンス railway_line_info に、
   # station_infos_including_other_railway_line_infos の要素である駅（路線別）が含まれている場合は、その駅の id を返す。
   # 含まれていない場合は、nil を返す。
   # @param stations_of_this_instance 駅（路線）のインスタンス
@@ -115,7 +115,7 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
   # @note
   def set_id_of_starting_station_info
     ids_of_station_infos = @station_infos_including_other_railway_line_infos.pluck( :id )
-    ids_of_this_railway_line = @railway_line.station_infos.pluck( :id )
+    ids_of_this_railway_line = @railway_line_info.station_infos.pluck( :id )
     common_station_info_ids = ( ids_of_station_infos & ids_of_this_railway_line )
     if common_station_info_ids.empty?
       nil
@@ -126,35 +126,35 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
     end
   end
 
-  def station_infos_of_railway_line_in_h_locals
+  def station_infos_of_railway_line_info_in_h_locals
     if @id_of_starting_station_info.blank?
-      { station_infos_of_railway_line: @station_infos_of_railway_line }
+      { station_infos_of_railway_line_info: @station_infos_of_railway_line_info }
     else
-      station_infos_of_railway_line_split_by_starting_station
+      station_infos_of_railway_line_info_split_by_starting_station
     end
 
   end
 
-  def station_infos_of_railway_line_split_by_starting_station
+  def station_infos_of_railway_line_info_split_by_starting_station
     raise "Error" if @id_of_starting_station_info.blank?
 
-    if @station_infos_of_railway_line.first.id == @id_of_starting_station_info
+    if @station_infos_of_railway_line_info.first.id == @id_of_starting_station_info
       {
-        station_infos_of_railway_line_before_starting_station: nil ,
-        station_infos_of_railway_line_after_starting_station: @station_infos_of_railway_line[ 1..(-1) ]
+        station_infos_of_railway_line_info_before_starting_station: nil ,
+        station_infos_of_railway_line_info_after_starting_station: @station_infos_of_railway_line_info[ 1..(-1) ]
       }
 
-    elsif @station_infos_of_railway_line.last.id == @id_of_starting_station_info
+    elsif @station_infos_of_railway_line_info.last.id == @id_of_starting_station_info
       {
-        station_infos_of_railway_line_before_starting_station: @station_infos_of_railway_line[ 0..(-2) ] ,
-        station_infos_of_railway_line_after_starting_station: nil
+        station_infos_of_railway_line_info_before_starting_station: @station_infos_of_railway_line_info[ 0..(-2) ] ,
+        station_infos_of_railway_line_info_after_starting_station: nil
       }
 
     else
-      position_of_starting_station_info = @station_infos_of_railway_line.index { | station_info | station_info.id == @id_of_starting_station_info }
+      position_of_starting_station_info = @station_infos_of_railway_line_info.index { | station_info | station_info.id == @id_of_starting_station_info }
       {
-        station_infos_of_railway_line_before_starting_station: @station_infos_of_railway_line[ 0..( position_of_starting_station_info - 1 ) ] ,
-        station_infos_of_railway_line_after_starting_station: @station_infos_of_railway_line[ ( position_of_starting_station_info + 1 )..( -1 ) ]
+        station_infos_of_railway_line_info_before_starting_station: @station_infos_of_railway_line_info[ 0..( position_of_starting_station_info - 1 ) ] ,
+        station_infos_of_railway_line_info_after_starting_station: @station_infos_of_railway_line_info[ ( position_of_starting_station_info + 1 )..( -1 ) ]
       }
     end
   end

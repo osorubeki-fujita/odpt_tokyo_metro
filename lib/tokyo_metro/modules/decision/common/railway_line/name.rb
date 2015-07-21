@@ -43,7 +43,7 @@ module TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   private
 
-  def on_the_railway_line_of?( *args , compared: railway_line.same_as )
+  def on_the_railway_line_of?( *args , compared: railway_line_info.same_as )
     compare_base( args , compared )
   end
 

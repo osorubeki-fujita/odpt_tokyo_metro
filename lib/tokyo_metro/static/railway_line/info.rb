@@ -1,6 +1,7 @@
 # 個別の路線の情報を扱うクラス
 class TokyoMetro::Static::RailwayLine::Info
 
+  include ::OdptCommon::Modules::Polymorphic::RailwayLine
   include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine

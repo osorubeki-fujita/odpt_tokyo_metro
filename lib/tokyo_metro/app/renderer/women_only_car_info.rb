@@ -1,8 +1,8 @@
 class TokyoMetro::App::Renderer::WomenOnlyCarInfo < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , railway_lines )
+  def initialize( request , railway_line_infos )
     super( request )
-    @railway_lines = railway_lines
+    @railway_line_infos = railway_line_infos
     set_infos
   end
 
@@ -12,8 +12,8 @@ class TokyoMetro::App::Renderer::WomenOnlyCarInfo < TokyoMetro::Factory::Decorat
 %div{ id: :women_only_car }
   = ::TokyoMetro::App::Renderer::WomenOnlyCarInfo::Header.new( request ).render
   - if infos.length > 1
-    - infos.each do | infos_of_a_railway_line |
-      = infos_of_a_railway_line.render( display_railway_line: true )
+    - infos.each do | infos_of_a_railway_line_info |
+      = infos_of_a_railway_line_info.render( display_railway_line: true )
   - else
     = infos.first.render
       HAML
@@ -23,10 +23,10 @@ class TokyoMetro::App::Renderer::WomenOnlyCarInfo < TokyoMetro::Factory::Decorat
   private
 
   def set_infos
-    if @railway_lines.instance_of?( ::Railway::Line::Info )
-      infos_in_db = ::Railway::Line::WomenOnlyCarInfo.where( railway_line_info_id: @railway_lines.id )
+    if @railway_line_infos.instance_of?( ::Railway::Line::Info )
+      infos_in_db = ::Railway::Line::WomenOnlyCarInfo.where( railway_line_info_id: @railway_line_infos.id )
     else
-      infos_in_db = ::Railway::Line::WomenOnlyCarInfo.where( railway_line_info_id: @railway_lines.pluck( :id ) )
+      infos_in_db = ::Railway::Line::WomenOnlyCarInfo.where( railway_line_info_id: @railway_line_infos.pluck( :id ) )
     end
 
     @infos = infos_in_db.includes( :operation_day , :from_station_info , :to_station_info ).to_a.group_by( &:railway_line_info_id ).map { | railway_line_info_id , infos |
