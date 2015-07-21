@@ -1,6 +1,8 @@
 # 個別の列車時刻表のクラス
 class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRealTime::Info
 
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+
   include ::TokyoMetro::ClassNameLibrary::Api::TrainTimetable
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
@@ -13,7 +15,7 @@ class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRea
   include ::TokyoMetro::Modules::Decision::Api::Station::Starting
   include ::TokyoMetro::Modules::Decision::Api::Station::Terminal
 
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
   include ::TokyoMetro::Modules::Decision::Api::TrainType
   include ::TokyoMetro::Modules::Decision::Api::OperatedSection
   include ::TokyoMetro::Modules::Decision::Api::TrainDirection

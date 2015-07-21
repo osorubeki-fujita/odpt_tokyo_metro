@@ -10,12 +10,12 @@ module TokyoMetro::Static::Fare
   # @note TokyoMetro::Static::Fare.last_revision で呼び出すことができる。
   LAST_REVISION = ::DateTime.new( 2014 , 4 , 1 , ::TokyoMetro.date_changing_hour , 0 , 0 )
 
-  # 定数 {::TokyoMetro::Static::NORMAL_FARE} を設定するメソッド
-  # @note {::TokyoMetro::Static.normal_fare} で呼び出すこともできる。
+  # 定数 {::TokyoMetro::Static::FARE_NORMAL_GROUPS} を設定するメソッド
+  # @note {::TokyoMetro::Static.fare_normal_groups} で呼び出すこともできる。
   # @note {::TokyoMetro::Static::Fare::Normal.instance.current_faretable.list} は {::TokyoMetro::Static::Fare::Normal::Table::List} クラスのインスタンス
-  # @return [:NORMAL_FARE]
+  # @return [:FARE_NORMAL_GROUPS]
   def self.set_constant
-    ::TokyoMetro::Static.const_set( :NORMAL_FARE , self.normal_fare_class.instance.current_faretable.list )
+    ::TokyoMetro::Static.const_set( :FARE_NORMAL_GROUPS , self.fare_normal_group_class.instance.current_faretable.list )
   end
 
 end

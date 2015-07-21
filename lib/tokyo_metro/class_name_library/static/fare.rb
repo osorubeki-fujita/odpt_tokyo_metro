@@ -13,25 +13,25 @@ module TokyoMetro::ClassNameLibrary::Static::Fare
 
     # 東京メトロの運賃表（普通運賃）を扱うクラス
     # @return [Const ( ::TokyoMetro::Static::Fare::Normal )]
-    def normal_fare_class
+    def fare_normal_group_class
       ::TokyoMetro::Static::Fare::Normal
     end
 
     # 各料金区間の運賃の配列を扱うクラス
     # @return [Const ( ::TokyoMetro::Static::Fare::Normal::Table )]
-    def normal_fare_table_class
+    def fare_normal_group_table_class
       ::TokyoMetro::Static::Fare::Normal::Table
     end
 
     # 各料金区間の運賃の配列
     # @return [Const ( ::TokyoMetro::Static::Fare::Normal::Table::List )]
-    def normal_fare_table_list_class
+    def fare_normal_group_table_list_class
       ::TokyoMetro::Static::Fare::Normal::Table::List
     end
 
     # 運賃のパターン（各料金区間の運賃）を扱うクラス
     # @return [Const ( ::TokyoMetro::Static::Fare::Normal::Table::Pattern )]
-    def normal_fare_table_pattern_class
+    def fare_normal_group_table_pattern_class
       ::TokyoMetro::Static::Fare::Normal::Table::Pattern
     end
 

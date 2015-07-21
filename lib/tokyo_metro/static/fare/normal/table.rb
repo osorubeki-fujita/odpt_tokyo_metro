@@ -48,11 +48,11 @@ class TokyoMetro::Static::Fare::Normal::Table
   # @param yaml_file [::String] YAML のファイル名
   # @return [::TokyoMetro::Static::Fare::Normal::Table]
   def self.generate_from_yaml( title , yaml_file , from )
-    ary = self.normal_fare_table_list_class.new
+    ary = self.fare_normal_group_table_list_class.new
 
     ::YAML.load_file( "#{db_dirname}/#{yaml_file}.yaml" ).each do |h|
       fares = [ "ticket_fare" , "child_ticket_fare" , "ic_card_fare" , "child_ic_card_fare" ].map { | key | h[ key ] }
-      ary << self.normal_fare_table_pattern_class.new( *fares ).freeze
+      ary << self.fare_normal_group_table_pattern_class.new( *fares ).freeze
     end
 
     raise_error_of_element( ary )
@@ -67,7 +67,7 @@ class TokyoMetro::Static::Fare::Normal::Table
     # @param ary [::Array] チェックする配列
     # @return [nil]
     def raise_error_of_element( ary )
-      unless ary.all?{ |i| i.instance_of?( normal_fare_table_pattern_class ) }
+      unless ary.all?{ |i| i.instance_of?( fare_normal_group_table_pattern_class ) }
         raise "Error"
       end
       return nil

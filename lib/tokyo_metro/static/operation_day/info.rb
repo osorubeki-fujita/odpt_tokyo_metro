@@ -26,7 +26,7 @@ class TokyoMetro::Static::OperationDay::Info
   end
 
   def match?( operation_day )
-    self.to_a.include?( operation_day ) or @name_en.gsub( /\,? / , "_" ).downcase.to_s == operation_day.to_s
+    to_a.include?( operation_day ) or @name_en.gsub( /\,? / , "_" ).downcase.to_s == operation_day.to_s
   end
 
 end

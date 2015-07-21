@@ -6,18 +6,18 @@ class TokyoMetro::Api::Fare::Info < TokyoMetro::Api::MetaClass::NotRealTime::Inf
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   # Constructor
-  def initialize( id_urn , same_as , dc_date , operator , from_station , to_station , normal_fare )
+  def initialize( id_urn , same_as , dc_date , operator , from_station , to_station , fare_normal_group )
     @id_urn = id_urn
     @same_as = same_as
     @dc_date = dc_date
     @operator = operator
     @from_station = from_station
     @to_station = to_station
-    @normal_fare = normal_fare
+    @fare_normal_group = fare_normal_group
   end
 
   def self.attr_names
-    [ :id_urn , :same_as , :dc_date , :operator , :from_station , :to_station , :normal_fare ]
+    [ :id_urn , :same_as , :dc_date , :operator , :from_station , :to_station , :fare_normal_group ]
   end
 
   # 固有識別子
@@ -43,7 +43,7 @@ class TokyoMetro::Api::Fare::Info < TokyoMetro::Api::MetaClass::NotRealTime::Inf
 
   # 運賃の情報を扱うインスタンス
   # @return [::TokyoMetro::Static::Fare::Normal::Pattern]
-  attr_reader :normal_fare
+  attr_reader :fare_normal_group
 
   # @param stations [String, Regexp , Array<String or Regexp>]
   def from?( *stations )
@@ -113,7 +113,7 @@ class TokyoMetro::Api::Fare::Info < TokyoMetro::Api::MetaClass::NotRealTime::Inf
       str_ary << ""
     end
 
-    str_ary << @normal_fare.to_s_table( indent + 2 )
+    str_ary << @fare_normal_group.to_s_table( indent + 2 )
     str_ary.join( "\n" )
   end
 
@@ -124,25 +124,25 @@ class TokyoMetro::Api::Fare::Info < TokyoMetro::Api::MetaClass::NotRealTime::Inf
   # 普通運賃（大人・切符）
   # @return [Integer]
   def ticket_fare
-    @normal_fare.ticket_fare
+    @fare_normal_group.ticket_fare
   end
 
   # 普通運賃（小児・切符）
   # @return [Integer]
   def child_ticket_fare
-    @normal_fare.child_ticket_fare
+    @fare_normal_group.child_ticket_fare
   end
 
   # 普通運賃（大人・ICカード）
   # @return [Integer]
   def ic_card_fare
-    @normal_fare.ic_card_fare
+    @fare_normal_group.ic_card_fare
   end
 
   # 普通運賃（小児・ICカード）
   # @return [Integer]
   def child_ic_card_fare
-    @normal_fare.child_ic_card_fare
+    @fare_normal_group.child_ic_card_fare
   end
 
   # @!group 具体的な運賃を取得するメソッド (2) - 回数券
@@ -150,49 +150,49 @@ class TokyoMetro::Api::Fare::Info < TokyoMetro::Api::MetaClass::NotRealTime::Inf
   # 回数券（大人）の発売額
   # @return [Integer]
   def coupon_ticket_fare
-    @normal_fare.coupon_ticket_fare
+    @fare_normal_group.coupon_ticket_fare
   end
 
   # 回数券（小児）の発売額
   # @return [Integer]
   def child_coupon_ticket_fare
-    @normal_fare.child_coupon_ticket_fare
+    @fare_normal_group.child_coupon_ticket_fare
   end
 
   # 普通回数券（大人・11枚つづり）の1枚あたりの発売額
   # @return [Integer]
   def normal_coupon_ticket_per_one_piece
-    @normal_fare.normal_coupon_ticket_per_one_piece
+    @fare_normal_group.normal_coupon_ticket_per_one_piece
   end
 
   # 時差回数券（大人・12枚つづり）の1枚あたりの発売額
   # @return [Integer]
   def daytime_coupon_ticket_per_one_piece
-    @normal_fare.daytime_coupon_ticket_per_one_piece
+    @fare_normal_group.daytime_coupon_ticket_per_one_piece
   end
 
   # 土休回数券（大人・14枚つづり）の1枚あたりの発売額
   # @return [Integer]
   def holiday_coupon_ticket_per_one_piece
-    @normal_fare.holiday_coupon_ticket_per_one_piece
+    @fare_normal_group.holiday_coupon_ticket_per_one_piece
   end
 
   # 普通回数券（小児・11枚つづり）の1枚あたりの発売額
   # @return [Integer]
   def child_normal_coupon_ticket_per_one_piece
-    @normal_fare.child_normal_coupon_ticket_per_one_piece
+    @fare_normal_group.child_normal_coupon_ticket_per_one_piece
   end
 
   # 時差回数券（小児・12枚つづり）の1枚あたりの発売額
   # @return [Integer]
   def child_daytime_coupon_ticket_per_one_piece
-    @normal_fare.child_daytime_coupon_ticket_per_one_piece
+    @fare_normal_group.child_daytime_coupon_ticket_per_one_piece
   end
 
   # 土休回数券（小児・14枚つづり）の1枚あたりの発売額
   # @return [Integer]
   def child_holiday_coupon_ticket_per_one_piece
-    @normal_fare.child_holiday_coupon_ticket_per_one_piece
+    @fare_normal_group.child_holiday_coupon_ticket_per_one_piece
   end
 
   # @!endgroup

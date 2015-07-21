@@ -33,9 +33,9 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
   # 事業者のインスタンスを取得するメソッド
   # @return [::TokyoMetro::Static::Operator::Info]
   def operator_instance
-    operator = ::TokyoMetro::Static.operators[ @h[ :operator ] ]
-    raise "Error: The operator is not defined." if operator.nil?
-    operator
+    operator_info = ::TokyoMetro::Static.operator_infos[ @h[ :operator ] ]
+    raise "Error: The operator is not defined." unless operator_info.nil?
+    return operator_info
   end
 
   # 色情報のインスタンスを取得するメソッド

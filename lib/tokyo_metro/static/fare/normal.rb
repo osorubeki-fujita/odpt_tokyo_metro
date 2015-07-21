@@ -8,7 +8,7 @@ class TokyoMetro::Static::Fare::Normal
   # Constructor
   def initialize
     @tables = ::Array.new
-    @tables << self.class.normal_fare_table_class.generate_from_yaml( "Fare" , "20140401_normal" , self.class.static_toplevel_namespace.last_revision ).freeze
+    @tables << self.class.fare_normal_group_table_class.generate_from_yaml( "Fare" , "20140401_normal" , self.class.static_toplevel_namespace.last_revision ).freeze
   end
 
   # データベースをもとにした運賃表（現在）

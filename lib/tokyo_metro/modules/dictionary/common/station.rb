@@ -39,5 +39,5 @@ module TokyoMetro::Modules::Dictionary::Common::Station
       same_as
     end
   end
-  
+
 end

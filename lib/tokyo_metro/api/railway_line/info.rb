@@ -4,12 +4,14 @@
 #   関連： {TokyoMetro::Factory::Seed::Static::RailwayLine::Info}
 class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+
   include ::TokyoMetro::ClassNameLibrary::Api::RailwayLine
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::SameAs
   include ::TokyoMetro::Modules::Decision::Common::Operator
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::BranchLine
 

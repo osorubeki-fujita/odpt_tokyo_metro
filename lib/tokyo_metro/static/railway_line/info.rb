@@ -1,6 +1,8 @@
 # 個別の路線の情報を扱うクラス
 class TokyoMetro::Static::RailwayLine::Info
 
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
@@ -11,7 +13,7 @@ class TokyoMetro::Static::RailwayLine::Info
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::SameAs
   include ::TokyoMetro::Modules::Decision::Common::Operator
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   include ::OdptCommon::Modules::Name::Common::RailwayLine
   include ::TokyoMetro::Modules::Name::Common::RailwayLine::CssClass

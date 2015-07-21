@@ -1,12 +1,14 @@
 # 個別の施設・出口情報を扱うクラス
 class TokyoMetro::Api::StationFacility::Info::Platform::Info
 
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
   include ::TokyoMetro::Modules::Fundamental::Api::Info::SetDataToHash

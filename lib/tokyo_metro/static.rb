@@ -1,6 +1,6 @@
 # 東京メトロの情報のうち、変化のない（or 非常に少ない）ものを扱うモジュール
 # @example
-#   * TokyoMetro::Static.normal_fare
+#   * TokyoMetro::Static.fare_normal_groups
 #     普通運賃の情報
 #       @note {::TokyoMetro::Static::Fare.set_constant} によって定義されている。
 #       @return [::TokyoMetro::Static::Fare::Normal::Table::List]
@@ -56,7 +56,7 @@ module TokyoMetro::Static
     ::TokyoMetro::Static::OperationDay.set_constant
 
     return nil
- end
+  end
 
   def self.railway_line_infos_operated_by_tokyo_metro
     railway_line_infos.select { | key , value | value[ "operator" ] == "odpt.Operator:TokyoMetro" }

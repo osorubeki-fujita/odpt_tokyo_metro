@@ -153,7 +153,7 @@ class TokyoMetro::Static::Fare::Normal::Table::Pattern
   # 運賃の情報を出力する際のヘッダー
   # @return [String]
   def self.header( indent )
-    self.normal_fare_table_list_class.header( indent )
+    self.fare_normal_group_table_list_class.header( indent )
   end
 
   def self.factory_for_seeding_this_class

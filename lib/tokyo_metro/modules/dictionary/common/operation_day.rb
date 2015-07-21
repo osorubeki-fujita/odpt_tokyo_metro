@@ -1,3 +1,6 @@
+
+__END__
+
 module TokyoMetro::Modules::Dictionary::Common::OperationDay
 
   include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods

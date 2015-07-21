@@ -40,19 +40,19 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos::Gro
   # fare_normal_group_id が定義されている場合
   def render_when_fare_normal_group_is_present
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-- normal_fare_decorated = fare_normal_group.decorate
+- fare_normal_group_decorated = fare_normal_group.decorate
 - station_infos.each.with_index(1) do | station_info , i |
   - case i
   - when number_of_station_infos
     %tr{ class: :last }<
       = station_info.decorate.render_in_fare_table
       - if i == 1
-        = normal_fare_decorated.render_columns( number_of_station_infos )
+        = fare_normal_group_decorated.render_columns( number_of_station_infos )
   - else
     %tr<
       = station_info.decorate.render_in_fare_table
       - if i == 1
-        = normal_fare_decorated.render_columns( number_of_station_infos )
+        = fare_normal_group_decorated.render_columns( number_of_station_infos )
     HAML
   end
 

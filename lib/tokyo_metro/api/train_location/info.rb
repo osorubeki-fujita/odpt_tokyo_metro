@@ -1,6 +1,8 @@
 # 個別の列車のロケーション情報を扱うクラス
 class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTime::Info
 
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+
   include ::TokyoMetro::ClassNameLibrary::Api::TrainLocation
 
   include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
@@ -9,7 +11,7 @@ class TokyoMetro::Api::TrainLocation::Info < TokyoMetro::Api::MetaClass::RealTim
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::ToeiMitaLine
   include ::TokyoMetro::Modules::Decision::Common::RomanceCar
 
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
   include ::TokyoMetro::Modules::Decision::Api::TrainType
   include ::TokyoMetro::Modules::Decision::Api::TrainDirection
   include ::TokyoMetro::Modules::Decision::Api::Station::Starting

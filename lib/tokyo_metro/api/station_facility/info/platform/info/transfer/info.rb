@@ -2,7 +2,8 @@
 class TokyoMetro::Api::StationFacility::Info::Platform::Info::Transfer::Info < TokyoMetro::Api::StationFacility::Info::Platform::Info::Common::Info
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   # Constructor
   def initialize( railway_line , railway_direction , necessary_time )

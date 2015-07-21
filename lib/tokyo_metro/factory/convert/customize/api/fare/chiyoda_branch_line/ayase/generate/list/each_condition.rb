@@ -24,7 +24,7 @@ class TokyoMetro::Factory::Convert::Customize::Api::Fare::ChiyodaBranchLine::Aya
 
     h[ :same_as ] = @obj.same_as.gsub( REGEXP , "ChiyodaBranch" )
 
-    [ :id_urn , :dc_date , :operator , :normal_fare , :from_station , :to_station ].each do | method_name |
+    [ :id_urn , :dc_date , :operator , :fare_normal_group , :from_station , :to_station ].each do | method_name |
       h[ method_name ] = @obj.send( method_name )
     end
 

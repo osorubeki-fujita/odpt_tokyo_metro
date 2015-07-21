@@ -38,7 +38,7 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
     end
 
     def db_instance_class
-      ::RailwayLine
+      ::Railway::Line::Info
     end
 
     private

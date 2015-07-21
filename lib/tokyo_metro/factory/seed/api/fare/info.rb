@@ -26,7 +26,7 @@ class TokyoMetro::Factory::Seed::Api::Fare::Info < TokyoMetro::Factory::Seed::Ap
   end
 
   def normal_group_id
-    super( @normal_fare_groups )
+    super( @fare_normal_groups )
   end
 
   def operator_id

@@ -1,11 +1,13 @@
 # 個別の駅・路線・方面の時刻表を扱うクラス
 class TokyoMetro::Api::StationTimetable::Info < TokyoMetro::Api::MetaClass::NotRealTime::Info
 
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+
   include ::TokyoMetro::ClassNameLibrary::Api::StationTimetable
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::SameAs
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
   include ::TokyoMetro::Modules::Decision::Api::Station::Current
 
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info

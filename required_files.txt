@@ -1552,7 +1552,9 @@ lib/tokyo_metro/search/railway_line.rb
 lib/tokyo_metro/rake.rb
 lib/tokyo_metro/rake/make.rb
 lib/tokyo_metro/rake/make/yaml_station_list.rb
-lib/tokyo_metro/rake/make/yaml_station_list/each_station.rb
+lib/tokyo_metro/rake/make/yaml_station_list/file.rb
+lib/tokyo_metro/rake/make/yaml_station_list/file/each_station.rb
+lib/tokyo_metro/rake/make/yaml_station_list/file/each_station/train_type.rb
 lib/tokyo_metro/rake/make/document.rb
 lib/tokyo_metro/rake/make/document/examples.rb
 lib/tokyo_metro/rake/make/document/examples/static.rb

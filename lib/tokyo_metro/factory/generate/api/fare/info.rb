@@ -14,9 +14,9 @@ class TokyoMetro::Factory::Generate::Api::Fare::Info < TokyoMetro::Factory::Gene
     to_station = @hash[ "odpt:toStation" ]
 
     fares = [ "odpt:ticketFare" , "odpt:childTicketFare" , "odpt:icCardFare" , "odpt:childIcCardFare" ].map { | key | @hash[ key ] }
-    normal_fare = ::TokyoMetro::Static.normal_fare.select_fare( *fares )
+    fare_normal_group = ::TokyoMetro::Static.fare_normal_group.select_fare( *fares )
 
-    [ id , same_as , dc_date , operator , from_station , to_station , normal_fare ]
+    [ id , same_as , dc_date , operator , from_station , to_station , fare_normal_group ]
   end
 
 end

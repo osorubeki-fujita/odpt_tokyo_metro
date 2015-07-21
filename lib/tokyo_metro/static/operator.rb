@@ -6,7 +6,7 @@ class TokyoMetro::Static::Operator < TokyoMetro::Static::Fundamental::MetaClass:
   # 定数を設定するクラスメソッド
   # @return [nil]
   def self.set_constant
-    ::TokyoMetro::Static.const_set( :OPERATORS , self.generate_from_yaml )
+    ::TokyoMetro::Static.const_set( :OPERATOR_INFOS , self.generate_from_yaml )
   end
 
 end

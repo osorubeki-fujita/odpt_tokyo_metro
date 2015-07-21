@@ -1,6 +1,8 @@
 # 個別の駅情報を扱うクラス
 class TokyoMetro::Api::Station::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+
   # インスタンスメソッドの追加
   include ::TokyoMetro::Modules::Fundamental::Api::Info::ToJson
   include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
@@ -8,7 +10,7 @@ class TokyoMetro::Api::Station::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   include ::TokyoMetro::ClassNameLibrary::Api::Station
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
   include ::TokyoMetro::Modules::Decision::Api::Station::Current
 
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info

@@ -1,10 +1,12 @@
 # 個別の路線の運行情報を扱うクラス
 class TokyoMetro::Api::TrainOperation::Info < TokyoMetro::Api::MetaClass::RealTime::Info
 
+  include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
+
   include ::TokyoMetro::ClassNameLibrary::Api::TrainOperation
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::Common::RailwayLine
+  include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   include ::TokyoMetro::Modules::Fundamental::Api::Info::ToStringGeneral
 
