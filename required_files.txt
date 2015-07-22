@@ -18,7 +18,6 @@ lib/tokyo_metro/modules/dictionary/common/station.rb
 lib/tokyo_metro/modules/dictionary/common/station/string_info.rb
 lib/tokyo_metro/modules/dictionary/common/station/string_list.rb
 lib/tokyo_metro/modules/dictionary/common/station/regexp_info.rb
-lib/tokyo_metro/modules/dictionary/common/operation_day.rb
 lib/tokyo_metro/modules/dictionary/common/romance_car.rb
 lib/tokyo_metro/modules/decision.rb
 lib/tokyo_metro/modules/decision/common.rb

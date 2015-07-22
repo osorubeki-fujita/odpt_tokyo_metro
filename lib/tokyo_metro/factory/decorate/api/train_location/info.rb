@@ -117,7 +117,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     end
   end
 
-  [ :train_type_info , :train_owner ].each do | method_basename |
+  [ :train_type_info , :operator_as_train_owner ].each do | method_basename |
     eval <<-DEF
       def render_#{ method_basename }?
         !( not_render_#{ method_basename }? )
