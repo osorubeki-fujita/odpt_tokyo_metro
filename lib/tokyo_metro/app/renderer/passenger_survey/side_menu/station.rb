@@ -5,7 +5,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::Station < TokyoMetro
     @all_railway_line_infos = ::Railway::Line::Info.tokyo_metro( including_branch_line: false )
 
     if station_info.at_kita_ayase? or station_info.between_honancho_and_nakano_shimbashi?
-      @prior_railway_line_info_ids = station_info.railway_line.main_railway_line_info.id
+      @prior_railway_line_info_ids = station_info.railway_line_info.main_railway_line_info.id
     else
       railway_line_infos =  station_info.railway_line_infos_of_tokyo_metro
       @prior_railway_line_info_ids = railway_line_infos.pluck( :railway_line_info_id ).uniq
