@@ -20,4 +20,8 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator
     ::ActionView::Base.new
   end
 
+  def self.h
+    ::ActionView::Base.new
+  end
+
 end
