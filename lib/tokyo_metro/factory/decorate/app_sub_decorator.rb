@@ -11,6 +11,12 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator < TokyoMetro::Factory::Deco
     @decorator.object
   end
 
+  def on( request )
+    @request = request
+
+    return self
+  end
+
   private
 
   def method_missing( method_name , *args )
