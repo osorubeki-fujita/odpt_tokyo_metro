@@ -24,7 +24,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %li{ class: [ :train_location , railway_line_of_train.css_class , :clearfix ] , id: this.object.train_number.downcase }
   %div{ class: :train_fundamental_infos }
-    = railway_line_of_train.decorate.render_matrix( make_link_to_railway_line: false , size: :very_small )
+    = railway_line_of_train.decorate.matrix.render_normally( make_link_to_railway_line: false , size: :very_small )
     - if to_render_train_type_info
       = train_type_info_decorated.render_in_train_location
     = terminal_station_decorated.try( :render_as_terminal_station )

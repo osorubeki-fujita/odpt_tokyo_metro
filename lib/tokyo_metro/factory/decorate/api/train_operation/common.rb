@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainOperation::Common < TokyoMetro::F
   def render
     h.render inline: <<-HAML , type: :haml , locals: { this: self }
 %li{ class: [ :train_operation_info , :railway_line , :clearfix ] }
-  = this.railway_line.decorate.render_matrix( make_link_to_railway_line: true , size: :small , link_controller_name: this.controller )
+  = this.railway_line.decorate.matrix.render_normally( make_link_to_railway_line: true , size: :small , link_controller_name: this.controller )
   %div{ class: [ :status , this.status_type ] }
     %div{ class: :infos }
       = this.render_status_icon_and_text
