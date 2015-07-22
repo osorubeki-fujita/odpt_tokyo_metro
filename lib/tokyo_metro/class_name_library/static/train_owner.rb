@@ -34,13 +34,13 @@ module TokyoMetro::ClassNameLibrary::Static::TrainOwner
     end
 
     def db_instance_class
-      ::TrainOwner
+      ::Operator::AsTrainOwner
     end
 
     private
 
     def yaml_file_basename
-      "train_owner"
+      "operator/as_train_owner"
     end
 
   end

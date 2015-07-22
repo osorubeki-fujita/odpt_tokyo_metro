@@ -17,9 +17,9 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       train_type_info_decorated: train_type_info_decorated ,
       starting_station_decorated: starting_station_decorated ,
       terminal_station_decorated: terminal_station_decorated ,
-      train_owner_decorated: train_owner_decorated ,
+      operator_as_train_owner_decorated: operator_as_train_owner_decorated ,
       to_render_train_type_info: render_train_type_info? ,
-      to_render_train_owner: render_train_owner?
+      to_render_operator_as_train_owner: render_operator_as_train_owner?
     }
     h.render inline: <<-HAML , type: :haml , locals: h_locals_i
 %li{ class: [ :train_location , railway_line_of_train.css_class , :clearfix ] , id: this.object.train_number.downcase }
@@ -33,8 +33,8 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     = this.render_delay
     = this.render_train_number
     = starting_station_decorated.try( :render_as_starting_station )
-    - if to_render_train_owner
-      = train_owner_decorated.in_train_location.render
+    - if to_render_operator_as_train_owner
+      = operator_as_train_owner_decorated.in_train_location.render
     HAML
   end
 
@@ -105,7 +105,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     ( on_ginza_line_page? or on_marunouchi_line_page? or on_marunouchi_branch_line_page? or on_hibiya_line_page? ) and object.local_train?
   end
 
-  def not_render_train_owner?
+  def not_render_operator_as_train_owner?
     on_ginza_line_page? or on_marunouchi_line_page? or on_marunouchi_branch_line_page?
   end
 
@@ -164,12 +164,12 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
     train_type_info.decorate
   end
 
-  def train_owner_in_db
-    ::TrainOwner.find_by( same_as: object.train_owner )
+  def operator_as_train_owner_in_db
+    ::Operator::AsTrainOwner.find_by( same_as: object.train_owner )
   end
 
-  def train_owner_decorated
-    train_owner_in_db.decorate
+  def operator_as_train_owner_decorated
+    operator_as_train_owner_in_db.decorate
   end
 
 end

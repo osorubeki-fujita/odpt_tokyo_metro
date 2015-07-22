@@ -40,7 +40,7 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
     private
 
     def yaml_file_basename
-      "operator"
+      "operator/info"
     end
 
   end

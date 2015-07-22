@@ -46,7 +46,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info < TokyoMetro::Factory
       h[ column_name ] = @info.send( column_name )
     end
 
-    [ :dc_date , :operator_info_id , :train_owner_id , :train_name_id ].each do | column_name |
+    [ :dc_date , :operator_info_id , :operator_as_train_owner_id , :train_name_id ].each do | column_name |
       h[ column_name ] = self.send( column_name )
     end
 
@@ -77,7 +77,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info < TokyoMetro::Factory
     super( _railway_line_info_id , @railway_directions )
   end
 
-  def train_owner_id
+  def operator_as_train_owner_id
     super( @train_owners )
   end
 
