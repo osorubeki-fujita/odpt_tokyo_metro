@@ -9,7 +9,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info
   def initialize( stations , railway_line_infos , operators , railway_directions )
     @stations = stations
     @railway_line_infos = railway_line_infos
-    @operator_infos = operators
+    @operators = operators
     @railway_directions = railway_directions
   end
 
