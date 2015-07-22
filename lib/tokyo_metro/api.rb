@@ -8,7 +8,7 @@ module TokyoMetro::Api
   end
 
   def self.list_of_constants
-    [ :station_facility , :passenger_survey , :station , :railway_line_info , :point , :fare , :station_timetable , :train_timetable ]
+    [ :station_facility , :passenger_survey , :station , :railway_line , :point , :fare , :station_timetable , :train_timetable ]
   end
 
   # 東京メトロ オープンデータに関する定数を定義するメソッド (2) - API から取得し保存したデータからインスタンスを作成し、定数とする
