@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
     super( info , get_id: true )
 
     @id_urn = nil
-    @geojson = nil
+    @geo_json = nil
     @dc_date = nil
 
     set_variables_of_railway_lines_operated_by_tokyo_metro
@@ -18,16 +18,30 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
 
   private
 
+  def set_variables_of_railway_lines_operated_by_tokyo_metro
+    if @info.operated_by_tokyo_metro?
+      railway_line_info_in_api = ::TokyoMetro::Api.railway_lines.find{ | railway_line | railway_line.same_as?( @info.same_as ) }
+
+      [ :id_urn , :geo_json , :dc_date ].each do | method_name |
+        eval <<-DEF
+          @#{ method_name } = railway_line_info_in_api.#{ method_name }
+        DEF
+      end
+
+    end
+  end
+
   def hash_to_db
     h = {
       color: @info.color_normal_web ,
       name_codes: name_codes ,
       #
       id_urn: @id_urn ,
-      geo_json: @geo_json
+      geo_json: @geo_json ,
+      dc_date: dc_date
     }
 
-    [ :name_ja , :name_hira , :name_en , :operator_info_id , :dc_date ].each do | key_name |
+    [ :name_ja , :name_hira , :name_en , :operator_info_id ].each do | key_name |
       h[ key_name ] = send( key_name )
     end
 
@@ -41,19 +55,6 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
     end
 
     h
-  end
-
-  def set_variables_of_railway_lines_operated_by_tokyo_metro
-    if @info.operated_by_tokyo_metro?
-      railway_line_info_in_api = ::TokyoMetro::Api.railway_lines.find{ | railway_line | railway_line.same_as?( @info.same_as ) }
-
-      [ :id_urn , :geo_json , :dc_date ].each do | method_name |
-        eval <<-DEF
-          @#{ method_name } = railway_line_info_in_api.#{ method_name }
-        DEF
-      end
-
-    end
   end
 
   def name_codes
