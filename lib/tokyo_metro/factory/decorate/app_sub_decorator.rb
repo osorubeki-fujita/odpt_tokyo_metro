@@ -27,6 +27,10 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator < TokyoMetro::Factory::Deco
     end
   end
 
+  def h_object
+    { object: object }
+  end
+
   def h_decorator
     { decorator: decorator }
   end

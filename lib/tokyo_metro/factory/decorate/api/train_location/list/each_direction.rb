@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::List::EachDirection < T
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-= railway_direction.decorate.render_title_in_train_location
+= railway_direction.decorate.title.render_in_train_location
 %ul{ class: [ :train_locations_of_each_direction , :clearfix ] }
   - train_location_infos.each do | train_location |
     = train_location.decorate( request , railway_line_info ).render
