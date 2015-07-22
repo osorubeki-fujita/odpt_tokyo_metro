@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Generate::Api::RailwayLine::Info < TokyoMetro::Factor
     region = @hash[ "ug:region" ]
     operator = @hash[ "odpt:operator" ]
     railway_line_code = @hash[ "odpt:lineCode" ]
-    dc_date = @hash[ "dc:date" ]
+    dc_date = ::DateTime.parse( @hash[ "dc:date" ] )
 
     [ id , same_as , title , region , operator , railway_line_code ,
       station_order , travel_time , women_only_car , dc_date ]

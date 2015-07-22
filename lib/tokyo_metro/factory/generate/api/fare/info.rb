@@ -8,7 +8,7 @@ class TokyoMetro::Factory::Generate::Api::Fare::Info < TokyoMetro::Factory::Gene
   def variables
     id = @hash[ "\@id" ]
     same_as = @hash[ "owl:sameAs" ]
-    dc_date = DateTime.parse( @hash[ "dc:date" ] )
+    dc_date = ::DateTime.parse( @hash[ "dc:date" ] )
     operator = @hash[ "odpt:operator" ]
     from_station = @hash[ "odpt:fromStation" ]
     to_station = @hash[ "odpt:toStation" ]
