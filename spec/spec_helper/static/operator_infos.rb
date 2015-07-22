@@ -38,12 +38,12 @@ def static_operator_infos
   ]
 
   describe ::TokyoMetro::Static::Operator::Info do
-    ::TokyoMetro::Static.operator_infos.each do | operator , static_info |
-      infos = operator_infos_in_db.find { | item | item[0] == operator }
+    ::TokyoMetro::Static.operator_infos.each do | operator_info , static_info |
+      infos_of_an_operator = operator_infos_in_db.find { | item | item[0] == operator_info }
       it "has valid infos" do
         for i in 1..( columns.length - 1 )
           s = static_info.send( columns[i] )
-          in_db = infos[i]
+          in_db = infos_of_an_operator[i]
           if in_db.blank?
             expect(s).to be_blank
           else

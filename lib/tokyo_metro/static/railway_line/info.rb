@@ -340,6 +340,8 @@ class TokyoMetro::Static::RailwayLine::Info
   #   TokyoMetro::Static::Operator::Info
   attr_reader :operator
 
+  alias :operator_info :operator
+
   # 鉄道事業者の ID キー
   # @return [String]
   def oprerator_same_as
@@ -1388,8 +1390,8 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # @!endgroup
 
-  def operator_of?( *args )
-    super( *args , compared: operator.same_as )
+  def operator_info_of?( *args )
+    super( *args , compared: operator_info.same_as )
   end
 
   def set_name_ja_short( operator , railway_line , en: false , with_operator: true )

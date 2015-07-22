@@ -5,11 +5,11 @@ module TokyoMetro::Modules::Decision::Common::Operator
   end
 
   def tokyo_metro?
-    operator_of?( "odpt.Operator:TokyoMetro" )
+    operator_info_of?( "odpt.Operator:TokyoMetro" )
   end
 
   def toei_subway?
-    operator_of?( "odpt.Operator:Toei" )
+    operator_info_of?( "odpt.Operator:Toei" )
   end
 
   def subways_in_tokyo?
@@ -17,24 +17,24 @@ module TokyoMetro::Modules::Decision::Common::Operator
   end
 
   def nippori_toneri_liner?
-    operator_of?( "odpt.Operator:ToeiNipporiToneri" )
+    operator_info_of?( "odpt.Operator:ToeiNipporiToneri" )
   end
 
   def tokyu?
-    operator_of?( "odpt.Operator:Tokyu" )
+    operator_info_of?( "odpt.Operator:Tokyu" )
   end
 
   def yokohama_minatomirai_railway?
-    operator_of?( "odpt.Operator:YokohamaMinatomiraiRailway" )
+    operator_info_of?( "odpt.Operator:YokohamaMinatomiraiRailway" )
   end
 
   def toyo_rapid_railway?
-    operator_of?( "odpt.Operator:ToyoRapidRailway" )
+    operator_info_of?( "odpt.Operator:ToyoRapidRailway" )
   end
 
   private
 
-  def operator_of?( *args , compared: operator.same_as )
+  def operator_info_of?( *args , compared: operator_info.same_as )
     compare_base( args , compared )
   end
 

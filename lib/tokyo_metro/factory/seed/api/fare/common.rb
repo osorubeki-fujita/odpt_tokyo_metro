@@ -4,11 +4,11 @@ module TokyoMetro::Factory::Seed::Api::Fare::Common
 
   def set_optional_variables( args )
     set_optional_variables__check_length_of_args( args , 2 )
-    @fare_normal_groups , @operators = args
+    @fare_normal_groups , @operator_infos = args
   end
 
   def optional_variables
-    [ @fare_normal_groups , @operators ]
+    [ @fare_normal_groups , @operator_infos ]
   end
 
 end

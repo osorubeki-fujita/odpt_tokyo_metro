@@ -1,6 +1,8 @@
 # 個別の鉄道事業者の情報を扱うクラス
 class TokyoMetro::Static::Operator::Info
 
+  include ::OdptCommon::Modules::Polymorphic::Operator
+
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
@@ -352,7 +354,7 @@ class TokyoMetro::Static::Operator::Info
     name_en
   end
 
-  def operator_of?( *args )
+  def operator_info_of?( *args )
     super( *args , compared: @same_as  )
   end
 

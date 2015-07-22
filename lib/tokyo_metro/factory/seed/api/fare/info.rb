@@ -18,7 +18,7 @@ class TokyoMetro::Factory::Seed::Api::Fare::Info < TokyoMetro::Factory::Seed::Ap
       h[ key_name ] = @info.send( key_name )
     end
 
-    [ :dc_date , :normal_group_id , :operator_id , :from_station_info_id , :to_station_info_id ].each do | key_name |
+    [ :dc_date , :normal_group_id , :operator_info_id , :from_station_info_id , :to_station_info_id ].each do | key_name |
       h[ key_name ] = self.send( key_name )
     end
 
@@ -29,8 +29,8 @@ class TokyoMetro::Factory::Seed::Api::Fare::Info < TokyoMetro::Factory::Seed::Ap
     super( @fare_normal_groups )
   end
 
-  def operator_id
-    super( @operators )
+  def operator_info_id
+    super( @operator_infos )
   end
 
 end

@@ -23,7 +23,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info < TokyoMetro::Facto
   end
 
   def seed_fundamental_infos
-    @info.fundamental_infos.seed( @id , @operators , @railway_line_infos , @stations , @railway_directions )
+    @info.fundamental_infos.seed( @id , @operator_infos , @railway_line_infos , @stations , @railway_directions )
   end
 
 end

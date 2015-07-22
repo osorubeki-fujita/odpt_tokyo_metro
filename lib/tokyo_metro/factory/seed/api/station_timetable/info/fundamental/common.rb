@@ -4,11 +4,11 @@ module TokyoMetro::Factory::Seed::Api::StationTimetable::Info::Fundamental::Comm
 
   def set_optional_variables( args )
     set_optional_variables__check_length_of_args( args , 5 )
-    @info_id , @operators , @railway_lines , @stations , @railway_directions = args
+    @info_id , @operator_infos , @railway_lines , @stations , @railway_directions = args
   end
 
   def optional_variables
-    [ @info_id , @operators , @railway_lines , @stations , @railway_directions ]
+    [ @info_id , @operator_infos , @railway_lines , @stations , @railway_directions ]
   end
 
 end

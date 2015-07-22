@@ -140,7 +140,7 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
   end
 
   def railway_line_info_id
-    ::Railway::Line.find_by( same_as: @same_as ).id
+    ::Railway::Line::Info.find_by( same_as: @same_as ).id
   end
 
   # @!endgroup
@@ -151,7 +151,7 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
     super( *args , compared: @same_as )
   end
 
-  def operator_of?( *args )
+  def operator_info_of?( *args )
     super( *args , compared: @operator )
   end
 

@@ -94,7 +94,7 @@ def static_railway_line_infos
         expect( info.index ).to be_number
       end
       it "\'#{ railway_line_name }\' has attiribute \'operator\' (TokyoMetro::Static::Operator::Info)" do
-        expect( info.operator ).to be_instance_of( ::TokyoMetro::Static::Operator::Info )
+        expect( info.operator_info ).to be_instance_of( ::TokyoMetro::Static::Operator::Info )
       end
 
       valid_same_as_and_css_class = railway_line_and_css_class.find { | same_as , css_class | same_as == info.same_as }
@@ -115,23 +115,3 @@ def static_railway_line_infos
 
   end
 end
-
-__END__
-
-
-  describe ::TokyoMetro::Static::Operator::Info do
-    ::TokyoMetro::Static.operators.each do | operator , static_info |
-      infos = operator_infos_in_db.find { | item | item[0] == operator }
-      it "has valid infos" do
-        for i in 1..( columns.length - 1 )
-          s = static_info.send( columns[i] )
-          in_db = infos[i]
-          if in_db.blank?
-            expect(s).to be_blank
-          else
-            expect(s).to eq( in_db )
-          end
-        end
-      end
-    end
-  end

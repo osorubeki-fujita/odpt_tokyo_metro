@@ -27,7 +27,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
       geo_json: @geo_json
     }
 
-    [ :name_ja , :name_hira , :name_en , :operator_id , :dc_date ].each do | key_name |
+    [ :name_ja , :name_hira , :name_en , :operator_info_id , :dc_date ].each do | key_name |
       h[ key_name ] = send( key_name )
     end
 
@@ -72,7 +72,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
     DEF
   end
 
-  [ :operator_in_db , :operator_id ].each do | method_name |
+  [ :operator_info_in_db , :operator_info_id ].each do | method_name |
     eval <<-DEF
       def #{ method_name }( whole = nil , search_by: @info.operator.same_as )
         super( whole , search_by: search_by )

@@ -9,7 +9,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info
   def initialize( stations , railway_line_infos , operators , railway_directions )
     @stations = stations
     @railway_line_infos = railway_line_infos
-    @operators = operators
+    @operator_infos = operators
     @railway_directions = railway_directions
   end
 
@@ -34,7 +34,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info
 
     @stations.each do | station |
       @railway_line_infos.each do | railway_line_info |
-        @operators.each do | operator |
+        @operator_infos.each do | operator |
           @railway_directions.each do | railway_direction |
 
             ary << self.class.fundamental_info_separeted_info.new( station , railway_line_info , operator , railway_direction )

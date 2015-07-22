@@ -60,7 +60,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
 
     h[ :station_facility_info_id ] = station_facility_info_id
     h[ :railway_line_info_id ] = @railway_line_info_id
-    h[ :operator_id ] = ::Railway::Line::Info.find( @railway_line_info_id ).operator_id
+    h[ :operator_info_id ] = ::Railway::Line::Info.find( @railway_line_info_id ).operator_info_id
 
     [
       :name_ja , :name_hira , :name_in_system , :name_en , :index_in_railway_line ,
@@ -72,7 +72,7 @@ class TokyoMetro::Factory::Seed::Static::Station::Info < TokyoMetro::Factory::Se
     h
   end
 
-  [ :operator_in_db , :operator_id ].each do | method_name |
+  [ :operator_info_in_db , :operator_info_id ].each do | method_name |
     eval <<-DEF
       def #{method_name}( whole = nil , search_by: @info.operator.same_as )
         super( whole = nil , search_by: search_by )

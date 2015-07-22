@@ -12,7 +12,7 @@ class TokyoMetro::Factory::Seed::Static::Fare::Normal::Table::Pattern < TokyoMet
   def hash_to_db
     h = {
       date_of_revision: @date_of_revision ,
-      operator_id: @operator_id
+      operator_info_id: @operator_info_id
     }
 
     [ :ticket_fare , :child_ticket_fare , :ic_card_fare , :child_ic_card_fare ].each do | column_name |
