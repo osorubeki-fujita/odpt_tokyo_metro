@@ -101,3 +101,6 @@ Rss:
 AirConditioner:
   - "AirConditioner::Info"
   - "AirConditioner::Answer"
+
+Twitter:
+  - "TwitterAccount"
