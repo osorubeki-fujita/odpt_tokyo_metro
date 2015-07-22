@@ -34,7 +34,7 @@ class TokyoMetro::Api::PassengerSurvey::List < TokyoMetro::Api::MetaClass::NotRe
   end
 
   def seed
-    super( ::Operator.all )
+    super( ::Operator::Info.all )
   end
 
 end

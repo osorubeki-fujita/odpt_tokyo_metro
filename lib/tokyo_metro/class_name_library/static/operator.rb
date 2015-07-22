@@ -34,7 +34,7 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
     end
 
     def db_instance_class
-      ::Operator
+      ::Operator::Info
     end
 
     private

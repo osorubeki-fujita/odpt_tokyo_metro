@@ -17,7 +17,7 @@ class TokyoMetro::App::Renderer::Twitter < TokyoMetro::Factory::Decorate::MetaCl
   %div{ id: :twitter_accounts }
     - # %ul{ id: :twitter_tabs_for_each_acount }
     - #   %li{ id: :twitter_tab_tokyo_metro }<
-    - #    = ::Operator.tokyo_metro.decorate.render_logo
+    - #    = ::Operator::Info.tokyo_metro.decorate.render_logo
     - if setting == :tokyo_metro
       %div{ id: :tweets_of_tokyo_metro , class: :twitter_account }
         = ::ApplicationHelper.tokyo_metro.decorate.render_twitter_widget

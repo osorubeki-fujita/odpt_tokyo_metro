@@ -8,7 +8,7 @@ class TokyoMetro::Api::StationTimetable::List < TokyoMetro::Api::MetaClass::NotR
 
   def seed
     super(
-      ::Operator.all ,
+      ::Operator::Info.all ,
       ::Railway::Line::Info.all ,
       ::Station::Info.all ,
       ::Railway::Direction.all ,

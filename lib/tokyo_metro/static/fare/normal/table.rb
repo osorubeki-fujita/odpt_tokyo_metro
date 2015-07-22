@@ -40,7 +40,7 @@ class TokyoMetro::Static::Fare::Normal::Table
   end
 
   def seed
-    @list.seed( date_of_revision , ::Operator.find_by_same_as( "odpt.Operator:TokyoMetro" ).id )
+    @list.seed( date_of_revision , ::Operator::Info.find_by_same_as( "odpt.Operator:TokyoMetro" ).id )
   end
 
   # YAML のデータからインスタンスを作成するメソッド

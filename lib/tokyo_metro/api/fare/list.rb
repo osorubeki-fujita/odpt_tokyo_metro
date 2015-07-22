@@ -6,7 +6,7 @@ class TokyoMetro::Api::Fare::List < TokyoMetro::Api::MetaClass::NotRealTime::Lis
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::List
 
   def seed
-    super( ::Fare::NormalGroup.all , ::Operator.all )
+    super( ::Fare::NormalGroup.all , ::Operator::Info.all )
   end
 
   # インスタンスの情報を整形した文字列にして返すメソッド
