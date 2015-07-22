@@ -35,13 +35,13 @@ class TokyoMetro::Static::RailwayLine::Info
   # @param operator [::TokyoMetro::Static::Operator::Info]
   # @param index [::Numeric]
   # @param color
-  def initialize( same_as , name_ja , name_hira , name_en , name_codes , operator , index , color , start_on , end_on , twitter_widget_id , twitter_account_name )
+  def initialize( same_as , name_ja , name_hira , name_en , name_codes , operator , index_in_operator , color , start_on , end_on , twitter_widget_id , twitter_account_name )
     @same_as = same_as
     @name_ja = name_ja
     @name_hira = name_hira
     @name_en = name_en
     @name_codes = name_codes
-    @index = index
+    @index_in_operator = index_in_operator
     @color = color
     @operator = operator
 
@@ -60,7 +60,7 @@ class TokyoMetro::Static::RailwayLine::Info
   # @return [Integer]
   def <=>( other )
     if @operator.same_as?( other.operator.same_as )
-      @index <=> other.index
+      @index_in_operator <=> other.index_in_operator
     else
       @operator <=> other.operator
     end
@@ -253,7 +253,7 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # @return [Numeric] 同一事業者内での路線の番号（整列のために定義）
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.index.to_s.rjust(2) }
+  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.index_in_operator.to_s.rjust(2) }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    :  1
   #   odpt.Railway:TokyoMetro.Marunouchi               :  2
@@ -326,7 +326,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:MIR.TX                              :  1
   #   odpt.Railway:Yurikamome.Yurikamome               :  1
   #   odpt.Railway:TWR.Rinkai                          :  1
-  attr_reader :index
+  attr_reader :index_in_operator
 
 # @!group 鉄道事業者に関するメソッド (1) - ID、番号
 

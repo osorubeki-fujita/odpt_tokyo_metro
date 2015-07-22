@@ -4,14 +4,14 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
   include ::OdptCommon::Modules::Time::Set
 
   def self.hash_keys
-    [ :name_ja , :name_hira , :name_en , :name_codes , :operator , :index , :color , :start_on , :end_on , :twitter_widget_id , :twitter_account_name ]
+    [ :name_ja , :name_hira , :name_en , :name_codes , :operator , :index_in_operator , :color , :start_on , :end_on , :twitter_widget_id , :twitter_account_name ]
   end
 
   private
 
   def set_values_to_hash_for_making_variables
     super( hash_key_array: [ :name_ja , :name_hira , :name_en ] , make_array: true )
-    super( hash_key_array: [ :twitter_widget_id , :twitter_account_name , :index ] )
+    super( hash_key_array: [ :twitter_widget_id , :twitter_account_name , :index_in_operator ] )
 
     @hash_for_making_variables[ :name_codes ] = name_codes
     @hash_for_making_variables[ :color ] = color_instance
