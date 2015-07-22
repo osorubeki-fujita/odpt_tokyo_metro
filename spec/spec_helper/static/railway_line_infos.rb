@@ -90,8 +90,8 @@ def static_railway_line_infos
       it "\'#{ railway_line_name }\' has attiribute \'name_en\' (Array)" do
         expect( info.name_en ).to be_instance_of( ::Array )
       end
-      it "\'#{ railway_line_name }\' has attiribute \'index\' (number)" do
-        expect( info.index ).to be_number
+      it "\'#{ railway_line_name }\' has attiribute \'index_in_operator\' (number)" do
+        expect( info.index_in_operator ).to be_number
       end
       it "\'#{ railway_line_name }\' has attiribute \'operator\' (TokyoMetro::Static::Operator::Info)" do
         expect( info.operator_info ).to be_instance_of( ::TokyoMetro::Static::Operator::Info )
