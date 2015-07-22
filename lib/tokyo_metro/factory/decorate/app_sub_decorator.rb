@@ -1,6 +1,7 @@
-class TokyoMetro::Factory::Decorate::AppSubDecorator
+class TokyoMetro::Factory::Decorate::AppSubDecorator < TokyoMetro::Factory::Decorate::MetaClass
 
   def initialize( decorator )
+    super( nil )
     @decorator = decorator
   end
 
@@ -10,18 +11,14 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator
     @decorator.object
   end
 
-  def method_missing( method_name , *args )
-    @decorator.send( method_name , *args )
-  end
-
   private
 
-  def h
-    ::ActionView::Base.new
-  end
-
-  def self.h
-    ::ActionView::Base.new
+  def method_missing( method_name , *args )
+    begin
+      @decorator.send( method_name , *args )
+    rescue
+      super( method_name , *args )
+    end
   end
 
 end
