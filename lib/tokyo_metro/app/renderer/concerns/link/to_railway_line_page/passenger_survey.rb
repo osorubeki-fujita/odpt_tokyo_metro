@@ -19,7 +19,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
   = this.render_railway_line_name
   - survey_year_max = survey_years.max
   - survey_years.each do | survey_year |
-    = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear.new( request , survey_year , survey_year_max , page_name ).render
+    = ::TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::MetaClass::EachYear.new( request , survey_year , survey_year_max , railway_line_page_name ).render
     HAML
   end
 
