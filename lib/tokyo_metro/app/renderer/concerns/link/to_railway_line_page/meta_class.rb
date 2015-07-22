@@ -34,7 +34,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass < 
   end
 
   def railway_line_page_name
-    @railway_line_decorated.railway_line_page_name
+    @railway_line_decorated.page_name
   end
 
   def li_classes
