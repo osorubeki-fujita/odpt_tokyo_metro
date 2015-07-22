@@ -33,7 +33,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
     url_helpers.url_for(
       controller: @controller ,
       action: :action_for_railway_line_or_year_page ,
-      railway_line: page_name ,
+      railway_line: railway_line_page_name ,
       only_path: true
     )
   end
