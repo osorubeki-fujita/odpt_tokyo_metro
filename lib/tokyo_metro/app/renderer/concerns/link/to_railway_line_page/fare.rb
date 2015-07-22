@@ -32,7 +32,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::Fare < Tokyo
   end
 
   def railway_line_of_station_info_and_railway_line_info_object_is_the_same?
-    @station_info.railway_line.id == railway_line_info_object.id
+    @station_info.railway_line_info.id == railway_line_info_object.id
   end
 
   def railway_line_on_this_station?
