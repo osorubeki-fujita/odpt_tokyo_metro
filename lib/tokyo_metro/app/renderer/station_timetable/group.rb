@@ -31,7 +31,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group < TokyoMetro::Factory::
       ::TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine.new(
         request ,
         @station_info ,
-        ::Railway::Line.find( railway_line_info_id ) ,
+        ::Railway::Line::Info.find( railway_line_info_id ) ,
         station_timetables
       )
     }
