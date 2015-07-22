@@ -7,7 +7,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::Station < TokyoMetro
       @prior_railway_line_info_ids = station_info.railway_line.main_railway_line_info.id
     else
       railway_line_infos = station_info.railway_line_infos_of_tokyo_metro
-      @prior_railway_line_info_ids = @railway_line_infos.pluck( :railway_line_info_id ).uniq
+      @prior_railway_line_info_ids = railway_line_infos.pluck( :railway_line_info_id ).uniq
     end
   end
 
