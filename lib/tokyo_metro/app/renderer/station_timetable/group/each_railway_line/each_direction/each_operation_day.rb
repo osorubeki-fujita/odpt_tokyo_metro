@@ -34,7 +34,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
 %thead{ class: railway_line_info.css_class }
   %tr
     %td{ colspan: 2 , class: :top_header }
-      = railway_line_info.decorate.render_in_station_timetable_header
+      = railway_line_info.decorate.in_station_timetable.render_header
       %div{ class: :main }
         = operation_day.decorate.render_in_station_timetable_header
         = railway_direction.decorate.render_in_station_timetable_header

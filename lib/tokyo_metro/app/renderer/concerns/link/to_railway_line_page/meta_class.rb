@@ -14,7 +14,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass < 
   - if url.present?
     = link_to_unless( without_link_to_railway_line_page , "" , url )
   %div{ class: div_classes }
-    = railway_line_decorated.render_railway_line_code( small: small_railway_line_code )
+    = railway_line_decorated.code.render( small: small_railway_line_code )
     = railway_line_decorated.render_name( prefix_ja: prefix_ja , prefix_en: prefix_en , suffix_ja: suffix_ja , suffix_en: suffix_en )
     - if optional_infos_to_display.present?
       - [ optional_infos_to_display ].flatten.each do | info |
