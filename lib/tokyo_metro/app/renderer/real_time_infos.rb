@@ -95,7 +95,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
   - else
     - this.infos_of_each_railway_line.each do | info_of_a_railway_line |
       - if info_of_a_railway_line.train_location_infos.present?
-        = info_of_a_railway_line.railway_line.decorate.render_title_in_train_location
+        = info_of_a_railway_line.railway_line.decorate.title.render_in_train_location_info
         = info_of_a_railway_line.render_train_location_infos
     HAML
   end

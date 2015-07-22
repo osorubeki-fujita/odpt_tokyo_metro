@@ -11,7 +11,7 @@ class TokyoMetro::App::Renderer::WomenOnlyCarInfo::EachRailwayLine < TokyoMetro:
 - railway_line_decorated = railway_line.decorate
 - if display_railway_line
   %div{ class: [ railway_line_decorated.css_class , :in_railway_line_group ] }
-    = railway_line_decorated.render_title_in_women_only_car_info
+    = railway_line_decorated.title.render_in_women_only_car_info
     = this.render_each_women_only_car_info
 - else
   %div{ class: railway_line_decorated.css_class }
