@@ -50,7 +50,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::PassengerSur
     current_page?(
       controller: @controller ,
       action: :action_for_railway_line_or_year_page ,
-      railway_line: page_name ,
+      railway_line: railway_line_page_name ,
       survey_year: @survey_years.max.to_s
     )
   end
