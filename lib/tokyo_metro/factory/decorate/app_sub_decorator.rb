@@ -1,7 +1,7 @@
 class TokyoMetro::Factory::Decorate::AppSubDecorator < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( decorator )
-    super( nil )
+  def initialize( decorator , request = nil )
+    super( request )
     @decorator = decorator
   end
 
