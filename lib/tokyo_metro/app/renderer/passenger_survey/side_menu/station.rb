@@ -2,23 +2,24 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::Station < TokyoMetro
 
   def initialize( request , station_info )
     super( request )
-    @railway_line_infos =  station_info.railway_line_infos_of_tokyo_metro
+    @all_railway_line_infos = ::Railway::Line::Info.tokyo_metro( including_branch_line: false )
 
     if station_info.at_kita_ayase? or station_info.between_honancho_and_nakano_shimbashi?
       @prior_railway_line_info_ids = station_info.railway_line.main_railway_line_info.id
     else
-      @prior_railway_line_info_ids = @railway_line_infos.pluck( :railway_line_info_id ).uniq
+      railway_line_infos =  station_info.railway_line_infos_of_tokyo_metro
+      @prior_railway_line_info_ids = railway_line_infos.pluck( :railway_line_info_id ).uniq
     end
   end
 
   private
 
   def railway_lines_prior
-    @railway_line_infos.where( id: @prior_railway_line_info_ids )
+    @all_railway_line_infos.where( id: @prior_railway_line_info_ids )
   end
 
   def railway_lines_not_prior
-    @railway_line_infos.where.not( id: @prior_railway_line_info_ids )
+    @all_railway_line_infos.where.not( id: @prior_railway_line_info_ids )
   end
 
   def proc_for_links_to_railway_line_pages
