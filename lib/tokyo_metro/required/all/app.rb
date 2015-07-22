@@ -5,7 +5,7 @@ class TokyoMetro::Required::All::App < TokyoMetro::Required
   end
 
   def self.other_files
-    Renderer.files
+    [ Renderer.files , Container.files ]
   end
 
 end

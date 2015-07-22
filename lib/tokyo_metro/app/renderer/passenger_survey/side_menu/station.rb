@@ -2,12 +2,12 @@ class TokyoMetro::App::Renderer::PassengerSurvey::SideMenu::Station < TokyoMetro
 
   def initialize( request , station_info )
     super( request )
-    @station_infos = station_info.railway_line_infos_of_tokyo_metro
 
     if station_info.at_kita_ayase? or station_info.between_honancho_and_nakano_shimbashi?
       @prior_railway_line_info_ids = station_info.railway_line.main_railway_line_info.id
     else
-      @prior_railway_line_info_ids = @station_infos.pluck( :railway_line_info_id )
+      railway_line_infos = station_info.railway_line_infos_of_tokyo_metro
+      @prior_railway_line_info_ids = @railway_line_infos.pluck( :railway_line_info_id ).uniq
     end
   end
 
