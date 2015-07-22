@@ -47,7 +47,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       = "Now at"
   %div{ class: :station_infos }<
     - station_infos.each.with_index(1) do | station_info , i |
-      = station_info.decorate.train_location.render_name
+      = station_info.decorate.in_train_location.render_name
       - unless i == station_infos.length
         %div{ class: :arrow }
           = ::TokyoMetro::App::Renderer::Icon.caret_down( request , 2 ).render
@@ -142,7 +142,7 @@ class TokyoMetro::Factory::Decorate::Api::TrainLocation::Info < TokyoMetro::Fact
       def #{ method_basename }_decorated
         _#{ method_basename } = #{ method_basename }
         if _#{ method_basename }.present?
-          _#{ method_basename }.decorate.train_location
+          _#{ method_basename }.decorate.in_train_location
         else
           nil
         end

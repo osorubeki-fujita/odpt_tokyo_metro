@@ -54,7 +54,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
   def another_station_info_to_display
     ::Proc.new {
       h.render inline: <<-HAML , type: :haml , locals: { connecting_station_info: object.connecting_station_info }
-= connecting_station_info.decorate.render_connection_info_from_another_station
+= connecting_station_info.decorate.in_transfer_info.render_connection_info_from_another_station
       HAML
     }
   end

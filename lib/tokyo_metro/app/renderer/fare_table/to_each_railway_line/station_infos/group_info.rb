@@ -45,12 +45,12 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos::Gro
   - case i
   - when number_of_station_infos
     %tr{ class: :last }<
-      = station_info.decorate.render_in_fare_table
+      = station_info.decorate.in_fare_table.render
       - if i == 1
         = fare_normal_group_decorated.render_columns( number_of_station_infos )
   - else
     %tr<
-      = station_info.decorate.render_in_fare_table
+      = station_info.decorate.in_fare_table.render
       - if i == 1
         = fare_normal_group_decorated.render_columns( number_of_station_infos )
     HAML
@@ -62,7 +62,7 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::StationInfos::Gro
 - # （運賃が設定されていない場合）
 - station_infos.each.with_index(1) do | station_info , i |
   %tr<
-    = station_info.decorate.render_in_fare_table
+    = station_info.decorate.in_fare_table.render
     - if i == 1
       %td{ colspan: number_of_station_infos , colspan: 4 , class: :no_fare }<>
         = " "

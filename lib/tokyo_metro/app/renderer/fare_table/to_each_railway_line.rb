@@ -86,7 +86,7 @@ class TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine < TokyoMetro::Fact
     = ::TokyoMetro::App::Renderer::FareTable::ToEachRailwayLine::Rows.new( request , station_infos_of_railway_line_info_before_starting_station , fares , fare_normal_groups , to_make_empty_row_when_no_station: true ).render
     - #
     %tr<
-      = ::Station::Info.find( id_of_starting_station_info ).decorate.render_in_fare_table( starting_station_info: true )
+      = ::Station::Info.find( id_of_starting_station_info ).decorate.in_fare_table.render( starting_station_info: true )
       %td{ class: :starting_station , colspan: 4 }<
         %div{ class: :text_ja }
           = "この駅からの運賃を表示しています"

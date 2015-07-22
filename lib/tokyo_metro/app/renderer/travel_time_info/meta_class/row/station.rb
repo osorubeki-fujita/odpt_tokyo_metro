@@ -26,10 +26,10 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Row::Station < Tokyo
     = additional_info_left_on_station.render( station_info )
   - elsif left_columns > 1
     %td{ class: :transfer , colspan: left_columns }
-      = station_info_decorated.render_connecting_railway_lines_in_travel_time_infos
+      = station_info_decorated.in_travel_time_info.render_connecting_railway_lines
   - else
     %td{ class: :transfer }
-      = station_info_decorated.render_connecting_railway_lines_in_travel_time_infos
+      = station_info_decorated.in_travel_time_info.render_connecting_railway_lines
 
   - if columns_next_to_railway_line > 0 and additional_info_next_to_railway_on_station.present? and additional_info_next_to_railway_on_station.has_procedure_of?( station_info )
     = additional_info_next_to_railway_on_station.render( station_info )
@@ -48,10 +48,10 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::Row::Station < Tokyo
     = additional_info_right_on_station.render( station_info )
   - elsif right_columns > 1
     %td{ class: :station_info , colspan: right_columns }
-      = station_info_decorated.render_name_in_travel_time_infos
+      = station_info_decorated.in_travel_time_info.render_name
   - else
     %td{ class: :station_info }
-      = station_info_decorated.render_name_in_travel_time_infos
+      = station_info_decorated.in_travel_time_info.render_name
     HAML
   end
 

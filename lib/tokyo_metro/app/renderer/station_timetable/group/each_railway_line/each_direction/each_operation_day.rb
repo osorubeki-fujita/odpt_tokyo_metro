@@ -39,7 +39,7 @@ class TokyoMetro::App::Renderer::StationTimetable::Group::EachRailwayLine::EachR
         = operation_day.decorate.render_in_station_timetable_header
         = railway_direction.decorate.render_in_station_timetable_header
         - if station_info.present?
-          = station_info.decorate.render_in_station_timetable_header
+          = station_info.decorate.in_station_timetable.render_in_header
   = station_train_times.render_message_in_header
     HAML
   end

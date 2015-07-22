@@ -12,7 +12,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Botto
   %div{ class: :travel_time_info_square }<
     = " "
 %td{ class: [ :station_info , :auto_width , :kita_ayase ] }
-  = kita_ayase.decorate.render_name_in_travel_time_infos
+  = kita_ayase.decorate.in_travel_time_info.render_name
     HAML
   end
 
