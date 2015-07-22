@@ -39,8 +39,10 @@ module TokyoMetro
   # 辞書ファイルのディレクトリ
   DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/tokyo_metro/dictionary" )
 
-# データベースのディレクトリ
-  const_set( :GEM_DB_DIR , "#{ TOP_DIR }/db" )
+  # Gem のためのデータベースのディレクトリ
+  GEM_DEV_TOP_DIR = "/Users/shufujita/rubypj/gems/tokyo_metro"
+
+  const_set( :GEM_DB_DIR , "#{ GEM_DEV_TOP_DIR }/db" )
   const_set( :API_LOG_DIR , "#{ GEM_DB_DIR }/api_log" )
   const_set( :API_LOG_DEFAULT_DIR , "#{ API_LOG_DIR }/201412" )
 
