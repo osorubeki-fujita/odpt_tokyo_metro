@@ -1,7 +1,7 @@
 odpt.Station:Tobu.SkytreeOshiage.Oshiage:
   station_alias:
     - odpt.Station:TokyoMetro.Hanzomon.Oshiage
-    - odpt.Station:Tobu.Isesaki.Oshiage
+    - odpt.Station:Tobu.Skytree.Oshiage
   station_facility_info: odpt.StationFacility:Tobu.Oshiage
   station_facility_custom: odpt.StationFacility:TokyoMetro.Oshiage
   station_facility_custom_alias: odpt.StationFacility:Tobu.Oshiage
@@ -14,7 +14,7 @@ odpt.Station:Tobu.SkytreeOshiage.Oshiage:
     - custom.StoppingPattern:Tobu.SkytreeOshiage.Subway
 
 odpt.Station:Tobu.SkytreeOshiage.Hikifune:
-  station_alias: odpt.Station:Tobu.Isesaki.Hikifune
+  station_alias: odpt.Station:Tobu.Skytree.Hikifune
   station_facility_info: odpt.StationFacility:Tobu.Hikifune
   name_ja: 曳舟
   name_hira: ひきふね

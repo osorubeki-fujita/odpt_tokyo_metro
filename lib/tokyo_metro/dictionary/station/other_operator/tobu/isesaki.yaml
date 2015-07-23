@@ -1,4 +1,7 @@
 odpt.Station:Tobu.Isesaki.TobuDoubutsuKoen:
+  station_alias:
+    - odpt.Station:Tobu.Skytree.TobuDoubutsuKoen
+    - odpt.Station:Tobu.Nikko.TobuDoubutsuKoen
   station_facility_info: odpt.StationFacility:Tobu.TobuDobutsuKoen
   # station_facility_info: odpt.StationFacility:Tobu.TobuDoubutuKouen
   name_ja: 東武動物公園

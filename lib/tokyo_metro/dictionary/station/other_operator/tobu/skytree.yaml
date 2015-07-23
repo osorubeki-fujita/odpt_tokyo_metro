@@ -345,7 +345,9 @@ odpt.Station:Tobu.Skytree.Himemiya:
     - custom.StoppingPattern:Tobu.Skytree.SemiExpress
 
 odpt.Station:Tobu.Skytree.TobuDobutsuKoen:
-  station_alias: odpt.Station:Tobu.Nikko.TobuDobutsuKoen
+  station_alias:
+    - odpt.Station:Tobu.Isesaki.TobuDoubutsuKoen
+    - odpt.Station:Tobu.Nikko.TobuDobutsuKoen
   station_facility_info: odpt.StationFacility:Tobu.TobuDobutsuKoen
   # station_alias: odpt.Station:Tobu.Nikko.TobuDoubutuKouen
   # station_facility_info: odpt.StationFacility:Tobu.TobuDoubutuKouen
