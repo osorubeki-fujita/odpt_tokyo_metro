@@ -1,9 +1,9 @@
 class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::EachDirection < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , platform_infos , railway_lines , railway_direction )
+  def initialize( request , platform_infos , railway_line_infos , railway_direction )
     super( request )
     @platform_infos = platform_infos.sort_by( &:car_number )
-    set_railway_line( railway_lines )
+    set_railway_line_info( railway_line_infos )
     @railway_direction = railway_direction
   end
 

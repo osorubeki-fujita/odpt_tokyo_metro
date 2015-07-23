@@ -4,8 +4,8 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::Normal::EachDi
 
   private
 
-  def set_railway_line( railway_line )
-    @railway_line = railway_line
+  def set_railway_line_info( railway_line_info )
+    @railway_line_info = railway_line_info
   end
 
 end

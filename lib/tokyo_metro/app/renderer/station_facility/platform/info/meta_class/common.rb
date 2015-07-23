@@ -70,7 +70,7 @@ module TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Co
 
   private
 
-  def set_railway_line( railway_lines )
+  def set_railway_line_info( railway_line_infos )
     raise "Error: The method \'#{ __method__ }\' is not defined yet in this class \"#{ self.class }\"."
   end
 

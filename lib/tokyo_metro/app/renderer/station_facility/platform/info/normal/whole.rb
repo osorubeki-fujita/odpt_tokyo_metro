@@ -14,9 +14,9 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::Normal::Whole 
 
   private
 
-  def set_railway_line( railway_lines )
-    raise "Error" unless railway_lines.length == 1
-    @railway_line = railway_lines.first
+  def set_railway_line_info( railway_lines_infos )
+    raise "Error" unless railway_line_infos.length == 1
+    @railway_line_info = railway_line_infos.first
   end
 
 end

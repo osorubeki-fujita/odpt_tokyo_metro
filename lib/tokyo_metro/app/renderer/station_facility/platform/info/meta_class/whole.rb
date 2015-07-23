@@ -3,7 +3,7 @@ class TokyoMetro::App::Renderer::StationFacility::Platform::Info::MetaClass::Who
   def initialize( request , platform_infos , railway_lines )
     super( request )
     @platform_infos = platform_infos
-    set_railway_line( [ railway_lines ].flatten )
+    set_railway_line_info( [ railway_lines ].flatten )
   end
 
   attr_reader :platform_infos
