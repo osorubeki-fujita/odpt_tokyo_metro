@@ -343,10 +343,10 @@ class TokyoMetro::Static::TrainOwner::Info
     @operator.color
   end
 
-  # 運行事業者の WebColor を取得するメソッド
+  # 運行事業者の HexColor を取得するメソッド
   # @return [String]
-  def web_color
-    @operator.web_color
+  def hex_color
+    @operator.hex_color
   end
 
 # @!group 運行事業者の色に関するメソッド (2)

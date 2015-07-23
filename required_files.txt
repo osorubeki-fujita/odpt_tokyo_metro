@@ -1586,6 +1586,8 @@ lib/tokyo_metro/rake/rails/assets/image/svg_files.rb
 lib/tokyo_metro/rake/rails/assets/image/svg_files/each_file.rb
 lib/tokyo_metro/rake/rails/assets/sass.rb
 lib/tokyo_metro/rake/rails/assets/sass/make.rb
+lib/tokyo_metro/rake/rails/assets/sass/make/partial.rb
+lib/tokyo_metro/rake/rails/assets/sass/make/partial/file.rb
 lib/tokyo_metro/rake/rails/bug_fix.rb
 lib/tokyo_metro/rake/rails/bug_fix/barrier_free_facility.rb
 lib/tokyo_metro/rake/rails/bug_fix/barrier_free_facility/service_detail.rb

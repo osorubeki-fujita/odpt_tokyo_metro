@@ -3,7 +3,7 @@
 custom.TrainTypeOtherOperator:Tokyu.Local:
   train_type: odpt.TrainType:TokyoMetro.Local
   bgcolor:
-    web: "#0000ff"
+    hex: "#0000ff"
     red: 0
     green: 0
     blue: 255
@@ -16,7 +16,7 @@ custom.TrainTypeOtherOperator:Tokyu.Local:
 custom.TrainTypeOtherOperator:Tokyu.Meguro.Local:
   train_type: odpt.TrainType:TokyoMetro.Local
   bgcolor:
-    web: "#00b379"
+    hex: "#00b379"
     red: 0
     green: 179
     blue: 121
@@ -31,7 +31,7 @@ custom.TrainTypeOtherOperator:Tokyu.Meguro.Local:
 custom.TrainTypeOtherOperator:Tokyu.SemiExpress:
   train_type: odpt.TrainType:TokyoMetro.SemiExpress
   bgcolor:
-    web: "#018d54"
+    hex: "#018d54"
     red: 1
     green: 141
     blue: 84
@@ -45,10 +45,10 @@ custom.TrainTypeOtherOperator:Tokyu.SemiExpress:
 custom.TrainTypeOtherOperator:Tokyu.Express:
   train_type: odpt.TrainType:TokyoMetro.Express
   bgcolor :
-    web : "#ee0011"
-    red : 238
-    green : 0
-    blue : 17
+    hex: "#ee0011"
+    red: 238
+    green: 0
+    blue: 17
   color:
     ref: custom.TrainTypeColor:White
   operator: odpt.Operator:Tokyu
@@ -71,7 +71,7 @@ custom.TrainTypeOtherOperator:Tokyu.HolidayExpress:
 custom.TrainTypeOtherOperator:Tokyu.CommuterLimitedExpress:
   train_type: odpt.TrainType:TokyoMetro.CommuterLimitedExpress
   bgcolor:
-    web: "#ffcc66"
+    hex: "#ffcc66"
     red: 255
     green: 204
     blue: 102
@@ -87,7 +87,7 @@ custom.TrainTypeOtherOperator:Tokyu.CommuterLimitedExpress:
 custom.TrainTypeOtherOperator:Tokyu.LimitedExpress:
   train_type: odpt.TrainType:TokyoMetro.LimitedExpress
   bgcolor:
-    web: "#fd9a3d"
+    hex: "#fd9a3d"
     red: 253
     green: 154
     blue: 61

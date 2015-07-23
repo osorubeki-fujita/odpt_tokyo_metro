@@ -5,20 +5,20 @@ class TokyoMetro::Static::Color
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
 
   # Constructor
-  # @param web [String] WebColor
+  # @param hex [String] HexColor
   # @param red [Integer] R 成分の値
   # @param green [Integer] G 成分の値
   # @param blue [Integer] B 成分の値
-  def initialize( web , red , green , blue )
-    @web = web
+  def initialize( hex , red , green , blue )
+    @hex = hex
     @red = red
     @green = green
     @blue = blue
   end
 
-  # WebColor を取得するメソッド
+  # HexColor を取得するメソッド
   # @return [String]
-  attr_reader :web
+  attr_reader :hex
   # R 成分の値を返すメソッド
   # @return [Integer]
   attr_reader :red
@@ -29,7 +29,7 @@ class TokyoMetro::Static::Color
   # @return [Integer]
   attr_reader :blue
 
-  alias :web_color :web
+  alias :hex_color :hex
 
 # @!group 文字列への変換
 
@@ -37,7 +37,7 @@ class TokyoMetro::Static::Color
   # @param indent [Integer (>=0)] インデントの幅
   # @return [String]
   def to_s( indent = 0 )
-    " " * indent + "#{@web} (#{ self.to_a_rgb.join( " , " ) })"
+    " " * indent + "#{@hex} (#{ self.to_a_rgb.join( " , " ) })"
   end
 
   # インスタンスの情報を CSV 出力用の文字列（カンマ区切り）にして返すメソッド
@@ -60,10 +60,10 @@ class TokyoMetro::Static::Color
     [ @red , @green , @blue ]
   end
 
-  # WebColor, Red, Green, Blue の各成分を配列にして返すメソッド
+  # HexColor, Red, Green, Blue の各成分を配列にして返すメソッド
   # @return [::Array <Integer>]
   def to_a
-    [ @web ] + self.to_a_rgb
+    [ @hex ] + self.to_a_rgb
   end
 
 # @!endgroup

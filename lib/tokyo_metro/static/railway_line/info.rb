@@ -711,10 +711,10 @@ class TokyoMetro::Static::RailwayLine::Info
     end
   end
 
-  # 標準の路線色の WebColor を取得するメソッド
+  # 標準の路線色の HexColor を取得するメソッド
   # @return [::String]
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.color_normal_web }
+  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.color_normal_hex }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : #f39700
   #   odpt.Railway:TokyoMetro.Marunouchi               : #e60012
@@ -787,8 +787,8 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:MIR.TX                              : #000084
   #   odpt.Railway:Yurikamome.Yurikamome               : #00418e
   #   odpt.Railway:TWR.Rinkai                          : #00418e
-  def color_normal_web
-    color_normal.web_color
+  def color_normal_hex
+    color_normal.hex_color
   end
 
   # 標準の路線色の Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
@@ -919,10 +919,10 @@ class TokyoMetro::Static::RailwayLine::Info
     @operator.color
   end
 
-  # 鉄道事業者の色の WebColor を取得するメソッド
+  # 鉄道事業者の色の HexColor を取得するメソッド
   # @return [String]
-  def operator_color_web
-    @operator.web_color
+  def operator_color_hex
+    @operator.hex_color
   end
 
   # 鉄道事業者の色の Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド

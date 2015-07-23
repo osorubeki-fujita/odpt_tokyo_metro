@@ -27,7 +27,7 @@ custom.TrainTypeDefault:TokyoMetro.Express.ToTokyu:
 custom.TrainTypeDefault:TokyoMetro.CommuterExpress:
   train_type: odpt.TrainType:TokyoMetro.CommuterExpress
   bgcolor:
-    web: "#ff66cc"
+    hex: "#ff66cc"
     red: 255
     green: 102
     blue: 204
@@ -50,7 +50,7 @@ custom.TrainTypeDefault:TokyoMetro.HolidayExpress:
 custom.TrainTypeDefault:TokyoMetro.Express:
   train_type: odpt.TrainType:TokyoMetro.Express
   bgcolor:
-    web: "#ff0066"
+    hex: "#ff0066"
     red: 255
     green: 0
     blue: 102

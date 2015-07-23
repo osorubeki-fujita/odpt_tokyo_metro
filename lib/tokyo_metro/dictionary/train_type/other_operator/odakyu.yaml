@@ -5,7 +5,7 @@
 custom.TrainTypeOtherOperator:Odakyu.Local:
   train_type: odpt.TrainType:TokyoMetro.Local
   bgcolor:
-    web: "#0c449b"
+    hex: "#0c449b"
     red: 12
     green: 68
     blue: 155
@@ -18,7 +18,7 @@ custom.TrainTypeOtherOperator:Odakyu.Local:
 custom.TrainTypeOtherOperator:Odakyu.SemiExpress:
   train_type: odpt.TrainType:TokyoMetro.SemiExpress
   bgcolor:
-    web: "#319f2d"
+    hex: "#319f2d"
     red: 49
     green: 159
     blue: 45
@@ -31,7 +31,7 @@ custom.TrainTypeOtherOperator:Odakyu.SemiExpress:
 custom.TrainTypeOtherOperator:Odakyu.TamaExpress:
   train_type: odpt.TrainType:TokyoMetro.TamaExpress
   bgcolor:
-    web: "#f13b9b"
+    hex: "#f13b9b"
     red: 241
     green: 59
     blue: 155
@@ -45,7 +45,7 @@ custom.TrainTypeOtherOperator:Odakyu.RomanceCar:
   # train_type: odpt.TrainType:TokyoMetro.RomanceCar
   train_type: odpt.TrainType:TokyoMetro.LimitedExpress
   bgcolor:
-    web: "#ff0000"
+    hex: "#ff0000"
     red: 255
     green: 0
     blue: 0

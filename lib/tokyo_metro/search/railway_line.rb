@@ -27,14 +27,14 @@ module TokyoMetro::Search::RailwayLine
     ""
   end
 
-  # 路線色 (Web Color)
+  # 路線色 (Hex Color)
   # @param railway_line_name [String] 路線名称（例：odpt.Railway:TokyoMetro.Marunouchi、銀座線、T、Mita）
   # @return [String]
-  def self.web_color( railway_line_name )
+  def self.hex_color( railway_line_name )
     railway_line_same_as = name_in_api( railway_line_name )
     ::TokyoMetro::Static.railway_line_infos_operated_by_tokyo_metro.each do | item |
       if item[ "odpt:railway" ] == railway_line_same_as
-        return item[ "color" ][ "web" ]
+        return item[ "color" ][ "hex" ]
       end
     end
     "\#999999"

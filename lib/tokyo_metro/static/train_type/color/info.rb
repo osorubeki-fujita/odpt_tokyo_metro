@@ -9,7 +9,7 @@ class TokyoMetro::Static::TrainType::Color::Info < TokyoMetro::Static::Color
   # Constructor
   # @param same_as [String] 作成するインスタンスの ID キー
   # @param note [String] 作成するインスタンスの補足情報
-  # @param wrgb [::Array] 作成するインスタンスの WebColor と RGB の各成分の情報
+  # @param wrgb [::Array] 作成するインスタンスの HexColor と RGB の各成分の情報
   def initialize( same_as , note , *wrgb )
     @same_as = same_as
     @note = note
@@ -38,15 +38,15 @@ class TokyoMetro::Static::TrainType::Color::Info < TokyoMetro::Static::Color
 
 # @!group 種別色の値を取得するメソッド - 例を追加するためだけに定義
 
-  # WebColor を取得するメソッド
+  # HexColor を取得するメソッド
   # @return [String]
   # @example
-  #   TokyoMetro::Static.train_types_color.each_value { | color | puts color.same_as.ljust(48) + " " + color.web }
+  #   TokyoMetro::Static.train_types_color.each_value { | color | puts color.same_as.ljust(48) + " " + color.hex }
   #   =>
   #   custom.TrainTypeColor:White                      #ffffff
   #   custom.TrainTypeColor:DarkGray                   #666666
   #   custom.TrainTypeColor:HolidayExpress             #ff3399
-  def web
+  def hex
     super
   end
 

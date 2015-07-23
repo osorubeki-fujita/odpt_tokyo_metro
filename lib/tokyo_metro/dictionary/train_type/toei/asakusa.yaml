@@ -15,7 +15,7 @@ custom.TrainType:Toei.Asakusa.Local.Normal:
 custom.TrainType:Toei.Asakusa.AirportLimitedExpress.Normal:
   train_type: odpt.TrainType:Toei.AirportLimitedExpress
   bgcolor:
-    web: "#fd9a3d"
+    hex: "#fd9a3d"
     red: 253
     green: 154
     blue: 61

@@ -65,7 +65,7 @@ custom.TrainType:TokyoMetro.Tozai.Local.ForToyoRapidRailway:
 custom.TrainType:TokyoMetro.Tozai.CommuterRapid.Normal:
   train_type: odpt.TrainType:TokyoMetro.CommuterRapid
   bgcolor:
-    web: "#cc6699"
+    hex: "#cc6699"
     red: 204
     green: 102
     blue: 153
@@ -84,7 +84,7 @@ custom.TrainType:TokyoMetro.Tozai.CommuterRapid.Normal:
 custom.TrainType:TokyoMetro.Tozai.CommuterRapid.ForMitaka:
   train_type: odpt.TrainType:TokyoMetro.CommuterRapid
   bgcolor:
-    web: "#cc6699"
+    hex: "#cc6699"
     red: 204
     green: 102
     blue: 153
@@ -104,7 +104,7 @@ custom.TrainType:TokyoMetro.Tozai.CommuterRapid.ForMitaka:
 custom.TrainType:TokyoMetro.Tozai.Rapid.Normal:
   train_type: odpt.TrainType:TokyoMetro.Rapid
   bgcolor:
-    web: "#6699ff"
+    hex: "#6699ff"
     red: 102
     green: 153
     blue: 255
@@ -124,7 +124,7 @@ custom.TrainType:TokyoMetro.Tozai.Rapid.Normal:
 custom.TrainType:TokyoMetro.Tozai.Rapid.ForMitaka:
   train_type: odpt.TrainType:TokyoMetro.Rapid
   bgcolor:
-    web: "#6699ff"
+    hex: "#6699ff"
     red: 102
     green: 153
     blue: 255
@@ -144,7 +144,7 @@ custom.TrainType:TokyoMetro.Tozai.Rapid.ForMitaka:
 custom.TrainType:TokyoMetro.Tozai.Rapid.ForTsudanuma:
   train_type: odpt.TrainType:TokyoMetro.Rapid
   bgcolor:
-    web: "#6699ff"
+    hex: "#6699ff"
     red: 102
     green: 153
     blue: 255
@@ -163,7 +163,7 @@ custom.TrainType:TokyoMetro.Tozai.Rapid.ForTsudanuma:
 custom.TrainType:TokyoMetro.Tozai.Rapid.ForToyoRapidRailway:
   train_type: odpt.TrainType:TokyoMetro.Rapid
   bgcolor:
-    web: "#6699ff"
+    hex: "#6699ff"
     red: 102
     green: 153
     blue: 255

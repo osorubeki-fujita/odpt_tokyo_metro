@@ -33,7 +33,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
 
   def hash_to_db
     h = {
-      color: @info.color_normal_web ,
+      color: @info.color_normal_hex ,
       name_codes: name_codes ,
       #
       id_urn: @id_urn ,

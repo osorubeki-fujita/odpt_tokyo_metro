@@ -3,7 +3,7 @@
 custom.TrainTypeOtherOperator:ToyoRapidRailway.ToyoRapid:
   train_type: odpt.TrainType:TokyoMetro.ToyoRapid
   bgcolor:
-    web: "#6699ff"
+    hex: "#6699ff"
     red: 102
     green: 153
     blue: 255
