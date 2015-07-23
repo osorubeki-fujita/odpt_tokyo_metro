@@ -1,6 +1,6 @@
 module TokyoMetro::App::Renderer::StationFacility::Platform::Info::Normal::Common
 
-  attr_reader :railway_line
+  attr_reader :railway_line_info
 
   def railway_line_name_ja
     @railway_line_info.name_ja
