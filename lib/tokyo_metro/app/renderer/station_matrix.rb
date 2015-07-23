@@ -27,7 +27,7 @@ class TokyoMetro::App::Renderer::StationMatrix < TokyoMetro::Factory::Decorate::
       make_link_to_railway_line: @make_link_to_railway_line ,
       type_of_link_to_station: @type_of_link_to_station ,
       set_anchor: @set_anchor ,
-      controller_of_linked_page_from_railway_line: controller_of_linked_page_from_railway_line
+      controller_of_linked_page_from_railway_line: @controller_of_linked_page_from_railway_line
     })
   end
 
