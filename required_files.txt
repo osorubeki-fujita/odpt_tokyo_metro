@@ -1272,6 +1272,7 @@ lib/tokyo_metro/factory/before_seed/api/train_timetable/info/train_type.rb
 lib/tokyo_metro/factory/before_seed/api/train_timetable/info/train_type/pattern.rb
 lib/tokyo_metro/factory/decorate.rb
 lib/tokyo_metro/factory/decorate/meta_class.rb
+lib/tokyo_metro/factory/decorate/settings.rb
 lib/tokyo_metro/factory/decorate/api.rb
 lib/tokyo_metro/factory/decorate/api/meta_class.rb
 lib/tokyo_metro/factory/decorate/api/meta_class/real_time.rb
