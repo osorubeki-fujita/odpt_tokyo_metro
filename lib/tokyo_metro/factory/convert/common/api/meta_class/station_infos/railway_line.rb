@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Convert::Common::Api::MetaClass::StationInfos::RailwayLine
+class TokyoMetro::Factory::Convert::Common::Api::MetaClass::StationInfos::RailwayLine < OdptCommon::Factory::MetaProcessor::Process
 
   def initialize( info , list , replacing_dictionary , ignored_dictionary )
     @info = info
@@ -17,10 +17,6 @@ class TokyoMetro::Factory::Convert::Common::Api::MetaClass::StationInfos::Railwa
         @list << @info
       end
     end
-  end
-
-  def self.process( *args )
-    self.new( *args ).process
   end
 
   private
