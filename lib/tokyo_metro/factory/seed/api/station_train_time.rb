@@ -76,7 +76,7 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime
 
   def seed_optional_infos
     seed_arrival_times_of_romance_car
-    seed_arrival_times_of_last_station_in_tokyo_metro
+    seed_arrival_times_of_last_station_of_the_same_operator
   end
 
   def check_validity_after_finish_seeding
@@ -92,14 +92,14 @@ class TokyoMetro::Factory::Seed::Api::StationTrainTime
 
   # 到着時刻をDBに流し込むメソッド (1) - 特急ロマンスカーの各停車駅（終着駅以外）
   # @note {#seed_additional_arrival_times} を経由し、{TokyoMetro::Api::TrainTimetable::Info#seed_arrival_times_of_romance_car} を実行する。
-  # @note 終着駅の処理は {#seed_arrival_times_of_last_station_in_tokyo_metro_for_each_train} で行う。
+  # @note 終着駅の処理は {#seed_arrival_times_of_last_station_of_the_same_operator_for_each_train} で行う。
   def seed_arrival_times_of_romance_car
     @info.train_timetables.send( __method__ )
   end
 
   # 到着時刻をDBに流し込むメソッド (2) - 東京メトロ線内の最後の駅
-  # @note {#seed_additional_arrival_times} を経由し、{TokyoMetro::Api::TrainTimetable::Info#seed_arrival_times_of_last_station_in_tokyo_metro} を実行する。
-  def seed_arrival_times_of_last_station_in_tokyo_metro
+  # @note {#seed_additional_arrival_times} を経由し、{TokyoMetro::Api::TrainTimetable::Info#seed_arrival_times_of_last_station_of_the_same_operator} を実行する。
+  def seed_arrival_times_of_last_station_of_the_same_operator
     @info.train_timetables.send( __method__ )
   end
 

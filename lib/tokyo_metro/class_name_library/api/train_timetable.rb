@@ -121,7 +121,7 @@ module TokyoMetro::ClassNameLibrary::Api::TrainTimetable
       ::TokyoMetro::Factory::Seed::Api::TrainTimetable::List::ArrivalTimes::RomanceCar
     end
 
-    def factory_for_seeding_arrival_times_of_last_station_in_tokyo_metro
+    def factory_for_seeding_arrival_times_of_last_station_of_the_same_operator
       ::TokyoMetro::Factory::Seed::Api::TrainTimetable::List::ArrivalTimes::LastStationInTokyoMetro
     end
 
@@ -137,7 +137,7 @@ module TokyoMetro::ClassNameLibrary::Api::TrainTimetable
       ::TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::RomanceCar
     end
 
-    def factory_for_seeding_each_arrival_time_of_last_station_in_tokyo_metro
+    def factory_for_seeding_each_arrival_time_info_of_last_station_of_the_same_operator
       ::TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::LastStationInTokyoMetro
     end
 

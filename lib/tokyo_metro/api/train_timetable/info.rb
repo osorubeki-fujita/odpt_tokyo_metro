@@ -226,8 +226,8 @@ class TokyoMetro::Api::TrainTimetable::Info < TokyoMetro::Api::MetaClass::NotRea
     self.class.factory_for_seeding_each_arrival_time_of_romance_car.process( self )
   end
 
-  def seed_arrival_time_of_last_station_in_tokyo_metro
-    self.class.factory_for_seeding_each_arrival_time_of_last_station_in_tokyo_metro.process( self )
+  def seed_arrival_time_of_last_station_of_this_operator
+    self.class.factory_for_seeding_each_arrival_time_info_of_last_station_of_the_same_operator.process( self )
   end
 
 end

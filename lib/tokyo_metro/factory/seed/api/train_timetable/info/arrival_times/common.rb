@@ -24,7 +24,7 @@ module TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Commo
     @info.valid_list
   end
 
-  def info_of_last_station_in_tokyo_metro
+  def info_of_last_station_of_the_same_operator
     station_times.last
   end
 

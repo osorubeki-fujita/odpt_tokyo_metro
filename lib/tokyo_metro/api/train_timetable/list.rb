@@ -40,9 +40,9 @@ class TokyoMetro::Api::TrainTimetable::List < TokyoMetro::Api::MetaClass::NotRea
     )
   end
 
-  def seed_arrival_times_of_last_station_in_tokyo_metro
+  def seed_arrival_times_of_last_station_of_the_same_operator
     __seed__(
-      factory_name: :factory_for_seeding_arrival_times_of_last_station_in_tokyo_metro ,
+      factory_name: :factory_for_seeding_arrival_times_of_last_station_of_the_same_operator ,
       method_name: __method__ ,
       indent: 1 ,
       not_on_the_top_layer: true ,

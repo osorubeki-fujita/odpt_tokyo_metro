@@ -13,12 +13,12 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
     @geo_json = nil
     @dc_date = nil
 
-    set_variables_of_railway_lines_operated_by_tokyo_metro
+    set_variables_of_railway_lines_operated_by_the_app_operator
   end
 
   private
 
-  def set_variables_of_railway_lines_operated_by_tokyo_metro
+  def set_variables_of_railway_lines_operated_by_the_app_operator
     if @info.operated_by_tokyo_metro?
       railway_line_info_in_api = ::TokyoMetro::Api.railway_lines.find{ | railway_line | railway_line.same_as?( @info.same_as ) }
 

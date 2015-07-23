@@ -75,7 +75,7 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Romanc
       check_validty_of_the_train_for_odakyu_line( _station_times )
       return nil
     # 小田急線→千代田線の列車の場合
-    # 終着駅の処理は、ロマンスカー以外の列車も含め #seed_arrival_times_of_last_station_in_tokyo_metro で行う。
+    # 終着駅の処理は、ロマンスカー以外の列車も含め #seed_arrival_times_of_last_station_of_the_same_operator で行う。
     elsif for_chiyoda_line?
       station_times[0..-2]
     else
@@ -85,8 +85,8 @@ class TokyoMetro::Factory::Seed::Api::TrainTimetable::Info::ArrivalTimes::Romanc
 
   def check_validty_of_the_train_for_odakyu_line( _station_times )
     # 末尾に代々木上原の到着時刻が定義されている場合は無視する。
-    # @note 運転停車の到着時刻の処理は TokyoMetro::Api::TrainTimetable::Info#seed_arrival_times_of_last_station_in_tokyo_metro で行う。
-    if info_of_last_station_in_tokyo_metro.arrival_station == "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
+    # @note 運転停車の到着時刻の処理は TokyoMetro::Api::TrainTimetable::Info#seed_arrival_times_of_last_station_of_the_same_operator で行う。
+    if info_of_last_station_of_the_same_operator.arrival_station == "odpt.Station:TokyoMetro.Chiyoda.YoyogiUehara"
       _station_times = _station_times[0..-2]
     end
     # 代々木上原以外の各駅の出発時刻は、すでにDBへ流し込まれているはずである。

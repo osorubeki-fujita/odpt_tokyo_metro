@@ -36,7 +36,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::Fare < Tokyo
   end
 
   def railway_line_on_this_station?
-    @station_info.connected_to?( railway_line_info_object , only_tokyo_metro: true , include_myself: true )
+    @station_info.connected_to?( railway_line_info_object , only_of_the_same_operator: true , include_myself: true )
   end
 
   def h_locals
