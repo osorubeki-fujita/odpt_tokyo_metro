@@ -44,7 +44,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::MetaClass::Row < TokyoM
   end
 
   def svg_id
-    "passengers_#{ @number }_#{ @passenger_survey_info.station_name_in_system.underscore }"
+    "passengers_#{ @number }_#{ @passenger_survey_info.decorate.station_page_name }"
   end
 
   def set_order( whole_passenger_survey_infos)

@@ -12,7 +12,7 @@ class TokyoMetro::App::Renderer::PassengerSurvey::Table::Station::Row < TokyoMet
 
   def render
     h.render inline: <<-HAML , type: :haml , locals: h_locals
-%tr{ class: [ :passenger_survey_table_row , cycle( :odd_row , :even_row ) ] , "data-href" => passenger_survey_info.station_page_name }
+%tr{ class: [ :passenger_survey_table_row , cycle( :odd_row , :even_row ) ] , "data-href" => passenger_survey_info.decorate.station_page_name }
   - passenger_survey_info_decorated = passenger_survey_info.decorate
   = passenger_survey_info_decorated.render_station_name_in_table
   = passenger_survey_info_decorated.render_survey_year_in_table
