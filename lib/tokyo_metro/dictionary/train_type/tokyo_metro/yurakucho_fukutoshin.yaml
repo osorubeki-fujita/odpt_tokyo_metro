@@ -88,7 +88,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToSeibu:
   ref: custom.TrainTypeOtherOperator:Seibu.Local
   stopping_pattern:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.Local
-    odpt.Railway:Seibu.Yurakucho: custom.StoppingPattern:Seibu.Yurakucho.Local
+    odpt.Railway:Seibu.SeibuYurakucho: custom.StoppingPattern:Seibu.SeibuYurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
     odpt.Railway:Seibu.SeibuChichibu: custom.StoppingPattern:Seibu.SeibuChichibu.Local
   note: 西武池袋線 各駅停車（有楽町線・副都心線 共通／小竹向原方面行で使用）
@@ -101,7 +101,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu:
   ref: custom.TrainTypeOtherOperator:Seibu.SemiExpress
   stopping_pattern:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.SemiExpress
-    odpt.Railway:Seibu.Yurakucho: custom.StoppingPattern:Seibu.Yurakucho.Local
+    odpt.Railway:Seibu.SeibuYurakucho: custom.StoppingPattern:Seibu.SeibuYurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
     odpt.Railway:Seibu.SeibuChichibu: custom.StoppingPattern:Seibu.SeibuChichibu.Local
   note: 西武池袋線 準急（有楽町線・副都心線 共通／小竹向原方面行で使用）
@@ -114,7 +114,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu:
   ref: custom.TrainTypeOtherOperator:Seibu.Rapid
   stopping_pattern:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.Rapid
-    odpt.Railway:Seibu.Yurakucho: custom.StoppingPattern:Seibu.Yurakucho.Local
+    odpt.Railway:Seibu.SeibuYurakucho: custom.StoppingPattern:Seibu.SeibuYurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
     odpt.Railway:Seibu.SeibuChichibu: custom.StoppingPattern:Seibu.SeibuChichibu.Local
   note: 西武池袋線 快速（有楽町線・副都心線 共通／小竹向原方面行で使用）
@@ -127,7 +127,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu:
   ref: custom.TrainTypeOtherOperator:Seibu.RapidExpress
   stopping_pattern:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Subway
-    odpt.Railway:Seibu.Yurakucho: custom.StoppingPattern:Seibu.Yurakucho.Local
+    odpt.Railway:Seibu.SeibuYurakucho: custom.StoppingPattern:Seibu.SeibuYurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
     odpt.Railway:Seibu.SeibuChichibu: custom.StoppingPattern:Seibu.SeibuChichibu.Local
   note: 西武池袋線 快速急行（有楽町線・副都心線 共通／小竹向原方面行で使用）

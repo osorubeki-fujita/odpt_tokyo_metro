@@ -74,7 +74,7 @@ odpt.Station:TokyoMetro.Yurakucho.Hikawadai:
 odpt.Station:TokyoMetro.Yurakucho.KotakeMukaihara:
   station_alias:
     - odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara
-    - odpt.Station:Seibu.Yurakucho.KotekeMukaihara
+    - odpt.Station:Seibu.SeibuYurakucho.KotekeMukaihara
   station_facility_info: odpt.StationFacility:TokyoMetro.KotakeMukaihara
   station_facility_custom_alias: odpt.StationFacility:Seibu.KotekeMukaihara
   name_ja: 小竹向原

@@ -7,7 +7,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::YurakuchoAndFukuto
     # @from_station = ::Station::Info.find_by( same_as: "odpt.Station:TokyoMetro.Fukutoshin.KotakeMukaihara" )
 
     @direction = [
-      ::Station::Info.find_by( same_as: "odpt.Station:Seibu.Yurakucho.Nerima" ) ,
+      ::Station::Info.find_by( same_as: "odpt.Station:Seibu.SeibuYurakucho.Nerima" ) ,
       ::Station::Info.find_by( same_as: "odpt.Station:Seibu.Ikebukuro.Tokorozawa" )
     ]
 

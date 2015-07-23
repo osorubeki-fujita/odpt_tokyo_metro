@@ -56,7 +56,7 @@ odpt.Station:Seibu.Ikebukuro.Sakuradai:
 
 odpt.Station:Seibu.Ikebukuro.Nerima:
   station_alias:
-    - odpt.Station:Seibu.Yurakucho.Nerima
+    - odpt.Station:Seibu.SeibuYurakucho.Nerima
     - odpt.Seibu.Toshima.Nerima
   station_facility_info: odpt.StationFacility:Seibu.Nerima
   name_ja: 練馬
@@ -335,7 +335,7 @@ odpt.Station:Seibu.Ikebukuro.Motokaji:
     - custom.StoppingPattern:Seibu.Ikebukuro.Express
 
 odpt.Station:Seibu.Ikebukuro.Hanno:
-  station_alias: odpt.Station:Seibu.Chichibu.Hanno
+  station_alias: odpt.Station:Seibu.SeibuChichibu.Hanno
   station_facility_info: odpt.StationFacility:Seibu.Hanno
   name_ja: 飯能
   name_hira: はんのう
@@ -353,7 +353,7 @@ odpt.Station:Seibu.Ikebukuro.Hanno:
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Ikebukuro
 
 odpt.Station:Seibu.Ikebukuro.HigashiHanno:
-  station_alias: odpt.Station:Seibu.Chichibu.HigashiHanno
+  station_alias: odpt.Station:Seibu.SeibuChichibu.HigashiHanno
   station_facility_info: odpt.StationFacility:Seibu.HigashiHanno
   name_ja: 東飯能
   name_hira: ひがしはんのう
@@ -372,7 +372,7 @@ odpt.Station:Seibu.Ikebukuro.HigashiHanno:
       - 臨時列車のみ停車します。
 
 odpt.Station:Seibu.Ikebukuro.Koma:
-  station_alias: odpt.Station:Seibu.Chichibu.Koma
+  station_alias: odpt.Station:Seibu.SeibuChichibu.Koma
   station_facility_info: odpt.StationFacility:Seibu.Koma
   name_ja: 高麗
   name_hira: こま
@@ -391,7 +391,7 @@ odpt.Station:Seibu.Ikebukuro.Koma:
       - 臨時列車のみ停車します。
 
 odpt.Station:Seibu.Ikebukuro.MusashiYokote:
-  station_alias: odpt.Station:Seibu.Chichibu.MusashiYokote
+  station_alias: odpt.Station:Seibu.SeibuChichibu.MusashiYokote
   station_facility_info: odpt.StationFacility:Seibu.MusashiYokote
   name_ja: 武蔵横手
   name_hira: むさしよこて
@@ -410,7 +410,7 @@ odpt.Station:Seibu.Ikebukuro.MusashiYokote:
       - 臨時列車のみ停車します。
 
 odpt.Station:Seibu.Ikebukuro.HigashiAgano:
-  station_alias: odpt.Station:Seibu.Chichibu.HigashiAgano
+  station_alias: odpt.Station:Seibu.SeibuChichibu.HigashiAgano
   station_facility_info: odpt.StationFacility:Seibu.HigashiAgano
   name_ja: 東吾野
   name_hira: ひがしあがの
@@ -429,7 +429,7 @@ odpt.Station:Seibu.Ikebukuro.HigashiAgano:
       - 臨時列車のみ停車します。
 
 odpt.Station:Seibu.Ikebukuro.Agano:
-  station_alias: odpt.Station:Seibu.Chichibu.Agano
+  station_alias: odpt.Station:Seibu.SeibuChichibu.Agano
   station_facility_info: odpt.StationFacility:Seibu.Agano
   name_ja: 吾野
   name_hira: あがの
