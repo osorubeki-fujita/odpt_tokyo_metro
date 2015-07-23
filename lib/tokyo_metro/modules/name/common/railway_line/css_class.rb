@@ -62,9 +62,9 @@ module TokyoMetro::Modules::Name::Common::RailwayLine::CssClass
   #   odpt.Railway:Seibu.Sayama                        : seibu_sayama
   #   odpt.Railway:Seibu.SeibuYurakucho                : seibu_yurakucho
   #   odpt.Railway:Seibu.Shinjuku                      : seibu_shinjuku
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : tobu_sky_tree_and_isesaki
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : tobu_sky_tree_oshiage_hikifune
-  #   odpt.Railway:Tobu.SkyTree                        : tobu_sky_tree
+  #   odpt.Railway:Tobu.SkytreeIsesaki                 : tobu_skytree_and_isesaki
+  #   odpt.Railway:Tobu.SkytreeOshiage                 : tobu_skytree_oshiage_hikifune
+  #   odpt.Railway:Tobu.Skytree                        : tobu_skytree
   #   odpt.Railway:Tobu.Isesaki                        : tobu_isesaki
   #   odpt.Railway:Tobu.Nikko                          : tobu_nikko
   #   odpt.Railway:Tobu.Kinugawa                       : tobu_kinugawa

@@ -4,12 +4,12 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::HanzomonLine::Bott
     super( request )
 
     @direction = [
-      ::Station::Info.find_by( same_as: "odpt.Station:Tobu.SkyTree.KitaSenju" ) ,
-      ::Station::Info.find_by( same_as: "odpt.Station:Tobu.SkyTree.Koshigaya" ) ,
-      ::Station::Info.find_by( same_as: "odpt.Station:Tobu.SkyTree.Kasukabe" ) ,
-      ::Station::Info.find_by( same_as: "odpt.Station:Tobu.SkyTree.TobuDobutsuKoen" )
+      ::Station::Info.find_by( same_as: "odpt.Station:Tobu.Skytree.KitaSenju" ) ,
+      ::Station::Info.find_by( same_as: "odpt.Station:Tobu.Skytree.Koshigaya" ) ,
+      ::Station::Info.find_by( same_as: "odpt.Station:Tobu.Skytree.Kasukabe" ) ,
+      ::Station::Info.find_by( same_as: "odpt.Station:Tobu.Skytree.TobuDobutsuKoen" )
     ]
-    @via = ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Tobu.SkyTree" )
+    @via = ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Tobu.Skytree" )
     @railway_line_and_terminal_station_info = [
       ::TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::EachType::RailwayLineAndTerminalStation.new(
         @request ,

@@ -725,11 +725,11 @@ odpt.Railway:Seibu.Shinjuku:
 
 #-------- 東武鉄道
 
-odpt.Railway:Tobu.SkyTreeIsesaki:
+odpt.Railway:Tobu.SkytreeIsesaki:
   name_ja:
     - スカイツリーライン（伊勢崎線）
     - 伊勢崎線
-  name_en: Sky Tree and Isesaki Line
+  name_en: Skytree and Isesaki Line
   name_codes:
     - TS
     - TI
@@ -747,9 +747,9 @@ odpt.Railway:Tobu.SkyTreeIsesaki:
       green: 0
       blue: 0
 
-odpt.Railway:Tobu.SkyTreeOshiage:
+odpt.Railway:Tobu.SkytreeOshiage:
   name_ja: スカイツリーライン（押上 - 曳舟）
-  name_en: Sky Tree Line (Oshiage - Hikifune)
+  name_en: Skytree Line (Oshiage - Hikifune)
   name_codes: TS
   operator: odpt.Operator:Tobu
   index_in_operator: 1.09
@@ -759,9 +759,9 @@ odpt.Railway:Tobu.SkyTreeOshiage:
     green: 108
     blue: 195
 
-odpt.Railway:Tobu.SkyTree:
+odpt.Railway:Tobu.Skytree:
   name_ja: スカイツリーライン
-  name_en: Sky Tree Line
+  name_en: Skytree Line
   name_codes: TS
   operator: odpt.Operator:Tobu
   index_in_operator: 1.1

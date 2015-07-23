@@ -97,12 +97,12 @@ odpt.Railway:Tokyu.DenEnToshi:
   - tokyu_and_mm
   - den_en_toshi
 
-odpt.Railway:Tobu.SkyTreeOshiage:
+odpt.Railway:Tobu.SkytreeOshiage:
   - other_operator
   - tobu
   - skytree_oshiage
 
-odpt.Railway:Tobu.SkyTree:
+odpt.Railway:Tobu.Skytree:
   - other_operator
   - tobu
   - skytree

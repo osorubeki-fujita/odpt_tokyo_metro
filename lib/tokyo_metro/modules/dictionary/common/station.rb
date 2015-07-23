@@ -18,16 +18,16 @@ module TokyoMetro::Modules::Dictionary::Common::Station
   #     After: "odpt.Station:HakoneTozan.Rail.HakoneYumoto"
   #   (4) 竹ノ塚
   #     Before: "odpt.Station:Tobu.Isesaki.Takenotsuka"
-  #     After: "odpt.Station:Tobu.SkyTree.Takenotsuka"
+  #     After: "odpt.Station:Tobu.Skytree.Takenotsuka"
   #   (5) 北越谷
   #     Before: "odpt.Station:Tobu.Isesaki.KitaKoshigaya"
-  #     After: "odpt.Station:Tobu.SkyTree.KitaKoshigaya"
+  #     After: "odpt.Station:Tobu.Skytree.KitaKoshigaya"
   #   (6) 北春日部
   #     Before: "odpt.Station:Tobu.Isesaki.KitaKasukabe"
-  #     After: "odpt.Station:Tobu.SkyTree.KitaKasukabe"
+  #     After: "odpt.Station:Tobu.Skytree.KitaKasukabe"
   #   (7) 東武動物公園
   #     Before: "odpt.Station:Tobu.Isesaki.TobuDoubutuKouen"
-  #     After: "odpt.Station:Tobu.SkyTree.TobuDobutsuKoen"
+  #     After: "odpt.Station:Tobu.Skytree.TobuDobutsuKoen"
   #   (8) 元町・中華街
   #     Before: "odpt.Station:Minatomirai.Minatomirai.MotomachiChukagai"
   #     After: "odpt.Station:YokohamaMinatomiraiRailway.Minatomirai.MotomachiChukagai"

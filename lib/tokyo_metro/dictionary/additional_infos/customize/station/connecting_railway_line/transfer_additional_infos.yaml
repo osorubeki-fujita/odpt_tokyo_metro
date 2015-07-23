@@ -367,7 +367,7 @@
   stations:
     - odpt.Station:TokyoMetro.Hanzomon.Oshiage
   railway_line_infos:
-    "odpt.Railway:Tobu.SkyTreeIsesaki":
+    "odpt.Railway:Tobu.SkytreeIsesaki":
       hidden_on_railway_line_page: true
 
 # 【南北線】目黒

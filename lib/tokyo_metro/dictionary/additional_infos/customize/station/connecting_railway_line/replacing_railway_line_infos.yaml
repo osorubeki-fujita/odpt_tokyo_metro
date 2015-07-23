@@ -1,19 +1,19 @@
 "odpt.Station:TokyoMetro.Ginza.Asakusa" :
   -
     replaced_railway_line_infos: "odpt.Railway:Tobu.Isesaki"
-    replacing_railway_line_infos: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replacing_railway_line_infos: "odpt.Railway:Tobu.SkytreeIsesaki"
 
 "odpt.Station:TokyoMetro.Hanzomon.Oshiage" :
   -
     replaced_railway_line_infos: "odpt.Railway:Tobu.Isesaki"
-    replacing_railway_line_infos: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replacing_railway_line_infos: "odpt.Railway:Tobu.SkytreeIsesaki"
 
 "odpt.Station:TokyoMetro.Hibiya.KitaSenju" :
   -
     replaced_railway_line_infos: "odpt.Railway:Tobu.Isesaki"
-    replacing_railway_line_infos: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replacing_railway_line_infos: "odpt.Railway:Tobu.SkytreeIsesaki"
 
 "odpt.Station:TokyoMetro.Chiyoda.KitaSenju" :
   -
     replaced_railway_line_infos: "odpt.Railway:Tobu.Isesaki"
-    replacing_railway_line_infos: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replacing_railway_line_infos: "odpt.Railway:Tobu.SkytreeIsesaki"

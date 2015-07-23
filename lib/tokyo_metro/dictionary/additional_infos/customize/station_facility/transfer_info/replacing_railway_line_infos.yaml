@@ -1,17 +1,17 @@
 "odpt.StationFacility:TokyoMetro.Asakusa":
   -
     replaced_railway_line_infos: "odpt.Railway:Tobu.Isesaki"
-    replacing_railway_line_infos: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replacing_railway_line_infos: "odpt.Railway:Tobu.SkytreeIsesaki"
 
 "odpt.StationFacility:TokyoMetro.Oshiage":
   -
     replaced_railway_line_infos: "odpt.Railway:Tobu.Isesaki"
-    replacing_railway_line_infos: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replacing_railway_line_infos: "odpt.Railway:Tobu.SkytreeIsesaki"
 
 "odpt.StationFacility:TokyoMetro.KitaSenju":
   -
     replaced_railway_line_infos: "odpt.Railway:Tobu.Isesaki"
-    replacing_railway_line_infos: "odpt.Railway:Tobu.SkyTreeIsesaki"
+    replacing_railway_line_infos: "odpt.Railway:Tobu.SkytreeIsesaki"
   -
     replaced_railway_line_infos: "odpt.Railway:JR-East"
     replacing_railway_line_infos: "odpt.Railway:JR-East.Joban"

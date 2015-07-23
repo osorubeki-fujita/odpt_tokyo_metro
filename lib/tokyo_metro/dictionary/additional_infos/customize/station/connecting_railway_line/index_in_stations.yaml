@@ -378,7 +378,7 @@
 # 【日比谷線】北千住
 
 "odpt.Station:TokyoMetro.Hibiya.KitaSenju":
-  "odpt.Railway:Tobu.SkyTreeIsesaki":
+  "odpt.Railway:Tobu.SkytreeIsesaki":
     index_in_station: 1
   "odpt.Railway:TokyoMetro.Chiyoda":
     index_in_station: 2
@@ -455,7 +455,7 @@
   "odpt.Railway:TokyoMetro.Hibiya":
     index_in_station: 2
     cleared: true
-  "odpt.Railway:Tobu.SkyTreeIsesaki":
+  "odpt.Railway:Tobu.SkytreeIsesaki":
     index_in_station: 3
   "odpt.Railway:MIR.TX":
     index_in_station: 4
@@ -561,7 +561,7 @@
 # 【半蔵門線】押上
 
 "odpt.Station:TokyoMetro.Hanzomon.Oshiage":
-  "odpt.Railway:Tobu.SkyTreeIsesaki":
+  "odpt.Railway:Tobu.SkytreeIsesaki":
     index_in_station: 1
   "odpt.Railway:Toei.Asakusa":
     index_in_station: 2

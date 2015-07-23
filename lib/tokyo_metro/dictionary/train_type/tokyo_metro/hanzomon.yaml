@@ -60,8 +60,8 @@ custom.TrainType:TokyoMetro.Hanzomon.SemiExpress.ToTobu:
   ref: custom.TrainTypeOtherOperator:Tobu.SemiExpress
   stopping_pattern:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
-    odpt.Railway:Tobu.SkyTreeOshiage: custom.StoppingPattern:Tobu.SkyTreeOshiage.Subway
-    odpt.Railway:Tobu.SkyTree: custom.StoppingPattern:Tobu.SkyTree.SemiExpress
+    odpt.Railway:Tobu.SkytreeOshiage: custom.StoppingPattern:Tobu.SkytreeOshiage.Subway
+    odpt.Railway:Tobu.Skytree: custom.StoppingPattern:Tobu.Skytree.SemiExpress
     odpt.Railway:Tobu.Isesaki: custom.StoppingPattern:Tobu.Isesaki.SemiExpress
     odpt.Railway:Tobu.Nikko: custom.StoppingPattern:Tobu.Nikko.SemiExpress
   note: 半蔵門線 準急（東武線 直通）
@@ -74,8 +74,8 @@ custom.TrainType:TokyoMetro.Hanzomon.Express.ToTobu:
   ref: custom.TrainTypeOtherOperator:Tobu.Express
   stopping_pattern:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
-    odpt.Railway:Tobu.SkyTreeOshiage: custom.StoppingPattern:Tobu.SkyTreeOshiage.Subway
-    odpt.Railway:Tobu.SkyTree: custom.StoppingPattern:Tobu.SkyTree.Express
+    odpt.Railway:Tobu.SkytreeOshiage: custom.StoppingPattern:Tobu.SkytreeOshiage.Subway
+    odpt.Railway:Tobu.Skytree: custom.StoppingPattern:Tobu.Skytree.Express
     odpt.Railway:Tobu.Isesaki: custom.StoppingPattern:Tobu.Isesaki.Express
     odpt.Railway:Tobu.Nikko: custom.StoppingPattern:Tobu.Nikko.Express
   note: 半蔵門線 急行（東武線 直通）

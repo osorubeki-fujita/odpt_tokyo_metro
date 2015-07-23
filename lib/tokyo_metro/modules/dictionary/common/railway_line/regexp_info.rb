@@ -12,7 +12,7 @@
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.namboku_line                      => (?-mix:TokyoMetro\.Namboku)
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.fukutoshin_line                   => (?-mix:TokyoMetro\.Fukutoshin)
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.marunouchi_line_including_branch  => (?-mix:TokyoMetro\.Marunouchi(?:Branch)?\.)
-#   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.tobu_main_line                    => (?-mix:Tobu\.(?:SkyTree|Isesaki|SkyTreeOshiage|Nikko))
+#   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.tobu_main_line                    => (?-mix:Tobu\.(?:Skytree|Isesaki|SkytreeOshiage|Nikko))
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.tokyu_den_en_toshi_line           => (?-mix:Tokyu\.DenEnToshi)
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.toyo_rapid_line                   => (?-mix:ToyoRapidRailway\.ToyoRapid)
 #   TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo.odakyu_line                       => (?-mix:Odakyu\.(?:Odawara|Tama|Enoshima))
@@ -43,7 +43,7 @@ module TokyoMetro::Modules::Dictionary::Common::RailwayLine::RegexpInfo
 
   # @!group 日比谷線・半蔵門線
 
-  TOBU_MAIN_LINE = /Tobu\.(?:SkyTree|Isesaki|SkyTreeOshiage|Nikko)/
+  TOBU_MAIN_LINE = /Tobu\.(?:Skytree|Isesaki|SkytreeOshiage|Nikko)/
   TOKYU_DEN_EN_TOSHI_LINE = /Tokyu\.DenEnToshi/
 
   # @!group 東西線

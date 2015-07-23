@@ -1,4 +1,4 @@
-odpt.Station:Tobu.SkyTree.Asakusa:
+odpt.Station:Tobu.Skytree.Asakusa:
   station_facility_info: odpt.StationFacility:Tobu.Asakusa
   name_ja: 浅草
   name_hira: あさくさ
@@ -6,13 +6,13 @@ odpt.Station:Tobu.SkyTree.Asakusa:
   name_en: Asakusa
   station_code: TS-01
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionRapid
-    - custom.StoppingPattern:Tobu.SkyTree.Rapid
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionRapid
+    - custom.StoppingPattern:Tobu.Skytree.Rapid
 
-odpt.Station:Tobu.SkyTree.TokyoSkytree:
+odpt.Station:Tobu.Skytree.TokyoSkytree:
   station_facility_info: odpt.StationFacility:Tobu.TokyoSkytree
   name_ja: とうきょうスカイツリー
   name_hira: とうきょうすかいつりー
@@ -20,13 +20,13 @@ odpt.Station:Tobu.SkyTree.TokyoSkytree:
   name_en: Tokyo Skytree
   station_code: TS-02
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionRapid
-    - custom.StoppingPattern:Tobu.SkyTree.Rapid
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionRapid
+    - custom.StoppingPattern:Tobu.Skytree.Rapid
 
-odpt.Station:Tobu.SkyTree.Hikifune:
+odpt.Station:Tobu.Skytree.Hikifune:
   station_facility_info: odpt.StationFacility:Tobu.Hikifune
   name_ja: 曳舟
   name_hira: ひきふね
@@ -34,13 +34,13 @@ odpt.Station:Tobu.SkyTree.Hikifune:
   name_en: Hikifune
   station_code: TS-04
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
 
-odpt.Station:Tobu.SkyTree.HigashiMukoujima:
+odpt.Station:Tobu.Skytree.HigashiMukoujima:
   station_facility_info: odpt.StationFacility:Tobu.HigashiMukoujima
   name_ja: 東向島
   name_hira: ひがしむこうじま
@@ -48,11 +48,11 @@ odpt.Station:Tobu.SkyTree.HigashiMukoujima:
   name_en: Higashi-mukoujima
   station_code: TS-05
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
 
-odpt.Station:Tobu.SkyTree.Kanegafuchi:
+odpt.Station:Tobu.Skytree.Kanegafuchi:
   station_facility_info: odpt.StationFacility:Tobu.Kanegafuchi
   name_ja: 鐘ヶ淵
   name_hira: かねがふち
@@ -60,11 +60,11 @@ odpt.Station:Tobu.SkyTree.Kanegafuchi:
   name_en: Kanegafuchi
   station_code: TS-06
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
 
-odpt.Station:Tobu.SkyTree.Horikiri:
+odpt.Station:Tobu.Skytree.Horikiri:
   station_facility_info: odpt.StationFacility:Tobu.Horikiri
   name_ja: 堀切
   name_hira: ほりきり
@@ -72,11 +72,11 @@ odpt.Station:Tobu.SkyTree.Horikiri:
   name_en: Horikiri
   station_code: TS-07
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
 
-odpt.Station:Tobu.SkyTree.Ushida:
+odpt.Station:Tobu.Skytree.Ushida:
   station_facility_info: odpt.StationFacility:Tobu.Ushida
   name_ja: 牛田
   name_hira: うしだ
@@ -84,11 +84,11 @@ odpt.Station:Tobu.SkyTree.Ushida:
   name_en: Ushida
   station_code: TS-08
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
 
-odpt.Station:Tobu.SkyTree.KitaSenju:
+odpt.Station:Tobu.Skytree.KitaSenju:
   station_alias: odpt.Station:TokyoMetro.Hibiya.KitaSenju
   station_facility_info: odpt.StationFacility:Tobu.KitaSenju
   station_facility_custom_alias: odpt.StationFacility:TokyoMetro.KitaSenju.Hibiya
@@ -98,15 +98,15 @@ odpt.Station:Tobu.SkyTree.KitaSenju:
   name_en: Kita-senju
   station_code: TS-09
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
-    - custom.StoppingPattern:Tobu.SkyTree.SectionRapid
-    - custom.StoppingPattern:Tobu.SkyTree.Rapid
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
+    - custom.StoppingPattern:Tobu.Skytree.SectionRapid
+    - custom.StoppingPattern:Tobu.Skytree.Rapid
 
-odpt.Station:Tobu.SkyTree.Kosuge:
+odpt.Station:Tobu.Skytree.Kosuge:
   station_facility_info: odpt.StationFacility:Tobu.Kosuge
   name_ja: 小菅
   name_hira: こすげ
@@ -114,9 +114,9 @@ odpt.Station:Tobu.SkyTree.Kosuge:
   name_en: Kosuge
   station_code: TS-10
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
+    - custom.StoppingPattern:Tobu.Skytree.Local
 
-odpt.Station:Tobu.SkyTree.Gotanno:
+odpt.Station:Tobu.Skytree.Gotanno:
   station_facility_info: odpt.StationFacility:Tobu.Gotanno
   name_ja: 五反野
   name_hira: ごたんの
@@ -124,9 +124,9 @@ odpt.Station:Tobu.SkyTree.Gotanno:
   name_en: Gotanno
   station_code: TS-11
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
+    - custom.StoppingPattern:Tobu.Skytree.Local
 
-odpt.Station:Tobu.SkyTree.Umejima:
+odpt.Station:Tobu.Skytree.Umejima:
   station_facility_info: odpt.StationFacility:Tobu.Umejima
   name_ja: 梅島
   name_hira: うめじま
@@ -134,9 +134,9 @@ odpt.Station:Tobu.SkyTree.Umejima:
   name_en: Umejima
   station_code: TS-12
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
+    - custom.StoppingPattern:Tobu.Skytree.Local
 
-odpt.Station:Tobu.SkyTree.NishiArai:
+odpt.Station:Tobu.Skytree.NishiArai:
   station_facility_info: odpt.StationFacility:Tobu.NishiArai
   name_ja: 西新井
   name_hira: にしあらい
@@ -144,13 +144,13 @@ odpt.Station:Tobu.SkyTree.NishiArai:
   name_en: Nishi-arai
   station_code: TS-13
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
 
-odpt.Station:Tobu.SkyTree.Takenotsuka:
+odpt.Station:Tobu.Skytree.Takenotsuka:
   station_facility_info: odpt.StationFacility:Tobu.Takenotsuka
   name_ja: 竹ノ塚
   name_hira: たけのつか
@@ -158,9 +158,9 @@ odpt.Station:Tobu.SkyTree.Takenotsuka:
   name_en: Takenotsuka
   station_code: TS-14
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
+    - custom.StoppingPattern:Tobu.Skytree.Local
 
-odpt.Station:Tobu.SkyTree.Yatsuka:
+odpt.Station:Tobu.Skytree.Yatsuka:
   station_facility_info: odpt.StationFacility:Tobu.Yatsuka
   name_ja: 谷塚
   name_hira: やつか
@@ -168,9 +168,9 @@ odpt.Station:Tobu.SkyTree.Yatsuka:
   name_en: Yatsuka
   station_code: TS-15
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
+    - custom.StoppingPattern:Tobu.Skytree.Local
 
-odpt.Station:Tobu.SkyTree.Soka:
+odpt.Station:Tobu.Skytree.Soka:
   station_facility_info: odpt.StationFacility:Tobu.Soka
   name_ja: 草加
   name_hira: そうか
@@ -178,13 +178,13 @@ odpt.Station:Tobu.SkyTree.Soka:
   name_en: Soka
   station_code: TS-16
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
 
-odpt.Station:Tobu.SkyTree.MatsubaraDanchi:
+odpt.Station:Tobu.Skytree.MatsubaraDanchi:
   station_facility_info: odpt.StationFacility:Tobu.MatsubaraDanchi
   name_ja: 松原団地
   name_hira: まつばらだんち
@@ -192,9 +192,9 @@ odpt.Station:Tobu.SkyTree.MatsubaraDanchi:
   name_en: Matsubara-danchi
   station_code: TS-17
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
+    - custom.StoppingPattern:Tobu.Skytree.Local
 
-odpt.Station:Tobu.SkyTree.Shinden:
+odpt.Station:Tobu.Skytree.Shinden:
   station_facility_info: odpt.StationFacility:Tobu.Shinden
   name_ja: 新田
   name_hira: しんでん
@@ -202,9 +202,9 @@ odpt.Station:Tobu.SkyTree.Shinden:
   name_en: Shinden
   station_code: TS-18
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
+    - custom.StoppingPattern:Tobu.Skytree.Local
 
-odpt.Station:Tobu.SkyTree.Gamou:
+odpt.Station:Tobu.Skytree.Gamou:
   station_facility_info: odpt.StationFacility:Tobu.Gamou
   name_ja: 蒲生
   name_hira: がもう
@@ -212,9 +212,9 @@ odpt.Station:Tobu.SkyTree.Gamou:
   name_en: Gamou
   station_code: TS-19
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
+    - custom.StoppingPattern:Tobu.Skytree.Local
 
-odpt.Station:Tobu.SkyTree.ShinKoshigaya:
+odpt.Station:Tobu.Skytree.ShinKoshigaya:
   station_facility_info: odpt.StationFacility:Tobu.ShinKoshigaya
   name_ja: 新越谷
   name_hira: しんこしがや
@@ -222,13 +222,13 @@ odpt.Station:Tobu.SkyTree.ShinKoshigaya:
   name_en: Shin-koshigaya
   station_code: TS-20
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
 
-odpt.Station:Tobu.SkyTree.Koshigaya:
+odpt.Station:Tobu.Skytree.Koshigaya:
   station_facility_info: odpt.StationFacility:Tobu.Koshigaya
   name_ja: 越谷
   name_hira: こしがや
@@ -236,13 +236,13 @@ odpt.Station:Tobu.SkyTree.Koshigaya:
   name_en: Koshigaya
   station_code: TS-21
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
 
-odpt.Station:Tobu.SkyTree.KitaKoshigaya:
+odpt.Station:Tobu.Skytree.KitaKoshigaya:
   station_facility_info: odpt.StationFacility:Tobu.KitaKoshigaya
   name_ja: 北越谷
   name_hira: きたこしがや
@@ -250,11 +250,11 @@ odpt.Station:Tobu.SkyTree.KitaKoshigaya:
   name_en: Kita-koshigaya
   station_code: TS-22
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
 
-odpt.Station:Tobu.SkyTree.Obukuro:
+odpt.Station:Tobu.Skytree.Obukuro:
   station_facility_info: odpt.StationFacility:Tobu.Obukuro
   name_ja: 大袋
   name_hira: おおぶくろ
@@ -262,11 +262,11 @@ odpt.Station:Tobu.SkyTree.Obukuro:
   name_en: Obukuro
   station_code: TS-23
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
 
-odpt.Station:Tobu.SkyTree.Sengendai:
+odpt.Station:Tobu.Skytree.Sengendai:
   station_facility_info: odpt.StationFacility:Tobu.Sengendai
   name_ja: せんげん台
   name_hira: せんげんだい
@@ -274,13 +274,13 @@ odpt.Station:Tobu.SkyTree.Sengendai:
   name_en: Sengendai
   station_code: TS-24
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
 
-odpt.Station:Tobu.SkyTree.Takesato:
+odpt.Station:Tobu.Skytree.Takesato:
   station_facility_info: odpt.StationFacility:Tobu.Takesato
   name_ja: 武里
   name_hira: たけさと
@@ -288,11 +288,11 @@ odpt.Station:Tobu.SkyTree.Takesato:
   name_en: Takesato
   station_code: TS-25
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
 
-odpt.Station:Tobu.SkyTree.Ichinowari:
+odpt.Station:Tobu.Skytree.Ichinowari:
   station_facility_info: odpt.StationFacility:Tobu.Ichinowari
   name_ja: 一ノ割
   name_hira: いちのわり
@@ -300,11 +300,11 @@ odpt.Station:Tobu.SkyTree.Ichinowari:
   name_en: Ichinowari
   station_code: TS-26
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
 
-odpt.Station:Tobu.SkyTree.Kasukabe:
+odpt.Station:Tobu.Skytree.Kasukabe:
   station_facility_info: odpt.StationFacility:Tobu.Kasukabe
   name_ja: 春日部
   name_hira: かすかべ
@@ -312,15 +312,15 @@ odpt.Station:Tobu.SkyTree.Kasukabe:
   name_en: Kasukabe
   station_code: TS-27
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
-    - custom.StoppingPattern:Tobu.SkyTree.SectionRapid
-    - custom.StoppingPattern:Tobu.SkyTree.Rapid
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
+    - custom.StoppingPattern:Tobu.Skytree.SectionRapid
+    - custom.StoppingPattern:Tobu.Skytree.Rapid
 
-odpt.Station:Tobu.SkyTree.KitaKasukabe:
+odpt.Station:Tobu.Skytree.KitaKasukabe:
   station_facility_info: odpt.StationFacility:Tobu.KitaKasukabe
   name_ja: 北春日部
   name_hira: きたかすかべ
@@ -328,11 +328,11 @@ odpt.Station:Tobu.SkyTree.KitaKasukabe:
   name_en: Kita-kasukabe
   station_code: TS-28
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
 
-odpt.Station:Tobu.SkyTree.Himemiya:
+odpt.Station:Tobu.Skytree.Himemiya:
   station_facility_info: odpt.StationFacility:Tobu.Himemiya
   name_ja: 姫宮
   name_hira: ひめみや
@@ -340,11 +340,11 @@ odpt.Station:Tobu.SkyTree.Himemiya:
   name_en: Himemiya
   station_code: TS-29
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
 
-odpt.Station:Tobu.SkyTree.TobuDobutsuKoen:
+odpt.Station:Tobu.Skytree.TobuDobutsuKoen:
   station_alias: odpt.Station:Tobu.Nikko.TobuDobutsuKoen
   station_facility_info: odpt.StationFacility:Tobu.TobuDobutsuKoen
   # station_alias: odpt.Station:Tobu.Nikko.TobuDoubutuKouen
@@ -356,10 +356,10 @@ odpt.Station:Tobu.SkyTree.TobuDobutsuKoen:
   name_en: Tobu-dobutsu-koen
   station_code: TS-30
   stop:
-    - custom.StoppingPattern:Tobu.SkyTree.Local
-    - custom.StoppingPattern:Tobu.SkyTree.SectionSemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SemiExpress
-    - custom.StoppingPattern:Tobu.SkyTree.SectionExpress
-    - custom.StoppingPattern:Tobu.SkyTree.Express
-    - custom.StoppingPattern:Tobu.SkyTree.SectionRapid
-    - custom.StoppingPattern:Tobu.SkyTree.Rapid
+    - custom.StoppingPattern:Tobu.Skytree.Local
+    - custom.StoppingPattern:Tobu.Skytree.SectionSemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SemiExpress
+    - custom.StoppingPattern:Tobu.Skytree.SectionExpress
+    - custom.StoppingPattern:Tobu.Skytree.Express
+    - custom.StoppingPattern:Tobu.Skytree.SectionRapid
+    - custom.StoppingPattern:Tobu.Skytree.Rapid

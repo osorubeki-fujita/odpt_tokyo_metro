@@ -153,9 +153,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Seibu.Sayama
   #   odpt.Railway:Seibu.SeibuYurakucho
   #   odpt.Railway:Seibu.Shinjuku
-  #   odpt.Railway:Tobu.SkyTreeIsesaki
-  #   odpt.Railway:Tobu.SkyTreeOshiage
-  #   odpt.Railway:Tobu.SkyTree
+  #   odpt.Railway:Tobu.SkytreeIsesaki
+  #   odpt.Railway:Tobu.SkytreeOshiage
+  #   odpt.Railway:Tobu.Skytree
   #   odpt.Railway:Tobu.Isesaki
   #   odpt.Railway:Tobu.Nikko
   #   odpt.Railway:Tobu.Kinugawa
@@ -232,9 +232,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Seibu.Sayama                        : ["SY"]
   #   odpt.Railway:Seibu.SeibuYurakucho                : ["SI"]
   #   odpt.Railway:Seibu.Shinjuku                      : ["SS"]
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : ["TS", "TI"]
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : ["TS"]
-  #   odpt.Railway:Tobu.SkyTree                        : ["TS"]
+  #   odpt.Railway:Tobu.SkytreeIsesaki                 : ["TS", "TI"]
+  #   odpt.Railway:Tobu.SkytreeOshiage                 : ["TS"]
+  #   odpt.Railway:Tobu.Skytree                        : ["TS"]
   #   odpt.Railway:Tobu.Isesaki                        : ["TI"]
   #   odpt.Railway:Tobu.Nikko                          : ["TN"]
   #   odpt.Railway:Tobu.Kinugawa                       : ["TN"]
@@ -309,9 +309,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Seibu.Sayama                        :  4
   #   odpt.Railway:Seibu.SeibuYurakucho                :  5
   #   odpt.Railway:Seibu.Shinjuku                      :  6
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 :  1
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : 1.09
-  #   odpt.Railway:Tobu.SkyTree                        : 1.1
+  #   odpt.Railway:Tobu.SkytreeIsesaki                 :  1
+  #   odpt.Railway:Tobu.SkytreeOshiage                 : 1.09
+  #   odpt.Railway:Tobu.Skytree                        : 1.1
   #   odpt.Railway:Tobu.Isesaki                        :  2
   #   odpt.Railway:Tobu.Nikko                          :  3
   #   odpt.Railway:Tobu.Kinugawa                       : 3.1
@@ -503,9 +503,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Seibu.Sayama                        : ["狭山線"]
   #   odpt.Railway:Seibu.SeibuYurakucho                : ["西武有楽町線"]
   #   odpt.Railway:Seibu.Shinjuku                      : ["新宿線"]
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : ["スカイツリーライン（伊勢崎線）", "伊勢崎線"]
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : ["スカイツリーライン（押上 - 曳舟）"]
-  #   odpt.Railway:Tobu.SkyTree                        : ["スカイツリーライン"]
+  #   odpt.Railway:Tobu.SkytreeIsesaki                 : ["スカイツリーライン（伊勢崎線）", "伊勢崎線"]
+  #   odpt.Railway:Tobu.SkytreeOshiage                 : ["スカイツリーライン（押上 - 曳舟）"]
+  #   odpt.Railway:Tobu.Skytree                        : ["スカイツリーライン"]
   #   odpt.Railway:Tobu.Isesaki                        : ["伊勢崎線"]
   #   odpt.Railway:Tobu.Nikko                          : ["日光線"]
   #   odpt.Railway:Tobu.Kinugawa                       : ["鬼怒川線"]
@@ -581,9 +581,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Seibu.Sayama                        : ["Sayama Line"]
   #   odpt.Railway:Seibu.SeibuYurakucho                : ["Seibu Yurakucho Line"]
   #   odpt.Railway:Seibu.Shinjuku                      : ["Shinjuku Line"]
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : ["Sky Tree and Isesaki Line"]
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : ["Sky Tree Line (Oshiage - Hikifune)"]
-  #   odpt.Railway:Tobu.SkyTree                        : ["Sky Tree Line"]
+  #   odpt.Railway:Tobu.SkytreeIsesaki                 : ["Skytree and Isesaki Line"]
+  #   odpt.Railway:Tobu.SkytreeOshiage                 : ["Skytree Line (Oshiage - Hikifune)"]
+  #   odpt.Railway:Tobu.Skytree                        : ["Skytree Line"]
   #   odpt.Railway:Tobu.Isesaki                        : ["Isesaki Line"]
   #   odpt.Railway:Tobu.Nikko                          : ["Nikko Line"]
   #   odpt.Railway:Tobu.Kinugawa                       : ["Kinugawa Line"]
@@ -662,9 +662,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Seibu.Sayama                        : Array
   #   odpt.Railway:Seibu.SeibuYurakucho                : Array
   #   odpt.Railway:Seibu.Shinjuku                      : Array
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : Array
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : Array
-  #   odpt.Railway:Tobu.SkyTree                        : Array
+  #   odpt.Railway:Tobu.SkytreeIsesaki                 : Array
+  #   odpt.Railway:Tobu.SkytreeOshiage                 : Array
+  #   odpt.Railway:Tobu.Skytree                        : Array
   #   odpt.Railway:Tobu.Isesaki                        : Array
   #   odpt.Railway:Tobu.Nikko                          : Array
   #   odpt.Railway:Tobu.Kinugawa                       : Array
@@ -770,9 +770,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Seibu.Sayama                        : #ff6600
   #   odpt.Railway:Seibu.SeibuYurakucho                : #ff6600
   #   odpt.Railway:Seibu.Shinjuku                      : #0099cc
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : #0f6cc3
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : #0f6cc3
-  #   odpt.Railway:Tobu.SkyTree                        : #0f6cc3
+  #   odpt.Railway:Tobu.SkytreeIsesaki                 : #0f6cc3
+  #   odpt.Railway:Tobu.SkytreeOshiage                 : #0f6cc3
+  #   odpt.Railway:Tobu.Skytree                        : #0f6cc3
   #   odpt.Railway:Tobu.Isesaki                        : #ff0000
   #   odpt.Railway:Tobu.Nikko                          : #ffa500
   #   odpt.Railway:Tobu.Kinugawa                       : #ffa500
@@ -850,9 +850,9 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:Seibu.Sayama                        : ( 255 , 102 , 0 )
   #   odpt.Railway:Seibu.SeibuYurakucho                : ( 255 , 102 , 0 )
   #   odpt.Railway:Seibu.Shinjuku                      : ( 0 , 153 , 204 )
-  #   odpt.Railway:Tobu.SkyTreeIsesaki                 : ( 15 , 108 , 195 )
-  #   odpt.Railway:Tobu.SkyTreeOshiage                 : ( 15 , 108 , 195 )
-  #   odpt.Railway:Tobu.SkyTree                        : ( 15 , 108 , 195 )
+  #   odpt.Railway:Tobu.SkytreeIsesaki                 : ( 15 , 108 , 195 )
+  #   odpt.Railway:Tobu.SkytreeOshiage                 : ( 15 , 108 , 195 )
+  #   odpt.Railway:Tobu.Skytree                        : ( 15 , 108 , 195 )
   #   odpt.Railway:Tobu.Isesaki                        : ( 255 , 0 , 0 )
   #   odpt.Railway:Tobu.Nikko                          : ( 255 , 165 , 0 )
   #   odpt.Railway:Tobu.Kinugawa                       : ( 255 , 165 , 0 )
