@@ -46,7 +46,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "rails_decorate_factory" , ">= 0.1.1"
 
   spec.add_runtime_dependency "odpt_common" , ">= 0.2.3"
-  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.2.1"
+  spec.add_runtime_dependency "odpt_tokyo_metro_helper" , ">= 0.2.2"
 
   spec.add_runtime_dependency "haml"
   spec.add_runtime_dependency "log_finder" , ">= 0.1.0"
