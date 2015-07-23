@@ -1,7 +1,6 @@
 def static_railway_line_infos
-  columns_for_check_css_class = [ :same_as , :css_class ]
 
-  railway_line_and_css_class = [
+  railway_line_infos_in_db = [
     ["odpt.Railway:TokyoMetro.Ginza", "ginza"],
     ["odpt.Railway:TokyoMetro.Marunouchi", "marunouchi"],
     ["odpt.Railway:TokyoMetro.MarunouchiBranch", "marunouchi_branch"],
@@ -78,9 +77,21 @@ def static_railway_line_infos
     ["odpt.Railway:JR-East.Shinkansen.2016", "shinkansen_e"]
   ]
 
+  columns = [
+    :same_as ,
+    # :name_ja_normal ,
+    # :name_en_normal ,
+    # :name_ja_with_operator_name ,
+    # :name_en_with_operator_name ,
+    # :name_ja_with_operator_name_precise ,
+    # :name_en_with_operator_name_precise ,
+    :css_class
+  ]
+
   ::TokyoMetro::Static.railway_line_infos.each do | railway_line_name , info |
 
     describe ::TokyoMetro::Static::RailwayLine::Info do
+
       it "\'#{ railway_line_name }\' has attiribute \'same_as\' (String)" do
         expect( info.same_as ).to be_instance_of( ::String )
       end
@@ -97,21 +108,31 @@ def static_railway_line_infos
         expect( info.operator_info ).to be_instance_of( ::TokyoMetro::Static::Operator::Info )
       end
 
+      if info.color.present?
+        describe ::TokyoMetro::Static::RailwayLine::Info do
+          it "\'#{railway_line_name}\' contains color info." do
+            expect( info.color ).to be_instance_of( ::Array )
+            # expect( info.color ).to be_instance_of( ::TokyoMetro::Static::Color )
+          end
+        end
+      end
+
       valid_same_as_and_css_class = railway_line_and_css_class.find { | same_as , css_class | same_as == info.same_as }
+
       it "has method 'css_class'" do
         expect( valid_same_as_and_css_class ).to be_present
         expect( info.css_class ).to eq( valid_same_as_and_css_class[1] )
       end
-    end
 
-    if info.color.present?
-      describe ::TokyoMetro::Static::RailwayLine::Info do
-        it "\'#{railway_line_name}\' contains color info." do
-          expect( info.color ).to be_instance_of( ::Array )
-          # expect( info.color ).to be_instance_of( ::TokyoMetro::Static::Color )
-        end
-      end
     end
 
   end
+
+  compare_infos_in_db_and_static_infos(
+    ::TokyoMetro::Static::RailwayLine::Info ,
+    ::TokyoMetro::Static.railway_line_infos ,
+    infos_in_db ,
+    columns
+  )
+
 end

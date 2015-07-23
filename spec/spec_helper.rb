@@ -4,6 +4,29 @@ require 'tokyo_metro'
 # TokyoMetro.initialize_in_local_environment( "C:/RubyPj/rails/tokyo_metro" )
 TokyoMetro.initialize_in_local_environment( "/Users/shufujita/RubyPj/Rails/tokyo_metro_app" )
 
+def compare_infos_in_db_and_static_infos( class_name_of_static_info , static_infos , infos_in_db , columns )
+
+  describe class_name_of_static_info do
+
+    static_infos.each do | static_info_name , static_info |
+      data = infos_in_db.find { | item | item[0] == static_info_name }
+      it "has valid infos" do
+        for i in 1..( columns.length - 1 )
+          s = static_info.send( columns[i] )
+          in_db = data[i]
+          if in_db.blank?
+            expect(s).to be_blank
+          else
+            expect(s).to eq( in_db )
+          end
+        end
+      end
+    end
+
+  end
+
+end
+
 
 #--------------------------------
 

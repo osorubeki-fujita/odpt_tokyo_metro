@@ -681,7 +681,8 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:TWR.Rinkai                          : りんかい線
   def name_ja_with_operator_name_precise
     # 標準の事業者名
-    operator_name_ja_normal_str = operator_name_ja_normal
+    operator_name_ja_normal_str = operator_info.name_ja_normal
+
     # 標準の路線名（路線名のみ）
     name_ja_normal_str = name_ja_normal
 
@@ -690,10 +691,12 @@ class TokyoMetro::Static::RailwayLine::Info
     if str.string?
       return str
     else
-      puts "Error:"
-      puts "  \[name_ja_normal\] #{name_ja_normal_str} (class: #{name_ja_normal_str.class.name})"
-      puts "  \[operator_name_ja_normal\] #{operator_name_ja_normal} (class: #{operator_name_ja_normal.class.name})"
-      raise "Error"
+      err_msg_ary = ::Array.new
+
+      err_msg_ary << "Error: "
+      err_msg_ary << "  \[name_ja_normal\] #{name_ja_normal_str} (class: #{name_ja_normal_str.class.name})"
+      err_msg_ary << "  \[operator_name_ja_normal\] #{operator_name_ja_normal} (class: #{operator_name_ja_normal.class.name})"
+      raise err_msg_ary.join( "\n" )
     end
   end
 

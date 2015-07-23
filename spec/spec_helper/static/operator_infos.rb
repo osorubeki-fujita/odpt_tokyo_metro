@@ -1,18 +1,4 @@
 def static_operator_infos
-  columns = [
-    :same_as ,
-    :name_ja_short ,
-    :name_en_short ,
-    :name_ja_normal_precise ,
-    :name_ja_normal ,
-    :name_ja_for_transfer_info ,
-    :name_ja_very_precise ,
-    :name_en_normal_precise ,
-    :name_en_normal ,
-    :name_en_for_transfer_info ,
-    :name_en_very_precise ,
-    :css_class
-  ]
 
   operator_infos_in_db = [
     ["odpt.Operator:TokyoMetro", "", "", "東京メトロ", "東京メトロ", "", "東京メトロ（東京地下鉄）", "Tokyo Metro", "Tokyo Metro", "", "Tokyo Metro", "tokyo_metro"],
@@ -37,21 +23,26 @@ def static_operator_infos
     ["odpt.Operator:Undefined", "", "", "", "", "", "", "", "", "", "", ""]
   ]
 
-  describe ::TokyoMetro::Static::Operator::Info do
-    ::TokyoMetro::Static.operator_infos.each do | operator_info , static_info |
-      infos_of_an_operator = operator_infos_in_db.find { | item | item[0] == operator_info }
-      it "has valid infos" do
-        for i in 1..( columns.length - 1 )
-          s = static_info.send( columns[i] )
-          in_db = infos_of_an_operator[i]
-          if in_db.blank?
-            expect(s).to be_blank
-          else
-            expect(s).to eq( in_db )
-          end
-        end
-      end
-    end
-  end
+  columns = [
+    :same_as ,
+    :name_ja_short ,
+    :name_en_short ,
+    :name_ja_normal_precise ,
+    :name_ja_normal ,
+    :name_ja_for_transfer_info ,
+    :name_ja_very_precise ,
+    :name_en_normal_precise ,
+    :name_en_normal ,
+    :name_en_for_transfer_info ,
+    :name_en_very_precise ,
+    :css_class
+  ]
+
+  compare_infos_in_db_and_static_infos(
+    ::TokyoMetro::Static::Operator::Info ,
+    ::TokyoMetro::Static.operator_infos ,
+    operator_infos_in_db ,
+    columns
+  )
 
 end
