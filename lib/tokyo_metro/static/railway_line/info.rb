@@ -84,7 +84,7 @@ class TokyoMetro::Static::RailwayLine::Info
       " " * indent + k + val
     }.join( "\n" )
 
-    str_2 = [ :name_ja_with_operator_name , :name_en_with_operator_name , :css_class ].map { |v|
+    str_2 = [ :name_ja_with_operator_name_precise , :name_en_with_operator_name_precise , :css_class ].map { |v|
       k = v.to_s.ljust(32)
       val = self.__send__(v)
       " " * indent + k + val

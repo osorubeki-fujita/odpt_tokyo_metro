@@ -77,7 +77,7 @@ class TokyoMetro::Test::Api::TrainTimetable::TrainInfo
 
   def station_name_in_db( station_name_same_as )
     station_info_in_db = ::STATIONS.find_by_same_as( station_name_same_as )
-    station_info_in_db.name_ja + "（" + station_info_in_db.railway_line.name_ja_with_operator_name + "）"
+    station_info_in_db.name_ja + "（" + station_info_in_db.railway_line_info.name_ja_with_operator_name + "）"
   end
 
 end
