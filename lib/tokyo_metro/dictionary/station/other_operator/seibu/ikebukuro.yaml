@@ -344,7 +344,7 @@ odpt.Station:Seibu.Ikebukuro.Hanno:
   station_code: SI26
   stop:
     - custom.StoppingPattern:Seibu.Ikebukuro.Local
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
     - custom.StoppingPattern:Seibu.Ikebukuro.SemiExpress
     - custom.StoppingPattern:Seibu.Ikebukuro.Rapid
     - custom.StoppingPattern:Seibu.Ikebukuro.CommuterExpress
@@ -362,7 +362,7 @@ odpt.Station:Seibu.Ikebukuro.HigashiHanno:
   station_code: SI27
   stop:
     - custom.StoppingPattern:Seibu.Ikebukuro.Local
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
     - custom.StoppingPattern:Seibu.Ikebukuro.Express
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Subway
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Ikebukuro
@@ -381,7 +381,7 @@ odpt.Station:Seibu.Ikebukuro.Koma:
   station_code: SI28
   stop:
     - custom.StoppingPattern:Seibu.Ikebukuro.Local
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
     - custom.StoppingPattern:Seibu.Ikebukuro.Express
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Subway
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Ikebukuro
@@ -400,7 +400,7 @@ odpt.Station:Seibu.Ikebukuro.MusashiYokote:
   station_code: SI29
   stop:
     - custom.StoppingPattern:Seibu.Ikebukuro.Local
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
     - custom.StoppingPattern:Seibu.Ikebukuro.Express
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Subway
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Ikebukuro
@@ -419,7 +419,7 @@ odpt.Station:Seibu.Ikebukuro.HigashiAgano:
   station_code: SI30
   stop:
     - custom.StoppingPattern:Seibu.Ikebukuro.Local
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
     - custom.StoppingPattern:Seibu.Ikebukuro.Express
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Subway
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Ikebukuro
@@ -438,7 +438,7 @@ odpt.Station:Seibu.Ikebukuro.Agano:
   station_code: SI31
   stop:
     - custom.StoppingPattern:Seibu.Ikebukuro.Local
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
     - custom.StoppingPattern:Seibu.Ikebukuro.Express
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Subway
     - custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Ikebukuro

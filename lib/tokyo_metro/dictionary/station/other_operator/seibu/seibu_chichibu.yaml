@@ -7,7 +7,7 @@ odpt.Station:Seibu.Chichibu.Agano:
   name_en: Agano
   station_code: SI31
   stop:
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
 
 odpt.Station:Seibu.Chichibu.NishiAgano:
   station_alias: odpt.Station:Seibu.Ikebukuro.NishiAgano
@@ -18,7 +18,7 @@ odpt.Station:Seibu.Chichibu.NishiAgano:
   name_en: Nishi-agano
   station_code: SI32
   stop:
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
 
 odpt.Station:Seibu.Chichibu.Shomaru:
   station_alias: odpt.Station:Seibu.Ikebukuro.Shomaru
@@ -29,7 +29,7 @@ odpt.Station:Seibu.Chichibu.Shomaru:
   name_en: Shomaru
   station_code: SI33
   stop:
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
 
 odpt.Station:Seibu.Chichibu.Ashigakubo:
   station_alias: odpt.Station:Seibu.Ikebukuro.Ashigakubo
@@ -40,7 +40,7 @@ odpt.Station:Seibu.Chichibu.Ashigakubo:
   name_en: Ashigakubo
   station_code: SI34
   stop:
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
 
 odpt.Station:Seibu.Chichibu.Yokoze:
   station_alias: odpt.Station:Seibu.Ikebukuro.Yokoze
@@ -51,7 +51,7 @@ odpt.Station:Seibu.Chichibu.Yokoze:
   name_en: Yokoze
   station_code: SI35
   stop:
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local
 
 odpt.Station:Seibu.Chichibu.SeibuChichibu:
   station_alias: odpt.Station:Seibu.Ikebukuro.SeibuChichibu
@@ -62,4 +62,4 @@ odpt.Station:Seibu.Chichibu.SeibuChichibu:
   name_en: Seibu-chichibu
   station_code: SI36
   stop:
-    - custom.StoppingPattern:Seibu.Chichibu.Local
+    - custom.StoppingPattern:Seibu.SeibuChichibu.Local

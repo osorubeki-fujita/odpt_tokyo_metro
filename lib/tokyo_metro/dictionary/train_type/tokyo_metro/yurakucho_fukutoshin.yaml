@@ -90,7 +90,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToSeibu:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.Local
     odpt.Railway:Seibu.Yurakucho: custom.StoppingPattern:Seibu.Yurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
-    odpt.Railway:Seibu.Chichibu: custom.StoppingPattern:Seibu.Chichibu.Local
+    odpt.Railway:Seibu.SeibuChichibu: custom.StoppingPattern:Seibu.SeibuChichibu.Local
   note: 西武池袋線 各駅停車（有楽町線・副都心線 共通／小竹向原方面行で使用）
   operator: odpt.Operator:Seibu
   railway_line: odpt.Railway:Seibu.Ikebukuro
@@ -103,7 +103,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.SemiExpress
     odpt.Railway:Seibu.Yurakucho: custom.StoppingPattern:Seibu.Yurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
-    odpt.Railway:Seibu.Chichibu: custom.StoppingPattern:Seibu.Chichibu.Local
+    odpt.Railway:Seibu.SeibuChichibu: custom.StoppingPattern:Seibu.SeibuChichibu.Local
   note: 西武池袋線 準急（有楽町線・副都心線 共通／小竹向原方面行で使用）
   operator: odpt.Operator:Seibu
   railway_line: odpt.Railway:Seibu.Ikebukuro
@@ -116,7 +116,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.Rapid
     odpt.Railway:Seibu.Yurakucho: custom.StoppingPattern:Seibu.Yurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
-    odpt.Railway:Seibu.Chichibu: custom.StoppingPattern:Seibu.Chichibu.Local
+    odpt.Railway:Seibu.SeibuChichibu: custom.StoppingPattern:Seibu.SeibuChichibu.Local
   note: 西武池袋線 快速（有楽町線・副都心線 共通／小竹向原方面行で使用）
   operator: odpt.Operator:Seibu
   railway_line: odpt.Railway:Seibu.Ikebukuro
@@ -129,7 +129,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Subway
     odpt.Railway:Seibu.Yurakucho: custom.StoppingPattern:Seibu.Yurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
-    odpt.Railway:Seibu.Chichibu: custom.StoppingPattern:Seibu.Chichibu.Local
+    odpt.Railway:Seibu.SeibuChichibu: custom.StoppingPattern:Seibu.SeibuChichibu.Local
   note: 西武池袋線 快速急行（有楽町線・副都心線 共通／小竹向原方面行で使用）
   operator: odpt.Operator:Seibu
   railway_line: odpt.Railway:Seibu.Ikebukuro

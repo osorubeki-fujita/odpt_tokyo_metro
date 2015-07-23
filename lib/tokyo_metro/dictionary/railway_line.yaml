@@ -664,8 +664,8 @@ odpt.Railway:Seibu.Ikebukuro:
     blue: 0
 
 odpt.Railway:Seibu.SeibuChichibu:
-  name_ja: 秩父線
-  name_en: Chichibu Line
+  name_ja: 西武秩父線
+  name_en: Seibu Chichibu Line
   name_codes: SI
   operator: odpt.Operator:Seibu
   index_in_operator: 2
