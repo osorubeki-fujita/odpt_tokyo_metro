@@ -204,7 +204,7 @@ odpt.Station:TokyoMetro.Hibiya.MinamiSenju:
     - custom.StoppingPattern:TokyoMetro.Hibiya.Local
 
 odpt.Station:TokyoMetro.Hibiya.KitaSenju:
-  station_alias: odpt.Station:Tobu.Isesaki.KitaSenju
+  station_alias: odpt.Station:Tobu.Skytree.KitaSenju
   station_facility_info: odpt.StationFacility:TokyoMetro.KitaSenju
   station_facility_custom: odpt.StationFacility:Tobu.KitaSenju
   station_facility_custom_alias: odpt.StationFacility:TokyoMetro.KitaSenju.Hibiya
