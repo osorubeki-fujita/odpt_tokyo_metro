@@ -87,7 +87,7 @@ class TokyoMetro::App::Renderer::SideMenu::Link::List < TokyoMetro::Factory::Dec
       end
 
       ::Proc.new { | this |
-        station_info.decorate.render_link_to_page_of_connecting_other_stations( this.send( :current_controller ) )
+        station_info.decorate.on_station_facility_page.render_link_to_page_of_connecting_other_stations( this.request , this.send( :current_controller ) )
       }
     end
 
