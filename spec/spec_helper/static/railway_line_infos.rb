@@ -65,7 +65,7 @@ def static_railway_line_infos
     ["odpt.Railway:HakoneTozan.Rail.OdawaraSide", "箱根登山鉄道線（小田原 - 箱根湯本）", "Hakone Tozan Line", "箱根登山鉄道線（小田原 - 箱根湯本）", "Hakone Tozan Line", "箱根登山鉄道線（小田原 - 箱根湯本）", "Hakone Tozan Line", "hakone_tozan"],
     ["odpt.Railway:HakoneTozan.Rail.GoraSide", "箱根登山鉄道線（箱根湯本 - 強羅）", "Hakone Tozan Line", "箱根登山鉄道線（箱根湯本 - 強羅）", "Hakone Tozan Line", "箱根登山鉄道線（箱根湯本 - 強羅）", "Hakone Tozan Line", "hakone_tozan"],
     ["odpt.Railway:Seibu.Ikebukuro", "池袋線", "Ikebukuro Line", "西武池袋線", "Seibu Ikebukuro Line", "西武池袋線", "Seibu Ikebukuro Line", "seibu_ikebukuro"],
-    ["odpt.Railway:Seibu.SeibuChichibu", "秩父線", "Chichibu Line", "西武秩父線", "Seibu Chichibu Line", "西武秩父線", "Seibu Chichibu Line", "seibu_chichibu"],
+    ["odpt.Railway:Seibu.SeibuChichibu", "西武秩父線", "Seibu Chichibu Line", "西武秩父線", "Seibu Chichibu Line", "西武秩父線", "Seibu Chichibu Line", "seibu_chichibu"],
     ["odpt.Railway:Seibu.Toshima", "豊島線", "Toshima Line", "西武豊島線", "Seibu Toshima Line", "西武豊島線", "Seibu Toshima Line", "seibu_toshima"],
     ["odpt.Railway:Seibu.Sayama", "狭山線", "Sayama Line", "西武狭山線", "Seibu Sayama Line", "西武狭山線", "Seibu Sayama Line", "seibu_sayama"],
     ["odpt.Railway:Seibu.SeibuYurakucho", "西武有楽町線", "Seibu Yurakucho Line", "西武有楽町線", "Seibu Yurakucho Line", "西武有楽町線", "Seibu Yurakucho Line", "seibu_yurakucho"],
