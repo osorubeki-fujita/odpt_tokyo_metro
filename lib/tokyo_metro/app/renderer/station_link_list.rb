@@ -1,9 +1,9 @@
 class TokyoMetro::App::Renderer::StationLinkList < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , stations )
+  def initialize( request , stations , controller_of_linked_page )
     super( request )
-    @ja = ::TokyoMetro::App::Renderer::StationLinkList::Japanese.new( request , stations )
-    @en = ::TokyoMetro::App::Renderer::StationLinkList::English.new( request , stations )
+    @ja = ::TokyoMetro::App::Renderer::StationLinkList::Japanese.new( request , stations , controller_of_linked_page )
+    @en = ::TokyoMetro::App::Renderer::StationLinkList::English.new( request , stations , controller_of_linked_page )
   end
 
   def render

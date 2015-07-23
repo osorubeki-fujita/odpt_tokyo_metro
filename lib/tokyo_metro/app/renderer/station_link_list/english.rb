@@ -14,7 +14,7 @@ class TokyoMetro::App::Renderer::StationLinkList::English < TokyoMetro::App::Ren
 
   def proc_for_render_link
     ::Proc.new { | station |
-      ::Station::Info.find_by( name_in_system: station[ :name_in_system ] ).decorate.link_to_station_facility_page.render_en
+      ::Station::Info.find_by( name_in_system: station[ :name_in_system ] ).decorate.link_to_station_facility_page.render_en( @controller_of_linked_page )
     }
   end
 

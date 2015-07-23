@@ -1,8 +1,9 @@
 class TokyoMetro::App::Renderer::StationLinkList::MetaClass < TokyoMetro::Factory::Decorate::MetaClass
 
-  def initialize( request , stations )
+  def initialize( request , stations , controller_of_linked_page )
     super( request )
     @stations = stations
+    @controller_of_linked_page = controller_of_linked_page
   end
 
   def render
