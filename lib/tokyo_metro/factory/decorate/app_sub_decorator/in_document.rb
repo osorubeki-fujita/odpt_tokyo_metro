@@ -59,6 +59,28 @@ class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::F
     h
   end
 
+  def infos_from_db_columns_of_multiple( objs , title )
+    if objs.present?
+      infos_from_method_of_multiple( objs , title )
+    else
+      ::Hash.new
+    end
+  end
+
+  def infos_from_method_of_multiple( objs , title , *method_names )
+    h = ::Hash.new
+
+    if objs.length == 1
+      h[ title ] = infors_from_db_columns_of( objs.first )
+    else
+      objs.to_a.each.with_index(1) do | item , i |
+        h[ "#{ title } \##{ i }" ] = infors_from_db_columns_of( item )
+      end
+    end
+
+    h
+  end
+
   def render_name( regexp , name_str , p_class )
     _h_locals = {
       regexp: regexp ,
