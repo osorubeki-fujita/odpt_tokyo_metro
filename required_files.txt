@@ -1029,9 +1029,6 @@ lib/tokyo_metro/factory/save/api/train_timetable/each_file.rb
 lib/tokyo_metro/factory/save/api/train_timetable/group.rb
 lib/tokyo_metro/factory/save/api/train_timetable/group/file_info.rb
 lib/tokyo_metro/factory/save/api/train_timetable/group/list.rb
-lib/tokyo_metro/factory/db.rb
-lib/tokyo_metro/factory/db/model.rb
-lib/tokyo_metro/factory/db/operation_day.rb
 lib/tokyo_metro/factory/common.rb
 lib/tokyo_metro/factory/seed.rb
 lib/tokyo_metro/factory/seed/reference.rb
@@ -1531,6 +1528,9 @@ lib/tokyo_metro/app/renderer/station_timetable/group/each_railway_line/each_dire
 lib/tokyo_metro/app/renderer/women_only_car_info.rb
 lib/tokyo_metro/app/renderer/women_only_car_info/each_railway.rb
 lib/tokyo_metro/app/renderer/women_only_car_info/header.rb
+lib/tokyo_metro/app/db.rb
+lib/tokyo_metro/app/db/dictionary/models.rb
+lib/tokyo_metro/app/db/operation_day.rb
 lib/tokyo_metro/refinement.rb
 lib/tokyo_metro/refinement/api.rb
 lib/tokyo_metro/refinement/api/station_timetable.rb
