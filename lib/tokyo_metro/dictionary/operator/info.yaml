@@ -44,6 +44,7 @@ odpt.Operator:ToeiNipporiToneri:
     - Bureau of Transportation Tokyo Metropolitan Government
   name_en_short: ""
   index: 3
+  color:
     hex: "#009f40"
     red: 0
     green: 159
