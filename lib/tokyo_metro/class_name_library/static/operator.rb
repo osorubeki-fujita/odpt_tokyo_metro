@@ -33,8 +33,16 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
       ::TokyoMetro::Factory::Seed::Static::Operator::Info
     end
 
+    def factory_for_seeding_code
+      ::TokyoMetro::Factory::Seed::Static::Operator::Info::Code
+    end
+
     def db_instance_class
       ::Operator::Info
+    end
+
+    def db_instance_class_of_code
+      ::Operator::Code
     end
 
     private

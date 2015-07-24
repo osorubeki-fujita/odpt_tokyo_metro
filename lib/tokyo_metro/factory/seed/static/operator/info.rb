@@ -17,7 +17,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
       :name_ja_short ,
       # :name_hira ,
       :name_en_short ,
-      :index , :operator_code , :numbering , :railway_line_code_shape , :station_code_shape
+      :index
     ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end
@@ -27,6 +27,13 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
 
   def seed_optional_infos
     seed_twitter_account
+    seed_code
+  end
+
+  private
+
+  def seed_code
+    self.class.factory_for_seeding_code.new( @info , @id )
   end
 
 end

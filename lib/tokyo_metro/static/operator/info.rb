@@ -33,8 +33,13 @@ class TokyoMetro::Static::Operator::Info
   # @param railway_line_code_shape [String or nil] 路線記号の形
   # @param station_code_shape [Stirng or nil] 駅番号の形
   # @param color [::TokyoMetro::Static::Color] 事業者の色
-  def initialize( same_as , name_ja , name_ja_short , name_en , name_en_short , index , operator_code ,
-    numbering , railway_line_code_shape , station_code_shape , color ,
+  def initialize( same_as , name_ja , name_ja_short , name_en , name_en_short , index ,
+    operator_code , numbering ,
+    #
+    railway_line_code_shape , railway_line_code_stroke_width_setting , railway_line_code_text_weight , railway_line_code_text_size_setting ,
+    station_code_shape , station_code_stroke_width_setting , station_code_text_weight , station_code_text_size_setting ,
+    #
+    color ,
     twitter_widget_id , twitter_account_name
   )
     @same_as = same_as

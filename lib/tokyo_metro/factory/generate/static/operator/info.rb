@@ -6,7 +6,9 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info < TokyoMetro::Factor
     [
       :name_ja , :name_ja_short , :name_en , :name_en_short , :index ,
       :operator_code , :numbering ,
-      :railway_line_code_shape , :station_code_shape , :color ,
+      :railway_line_code_shape , :railway_line_code_stroke_width_setting , :railway_line_code_text_weight , :railway_line_code_text_size_setting ,
+      :station_code_shape , :station_code_stroke_width_setting , :station_code_text_weight , :station_code_text_size_setting ,
+      :color ,
       :twitter_widget_id , :twitter_account_name
     ]
   end
@@ -15,7 +17,14 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info < TokyoMetro::Factor
 
   def set_values_to_hash_for_making_variables
     super( hash_key_array: [ :name_ja , :name_en ] , make_array: true )
-    super( hash_key_array: [ :name_ja_short , :name_en_short , :index , :operator_code , :railway_line_code_shape , :station_code_shape , :color ] )
+    super( hash_key_array: [ :name_ja_short , :name_en_short , :index ] )
+
+    super( hash_key_array: [ :operator_code , :numbering ] )
+
+    super( hash_key_array: [ :railway_line_code_shape , :railway_line_code_stroke_width_setting , :railway_line_code_text_weight , :railway_line_code_text_size_setting ] )
+    super( hash_key_array: [ :station_code_shape , :station_code_stroke_width_setting , :station_code_text_weight , :station_code_text_size_setting ] )
+
+    super( hash_key_array: [ :color ] )
     super( hash_key_array: [ :twitter_widget_id , :twitter_account_name ] )
     super( hash_key_array: :numbering , boolean: true )
 
