@@ -15,8 +15,8 @@ odpt.TrainType:TokyoMetro.Express:
 odpt.TrainType:TokyoMetro.HolidayExpress:
   name_ja: 土休急行
   name_en : Express (Holiday)
-  name_ja_short : 急行
-  name_en_short : Express
+  name_ja_short: 急行
+  name_en_short: Express
 
 odpt.TrainType:TokyoMetro.SemiExpress:
   name_ja: 準急
@@ -48,7 +48,7 @@ odpt.TrainType:TokyoMetro.TamaExpress:
 odpt.TrainType:TokyoMetro.RomanceCar:
   name_ja: 特急ロマンスカー
   name_en : Limited Express "Romance Car"
-  name_ja_short : 特急
+  name_ja_short: 特急
 
 #-------- 有楽町線・副都心線
 

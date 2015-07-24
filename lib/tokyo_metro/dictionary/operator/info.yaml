@@ -23,7 +23,7 @@ odpt.Operator:Toei:
   name_en:
     - Toei Subway
     - Bureau of Transportation Tokyo Metropolitan Government
-  name_en_short : Toei
+  name_en_short: Toei
   index : 2
   railway_line_code_shape : stroked_circle
   color:
@@ -38,11 +38,11 @@ odpt.Operator:ToeiNipporiToneri:
   name_ja:
     - 都営
     - 東京都交通局 # 日暮里・舎人ライナー
-  name_ja_short : ""
+  name_ja_short: ""
   name_en:
     - Toei
     - Bureau of Transportation Tokyo Metropolitan Government
-  name_en_short : ""
+  name_en_short: ""
   index : 3
 
     hex: "#009f40"
@@ -71,11 +71,11 @@ odpt.Operator:JR-East:
   name_ja:
     - JR東日本
     - 東日本旅客鉄道
-  name_ja_short : JR
+  name_ja_short: JR
   name_en:
     - JR East
     - East Japan Railway Company
-  name_en_short : JR
+  name_en_short: JR
   index : 5
   color:
     hex: "#008000"
@@ -88,11 +88,11 @@ odpt.Operator:JR-Central:
   name_ja:
     - JR東海
     - 東海旅客鉄道
-  name_ja_short : JR
+  name_ja_short: JR
   name_en:
     - JR Central
     - Central Japan Railway Company
-  name_en_short : JR
+  name_en_short: JR
   index : 6
   color:
     hex: "#f77321"
@@ -105,9 +105,9 @@ odpt.Operator:Tokyu:
   name_ja:
     - 東急電鉄
     - 東京急行電鉄
-  name_ja_short : 東急
+  name_ja_short: 東急
   name_en: Tokyu Corporation
-  name_en_short : Tokyu
+  name_en_short: Tokyu
   index : 7
   railway_line_code_shape : filled_rounded_square
   color:
@@ -120,9 +120,9 @@ odpt.Operator:Tokyu:
 
 odpt.Operator:YokohamaMinatomiraiRailway:
   name_ja: 横浜高速鉄道
-  name_ja_short : ""
+  name_ja_short: ""
   name_en: Yokohama Minatomirai Railway Company
-  name_en_short : ""
+  name_en_short: ""
   index : 7.1
   railway_line_code_shape : filled_rounded_square
   color:
@@ -135,9 +135,9 @@ odpt.Operator:YokohamaMinatomiraiRailway:
 
 odpt.Operator:Odakyu:
   name_ja: 小田急電鉄
-  name_ja_short : 小田急
+  name_ja_short: 小田急
   name_en: Odakyu Electric Railway
-  name_en_short : Odakyu
+  name_en_short: Odakyu
   index : 8
   railway_line_code_shape : stroked_circle
   color:
@@ -150,9 +150,9 @@ odpt.Operator:Odakyu:
 
 odpt.Operator:HakoneTozan :
   name_ja: 箱根登山鉄道
-  name_ja_short : 箱根登山
+  name_ja_short: 箱根登山
   name_en: Hakone Tozan Railway
-  name_en_short : Hakone Tozan
+  name_en_short: Hakone Tozan
   index : 8.1
   railway_line_code_shape : stroked_circle
   color:
@@ -165,9 +165,9 @@ odpt.Operator:HakoneTozan :
 
 odpt.Operator:Seibu:
   name_ja: 西武鉄道
-  name_ja_short : 西武
+  name_ja_short: 西武
   name_en: Seibu Railway
-  name_en_short : Seibu
+  name_en_short: Seibu
   index : 9
   railway_line_code_shape : filled_rounded_square
   color:
@@ -180,9 +180,9 @@ odpt.Operator:Seibu:
 
 odpt.Operator:Tobu:
   name_ja: 東武鉄道
-  name_ja_short : 東武
+  name_ja_short: 東武
   name_en: Tobu Railway
-  name_en_short : Tobu
+  name_en_short: Tobu
   index : 10
   railway_line_code_shape : stroked_rounded_square
   color:
@@ -219,9 +219,9 @@ odpt.Operator:ToyoRapidRailway:
 
 odpt.Operator:Keio:
   name_ja: 京王電鉄
-  name_ja_short : 京王
+  name_ja_short: 京王
   name_en: Keio Corporation
-  name_en_short : Keio
+  name_en_short: Keio
   index : 13
   railway_line_code_shape : stroked_circle
   color:
@@ -234,9 +234,9 @@ odpt.Operator:Keio:
 
 odpt.Operator:Keisei:
   name_ja: 京成電鉄
-  name_ja_short : 京成
+  name_ja_short: 京成
   name_en: Keisei Electric Railway
-  name_en_short : Keisei
+  name_en_short: Keisei
   operator_code : KS
   index : 14
   railway_line_code_shape : stroked_circle
