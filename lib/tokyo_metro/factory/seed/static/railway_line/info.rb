@@ -3,42 +3,18 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
   include ::TokyoMetro::Factory::Seed::Reference::Operator
-  include ::TokyoMetro::Factory::Seed::Reference::DcDate
   include ::TokyoMetro::Factory::Seed::Common::Polymorphic::TwitterAccount
 
   def initialize( info )
     super( info , to_get_id: true )
-
-    @id_urn = nil
-    @geo_json = nil
-    @dc_date = nil
-
-    set_variables_of_railway_lines_operated_by_the_app_operator
   end
 
   private
 
-  def set_variables_of_railway_lines_operated_by_the_app_operator
-    if @info.operated_by_tokyo_metro?
-      railway_line_info_in_api = ::TokyoMetro::Api.railway_lines.find{ | railway_line | railway_line.same_as?( @info.same_as ) }
-
-      [ :id_urn , :geo_json , :dc_date ].each do | method_name |
-        eval <<-DEF
-          @#{ method_name } = railway_line_info_in_api.#{ method_name }
-        DEF
-      end
-
-    end
-  end
-
   def hash_to_db
     h = {
       color: @info.color_normal_hex ,
-      name_codes: name_codes ,
-      #
-      id_urn: @id_urn ,
-      geo_json: @geo_json ,
-      dc_date: dc_date
+      name_codes: name_codes
     }
 
     [ :name_ja , :name_hira , :name_en , :operator_info_id ].each do | key_name |
@@ -79,16 +55,13 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
     DEF
   end
 
-  def dc_date
-    if @dc_date.present?
-      super( create_from: @dc_date )
-    else
-      nil
-    end
-  end
-
   def seed_optional_infos
     seed_twitter_account
+    seed_additional_infos_from_api
+  end
+
+  def seed_additional_infos_from_api
+    self.class.factory_for_seeding_additional_info.new( @info , @id )
   end
 
 end
