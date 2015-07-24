@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
   private
 
   def hash_to_db
-    h = { name_ja: @info.name_ja_inspect , name_en: @info.name_en_inspect , color: @info.hex_color }
+    h = { name_ja: @info.name_ja_inspect , name_en: @info.name_en_inspect }
 
     [
       :same_as ,
