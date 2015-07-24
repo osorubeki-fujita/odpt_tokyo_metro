@@ -43,7 +43,7 @@ custom.TrainTypeOtherOperator:Odakyu.TamaExpress:
 
 custom.TrainTypeOtherOperator:Odakyu.RomanceCar:
   # train_type: odpt.TrainType:TokyoMetro.RomanceCar
-  train_type: odpt.TrainType:TokyoMetro.LimitedExpress
+  train_type: odpt.TrainType:TokyoMetro.RomanceCar
   bgcolor:
     hex: "#ff0000"
     red: 255

@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Db::OperationDay
+class TokyoMetro::App::Db::OperationDay
 
   def initialize( datetime )
     @time = datetime

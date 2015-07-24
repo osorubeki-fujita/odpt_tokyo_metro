@@ -1,15 +1,15 @@
-module TokyoMetro::Factory::Db::Model
+module TokyoMetro::App::Db::Dictionary::Models
 
-  include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
-
-  GROUP = ::YAML.load_file( "#{ ::TokyoMetro.dictionary_dir }/models.yaml" )
+  def self.init
+    const_set( :GROUP , ::YAML.load_file( "#{ ::TokyoMetro::RAILS_DIR }/lib/models.yaml" ) )
+  end
 
   def self.list
-    make_list( group )
+    make_list( GROUP )
   end
 
   def self.list_sort_by_alphabet
-    make_list( { "All" => group.values.flatten.sort } )
+    make_list( { "All" => GROUP.values.flatten.sort } )
   end
 
   class << self
