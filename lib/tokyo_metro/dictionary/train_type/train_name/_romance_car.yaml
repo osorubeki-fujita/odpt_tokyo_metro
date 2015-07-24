@@ -1,15 +1,5 @@
 #---------------- 【ロマンスカー】
 
-#-------- 【小田急線へ】
-
-"custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal":
-  ref: custom.TrainTypeDefault:TokyoMetro.RomanceCar
-  stopping_pattern:
-    "odpt.Railway:TokyoMetro.Chiyoda": custom.StoppingPattern:TokyoMetro.Chiyoda.RomanceCar
-  note: 千代田線 特急ロマンスカー（小田急線 直通）
-  operator: odpt.Operator:TokyoMetro
-  railway_line: odpt.Railway:TokyoMetro.Chiyoda
-
 #-------- 平日
 
 "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.MetroHakone.Weekdays.21":

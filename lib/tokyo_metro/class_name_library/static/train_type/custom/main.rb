@@ -61,7 +61,7 @@ module TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::Main
 
       # YAML ファイルは以下のリストに含まれているものがすべて
       # 過不足がある場合はエラーとする。
-      valid_yaml_files = %W( ginza marunouchi hibiya tozai chiyoda chiyoda_romance_car hanzomon namboku yurakucho_fukutoshin )
+      valid_yaml_files = %W( ginza marunouchi hibiya tozai chiyoda hanzomon namboku yurakucho_fukutoshin )
 
       yaml_files_sorted( dir_name , valid_yaml_files )
     end

@@ -17,7 +17,7 @@ class TokyoMetro::Rake::Rails::Assets::Sass::Make::Partial::File < OdptCommon::F
   end
 
   def scss_content
-    erb_instance.result.gsub( /^ +$/ , "" ).gsub( /\n+/ , "\n" ).gsub( /\A\n+/ , "" )
+    erb_instance.result.gsub( /^[ \t]+$/ , "" ).gsub( /\n+/ , "\n" ).gsub( /\A\n+/ , "" )
   end
 
   def mkdir_of_scss_filepath

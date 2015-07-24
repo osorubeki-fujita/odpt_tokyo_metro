@@ -17,7 +17,7 @@
 #     }
 module TokyoMetro::Modules::Dictionary::Common::RomanceCar
 
-  TRAIN_NAMES = ::YAML.load_file( "#{ ::TokyoMetro.dictionary_dir }/train_type/romance_car_train_names.yaml" )
+  TRAIN_NAMES = ::YAML.load_file( "#{ ::TokyoMetro.dictionary_dir }/train_name/romance_car.yaml" )
   include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods
 
 end
