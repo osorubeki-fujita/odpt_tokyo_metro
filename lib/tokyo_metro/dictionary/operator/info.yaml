@@ -3,7 +3,7 @@ odpt.Operator:TokyoMetro:
     - 東京メトロ
     - 東京地下鉄
   name_en: Tokyo Metro
-  index : 1
+  index: 1
   twitter_widget_id: "532627820543897600"
   twitter_account_name: tokyometro_info
   railway_line_code_shape: stroked_circle
@@ -24,7 +24,7 @@ odpt.Operator:Toei:
     - Toei Subway
     - Bureau of Transportation Tokyo Metropolitan Government
   name_en_short: Toei
-  index : 2
+  index: 2
   railway_line_code_shape: stroked_circle
   color:
     hex: "#009f40"
@@ -43,7 +43,7 @@ odpt.Operator:ToeiNipporiToneri:
     - Toei
     - Bureau of Transportation Tokyo Metropolitan Government
   name_en_short: ""
-  index : 3
+  index: 3
 
     hex: "#009f40"
     red: 0
@@ -59,7 +59,7 @@ odpt.Operator:Toden:
   name_en:
     - Toden
     - Bureau of Transportation Tokyo Metropolitan Government
-  index : 4
+  index: 4
   color:
     hex: "#009f40"
     red: 0
@@ -76,7 +76,7 @@ odpt.Operator:JR-East:
     - JR East
     - East Japan Railway Company
   name_en_short: JR
-  index : 5
+  index: 5
   color:
     hex: "#008000"
     red: 0
@@ -93,7 +93,7 @@ odpt.Operator:JR-Central:
     - JR Central
     - Central Japan Railway Company
   name_en_short: JR
-  index : 6
+  index: 6
   color:
     hex: "#f77321"
     red: 247
@@ -108,7 +108,7 @@ odpt.Operator:Tokyu:
   name_ja_short: 東急
   name_en: Tokyu Corporation
   name_en_short: Tokyu
-  index : 7
+  index: 7
   railway_line_code_shape: filled_rounded_square
   color:
     hex: "#ee0011"
@@ -123,7 +123,7 @@ odpt.Operator:YokohamaMinatomiraiRailway:
   name_ja_short: ""
   name_en: Yokohama Minatomirai Railway Company
   name_en_short: ""
-  index : 7.1
+  index: 7.1
   railway_line_code_shape: filled_rounded_square
   color:
     hex: "#09357f"
@@ -138,7 +138,7 @@ odpt.Operator:Odakyu:
   name_ja_short: 小田急
   name_en: Odakyu Electric Railway
   name_en_short: Odakyu
-  index : 8
+  index: 8
   railway_line_code_shape: stroked_circle
   color:
     hex: "#2288cc"
@@ -153,7 +153,7 @@ odpt.Operator:HakoneTozan :
   name_ja_short: 箱根登山
   name_en: Hakone Tozan Railway
   name_en_short: Hakone Tozan
-  index : 8.1
+  index: 8.1
   railway_line_code_shape: stroked_circle
   color:
     hex: "#2288cc"
@@ -168,7 +168,7 @@ odpt.Operator:Seibu:
   name_ja_short: 西武
   name_en: Seibu Railway
   name_en_short: Seibu
-  index : 9
+  index: 9
   railway_line_code_shape: filled_rounded_square
   color:
     hex: "#87ceed"
@@ -183,7 +183,7 @@ odpt.Operator:Tobu:
   name_ja_short: 東武
   name_en: Tobu Railway
   name_en_short: Tobu
-  index : 10
+  index: 10
   railway_line_code_shape: stroked_rounded_square
   color:
     hex: "#005bac"
@@ -196,7 +196,7 @@ odpt.Operator:Tobu:
 odpt.Operator:SaitamaRailway:
   name_ja: 埼玉高速鉄道
   name_en: Saitama Railway
-  index : 11
+  index: 11
   color:
     hex: "#6699ff"
     red: 102
@@ -207,7 +207,7 @@ odpt.Operator:ToyoRapidRailway:
   name_ja: 東葉高速鉄道
   name_en: Toyo Rapid Railway
   operator_code : TR
-  index : 12
+  index: 12
   railway_line_code_shape: stroked_circle
   color:
     hex: "#3fb036"
@@ -222,7 +222,7 @@ odpt.Operator:Keio:
   name_ja_short: 京王
   name_en: Keio Corporation
   name_en_short: Keio
-  index : 13
+  index: 13
   railway_line_code_shape: stroked_circle
   color:
     hex: "#dd0077"
@@ -238,7 +238,7 @@ odpt.Operator:Keisei:
   name_en: Keisei Electric Railway
   name_en_short: Keisei
   operator_code : KS
-  index : 14
+  index: 14
   railway_line_code_shape: stroked_circle
   color:
     hex: "#005aaa"
@@ -256,7 +256,7 @@ odpt.Operator:MIR:
     - Tsukuba Express
     - MIR
     - Metropolitan Intercity Railway
-  index : 15
+  index: 15
   color:
     hex: "#000084"
     red: 0
@@ -268,7 +268,7 @@ odpt.Operator:MIR:
 odpt.Operator:Yurikamome:
   name_ja: ゆりかもめ
   name_en: Yurikamome
-  index : 16
+  index: 16
   numbering: true
   railway_line_code_shape: stroked_circle
   color:
@@ -286,7 +286,7 @@ odpt.Operator:TWR:
     - Rinkai Line
     - TWR
     - Tokyo Waterfront Area Rapid Transit
-  index : 17
+  index: 17
   color:
     hex: "#00418e"
     red: 0
