@@ -13,7 +13,10 @@ class TokyoMetro::Static::RailwayLine::Info
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::SameAs
-  include ::TokyoMetro::Modules::Decision::Common::Operator
+
+  include ::OdptCommon::Modules::Decision::Common::Operator::Name
+  include ::TokyoMetro::Modules::Decision::Common::Operator::Name
+
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   include ::OdptCommon::Modules::Name::Common::RailwayLine

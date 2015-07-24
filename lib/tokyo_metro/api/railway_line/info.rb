@@ -10,7 +10,10 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
   include ::TokyoMetro::Modules::Decision::Common::SameAs
-  include ::TokyoMetro::Modules::Decision::Common::Operator
+
+  include ::OdptCommon::Modules::Decision::Common::Operator::Name
+  include ::TokyoMetro::Modules::Decision::Common::Operator::Name
+
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::BranchLine

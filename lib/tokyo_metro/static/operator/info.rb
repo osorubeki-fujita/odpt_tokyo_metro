@@ -14,7 +14,9 @@ class TokyoMetro::Static::Operator::Info
   include ::TokyoMetro::Modules::Name::Common::Operator::CssClass
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
-  include ::TokyoMetro::Modules::Decision::Common::Operator
+
+  include ::OdptCommon::Modules::Decision::Common::Operator::Name
+  include ::TokyoMetro::Modules::Decision::Common::Operator::Name
 
   include ::OdptCommon::Modules::MethodMissing::Decision::Common::Operator
 
