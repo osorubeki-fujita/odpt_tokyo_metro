@@ -1208,6 +1208,7 @@ lib/tokyo_metro/factory/seed/static/meta_class/list.rb
 lib/tokyo_metro/factory/seed/static/operator.rb
 lib/tokyo_metro/factory/seed/static/operator/hash.rb
 lib/tokyo_metro/factory/seed/static/operator/info.rb
+lib/tokyo_metro/factory/seed/static/operator/info/code.rb
 lib/tokyo_metro/factory/seed/static/railway_line.rb
 lib/tokyo_metro/factory/seed/static/railway_line/hash.rb
 lib/tokyo_metro/factory/seed/static/railway_line/info.rb
