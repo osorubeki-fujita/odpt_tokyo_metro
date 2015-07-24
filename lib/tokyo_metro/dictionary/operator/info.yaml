@@ -4,16 +4,16 @@ odpt.Operator:TokyoMetro:
     - 東京地下鉄
   name_en : Tokyo Metro
   index : 1
-  numbering : true
-  railway_line_code_shape : stroked_circle
-  station_code_shape : stroked_circle
   twitter_widget_id: "532627820543897600"
-  twitter_account_name: "tokyometro_info"
+  twitter_account_name: tokyometro_info
+  railway_line_code_shape : stroked_circle
   color :
     hex: "#109ed4"
     red: 16
     green: 158
     blue: 212
+  numbering : true
+  station_code_shape : stroked_circle
 
 odpt.Operator:Toei:
   name_ja :
@@ -25,14 +25,14 @@ odpt.Operator:Toei:
     - Bureau of Transportation Tokyo Metropolitan Government
   name_en_short : Toei
   index : 2
-  numbering : true
   railway_line_code_shape : stroked_circle
-  station_code_shape : stroked_circle
   color :
     hex: "#009f40"
     red: 0
     green: 159
     blue: 64
+  numbering : true
+  station_code_shape : stroked_circle
 
 odpt.Operator:ToeiNipporiToneri:
   name_ja :
@@ -44,13 +44,13 @@ odpt.Operator:ToeiNipporiToneri:
     - Bureau of Transportation Tokyo Metropolitan Government
   name_en_short : ""
   index : 3
-  numbering : true
-  station_code_shape : none
   color :
     hex: "#009f40"
     red: 0
     green: 159
     blue: 64
+  numbering : true
+  station_code_shape : none
 
 odpt.Operator:Toden:
   name_ja :
@@ -65,6 +65,7 @@ odpt.Operator:Toden:
     red: 0
     green: 159
     blue: 64
+  numbering : false
 
 odpt.Operator:JR-East:
   name_ja :
@@ -81,6 +82,7 @@ odpt.Operator:JR-East:
     red: 0
     green: 128
     blue: 0
+  numbering : false
 
 odpt.Operator:JR-Central:
   name_ja :
@@ -97,6 +99,7 @@ odpt.Operator:JR-Central:
     red: 247
     green: 115
     blue: 33
+  numbering : false
 
 odpt.Operator:Tokyu:
   name_ja :
@@ -106,14 +109,14 @@ odpt.Operator:Tokyu:
   name_en : Tokyu Corporation
   name_en_short : Tokyu
   index : 7
-  numbering : true
   railway_line_code_shape : filled_rounded_square
-  station_code_shape : stroked_rounded_square
   color :
     hex: "#ee0011"
     red: 238
     green: 0
     blue: 17
+  numbering : true
+  station_code_shape : stroked_rounded_square
 
 odpt.Operator:YokohamaMinatomiraiRailway:
   name_ja : 横浜高速鉄道
@@ -121,14 +124,14 @@ odpt.Operator:YokohamaMinatomiraiRailway:
   name_en : Yokohama Minatomirai Railway Company
   name_en_short : ""
   index : 7.1
-  numbering : true
   railway_line_code_shape : filled_rounded_square
-  station_code_shape : stroked_rounded_square
   color :
     hex: "#09357f"
     red: 9
     green: 53
     blue: 127
+  numbering : true
+  station_code_shape : stroked_rounded_square
 
 odpt.Operator:Odakyu:
   name_ja : 小田急電鉄
@@ -136,14 +139,14 @@ odpt.Operator:Odakyu:
   name_en : Odakyu Electric Railway
   name_en_short : Odakyu
   index : 8
-  numbering : true
   railway_line_code_shape : stroked_circle
-  station_code_shape : stroked_circle
   color :
     hex: "#2288cc"
     red: 34
     green: 136
     blue: 204
+  numbering : true
+  station_code_shape : stroked_circle
 
 odpt.Operator:HakoneTozan :
   name_ja : 箱根登山鉄道
@@ -151,14 +154,14 @@ odpt.Operator:HakoneTozan :
   name_en : Hakone Tozan Railway
   name_en_short : Hakone Tozan
   index : 8.1
-  numbering : true
   railway_line_code_shape : stroked_circle
-  station_code_shape : stroked_circle
   color :
     hex: "#2288cc"
     red: 34
     green: 136
     blue: 204
+  numbering : true
+  station_code_shape : stroked_circle
 
 odpt.Operator:Seibu:
   name_ja : 西武鉄道
@@ -166,14 +169,14 @@ odpt.Operator:Seibu:
   name_en : Seibu Railway
   name_en_short : Seibu
   index : 9
-  numbering : true
   railway_line_code_shape : filled_rounded_square
-  station_code_shape : seibu_rounded_square
   color :
     hex: "#87ceed"
     red: 135
     green: 206
     blue: 237
+  numbering : true
+  station_code_shape : seibu_rounded_square
 
 odpt.Operator:Tobu:
   name_ja : 東武鉄道
@@ -181,14 +184,14 @@ odpt.Operator:Tobu:
   name_en : Tobu Railway
   name_en_short : Tobu
   index : 10
-  numbering : true
   railway_line_code_shape : stroked_rounded_square
-  station_code_shape : stroked_rounded_square
   color :
     hex: "#005bac"
     red: 0
     green: 91
     blue: 172
+  numbering : true
+  station_code_shape : stroked_rounded_square
 
 odpt.Operator:SaitamaRailway:
   name_ja : 埼玉高速鉄道
@@ -205,14 +208,14 @@ odpt.Operator:ToyoRapidRailway:
   name_en : Toyo Rapid Railway
   operator_code : TR
   index : 12
-  numbering : true
   railway_line_code_shape : stroked_circle
-  station_code_shape : stroked_circle
   color:
     hex: "#3fb036"
     red: 63
     green: 176
     blue: 54
+  numbering : true
+  station_code_shape : stroked_circle
 
 odpt.Operator:Keio:
   name_ja : 京王電鉄
@@ -220,14 +223,14 @@ odpt.Operator:Keio:
   name_en : Keio Corporation
   name_en_short : Keio
   index : 13
-  numbering : true
   railway_line_code_shape : stroked_circle
-  station_code_shape : stroked_circle
   color :
     hex: "#dd0077"
     red: 221
     green: 0
     blue: 119
+  numbering : true
+  station_code_shape : stroked_circle
 
 odpt.Operator:Keisei:
   name_ja : 京成電鉄
@@ -236,14 +239,14 @@ odpt.Operator:Keisei:
   name_en_short : Keisei
   operator_code : KS
   index : 14
-  numbering : true
   railway_line_code_shape : stroked_circle
-  station_code_shape : stroked_circle
   color :
     hex: "#005aaa"
     red: 0
     green: 90
     blue: 170
+  numbering : true
+  station_code_shape : stroked_circle
 
 odpt.Operator:MIR:
   name_ja :
@@ -254,13 +257,13 @@ odpt.Operator:MIR:
     - MIR
     - Metropolitan Intercity Railway
   index : 15
-  numbering : true
-  station_code_shape : none
   color :
     hex: "#000084"
     red: 0
     green: 0
     blue: 132
+  numbering : true
+  station_code_shape : none
 
 odpt.Operator:Yurikamome:
   name_ja : ゆりかもめ
@@ -268,12 +271,12 @@ odpt.Operator:Yurikamome:
   index : 16
   numbering : true
   railway_line_code_shape : stroked_circle
-  station_code_shape : stroked_circle
   color :
     hex: "#00418e"
     red: 0
     green: 65
     blue: 142
+  station_code_shape : stroked_circle
 
 odpt.Operator:TWR:
   name_ja :
@@ -284,9 +287,9 @@ odpt.Operator:TWR:
     - TWR
     - Tokyo Waterfront Area Rapid Transit
   index : 17
-  numbering : false
   color :
     hex: "#00418e"
     red: 0
     green: 65
     blue: 142
+  numbering : false

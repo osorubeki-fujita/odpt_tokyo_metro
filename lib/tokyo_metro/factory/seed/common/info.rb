@@ -2,10 +2,10 @@ class TokyoMetro::Factory::Seed::Common::Info
 
   include ::TokyoMetro::Factory::Seed::Common::SetOptionalVariables
 
-  def initialize( info , *args , get_id: false )
+  def initialize( info , *args , to_get_id: false )
     @info = info
     set_optional_variables( args )
-    @get_id = get_id
+    @to_get_id = to_get_id
   end
 
   def seed
@@ -24,7 +24,7 @@ class TokyoMetro::Factory::Seed::Common::Info
   end
 
   def seed_main
-    if @get_id
+    if @to_get_id
       @id = db_class.find_or_create_by( hash_to_db ).id
     else
       db_class.find_or_create_by( hash_to_db )

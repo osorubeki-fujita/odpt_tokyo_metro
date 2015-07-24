@@ -8,7 +8,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info::TrainTime::Info < 
   include ::TokyoMetro::Modules::Decision::Common::TrainType
 
   def initialize( *args )
-    super( *args , get_id: true )
+    super( *args , to_get_id: true )
     class << @info
       include ::TokyoMetro::Refinement::Api::StationTimetable::Info::TrainTime::Info::OptionalInfoId
     end

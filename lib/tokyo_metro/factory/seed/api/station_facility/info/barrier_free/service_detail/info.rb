@@ -9,10 +9,10 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Servic
 
   private
 
-  def seed_main( get_id: false )
+  def seed_main( to_get_id: false )
     operation_day_ids.each do | operation_day_id |
       h = hash_to_db( operation_day_id )
-      if get_id
+      if to_get_id
         @id = db_class.find_or_create_by(h).id
         seed_optional_infos_for_each_loop
       else

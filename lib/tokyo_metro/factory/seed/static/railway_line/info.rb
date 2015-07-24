@@ -7,7 +7,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
   include ::TokyoMetro::Factory::Seed::Common::Polymorphic::TwitterAccount
 
   def initialize( info )
-    super( info , get_id: true )
+    super( info , to_get_id: true )
 
     @id_urn = nil
     @geo_json = nil

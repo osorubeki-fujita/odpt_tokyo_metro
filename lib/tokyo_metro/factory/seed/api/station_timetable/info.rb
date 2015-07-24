@@ -5,7 +5,7 @@ class TokyoMetro::Factory::Seed::Api::StationTimetable::Info < TokyoMetro::Facto
   include ::TokyoMetro::Factory::Seed::Reference::DcDate
 
   def initialize( *args )
-    super( *args , get_id: true )
+    super( *args , to_get_id: true )
   end
 
   private

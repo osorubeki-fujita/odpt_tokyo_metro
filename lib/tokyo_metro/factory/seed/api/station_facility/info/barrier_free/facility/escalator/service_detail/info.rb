@@ -3,7 +3,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::BarrierFree::Facili
   private
 
   def seed_main
-    super( get_id: true )
+    super( to_get_id: true )
   end
 
   def seed_optional_infos_for_each_loop

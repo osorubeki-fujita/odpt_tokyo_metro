@@ -4,7 +4,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
   include ::TokyoMetro::Factory::Seed::Common::Polymorphic::TwitterAccount
 
   def initialize( info )
-    super( info , get_id: true )
+    super( info , to_get_id: true )
   end
 
   private

@@ -3,7 +3,7 @@ class TokyoMetro::Factory::Seed::Api::StationFacility::Info::Common::Info < Toky
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility
 
   def initialize( *args )
-    super( *args , get_id: true )
+    super( *args , to_get_id: true )
   end
 
   private
