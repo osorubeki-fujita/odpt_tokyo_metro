@@ -44,7 +44,7 @@ custom.TrainTypeOtherOperator:Tokyu.SemiExpress:
 
 custom.TrainTypeOtherOperator:Tokyu.Express:
   train_type: odpt.TrainType:TokyoMetro.Express
-  bgcolor :
+  bgcolor:
     hex: "#ee0011"
     red: 238
     green: 0
