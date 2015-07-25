@@ -12,10 +12,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
   private
 
   def hash_to_db
-    h = {
-      color: @info.color_normal_hex ,
-      name_codes: name_codes
-    }
+    h = ::Hash.new
 
     [ :name_ja , :name_hira , :name_en , :operator_info_id ].each do | key_name |
       h[ key_name ] = send( key_name )
@@ -31,9 +28,9 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
     h
   end
 
-  def name_codes
-    if @info.has_name_codes?
-      @info.name_codes.join( "/" )
+  def codes
+    if @info.has_codes?
+      @info.codes.join( "/" )
     else
       nil
     end
@@ -57,11 +54,16 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
 
   def seed_optional_infos
     seed_twitter_account
-    seed_additional_infos_from_api
+    seed_additional_infos_in_api
+    seed_codes
   end
 
-  def seed_additional_infos_from_api
-    self.class.factory_for_seeding_additional_info.new( @info , @id )
+  def seed_additional_infos_in_api
+    self.class.factory_for_seeding_additional_infos_in_api.new( @info , @id )
+  end
+
+  def seed_codes
+    self.class.factory_for_seeding_codes.new( @info , @id )
   end
 
 end

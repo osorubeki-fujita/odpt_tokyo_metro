@@ -37,8 +37,12 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
       ::TokyoMetro::Factory::Seed::Static::RailwayLine::Info
     end
 
-    def factory_for_seeding_additional_info
+    def factory_for_seeding_additional_infos_in_api
       ::TokyoMetro::Factory::Seed::Static::RailwayLine::Info::AdditionalInfo
+    end
+
+    def factory_for_seeding_codes
+      ::TokyoMetro::Factory::Seed::Static::RailwayLine::Info::Code
     end
 
     def db_instance_class
@@ -47,6 +51,14 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
 
     def db_instance_class_of_additional_info
       ::Railway::Line::AdditionalInfo
+    end
+
+    def db_instance_class_of_code
+      ::Railway::Line::Code
+    end
+
+    def db_instance_class_of_info_code
+      ::Railway::Line::InfoCode
     end
 
     private

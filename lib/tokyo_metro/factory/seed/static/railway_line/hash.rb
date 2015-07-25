@@ -4,15 +4,27 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Hash < TokyoMetro::Factory
 
   private
 
-  def seed_instance_for_escaping_undefined
-    self.class.db_instance_class.find_or_create_by(
+  def seed_instance_for_undefined_object
+    @undefind_instance = self.class.db_instance_class.find_or_create_by(
       same_as: "odpt.Railway:Undefined" ,
       name_ja: "未定義" ,
       name_en: "Undefined" ,
       operator_info_id: ::Operator::Info.find_by( same_as: "odpt.Operator:Undefined" ).id ,
+      index_in_operator: 1
+    )
+  end
+
+  def seed_instance_for_color_and_code_of_undefined_object
+    code_instance = self.class.factory_for_seeding_codes.find_or_create_by(
+      code: "NG" ,
       color: "\#999999" ,
-      index_in_operator: 1 ,
-      name_codes: "NG"
+      numbering: false
+    )
+
+    self.class.db_instance_class_of_info_code.find_or_create_by(
+      info_id: @undefind_instance.id ,
+      code_id: code_instance.id ,
+      index: 1
     )
   end
 

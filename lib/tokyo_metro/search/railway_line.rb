@@ -7,7 +7,7 @@ module TokyoMetro::Search::RailwayLine
     end
 
     ::TokyoMetro::Static.railway_line_infos_operated_by_tokyo_metro.each do | item |
-      if [ item[ "name" ] , item[ "name_en" ] , item[ "odpt:railway" ] , item[ "name_code" ] ].include?( railway_line_name )
+      if [ item[ "name" ] , item[ "name_en" ] , item[ "odpt:railway" ] , item[ "code" ] ].include?( railway_line_name )
         return item[ "odpt:railway" ]
       end
     end
@@ -43,11 +43,11 @@ module TokyoMetro::Search::RailwayLine
   # 路線記号
   # @param railway_line_name [String] 路線名称（例：odpt.Railway:TokyoMetro.Marunouchi、銀座線、T、Mita）
   # @return [String]
-  def self.name_code( railway_line_name )
+  def self.code( railway_line_name )
     railway_line_same_as = name_in_api( railway_line_name )
     ::TokyoMetro::Static.railway_line_infos_operated_by_tokyo_metro.each do | item |
       if item[ "odpt:railway" ] == railway_line_same_as
-        return item[ "name_code" ]
+        return item[ "code" ]
       end
     end
     ""
@@ -72,7 +72,7 @@ module TokyoMetro::Search::RailwayLine
   # @return [String]
   def self.color_in_css_class( railway_line_name )
     railway_line_same_as = name_in_api( railway_line_name )
-    railway_line_code = name_code( railway_line_same_as )
+    railway_line_code = code( railway_line_same_as )
     case railway_line_code
     when ""
       "normal_line"

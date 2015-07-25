@@ -34,18 +34,18 @@ class TokyoMetro::Static::RailwayLine::Info
   # @param name_ja [::Array <::String>]
   # @param name_hira
   # @param name_en [::Array <::String>]
-  # @param name_code
+  # @param codes
   # @param operator [::TokyoMetro::Static::Operator::Info]
   # @param index [::Numeric]
-  # @param color
-  def initialize( same_as , name_ja , name_hira , name_en , name_codes , operator , index_in_operator , color , start_on , end_on , twitter_widget_id , twitter_account_name )
+  # @param colors
+  def initialize( same_as , name_ja , name_hira , name_en , codes , operator , index_in_operator , colors , start_on , end_on , twitter_widget_id , twitter_account_name )
     @same_as = same_as
     @name_ja = name_ja
     @name_hira = name_hira
     @name_en = name_en
-    @name_codes = name_codes
+    @codes = codes
     @index_in_operator = index_in_operator
-    @color = color
+    @colors = colors
     @operator = operator
 
     @start_on = start_on
@@ -179,7 +179,7 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # @return [::Array <::String>] 路線記号
   # @example
-  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.name_codes }
+  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.codes }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : ["G"]
   #   odpt.Railway:TokyoMetro.Marunouchi               : ["M"]
@@ -252,7 +252,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:MIR.TX                              : []
   #   odpt.Railway:Yurikamome.Yurikamome               : ["U"]
   #   odpt.Railway:TWR.Rinkai                          : []
-  attr_reader :name_codes
+  attr_reader :codes
 
   # @return [Numeric] 同一事業者内での路線の番号（整列のために定義）
   # @example
@@ -477,7 +477,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:JR-East.Takasaki                    : ["高崎線"]
   #   odpt.Railway:JR-East.Utsunomiya                  : ["宇都宮線"]
   #   odpt.Railway:JR-East.ShonanShinjuku              : ["湘南新宿ライン"]
-  #   odpt.Railway:JR-East.UenoTokyo                   : ["上野東京ライ���"]
+  #   odpt.Railway:JR-East.UenoTokyo                   : ["上野東京ライン"]
   #   odpt.Railway:JR-East.Chuo                        : ["中央線 特急"]
   #   odpt.Railway:JR-East.ChuoKaisoku                 : ["中央線 快速"]
   #   odpt.Railway:JR-East.ChuoSobu                    : ["中央・総武線 各駅停車"]
@@ -682,7 +682,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:MIR.TX                              : NilClass
   #   odpt.Railway:Yurikamome.Yurikamome               : Array
   #   odpt.Railway:TWR.Rinkai                          : NilClass
-  attr_reader :color
+  attr_reader :colors
 
   # 標準の路線色を取得するメソッド
   # @return [::TokyoMetro::Static::Color]
@@ -695,7 +695,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:TWR.Rinkai                          : TokyoMetro::Static::Color
   def color_normal
     # 路線の色が定義されていない場合
-    if @color.nil?
+    if @colors.nil?
       # 事業者の色が定義されている場合は、事業者の色をそのまま標準の路線色とする。
       if operator_color.instance_of?( ::TokyoMetro::Static::Color )
         operator_color
@@ -706,11 +706,11 @@ class TokyoMetro::Static::RailwayLine::Info
       end
 
     # @color が配列の場合は、配列の最初の要素を標準の路線色とする。
-    elsif @color.instance_of?( ::Array )
+    elsif @colors.instance_of?( ::Array )
       @color.first
     # 路線の色が1つのみ設定されている場合は、それを標準の路線色とする。
-    elsif @color.instance_of?( ::TokyoMetro::Static::Color )
-      @color
+    elsif @colors.instance_of?( ::TokyoMetro::Static::Color )
+      @colors
     end
   end
 
@@ -924,13 +924,13 @@ class TokyoMetro::Static::RailwayLine::Info
 
   # 鉄道事業者の色の HexColor を取得するメソッド
   # @return [String]
-  def operator_color_hex
+  def operator_hex_color
     @operator.hex_color
   end
 
   # 鉄道事業者の色の Red, Green, Blue の各成分の情報を括弧で囲んだ文字列にして返すメソッド
   # @return [String]
-  def to_operator_color_rgb_in_parentheses
+  def to_operator_rgb_color_in_parentheses
     @operator.to_rgb_color_in_parentheses
   end
 
@@ -991,8 +991,8 @@ class TokyoMetro::Static::RailwayLine::Info
   def railway_line_code_text_settings_for_scss
     ary = ::Array.new
     # 路線記号が定義されている場合
-    if name_code_normal.string?
-      if name_code_normal.length == 1
+    if code_normal.string?
+      if code_normal.length == 1
         ary << "railway_line_code_large_letter"
       else
         ary << "railway_line_code_small_letter"
@@ -1017,8 +1017,8 @@ class TokyoMetro::Static::RailwayLine::Info
     name_en
   end
 
-  def name_codes_to_a
-    name_codes
+  def codes_to_a
+    codes
   end
 
   # @!endgroup
