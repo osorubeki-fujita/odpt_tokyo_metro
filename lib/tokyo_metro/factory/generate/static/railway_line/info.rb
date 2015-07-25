@@ -58,7 +58,7 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
 
   def check_validity_of_codes_and_color
     _codes = @hash_for_making_variables[ :codes ]
-    _colors = @hash_for_smaking_variables[ :colors ]
+    _colors = @hash_for_making_variables[ :colors ]
     if _codes.present? and _colors.present?
       # puts @same_as
       raise unless [ _codes , _colors ].all?( &:array? ) and _codes.length == _colors.length
