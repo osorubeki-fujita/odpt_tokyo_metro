@@ -9,16 +9,16 @@ class TokyoMetro::Static::RailwayLine::Hash < ::TokyoMetro::Static::Fundamental:
   # @return [::TokyoMetro::Static::Color]
   def select_main_color( str )
     if self.keys.include?( str )
-      return self[ str ].color.first
+      return self[ str ].colors.first
     else
       #---- 末尾が数字の場合 ここから
       if /\A(odpt\.Railway\:[a-zA-Z\-\.]+)\.(\d+?)\Z/ =~ str
         str , num = $1 , $2.to_i
         # 文字列部分が self の key である場合
         if self.keys.include?( str )
-          color_info = self[ str ].color
-          if color_info.instance_of?( ::Array ) and num <= color_info.length
-            return color_info[ num - 1 ]
+          color_infos = self[ str ].colors
+          if color_infos.instance_of?( ::Array ) and num <= color_infos.length
+            return color_infos[ num - 1 ]
           end
         end
       end

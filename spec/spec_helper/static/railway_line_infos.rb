@@ -110,11 +110,11 @@ def static_railway_line_infos
         expect( info.operator_info ).to be_instance_of( ::TokyoMetro::Static::Operator::Info )
       end
 
-      if info.color.present?
+      if info.colors.present?
         describe ::TokyoMetro::Static::RailwayLine::Info do
           it "\'#{railway_line_name}\' contains color info." do
-            expect( info.color ).to be_instance_of( ::Array )
-            info.color.each do | color_info |
+            expect( info.colors ).to be_instance_of( ::Array )
+            info.colors.each do | color_info |
               expect( color_info ).to be_instance_of( ::TokyoMetro::Static::Color )
             end
           end
