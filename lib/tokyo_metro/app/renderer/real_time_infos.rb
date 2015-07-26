@@ -26,7 +26,7 @@ class TokyoMetro::App::Renderer::RealTimeInfos < TokyoMetro::Factory::Decorate::
     @railway_line_infos.length == 1
   end
 
-  def has_multiple_railway_line_infos?
+  def has_many_railway_line_infos?
     @railway_line_infos.length > 1
   end
 

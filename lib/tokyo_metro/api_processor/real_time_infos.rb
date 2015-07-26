@@ -47,7 +47,7 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
 
   # インスタンス変数 railway_line_infos に含まれている路線の情報が複数か否かを判定するメソッド
   # @return [Boolean]
-  def has_multiple_railway_line_infos?
+  def has_many_railway_line_infos?
     @railway_line_infos.length > 1
   end
 
@@ -65,7 +65,7 @@ class TokyoMetro::ApiProcessor::RealTimeInfos
 
   # インスタンス変数 railway_line_infos に含まれている「支線ではない路線」の情報が1つか否かを判定するメソッド
   # @return [Boolean]
-  def has_multiple_railway_line_infos_except_for_branch_lines?
+  def has_many_railway_line_infos_except_for_branch_lines?
     railway_line_infos_except_for_branch_lines.length > 1
   end
 
