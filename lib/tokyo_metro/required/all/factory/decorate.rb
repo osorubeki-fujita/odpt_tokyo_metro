@@ -2,8 +2,7 @@ class TokyoMetro::Required::All::Factory::Decorate < TokyoMetro::Required
 
   def self.other_files
     [
-      ::File.join( top_file , "meta_class" ) ,
-      ::File.join( top_file , "settings" ) ,
+      ::File.join( top_file , "current_path" ) ,
       Api.files
     ]
   end

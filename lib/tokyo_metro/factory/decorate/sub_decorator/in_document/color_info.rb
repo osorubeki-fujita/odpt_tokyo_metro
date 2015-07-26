@@ -1,4 +1,4 @@
-module TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument::ColorInfo
+module TokyoMetro::Factory::Decorate::SubDecorator::InDocument::ColorInfo
 
   # @!group Sub public methods
 

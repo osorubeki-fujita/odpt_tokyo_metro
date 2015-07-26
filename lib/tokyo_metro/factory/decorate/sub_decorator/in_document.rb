@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Decorate::AppSubDecorator::InDocument < TokyoMetro::Factory::Decorate::AppSubDecorator
+class TokyoMetro::Factory::Decorate::SubDecorator::InDocument < TokyoMetro::Factory::Decorate::SubDecorator
 
   def render_button_domain
     h.content_tag( :div , '' , class: [ :button_area , :clearfix ] )
