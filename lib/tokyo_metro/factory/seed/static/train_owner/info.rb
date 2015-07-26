@@ -8,7 +8,7 @@ class TokyoMetro::Factory::Seed::Static::TrainOwner::Info < TokyoMetro::Factory:
   def hash_to_db
     {
       same_as: @info.same_as ,
-      operator_info_id: operator_info_id
+      info_id: operator_info_id
     }
   end
 

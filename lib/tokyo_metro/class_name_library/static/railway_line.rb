@@ -54,7 +54,7 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
     end
 
     def db_instance_class_of_code_info
-      ::Railway::Line::Code
+      ::Railway::Line::CodeInfo
     end
 
     def db_instance_class_of_info_code_info
