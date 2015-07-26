@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Seed::Static::RailwayLine::Info::Code < TokyoMetro::Factory::Seed::Static::MetaClass::Info
+class TokyoMetro::Factory::Seed::Static::RailwayLine::Info::CodeInfo < TokyoMetro::Factory::Seed::Static::MetaClass::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
 
@@ -38,11 +38,11 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info::Code < TokyoMetro::F
   end
 
   def seed_optional_infos(i)
-    self.class.db_instance_class_of_info_code( info_id: @info_id , code_id: @id , index: i )
+    self.class.db_instance_class_of_info_code_info( info_id: @info_id , code_info_id: @id , index: i )
   end
 
   def method_name_for_db_instance_class
-    :db_instance_class_of_code
+    :db_instance_class_of_code_info
   end
 
 end

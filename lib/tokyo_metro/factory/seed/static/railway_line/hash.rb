@@ -15,13 +15,13 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Hash < TokyoMetro::Factory
   end
 
   def seed_instance_for_color_and_code_of_undefined_object
-    code_instance = self.class.factory_for_seeding_codes.find_or_create_by(
+    code_instance = self.class.factory_for_seeding_code_infos.find_or_create_by(
       code: "NG" ,
       color: "\#999999" ,
       numbering: false
     )
 
-    self.class.db_instance_class_of_info_code.find_or_create_by(
+    self.class.db_instance_class_of_info_code_info.find_or_create_by(
       info_id: @undefind_instance.id ,
       code_id: code_instance.id ,
       index: 1

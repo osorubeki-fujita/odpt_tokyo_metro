@@ -23,7 +23,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Hash < TokyoMetro::Factory::S
   end
 
   def seed_instance_for_color_and_code_of_undefined_object
-    self.class.db_instance_class_of_code.find_or_create_by(
+    self.class.db_instance_class_of_code_info.find_or_create_by(
       info_id: @undefined_instance.id ,
       color: "\#999999" ,
       railway_line_code_shape: "none" ,

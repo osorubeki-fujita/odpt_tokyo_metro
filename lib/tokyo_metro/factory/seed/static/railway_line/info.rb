@@ -63,7 +63,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
   end
 
   def seed_codes
-    self.class.factory_for_seeding_codes.new( @info , @id )
+    self.class.factory_for_seeding_code_infos.new( @info , @id )
   end
 
 end

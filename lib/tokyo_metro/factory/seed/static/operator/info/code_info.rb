@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::Seed::Static::MetaClass::Info
+class TokyoMetro::Factory::Seed::Static::Operator::Info::CodeInfo < TokyoMetro::Factory::Seed::Static::MetaClass::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
@@ -27,7 +27,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
   end
 
   def method_name_for_db_instance_class
-    :db_instance_class_of_code
+    :db_instance_class_of_code_info
   end
 
 end

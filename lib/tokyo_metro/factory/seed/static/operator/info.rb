@@ -33,7 +33,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
   private
 
   def seed_code
-    self.class.factory_for_seeding_code.new( @info , @id )
+    self.class.factory_for_seeding_code_info.new( @info , @id )
   end
 
 end
