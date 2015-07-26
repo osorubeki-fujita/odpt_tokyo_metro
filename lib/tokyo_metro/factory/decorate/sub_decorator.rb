@@ -1,3 +1,2 @@
-class TokyoMetro::Factory::Decorate::SubDecorator < RailsDecorateFactory::SubDecorator
-  include ::TokyoMetro::Factory::Decorate::CurrentPath
+class TokyoMetro::Factory::Decorate::SubDecorator < OdptCommon::Factory::Decorate::SubDecorator
 end

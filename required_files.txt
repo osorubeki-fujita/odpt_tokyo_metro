@@ -1273,9 +1273,10 @@ lib/tokyo_metro/factory/before_seed/api/train_timetable/info.rb
 lib/tokyo_metro/factory/before_seed/api/train_timetable/info/train_type.rb
 lib/tokyo_metro/factory/before_seed/api/train_timetable/info/train_type/pattern.rb
 lib/tokyo_metro/factory/decorate.rb
+lib/tokyo_metro/factory/decorate/api.rb
 lib/tokyo_metro/factory/decorate/meta_class.rb
 lib/tokyo_metro/factory/decorate/settings.rb
-lib/tokyo_metro/factory/decorate/api.rb
+lib/tokyo_metro/factory/decorate/sub_decorator.rb
 lib/tokyo_metro/factory/decorate/api/meta_class.rb
 lib/tokyo_metro/factory/decorate/api/meta_class/real_time.rb
 lib/tokyo_metro/factory/decorate/api/meta_class/real_time/info.rb
@@ -1291,9 +1292,8 @@ lib/tokyo_metro/factory/decorate/api/train_operation/info.rb
 lib/tokyo_metro/factory/decorate/api/train_operation/info/basic_error.rb
 lib/tokyo_metro/factory/decorate/api/train_operation/info/json_parser_error.rb
 lib/tokyo_metro/factory/decorate/api/train_operation/info/network_error.rb
-lib/tokyo_metro/factory/decorate/app_sub_decorator.rb
-lib/tokyo_metro/factory/decorate/app_sub_decorator/in_document.rb
-lib/tokyo_metro/factory/decorate/app_sub_decorator/in_document/color_info.rb
+lib/tokyo_metro/factory/decorate/sub_decorator/in_document.rb
+lib/tokyo_metro/factory/decorate/sub_decorator/in_document/color_info.rb
 lib/tokyo_metro/factory/before_decorate.rb
 lib/tokyo_metro/factory/before_decorate/api.rb
 lib/tokyo_metro/factory/before_decorate/api/train_location.rb

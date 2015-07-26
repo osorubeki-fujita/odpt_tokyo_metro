@@ -1,3 +1,2 @@
-class TokyoMetro::Factory::Decorate::Settings < RailsDecorateFactory::Settings
-  include ::TokyoMetro::Factory::Decorate::CurrentPath
+class TokyoMetro::Factory::Decorate::Settings < OdptCommon::Factory::Decorate::Settings
 end

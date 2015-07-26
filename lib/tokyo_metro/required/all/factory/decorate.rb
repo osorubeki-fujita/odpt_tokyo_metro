@@ -1,10 +1,7 @@
 class TokyoMetro::Required::All::Factory::Decorate < TokyoMetro::Required
 
   def self.other_files
-    [
-      ::File.join( top_file , "current_path" ) ,
-      Api.files
-    ]
+    [ all_files_in_the_same_directory , Api.files ]
   end
 
 end

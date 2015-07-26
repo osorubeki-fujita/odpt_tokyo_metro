@@ -1,3 +1,2 @@
-class TokyoMetro::Factory::Decorate::MetaClass < RailsDecorateFactory::MetaClass
-  include ::TokyoMetro::Factory::Decorate::CurrentPath
+class TokyoMetro::Factory::Decorate::MetaClass < OdptCommon::Factory::Decorate::MetaClass
 end
