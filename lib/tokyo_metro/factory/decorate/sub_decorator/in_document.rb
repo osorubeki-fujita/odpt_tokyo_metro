@@ -1,9 +1,5 @@
 class TokyoMetro::Factory::Decorate::SubDecorator::InDocument < TokyoMetro::Factory::Decorate::SubDecorator
 
-  def render_button_domain
-    h.content_tag( :div , '' , class: [ :button_area , :clearfix ] )
-  end
-
   def render_id_and_size_changing_buttons
     h.render inline: <<-HAML , type: :haml , locals: { number: object.id }
 %div{ class: [ :header , :clearfix ] }
