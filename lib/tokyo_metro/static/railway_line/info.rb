@@ -1018,7 +1018,7 @@ class TokyoMetro::Static::RailwayLine::Info
   end
 
   def codes_to_a
-    codes
+    codes.delete_if( &:blank? )
   end
 
   # @!endgroup
