@@ -13,7 +13,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::ConnectingRa
   - if url.present?
     = link_to_unless( request.fullpath == url , "" , url )
   %div{ class: div_classes }
-    = railway_line_decorated.code.render( small: small_railway_line_code )
+    = railway_line_decorated.code_domain.render( small: small_railway_line_code )
     %div{ class: :railway_line }
       = railway_line_decorated.in_platform_transfer_info.render
       - if railway_direction_decorated.present?

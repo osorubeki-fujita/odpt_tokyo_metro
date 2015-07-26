@@ -5,7 +5,7 @@ class TokyoMetro::App::Renderer::Concerns::Link::ToRailwayLinePage::MetaClass::G
 %li{ class: li_classes }
   = link_to_unless( without_link_to_railway_line_page , "" , url )
   %div{ class: div_classes }
-    = railway_line_decorated.code.render( small: small_railway_line_code )
+    = railway_line_decorated.code_domain.render( small: small_railway_line_code )
     = railway_line_decorated.render_name( prefix_ja: prefix_ja , prefix_en: prefix_en , suffix_ja: suffix_ja , suffix_en: suffix_en )
     HAML
   end
