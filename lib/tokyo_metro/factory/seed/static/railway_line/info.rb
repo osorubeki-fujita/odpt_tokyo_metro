@@ -29,7 +29,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
   end
 
   def codes
-    if @info.has_codes?
+    if @info.has_code_infos?
       @info.codes.join( "/" )
     else
       nil
