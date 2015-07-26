@@ -4,6 +4,7 @@ class TokyoMetro::Factory::Design::RailwayLine::CssClass < OdptCommon::Factory::
     str = super(i)
 
     if @object.marunouchi_branch_line? or @object.chiyoda_branch_line?
+      raise unless i == 0
       str = str.gsub( /\Atokyo_metro_/ , "" )
     end
 
