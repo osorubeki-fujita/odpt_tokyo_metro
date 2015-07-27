@@ -12,9 +12,12 @@ module TokyoMetro::Factory::Seed
     time_begin = ::Time.now
     inspect_time_begin( time_begin )
 
+
     #-------- TokyoMetro::Static.operators
     #-------- TokyoMetro::Static.train_owners
     #-------- TokyoMetro::Static.Fare::Normal.seed
+    #-------- TokyoMetro::Static.operation_days.seed
+    #-------- TokyoMetro::Static.train_operation_statuses.seed
     process_fundamental_static(h)
 
     #-------- TokyoMetro::Static.railway_lines
