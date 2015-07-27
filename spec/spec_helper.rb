@@ -5,6 +5,8 @@ time_begin = ::Time.now
 
 # TokyoMetro.initialize_in_local_environment( "C:/RubyPj/rails/tokyo_metro" )
 TokyoMetro.initialize_in_local_environment( "/Users/shufujita/RubyPj/Rails/tokyo_metro_app" )
+TokyoMetro.set_gem_dev_dirs( "/Users/shufujita/rubypj/gems/tokyo_metro" , "201412" )
+
 
 time_end = ::Time.now
 puts "#{ ( time_end - time_begin ) } ms"

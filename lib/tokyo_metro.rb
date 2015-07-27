@@ -6,15 +6,12 @@ require "active_support"
 require "active_support/core_ext"
 require "active_support/concern"
 
-require "positive_support"
-require "positive_web_support"
-require "required_files"
-
 require "odpt_common"
+require "positive_web_support"
+
 require "odpt_tokyo_metro_helper"
 require "with_default_value"
 
-require "rails_decorate_factory"
 require "log_finder"
 
 # Encoding.default_external
@@ -38,13 +35,6 @@ module TokyoMetro
 
   # 辞書ファイルのディレクトリ
   DICTIONARY_DIR = ::File.expand_path( "#{ LIB_DIR }/tokyo_metro/dictionary" )
-
-  # Gem のためのデータベースのディレクトリ
-  GEM_DEV_TOP_DIR = "/Users/shufujita/rubypj/gems/tokyo_metro"
-
-  const_set( :GEM_DB_DIR , "#{ GEM_DEV_TOP_DIR }/db" )
-  const_set( :API_LOG_DIR , "#{ GEM_DB_DIR }/api_log" )
-  const_set( :API_LOG_DEFAULT_DIR , "#{ API_LOG_DIR }/201412" )
 
   # @!group API へのアクセス
 
@@ -153,6 +143,14 @@ module TokyoMetro
     set_api_constants( config_of_api_constants_when_load_without_fare )
   end
 
+  # Gem のためのデータベースのディレクトリ
+  def self.set_gem_dev_dirs( top_dirname , api_log_default_dirname )
+    const_set( :GEM_DEV_TOP_DIR , top_dirname )
+    const_set( :GEM_DB_DIR , "#{ GEM_DEV_TOP_DIR }/db" )
+    const_set( :API_LOG_DIR , "#{ GEM_DB_DIR }/api_log" )
+    const_set( :API_LOG_DEFAULT_DIR , "#{ API_LOG_DIR }/#{ api_log_default_dirname }" )
+  end
+
   # @!group 関連ファイルのロード
 
   def self.reload_all_files!
@@ -163,9 +161,16 @@ module TokyoMetro
 
   def self.require_files( settings: nil , file_type: "txt" )
     settings ||= :make_list_of_required_files
+    # ary = ::Array.new
+
     required_files( settings , file_type ).each do | filename |
+      # time_begin = ::Time.now
       require filename
+      # time_end = ::Time.now
+      # ary << "#{ filename.ljust(144) } #{ time_end - time_begin } ms"
     end
+
+    # puts ary
   end
 
   def self.initialize_in_local_environment( rails_dir )
