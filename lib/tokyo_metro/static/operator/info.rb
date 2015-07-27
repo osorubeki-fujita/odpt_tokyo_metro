@@ -10,7 +10,7 @@ class TokyoMetro::Static::Operator::Info
   include ::OdptCommon::Modules::Name::Static::Fundamental::ForInspection
   include ::OdptCommon::Modules::Name::Common::Fundamental::GetMainName
 
-  include ::OdptCommon::Modules::Name::Common::Operator
+  include ::OdptCommon::Modules::Name::Common::Operator::Info
   include ::TokyoMetro::Modules::Name::Common::Operator::CssClass
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
