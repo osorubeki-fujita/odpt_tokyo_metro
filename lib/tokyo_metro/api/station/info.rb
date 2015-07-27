@@ -104,7 +104,7 @@ class TokyoMetro::Api::Station::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   alias :longitude :geo_long
   alias :latitude :geo_lat
-  alias :geo_json :region
+  alias :geojson :region
 
   # @!group 駅情報の取得
 

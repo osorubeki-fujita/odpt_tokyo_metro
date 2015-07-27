@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Seed::Api::Point::Info < TokyoMetro::Factory::Seed::A
   def hash_to_db
     h = ::Hash.new
 
-    [ :id_urn , :latitude , :longitude , :geo_json , :floor ].each do | key_name |
+    [ :id_urn , :latitude , :longitude , :geojson , :floor ].each do | key_name |
       h[ key_name ] = @info.send( key_name )
     end
 

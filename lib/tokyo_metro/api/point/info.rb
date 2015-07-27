@@ -54,7 +54,7 @@ class TokyoMetro::Api::Point::Info < TokyoMetro::Api::MetaClass::Hybrid::Info
 
   alias :longitude :geo_long
   alias :latitude :geo_lat
-  alias :geo_json :region
+  alias :geojson :region
 
   alias :category_name_ja :category_name
 

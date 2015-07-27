@@ -3,7 +3,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info::AdditionalInfo < Tok
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
   include ::TokyoMetro::Factory::Seed::Reference::DcDate
 
-  ADDITIONAL_INFO_COLUMNS = [ :id_urn , :geo_json , :dc_date ]
+  ADDITIONAL_INFO_COLUMNS = [ :id_urn , :geojson , :dc_date ]
 
   private
 

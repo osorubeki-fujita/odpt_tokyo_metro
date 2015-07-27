@@ -87,7 +87,7 @@ class TokyoMetro::Api::RailwayLine::Info < TokyoMetro::Api::MetaClass::Hybrid::I
 
   attr_reader :dc_date
 
-  alias :geo_json :region
+  alias :geojson :region
 
   # @!group 路線情報の取得
 
