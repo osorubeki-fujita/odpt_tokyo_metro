@@ -4,6 +4,7 @@ def static_train_types
     ["custom.TrainType:TokyoMetro.Marunouchi.Local.Normal", "train_type_marunouchi_local_normal"],
     ["custom.TrainType:TokyoMetro.MarunouchiBranch.Local.Normal", "train_type_marunouchi_branch_local_normal"],
     ["custom.TrainType:TokyoMetro.Hibiya.Local.Normal", "train_type_hibiya_local_normal"],
+    ["custom.TrainType:TokyoMetro.Hibiya.Local.ToTobu", "train_type_hibiya_local_to_tobu"],
     ["custom.TrainType:TokyoMetro.Tozai.Local.Normal", "train_type_tozai_local_normal"],
     ["custom.TrainType:TokyoMetro.Tozai.Local.ForMitaka", "train_type_tozai_local_for_mitaka"],
     ["custom.TrainType:TokyoMetro.Tozai.Local.ForTsudanuma", "train_type_tozai_local_for_tsudanuma"],
