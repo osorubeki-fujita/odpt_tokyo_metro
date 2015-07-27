@@ -15,6 +15,8 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
     h[ :in_api_id ] = in_api_id
     h[ :railway_line_info_id ] = railway_line_info_id
 
+    h[ :color_info_id ] = color_info_id
+
     h
   end
 
@@ -26,12 +28,8 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
     DEF
   end
 
-  def seed_optional_infos
-    seed_color_info
-  end
-
-  def seed_color_info
-    self.class.db_instance_class_of_color_info.find_or_create_by( color: @info.color.hex_color , bgcolor: @info.bgcolor.hex_color )
+  def color_info_id
+    self.class.db_instance_class_of_color_info.find_or_create_by( color: @info.color.hex_color , bgcolor: @info.bgcolor.hex_color ).id
   end
 
 end
