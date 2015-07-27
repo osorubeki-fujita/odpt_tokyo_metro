@@ -27,7 +27,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Botto
   %td{ colspan: columns }<
     = " "
 
-%tr{ class: position }
+%tr{ class: :additional_info_bottom }
   %td{ class: :chiyoda_line_fare , colspan: columns }
     %div{ class: [ :title , :content_header , :clearfix ] }
       %div{ class: :icon }
