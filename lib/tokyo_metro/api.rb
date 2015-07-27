@@ -35,6 +35,7 @@ module TokyoMetro::Api
 
     def method_missing( method_name , *args )
       if costants_converted_by_method_missing.include?( method_name.singularize.upcase )
+        puts "TokyoMetro::Api\#method_missing"
         return const_get( method_name.singularize.upcase )
       else
         super( method_name , *args )

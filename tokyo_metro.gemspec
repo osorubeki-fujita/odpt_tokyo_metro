@@ -52,4 +52,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "holiday_japan" , ">= 1.2.0"
 
   spec.add_runtime_dependency "positive_code_counter" , ">= 0.1.0"
+  spec.add_runtime_dependency "rails_decorate_factory" , ">= 0.2.0"
 end

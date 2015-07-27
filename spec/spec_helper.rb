@@ -1,8 +1,13 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'tokyo_metro'
 
+time_begin = ::Time.now
+
 # TokyoMetro.initialize_in_local_environment( "C:/RubyPj/rails/tokyo_metro" )
 TokyoMetro.initialize_in_local_environment( "/Users/shufujita/RubyPj/Rails/tokyo_metro_app" )
+
+time_end = ::Time.now
+puts "#{ ( time_end - time_begin ) } ms"
 
 def compare_infos_in_db_and_static_infos( class_name_of_static_info , static_infos , infos_in_db , columns )
 
