@@ -19,7 +19,8 @@ class TokyoMetro::Static::RailwayLine::Info
 
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
-  include ::OdptCommon::Modules::Name::Common::RailwayLine
+  include ::OdptCommon::Modules::Name::Common::RailwayLine::Info
+  include ::OdptCommon::Modules::Name::Common::RailwayLine::StationAttribute
   include ::TokyoMetro::Modules::Name::Common::RailwayLine::CssClass
 
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::BranchLine
