@@ -19,7 +19,10 @@ custom.TrainType:TokyoMetro.Namboku.Local.ToTokyu:
     odpt.Railway:SaitamaRailway.SaitamaRailway: custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
     odpt.Railway:TokyoMetro.Namboku: custom.StoppingPattern:TokyoMetro.Namboku.Local
     odpt.Railway:Tokyu.Meguro: custom.StoppingPattern:Tokyu.Meguro.Local
-  note: 南北線 各駅停車（東急目黒線 直通）
+  note: 南北線 各駅停車
+  through_to:
+    -
+      railway_line: odpt.Railway:Tokyu.Meguro
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Namboku
 
@@ -31,6 +34,9 @@ custom.TrainType:TokyoMetro.Namboku.Express.ToTokyu:
     odpt.Railway:SaitamaRailway.SaitamaRailway: custom.StoppingPattern:SaitamaRailway.SaitamaRailway.Local
     odpt.Railway:TokyoMetro.Namboku: custom.StoppingPattern:TokyoMetro.Namboku.Local
     odpt.Railway:Tokyu.Meguro: custom.StoppingPattern:Tokyu.Meguro.Express
-  note: 南北線 急行（東急目黒線 直通）
+  note: 南北線 急行
+  through_to:
+    -
+      railway_line: odpt.Railway:Tokyu.Meguro
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Namboku

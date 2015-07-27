@@ -25,9 +25,13 @@ custom.TrainType:TokyoMetro.Tozai.Local.ForMitaka:
     odpt.Railway:JR-East.ChuoTozai: custom.StoppingPattern:JR-East.ChuoTozai.Local
     odpt.Railway:JR-East.SobuTozai: custom.StoppingPattern:JR-East.SobuTozai.Local
     odpt.Railway:ToyoRapidRailway.ToyoRapidRailway: custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
-  note: 東西線 各駅停車（JR中央・総武線 三鷹まで直通）
+  note: 東西線 各駅停車
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Tozai
+  through_to:
+    -
+      railway_line: odpt.Railway:JR-East.ChuoTozai
+      station: odpt.Railway:JR-East.ChuoTozai.Mitaka
 
 
 #---- 各駅停車（JR中央・総武線 津田沼まで直通）
@@ -43,9 +47,13 @@ custom.TrainType:TokyoMetro.Tozai.Local.ForTsudanuma:
     odpt.Railway:TokyoMetro.Tozai: custom.StoppingPattern:TokyoMetro.Tozai.Local
     odpt.Railway:JR-East.ChuoTozai: custom.StoppingPattern:JR-East.ChuoTozai.Local
     odpt.Railway:JR-East.SobuTozai: custom.StoppingPattern:JR-East.SobuTozai.Local
-  note: 東西線 各駅停車（JR中央・総武線 津田沼まで直通）
+  note: 東西線 各駅停車
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Tozai
+  through_to:
+    -
+      railway_line: odpt.Railway:JR-East.SobuTozai
+      station: odpt.Railway:JR-East.SobuTozai.Tsudanuma
 
 
 #---- 各駅停車（東葉高速鉄道 直通）
@@ -56,9 +64,12 @@ custom.TrainType:TokyoMetro.Tozai.Local.ForToyoRapidRailway:
     odpt.Railway:TokyoMetro.Tozai: custom.StoppingPattern:TokyoMetro.Tozai.Local
     odpt.Railway:JR-East.ChuoTozai: custom.StoppingPattern:JR-East.ChuoTozai.Local
     odpt.Railway:ToyoRapidRailway.ToyoRapidRailway: custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
-  note: 東西線 各駅停車（東葉高速鉄道 直通）
+  note: 東西線 各駅停車
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Tozai
+  through_to:
+    -
+      railway_line: odpt.Railway:ToyoRapidRailway.ToyoRapidRailway
 
 #---- 通勤快速
 
@@ -95,9 +106,13 @@ custom.TrainType:TokyoMetro.Tozai.CommuterRapid.ForMitaka:
     odpt.Railway:JR-East.ChuoTozai: custom.StoppingPattern:JR-East.ChuoTozai.Local
     odpt.Railway:JR-East.SobuTozai: custom.StoppingPattern:JR-East.SobuTozai.Local
     odpt.Railway:ToyoRapidRailway.ToyoRapidRailway: custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
-  note: 東西線 通勤快速（JR中央・総武線 三鷹まで直通）
+  note: 東西線 通勤快速
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Tozai
+  through_to:
+    -
+      railway_line: odpt.Railway:JR-East.ChuoTozai
+      station: odpt.Railway:JR-East.ChuoTozai.Mitaka
 
 #---- 快速
 
@@ -135,9 +150,13 @@ custom.TrainType:TokyoMetro.Tozai.Rapid.ForMitaka:
     odpt.Railway:JR-East.ChuoTozai: custom.StoppingPattern:JR-East.ChuoTozai.Local
     odpt.Railway:JR-East.SobuTozai: custom.StoppingPattern:JR-East.SobuTozai.Local
     odpt.Railway:ToyoRapidRailway.ToyoRapidRailway: custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
-  note: 東西線 快速（JR中央・総武線 三鷹まで直通）
+  note: 東西線 快速
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Tozai
+  through_to:
+    -
+      railway_line: odpt.Railway:JR-East.ChuoTozai
+      station: odpt.Railway:JR-East.ChuoTozai.Mitaka
 
 #---- 快速（JR中央・総武線 津田沼まで直通）
 
@@ -154,9 +173,13 @@ custom.TrainType:TokyoMetro.Tozai.Rapid.ForTsudanuma:
     odpt.Railway:TokyoMetro.Tozai: custom.StoppingPattern:TokyoMetro.Tozai.Rapid
     odpt.Railway:JR-East.ChuoTozai: custom.StoppingPattern:JR-East.ChuoTozai.Local
     odpt.Railway:JR-East.SobuTozai: custom.StoppingPattern:JR-East.SobuTozai.Local
-  note: 東西線 快速（JR中央・総武線 津田沼まで直通）
+  note: 東西線 快速
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Tozai
+  through_to:
+    -
+      railway_line: odpt.Railway:JR-East.SobuTozai
+      station: odpt.Railway:JR-East.SobuTozai.Tsudanuma
 
 #---- 快速（東葉高速鉄道 直通）
 
@@ -173,9 +196,12 @@ custom.TrainType:TokyoMetro.Tozai.Rapid.ForToyoRapidRailway:
     odpt.Railway:TokyoMetro.Tozai: custom.StoppingPattern:TokyoMetro.Tozai.Rapid
     odpt.Railway:JR-East.ChuoTozai: custom.StoppingPattern:JR-East.ChuoTozai.Local
     odpt.Railway:ToyoRapidRailway.ToyoRapidRailway: custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.Local
-  note: 東西線 快速（東葉高速鉄道 直通）
+  note: 東西線 快速
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Tozai
+  through_to:
+    -
+      railway_line: odpt.Railway:ToyoRapidRailway.ToyoRapidRailway
 
 #---- 東葉快速（東葉高速鉄道 直通）
 
@@ -185,6 +211,9 @@ custom.TrainType:TokyoMetro.Tozai.ToyoRapid.ForToyoRapidRailway:
     odpt.Railway:TokyoMetro.Tozai: custom.StoppingPattern:TokyoMetro.Tozai.Rapid
     odpt.Railway:JR-East.ChuoTozai: custom.StoppingPattern:JR-East.ChuoTozai.Local
     odpt.Railway:ToyoRapidRailway.ToyoRapidRailway: custom.StoppingPattern:ToyoRapidRailway.ToyoRapidRailway.ToyoRapid
-  note: 東西線 東葉快速（東葉高速鉄道 直通）
+  note: 東西線 東葉快速
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Tozai
+  through_to:
+    -
+      railway_line: odpt.Railway:ToyoRapidRailway.ToyoRapidRailway

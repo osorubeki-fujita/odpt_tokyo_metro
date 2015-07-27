@@ -21,6 +21,8 @@
 #   TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.kita_ayase_on_chiyoda_branch_line     => odpt.Station:TokyoMetro.ChiyodaBranch.KitaAyase
 #   TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.kita_ayase_on_chiyoda_main_line       => odpt.Station:TokyoMetro.Chiyoda.KitaAyase
 #
+#   TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.chuo_rinkan                    => odpt.Station:Tokyu.DenEnToshi.ChuoRinkan
+#
 #   TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.shirokane_takanawa                    => odpt.Station:TokyoMetro.Namboku.ShirokaneTakanawa
 #
 #   TokyoMetro::Modules::Dictionary::Common::Station::StringInfo.wakoshi_on_yurakucho_line             => odpt.Station:TokyoMetro.Yurakucho.Wakoshi

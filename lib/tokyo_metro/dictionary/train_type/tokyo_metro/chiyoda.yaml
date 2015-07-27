@@ -16,7 +16,9 @@ custom.TrainType:TokyoMetro.ChiyodaBranch.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
   stopping_pattern:
     odpt.Railway:TokyoMetro.ChiyodaBranch: custom.StoppingPattern:TokyoMetro.ChiyodaBranch.Local
-  note: 千代田線 各駅停車（綾瀬 - 北綾瀬）
+  note: 千代田線 各駅停車
+  additional_infos:
+    - 綾瀬 - 北綾瀬
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.ChiyodaBranch
 
@@ -31,9 +33,12 @@ custom.TrainType:TokyoMetro.Chiyoda.Local.ForJR:
   stopping_pattern:
     odpt.Railway:TokyoMetro.Chiyoda: custom.StoppingPattern:TokyoMetro.Chiyoda.Local
     odpt.Railway:JR-East.Joban: custom.StoppingPattern:JR-East.Joban.Local
-  note: 千代田線 各駅停車（JR常磐線 直通）
+  note: 千代田線 各駅停車
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
+  through_to:
+    -
+      railway_line: odpt.Railway:JR-East.Joban
 
 #---- 各駅停車（小田急線 直通）
 
@@ -44,9 +49,12 @@ custom.TrainType:TokyoMetro.Chiyoda.Local.ForOdakyu:
     odpt.Railway:Odakyu.Odawara: custom.StoppingPattern:Odakyu.Odawara.Local
     odpt.Railway:Odakyu.Tama: custom.StoppingPattern:Odakyu.Tama.Local
     odpt.Railway:Odakyu.Enoshima: custom.StoppingPattern:Odakyu.Enoshima.Local
-  note: 千代田線 各駅停車（小田急線 直通）
+  note: 千代田線 各駅停車
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
+  through_to:
+    -
+      railway_line: odpt.Railway:Odakyu
 
 #---- 準急（小田急線 直通）
 
@@ -57,9 +65,13 @@ custom.TrainType:TokyoMetro.Chiyoda.SemiExpress.ForOdakyu:
     odpt.Railway:Odakyu.Odawara: custom.StoppingPattern:Odakyu.Odawara.SemiExpress
     odpt.Railway:Odakyu.Tama: custom.StoppingPattern:Odakyu.Tama.SemiExpress
     odpt.Railway:Odakyu.Enoshima: custom.StoppingPattern:Odakyu.Enoshima.SemiExpress
-  note: 千代田線 準急（小田急線 直通）
+  note: 千代田線 準急
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
+  through_to:
+    -
+      railway_line: odpt.Railway:Odakyu
+      station: odpt.Station:Odakyu.Odawara.HonAtsugi
 
 #---- 多摩急行（小田急線 直通）
 
@@ -69,9 +81,13 @@ custom.TrainType:TokyoMetro.Chiyoda.TamaExpress.ForOdakyu:
     odpt.Railway:TokyoMetro.Chiyoda: custom.StoppingPattern:TokyoMetro.Chiyoda.Local
     odpt.Railway:Odakyu.Odawara: custom.StoppingPattern:Odakyu.Odawara.TamaExpress
     odpt.Railway:Odakyu.Tama: custom.StoppingPattern:Odakyu.Tama.TamaExpress
-  note: 千代田線 多摩急行（小田急線 直通）
+  note: 千代田線 多摩急行
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
+  through_to:
+    -
+      railway_line: odpt.Railway:Odakyu
+      station: odpt.Station:Odakyu.Tama.Karakida
 
 #---------------- 【ロマンスカー】
 
@@ -81,6 +97,16 @@ custom.TrainType:TokyoMetro.Chiyoda.TamaExpress.ForOdakyu:
   ref: custom.TrainTypeDefault:TokyoMetro.RomanceCar
   stopping_pattern:
     "odpt.Railway:TokyoMetro.Chiyoda": custom.StoppingPattern:TokyoMetro.Chiyoda.RomanceCar
-  note: 千代田線 特急ロマンスカー（小田急線 直通）
+  note: 千代田線 特急ロマンスカー
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
+  through_to:
+    -
+      railway_line: odpt.Railway:Odakyu.Odawara
+      station: odpt.Station:Odakyu.Odawara.HonAtsugi
+    -
+      railway_line: odpt.Railway:Odakyu.Tama
+      station: odpt.Station:Odakyu.Tama.Karakida
+    -
+      railway_line: odpt.Railway:HakoneTozan.Rail.OdawaraSide
+      station: odpt.Station:HakoneTozan.Rail.HakoneYumoto

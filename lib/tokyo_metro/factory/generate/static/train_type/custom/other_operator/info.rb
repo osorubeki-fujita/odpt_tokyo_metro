@@ -6,14 +6,14 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::I
   TITLE = "TrainTypeOtherOperator"
 
   def self.hash_keys
-    hash_keys_1 + hash_keys_2
+    hash_keys_for_fundamental_infos + hash_keys_for_operator_and_railway_line
   end
 
-  def self.hash_keys_1
+  def self.hash_keys_for_fundamental_infos
     [ :train_type , :bgcolor , :color ]
   end
 
-  def self.hash_keys_2
+  def self.hash_keys_for_operator_and_railway_line
     [ :operator , :railway_line ]
   end
 
@@ -24,7 +24,7 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::I
   end
 
   def variables_from_hash_keys
-    hash_keys = self.class.hash_keys_1 + self.class.hash_keys_2
+    hash_keys = self.class.hash_keys_for_fundamental_infos + self.class.hash_keys_for_operator_and_railway_line
     super( hash_key_array: hash_keys )
   end
 
