@@ -29,7 +29,15 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
   end
 
   def color_info_id
-    self.class.db_instance_class_of_color_info.find_or_create_by( color: @info.color.hex_color , bgcolor: @info.bgcolor.hex_color ).id
+    self.class.db_instance_class_of_color_info.find_or_create_by( color: design_color_info_id , bgcolor: design_bgcolor_info_id ).id
+  end
+
+  def design_color_info_id
+    ::Design::Color::Info.find_or_create_by( hex_color: @info.color.hex_color ).id
+  end
+
+  def design_bgcolor_info_id
+    ::Design::Color::Info.find_or_create_by( hex_color: @info.bgcolor.hex_color ).id
   end
 
 end
