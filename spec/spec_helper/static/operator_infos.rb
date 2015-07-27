@@ -40,7 +40,7 @@ def static_operator_infos
 
   compare_infos_in_db_and_static_infos(
     ::TokyoMetro::Static::Operator::Info ,
-    ::TokyoMetro::Static.operator_infos ,
+    ::TokyoMetro::Static.operators ,
     operator_infos_in_db ,
     columns
   )

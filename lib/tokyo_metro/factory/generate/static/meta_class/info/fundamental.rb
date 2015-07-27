@@ -25,7 +25,7 @@ class TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
     hash_key_array.each do | key_name |
       v = get_hash_value( key_name , boolean: boolean )
       if make_array
-        if v.nil?
+        if v.blank?
           v = ::Array.new
         else
           v = [v].flatten

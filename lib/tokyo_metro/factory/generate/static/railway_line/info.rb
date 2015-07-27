@@ -11,6 +11,7 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
 
   def set_values_to_hash_for_making_variables
     super( hash_key_array: [ :name_ja , :name_hira , :name_en ] , make_array: true )
+    super( hash_key_array: [ :main_railway_line_infos , :branch_railway_line_infos ] , make_array: true )
     super( hash_key_array: [ :twitter_widget_id , :twitter_account_name , :index_in_operator ] )
 
     @hash_for_making_variables[ :codes ] = codes
@@ -34,7 +35,7 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
   # 事業者のインスタンスを取得するメソッド
   # @return [::TokyoMetro::Static::Operator::Info]
   def operator_instance
-    operator_info = ::TokyoMetro::Static.operator_infos[ @h[ :operator ] ]
+    operator_info = ::TokyoMetro::Static.operators[ @h[ :operator ] ]
     raise "Error: The operator is not defined." unless operator_info.present?
     return operator_info
   end

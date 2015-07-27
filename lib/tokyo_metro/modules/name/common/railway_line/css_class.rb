@@ -5,7 +5,7 @@ module TokyoMetro::Modules::Name::Common::RailwayLine::CssClass
   # CSS のクラスの名称
   # @return [String]
   # @example
-  #   ::TokyoMetro::Static.railway_line_infos.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.css_class }
+  #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.css_class }
   #   =>
   #   odpt.Railway:TokyoMetro.Ginza                    : ginza
   #   odpt.Railway:TokyoMetro.Marunouchi               : marunouchi

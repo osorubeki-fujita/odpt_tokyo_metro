@@ -17,7 +17,7 @@ module TokyoMetro::Factory::Seed
     #-------- TokyoMetro::Static.Fare::Normal.seed
     process_fundamental_static(h)
 
-    #-------- TokyoMetro::Static.railway_line_infos
+    #-------- TokyoMetro::Static.railway_lines
     # TokyoMetro::Api.railway_line_infos の情報も同時に取り込む
     process_static_of_railway_line_infos(h)
 
@@ -232,13 +232,13 @@ module TokyoMetro::Factory::Seed
       )
     end
 
-    #-------- TokyoMetro::Static.railway_line_infos
+    #-------- TokyoMetro::Static.railway_lines
     # TokyoMetro::Api.railway_line_infos の情報も同時に取り込む
 
     def process_static_of_railway_line_infos(h)
       process_each_content( h , :railway_line_infos ,
         Proc.new {
-          ::TokyoMetro::Static.railway_line_infos.seed
+          ::TokyoMetro::Static.railway_lines.seed
         }
       )
     end

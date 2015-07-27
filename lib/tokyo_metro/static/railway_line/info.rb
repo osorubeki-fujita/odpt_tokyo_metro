@@ -20,7 +20,8 @@ class TokyoMetro::Static::RailwayLine::Info
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::Name
 
   include ::OdptCommon::Modules::Name::Common::RailwayLine::Info
-  include ::OdptCommon::Modules::Name::Common::RailwayLine::StationAttribute
+  include ::OdptCommon::Modules::Attributes::Common::RailwayLine::Station
+  include ::OdptCommon::Modules::Attributes::Common::RailwayLine::Branch
   include ::TokyoMetro::Modules::Name::Common::RailwayLine::CssClass
 
   include ::TokyoMetro::Modules::Decision::Common::RailwayLine::BranchLine
@@ -39,7 +40,12 @@ class TokyoMetro::Static::RailwayLine::Info
   # @param operator [::TokyoMetro::Static::Operator::Info]
   # @param index [::Numeric]
   # @param colors
-  def initialize( same_as , name_ja , name_hira , name_en , codes , operator , index_in_operator , colors , start_on , end_on , twitter_widget_id , twitter_account_name )
+  def initialize(
+    same_as , name_ja , name_hira , name_en , codes , operator , index_in_operator , colors ,
+    start_on , end_on ,
+    main_railway_line_infos , branch_railway_line_infos ,
+    twitter_widget_id , twitter_account_name
+  )
     @same_as = same_as
     @name_ja = name_ja
     @name_hira = name_hira
@@ -51,6 +57,9 @@ class TokyoMetro::Static::RailwayLine::Info
 
     @start_on = start_on
     @end_on = end_on
+
+    @main_railway_line_infos = main_railway_line_infos
+    @branch_railway_line_infos = branch_railway_line_infos
 
     @twitter_widget_id = twitter_widget_id
     @twitter_account_name = twitter_account_name
@@ -466,7 +475,7 @@ class TokyoMetro::Static::RailwayLine::Info
   #   odpt.Railway:TokyoMetro.Fukutoshin               : ["副都心線"]
   #   odpt.Railway:Toei.Asakusa                        : ["浅草線"]
   #   odpt.Railway:Toei.Mita                           : ["三田線"]
-  #   odpt.Railway:Toei.Shinjuku                       : ["新宿線"]
+  #   odpt.Railway:Toei.Shinjuku                       : ["新宿���"]
   #   odpt.Railway:Toei.Oedo                           : ["大江戸線"]
   #   odpt.Railway:Toei.NipporiToneri                  : ["日暮里・舎人ライナー"]
   #   odpt.Railway:Toei.TodenArakawa                   : ["荒川線"]
@@ -1005,6 +1014,18 @@ class TokyoMetro::Static::RailwayLine::Info
     end
     ary
   end
+
+  # @!group 支線
+
+  def is_branch_railway_line_info?
+    @main_railway_line_infos.present?
+  end
+
+  def has_branch_railway_line_infos?
+    @branch_railway_line_infos.present?
+  end
+
+  # @!endgroup
 
   private
 

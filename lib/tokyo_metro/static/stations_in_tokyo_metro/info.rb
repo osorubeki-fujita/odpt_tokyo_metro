@@ -123,7 +123,7 @@ class TokyoMetro::Static::StationsInTokyoMetro::Info
 
     ary_of_info.map { | operator |
       # 事業者のインスタンスを取得
-      instance_of_operator = ::TokyoMetro::Static.operator_infos[ operator ]
+      instance_of_operator = ::TokyoMetro::Static.operators[ operator ]
       # ハッシュの返り値が nil の場合
       if instance_of_operator.nil?
         # 取得のやり直し
@@ -132,7 +132,7 @@ class TokyoMetro::Static::StationsInTokyoMetro::Info
         if regexp === operator
           operator_name = operator.gsub( regexp ) { "#{$1}" }
           # puts "#{operator} => #{ operator_name }"
-          instance_of_operator = ::TokyoMetro::Static.operator_infos[ operator_name ]
+          instance_of_operator = ::TokyoMetro::Static.operators[ operator_name ]
         end
       end
       # やり直しても返り値が nil の場合

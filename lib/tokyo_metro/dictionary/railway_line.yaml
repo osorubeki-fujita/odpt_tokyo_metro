@@ -35,6 +35,8 @@ odpt.Railway:TokyoMetro.Marunouchi:
   # ガイドライン準拠 - #f62e36
   # Wikipedia - #e60012
   # 画像 - #e61018
+  branch_railway_line_infos:
+    - odpt.Railway:TokyoMetro.MarunouchiBranch
 
 odpt.Railway:TokyoMetro.MarunouchiBranch:
   name_ja: 丸ノ内線（中野坂上 - 方南町）
@@ -51,6 +53,9 @@ odpt.Railway:TokyoMetro.MarunouchiBranch:
   # ガイドライン準拠 - #f62e36
   # Wikipedia - #e60012
   # 画像 - #e61018
+  main_railway_line_infos:
+    - odpt.Railway:TokyoMetro.Marunouchi
+
 
 odpt.Railway:TokyoMetro.Hibiya:
   name_ja: 日比谷線
@@ -105,6 +110,8 @@ odpt.Railway:TokyoMetro.Chiyoda:
   # ガイドライン準拠 - #00bb85
   # Wikipedia - #009945
   # 画像 - #0daa5d
+  branch_railway_line_infos:
+    - odpt.Railway:TokyoMetro.ChiyodaBranch
 
 odpt.Railway:TokyoMetro.ChiyodaBranch:
   name_ja: 千代田線（綾瀬 - 北綾瀬）
@@ -121,6 +128,8 @@ odpt.Railway:TokyoMetro.ChiyodaBranch:
   # ガイドライン準拠 - #00bb85
   # Wikipedia - #009945
   # 画像 - #0daa5d
+  main_railway_line_infos:
+    - odpt.Railway:TokyoMetro.Chiyoda
 
 odpt.Railway:TokyoMetro.Yurakucho:
   name_ja: 有楽町線
@@ -662,6 +671,10 @@ odpt.Railway:Seibu.Ikebukuro:
     red: 255
     green: 102
     blue: 0
+  branch_railway_line_infos:
+    - odpt.Railway:Seibu.Toshima
+    - odpt.Railway:Seibu.Sayama
+    - odpt.Railway:Seibu.SeibuYurakucho
 
 odpt.Railway:Seibu.SeibuChichibu:
   name_ja: 西武秩父線
@@ -686,6 +699,8 @@ odpt.Railway:Seibu.Toshima:
     red: 255
     green: 102
     blue: 0
+  main_railway_line_infos:
+    - odpt.Railway:Seibu.Ikebukuro
 
 odpt.Railway:Seibu.Sayama:
   name_ja: 狭山線
@@ -698,6 +713,8 @@ odpt.Railway:Seibu.Sayama:
     red: 255
     green: 102
     blue: 0
+  main_railway_line_infos:
+    - odpt.Railway:Seibu.Ikebukuro
 
 odpt.Railway:Seibu.SeibuYurakucho:
   name_ja: 西武有楽町線
@@ -710,6 +727,8 @@ odpt.Railway:Seibu.SeibuYurakucho:
     red: 255
     green: 102
     blue: 0
+  main_railway_line_infos:
+    - odpt.Railway:Seibu.Ikebukuro
 
 odpt.Railway:Seibu.Shinjuku:
   name_ja: 新宿線
@@ -758,6 +777,8 @@ odpt.Railway:Tobu.SkytreeOshiage:
     red: 15
     green: 108
     blue: 195
+  main_railway_line_infos:
+    - odpt.Railway:Tobu.Skytree
 
 odpt.Railway:Tobu.Skytree:
   name_ja: スカイツリーライン
@@ -770,6 +791,8 @@ odpt.Railway:Tobu.Skytree:
     red: 15
     green: 108
     blue: 195
+  branch_railway_line_infos:
+    - odpt.Railway:Tobu.SkytreeOshiage
 
 odpt.Railway:Tobu.Isesaki:
   name_ja: 伊勢崎線
@@ -794,6 +817,8 @@ odpt.Railway:Tobu.Nikko:
     red: 255
     green: 165
     blue: 0
+  branch_railway_line_infos:
+    - odpt.Railway:Tobu.Kinugawa
 
 odpt.Railway:Tobu.Kinugawa:
   name_ja: 鬼怒川線
@@ -806,6 +831,8 @@ odpt.Railway:Tobu.Kinugawa:
     red: 255
     green: 165
     blue: 0
+  main_railway_line_infos:
+    - odpt.Railway:Tobu.Nikko
 
 odpt.Railway:Tobu.Tojo:
   name_ja: 東上線
@@ -845,6 +872,8 @@ odpt.Railway:Keio.Keio:
     red: 221
     green: 0
     blue: 119
+  branch_railway_line_infos:
+    - odpt.Railway:Keio.New
 
 odpt.Railway:Keio.New:
   name_ja: 新線
@@ -857,6 +886,8 @@ odpt.Railway:Keio.New:
     red: 221
     green: 0
     blue: 119
+  main_railway_line_infos:
+    - odpt.Railway:Keio.Keio
 
 odpt.Railway:Keio.Inokashira:
   name_ja: 井の頭線

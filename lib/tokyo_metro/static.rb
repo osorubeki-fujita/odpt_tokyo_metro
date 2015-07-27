@@ -5,7 +5,8 @@
 #       @note {::TokyoMetro::Static::Fare.set_constant} によって定義されている。
 #       @return [::TokyoMetro::Static::Fare::Normal::Table::List]
 #
-#   * TokyoMetro::Static.railway_line_infos
+#   * TokyoMetro::Static.operators
+#   * TokyoMetro::Static.railway_lines
 #   * TokyoMetro::Static.stations_in_tokyo_metro
 #   * TokyoMetro::Static.stations
 #   * TokyoMetro::Static.stopping_patterns （現在未定義）
@@ -58,8 +59,8 @@ module TokyoMetro::Static
     return nil
   end
 
-  def self.railway_line_infos_operated_by_tokyo_metro
-    railway_line_infos.select { | key , value | value[ "operator" ] == "odpt.Operator:TokyoMetro" }
+  def self.railway_lines_operated_by_tokyo_metro
+    railway_lines.select { | key , value | value[ "operator" ] == "odpt.Operator:TokyoMetro" }
   end
 
 end
