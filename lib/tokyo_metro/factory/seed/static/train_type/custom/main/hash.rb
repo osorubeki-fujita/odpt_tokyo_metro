@@ -9,7 +9,7 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Hash < TokyoMe
       same_as: "custom.TrainType:Undefined" ,
       note: "未定義" ,
       in_api_id: train_type_in_api.id ,
-      railway_line_info_id: ::Railway::Line.find_by( same_as: "odpt.Railway:Undefined" ).id ,
+      railway_line_info_id: ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Undefined" ).id ,
       color: self.class.db_instance_class_of_color_info.find_or_create_by( color: "\#ffffff" , bgcolor: "\#666666" )
     }
     self.class.db_instance_class.find_or_create_by(h)
