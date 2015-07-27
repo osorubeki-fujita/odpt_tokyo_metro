@@ -7,7 +7,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::GinzaLine < TokyoM
       h.render inline: <<-HAML , type: :haml , locals: { columns: columns }
 %tr{ class: :additional_info_bottom }
   %td{ class: :asakusa_station , colspan: columns }
-    %div{ class: :title }
+    %div{ class: [ :title , :content_header , :clearfix ] }
       %div{ class: :icon }<
       %div{ class: :text }
         %h3{ class: :text_ja }<
