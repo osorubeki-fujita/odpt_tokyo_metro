@@ -16,6 +16,14 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::Main::Info < Tok
     super + hash_keys_for_note + hash_keys_for_additional_infos
   end
 
+  def self.hash_keys_for_note
+    [ :note ]
+  end
+
+  def self.hash_keys_for_additional_infos
+    [ :additional_infos ,  :through_to , :operation_days , :remarkable_stops ]
+  end
+
   private
 
   def set_values_to_hash_for_making_variables_when_reference_is_used
@@ -40,25 +48,11 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::Main::Info < Tok
   end
 
   def decinding_keys_in_variables_from_hash
-    @h.keys - ( self.class.hash_keys_for_operator_and_railway_line + self.class.hash_keys_for_additional_infos + [ :stopping_pattern ] ).map( &:to_s )
+    @h.keys - ( self.class.hash_keys_for_operator_and_railway_line + self.class.hash_keys_for_note + self.class.hash_keys_for_additional_infos + [ :stopping_pattern ] ).map( &:to_s )
   end
 
   def check_varidity_of_referenced_info( info )
     super( info , include_ancestors: true )
-  end
-
-  class << self
-
-    private
-
-    def hash_keys_for_note
-      [ :note ]
-    end
-
-    def hash_keys_for_additional_infos
-      [ :additional_infos ,  :through_to , :operation_days , :remarkable_stops ]
-    end
-
   end
 
 end
