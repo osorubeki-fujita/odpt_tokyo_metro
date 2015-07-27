@@ -10,7 +10,7 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Hash < TokyoMe
       note: "未定義" ,
       in_api_id: train_type_in_api.id ,
       railway_line_info_id: ::Railway::Line::Info.find_by( same_as: "odpt.Railway:Undefined" ).id ,
-      color: self.class.db_instance_class_of_color_info.find_or_create_by( color: "\#ffffff" , bgcolor: "\#666666" )
+      color_info_id: self.class.db_instance_class_of_color_info.find_or_create_by( color: "\#ffffff" , bgcolor: "\#666666" ).id
     }
     self.class.db_instance_class.find_or_create_by(h)
   end
