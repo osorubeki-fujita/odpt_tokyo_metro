@@ -29,7 +29,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::MetaClass::ThroughOperation::Ea
   - if via.present?
     %p{ class: :via }<
       :ruby
-        ary = [ via ].flatten.map( &:name_ja_with_operator_name_precise_and_without_parentheses )
+        ary = [ via ].flatten.map { | item | item.name_ja_with_operator_name_precise( without_parentheses: true ) }
       = ary.join( "、" ) + "経由"
 
 %div{ class: :main }<
