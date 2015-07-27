@@ -1,4 +1,4 @@
-class TokyoMetro::Rake::Rails::Assets::Sass::Make::Partial::File < OdptCommon::Factory::MetaProcessor::Process
+class TokyoMetro::Rake::Rails::Assets::Sass::Make::FromErbFiles::File < OdptCommon::Factory::MetaProcessor::Process
 
   def initialize( erb_filepath , erb_dir , style_sheet_dir )
     @erb_filepath = erb_filepath

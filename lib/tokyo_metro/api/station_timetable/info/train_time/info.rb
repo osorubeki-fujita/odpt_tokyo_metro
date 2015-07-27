@@ -81,6 +81,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info
       info.number
     end
   end
+  
   alias :depart_from :platform_number
 
   # @!group 列車の出発時刻

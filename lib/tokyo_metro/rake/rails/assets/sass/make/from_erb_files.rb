@@ -1,4 +1,4 @@
-class TokyoMetro::Rake::Rails::Assets::Sass::Make::Partial
+class TokyoMetro::Rake::Rails::Assets::Sass::Make::FromErbFiles
 
   def self.process( on: nil )
     raise unless on.present?
@@ -17,7 +17,7 @@ class TokyoMetro::Rake::Rails::Assets::Sass::Make::Partial
     puts @erb_files
 
     @erb_files.each do | erb_filepath |
-      ::TokyoMetro::Rake::Rails::Assets::Sass::Make::Partial::File.process( erb_filepath , @erb_dir , @style_sheet_dir )
+      ::TokyoMetro::Rake::Rails::Assets::Sass::Make::FromErbFiles::File.process( erb_filepath , @erb_dir , @style_sheet_dir )
     end
 
     return nil
