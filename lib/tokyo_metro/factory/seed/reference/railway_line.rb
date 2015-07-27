@@ -4,9 +4,9 @@ module TokyoMetro::Factory::Seed::Reference::RailwayLine
 
   def railway_line_info_in_db( whole = nil , search_by: @info.railway_line_info )
     if whole.present?
-      whole.find_by_same_as( search_by )
+      whole.find_by( same_as: search_by )
     else
-      ::Railway::Line.find_by_same_as( search_by )
+      ::Railway::Line.find_by( same_as: search_by )
     end
   end
 

@@ -1025,6 +1025,12 @@ class TokyoMetro::Static::RailwayLine::Info
     @branch_railway_line_infos.present?
   end
 
+  # @!group To Factory
+
+  def seed_railway_line_relations
+    self.class.factory_for_seeding_railway_line_relations.process( self )
+  end
+
   # @!endgroup
 
   private

@@ -45,6 +45,10 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
       ::TokyoMetro::Factory::Seed::Static::RailwayLine::Info::Code
     end
 
+    def seed_railway_line_relations
+      ::TokyoMetro::Factory::Seed::Static::RailwayLine::Info::Relation
+    end
+
     def db_instance_class
       ::Railway::Line::Info
     end
@@ -59,6 +63,10 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
 
     def db_instance_class_of_info_code_info
       ::Railway::Line::InfoCodeInfo
+    end
+
+    def db_instance_class_of_relation
+      ::Railway::Line::Relation
     end
 
     private

@@ -4,6 +4,11 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Hash < TokyoMetro::Factory
 
   private
 
+  def seed_optional_infos
+    super()
+    seed_railway_line_relations
+  end
+
   def seed_instance_for_undefined_object
     @undefind_instance = self.class.db_instance_class.find_or_create_by(
       same_as: "odpt.Railway:Undefined" ,
@@ -26,6 +31,13 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Hash < TokyoMetro::Factory
       code_id: code_instance.id ,
       index: 1
     )
+  end
+
+  def seed_railway_line_relations
+    @array_to_seed.each.with_index(1) do | item , now_at |
+      display_number( item , now_at )
+      item.seed_railway_line_relations
+    end
   end
 
 end
