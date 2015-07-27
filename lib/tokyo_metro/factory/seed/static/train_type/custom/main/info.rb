@@ -10,17 +10,10 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
   def hash_to_db
     h = ::Hash.new
 
-    [
-      :same_as ,
-      :note
-    ].each do | key_name |
-      h[ key_name ] = @info.send( key_name )
-    end
+    h[ :same_as ] = @info.same_as
 
     h[ :in_api_id ] = in_api_id
     h[ :railway_line_info_id ] = railway_line_info_id
-    h[ :color ] = @info.color.hex_color
-    h[ :bgcolor ] = @info.bgcolor.hex_color
 
     h
   end
@@ -33,4 +26,20 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
     DEF
   end
 
+  def seed_optional_infos
+    seed_color_info
+  end
+
+  def seed_color_info
+    self.class.db_instance_class_of_color_info.find_or_create_by( color: @info.color.hex_color , bgcolor: @info.bgcolor.hex_color )
+  end
+
+end
+
+__END__
+
+[
+  :note
+].each do | key_name |
+  h[ key_name ] = @info.send( key_name )
 end

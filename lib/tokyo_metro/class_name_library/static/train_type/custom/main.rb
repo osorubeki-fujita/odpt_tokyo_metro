@@ -41,6 +41,10 @@ module TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::Main
       ::Train::Type::Info
     end
 
+    def db_instance_class_of_color_info
+      ::Train::Type::ColorInfo
+    end
+
     # タイトル
     # @note Haml ファイルに書き出す際の見出しなどに使用
     # @return [String]
