@@ -29,12 +29,18 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Botto
 
 %tr{ class: position }
   %td{ colspan: columns }
-    %div{ class: :info }
+    %div{ class: [ :title , :content_header , :clearfix ] }
       %div{ class: :icon }
         %div{ class: :text_ja }<
           = "北千住 - 綾瀬を通過する際の運賃のご案内"
         %div{ class: :text_en }<
           = "Fare through between Kita-senju and Ayase"
+    %div{ class: :contents }
+      %div{ class: :content }
+        %h5{ class: :text_ja }<
+          = ""
+        %p{ class: :text_ja }<
+          = ""
     HAML
   end
 
