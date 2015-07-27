@@ -4,7 +4,10 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
   include ::OdptCommon::Modules::Time::Set
 
   def self.hash_keys
-    [ :name_ja , :name_hira , :name_en , :codes , :operator , :index_in_operator , :colors , :start_on , :end_on , :twitter_widget_id , :twitter_account_name ]
+    [
+      :name_ja , :name_hira , :name_en , :codes , :operator , :index_in_operator , :colors , :start_on , :end_on ,
+      :main_railway_line_infos , :branch_railway_line_infos , :twitter_widget_id , :twitter_account_name
+    ]
   end
 
   private
