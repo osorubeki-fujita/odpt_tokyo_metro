@@ -31,6 +31,7 @@ class TokyoMetro::App::Renderer::TravelTimeInfo::RailwayLine::ChiyodaLine::Botto
   %td{ class: :chiyoda_line_fare , colspan: columns }
     %div{ class: [ :title , :content_header , :clearfix ] }
       %div{ class: :icon }
+      %div{ class: :text }
         %div{ class: :text_ja }<
           = "北千住 - 綾瀬を通過する際の運賃のご案内"
         %div{ class: :text_en }<
