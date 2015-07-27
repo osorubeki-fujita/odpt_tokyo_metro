@@ -7,7 +7,7 @@ class TokyoMetro::Static::OperationDay < TokyoMetro::Static::Fundamental::MetaCl
   # 定数を設定するクラスメソッド
   # @return [nil]
   def self.set_constant
-    ::TokyoMetro::Static.const_set( :OPERATION_DAY_INFOS , generate_from_yaml )
+    ::TokyoMetro::Static.const_set( :OPERATION_DAYS , generate_from_yaml )
   end
 
   # @!endgroup

@@ -8,7 +8,7 @@ class TokyoMetro::Static::RailwayLine < TokyoMetro::Static::Fundamental::MetaCla
   # 定数を設定するクラスメソッド
   # @return [nil]
   def self.set_constant
-    ::TokyoMetro::Static.const_set( :RAILWAY_LINE , self.generate_from_yaml )
+    ::TokyoMetro::Static.const_set( :RAILWAY_LINES , self.generate_from_yaml )
   end
 
   # @!endgroup
