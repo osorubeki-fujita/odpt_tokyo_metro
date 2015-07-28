@@ -4,7 +4,7 @@
 
 custom.TrainType:TokyoMetro.Chiyoda.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Chiyoda: custom.StoppingPattern:TokyoMetro.Chiyoda.Local
   note: 千代田線 各駅停車
   operator: odpt.Operator:TokyoMetro
@@ -14,7 +14,7 @@ custom.TrainType:TokyoMetro.Chiyoda.Local.Normal:
 
 custom.TrainType:TokyoMetro.ChiyodaBranch.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.ChiyodaBranch: custom.StoppingPattern:TokyoMetro.ChiyodaBranch.Local
   note: 千代田線 各駅停車
   additional_infos:
@@ -30,13 +30,13 @@ custom.TrainType:TokyoMetro.Chiyoda.Local.ForJR:
     line_color: odpt.Railway:JR-East.Joban.1
   color:
     ref: custom.TrainTypeColor:White
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Chiyoda: custom.StoppingPattern:TokyoMetro.Chiyoda.Local
     odpt.Railway:JR-East.Joban: custom.StoppingPattern:JR-East.Joban.Local
   note: 千代田線 各駅停車
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:JR-East.Joban
 
@@ -44,7 +44,7 @@ custom.TrainType:TokyoMetro.Chiyoda.Local.ForJR:
 
 custom.TrainType:TokyoMetro.Chiyoda.Local.ForOdakyu:
   ref: custom.TrainTypeOtherOperator:Odakyu.Local
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Chiyoda: custom.StoppingPattern:TokyoMetro.Chiyoda.Local
     odpt.Railway:Odakyu.Odawara: custom.StoppingPattern:Odakyu.Odawara.Local
     odpt.Railway:Odakyu.Tama: custom.StoppingPattern:Odakyu.Tama.Local
@@ -52,7 +52,7 @@ custom.TrainType:TokyoMetro.Chiyoda.Local.ForOdakyu:
   note: 千代田線 各駅停車
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Odakyu
 
@@ -60,7 +60,7 @@ custom.TrainType:TokyoMetro.Chiyoda.Local.ForOdakyu:
 
 custom.TrainType:TokyoMetro.Chiyoda.SemiExpress.ForOdakyu:
   ref: custom.TrainTypeOtherOperator:Odakyu.SemiExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Chiyoda: custom.StoppingPattern:TokyoMetro.Chiyoda.Local
     odpt.Railway:Odakyu.Odawara: custom.StoppingPattern:Odakyu.Odawara.SemiExpress
     odpt.Railway:Odakyu.Tama: custom.StoppingPattern:Odakyu.Tama.SemiExpress
@@ -68,7 +68,7 @@ custom.TrainType:TokyoMetro.Chiyoda.SemiExpress.ForOdakyu:
   note: 千代田線 準急
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Odakyu
       station: odpt.Station:Odakyu.Odawara.HonAtsugi
@@ -77,14 +77,14 @@ custom.TrainType:TokyoMetro.Chiyoda.SemiExpress.ForOdakyu:
 
 custom.TrainType:TokyoMetro.Chiyoda.TamaExpress.ForOdakyu:
   ref: custom.TrainTypeOtherOperator:Odakyu.TamaExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Chiyoda: custom.StoppingPattern:TokyoMetro.Chiyoda.Local
     odpt.Railway:Odakyu.Odawara: custom.StoppingPattern:Odakyu.Odawara.TamaExpress
     odpt.Railway:Odakyu.Tama: custom.StoppingPattern:Odakyu.Tama.TamaExpress
   note: 千代田線 多摩急行
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Odakyu
       station: odpt.Station:Odakyu.Tama.Karakida
@@ -95,12 +95,12 @@ custom.TrainType:TokyoMetro.Chiyoda.TamaExpress.ForOdakyu:
 
 "custom.TrainType:TokyoMetro.Chiyoda.RomanceCar.Normal":
   ref: custom.TrainTypeDefault:TokyoMetro.RomanceCar
-  stopping_pattern:
+  stopping_patterns:
     "odpt.Railway:TokyoMetro.Chiyoda": custom.StoppingPattern:TokyoMetro.Chiyoda.RomanceCar
   note: 千代田線 特急ロマンスカー
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Chiyoda
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Odakyu.Odawara
       station: odpt.Station:Odakyu.Odawara.HonAtsugi

@@ -2,7 +2,7 @@
 
 custom.TrainType:TokyoMetro.Marunouchi.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Marunouchi: custom.StoppingPattern:TokyoMetro.Marunouchi.Local
     odpt.Railway:TokyoMetro.MarunouchiBranch: custom.StoppingPattern:TokyoMetro.MarunouchiBranch.Local
   note: 丸ノ内線
@@ -13,7 +13,7 @@ custom.TrainType:TokyoMetro.Marunouchi.Local.Normal:
 
 custom.TrainType:TokyoMetro.MarunouchiBranch.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Marunouchi: custom.StoppingPattern:TokyoMetro.Marunouchi.Local
     odpt.Railway:TokyoMetro.MarunouchiBranch: custom.StoppingPattern:TokyoMetro.MarunouchiBranch.Local
   note: 丸ノ内線

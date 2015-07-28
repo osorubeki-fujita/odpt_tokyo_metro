@@ -4,7 +4,7 @@
 
 custom.TrainType:Toei.Asakusa.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Toei.Asakusa: custom.StoppingPattern:Toei.Asakusa.Local
   note: 都営浅草線 普通
   operator: odpt.Operator:Toei
@@ -21,7 +21,7 @@ custom.TrainType:Toei.Asakusa.AirportLimitedExpress.Normal:
     blue: 61
   color:
     ref: custom.TrainTypeColor:White
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Toei.Asakusa: custom.StoppingPattern:Toei.Asakusa.AirportLimitedExpress
   note: 都営浅草線 エアポート快特
   operator: odpt.Operator:Toei

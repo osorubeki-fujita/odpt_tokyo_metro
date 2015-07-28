@@ -8,7 +8,7 @@ custom.TrainType:Toei.Oedo.Local.Normal:
     line_color: odpt.Railway:Toei.Oedo
   color:
     ref: custom.TrainTypeColor:White
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Toei.Oedo: custom.StoppingPattern:Toei.Oedo.Local
   note: 都営大江戸線
   operator: odpt.Operator:Toei

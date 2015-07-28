@@ -8,7 +8,7 @@ custom.TrainType:Toei.Shinjuku.Local.Normal:
     line_color: odpt.Railway:Toei.Shinjuku
   color:
     ref: custom.TrainTypeColor:White
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Toei.Shinjuku: custom.StoppingPattern:Toei.Shinjuku.Local
   note: 都営新宿線 各駅停車
   operator: odpt.Operator:Toei
@@ -18,7 +18,7 @@ custom.TrainType:Toei.Shinjuku.Local.Normal:
 
 custom.TrainType:Toei.Shinjuku.Express.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Express
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Toei.Shinjuku: custom.StoppingPattern:Toei.Shinjuku.Express
   note: 都営新宿線 急行
   operator: odpt.Operator:Toei

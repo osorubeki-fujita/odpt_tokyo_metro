@@ -2,7 +2,7 @@
 
 custom.TrainType:TokyoMetro.Hibiya.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hibiya: custom.StoppingPattern:TokyoMetro.Hibiya.Local
   note: 日比谷線
   operator: odpt.Operator:TokyoMetro
@@ -10,7 +10,7 @@ custom.TrainType:TokyoMetro.Hibiya.Local.Normal:
 
 custom.TrainType:TokyoMetro.Hibiya.Local.ToTobu:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hibiya: custom.StoppingPattern:TokyoMetro.Hibiya.Local
     odpt.Railway:Tobu.Skytree: custom.StoppingPattern:Tobu.Skytree.Local
     # odpt.Railway:Tobu.Isesaki: custom.StoppingPattern:Tobu.Skytree.Local
@@ -19,7 +19,7 @@ custom.TrainType:TokyoMetro.Hibiya.Local.ToTobu:
   note: 日比谷線
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Hibiya
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Tobu.Nikko.Hibiya
       station: odpt.Station:Tobu.Nikko.MinamiKurihashi

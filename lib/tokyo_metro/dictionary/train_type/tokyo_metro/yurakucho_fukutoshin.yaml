@@ -11,7 +11,7 @@ custom.TrainType:TokyoMetro.Yurakucho.Local.Colored:
   color:
     ref: custom.TrainTypeColor:Black
     # ref: custom.TrainTypeColor:White
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Yurakucho: custom.StoppingPattern:TokyoMetro.Yurakucho.Local
     odpt.Railway:TokyoMetro.Fukutoshin: custom.StoppingPattern:TokyoMetro.Fukutoshin.Local
   note: 有楽町線 各駅停車
@@ -26,7 +26,7 @@ custom.TrainType:TokyoMetro.Fukutoshin.Local.Colored:
     line_color: odpt.Railway:TokyoMetro.Fukutoshin
   color:
     ref: custom.TrainTypeColor:White
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Yurakucho: custom.StoppingPattern:TokyoMetro.Yurakucho.Local
     odpt.Railway:TokyoMetro.Fukutoshin: custom.StoppingPattern:TokyoMetro.Fukutoshin.Local
   note: 副都心線 各駅停車
@@ -37,7 +37,7 @@ custom.TrainType:TokyoMetro.Fukutoshin.Local.Colored:
 
 custom.TrainType:TokyoMetro.Yurakucho.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Yurakucho: custom.StoppingPattern:TokyoMetro.Yurakucho.Local
   note: 有楽町線 各駅停車
   additional_infos:
@@ -48,7 +48,7 @@ custom.TrainType:TokyoMetro.Yurakucho.Local.Normal:
 
 custom.TrainType:TokyoMetro.Fukutoshin.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Fukutoshin: custom.StoppingPattern:TokyoMetro.Fukutoshin.Local
   note: 副都心線 各駅停車
   additional_infos:
@@ -61,7 +61,7 @@ custom.TrainType:TokyoMetro.Fukutoshin.Local.Normal:
 
 custom.TrainType:TokyoMetro.Fukutoshin.CommuterExpress.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.CommuterExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Yurakucho: custom.StoppingPattern:TokyoMetro.Yurakucho.Local
     odpt.Railway:TokyoMetro.Fukutoshin: custom.StoppingPattern:TokyoMetro.Fukutoshin.CommuterExpress
   note: 副都心線 通勤急行
@@ -72,7 +72,7 @@ custom.TrainType:TokyoMetro.Fukutoshin.CommuterExpress.Normal:
 
 custom.TrainType:TokyoMetro.Fukutoshin.HolidayExpress.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.HolidayExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Yurakucho: custom.StoppingPattern:TokyoMetro.Fukutoshin.Express
     odpt.Railway:TokyoMetro.Fukutoshin: custom.StoppingPattern:TokyoMetro.Fukutoshin.HolidayExpress
   note: 副都心線 急行
@@ -87,7 +87,7 @@ custom.TrainType:TokyoMetro.Fukutoshin.HolidayExpress.Normal:
 
 custom.TrainType:TokyoMetro.Fukutoshin.Express.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Express
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Yurakucho: custom.StoppingPattern:TokyoMetro.Fukutoshin.Express
     odpt.Railway:TokyoMetro.Fukutoshin: custom.StoppingPattern:TokyoMetro.Fukutoshin.Express
   note: 副都心線 急行
@@ -100,7 +100,7 @@ custom.TrainType:TokyoMetro.Fukutoshin.Express.Normal:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToSeibu:
   ref: custom.TrainTypeOtherOperator:Seibu.Local
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.Local
     odpt.Railway:Seibu.SeibuYurakucho: custom.StoppingPattern:Seibu.SeibuYurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
@@ -116,7 +116,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToSeibu:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu:
   ref: custom.TrainTypeOtherOperator:Seibu.SemiExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.SemiExpress
     odpt.Railway:Seibu.SeibuYurakucho: custom.StoppingPattern:Seibu.SeibuYurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
@@ -132,7 +132,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.SemiExpress.ToSeibu:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu:
   ref: custom.TrainTypeOtherOperator:Seibu.Rapid
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.Rapid
     odpt.Railway:Seibu.SeibuYurakucho: custom.StoppingPattern:Seibu.SeibuYurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
@@ -148,7 +148,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Rapid.ToSeibu:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu:
   ref: custom.TrainTypeOtherOperator:Seibu.RapidExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Seibu.Ikebukuro: custom.StoppingPattern:Seibu.Ikebukuro.RapidExpress.Subway
     odpt.Railway:Seibu.SeibuYurakucho: custom.StoppingPattern:Seibu.SeibuYurakucho.Local
     odpt.Railway:Seibu.Sayama: custom.StoppingPattern:Seibu.Sayama.Local
@@ -167,7 +167,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.RapidExpress.ToSeibu:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToTobuTojo:
   ref: custom.TrainTypeOtherOperator:TobuTojo.Local
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Tobu.Tojo: custom.StoppingPattern:Tobu.Tojo.Local
   note: 東武東上線 各駅停車
   additional_infos:
@@ -182,7 +182,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToTobuTojo:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToTokyu:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.ToTokyu
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Tokyu.Toyoko: custom.StoppingPattern:Tokyu.Toyoko.Local
     odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai: custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.Local
   note: 東急東横線 各駅停車
@@ -195,7 +195,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Local.ToTokyu:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Express.ToTokyu:
   ref: custom.TrainTypeDefault:TokyoMetro.Express.ToTokyu
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Tokyu.Toyoko: custom.StoppingPattern:Tokyu.Toyoko.Express
     odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai: custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.Express
   note: 東急東横線 急行
@@ -208,7 +208,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.Express.ToTokyu:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu:
   ref: custom.TrainTypeOtherOperator:Tokyu.CommuterLimitedExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Tokyu.Toyoko: custom.StoppingPattern:Tokyu.Toyoko.CommuterLimitedExpress
     odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai: custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.Express
   note: 東急東横線 通勤特急
@@ -221,7 +221,7 @@ custom.TrainType:TokyoMetro.YurakuchoFukutoshin.CommuterLimitedExpress.ToTokyu:
 
 custom.TrainType:TokyoMetro.YurakuchoFukutoshin.LimitedExpress.ToTokyu:
   ref: custom.TrainTypeOtherOperator:Tokyu.LimitedExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:Tokyu.Toyoko: custom.StoppingPattern:Tokyu.Toyoko.LimitedExpress
     odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai: custom.StoppingPattern:YokohamaMinatomiraiRailway.Minatomirai.LimitedExpress
   note: 東急東横線 特急

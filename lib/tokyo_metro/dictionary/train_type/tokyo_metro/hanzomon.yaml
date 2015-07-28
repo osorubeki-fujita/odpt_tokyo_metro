@@ -4,7 +4,7 @@
 
 custom.TrainType:TokyoMetro.Hanzomon.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
   note: 半蔵門線 各駅停車
   operator: odpt.Operator:TokyoMetro
@@ -14,13 +14,13 @@ custom.TrainType:TokyoMetro.Hanzomon.Local.Normal:
 
 custom.TrainType:TokyoMetro.Hanzomon.Local.ToTokyu:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.ToTokyu
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
     odpt.Railway:Tokyu.DenEnToshi: custom.StoppingPattern:Tokyu.DenEnToshi.Local
   note: 半蔵門線 各駅停車
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Hanzomon
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Tokyu.DenEnToshi
 
@@ -28,13 +28,13 @@ custom.TrainType:TokyoMetro.Hanzomon.Local.ToTokyu:
 
 custom.TrainType:TokyoMetro.Hanzomon.SemiExpress.ToTokyu:
   ref: custom.TrainTypeOtherOperator:Tokyu.SemiExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
     odpt.Railway:Tokyu.DenEnToshi: custom.StoppingPattern:Tokyu.DenEnToshi.SemiExpress
   note: 半蔵門線 準急
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Hanzomon
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Tokyu.DenEnToshi
 
@@ -42,13 +42,13 @@ custom.TrainType:TokyoMetro.Hanzomon.SemiExpress.ToTokyu:
 
 custom.TrainType:TokyoMetro.Hanzomon.HolidayExpress.ToTokyu:
   ref: custom.TrainTypeOtherOperator:Tokyu.HolidayExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
     odpt.Railway:Tokyu.DenEnToshi: custom.StoppingPattern:Tokyu.DenEnToshi.HolidayExpress
   note: 半蔵門線 急行
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Hanzomon
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Tokyu.DenEnToshi
   specific_operation_days:
@@ -60,13 +60,13 @@ custom.TrainType:TokyoMetro.Hanzomon.HolidayExpress.ToTokyu:
 
 custom.TrainType:TokyoMetro.Hanzomon.Express.ToTokyu:
   ref: custom.TrainTypeDefault:TokyoMetro.Express.ToTokyu
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
     odpt.Railway:Tokyu.DenEnToshi: custom.StoppingPattern:Tokyu.DenEnToshi.Express
   note: 半蔵門線 急行
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Hanzomon
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Tokyu.DenEnToshi
 
@@ -74,7 +74,7 @@ custom.TrainType:TokyoMetro.Hanzomon.Express.ToTokyu:
 
 custom.TrainType:TokyoMetro.Hanzomon.SemiExpress.ToTobu:
   ref: custom.TrainTypeOtherOperator:Tobu.SemiExpress
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
     odpt.Railway:Tobu.SkytreeOshiage: custom.StoppingPattern:Tobu.SkytreeOshiage.Subway
     odpt.Railway:Tobu.Skytree: custom.StoppingPattern:Tobu.Skytree.SemiExpress
@@ -83,7 +83,7 @@ custom.TrainType:TokyoMetro.Hanzomon.SemiExpress.ToTobu:
   note: 半蔵門線 準急
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Hanzomon
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Tobu.Isesaki.Hanzomon
       station: odpt.Station:Tobu.Isesaki.Kuki
@@ -95,7 +95,7 @@ custom.TrainType:TokyoMetro.Hanzomon.SemiExpress.ToTobu:
 
 custom.TrainType:TokyoMetro.Hanzomon.Express.ToTobu:
   ref: custom.TrainTypeOtherOperator:Tobu.Express
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Hanzomon: custom.StoppingPattern:TokyoMetro.Hanzomon.Local
     odpt.Railway:Tobu.SkytreeOshiage: custom.StoppingPattern:Tobu.SkytreeOshiage.Subway
     odpt.Railway:Tobu.Skytree: custom.StoppingPattern:Tobu.Skytree.Express
@@ -104,7 +104,7 @@ custom.TrainType:TokyoMetro.Hanzomon.Express.ToTobu:
   note: 半蔵門線 急行
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Hanzomon
-  through_to:
+  through_operation_infos:
     -
       railway_line: odpt.Railway:Tobu.Isesaki.Hanzomon
       station: odpt.Station:Tobu.Isesaki.Kuki

@@ -2,7 +2,7 @@
 
 custom.TrainType:TokyoMetro.Ginza.Local.Normal:
   ref: custom.TrainTypeDefault:TokyoMetro.Local.Normal
-  stopping_pattern:
+  stopping_patterns:
     odpt.Railway:TokyoMetro.Ginza: custom.StoppingPattern:TokyoMetro.Ginza.Local
   note: 銀座線
   operator: odpt.Operator:TokyoMetro
