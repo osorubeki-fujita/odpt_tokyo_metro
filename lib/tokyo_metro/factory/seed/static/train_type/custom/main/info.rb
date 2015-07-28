@@ -59,10 +59,10 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
     end
   end
 
-  def seed_remarkable_stops
-    if @info.remarkable_stops.present?
-      @info.remarkable_stops.each do | remarkable_stop |
-        ::Train::Type::RemarkableStop.find_or_create_by( train_type_info_id: @id , remarkable_stop_id: ::Station::Info.find_by( same_as: remarkable_stop) )
+  def seed_remarkable_stop_infos
+    if @info.remarkable_stop_infos.present?
+      @info.remarkable_stop_infos.each do | remarkable_stop_info |
+        ::Train::Type::RemarkableStopInfo.find_or_create_by( train_type_info_id: @id , remarkable_stop_id: ::Station::Info.find_by( same_as: remarkable_stop_info ) )
       end
     end
   end

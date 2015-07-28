@@ -51,7 +51,7 @@ custom.TrainType:TokyoMetro.Hanzomon.HolidayExpress.ToTokyu:
   through_to:
     -
       railway_line: odpt.Railway:Tokyu.DenEnToshi
-  operation_days:
+  specific_operation_days:
     - custom:OperationDay:Holiday
   remarkable_stops:
     - odpt.Station:Tokyu.DenEnToshi.MinamiMachida
