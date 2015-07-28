@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info::CodeInfo < TokyoMetro::
     h[ :info_id ] = @operator_info_id
     h[ :code ] = @info.operator_code
 
-    h[ :color ] = @info.hex_color
+    h[ :color_info_id ] = color_info_id
 
     [
       :numbering ,
@@ -28,6 +28,10 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info::CodeInfo < TokyoMetro::
 
   def method_name_for_db_instance_class
     :db_instance_class_of_code_info
+  end
+
+  def color_info_id
+    ::Design::Color::Info.find_or_create_by( hex_color: @info.hex_color ).id
   end
 
 end
