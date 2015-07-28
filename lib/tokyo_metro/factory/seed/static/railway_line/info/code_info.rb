@@ -34,7 +34,8 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info::CodeInfo < TokyoMetr
   end
 
   def seed_main( code , color , i )
-    @id = db_class.find_or_create_by( code: code , color: color ).id
+    color_info_id = ::Desgin::Color::Info.find_or_create_by( hex_color: color ).id
+    @id = db_class.find_or_create_by( code: code , color_info_id: color_info_id ).id
   end
 
   def seed_optional_infos(i)

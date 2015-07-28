@@ -20,9 +20,10 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Hash < TokyoMetro::Factory
   end
 
   def seed_instance_for_color_and_code_of_undefined_object
+    color_info_id = ::Design::Color::Info.find_or_create_by( hex_color: "\#999999" ).id
     code_instance = self.class.factory_for_seeding_code_infos.find_or_create_by(
       code: "NG" ,
-      color: "\#999999" ,
+      color_info_id: color_info_id ,
       numbering: false
     )
 
