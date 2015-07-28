@@ -78,7 +78,7 @@ custom.TrainType:TokyoMetro.Fukutoshin.HolidayExpress.Normal:
   note: 副都心線 急行
   specific_operation_days:
     - custom:OperationDay:Holiday
-  remarkable_stops:
+  remarkable_stop_infos:
     - odpt.Station:TokyoMetro.Fukutoshin.MeijiJingumae
   operator: odpt.Operator:TokyoMetro
   railway_line: odpt.Railway:TokyoMetro.Fukutoshin

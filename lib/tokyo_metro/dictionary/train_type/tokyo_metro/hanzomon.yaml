@@ -53,7 +53,7 @@ custom.TrainType:TokyoMetro.Hanzomon.HolidayExpress.ToTokyu:
       railway_line: odpt.Railway:Tokyu.DenEnToshi
   specific_operation_days:
     - custom:OperationDay:Holiday
-  remarkable_stops:
+  remarkable_stop_infos:
     - odpt.Station:Tokyu.DenEnToshi.MinamiMachida
 
 #---- 急行（東急田園都市線 直通）
