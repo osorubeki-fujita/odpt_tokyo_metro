@@ -5,6 +5,10 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
   include ::TokyoMetro::Factory::Seed::Reference::RailwayLine
   include ::TokyoMetro::Factory::Seed::Reference::TrainTypeInApi
 
+  def initialize( *args )
+    super( *args , to_get_id: true )
+  end
+
   private
 
   def hash_to_db
@@ -39,6 +43,31 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
   def design_bgcolor_info_id
     ::Design::Color::Info.find_or_create_by( hex_color: @info.bgcolor.hex_color ).id
   end
+
+  # @!group Optional Infos
+
+  def seed_optional_infos
+    seed_specific_operation_days
+    seed_remarkable_stops
+  end
+
+  def seed_specific_operation_days
+    if @info.specific_operation_days.present?
+      @info.specific_operation_days.each do | specific_operation_day |
+        ::Train::Type::SpecificOperationDay.find_or_create_by( train_type_info_id: @id , specific_operation_day_id: ::OperationDay.find_by( same_as: specific_operation_day ) )
+      end
+    end
+  end
+
+  def seed_remarkable_stops
+    if @info.remarkable_stops.present?
+      @info.remarkable_stops.each do | remarkable_stop |
+        ::Train::Type::RemarkableStop.find_or_create_by( train_type_info_id: @id , remarkable_stop_id: ::Station::Info.find_by( same_as: remarkable_stop) )
+      end
+    end
+  end
+
+  # @!endgroup
 
 end
 
