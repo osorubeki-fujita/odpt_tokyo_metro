@@ -47,8 +47,29 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
   # @!group Optional Infos
 
   def seed_optional_infos
+    seed_note
+    seed_additional_infos
+
     seed_specific_operation_days
     seed_remarkable_stops
+    seed_through_operation_infos
+  end
+
+  def seed_note
+    if @info.note.present?
+      note_text = ::Train::Type::Note::Text.find_or_create_by( text_ja: note )
+      ::Train::Type::Note::Info.find_or_create_by( info_id: @id , text_id: note_text.id )
+    end
+  end
+
+  def seed_additional_infos
+    raise unless @info.additional_infos.present? and @info.note.blank?
+    if @info.additional_infos.present?
+      @info.additional_infos.each.with_index(1) do | additional_info , i |
+        additional_text = ::Train::Type::Note::Additional::Text.find_or_create_by( text_ja: additional_info )
+        ::Train::Type::Note::Additional::Info.find_or_create_by( info_id: @id , additional_text_id: additional_text.id , index: 1 )
+      end
+    end
   end
 
   def seed_specific_operation_days
@@ -67,14 +88,20 @@ class TokyoMetro::Factory::Seed::Static::TrainType::Custom::Main::Info < TokyoMe
     end
   end
 
+  def seed_through_operation_infos
+    if @info.through_operation_infos.present?
+      @info.through_operation_infos.each do | through_operation_info |
+        raise unless through_operation_info[ :railway_line ].present?
+        railway_line_info_id = ::Railway::Line::Info.find_by( same_as: through_operation_info[ :railway_line ] ).id
+        raise "\'#{ through_operation_info[ :railway_line ] }\' does not exist." unless railway_line_info.present?
+        to_statin_info_id = ::Station::Info.find_by( same_as: through_operation_info[ :to_station ]).try( :id )
+        ::Train::Type::ThroughOperationInfo.find_or_create_by( info_id: @id , railway_line_info_id: railway_line_info_id , to_station_id: to_station_id )
+      end
+    end
+  end
+
+
+
   # @!endgroup
 
-end
-
-__END__
-
-[
-  :note
-].each do | key_name |
-  h[ key_name ] = @info.send( key_name )
 end

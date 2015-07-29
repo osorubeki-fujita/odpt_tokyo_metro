@@ -21,7 +21,7 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::Main::Info < Tok
   end
 
   def self.hash_keys_for_additional_infos
-    [ :stopping_patterns , :additional_infos ,  :through_operation_infos , :remarkable_stop_infos , :specific_operation_days]
+    [ :additional_infos , :stopping_patterns , :through_operation_infos , :remarkable_stop_infos , :specific_operation_days]
   end
 
   private

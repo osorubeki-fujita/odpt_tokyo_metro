@@ -31,7 +31,7 @@ custom.TrainType:TokyoMetro.Tozai.Local.ForMitaka:
   through_operation_infos:
     -
       railway_line: odpt.Railway:JR-East.ChuoTozai
-      station: odpt.Railway:JR-East.ChuoTozai.Mitaka
+      to_station: odpt.Railway:JR-East.ChuoTozai.Mitaka
 
 
 #---- 各駅停車（JR中央・総武線 津田沼まで直通）
@@ -53,7 +53,7 @@ custom.TrainType:TokyoMetro.Tozai.Local.ForTsudanuma:
   through_operation_infos:
     -
       railway_line: odpt.Railway:JR-East.SobuTozai
-      station: odpt.Railway:JR-East.SobuTozai.Tsudanuma
+      to_station: odpt.Railway:JR-East.SobuTozai.Tsudanuma
 
 
 #---- 各駅停車（東葉高速鉄道 直通）
@@ -112,7 +112,7 @@ custom.TrainType:TokyoMetro.Tozai.CommuterRapid.ForMitaka:
   through_operation_infos:
     -
       railway_line: odpt.Railway:JR-East.ChuoTozai
-      station: odpt.Railway:JR-East.ChuoTozai.Mitaka
+      to_station: odpt.Railway:JR-East.ChuoTozai.Mitaka
 
 #---- 快速
 
@@ -156,7 +156,7 @@ custom.TrainType:TokyoMetro.Tozai.Rapid.ForMitaka:
   through_operation_infos:
     -
       railway_line: odpt.Railway:JR-East.ChuoTozai
-      station: odpt.Railway:JR-East.ChuoTozai.Mitaka
+      to_station: odpt.Railway:JR-East.ChuoTozai.Mitaka
 
 #---- 快速（JR中央・総武線 津田沼まで直通）
 
@@ -179,7 +179,7 @@ custom.TrainType:TokyoMetro.Tozai.Rapid.ForTsudanuma:
   through_operation_infos:
     -
       railway_line: odpt.Railway:JR-East.SobuTozai
-      station: odpt.Railway:JR-East.SobuTozai.Tsudanuma
+      to_station: odpt.Railway:JR-East.SobuTozai.Tsudanuma
 
 #---- 快速（東葉高速鉄道 直通）
 

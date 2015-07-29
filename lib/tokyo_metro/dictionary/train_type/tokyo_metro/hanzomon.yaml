@@ -86,10 +86,10 @@ custom.TrainType:TokyoMetro.Hanzomon.SemiExpress.ToTobu:
   through_operation_infos:
     -
       railway_line: odpt.Railway:Tobu.Isesaki.Hanzomon
-      station: odpt.Station:Tobu.Isesaki.Kuki
+      to_station: odpt.Station:Tobu.Isesaki.Kuki
     -
       railway_line: odpt.Railway:Tobu.Nikko.Hanzomon
-      station: odpt.Station:Tobu.Nikko.MinamiKurihashi
+      to_station: odpt.Station:Tobu.Nikko.MinamiKurihashi
 
 #---- 急行（東武方面）
 
@@ -107,7 +107,7 @@ custom.TrainType:TokyoMetro.Hanzomon.Express.ToTobu:
   through_operation_infos:
     -
       railway_line: odpt.Railway:Tobu.Isesaki.Hanzomon
-      station: odpt.Station:Tobu.Isesaki.Kuki
+      to_station: odpt.Station:Tobu.Isesaki.Kuki
     -
       railway_line: odpt.Railway:Tobu.Nikko.Hanzomon
-      station: odpt.Station:Tobu.Nikko.MinamiKurihashi
+      to_station: odpt.Station:Tobu.Nikko.MinamiKurihashi

@@ -71,7 +71,7 @@ custom.TrainType:TokyoMetro.Chiyoda.SemiExpress.ForOdakyu:
   through_operation_infos:
     -
       railway_line: odpt.Railway:Odakyu
-      station: odpt.Station:Odakyu.Odawara.HonAtsugi
+      # to_station: odpt.Station:Odakyu.Odawara.HonAtsugi
 
 #---- 多摩急行（小田急線 直通）
 
@@ -87,7 +87,7 @@ custom.TrainType:TokyoMetro.Chiyoda.TamaExpress.ForOdakyu:
   through_operation_infos:
     -
       railway_line: odpt.Railway:Odakyu
-      station: odpt.Station:Odakyu.Tama.Karakida
+      # to_station: odpt.Station:Odakyu.Tama.Karakida
 
 #---------------- 【ロマンスカー】
 
@@ -103,10 +103,10 @@ custom.TrainType:TokyoMetro.Chiyoda.TamaExpress.ForOdakyu:
   through_operation_infos:
     -
       railway_line: odpt.Railway:Odakyu.Odawara
-      station: odpt.Station:Odakyu.Odawara.HonAtsugi
+      to_station: odpt.Station:Odakyu.Odawara.HonAtsugi
     -
       railway_line: odpt.Railway:Odakyu.Tama
-      station: odpt.Station:Odakyu.Tama.Karakida
+      to_station: odpt.Station:Odakyu.Tama.Karakida
     -
       railway_line: odpt.Railway:HakoneTozan.Rail.OdawaraSide
-      station: odpt.Station:HakoneTozan.Rail.HakoneYumoto
+      to_station: odpt.Station:HakoneTozan.Rail.HakoneYumoto

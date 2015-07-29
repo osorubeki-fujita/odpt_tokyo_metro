@@ -22,4 +22,4 @@ custom.TrainType:TokyoMetro.Hibiya.Local.ToTobu:
   through_operation_infos:
     -
       railway_line: odpt.Railway:Tobu.Nikko.Hibiya
-      station: odpt.Station:Tobu.Nikko.MinamiKurihashi
+      to_station: odpt.Station:Tobu.Nikko.MinamiKurihashi
