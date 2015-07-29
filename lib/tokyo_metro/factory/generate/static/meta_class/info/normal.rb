@@ -9,7 +9,6 @@ class TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal < TokyoMetr
     # puts "hash keys: #{ @h.keys }"
 
     before_setting_values_to_hash_for_making_variables
-
     set_values_to_hash_for_making_variables
   end
 
