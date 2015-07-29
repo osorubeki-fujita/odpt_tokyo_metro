@@ -19,6 +19,19 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::I
 
   private
 
+  def before_setting_values_to_hash_for_making_variables
+    check_validity_of_hash_keys
+  end
+
+  def check_validity_of_hash_keys
+    invalid_keys = @h.keys - ( self.class.hash_keys + [ :ref ] )
+    if invalid_keys.present?
+      invalid_keys_to_s = invalid_keys.join( ", " )
+      raise invalid_keys_to_s
+    end
+    return nil
+  end
+
   def inspect_title
     puts "○ #{TITLE} #{ @same_as }"
   end
@@ -41,9 +54,9 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::I
   def train_type
     train_type = get_hash_value( :train_type )
     unless train_type.string?
-      puts @h.to_s
-      puts @h.keys
-      puts @h.keys.first.class
+      puts "h: " + @h.to_s
+      puts "keys: " + @h.keys.to_s
+      puts "Class: " + @h.keys.first.class
       raise "Error: \"#{ train_type.to_s }\" (#{train_type.class.name}) is not valid. (Key: :train_type )"
     end
     t = ::TokyoMetro::Static.train_types_in_api[ train_type ]

@@ -19,7 +19,7 @@ class TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
   end
 
   def set_values_to_hash_for_making_variables( hash_key_array: self.class.hash_keys , make_array: false , boolean: false )
-    raise "Error" if boolean and make_array
+    raise if boolean and make_array
     hash_key_array = [ hash_key_array ].flatten
 
     hash_key_array.each do | key_name |
