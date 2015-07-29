@@ -816,6 +816,26 @@ odpt.Railway:Tobu.Isesaki:
     green: 0
     blue: 0
 
+odpt.Railway:Tobu.Isesaki.Hanzomon:
+  name_ja: スカイツリーライン・伊勢崎線
+  name_en: Skytree and Isesaki Line
+  codes:
+    - TS
+    - TI
+  operator: odpt.Operator:Tobu
+  index_in_operator: 2.1
+  color:
+    -
+      hex: "#ff0000" # "red"
+      red: 255
+      green: 0
+      blue: 0
+    -
+      hex: "#0f6cc3"
+      red: 15
+      green: 108
+      blue: 195
+
 odpt.Railway:Tobu.Nikko:
   name_ja: 日光線
   name_en: Nikko Line
@@ -829,6 +849,46 @@ odpt.Railway:Tobu.Nikko:
     blue: 0
   branch_railway_line_infos:
     - odpt.Railway:Tobu.Kinugawa
+
+odpt.Railway:Tobu.Nikko.Hanzomon:
+  name_ja: スカイツリーライン・日光線
+  name_en:  Skytree and Isesaki Line
+  codes:
+    - TS
+    - TI
+  operator: odpt.Operator:Tobu
+  index_in_operator: 3.1
+  color:
+    -
+      hex: "#ff0000" # "red"
+      red: 255
+      green: 0
+      blue: 0
+    -
+      hex: "#ffa500" # "orange"
+      red: 255
+      green: 165
+      blue: 0
+
+  odpt.Railway:Tobu.Nikko.Hibiya:
+    name_ja: スカイツリーライン・日光線
+    name_en: Skytree and Isesaki Line
+    codes:
+      - TS
+      - TI
+    operator: odpt.Operator:Tobu
+    index_in_operator: 3.2
+    color:
+      -
+        hex: "#ff0000" # "red"
+        red: 255
+        green: 0
+        blue: 0
+      -
+        hex: "#ffa500" # "orange"
+        red: 255
+        green: 165
+        blue: 0
 
 odpt.Railway:Tobu.Kinugawa:
   name_ja: 鬼怒川線
