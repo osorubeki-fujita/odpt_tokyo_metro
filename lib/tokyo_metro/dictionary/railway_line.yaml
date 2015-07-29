@@ -391,6 +391,7 @@ odpt.Railway:JR-East.UenoTokyo:
     # red: 246
     # green: 139
     # blue: 30
+  start_on: 2015.3.14
 
 odpt.Railway:JR-East.Chuo:
   # name_ja: 中央本線
@@ -535,6 +536,7 @@ odpt.Railway:JR-East.Shinkansen:
     red: 0
     green: 128
     blue: 0
+  end_on: 2015.3.13
 
 odpt.Railway:JR-East.Shinkansen.2015:
   name_ja: 東北・秋田・山形・上越・北陸新幹線
@@ -547,6 +549,7 @@ odpt.Railway:JR-East.Shinkansen.2015:
     red: 0
     green: 128
     blue: 0
+  start_on: 2015.3.14
 
 odpt.Railway:JR-East.Shinkansen.2016:
   name_ja: 東北・北海道・秋田・山形・上越・北陸新幹線

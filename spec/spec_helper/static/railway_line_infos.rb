@@ -59,7 +59,7 @@ def static_railway_line_infos
     ["odpt.Railway:Tokyu.Meguro", "目黒線", "Meguro Line", "東急目黒線", "Tokyu Meguro Line", "東急目黒線", "Tokyu Meguro Line", "tokyu_meguro"],
     ["odpt.Railway:Tokyu.DenEnToshi", "田園都市線", "Den-en-toshi Line", "東急田園都市線", "Tokyu Den-en-toshi Line", "東急田園都市線", "Tokyu Den-en-toshi Line", "tokyu_den_en_toshi"],
     ["odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai", "みなとみらい線", "Minatomirai Line", "横浜高速鉄道みなとみらい線", "Yokohama Minatomirai Railway Company Minatomirai Line", "横浜高速鉄道みなとみらい線", "Yokohama Minatomirai Railway Company Minatomirai Line", "yokohama_minatomirai_mm"],
-    ["odpt.Railway:Odakyu", "小田急線", "Odakyu Line", "小田急線", "Odakyu Line", "小田急線", "Odakyu Line", "odakyu"],
+    ["odpt.Railway:Odakyu", "小田急線", "Odakyu Line", "小田急線", "Odakyu Line", "小田急線", "Odakyu Line", "odakyu_line"],
     ["odpt.Railway:Odakyu.Odawara", "小田原線", "Odawara Line", "小田急小田原線", "Odakyu Odawara Line", "小田急小田原線", "Odakyu Odawara Line", "odakyu_odawara"],
     ["odpt.Railway:Odakyu.Tama", "多摩線", "Tama Line", "小田急多摩線", "Odakyu Tama Line", "小田急多摩線", "Odakyu Tama Line", "odakyu_tama"],
     ["odpt.Railway:Odakyu.Enoshima", "江ノ島線", "Enoshima Line", "小田急江ノ島線", "Odakyu Enoshima Line", "小田急江ノ島線", "Odakyu Enoshima Line", "odakyu_enoshima"],

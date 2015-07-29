@@ -66,6 +66,7 @@ class TokyoMetro::Static::RailwayLine::Info
   end
 
   attr_reader :start_on
+  attr_reader :end_on
   attr_reader :twitter_widget_id
   attr_reader :twitter_account_name
 
