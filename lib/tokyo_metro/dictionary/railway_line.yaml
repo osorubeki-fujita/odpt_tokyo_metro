@@ -817,8 +817,8 @@ odpt.Railway:Tobu.Isesaki:
     blue: 0
 
 odpt.Railway:Tobu.Isesaki.Hanzomon:
-  name_ja: スカイツリーライン・伊勢崎線
-  name_en: Skytree and Isesaki Line
+  name_ja: スカイツリーライン・伊勢崎線（半蔵門線直通）
+  name_en: Skytree and Isesaki Line (through to Hanzomon Line)
   codes:
     - TS
     - TI
@@ -851,8 +851,8 @@ odpt.Railway:Tobu.Nikko:
     - odpt.Railway:Tobu.Kinugawa
 
 odpt.Railway:Tobu.Nikko.Hanzomon:
-  name_ja: スカイツリーライン・日光線
-  name_en:  Skytree and Isesaki Line
+  name_ja: スカイツリーライン・日光線（半蔵門線直通）
+  name_en:  Skytree and Nikko Line (through to Hanzomon Line)
   codes:
     - TS
     - TI
@@ -871,8 +871,8 @@ odpt.Railway:Tobu.Nikko.Hanzomon:
       blue: 0
 
   odpt.Railway:Tobu.Nikko.Hibiya:
-    name_ja: スカイツリーライン・日光線
-    name_en: Skytree and Isesaki Line
+    name_ja: スカイツリーライン・日光線（日比谷線直通）
+    name_en: Skytree and Nikko Line (through to Hibiya Line)
     codes:
       - TS
       - TI
