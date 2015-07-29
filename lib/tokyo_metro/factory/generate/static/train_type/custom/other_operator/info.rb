@@ -24,7 +24,8 @@ class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::I
   end
 
   def check_validity_of_hash_keys
-    invalid_keys = @h.keys - ( self.class.hash_keys + [ :ref ] )
+    invalid_keys = @h.keys.map( &:to_s ) - ( self.class.hash_keys + [ :ref ] ).map( &:to_s )
+
     if invalid_keys.present?
       invalid_keys_to_s = invalid_keys.join( ", " )
       raise invalid_keys_to_s

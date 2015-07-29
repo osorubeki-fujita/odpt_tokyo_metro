@@ -623,6 +623,16 @@ odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai:
 
 #-------- 小田急電鉄
 
+odpt.Railway:Odakyu:
+  name_ja: 小田急線
+  name_en: Odakyu Line
+  codes:
+    - OH
+    - OT
+    - OE
+  operator: odpt.Operator:Odakyu
+  index_in_operator: 0
+
 odpt.Railway:Odakyu.Odawara:
   name_ja: 小田原線
   name_en: Odawara Line
