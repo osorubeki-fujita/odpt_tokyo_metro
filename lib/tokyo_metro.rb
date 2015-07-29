@@ -7,6 +7,7 @@ require "active_support/core_ext"
 require "active_support/concern"
 
 require "odpt_common"
+require "positive_basic_support"
 require "positive_web_support"
 
 require "odpt_tokyo_metro_helper"
