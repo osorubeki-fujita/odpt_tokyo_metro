@@ -6,8 +6,6 @@ odpt.Railway:TokyoMetro.Ginza:
   name_en: Ginza Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 1
-  twitter_widget_id: "532630018443059201"
-  twitter_account_name: G_line_info
   code_infos:
     -
       code: G
@@ -19,6 +17,9 @@ odpt.Railway:TokyoMetro.Ginza:
       # ガイドライン準拠 - #ff9500
       # Wikipedia - #f39700
       # 画像 - #f6a90f
+  twitter:
+    widget_id: "532630018443059201"
+    account_name: G_line_info
 
 odpt.Railway:TokyoMetro.Marunouchi:
   name_ja: 丸ノ内線
@@ -26,8 +27,6 @@ odpt.Railway:TokyoMetro.Marunouchi:
   name_en: Marunouchi Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 2
-  twitter_widget_id: "532630724893868032"
-  twitter_account_name: M_line_info
   branch_railway_line_infos:
     - odpt.Railway:TokyoMetro.MarunouchiBranch
   code_infos:
@@ -41,6 +40,9 @@ odpt.Railway:TokyoMetro.Marunouchi:
       # ガイドライン準拠 - #f62e36
       # Wikipedia - #e60012
       # 画像 - #e61018
+  twitter:
+    widget_id: "532630724893868032"
+    account_name: M_line_info
 
 odpt.Railway:TokyoMetro.MarunouchiBranch:
   name_ja: 丸ノ内線（中野坂上 - 方南町）
@@ -63,15 +65,12 @@ odpt.Railway:TokyoMetro.MarunouchiBranch:
       # Wikipedia - #e60012
       # 画像 - #e61018
 
-
 odpt.Railway:TokyoMetro.Hibiya:
   name_ja: 日比谷線
   name_hira: ひびやせん
   name_en: Hibiya Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 3
-  twitter_widget_id: "532631112032321536"
-  twitter_account_name: H_line_info
   code_infos:
     -
       code: H
@@ -83,6 +82,9 @@ odpt.Railway:TokyoMetro.Hibiya:
       # ガイドライン準拠 - #b5b5ac
       # Wikipedia - #9caeb7
       # 画像 - #d0c7b8
+  twitter:
+    widget_id: "532631112032321536"
+    account_name: H_line_info
 
 odpt.Railway:TokyoMetro.Tozai:
   name_ja: 東西線
@@ -90,8 +92,6 @@ odpt.Railway:TokyoMetro.Tozai:
   name_en: Tozai Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 4
-  twitter_widget_id: "532631565486923777"
-  twitter_account_name: T_line_info
   code_infos:
     -
       code: T
@@ -103,6 +103,9 @@ odpt.Railway:TokyoMetro.Tozai:
       # ガイドライン準拠 - #009bbf
       # Wikipedia - #00a7db
       # 画像 - #00a1e9
+  twitter:
+    widget_id: "532631565486923777"
+    account_name: T_line_info
 
 odpt.Railway:TokyoMetro.Chiyoda:
   name_ja: 千代田線
@@ -110,8 +113,6 @@ odpt.Railway:TokyoMetro.Chiyoda:
   name_en: Chiyoda Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 5
-  twitter_widget_id: "532631847792959489"
-  twitter_account_name: C_line_info
   branch_railway_line_infos:
     - odpt.Railway:TokyoMetro.ChiyodaBranch
   code_infos:
@@ -125,6 +126,9 @@ odpt.Railway:TokyoMetro.Chiyoda:
       # ガイドライン準拠 - #00bb85
       # Wikipedia - #009945
       # 画像 - #0daa5d
+  twitter:
+    widget_id: "532631847792959489"
+    account_name: C_line_info
 
 odpt.Railway:TokyoMetro.ChiyodaBranch:
   name_ja: 千代田線（綾瀬 - 北綾瀬）
@@ -146,15 +150,12 @@ odpt.Railway:TokyoMetro.ChiyodaBranch:
       # Wikipedia - #009945
       # 画像 - #0daa5d
 
-
 odpt.Railway:TokyoMetro.Yurakucho:
   name_ja: 有楽町線
   name_hira: ゆうらくちょうせん
   name_en: Yurakucho Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 6
-  twitter_widget_id: "532632847350112256"
-  twitter_account_name: Y_line_info
   code_infos:
     -
       code: Y
@@ -166,6 +167,9 @@ odpt.Railway:TokyoMetro.Yurakucho:
       # ガイドライン準拠 - #c1a470
       # Wikipedia - #d7c447
       # 画像 - #d6ae59
+  twitter:
+    widget_id: "532632847350112256"
+    account_name: Y_line_info
 
 odpt.Railway:TokyoMetro.Hanzomon:
   name_ja: 半蔵門線
@@ -173,8 +177,6 @@ odpt.Railway:TokyoMetro.Hanzomon:
   name_en: Hanzomon Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 7
-  twitter_widget_id: "532632130656825344"
-  twitter_account_name: Z_line_info
   color_infos:
     -
       code: Z
@@ -186,6 +188,9 @@ odpt.Railway:TokyoMetro.Hanzomon:
       # ガイドライン準拠 - #8f76d6
       # Wikipedia - #9b7cb6
       # 画像 - #937eb7
+  twitter:
+    widget_id: "532632130656825344"
+    account_name: Z_line_info
 
 odpt.Railway:TokyoMetro.Namboku:
   name_ja: 南北線
@@ -193,8 +198,6 @@ odpt.Railway:TokyoMetro.Namboku:
   name_en: Namboku Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 8
-  twitter_widget_id: "532632503169724416"
-  twitter_account_name: N_line_info
   code_infos:
     -
       code: N
@@ -206,6 +209,9 @@ odpt.Railway:TokyoMetro.Namboku:
       # ガイドライン準拠 - #00ac9b
       # Wikipedia - #00ada9
       # 画像 - #01ad95
+  twitter:
+    widget_id: "532632503169724416"
+    account_name: N_line_info
 
 odpt.Railway:TokyoMetro.Fukutoshin:
   name_ja: 副都心線
@@ -213,8 +219,6 @@ odpt.Railway:TokyoMetro.Fukutoshin:
   name_en: Fukutoshin Line
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 9
-  twitter_widget_id: "532633227697991680"
-  twitter_account_name: F_line_info
   code_infos:
     -
       code: F
@@ -226,6 +230,9 @@ odpt.Railway:TokyoMetro.Fukutoshin:
       # ガイドライン準拠 - #9c5e31
       # Wikipedia - #bb641d
       # 画像 - #ab5a23
+  twitter:
+    widget_id: "532633227697991680"
+    account_name: F_line_info
 
 #-------- 東京都交通局
 
