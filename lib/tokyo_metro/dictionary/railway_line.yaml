@@ -4,39 +4,43 @@ odpt.Railway:TokyoMetro.Ginza:
   name_ja: 銀座線
   name_hira: ぎんざせん
   name_en: Ginza Line
-  codes: G
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 1
   twitter_widget_id: "532630018443059201"
   twitter_account_name: G_line_info
-  color:
-    Seibu.SeibuYurakucho: "#f39700"
-    red: 243
-    green: 151
-    blue: 0
-  # ガイドライン準拠 - #ff9500
-  # Wikipedia - #f39700
-  # 画像 - #f6a90f
+  code_infos:
+    -
+      code: G
+      color:
+        hex: "#f39700"
+        red: 243
+        green: 151
+        blue: 0
+      # ガイドライン準拠 - #ff9500
+      # Wikipedia - #f39700
+      # 画像 - #f6a90f
 
 odpt.Railway:TokyoMetro.Marunouchi:
   name_ja: 丸ノ内線
   name_hira: まるのうちせん
   name_en: Marunouchi Line
-  codes: M
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 2
   twitter_widget_id: "532630724893868032"
   twitter_account_name: M_line_info
-  color:
-    hex: "#e60012"
-    red: 230
-    green: 0
-    blue: 18
-  # ガイドライン準拠 - #f62e36
-  # Wikipedia - #e60012
-  # 画像 - #e61018
   branch_railway_line_infos:
     - odpt.Railway:TokyoMetro.MarunouchiBranch
+  code_infos:
+    -
+      code: M
+      color:
+        hex: "#e60012"
+        red: 230
+        green: 0
+        blue: 18
+      # ガイドライン準拠 - #f62e36
+      # Wikipedia - #e60012
+      # 画像 - #e61018
 
 odpt.Railway:TokyoMetro.MarunouchiBranch:
   name_ja: 丸ノ内線（中野坂上 - 方南町）
@@ -45,163 +49,183 @@ odpt.Railway:TokyoMetro.MarunouchiBranch:
   codes: m
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 2.1
-  color:
-    hex: "#e60012"
-    red: 230
-    green: 0
-    blue: 18
-  # ガイドライン準拠 - #f62e36
-  # Wikipedia - #e60012
-  # 画像 - #e61018
   main_railway_line_infos:
     - odpt.Railway:TokyoMetro.Marunouchi
+  code_infos:
+    -
+      code: m
+      color:
+        hex: "#e60012"
+        red: 230
+        green: 0
+        blue: 18
+      # ガイドライン準拠 - #f62e36
+      # Wikipedia - #e60012
+      # 画像 - #e61018
 
 
 odpt.Railway:TokyoMetro.Hibiya:
   name_ja: 日比谷線
   name_hira: ひびやせん
   name_en: Hibiya Line
-  codes: H
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 3
   twitter_widget_id: "532631112032321536"
   twitter_account_name: H_line_info
-  color:
-    hex: "#9caeb7"
-    red: 156
-    green: 174
-    blue: 183
-  # ガイドライン準拠 - #b5b5ac
-  # Wikipedia - #9caeb7
-  # 画像 - #d0c7b8
+  code_infos:
+    -
+      code: H
+      color:
+        hex: "#9caeb7"
+        red: 156
+        green: 174
+        blue: 183
+      # ガイドライン準拠 - #b5b5ac
+      # Wikipedia - #9caeb7
+      # 画像 - #d0c7b8
 
 odpt.Railway:TokyoMetro.Tozai:
   name_ja: 東西線
   name_hira: とうざいせん
   name_en: Tozai Line
-  codes: T
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 4
   twitter_widget_id: "532631565486923777"
   twitter_account_name: T_line_info
-  color:
-    hex: "#00a7db"
-    red: 0
-    green: 167
-    blue: 219
-  # ガイドライン準拠 - #009bbf
-  # Wikipedia - #00a7db
-  # 画像 - #00a1e9
+  code_infos:
+    -
+      code: T
+      color:
+        hex: "#00a7db"
+        red: 0
+        green: 167
+        blue: 219
+      # ガイドライン準拠 - #009bbf
+      # Wikipedia - #00a7db
+      # 画像 - #00a1e9
 
 odpt.Railway:TokyoMetro.Chiyoda:
   name_ja: 千代田線
   name_hira: ちよだせん
   name_en: Chiyoda Line
-  codes: C
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 5
   twitter_widget_id: "532631847792959489"
   twitter_account_name: C_line_info
-  color:
-    hex: "#009945"
-    red: 0
-    green: 153
-    blue: 69
-  # ガイドライン準拠 - #00bb85
-  # Wikipedia - #009945
-  # 画像 - #0daa5d
   branch_railway_line_infos:
     - odpt.Railway:TokyoMetro.ChiyodaBranch
+  code_infos:
+    -
+      code: C
+      color:
+        hex: "#009945"
+        red: 0
+        green: 153
+        blue: 69
+      # ガイドライン準拠 - #00bb85
+      # Wikipedia - #009945
+      # 画像 - #0daa5d
 
 odpt.Railway:TokyoMetro.ChiyodaBranch:
   name_ja: 千代田線（綾瀬 - 北綾瀬）
   name_hira: ちよだせん
   name_en: Chiyoda Line (Ayase - Kita-ayase)
-  codes: C
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 5.1
-  color:
-    hex: "#009945"
-    red: 0
-    green: 153
-    blue: 69
-  # ガイドライン準拠 - #00bb85
-  # Wikipedia - #009945
-  # 画像 - #0daa5d
   main_railway_line_infos:
     - odpt.Railway:TokyoMetro.Chiyoda
+  code_infos:
+    -
+      code: C
+      color:
+        hex: "#009945"
+        red: 0
+        green: 153
+        blue: 69
+      # ガイドライン準拠 - #00bb85
+      # Wikipedia - #009945
+      # 画像 - #0daa5d
+
 
 odpt.Railway:TokyoMetro.Yurakucho:
   name_ja: 有楽町線
   name_hira: ゆうらくちょうせん
   name_en: Yurakucho Line
-  codes: Y
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 6
   twitter_widget_id: "532632847350112256"
   twitter_account_name: Y_line_info
-  color:
-    hex: "#d7c447"
-    red: 215
-    green: 196
-    blue: 71
-  # ガイドライン準拠 - #c1a470
-  # Wikipedia - #d7c447
-  # 画像 - #d6ae59
+  code_infos:
+    -
+      code: Y
+      color:
+        hex: "#d7c447"
+        red: 215
+        green: 196
+        blue: 71
+      # ガイドライン準拠 - #c1a470
+      # Wikipedia - #d7c447
+      # 画像 - #d6ae59
 
 odpt.Railway:TokyoMetro.Hanzomon:
   name_ja: 半蔵門線
   name_hira: はんぞうもんせん
   name_en: Hanzomon Line
-  codes: Z
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 7
   twitter_widget_id: "532632130656825344"
   twitter_account_name: Z_line_info
-  color:
-    hex: "#9b7cb6"
-    red: 155
-    green: 124
-    blue: 182
-  # ガイドライン準拠 - #8f76d6
-  # Wikipedia - #9b7cb6
-  # 画像 - #937eb7
+  color_infos:
+    -
+      code: Z
+      color:
+        hex: "#9b7cb6"
+        red: 155
+        green: 124
+        blue: 182
+      # ガイドライン準拠 - #8f76d6
+      # Wikipedia - #9b7cb6
+      # 画像 - #937eb7
 
 odpt.Railway:TokyoMetro.Namboku:
   name_ja: 南北線
   name_hira: なんぼくせん
   name_en: Namboku Line
-  codes: N
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 8
   twitter_widget_id: "532632503169724416"
   twitter_account_name: N_line_info
-  color:
-    hex: "#00ada9"
-    red: 0
-    green: 173
-    blue: 169
-  # ガイドライン準拠 - #00ac9b
-  # Wikipedia - #00ada9
-  # 画像 - #01ad95
+  code_infos:
+    -
+      code: N
+      color:
+        hex: "#00ada9"
+        red: 0
+        green: 173
+        blue: 169
+      # ガイドライン準拠 - #00ac9b
+      # Wikipedia - #00ada9
+      # 画像 - #01ad95
 
 odpt.Railway:TokyoMetro.Fukutoshin:
   name_ja: 副都心線
   name_hira: ふくとしんせん
   name_en: Fukutoshin Line
-  codes: F
   operator: odpt.Operator:TokyoMetro
   index_in_operator: 9
   twitter_widget_id: "532633227697991680"
   twitter_account_name: F_line_info
-  color:
-    hex: "#bb641d"
-    red: 187
-    green: 100
-    blue: 29
-  # ガイドライン準拠 - #9c5e31
-  # Wikipedia - #bb641d
-  # 画像 - #ab5a23
+  code_infos:
+    -
+      code: F
+      color:
+        hex: "#bb641d"
+        red: 187
+        green: 100
+        blue: 29
+      # ガイドライン準拠 - #9c5e31
+      # Wikipedia - #bb641d
+      # 画像 - #ab5a23
 
 #-------- 東京都交通局
 
@@ -211,14 +235,16 @@ odpt.Railway:Toei.Asakusa:
   name_ja: 浅草線
   name_hira: あさくさせん
   name_en: Asakusa Line
-  codes: A
   operator: odpt.Operator:Toei
   index_in_operator: 1
-  color:
-    hex: "#e85298"
-    red: 232
-    green: 82
-    blue: 152
+  code_infos:
+    -
+      code: A
+      color:
+        hex: "#e85298"
+        red: 232
+        green: 82
+        blue: 152
 
 odpt.Railway:Toei.Mita:
   name_ja: 三田線
@@ -227,37 +253,44 @@ odpt.Railway:Toei.Mita:
   codes: I
   operator: odpt.Operator:Toei
   index_in_operator: 2
-  color:
-    hex: "#0078c2"
-    red: 0
-    green: 120
-    blue: 194
+  code_infos:
+    -
+      code: I
+      color:
+        hex: "#0078c2"
+        red: 0
+        green: 120
+        blue: 194
 
 odpt.Railway:Toei.Shinjuku:
   name_ja: 新宿線
   name_hira: しんじゅくせん
   name_en: Shinjuku Line
-  codes: S
   operator: odpt.Operator:Toei
   index_in_operator: 3
-  color:
-    hex: "#6cbb5a"
-    red: 108
-    green: 187
-    blue: 90
+  code_infos:
+    -
+      code: S
+      color:
+        hex: "#6cbb5a"
+        red: 108
+        green: 187
+        blue: 90
 
 odpt.Railway:Toei.Oedo:
   name_ja: 大江戸線
   name_hira: おおえどせん
   name_en: Oedo Line
-  codes: E
   operator: odpt.Operator:Toei
   index_in_operator: 4
-  color:
-    hex: "#b6007a"
-    red: 182
-    green: 0
-    blue: 122
+  code_infos:
+    -
+      code: E
+      color:
+        hex: "#b6007a"
+        red: 182
+        green: 0
+        blue: 122
 
 #---- 日暮里・舎人ライナー
 
@@ -266,11 +299,13 @@ odpt.Railway:Toei.NipporiToneri:
   name_en: Nippori Toneri Liner
   operator: odpt.Operator:ToeiNipporiToneri
   index_in_operator: 5
-  color:
-    hex: "#ff69b4" # "hotpink"
-    red: 255
-    green: 105
-    blue: 180
+  code_infos:
+    -
+      color:
+        hex: "#ff69b4" # "hotpink"
+        red: 255
+        green: 105
+        blue: 180
 
 #---- 都電
 
@@ -279,11 +314,13 @@ odpt.Railway:Toei.TodenArakawa:
   name_en: Arakawa Line
   operator: odpt.Operator:Toden
   index_in_operator: 6
-  color:
-    hex: "#66cc66"
-    red: 102
-    green: 204
-    blue: 102
+  code_infos:
+    -
+      color:
+        hex: "#66cc66"
+        red: 102
+        green: 204
+        blue: 102
 
 #-------- JR東日本
 
@@ -292,88 +329,104 @@ odpt.Railway:JR-East:
   name_en: JR Lines
   operator: odpt.Operator:JR-East
   index_in_operator: 0
-  color:
-    hex: "#999999"
-    red: 153
-    green: 153
-    blue: 153
+  code_infos:
+    -
+      color:
+        hex: "#999999"
+        red: 153
+        green: 153
+        blue: 153
 
 odpt.Railway:JR-East.Yamanote:
   name_ja: 山手線
   name_en: Yamanote Line
   operator: odpt.Operator:JR-East
   index_in_operator: 1
-  color:
-    hex: "#80c241"
-    red: 128
-    green: 194
-    blue: 65
+  code_infos:
+    -
+      color:
+        hex: "#80c241"
+        red: 128
+        green: 194
+        blue: 65
 
 odpt.Railway:JR-East.KeihinTohoku:
   name_ja: 京浜東北線
   name_en: Keihin-Tohoku Line
   operator: odpt.Operator:JR-East
   index_in_operator: 2
-  color:
-    hex: "#00b2e5"
-    red: 0
-    green: 178
-    blue: 229
+  code_infos:
+    -
+      color:
+        hex: "#00b2e5"
+        red: 0
+        green: 178
+        blue: 229
 
 odpt.Railway:JR-East.Tokaido:
   name_ja: 東海道線
   name_en: Tokaido Line
   operator: odpt.Operator:JR-East
   index_in_operator: 3
-  color:
-    hex: "#f68b1e"
-    red: 246
-    green: 139
-    blue: 30
+  code_infos:
+    -
+      color:
+        hex: "#f68b1e"
+        red: 246
+        green: 139
+        blue: 30
 
 odpt.Railway:JR-East.Yokosuka:
   name_ja: 横須賀線
   name_en: Yokosuka Line
   operator: odpt.Operator:JR-East
   index_in_operator: 4
-  color:
-    hex: "#007ac0"
-    red: 0
-    green: 122
-    blue: 192
+  code_infos:
+    -
+      color:
+        hex: "#007ac0"
+        red: 0
+        green: 122
+        blue: 192
 
 odpt.Railway:JR-East.Takasaki:
   name_ja: 高崎線
   name_en: Takasaki Line
   operator: odpt.Operator:JR-East
   index_in_operator: 5
-  color:
-    hex: "#f68b1e"
-    red: 246
-    green: 139
-    blue: 30
+  code_infos:
+    -
+      color:
+        hex: "#f68b1e"
+        red: 246
+        green: 139
+        blue: 30
 
 odpt.Railway:JR-East.Utsunomiya:
   name_ja: 宇都宮線
   name_en: Utsunomiya Line
   operator: odpt.Operator:JR-East
   index_in_operator: 6
-  color:
-    hex: "#f68b1e"
-    red: 246
-    green: 139
-    blue: 30
+  code_infos:
+    -
+      color:
+        hex: "#f68b1e"
+        red: 246
+        green: 139
+        blue: 30
 
 odpt.Railway:JR-East.ShonanShinjuku:
   name_ja: 湘南新宿ライン
   name_en: Shonan-Shinjuku Line
   operator: odpt.Operator:JR-East
   index_in_operator: 7
-  color:
-    hex: "#e21f26"
-    red: 226
-    green: 31
-    blue: 38
+  code_infos:
+    -
+      color:
+        hex: "#e21f26"
+        red: 226
+        green: 31
+        blue: 38
 
 odpt.Railway:JR-East.UenoTokyo:
   name_ja: 上野東京ライン
@@ -381,16 +434,18 @@ odpt.Railway:JR-East.UenoTokyo:
   operator: odpt.Operator:JR-East
   start_on: 2015.03.14
   index_in_operator: 8
-  color:
-    hex: "#654e99"
-    red: 101
-    green: 78
-    blue: 153
-  # color:
-    # hex: "#f68b1e"
-    # red: 246
-    # green: 139
-    # blue: 30
+  code_infos:
+    -
+      color:
+        hex: "#654e99"
+        red: 101
+        green: 78
+        blue: 153
+      # color:
+        # hex: "#f68b1e"
+        # red: 246
+        # green: 139
+        # blue: 30
   start_on: 2015.3.14
 
 odpt.Railway:JR-East.Chuo:
@@ -400,11 +455,13 @@ odpt.Railway:JR-East.Chuo:
   name_en: Chuo Line (Limited Express)
   operator: odpt.Operator:JR-East
   index_in_operator: 9
-  color:
-    hex: "#007ac0"
-    red: 0
-    green: 122
-    blue: 192
+  code_infos:
+    -
+      color:
+        hex: "#007ac0"
+        red: 0
+        green: 122
+        blue: 192
 
 odpt.Railway:JR-East.ChuoKaisoku:
   name_ja: 中央線 快速
@@ -412,44 +469,52 @@ odpt.Railway:JR-East.ChuoKaisoku:
   # name_en: Chuo Rapid Line
   operator: odpt.Operator:JR-East
   index_in_operator: 10
-  color:
-    hex: "#f15a22"
-    red: 241
-    green: 90
-    blue: 34
+  code_infos:
+    -
+      color:
+        hex: "#f15a22"
+        red: 241
+        green: 90
+        blue: 34
 
 odpt.Railway:JR-East.ChuoSobu:
   name_ja: 中央・総武線 各駅停車
   name_en: Chuo and Sobu Line (Local service)
   operator: odpt.Operator:JR-East
   index_in_operator: 11
-  color:
-    hex: "#ffd400"
-    red: 255
-    green: 212
-    blue: 0
+  code_infos:
+    -
+      color:
+        hex: "#ffd400"
+        red: 255
+        green: 212
+        blue: 0
 
 odpt.Railway:JR-East.ChuoTozai:
   name_ja: 中央・総武線 各駅停車（東西線直通 中野 - 三鷹）
   name_en: Chuo and Sobu Line (Local service, between Nakano and Mitaka)
   operator: odpt.Operator:JR-East
   index_in_operator: 11.1
-  color:
-    hex: "#00a7db"
-    red: 0
-    green: 167
-    blue: 219
+  code_infos:
+    -
+      color:
+        hex: "#00a7db"
+        red: 0
+        green: 167
+        blue: 219
 
 odpt.Railway:JR-East.SobuTozai:
   name_ja: 中央・総武線 各駅停車（東西線直通 西船橋 - 津田沼）
   name_en: Chuo and Sobu Line (Local service, between Nishi-funabashi and Tsudanuma)
   operator: odpt.Operator:JR-East
   index_in_operator: 11.2
-  color:
-    hex: "#00a7db"
-    red: 0
-    green: 167
-    blue: 219
+  code_infos:
+    -
+      color:
+        hex: "#00a7db"
+        red: 0
+        green: 167
+        blue: 219
 
 odpt.Railway:JR-East.Sobu:
   # name_ja: 総武本線
@@ -458,72 +523,84 @@ odpt.Railway:JR-East.Sobu:
   name_en: Sobu Line (Rapid service)
   operator: odpt.Operator:JR-East
   index_in_operator: 12
-  color:
-    hex: "#007ac0"
-    red: 0
-    green: 122
-    blue: 192
+  code_infos:
+    -
+      color:
+        hex: "#007ac0"
+        red: 0
+        green: 122
+        blue: 192
 
 odpt.Railway:JR-East.NaritaExpress:
   name_ja: 成田エクスプレス
   name_en: Narita Express
   operator: odpt.Operator:JR-East
   index_in_operator: 13
-  color:
-    hex: "#ff0000"
-    red: 255
-    green: 0
-    blue: 0
+  code_infos:
+    -
+      color:
+        hex: "#ff0000"
+        red: 255
+        green: 0
+        blue: 0
 
 odpt.Railway:JR-East.Saikyo:
   name_ja: 埼京線
   name_en: Saikyo Line
   operator: odpt.Operator:JR-East
   index_in_operator: 14
-  color:
-    hex: "#00b48d"
-    red: 0
-    green: 180
-    blue: 141
+  code_infos:
+    -
+      color:
+        hex: "#00b48d"
+        red: 0
+        green: 180
+        blue: 141
 
 odpt.Railway:JR-East.Joban:
   name_ja: 常磐線
   name_en: Joban Line
   operator: odpt.Operator:JR-East
   index_in_operator: 15
-  color:
+  code_infos:
     -
-      hex: "#00b261"
-      red: 0
-      green: 178
-      blue: 97
+      color:
+        hex: "#00b261"
+        red: 0
+        green: 178
+        blue: 97
     -
-      hex: "#007ac0"
-      red: 0
-      green: 122
-      blue: 192
+      color:
+        hex: "#007ac0"
+        red: 0
+        green: 122
+        blue: 192
 
 odpt.Railway:JR-East.Keiyo:
   name_ja: 京葉線
   name_en: Keiyo Line
   operator: odpt.Operator:JR-East
   index_in_operator: 16
-  color:
-    hex: "#c9242f"
-    red: 201
-    green: 36
-    blue: 47
+  code_infos:
+    -
+      color:
+        hex: "#c9242f"
+        red: 201
+        green: 36
+        blue: 47
 
 odpt.Railway:JR-East.Musashino:
   name_ja: 武蔵野線
   name_en: Musashino Line
   operator: odpt.Operator:JR-East
   index_in_operator: 17
-  color:
-    hex: "#f15a22"
-    red: 241
-    green: 90
-    blue: 34
+  code_infos:
+    -
+      color:
+        hex: "#f15a22"
+        red: 241
+        green: 90
+        blue: 34
 
 odpt.Railway:JR-East.Shinkansen:
   name_ja: 東北・秋田・山形・上越・長野新幹線
@@ -531,12 +608,13 @@ odpt.Railway:JR-East.Shinkansen:
   operator: odpt.Operator:JR-East
   index_in_operator: 18
   end_on: 2015.03.13
-  color:
-    hex: "#008000" # "green"
-    red: 0
-    green: 128
-    blue: 0
-  end_on: 2015.3.13
+  code_infos:
+    -
+      color:
+        hex: "#008000" # "green"
+        red: 0
+        green: 128
+        blue: 0
 
 odpt.Railway:JR-East.Shinkansen.2015:
   name_ja: 東北・秋田・山形・上越・北陸新幹線
@@ -544,12 +622,13 @@ odpt.Railway:JR-East.Shinkansen.2015:
   operator: odpt.Operator:JR-East
   index_in_operator: 18.1
   start_on: 2015.03.14
-  color:
-    hex: "#008000" # "green"
-    red: 0
-    green: 128
-    blue: 0
-  start_on: 2015.3.14
+  code_infos:
+    -
+      color:
+        hex: "#008000" # "green"
+        red: 0
+        green: 128
+        blue: 0
 
 odpt.Railway:JR-East.Shinkansen.2016:
   name_ja: 東北・北海道・秋田・山形・上越・北陸新幹線
@@ -557,22 +636,26 @@ odpt.Railway:JR-East.Shinkansen.2016:
   operator: odpt.Operator:JR-East
   index_in_operator: 18.2
   start_on: 2016.03.15
-  color:
-    hex: "#008000" # "green"
-    red: 0
-    green: 128
-    blue: 0
+  code_infos:
+    -
+      color:
+        hex: "#008000" # "green"
+        red: 0
+        green: 128
+        blue: 0
 
 odpt.Railway:JR-Central.Shinkansen:
   name_ja: 東海道・山陽新幹線
   name_en: Tokaido and Sanyo Shinkansen
   operator: odpt.Operator:JR-Central
   index_in_operator: 1
-  color:
-    hex: "#00008b" # "darkblue"
-    red: 0
-    green: 0
-    blue: 139
+  code_infos:
+    -
+      color:
+        hex: "#00008b" # "darkblue"
+        red: 0
+        green: 0
+        blue: 139
 
 #-------- 東急電鉄
 
@@ -582,11 +665,13 @@ odpt.Railway:Tokyu.Toyoko:
   codes: TY
   operator: odpt.Operator:Tokyu
   index_in_operator: 1
-  color:
-    hex: "#da0442"
-    red: 218
-    green: 4
-    blue: 66
+  code_infos:
+    -
+      color:
+        hex: "#da0442"
+        red: 218
+        green: 4
+        blue: 66
 
 odpt.Railway:Tokyu.Meguro:
   name_ja: 目黒線
@@ -594,11 +679,13 @@ odpt.Railway:Tokyu.Meguro:
   codes: MG
   operator: odpt.Operator:Tokyu
   index_in_operator: 2
-  color:
-    hex: "#009cd2"
-    red: 0
-    green: 156
-    blue: 210
+  code_infos:
+    -
+      color:
+        hex: "#009cd2"
+        red: 0
+        green: 156
+        blue: 210
 
 odpt.Railway:Tokyu.DenEnToshi:
   name_ja: 田園都市線
@@ -606,11 +693,13 @@ odpt.Railway:Tokyu.DenEnToshi:
   codes: DT
   operator: odpt.Operator:Tokyu
   index_in_operator: 3
-  color:
-    hex: "#20a288"
-    red: 32
-    green: 162
-    blue: 136
+  code_infos:
+    -
+      color:
+        hex: "#20a288"
+        red: 32
+        green: 162
+        blue: 136
 
 odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai:
   name_ja: みなとみらい線
@@ -618,72 +707,89 @@ odpt.Railway:YokohamaMinatomiraiRailway.Minatomirai:
   codes: MM
   operator: odpt.Operator:YokohamaMinatomiraiRailway
   index_in_operator: 1
-  color:
-    hex: "#09357f"
-    red: 9
-    green: 53
-    blue: 127
+  code_infos:
+    -
+      color:
+        hex: "#09357f"
+        red: 9
+        green: 53
+        blue: 127
 
 #-------- 小田急電鉄
 
 odpt.Railway:Odakyu:
   name_ja: 小田急線
   name_en: Odakyu Line
-  codes:
-    - OH
-    - OT
-    - OE
+  code_infos:
+    -
+      code: OH
+    -
+      code: OT
+    -
+      code: OE
   operator: odpt.Operator:Odakyu
   index_in_operator: 0
 
 odpt.Railway:Odakyu.Odawara:
   name_ja: 小田原線
   name_en: Odawara Line
-  codes: OH
   operator: odpt.Operator:Odakyu
   index_in_operator: 1
+  code_infos:
+    -
+      code: OH
 
 odpt.Railway:Odakyu.Tama:
   name_ja: 多摩線
   name_en: Tama Line
-  codes: OT
   operator: odpt.Operator:Odakyu
   index_in_operator: 2
+  code_infos:
+    -
+      code: OT
 
 odpt.Railway:Odakyu.Enoshima:
   name_ja: 江ノ島線
   name_en: Enoshima Line
-  codes: OE
   operator: odpt.Operator:Odakyu
   index_in_operator: 3
+  code_infos:
+    -
+      code: OE
 
 odpt.Railway:HakoneTozan.Rail.OdawaraSide:
   name_ja: 箱根登山鉄道線（小田原 - 箱根湯本）
   name_en: Hakone Tozan Line
-  codes: OH
   operator: odpt.Operator:HakoneTozan
   index_in_operator: 4
+  code_infos:
+    -
+      code: OH
 
 odpt.Railway:HakoneTozan.Rail.GoraSide:
   name_ja: 箱根登山鉄道線（箱根湯本 - 強羅）
   name_en: Hakone Tozan Line
-  codes: OH
   operator: odpt.Operator:HakoneTozan
   index_in_operator: 4.1
+  code_infos:
+    -
+      code: OH
 
 #-------- 西武鉄道
 
 odpt.Railway:Seibu.Ikebukuro:
   name_ja: 池袋線
   name_en: Ikebukuro Line
-  codes: SI
   operator: odpt.Operator:Seibu
   index_in_operator: 1
-  color:
-    hex: "#ff6600"
-    red: 255
-    green: 102
-    blue: 0
+  code_infos:
+    -
+      code: SI
+      color:
+        hex: "#ff6600"
+        red: 255
+        green: 102
+        blue: 0
   branch_railway_line_infos:
     - odpt.Railway:Seibu.Toshima
     - odpt.Railway:Seibu.Sayama
@@ -692,68 +798,78 @@ odpt.Railway:Seibu.Ikebukuro:
 odpt.Railway:Seibu.SeibuChichibu:
   name_ja: 西武秩父線
   name_en: Seibu Chichibu Line
-  codes: SI
   operator: odpt.Operator:Seibu
   index_in_operator: 2
-  color:
-    hex: "#ff6600"
-    red: 255
-    green: 102
-    blue: 0
+  code_infos:
+    -
+      code: SI
+      color:
+        hex: "#ff6600"
+        red: 255
+        green: 102
+        blue: 0
 
 odpt.Railway:Seibu.Toshima:
   name_ja: 豊島線
   name_en: Toshima Line
-  codes: SI
   operator: odpt.Operator:Seibu
   index_in_operator: 3
-  color:
-    hex: "#ff6600"
-    red: 255
-    green: 102
-    blue: 0
+  code_infos:
+    -
+      code: SI
+      color:
+        hex: "#ff6600"
+        red: 255
+        green: 102
+        blue: 0
   main_railway_line_infos:
     - odpt.Railway:Seibu.Ikebukuro
 
 odpt.Railway:Seibu.Sayama:
   name_ja: 狭山線
   name_en: Sayama Line
-  codes: SY
   operator: odpt.Operator:Seibu
   index_in_operator: 4
-  color:
-    hex: "#ff6600"
-    red: 255
-    green: 102
-    blue: 0
+  code_infos:
+    -
+      code: SY
+      color:
+        hex: "#ff6600"
+        red: 255
+        green: 102
+        blue: 0
   main_railway_line_infos:
     - odpt.Railway:Seibu.Ikebukuro
 
 odpt.Railway:Seibu.SeibuYurakucho:
   name_ja: 西武有楽町線
   name_en: Seibu Yurakucho Line
-  codes: SI
   operator: odpt.Operator:Seibu
   index_in_operator: 5
-  color:
-    hex: "#ff6600"
-    red: 255
-    green: 102
-    blue: 0
+  code_infos:
+    -
+      code: SI
+      color:
+        hex: "#ff6600"
+        red: 255
+        green: 102
+        blue: 0
   main_railway_line_infos:
     - odpt.Railway:Seibu.Ikebukuro
 
 odpt.Railway:Seibu.Shinjuku:
   name_ja: 新宿線
   name_en: Shinjuku Line
-  codes: SS
   operator: odpt.Operator:Seibu
   index_in_operator: 6
-  color:
-    hex: "#0099cc"
-    red: 0
-    green: 153
-    blue: 204
+  code_infos:
+    -
+      code: SS
+      color:
+        hex: "#0099cc"
+        red: 0
+        green: 153
+        blue: 204
 
 #-------- 東武鉄道
 
@@ -762,148 +878,162 @@ odpt.Railway:Tobu.SkytreeIsesaki:
     - スカイツリーライン（伊勢崎線）
     - 伊勢崎線
   name_en: Skytree and Isesaki Line
-  codes:
-    - TS
-    - TI
   operator: odpt.Operator:Tobu
   index_in_operator: 1
-  color:
+  code_infos:
     -
-      hex: "#0f6cc3"
-      red: 15
-      green: 108
-      blue: 195
+      code: TS
+      color:
+        hex: "#0f6cc3"
+        red: 15
+        green: 108
+        blue: 195
     -
-      hex: "#ff0000" # "red"
-      red: 255
-      green: 0
-      blue: 0
+      code: TI
+      color:
+        hex: "#ff0000" # "red"
+        red: 255
+        green: 0
+        blue: 0
 
 odpt.Railway:Tobu.SkytreeOshiage:
   name_ja: スカイツリーライン（押上 - 曳舟）
   name_en: Skytree Line (Oshiage - Hikifune)
-  codes: TS
   operator: odpt.Operator:Tobu
   index_in_operator: 1.09
-  color:
-    hex: "#0f6cc3"
-    red: 15
-    green: 108
-    blue: 195
+  code_infos:
+    -
+      code: TS
+      color:
+        hex: "#0f6cc3"
+        red: 15
+        green: 108
+        blue: 195
   main_railway_line_infos:
     - odpt.Railway:Tobu.Skytree
 
 odpt.Railway:Tobu.Skytree:
   name_ja: スカイツリーライン
   name_en: Skytree Line
-  codes: TS
   operator: odpt.Operator:Tobu
   index_in_operator: 1.1
-  color:
-    hex: "#0f6cc3"
-    red: 15
-    green: 108
-    blue: 195
+  code_infos:
+    -
+      code: TS
+      color:
+        hex: "#0f6cc3"
+        red: 15
+        green: 108
+        blue: 195
   branch_railway_line_infos:
     - odpt.Railway:Tobu.SkytreeOshiage
 
 odpt.Railway:Tobu.Isesaki:
   name_ja: 伊勢崎線
   name_en: Isesaki Line
-  codes: TI
   operator: odpt.Operator:Tobu
   index_in_operator: 2
-  color:
-    hex: "#ff0000"
-    red: 255
-    green: 0
-    blue: 0
+  code_infos:
+    -
+      code: TI
+      color:
+        hex: "#ff0000"
+        red: 255
+        green: 0
+        blue: 0
 
 odpt.Railway:Tobu.Isesaki.Hanzomon:
   name_ja: スカイツリーライン・伊勢崎線（半蔵門線直通）
   name_en: Skytree and Isesaki Line (through to Hanzomon Line)
-  codes:
-    - TS
-    - TI
   operator: odpt.Operator:Tobu
   index_in_operator: 2.1
-  color:
+  code_infos:
     -
-      hex: "#ff0000" # "red"
-      red: 255
-      green: 0
-      blue: 0
+      code: TS
+      color:
+        hex: "#0f6cc3"
+        red: 15
+        green: 108
+        blue: 195
     -
-      hex: "#0f6cc3"
-      red: 15
-      green: 108
-      blue: 195
+      code: TI
+      color:
+        hex: "#ff0000" # "red"
+        red: 255
+        green: 0
+        blue: 0
 
 odpt.Railway:Tobu.Nikko:
   name_ja: 日光線
   name_en: Nikko Line
-  codes: TN
   operator: odpt.Operator:Tobu
   index_in_operator: 3
-  color:
-    hex: "#ffa500" # "orange"
-    red: 255
-    green: 165
-    blue: 0
+  code_infos:
+    -
+      code: TN
+      color:
+        hex: "#ffa500" # "orange"
+        red: 255
+        green: 165
+        blue: 0
   branch_railway_line_infos:
     - odpt.Railway:Tobu.Kinugawa
 
 odpt.Railway:Tobu.Nikko.Hanzomon:
   name_ja: スカイツリーライン・日光線（半蔵門線直通）
   name_en:  Skytree and Nikko Line (through to Hanzomon Line)
-  codes:
-    - TS
-    - TI
   operator: odpt.Operator:Tobu
-  index_in_operator: 3.1
-  color:
+  index_in_operator: 3.01
+  code_infos:
     -
-      hex: "#ff0000" # "red"
-      red: 255
-      green: 0
-      blue: 0
+      code: TS
+      color:
+        hex: "#0f6cc3"
+        red: 15
+        green: 108
+        blue: 195
     -
-      hex: "#ffa500" # "orange"
-      red: 255
-      green: 165
-      blue: 0
-
-  odpt.Railway:Tobu.Nikko.Hibiya:
-    name_ja: スカイツリーライン・日光線（日比谷線直通）
-    name_en: Skytree and Nikko Line (through to Hibiya Line)
-    codes:
-      - TS
-      - TI
-    operator: odpt.Operator:Tobu
-    index_in_operator: 3.2
-    color:
-      -
-        hex: "#ff0000" # "red"
-        red: 255
-        green: 0
-        blue: 0
-      -
+      code: TN
+      color:
         hex: "#ffa500" # "orange"
         red: 255
         green: 165
         blue: 0
 
+  odpt.Railway:Tobu.Nikko.Hibiya:
+    name_ja: スカイツリーライン・日光線（日比谷線直通）
+    name_en: Skytree and Nikko Line (through to Hibiya Line)
+    operator: odpt.Operator:Tobu
+    index_in_operator: 3.02
+    code_infos:
+      -
+        code: TS
+        color:
+          hex: "#0f6cc3"
+          red: 15
+          green: 108
+          blue: 195
+      -
+        code: TN
+        color:
+          hex: "#ffa500" # "orange"
+          red: 255
+          green: 165
+          blue: 0
+
 odpt.Railway:Tobu.Kinugawa:
   name_ja: 鬼怒川線
   name_en: Kinugawa Line
-  codes: TN
   operator: odpt.Operator:Tobu
   index_in_operator: 3.1
-  color:
-    hex: "#ffa500" # "orange"
-    red: 255
-    green: 165
-    blue: 0
+  code_infos:
+    -
+      code: TN
+      color:
+        hex: "#ffa500" # "orange"
+        red: 255
+        green: 165
+        blue: 0
   main_railway_line_infos:
     - odpt.Railway:Tobu.Nikko
 
@@ -913,11 +1043,14 @@ odpt.Railway:Tobu.Tojo:
   codes: TJ
   operator: odpt.Operator:Tobu
   index_in_operator: 5
-  color:
-    hex: "#000099"
-    red: 0
-    green: 0
-    blue: 153
+  code_infos:
+    -
+      code: TJ
+      color:
+        hex: "#000099"
+        red: 0
+        green: 0
+        blue: 153
 
 #-------- 埼玉高速鉄道
 
@@ -937,58 +1070,68 @@ odpt.Railway:ToyoRapidRailway.ToyoRapidRailway:
 odpt.Railway:Keio.Keio:
   name_ja: 京王線
   name_en: Keio Line
-  codes: KO
   operator: odpt.Operator:Keio
   index_in_operator: 1
-  color:
-    hex: "#dd0077"
-    red: 221
-    green: 0
-    blue: 119
+  code_infos:
+    -
+      code: KO
+      color:
+        hex: "#dd0077"
+        red: 221
+        green: 0
+        blue: 119
   branch_railway_line_infos:
     - odpt.Railway:Keio.New
 
 odpt.Railway:Keio.New:
   name_ja: 新線
   name_en: New Line
-  codes: KO
   operator: odpt.Operator:Keio
   index_in_operator: 2
-  color:
-    hex: "#dd0077"
-    red: 221
-    green: 0
-    blue: 119
+  code_infos:
+    -
+      code: KO
+      color:
+        hex: "#dd0077"
+        red: 221
+        green: 0
+        blue: 119
   main_railway_line_infos:
     - odpt.Railway:Keio.Keio
 
 odpt.Railway:Keio.Inokashira:
   name_ja: 井の頭線
   name_en: Inokashira Line
-  codes: IK
   operator: odpt.Operator:Keio
   index_in_operator: 3
-  color:
-    hex: "#000088"
-    red: 0
-    green: 0
-    blue: 136
+  code_infos:
+    -
+      code: IK
+      color:
+        hex: "#000088"
+        red: 0
+        green: 0
+        blue: 136
 
 #-------- 京成電鉄
 
 odpt.Railway:Keisei.KeiseiMain:
   name_ja: 本線
   name_en: Main Line
-  codes: KS
   operator: odpt.Operator:Keisei
   index_in_operator: 1
+  code_infos:
+    -
+      code: KS
 
 odpt.Railway:Keisei.KeiseiOshiage:
   name_ja: 押上線
   name_en: Oshiage Line
-  codes: KS
   operator: odpt.Operator:Keisei
   index_in_operator: 2
+  code_infos:
+    -
+      code: KS
 
 #-------- つくばエクスプレス（首都圏新都市鉄道）
 
@@ -1001,15 +1144,17 @@ odpt.Railway:MIR.TX:
 odpt.Railway:Yurikamome.Yurikamome:
   name_ja: ゆりかもめ
   name_en: Yurikamome
-  codes: U
   operator: odpt.Operator:Yurikamome
   index_in_operator: 1
-  color:
-    # 【要検討】
-    hex: "#00418e"
-    red: 0
-    green: 65
-    blue: 142
+  code_infos:
+    -
+      code: U
+      color:
+        # 【要検討】
+        hex: "#00418e"
+        red: 0
+        green: 65
+        blue: 142
 
 #-------- りんかい線（東京臨海高速鉄道）
 
