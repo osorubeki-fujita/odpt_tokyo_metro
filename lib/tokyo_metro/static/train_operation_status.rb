@@ -1,4 +1,4 @@
-class TokyoMetro::Static::TrainOperationStatus < TokyoMetro::Static::Fundamental::MetaClass::UsingOneYaml
+class TokyoMetro::Static::TrainOperationStatus < TokyoMetro::Static::Fundamental::TopLevel::UsingOneYaml
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainOperationStatus
 

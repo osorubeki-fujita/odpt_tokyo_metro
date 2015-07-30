@@ -1,5 +1,5 @@
 # 鉄道事業者の情報を扱うクラス
-class TokyoMetro::Static::Operator < TokyoMetro::Static::Fundamental::MetaClass::UsingOneYaml
+class TokyoMetro::Static::Operator < TokyoMetro::Static::Fundamental::TopLevel::UsingOneYaml
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 

@@ -1,5 +1,5 @@
 # 駅の情報（名称、管理事業者など）を扱うクラス
-class TokyoMetro::Static::StationsInTokyoMetro < TokyoMetro::Static::Fundamental::MetaClass::UsingOneYaml
+class TokyoMetro::Static::StationsInTokyoMetro < TokyoMetro::Static::Fundamental::TopLevel::UsingOneYaml
 
   include ::TokyoMetro::ClassNameLibrary::Static::StationsInTokyoMetro
 

@@ -1,11 +1,9 @@
 # 個別の鉄道事業者の情報を扱うクラス
-class TokyoMetro::Static::Operator::Info
+class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
 
   include ::OdptCommon::Modules::Polymorphic::Operator
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
-  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
-  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::OdptCommon::Modules::Name::Static::Fundamental::ForInspection
   include ::OdptCommon::Modules::Name::Common::Fundamental::GetMainName

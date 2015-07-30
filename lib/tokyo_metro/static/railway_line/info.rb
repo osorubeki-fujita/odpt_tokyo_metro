@@ -1,12 +1,10 @@
 # 個別の路線の情報を扱うクラス
-class TokyoMetro::Static::RailwayLine::Info
+class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::info
 
   include ::OdptCommon::Modules::Polymorphic::RailwayLine
   include ::OdptCommon::Modules::Decision::Common::RailwayLine::Name
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
-  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
-  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   include ::OdptCommon::Modules::Name::Static::Fundamental::ForInspection
   include ::OdptCommon::Modules::Name::Common::Fundamental::GetMainName

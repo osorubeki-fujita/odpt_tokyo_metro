@@ -1,4 +1,4 @@
-class TokyoMetro::Static::OperationDay < TokyoMetro::Static::Fundamental::MetaClass::UsingOneYaml
+class TokyoMetro::Static::OperationDay < TokyoMetro::Static::Fundamental::TopLevel::UsingOneYaml
 
   include ::TokyoMetro::ClassNameLibrary::Static::OperationDay
 

@@ -1,9 +1,7 @@
 # 方面の情報を扱うクラス
-class TokyoMetro::Static::RailwayDirection::Info
+class TokyoMetro::Static::RailwayDirection::Info < TokyoMetro::Static::Fundamental::info
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayDirection
-  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
-  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   def initialize( same_as , in_api_same_as , railway_line , railway_direction_code , station )
     raise "Error" unless /\Aodpt.Station:/ === station

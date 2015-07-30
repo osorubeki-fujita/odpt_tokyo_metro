@@ -1,8 +1,6 @@
-class TokyoMetro::Static::OperationDay::Info
+class TokyoMetro::Static::OperationDay::Info < TokyoMetro::Static::Fundamental::info
 
   include ::TokyoMetro::ClassNameLibrary::Static::OperationDay
-  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
-  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   def initialize( name_ja , name_en , same_as )
     @name_ja = name_ja

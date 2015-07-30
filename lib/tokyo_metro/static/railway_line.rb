@@ -1,5 +1,5 @@
 # 路線の情報を扱うクラス
-class TokyoMetro::Static::RailwayLine < TokyoMetro::Static::Fundamental::MetaClass::UsingOneYaml
+class TokyoMetro::Static::RailwayLine < TokyoMetro::Static::Fundamental::TopLevel::UsingOneYaml
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
 

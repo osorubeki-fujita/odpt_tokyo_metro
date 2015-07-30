@@ -1,5 +1,5 @@
 # 車両所有事業者の情報を扱うクラス
-class TokyoMetro::Static::TrainOwner < TokyoMetro::Static::Fundamental::MetaClass::UsingOneYaml
+class TokyoMetro::Static::TrainOwner < TokyoMetro::Static::Fundamental::TopLevel::UsingOneYaml
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainOwner
 

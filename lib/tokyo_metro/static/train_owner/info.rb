@@ -1,9 +1,7 @@
 # 個別の車両所有事業者の情報を扱うクラス
-class TokyoMetro::Static::TrainOwner::Info
+class TokyoMetro::Static::TrainOwner::Info < TokyoMetro::Static::Fundamental::info
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainOwner
-  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
-  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
 # @!group Constructor
 

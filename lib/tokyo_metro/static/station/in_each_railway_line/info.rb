@@ -1,9 +1,7 @@
 # 個別の路線の、個別の駅の情報を扱うクラス
-class TokyoMetro::Static::Station::InEachRailwayLine::Info
+class TokyoMetro::Static::Station::InEachRailwayLine::Info < TokyoMetro::Static::Fundamental::info
 
   include ::TokyoMetro::ClassNameLibrary::Static::Station
-  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
-  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   # Constructor
   def initialize( same_as , station_name_alias , station_facility_info , station_facility_custom , station_facility_custom_alias ,

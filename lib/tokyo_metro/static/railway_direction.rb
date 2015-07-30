@@ -1,5 +1,5 @@
 # 方面の情報を扱うクラス
-class TokyoMetro::Static::RailwayDirection < TokyoMetro::Static::Fundamental::MetaClass::UsingOneYaml
+class TokyoMetro::Static::RailwayDirection < TokyoMetro::Static::Fundamental::TopLevel::UsingOneYaml
 
   include TokyoMetro::ClassNameLibrary::Static::RailwayDirection
 

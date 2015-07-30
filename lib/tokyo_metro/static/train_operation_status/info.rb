@@ -1,8 +1,6 @@
-class TokyoMetro::Static::TrainOperationStatus::Info
+class TokyoMetro::Static::TrainOperationStatus::Info < TokyoMetro::Static::Fundamental::info
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainOperationStatus
-  include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
-  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
 
   def initialize( in_api , name_ja )
     @in_api = in_api
