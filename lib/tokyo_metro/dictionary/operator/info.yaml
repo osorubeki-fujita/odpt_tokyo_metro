@@ -4,8 +4,6 @@ odpt.Operator:TokyoMetro:
     - 東京地下鉄
   name_en: Tokyo Metro
   index: 1
-  twitter_widget_id: "532627820543897600"
-  twitter_account_name: tokyometro_info
   railway_line_code_shape: stroked_circle
   railway_line_code_stroke_width_setting: bold
   railway_line_code_text_weight: bold
@@ -20,6 +18,9 @@ odpt.Operator:TokyoMetro:
   station_code_stroke_width_setting: normal
   station_code_text_weight: normal
   station_code_text_size_setting: normal
+  twitter:
+    widget_id: "532627820543897600"
+    account_name: tokyometro_info
 
 odpt.Operator:Toei:
   name_ja:
