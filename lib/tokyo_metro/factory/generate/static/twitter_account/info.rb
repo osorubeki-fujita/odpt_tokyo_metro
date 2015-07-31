@@ -8,9 +8,9 @@ class TokyoMetro::Factory::Generate::Static::TwitterAccount::Info < TokyoMetro::
   end
 
   def initialize( h , db_class_of_parent_info )
-    @h = h.with_indifferent_access
     @db_class_of_parent_info = db_class_of_parent_info
 
+    @h = h.with_indifferent_access
     @hash_for_making_variables = ::Hash.new.with_indifferent_access
   end
 
