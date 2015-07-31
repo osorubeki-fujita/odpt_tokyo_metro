@@ -1,8 +1,7 @@
 class TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
 
   def initialize(h)
-    @h = h.with_indifferent_access
-    @hash_for_making_variables = ::Hash.new.with_indifferent_access
+    super(h)
 
     before_setting_values_to_hash_for_making_variables
     set_values_to_hash_for_making_variables
