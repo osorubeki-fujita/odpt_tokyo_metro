@@ -15,4 +15,17 @@ class TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings::MetaCla
   attr_reader :text_weight
   attr_reader :text_size
 
+  def to_a
+    [ @shape , @stroke_width , @text_weight , @text_size ]
+  end
+
+  def to_h
+    {
+      shape: @shape ,
+      stroke_width: @stroke_width ,
+      text_weight: @text_weight ,
+      text_size: @text_size
+    }
+  end
+
 end
