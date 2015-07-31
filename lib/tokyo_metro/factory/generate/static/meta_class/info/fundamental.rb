@@ -12,6 +12,13 @@ class TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
     info_class
   end
 
+  def initialize( h , with_hash_for_making_variables: true )
+    @h = h.with_indifferent_access
+    if with_hash_for_making_variables
+      @hash_for_making_variables = ::Hash.new.with_indifferent_access
+    end
+  end
+
   private
 
   def variables
