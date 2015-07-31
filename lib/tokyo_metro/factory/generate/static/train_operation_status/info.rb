@@ -3,7 +3,7 @@ class TokyoMetro::Factory::Generate::Static::TrainOperationStatus::Info < TokyoM
   include ::TokyoMetro::ClassNameLibrary::Static::TrainOperationStatus
 
   def initialize(h)
-    @h = h.with_indifferent_access
+    super( h , with_hash_for_making_variables: false )
   end
 
   def self.hash_keys

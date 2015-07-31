@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
+class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos < TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
@@ -8,11 +8,6 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos < T
 
   def self.info_class_for_this_class
     additional_infos_class
-  end
-
-  def initialize(h)
-    @h = h.with_indifferent_access
-    @hash_for_making_variables = ::Hash.new.with_indifferent_access
   end
 
   private
