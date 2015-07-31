@@ -30,11 +30,11 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos < T
   end
 
   def has_color?
-    @hash_for_making_variables[ :color ].present?
+    @h[ :color ].present?
   end
 
   def has_station_number?
-    @hash_for_making_variables[ :numbering ]
+    @h[ :numbering ]
   end
 
 end
