@@ -25,31 +25,3 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info < TokyoMetro::Factor
   end
 
 end
-
-__END__
-
-  super( hash_key_array: [ :operator_code , :numbering ] )
-
-  super( hash_key_array: [ :railway_line_code_shape , :railway_line_code_stroke_width_setting , :railway_line_code_text_weight , :railway_line_code_text_size_setting ] )
-  super( hash_key_array: [ :station_code_shape , :station_code_stroke_width_setting , :station_code_text_weight , :station_code_text_size_setting ] )
-
-  super( hash_key_array: [ :color ] )
-  super( hash_key_array: :numbering , boolean: true )
-
-  if has_number? and !( has_railway_line_code? ) and has_no_station_code?
-    @hash_for_making_variables[ :railway_line_code_shape ] = "none"
-  end
-
-end
-
-def has_railway_line_code?
-  @hash_for_making_variables[ :railway_line_code_shape ].present?
-end
-
-def has_no_railway_line_code?
-  @hash_for_making_variables[ :railway_line_code_shape ] == "none"
-end
-
-def has_no_station_code?
-  @hash_for_making_variables[ :station_code_shape ] == "none"
-end
