@@ -18,14 +18,10 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::Co
   end
 
   def railway_line_instance
-    puts 'railway_line_instance'
-    puts @h[ :railway_line ].to_s
     ::TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings::RailwayLine.generate_from_hash( @h[ :railway_line ] )
   end
 
   def station_instance
-    puts 'station_instance'
-    puts @h[ :station ].to_s
     ::TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings::Station.generate_from_hash( @h[ :station ] )
   end
 
