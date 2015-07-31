@@ -22,7 +22,11 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::Co
   end
 
   def station_instance
-    ::TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings::Station.generate_from_hash( @h[ :station ] )
+    if @h[ :station ].present?
+      ::TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings::Station.generate_from_hash( @h[ :station ] )
+    else
+      nil
+    end
   end
 
 end
