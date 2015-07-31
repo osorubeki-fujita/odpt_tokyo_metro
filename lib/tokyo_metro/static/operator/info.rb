@@ -271,7 +271,9 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
   #   odpt.Operator:MIR                : none
   #   odpt.Operator:Yurikamome         : stroked_circle
   #   odpt.Operator:TWR                : (nil)
-  attr_reader :railway_line_code_shape
+  def railway_line_code_shape
+    @additional_infos.code_settings.railway_line.shape
+  end
 
   # @return [::Stirng or nil] 駅番号の形
   # @note 「縁取りあり・塗りつぶしなしの円」は "stroked_circle"、「縁取りあり・塗りつぶしなしの角丸四角形」は "stroked_rounded_square" とする。
@@ -299,7 +301,9 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
   #   odpt.Operator:MIR                : none
   #   odpt.Operator:Yurikamome         : stroked_circle
   #   odpt.Operator:TWR                : (nil)
-  attr_reader :station_code_shape
+  def station_code_shape
+    @additional_infos.code_settings.station.shape
+  end
 
   # @!group 鉄道事業者の色に関するメソッド
 

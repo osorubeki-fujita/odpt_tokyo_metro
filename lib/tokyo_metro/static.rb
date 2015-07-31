@@ -36,7 +36,7 @@ module TokyoMetro::Static
     ::TokyoMetro::Static::TrainOwner.set_constant
 
     #---- 鉄道路線
-    ::TokyoMetro::Static::RailwayLine.set_constant
+    #::TokyoMetro::Static::RailwayLine.set_constant
 
     #---- 駅情報（東京メトロのみ）
     ::TokyoMetro::Static::StationsInTokyoMetro.set_constant
@@ -45,10 +45,10 @@ module TokyoMetro::Static
     ::TokyoMetro::Static::Station.set_constant
 
     #---- 停車駅（他社も含む）
-    ::TokyoMetro::Static::StoppingPattern.set_constant
+    # ::TokyoMetro::Static::StoppingPattern.set_constant
 
     #---- 列車種別
-    ::TokyoMetro::Static::TrainType.set_constant
+    #::TokyoMetro::Static::TrainType.set_constant
 
     #---- 列車運行情報
     ::TokyoMetro::Static::TrainOperationStatus.set_constant
