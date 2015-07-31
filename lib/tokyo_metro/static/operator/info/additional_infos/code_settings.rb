@@ -19,4 +19,15 @@ class TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings
     factory_for_generating_instance_of_code_settings
   end
 
+  def to_a
+    [ @railway_line , @station ]
+  end
+
+  def to_h
+    {
+      railway_line: @railway_line ,
+      station: @station
+    }
+  end
+
 end
