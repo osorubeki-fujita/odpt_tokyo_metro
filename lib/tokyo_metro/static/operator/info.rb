@@ -1,5 +1,5 @@
 # 個別の鉄道事業者の情報を扱うクラス
-class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
+class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
 
   include ::OdptCommon::Modules::Polymorphic::Operator
 
@@ -239,7 +239,7 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
   #   odpt.Operator:MIR                : true
   #   odpt.Operator:Yurikamome         : true
   #   odpt.Operator:TWR                : false
-  def numbering
+  def with_station_number?
     @additional_infos.with_station_number?
   end
 

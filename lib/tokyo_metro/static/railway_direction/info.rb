@@ -1,5 +1,5 @@
 # 方面の情報を扱うクラス
-class TokyoMetro::Static::RailwayDirection::Info < TokyoMetro::Static::Fundamental::info
+class TokyoMetro::Static::RailwayDirection::Info < TokyoMetro::Static::Fundamental::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayDirection
 

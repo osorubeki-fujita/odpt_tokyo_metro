@@ -2,7 +2,7 @@ class TokyoMetro::Static::TwitterAccount::Info < TokyoMetro::Static::Fundamental
 
   include ::TokyoMetro::ClassNameLibrary::Static::TwitterAccount
 
-  def initialize( widget_id , account_id , type , db_class_of_parent_info )
+  def initialize( widget_id , account_id , db_class_of_parent_info )
     raise unless widget_id.string? and /\A\d+\Z/ === widget_id
 
     @widget_id = widget_id

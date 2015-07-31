@@ -1,5 +1,5 @@
 # 個別の列車種別の情報（API で定義されている）を扱うクラス
-class TokyoMetro::Static::TrainType::InApi::Info < TokyoMetro::Static::Fundamental::info
+class TokyoMetro::Static::TrainType::InApi::Info < TokyoMetro::Static::Fundamental::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainType::InApi
   include ::OdptCommon::Modules::Name::Common::TrainType::InApi

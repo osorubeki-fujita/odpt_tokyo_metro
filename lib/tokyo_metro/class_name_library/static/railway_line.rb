@@ -69,6 +69,10 @@ module TokyoMetro::ClassNameLibrary::Static::RailwayLine
       ::Railway::Line::Relation
     end
 
+    def db_instance_class_str
+      "Railway::Line::Info"
+    end
+
     private
 
     def yaml_file_basename

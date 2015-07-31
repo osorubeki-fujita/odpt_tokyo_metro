@@ -1,5 +1,5 @@
 # 個別の路線の、個別の駅の情報を扱うクラス
-class TokyoMetro::Static::Station::InEachRailwayLine::Info < TokyoMetro::Static::Fundamental::info
+class TokyoMetro::Static::Station::InEachRailwayLine::Info < TokyoMetro::Static::Fundamental::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::Station
 

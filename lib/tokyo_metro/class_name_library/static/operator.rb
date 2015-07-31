@@ -22,12 +22,22 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
     end
 
     def additional_infos_class
-      ::TokyoMetro::Static::Operator::Info::AdditionaInfos
+      ::TokyoMetro::Static::Operator::Info::AdditionalInfos
     end
 
     def code_settings_class
-      ::TokyoMetro::Static::Operator::Info::AdditionaInfos::CodeSettings
+      ::TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings
     end
+
+    def railway_line_code_settings_class
+      ::TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings::RailwayLine
+    end
+
+    def station_code_settings_class
+      ::TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings::Station
+    end
+
+    # @!group Generate
 
     def factory_for_generating_from_saved_file
       ::TokyoMetro::Factory::Generate::Static::Operator::Hash
@@ -42,12 +52,22 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
     end
 
     def factory_for_generating_instance_of_additional_infos
-      ::TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionaInfos
+      ::TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos
     end
 
     def factory_for_generating_instance_of_code_settings
-      ::TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionaInfos::CodeSettings
+      ::TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::CodeSettings
     end
+
+    def factory_for_generating_instance_of_railway_line_code_settings
+      ::TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::CodeSettings::RailwayLine
+    end
+
+    def factory_for_generating_instance_of_station_code_settings
+      ::TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::CodeSettings::Station
+    end
+
+    # @!group Seed
 
     def factory_for_seeding_hash
       ::TokyoMetro::Factory::Seed::Static::Operator::Hash
@@ -61,6 +81,8 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
       ::TokyoMetro::Factory::Seed::Static::Operator::Info::CodeInfo
     end
 
+    # @!group Db
+
     def db_instance_class
       ::Operator::Info
     end
@@ -68,6 +90,12 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
     def db_instance_class_of_code_info
       ::Operator::CodeInfo
     end
+
+    def db_instance_class_str
+      "Operator::Info"
+    end
+
+    # @!endgroup
 
     private
 

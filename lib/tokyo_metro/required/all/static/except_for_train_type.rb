@@ -23,7 +23,7 @@ class TokyoMetro::Required::All::Static::ExceptForTrainType < TokyoMetro::Requir
         "fundamental" ,
         "fare" , "color" , "operator" , "station" ,
         "railway_direction" , "railway_line" , "stations_in_tokyo_metro" , "stopping_pattern" , "train_owner" ,
-        "operation_day" , "train_operation_status" , "twitter"
+        "operation_day" , "train_operation_status" , "twitter_account"
       ] - [
         "stopping_pattern"
       ]

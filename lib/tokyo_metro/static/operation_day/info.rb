@@ -1,4 +1,4 @@
-class TokyoMetro::Static::OperationDay::Info < TokyoMetro::Static::Fundamental::info
+class TokyoMetro::Static::OperationDay::Info < TokyoMetro::Static::Fundamental::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::OperationDay
 

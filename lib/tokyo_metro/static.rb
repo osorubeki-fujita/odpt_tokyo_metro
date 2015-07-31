@@ -45,7 +45,7 @@ module TokyoMetro::Static
     ::TokyoMetro::Static::Station.set_constant
 
     #---- 停車駅（他社も含む）
-    # ::TokyoMetro::Static::StoppingPattern.set_constant
+    ::TokyoMetro::Static::StoppingPattern.set_constant
 
     #---- 列車種別
     ::TokyoMetro::Static::TrainType.set_constant
