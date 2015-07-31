@@ -23,4 +23,17 @@ class TokyoMetro::Static::Operator::Info::Name
     factory_for_generating_instance_of_name
   end
 
+  def to_a
+    [ @ja , @ja_short , @en , @en_short ]
+  end
+
+  def to_h
+    {
+      ja: @ja ,
+      ja_short: @ja_short ,
+      en: @en ,
+      en_short: @en_short
+    }
+  end
+
 end
