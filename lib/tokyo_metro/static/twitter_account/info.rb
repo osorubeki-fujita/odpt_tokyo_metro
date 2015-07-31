@@ -17,7 +17,7 @@ class TokyoMetro::Static::TwitterAccount::Info < TokyoMetro::Static::Fundamental
   attr_reader :db_class_of_parent_info
 
   def to_a
-    [ :widget_id , :account_name , :db_class_of_parent_info ]
+    [ @widget_id , @account_name , @db_class_of_parent_info ]
   end
 
   def to_h
