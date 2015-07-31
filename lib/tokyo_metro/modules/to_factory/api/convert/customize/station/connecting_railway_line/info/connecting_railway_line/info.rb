@@ -13,8 +13,11 @@ module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::Connect
     # puts railway_line
 
     super( railway_line )
-    @start_on = set_time_of( start_on , type: :start_on )
-    @end_on = set_time_of( end_on , type: :end_on )
+
+    @customized_infos = ::Array.new
+
+    set_start_on( start_on )
+    set_end_on( end_on )
 
     @index_in_station = index_in_station
     @cleared = cleared
@@ -23,8 +26,6 @@ module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::Connect
     @not_recommended = not_recommended
     @note = note
     @hidden_on_railway_line_page = hidden_on_railway_line_page
-
-    @customized_infos = ::Array.new
   end
 
   attr_reader :start_on
@@ -40,8 +41,8 @@ module TokyoMetro::Modules::ToFactory::Api::Convert::Customize::Station::Connect
 
   [ :start_on , :end_on ].each do | instance_variable |
     eval <<-DEF
-      def set_#{ instance_variable }( variable )
-        @#{ instance_variable } = set_time_of( variable , type: :#{ instance_variable } )
+      def set_#{ instance_variable }( var )
+        @#{ instance_variable } = set_time_of( var , type: :#{ instance_variable } )
         @customized_infos << :#{ instance_variable }
       end
       private :set_#{ instance_variable }

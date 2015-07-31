@@ -6,7 +6,7 @@ class TokyoMetro::Api::StationFacility::Info::Platform::Info::SurroundingArea::I
 
   attr_reader :name_ja
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_platform_surrounding_area_info_from_string
   end
 

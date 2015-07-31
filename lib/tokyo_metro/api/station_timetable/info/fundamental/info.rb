@@ -51,7 +51,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info
     self.to_separated_list.seed( *args )
   end
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_fundamental_info_from_hash
   end
 

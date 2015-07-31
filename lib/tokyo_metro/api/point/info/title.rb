@@ -43,7 +43,7 @@ class TokyoMetro::Api::Point::Info::Title
 
   private :to_s_sub_1
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_title_from_hash
   end
 

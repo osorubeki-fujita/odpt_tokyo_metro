@@ -6,7 +6,7 @@ class TokyoMetro::Api::Station::Info::Exit::Info < TokyoMetro::Api::Station::Inf
 
   attr_reader :point_id_urn
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_exit_from_string
   end
 

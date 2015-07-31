@@ -17,12 +17,36 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
       ::TokyoMetro::Static::Operator::Info
     end
 
+    def name_class
+      ::TokyoMetro::Static::Operator::Info::Name
+    end
+
+    def additional_infos_class
+      ::TokyoMetro::Static::Operator::Info::AdditionaInfos
+    end
+
+    def code_settings_class
+      ::TokyoMetro::Static::Operator::Info::AdditionaInfos::CodeSettings
+    end
+
     def factory_for_generating_from_saved_file
       ::TokyoMetro::Factory::Generate::Static::Operator::Hash
     end
 
     def factory_for_generating_from_hash
       ::TokyoMetro::Factory::Generate::Static::Operator::Info
+    end
+
+    def factory_for_generating_instance_of_name
+      ::TokyoMetro::Factory::Generate::Static::Operator::Info::Name
+    end
+
+    def factory_for_generating_instance_of_additional_infos
+      ::TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionaInfos
+    end
+
+    def factory_for_generating_instance_of_code_settings
+      ::TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionaInfos::CodeSettings
     end
 
     def factory_for_seeding_hash

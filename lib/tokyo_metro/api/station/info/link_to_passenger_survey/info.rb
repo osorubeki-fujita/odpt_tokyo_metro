@@ -6,7 +6,7 @@ class TokyoMetro::Api::Station::Info::LinkToPassengerSurvey::Info < TokyoMetro::
 
   attr_reader :survey
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_link_to_passenger_survey_from_string
   end
 

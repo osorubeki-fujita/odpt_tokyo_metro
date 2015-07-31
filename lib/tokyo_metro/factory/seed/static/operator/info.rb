@@ -26,7 +26,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
   end
 
   def seed_optional_infos
-    seed_twitter_account
+    seed_twitter_account_info
     seed_code
   end
 

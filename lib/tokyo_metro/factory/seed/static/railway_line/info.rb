@@ -28,14 +28,6 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
     h
   end
 
-  def codes
-    if @info.has_code_infos?
-      @info.codes.join( "/" )
-    else
-      nil
-    end
-  end
-
   [ :name_ja , :name_hira , :name_en ].each do | method_name |
     eval <<-DEF
       def #{ method_name }
@@ -53,7 +45,7 @@ class TokyoMetro::Factory::Seed::Static::RailwayLine::Info < TokyoMetro::Factory
   end
 
   def seed_optional_infos
-    seed_twitter_account
+    seed_twitter_account_info
     seed_additional_infos_in_api
     seed_codes
   end

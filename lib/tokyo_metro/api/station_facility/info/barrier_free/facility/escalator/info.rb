@@ -25,7 +25,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::
   # @return [Boolean] 一般的な車いすが利用可能か否か
   attr_reader :is_available_to_wheel_chair
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_barrier_free_escalator_info_from_hash
   end
 

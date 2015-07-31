@@ -6,7 +6,7 @@ class TokyoMetro::Api::Station::Info::ConnectingRailwayLine::Info < TokyoMetro::
 
   attr_reader :railway_line
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_connecting_railway_from_string
   end
 

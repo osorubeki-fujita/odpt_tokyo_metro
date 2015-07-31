@@ -81,7 +81,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info
       info.number
     end
   end
-  
+
   alias :depart_from :platform_number
 
   # @!group 列車の出発時刻
@@ -233,7 +233,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info
 
 # @!group クラスメソッド (2) - データの取得・保存
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_train_from_hash
   end
 

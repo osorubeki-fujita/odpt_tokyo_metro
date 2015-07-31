@@ -104,7 +104,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::ServiceDetail::Info
     !( service_end_after_last_train? ) and @service_end_time.present?
   end
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_barrier_free_service_detail_from_hash
   end
 

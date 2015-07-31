@@ -34,24 +34,23 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::i
   # @param name_ja [::Array <::String>]
   # @param name_hira
   # @param name_en [::Array <::String>]
-  # @param codes
   # @param operator [::TokyoMetro::Static::Operator::Info]
   # @param index [::Numeric]
-  # @param colors
+  # @param code_infos
   def initialize(
-    same_as , name_ja , name_hira , name_en , codes , operator , index_in_operator , colors ,
+    same_as , name_ja , name_hira , name_en , operator , index_in_operator , code_infos ,
     start_on , end_on ,
     main_railway_line_infos , branch_railway_line_infos ,
-    twitter_widget_id , twitter_account_name
+    twitter_account_info
   )
     @same_as = same_as
     @name_ja = name_ja
     @name_hira = name_hira
     @name_en = name_en
-    @codes = codes
+
     @index_in_operator = index_in_operator
-    @colors = colors
     @operator = operator
+    @code_infos = code_infos
 
     @start_on = start_on
     @end_on = end_on
@@ -59,14 +58,16 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::i
     @main_railway_line_infos = main_railway_line_infos
     @branch_railway_line_infos = branch_railway_line_infos
 
-    @twitter_widget_id = twitter_widget_id
-    @twitter_account_name = twitter_account_name
+    @twitter_account_info = twitter_account_info
   end
 
   attr_reader :start_on
   attr_reader :end_on
-  attr_reader :twitter_widget_id
-  attr_reader :twitter_account_name
+
+  attr_reader :main_railway_line_infos
+  attr_reader :branch_railway_line_infos
+
+  attr_reader :twitter_account_info
 
   # インスタンスの比較に用いるメソッド
   # @return [Integer]
@@ -186,6 +187,8 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::i
 
 # @!group 路線の記号・番号に関するメソッド
 
+  attr_reader :code_infos
+
   # @return [::Array <::String>] 路線記号
   # @example
   #   ::TokyoMetro::Static.railway_lines.each_value { | railway_line | puts railway_line.same_as.ljust(48) + " : " + railway_line.codes }
@@ -261,7 +264,10 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::i
   #   odpt.Railway:MIR.TX                              : []
   #   odpt.Railway:Yurikamome.Yurikamome               : ["U"]
   #   odpt.Railway:TWR.Rinkai                          : []
-  attr_reader :codes
+
+  def codes
+    @code_infos.map( &:code )
+  end
 
   # @return [Numeric] 同一事業者内での路線の番号（整列のために定義）
   # @example
@@ -691,7 +697,9 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::i
   #   odpt.Railway:MIR.TX                              : NilClass
   #   odpt.Railway:Yurikamome.Yurikamome               : Array
   #   odpt.Railway:TWR.Rinkai                          : NilClass
-  attr_reader :colors
+  def colors
+    @code_infos.map( &:color )
+  end
 
   # 標準の路線色を取得するメソッド
   # @return [::TokyoMetro::Static::Color]
@@ -704,7 +712,7 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::i
   #   odpt.Railway:TWR.Rinkai                          : TokyoMetro::Static::Color
   def color_normal
     # 路線の色が定義されていない場合
-    if @colors.nil?
+    if colors_to_a.blank?
       # 事業者の色が定義されている場合は、事業者の色をそのまま標準の路線色とする。
       if operator_color.instance_of?( ::TokyoMetro::Static::Color )
         operator_color
@@ -715,11 +723,11 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::i
       end
 
     # @color が配列の場合は、配列の最初の要素を標準の路線色とする。
-    elsif @colors.instance_of?( ::Array )
-      @color.first
+    elsif colors_to_a.instance_of?( ::Array )
+      colors_to_a.first
     # 路線の色が1つのみ設定されている場合は、それを標準の路線色とする。
-    elsif @colors.instance_of?( ::TokyoMetro::Static::Color )
-      @colors
+    else
+      raise
     end
   end
 
@@ -1046,6 +1054,10 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::i
 
   def codes_to_a
     codes.try( :delete_if , &:blank? )
+  end
+
+  def colors_to_a
+    colors.try( :delete_if , &:blank? )
   end
 
   # @!endgroup

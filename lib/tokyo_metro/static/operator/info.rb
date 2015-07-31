@@ -22,44 +22,20 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
 
   # Constructor
   # @param same_as [String] キー
-  # @param name_ja [::Array <::String>] 事業者の名称（日本語、正式名）
-  # @param name_ja_short [::Array <::String>] 事業者の名称（日本語、略称・表示用）
-  # @param name_en [String] 事業者の名称（ローマ字表記、正式名）
-  # @param name_en_short [String] 事業者の名称（ローマ字表記、略称・表示用）
+  # @param name [::TokyoMetro::Static::Operator::Info::Name]
   # @param index [Integer] 事業者の番号（整列のための定義）
-  # @param numbering [Boolean] 駅ナンバリングを実施しているか否か
-  # @param railway_line_code_shape [String or nil] 路線記号の形
-  # @param station_code_shape [Stirng or nil] 駅番号の形
-  # @param color [::TokyoMetro::Static::Color] 事業者の色
-  def initialize( same_as , name_ja , name_ja_short , name_en , name_en_short , index ,
-    operator_code , numbering ,
-    #
-    railway_line_code_shape , railway_line_code_stroke_width_setting , railway_line_code_text_weight , railway_line_code_text_size_setting ,
-    station_code_shape , station_code_stroke_width_setting , station_code_text_weight , station_code_text_size_setting ,
-    #
-    color ,
-    twitter_widget_id , twitter_account_name
-  )
+  def initialize( same_as , name , index , additional_infos , twitter_account_info )
     @same_as = same_as
-    @name_ja = name_ja
-    @name_ja_short = name_ja_short
-    @name_en = name_en
-    @name_en_short = name_en_short
+    @name = name
     @index = index
-    @operator_code = operator_code
-    @numbering = numbering
-    @railway_line_code_shape = railway_line_code_shape
-    @station_code_shape = station_code_shape
-    @color = color
 
-    @twitter_widget_id = twitter_widget_id
-    @twitter_account_name = twitter_account_name
+    @additional_infos = additional_infos
+    @twitter_account_info = twitter_account_info
   end
 
-  attr_reader :operator_code
-
-  attr_reader :twitter_widget_id
-  attr_reader :twitter_account_name
+  attr_reader :name
+  attr_reader :additional_infos
+  attr_reader :twitter_account_info
 
 # @!group 鉄道事業者の ID、番号に関するメソッド
 
@@ -144,7 +120,9 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
   #   odpt.Operator:MIR                : ["つくばエクスプレス", "首都圏新都市鉄道"]
   #   odpt.Operator:Yurikamome         : ["ゆりかもめ"]
   #   odpt.Operator:TWR                : ["りんかい線", "東京臨海高速鉄道"]
-  attr_reader :name_ja
+  def name_ja
+    @name.ja
+  end
 
   # 鉄道事業者の事業者の名称（ローマ字表記、正式名称）
   # @return [::Array <::String>]
@@ -171,7 +149,9 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
   #   odpt.Operator:MIR                : ["Tsukuba Express", "MIR", "Metropolitan Intercity Railway"]
   #   odpt.Operator:Yurikamome         : ["Yurikamome"]
   #   odpt.Operator:TWR                : ["Rinkai Line", "TWR", "Tokyo Waterfront Area Rapid Transit"]
-  attr_reader :name_en
+  def name_en
+    @name.en
+  end
 
   # @!group 鉄道事業者の名称に関するメソッド (2) - インスタンス変数 略称・表示用
 
@@ -202,7 +182,9 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
   #   odpt.Operator:MIR                : (nil)
   #   odpt.Operator:Yurikamome         : (nil)
   #   odpt.Operator:TWR                : (nil)
-  attr_reader :name_ja_short
+  def name_ja_short
+    @name.ja_short
+  end
 
   # 鉄道事業者の事業者の名称（ローマ字表記、略称・表示用）
   # @return [::String or nil]
@@ -228,7 +210,9 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
   #   odpt.Operator:MIR                : (nil)
   #   odpt.Operator:Yurikamome         : (nil)
   #   odpt.Operator:TWR                : (nil)
-  attr_reader :name_en_short
+  def name_en_short
+    @name.en_short
+  end
 
 # @!group 鉄道事業者の駅番号・路線番号に関するメソッド
 
@@ -255,7 +239,11 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
   #   odpt.Operator:MIR                : true
   #   odpt.Operator:Yurikamome         : true
   #   odpt.Operator:TWR                : false
-  attr_reader :numbering
+  def numbering
+    @additional_infos.with_station_number?
+  end
+
+  alias :numbering :with_station_number?
 
   # @return [::String or nil] 路線記号の形
   # @note 「縁取りあり・塗りつぶしなしの円」は "stroked_circle"、「縁取りあり・塗りつぶしなしの角丸四角形」は "stroked_rounded_square" とする。
@@ -316,9 +304,17 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::info
   # @!group 鉄道事業者の色に関するメソッド
 
   # @return [::TokyoMetro::Static::Color] 事業者の色
-  attr_reader :color
+
+  def color
+    @additional_infos.color
+  end
+
   include ::OdptCommon::Modules::Color::Static::Fundamental::GetColorInfo
   include ::OdptCommon::Modules::Color::Static::Normal
+
+  def code
+    @additional_infos.code
+  end
 
   # @!endgroup
 

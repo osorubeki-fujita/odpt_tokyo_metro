@@ -38,7 +38,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Toilet::Ass
 
   # @!group クラスメソッド
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_barrier_free_toilet_assistant_from_hash
   end
 

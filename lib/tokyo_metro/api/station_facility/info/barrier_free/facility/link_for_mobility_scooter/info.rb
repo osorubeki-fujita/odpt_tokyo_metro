@@ -3,7 +3,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::LinkForMobi
 
   include ::TokyoMetro::ClassNameLibrary::Api::StationFacility::BarrierFree::LinkForMobilityScooter
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_barrier_free_link_for_mobility_scooter_info_from_hash
   end
 

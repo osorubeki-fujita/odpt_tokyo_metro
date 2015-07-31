@@ -73,7 +73,7 @@ class TokyoMetro::Api::TrainTimetable::Info::StationTime::Info
     @arrival_time.present? and @departure_time.nil?
   end
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_station_time_from_hash
   end
 

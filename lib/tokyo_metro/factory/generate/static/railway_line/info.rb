@@ -3,10 +3,12 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
   include ::OdptCommon::Modules::Time::Set
 
+  include ::TokyoMetro::Factory::Generate::Static::MetaClass::Polymorphic::TwitterAccount
+
   def self.hash_keys
     [
-      :name_ja , :name_hira , :name_en , :codes , :operator , :index_in_operator , :colors , :start_on , :end_on ,
-      :main_railway_line_infos , :branch_railway_line_infos , :twitter_widget_id , :twitter_account_name
+      :name_ja , :name_hira , :name_en , :operator , :index_in_operator , :code_infos , :start_on , :end_on ,
+      :main_railway_line_infos , :branch_railway_line_infos , :twitter_account_info
     ]
   end
 
@@ -15,7 +17,7 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
   def set_values_to_hash_for_making_variables
     super( hash_key_array: [ :name_ja , :name_hira , :name_en ] , make_array: true )
     super( hash_key_array: [ :main_railway_line_infos , :branch_railway_line_infos ] , make_array: true )
-    super( hash_key_array: [ :twitter_widget_id , :twitter_account_name , :index_in_operator ] )
+    super( hash_key_array: [ :index_in_operator ] )
 
     @hash_for_making_variables[ :codes ] = codes
     @hash_for_making_variables[ :colors ] = color_instances
@@ -24,6 +26,7 @@ class TokyoMetro::Factory::Generate::Static::RailwayLine::Info < TokyoMetro::Fac
     @hash_for_making_variables[ :end_on ] = set_time_of( @h[ :end_on ] , type: :end_on )
 
     check_validity_of_codes_and_color
+    set_twitter_account_info
   end
 
   def codes

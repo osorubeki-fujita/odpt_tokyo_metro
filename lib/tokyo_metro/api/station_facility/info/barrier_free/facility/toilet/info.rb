@@ -23,7 +23,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Toilet::Inf
     self.assistant_facility.instance_of?( self.class.barrier_free_toilet_assinstant_class )
   end
 
-  def self.factory_for_this_class
+  def self.factory_for_generating_instance_of_this_class
     factory_for_generating_barrier_free_toilet_info_from_hash
   end
 
