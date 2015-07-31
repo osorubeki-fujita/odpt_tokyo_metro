@@ -1,5 +1,5 @@
 # Twitter アカウントに関連するインスタンスを作成するための Factory クラス
-class TokyoMetro::Factory::Generate::Static::TwitterAccount::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
+class TokyoMetro::Factory::Generate::Static::TwitterAccount::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo
 
   include ::TokyoMetro::ClassNameLibrary::Static::TwitterAccount
 
@@ -13,8 +13,7 @@ class TokyoMetro::Factory::Generate::Static::TwitterAccount::Info < TokyoMetro::
     puts db_class_of_parent_info
     @db_class_of_parent_info = db_class_of_parent_info
 
-    @h = h.with_indifferent_access
-    @hash_for_making_variables = ::Hash.new.with_indifferent_access
+    super(h)
   end
 
   private

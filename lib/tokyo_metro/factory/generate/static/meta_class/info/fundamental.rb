@@ -48,8 +48,8 @@ class TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
   # @return [Object]
   # @return [Boolean] 変数 boolean に true を設定した場合
   def get_hash_value( key_name , boolean: false )
-    if @hash_for_making_variables[ key_name ].present?
-      v = @hash_for_making_variables[ key_name ]
+    if @h[ key_name ].present?
+      v = @h[ key_name ]
     elsif boolean
       v = false
     else
