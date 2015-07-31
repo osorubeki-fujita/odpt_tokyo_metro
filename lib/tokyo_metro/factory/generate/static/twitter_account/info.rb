@@ -4,7 +4,7 @@ class TokyoMetro::Factory::Generate::Static::TwitterAccount::Info < TokyoMetro::
   include ::TokyoMetro::ClassNameLibrary::Static::TwitterAccount
 
   def self.hash_keys
-    [ :widget_id , :account_id , :db_class_of_parent_info ]
+    [ :widget_id , :account_name , :db_class_of_parent_info ]
   end
 
   def initialize( h , db_class_of_parent_info )
@@ -17,7 +17,7 @@ class TokyoMetro::Factory::Generate::Static::TwitterAccount::Info < TokyoMetro::
   private
 
   def set_values_to_hash_for_making_variables
-    super( hash_key_array: [ :widget_id , :account_id ] )
+    super( hash_key_array: [ :widget_id , :account_name ] )
     @hash_for_making_variables[ :db_class_of_parent_info ] = @db_class_of_parent_info
   end
 
