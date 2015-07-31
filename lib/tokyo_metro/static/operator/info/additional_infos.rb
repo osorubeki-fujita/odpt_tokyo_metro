@@ -21,6 +21,19 @@ class TokyoMetro::Static::Operator::Info::AdditionalInfos
     @numbering
   end
 
+  def to_a
+    [ @color , @numbering , @code , @code_settings ]
+  end
+
+  def to_h
+    {
+      color: @color ,
+      numbering: @numbering ,
+      code: @code ,
+      code_settings: @code_settings
+    }
+  end
+
   def self.factory_for_generating_instance_of_this_class
     factory_for_generating_instance_of_additional_infos
   end
