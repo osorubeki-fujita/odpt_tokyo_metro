@@ -3,7 +3,7 @@ class TokyoMetro::Factory::Generate::Static::OperationDay::Info < TokyoMetro::Fa
   include ::TokyoMetro::ClassNameLibrary::Static::OperationDay
 
   def initialize(h)
-    @h = h.with_indifferent_access
+    super( h , with_hash_for_making_variables: false )
   end
 
   def self.hash_keys
