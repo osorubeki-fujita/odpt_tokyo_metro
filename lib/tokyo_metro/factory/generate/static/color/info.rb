@@ -1,12 +1,6 @@
-class TokyoMetro::Factory::Generate::Static::Color::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
+class TokyoMetro::Factory::Generate::Static::Color::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo
 
   include ::TokyoMetro::ClassNameLibrary::Static::Color
-
-  def initialize(h)
-    @h = h.with_indifferent_access
-    @hash_for_making_variables = ::Hash.new.with_indifferent_access
-    set_values_to_hash_for_making_variables
-  end
 
   def self.info_class_for_this_class
     toplevel_class
@@ -31,7 +25,7 @@ class TokyoMetro::Factory::Generate::Static::Color::Info < TokyoMetro::Factory::
   end
 
   def color_variables
-    self.class.hash_keys_of_color.map { | key_name | @hash_for_making_variables[ key_name ] }
+    variables_from_hash_keys( hash_key_array: self.class.hash_keys_of_color )
   end
 
   def set_values_to_hash_for_making_variables
