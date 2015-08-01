@@ -6,6 +6,10 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::Co
     info_class_for_this_class.instance_variable_names
   end
 
+  def self.info_class_for_this_class
+    code_settings_class
+  end
+
   private
 
   def set_values_to_hash_for_making_variables
