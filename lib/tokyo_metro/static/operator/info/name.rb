@@ -1,5 +1,6 @@
 class TokyoMetro::Static::Operator::Info::Name
 
+  include ::OdptCommon::Modules::Name::Static::Fundamental::Infos
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
@@ -31,18 +32,6 @@ class TokyoMetro::Static::Operator::Info::Name
 
   def self.factory_for_generating_instance_of_this_class
     factory_for_generating_instance_of_name
-  end
-
-  def to_a
-    self.class.instance_variable_names.map { | instance_variable_name | send( instance_variable_name ) }
-  end
-
-  def to_h
-    h = ::Hash.new
-    self.class.instance_variable_names.each do | instance_variable_name |
-      h[ instance_variable_name ] = send( instance_variable_name )
-    end
-    h
   end
 
 end
