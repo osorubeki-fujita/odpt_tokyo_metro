@@ -3,6 +3,9 @@ odpt.Operator:TokyoMetro:
     ja:
       - 東京メトロ
       - 東京地下鉄
+    hira:
+      - とうきょうめとろ
+      - とうきょうちかてつ
     en: Tokyo Metro
   index: 1
   additional_infos:
@@ -32,10 +35,14 @@ odpt.Operator:Toei:
     ja:
       - 都営地下鉄
       - 東京都交通局
-    ja_short: 都営
+    hira:
+      - とえいちかてつ
+      - とうきょうとこうつうきょく
     en:
       - Toei Subway
       - Bureau of Transportation Tokyo Metropolitan Government
+    ja_short: 都営
+    hira_short: とえい
     en_short: Toei
   index: 2
   additional_infos:
@@ -62,10 +69,14 @@ odpt.Operator:ToeiNipporiToneri:
     ja:
       - 都営
       - 東京都交通局 # 日暮里・舎人ライナー
-    ja_short: " "
+    hira:
+      - とえい
+      - とうきょうとこうつうきょく
     en:
       - Toei
       - Bureau of  Transportation Tokyo Metropolitan Government
+    ja_short: " "
+    hira_short: " "
     en_short: " "
   index: 3
   additional_infos:
@@ -88,6 +99,9 @@ odpt.Operator:Toden:
     ja:
       - 都電
       - 東京都交通局
+    hira:
+      - とでん
+      - とうきょうとこうつうきょく
     en:
       - Toden
       - Bureau of Transportation Tokyo Metropolitan Government
@@ -108,10 +122,14 @@ odpt.Operator:JR-East:
     ja:
       - JR東日本
       - 東日本旅客鉄道
-    ja_short: JR
+    hira:
+      - じぇいあーるひがしにほん
+      - ひがしにほんりょかくてつどう
     en:
       - JR East
       - East Japan Railway Company
+    ja_short: JR
+    hira_short: じぇいあーる
     en_short: JR
   index: 5
   railway_line_code_shape: none
@@ -131,10 +149,14 @@ odpt.Operator:JR-Central:
     ja:
       - JR東海
       - 東海旅客鉄道
-    ja_short: JR
+    hira:
+      - じぇいあーるとうかい
+      - とうかいりょかくてつどう
     en:
       - JR Central
       - Central Japan Railway Company
+    ja_short: JR
+    hira_short: じぇいあーる
     en_short: JR
   index: 6
   additional_infos:
@@ -153,8 +175,12 @@ odpt.Operator:Tokyu:
     ja:
       - 東急電鉄
       - 東京急行電鉄
-    ja_short: 東急
+    hira:
+      - とうきゅうでんてつ
+      - とうきょうきゅうこうでんてつ
     en: Tokyu Corporation
+    ja_short: 東急
+    hira_short: とうきゅう
     en_short: Tokyu
   index: 7
   additional_infos:
@@ -178,8 +204,10 @@ odpt.Operator:Tokyu:
 odpt.Operator:YokohamaMinatomiraiRailway:
   name:
     ja: 横浜高速鉄道
-    ja_short: " "
+    hira: よこはまこうそくてつどう
     en: Yokohama Minatomirai Railway Company
+    ja_short: " "
+    hira_short: " "
     en_short: " "
   index: 7.1
   additional_infos:
@@ -203,8 +231,10 @@ odpt.Operator:YokohamaMinatomiraiRailway:
 odpt.Operator:Odakyu:
   name:
     ja: 小田急電鉄
-    ja_short: 小田急
+    hira: おだきゅうでんてつ
     en: Odakyu Electric Railway
+    ja_short: 小田急
+    hira_short: おだきゅう
     en_short: Odakyu
   index: 8
   additional_infos:
@@ -229,8 +259,10 @@ odpt.Operator:Odakyu:
 odpt.Operator:HakoneTozan :
   name:
     ja: 箱根登山鉄道
-    ja_short: 箱根登山
+    hira: はこねとざんてつどう
     en: Hakone Tozan Railway
+    ja_short: 箱根登山
+    hira_short: はこねとざん
     en_short: Hakone Tozan
   index: 8.1
   additional_infos:
@@ -255,8 +287,10 @@ odpt.Operator:HakoneTozan :
 odpt.Operator:Seibu:
   name:
     ja: 西武鉄道
-    ja_short: 西武
+    hira: せいぶてつどう
     en: Seibu Railway
+    ja_short: 西武
+    hira_short: せいぶ
     en_short: Seibu
   index: 9
   additional_infos:
@@ -280,8 +314,10 @@ odpt.Operator:Seibu:
 odpt.Operator:Tobu:
   name:
     ja: 東武鉄道
-    ja_short: 東武
+    hira: とうぶてつどう
     en: Tobu Railway
+    ja_short: 東武
+    hira_short: とうぶ
     en_short: Tobu
   index: 10
   additional_infos:
@@ -306,7 +342,10 @@ odpt.Operator:Tobu:
 odpt.Operator:SaitamaRailway:
   name:
     ja: 埼玉高速鉄道
+    hira: さいたまこうそくてつどう
     en: Saitama Railway
+    ja_short: 埼玉高速
+    hira_short: さいたまこうそく
   index: 11
   additional_infos:
     color:
@@ -322,7 +361,10 @@ odpt.Operator:SaitamaRailway:
 odpt.Operator:ToyoRapidRailway:
   name:
     ja: 東葉高速鉄道
+    hira: とうようこうそくてつどう
     en: Toyo Rapid Railway
+    ja_short: 東葉高速
+    hira_short: とうようこうそく
   index: 12
   additional_infos:
     color:
@@ -347,8 +389,10 @@ odpt.Operator:ToyoRapidRailway:
 odpt.Operator:Keio:
   name:
     ja: 京王電鉄
-    ja_short: 京王
+    hira: けいおうでんてつ
     en: Keio Corporation
+    ja_short: 京王
+    hira_short: けいおう
     en_short: Keio
   index: 13
   additional_infos:
@@ -373,8 +417,10 @@ odpt.Operator:Keio:
 odpt.Operator:Keisei:
   name:
     ja: 京成電鉄
-    ja_short: 京成
+    hira: けいせいでんてつ
     en: Keisei Electric Railway
+    ja_short: 京成
+    hira_short: けいせい
     en_short: Keisei
   index: 14
   additional_infos:
@@ -402,8 +448,12 @@ odpt.Operator:MIR:
     ja:
       - つくばエクスプレス
       - 首都圏新都市鉄道
+    hira:
+      - つくばえくすぷれす
+      - しゅとけんしんとしてつどう
     en:
       - Tsukuba Express
+      - TX
       - MIR
       - Metropolitan Intercity Railway
   index: 15
@@ -425,6 +475,7 @@ odpt.Operator:MIR:
 odpt.Operator:Yurikamome:
   name:
     ja: ゆりかもめ
+    hira: ゆりかもめ
     en: Yurikamome
   index: 16
   additional_infos:
@@ -450,6 +501,9 @@ odpt.Operator:TWR:
     ja:
       - りんかい線
       - 東京臨海高速鉄道
+    hira:
+      - りんかいせん
+      - とうきょうりんかいこうそくてつどう
     en:
       - Rinkai Line
       - TWR
