@@ -3,7 +3,7 @@ class TokyoMetro::Static::Operator::Info::Name
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
-  def self.variable_names
+  def self.instance_variable_names
     [ :ja , :hira , :en , :ja_short , :hira_short , :en_short ]
   end
 
@@ -34,18 +34,15 @@ class TokyoMetro::Static::Operator::Info::Name
   end
 
   def to_a
-    [ @ja , @hira , @en , @ja_short , @hira_short , @en_short ]
+    self.class.instance_variable_names.map { | instance_variable_name | send( instance_variable_name ) }
   end
 
   def to_h
-    {
-      ja: @ja ,
-      hira: @hira ,
-      en: @en ,
-      ja_short: @ja_short ,
-      hira_short: @hira_short ,
-      en_short: @en_short
-    }
+    h = ::Hash.new
+    self.class.instance_variable_names.each do | instance_variable_name |
+      h[ instance_variable_name ] = send( instance_variable_name )
+    end
+    h
   end
 
 end

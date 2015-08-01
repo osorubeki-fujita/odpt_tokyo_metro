@@ -5,7 +5,7 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
-  include ::OdptCommon::Modules::Name::Static::Fundamental::ForInspection
+  include ::OdptCommon::Modules::Name::Static::Fundamental::NameForInspection
   include ::OdptCommon::Modules::Name::Common::Fundamental::GetMainName
 
   include ::OdptCommon::Modules::Name::Common::Operator::Info

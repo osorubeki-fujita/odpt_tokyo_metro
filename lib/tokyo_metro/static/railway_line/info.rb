@@ -6,7 +6,7 @@ class TokyoMetro::Static::RailwayLine::Info < TokyoMetro::Static::Fundamental::I
 
   include ::TokyoMetro::ClassNameLibrary::Static::RailwayLine
 
-  include ::OdptCommon::Modules::Name::Static::Fundamental::ForInspection
+  include ::OdptCommon::Modules::Name::Static::Fundamental::NameForInspection
   include ::OdptCommon::Modules::Name::Common::Fundamental::GetMainName
 
   include ::TokyoMetro::Modules::Decision::Common::Fundamental::CompareBase
