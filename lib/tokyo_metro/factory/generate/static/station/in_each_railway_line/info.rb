@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Generate::Static::Station::InEachRailwayLine::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
+class TokyoMetro::Factory::Generate::Static::Station::InEachRailwayLine::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::WithAttrSameAs
 
   include ::TokyoMetro::ClassNameLibrary::Static::Station
 

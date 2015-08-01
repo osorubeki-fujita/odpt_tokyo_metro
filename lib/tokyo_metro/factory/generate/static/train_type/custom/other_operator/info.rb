@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
+class TokyoMetro::Factory::Generate::Static::TrainType::Custom::OtherOperator::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::WithAttrSameAs
 
   include ::TokyoMetro::ClassNameLibrary::Static::TrainType::Custom::OtherOperator
   include ::PositiveBasicSupport::Modules::ConstantsAsClassMethods

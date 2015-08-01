@@ -1,5 +1,5 @@
 # Twitter アカウントに関連するインスタンスを作成するための Factory クラス
-class TokyoMetro::Factory::Generate::Static::TwitterAccount::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo
+class TokyoMetro::Factory::Generate::Static::TwitterAccount::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
 
   include ::TokyoMetro::ClassNameLibrary::Static::TwitterAccount
 

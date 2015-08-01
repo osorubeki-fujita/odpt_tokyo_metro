@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::CodeSettings::MetaClass < TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo
+class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::CodeSettings::MetaClass < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 

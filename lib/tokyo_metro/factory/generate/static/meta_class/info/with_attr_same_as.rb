@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal < TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo
+class TokyoMetro::Factory::Generate::Static::MetaClass::Info::WithAttrSameAs < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
 
   def initialize( same_as , h )
     @same_as = same_as

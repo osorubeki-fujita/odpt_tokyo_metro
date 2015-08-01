@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Generate::Static::Operator::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
+class TokyoMetro::Factory::Generate::Static::Operator::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::WithAttrSameAs
 
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
   include ::TokyoMetro::Factory::Generate::Static::MetaClass::Polymorphic::TwitterAccount

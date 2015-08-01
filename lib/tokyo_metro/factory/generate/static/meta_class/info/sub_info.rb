@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
+class TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Fundamental
 
   def initialize(h)
     super(h)

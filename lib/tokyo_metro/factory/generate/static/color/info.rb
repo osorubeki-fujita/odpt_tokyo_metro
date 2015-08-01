@@ -1,4 +1,4 @@
-class TokyoMetro::Factory::Generate::Static::Color::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::SubInfo
+class TokyoMetro::Factory::Generate::Static::Color::Info < TokyoMetro::Factory::Generate::Static::MetaClass::Info::Normal
 
   include ::TokyoMetro::ClassNameLibrary::Static::Color
 

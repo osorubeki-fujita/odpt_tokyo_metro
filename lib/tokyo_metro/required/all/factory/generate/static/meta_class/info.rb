@@ -5,7 +5,7 @@ class TokyoMetro::Required::All::Factory::Generate::Static::MetaClass::Info < To
   end
 
   def self.other_files
-    [ "fundamental" , "sub_info" , "normal "].map { | filename |
+    [ "fundamental" , "normal" , "with_attr_same_as "].map { | filename |
       ::File.join( top_file , filename )
     }
   end
