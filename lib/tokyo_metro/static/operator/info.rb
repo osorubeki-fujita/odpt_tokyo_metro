@@ -124,6 +124,10 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
     @name.ja
   end
 
+  def name_hira
+    @name.hira
+  end
+
   # 鉄道事業者の事業者の名称（ローマ字表記、正式名称）
   # @return [::Array <::String>]
   # @note 配列を使用する基準については {#name_ja} を参照のこと。
@@ -353,6 +357,10 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
 
   def name_ja_to_a
     name_ja
+  end
+
+  def name_hira_to_a
+    name_hira
   end
 
   def name_en_to_a
