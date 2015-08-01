@@ -4,7 +4,7 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info < TokyoMetro::Factor
   include ::TokyoMetro::Factory::Generate::Static::MetaClass::Polymorphic::TwitterAccount
 
   def self.hash_keys
-    [ :name , :index , :additional_infos , :twitter_account_info ]
+    info_class_for_this_class.instance_variable_names
   end
 
   private
