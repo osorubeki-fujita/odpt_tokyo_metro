@@ -18,6 +18,10 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
 
   include ::OdptCommon::Modules::MethodMissing::Decision::Common::Operator
 
+  def self.instance_variable_names
+    [ :same_as , :name , :index , :additional_infos , :twitter_account_info ]
+  end
+
 # @!group Constructor
 
   # Constructor
