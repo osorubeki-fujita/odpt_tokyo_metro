@@ -3,7 +3,7 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos < T
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
   def self.hash_keys
-    [ :color , :numbering , :code , :code_settings ]
+    additional_infos_class.instance_variable_names
   end
 
   def self.info_class_for_this_class

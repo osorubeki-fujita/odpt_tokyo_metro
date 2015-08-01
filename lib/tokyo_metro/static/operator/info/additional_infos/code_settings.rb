@@ -1,7 +1,12 @@
 class TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings
 
+  include ::OdptCommon::Modules::Name::Static::Fundamental::Infos
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
+
+  def self.instance_variable_names
+    [ :railway_line , :station ]
+  end
 
 # @param railway_line [String or nil] 路線記号の設定
 # @param station [Stirng or nil] 駅番号の設定
@@ -17,17 +22,6 @@ class TokyoMetro::Static::Operator::Info::AdditionalInfos::CodeSettings
 
   def self.factory_for_generating_instance_of_this_class
     factory_for_generating_instance_of_code_settings
-  end
-
-  def to_a
-    [ @railway_line , @station ]
-  end
-
-  def to_h
-    {
-      railway_line: @railway_line ,
-      station: @station
-    }
   end
 
 end

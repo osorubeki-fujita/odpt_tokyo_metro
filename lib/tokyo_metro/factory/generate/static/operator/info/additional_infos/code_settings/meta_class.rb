@@ -3,7 +3,7 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos::Co
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
   def self.hash_keys
-    [ :shape , :stroke_width , :text_weight , :text_size ]
+    info_class_for_this_class.instance_variable_names
   end
 
   def self.info_class_for_this_class

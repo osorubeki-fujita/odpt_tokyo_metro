@@ -189,7 +189,7 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
   def name_ja_short
     @name.ja_short
   end
-  
+
   def name_hira_short
     @name.hira_short
   end
