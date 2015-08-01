@@ -3,7 +3,7 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::Name < TokyoMetro::
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
   def self.hash_keys
-    [ :ja , :ja_short , :en , :en_short ]
+    [ :ja , :ja_short , :hira , :hira_short , :en , :en_short ]
   end
 
   def self.info_class_for_this_class
@@ -14,7 +14,7 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::Name < TokyoMetro::
 
   def set_values_to_hash_for_making_variables
     super( hash_key_array: [ :ja , :en , :hira ] , make_array: true )
-    super( hash_key_array: [ :ja_short , :en_short ] )
+    super( hash_key_array: [ :ja_short , :hira_short , :en_short ] )
     raise unless @hash_for_making_variables[ :hira ].array?
     raise unless @hash_for_making_variables[ :hira ].delete_if( &:nil? ).present?
   end

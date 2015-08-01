@@ -189,6 +189,10 @@ class TokyoMetro::Static::Operator::Info < TokyoMetro::Static::Fundamental::Info
   def name_ja_short
     @name.ja_short
   end
+  
+  def name_hira_short
+    @name.hira_short
+  end
 
   # 鉄道事業者の事業者の名称（ローマ字表記、略称・表示用）
   # @return [::String or nil]
