@@ -13,7 +13,7 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::Name < TokyoMetro::
   private
 
   def set_values_to_hash_for_making_variables
-    super( hash_key_array: [ :ja , :en ] , make_array: true )
+    super( hash_key_array: [ :ja , :en , :hira ] , make_array: true )
     super( hash_key_array: [ :ja_short , :en_short ] )
   end
 
