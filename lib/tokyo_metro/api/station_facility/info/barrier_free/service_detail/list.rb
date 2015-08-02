@@ -19,7 +19,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::ServiceDetail::List <
     super( barrier_free_facility_info_id , not_on_the_top_layer: true , no_display: true , display_number: false )
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_barrier_free_facility_service_detail_list
   end
 

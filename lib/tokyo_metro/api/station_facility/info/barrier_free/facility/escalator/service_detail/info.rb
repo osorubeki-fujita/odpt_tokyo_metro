@@ -33,7 +33,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Escalator::
     factory_for_generating_barrier_free_escalator_service_detail_from_hash
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_escalator_service_detail_info
   end
 

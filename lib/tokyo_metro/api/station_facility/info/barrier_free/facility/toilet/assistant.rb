@@ -42,7 +42,7 @@ class TokyoMetro::Api::StationFacility::Info::BarrierFree::Facility::Toilet::Ass
     factory_for_generating_barrier_free_toilet_assistant_from_hash
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_toilet_service_detail_assistant_info
   end
 

@@ -13,7 +13,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::List < Array
     )
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_fundamental_list
   end
 

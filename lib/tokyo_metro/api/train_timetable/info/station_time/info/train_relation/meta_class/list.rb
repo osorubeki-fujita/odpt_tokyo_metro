@@ -17,7 +17,7 @@ class TokyoMetro::Api::TrainTimetable::Info::StationTime::Info::TrainRelation::M
   def seed( *args )
     __seed__(
       *args ,
-      factory_name: :factory_for_seeding_this_class ,
+      factory_name: :factory_for_seeding_instance_of_this_class ,
       class_name: self.class ,
       method_name: __method__  ,
       indent: 0 ,

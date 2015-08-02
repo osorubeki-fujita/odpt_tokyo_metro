@@ -56,7 +56,7 @@ class TokyoMetro::Api::RailwayLine::Info::TravelTime::Info < TokyoMetro::Api::Ra
     factory_for_generating_travel_time_info_from_hash
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_travel_time_infos
   end
 

@@ -17,7 +17,7 @@ class TokyoMetro::Api::StationTimetable::Info::Fundamental::Info::Separated::Inf
   attr_reader :operator
   attr_reader :railway_direction
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_fundamental_info_separeted_info
   end
 

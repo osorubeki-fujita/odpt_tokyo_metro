@@ -40,7 +40,7 @@ class TokyoMetro::Api::RailwayLine::Info::StationOrder::Info < TokyoMetro::Api::
     factory_for_generating_station_order_info_from_hash
   end
 
-  # def self.factory_for_seeding_this_class
+  # def self.factory_for_seeding_instance_of_this_class
     # factory_for_seeding_station_order_infos
   # end
 

@@ -10,11 +10,12 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
   private
 
   def hash_to_db
-    h = { name_ja: @info.name_ja_inspect , name_en: @info.name_en_inspect , name_hira: @info.name_hira_inspect }
+    h = { name_ja: @info.name_ja_inspect , name_hira: @info.name_hira_inspect , name_en: @info.name_en_inspect }
 
     [
       :same_as ,
       :name_ja_short ,
+      :name_hira_short ,
       :name_en_short ,
       :index
     ].each do | key_name |
@@ -32,7 +33,7 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info < TokyoMetro::Factory::S
   private
 
   def seed_code
-    self.class.factory_for_seeding_code_info.new( @info , @id )
+    @info.additional_infos.seed( @id )
   end
 
 end

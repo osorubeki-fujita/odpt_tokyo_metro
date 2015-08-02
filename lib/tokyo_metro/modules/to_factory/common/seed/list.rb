@@ -5,7 +5,7 @@ module TokyoMetro::Modules::ToFactory::Common::Seed::List
 
   module ClassMethods
 
-    def factory_for_seeding_this_class
+    def factory_for_seeding_instance_of_this_class
       factory_for_seeding_list
     end
 

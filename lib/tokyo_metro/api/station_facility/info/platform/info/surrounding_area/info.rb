@@ -10,7 +10,7 @@ class TokyoMetro::Api::StationFacility::Info::Platform::Info::SurroundingArea::I
     factory_for_generating_platform_surrounding_area_info_from_string
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_platform_info_surrounding_area_info
   end
 

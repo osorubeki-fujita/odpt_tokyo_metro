@@ -156,7 +156,7 @@ class TokyoMetro::Static::Fare::Normal::Table::Pattern
     self.fare_normal_group_table_list_class.header( indent )
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_normal_table_pattern
   end
 

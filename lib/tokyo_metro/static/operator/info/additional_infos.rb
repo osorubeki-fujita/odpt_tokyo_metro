@@ -1,7 +1,10 @@
 class TokyoMetro::Static::Operator::Info::AdditionalInfos
 
   include ::OdptCommon::Modules::Name::Static::Fundamental::Infos
+
   include ::TokyoMetro::Modules::ToFactory::Common::Generate::Info
+  include ::TokyoMetro::Modules::ToFactory::Common::Seed::Info
+
   include ::TokyoMetro::ClassNameLibrary::Static::Operator
 
   def self.instance_variable_names
@@ -28,6 +31,10 @@ class TokyoMetro::Static::Operator::Info::AdditionalInfos
 
   def self.factory_for_generating_instance_of_this_class
     factory_for_generating_instance_of_additional_infos
+  end
+
+  def self.factory_for_seeding_instance_of_this_class
+    factory_for_seeding_additional_infos
   end
 
 end

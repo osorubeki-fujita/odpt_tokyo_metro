@@ -10,6 +10,7 @@
 #   * TokyoMetro::Static.stations_in_tokyo_metro
 #   * TokyoMetro::Static.stations
 #   * TokyoMetro::Static.stopping_patterns （現在未定義）
+#
 #   * TokyoMetro::Static.train_types_in_api
 #   * TokyoMetro::Static.train_types_color
 #   * TokyoMetro::Static.train_types_other_operator

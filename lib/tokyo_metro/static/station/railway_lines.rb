@@ -4,7 +4,7 @@ class TokyoMetro::Static::Station::RailwayLines < ::TokyoMetro::Static::Fundamen
   include ::TokyoMetro::ClassNameLibrary::Static::Station
   include ::TokyoMetro::Modules::ToFactory::Common::Seed::Hash
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_hash
   end
 

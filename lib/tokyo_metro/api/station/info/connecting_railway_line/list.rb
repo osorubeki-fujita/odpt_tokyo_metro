@@ -1,7 +1,7 @@
 # 乗り換え可能路線の一覧を扱うクラス
 class TokyoMetro::Api::Station::Info::ConnectingRailwayLine::List < TokyoMetro::Api::Station::Info::Common::List
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_connecting_railway_line_infos_of_each_station
   end
 

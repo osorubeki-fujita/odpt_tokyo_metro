@@ -17,7 +17,7 @@ class TokyoMetro::Static::Station::InEachRailwayLine < ::TokyoMetro::Static::Fun
     factory_for_generating_from_each_saved_file
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_subhash
   end
 

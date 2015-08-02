@@ -77,8 +77,8 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
       ::TokyoMetro::Factory::Seed::Static::Operator::Info
     end
 
-    def factory_for_seeding_code_info
-      ::TokyoMetro::Factory::Seed::Static::Operator::Info::CodeInfo
+    def factory_for_seeding_additional_infos
+      ::TokyoMetro::Factory::Seed::Static::Operator::Info::AdditionalInfos
     end
 
     # @!group Db
@@ -87,8 +87,8 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
       ::Operator::Info
     end
 
-    def db_instance_class_of_code_info
-      ::Operator::CodeInfo
+    def db_instance_class_of_additional_info
+      ::Operator::AdditionalInfo
     end
 
     def db_instance_class_str

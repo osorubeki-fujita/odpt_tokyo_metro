@@ -11,7 +11,7 @@ class TokyoMetro::Api::StationFacility::Info::Platform::Info::BarrierFree::Info 
     factory_for_generating_platform_barrier_free_info_from_string
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_platform_info_barrier_free_info
   end
 

@@ -237,7 +237,7 @@ class TokyoMetro::Api::StationTimetable::Info::TrainTime::Info
     factory_for_generating_train_from_hash
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_station_train_time
   end
 

@@ -5,7 +5,7 @@ class TokyoMetro::Api::Station::Info::Exit::List < TokyoMetro::Api::Station::Inf
     self.any? { | item | item.point == id_urn }
   end
 
-  def self.factory_for_seeding_this_class
+  def self.factory_for_seeding_instance_of_this_class
     factory_for_seeding_exits_of_each_station
   end
 

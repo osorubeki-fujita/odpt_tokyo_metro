@@ -16,7 +16,7 @@ module TokyoMetro::Modules::ToFactory::Common::Seed::Group
   )
     __seed__(
       *variables ,
-      factory_name: :factory_for_seeding_this_class , # ★
+      factory_name: :factory_for_seeding_instance_of_this_class , # ★
       class_name: class_name ,
       method_name: __method__ , # ★
       indent: indent ,
@@ -32,7 +32,7 @@ module TokyoMetro::Modules::ToFactory::Common::Seed::Group
 
   def __seed__(
     *args ,
-    factory_name: :factory_for_seeding_this_class ,
+    factory_name: :factory_for_seeding_instance_of_this_class ,
     class_name: self.class ,
     method_name: __method__  ,
     indent: 0 ,
