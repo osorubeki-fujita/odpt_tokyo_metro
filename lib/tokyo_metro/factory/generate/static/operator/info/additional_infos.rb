@@ -13,7 +13,8 @@ class TokyoMetro::Factory::Generate::Static::Operator::Info::AdditionalInfos < T
   private
 
   def set_values_to_hash_for_making_variables
-    super( hash_key_array: [ :numbering , :code ] )
+    super( hash_key_array: [ :numbering ] , boolean: true )
+    super( hash_key_array: [ :code ] )
     @hash_for_making_variables[ :color ] = color_instance
     @hash_for_making_variables[ :code_settings ] = code_settings
   end
