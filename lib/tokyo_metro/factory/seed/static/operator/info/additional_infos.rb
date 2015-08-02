@@ -4,8 +4,9 @@ class TokyoMetro::Factory::Seed::Static::Operator::Info::AdditionalInfos < Tokyo
 
   private
 
-  def set_optional_variables( operator_info_id )
-    @operator_info_id = operator_info_id
+  def set_optional_variables( args )
+    raise unless args.length == 1
+    @operator_info_id = args.first
   end
 
   def hash_to_db
