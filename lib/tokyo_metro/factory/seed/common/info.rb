@@ -1,11 +1,13 @@
+# @todo 仕上げ
 class TokyoMetro::Factory::Seed::Common::Info
 
   include ::TokyoMetro::Factory::Seed::Common::SetOptionalVariables
 
-  def initialize( info , *args , to_get_id: false )
+  def initialize( info , *args , to_get_id: false , to_return_instance: false , to_return_id: false )
     @info = info
     set_optional_variables( args )
     @to_get_id = to_get_id
+    @to_return_instance = to_return_instance
   end
 
   def seed
@@ -24,8 +26,10 @@ class TokyoMetro::Factory::Seed::Common::Info
   end
 
   def seed_main
-    if @to_get_id
+    if @to_get_id or @to_return_id
       @id = db_class.find_or_create_by( hash_to_db ).id
+    elsif @to_return_instance
+      @instance = db_class.find_or_create_by( hash_to_db )
     else
       db_class.find_or_create_by( hash_to_db )
     end
