@@ -91,6 +91,10 @@ module TokyoMetro::ClassNameLibrary::Static::Operator
       ::Operator::AdditionalInfo
     end
 
+    def db_instance_class_of_code_info
+      ::Operator::AdditionalInfo
+    end
+
     def db_instance_class_str
       "Operator::Info"
     end
