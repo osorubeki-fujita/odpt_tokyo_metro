@@ -24,7 +24,7 @@ class TokyoMetro::App::Db::OperationDay
   end
 
   def holiday?
-    ::HolidayJapan.check( ::Date.new( @time.year , @time.month , @time.day ) )
+    @time.holiday?
   end
 
 end

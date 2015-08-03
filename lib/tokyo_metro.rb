@@ -23,8 +23,6 @@ require 'yaml'
 require 'singleton'
 require 'fileutils'
 
-require 'holiday_japan'
-
 # 東京メトロ オープンデータを扱うモジュール
 module TokyoMetro
 
